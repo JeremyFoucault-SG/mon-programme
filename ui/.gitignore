@@ -1,0 +1,109 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.history
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+package-lock.json
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# JPEG
+*.[jJ][pP][gG]
+*.[jJ][pP][eE][gG]
+*.[jJ][pP][eE]
+*.[jJ][iI][fF]
+*.[jJ][fF][iI][fF]
+*.[jJ][fF][iI]
+
+# JPEG 2000
+*.[jJ][pP][22]
+*.[jJ][22][kK]
+*.[jJ][pP][fF]
+*.[jJ][pP][xX]
+*.[jJ][pP][mM]
+*.[mM][jJ][22]
+
+# JPEG XR
+*.[jJ][xX][rR]
+*.[hH][dD][pP]
+*.[wW][dD][pP]
+
+# Graphics Interchange Format
+*.[gG][iI][fF]
+
+# RAW
+*.[rR][aA][wW]
+
+# Web P
+*.[wW][eE][bB][pP]
+
+# Portable Network Graphics
+*.[pP][nN][gG]
+
+# Animated Portable Network Graphics
+*.[aA][pP][nN][gG]
+
+# Multiple-image Network Graphics
+*.[mM][nN][gG]
+
+# Tagged Image File Format
+*.[tT][iI][fF][fF]
+*.[tT][iI][fF]
+
+# Scalable Vector Graphics
+*.[sS][vV][gG]
+*.[sS][vV][gG][zZ]
+
+# Portable Document Format
+*.[pP][dD][fF]
+
+# X BitMap
+*.[xX][bB][mM]
+
+# BMP
+*.[bB][mM][pP]
+*.[dD][iI][bB]
+
+# 3D Images
+*.[33][dD][mM]
+*.[mM][aA][xX]

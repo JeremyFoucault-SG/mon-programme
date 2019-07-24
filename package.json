@@ -1,0 +1,23 @@
+{
+  "name": "mon-programme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "yarn --cwd ./api install && yarn --cwd ./ui install",
+    "start": "concurrently --raw \"yarn --cwd ./api start:dev\" \"yarn --cwd ./ui start\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.1"
+  },
+  "devDependencies": {
+    "husky": "^3.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn --cwd ./api lint && yarn --cwd ./ui lint && node ./husky.hook.js"
+    }
+  }
+}
