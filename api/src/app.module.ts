@@ -1,18 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { AuthenticationModule } from './authentication/authentication.module';
-import { UserModule } from './user/user.module';
-import { TrainingModule } from './training/training.module';
-import { ArticleModule } from './article/article.module';
-import { ItemModule } from './item/item.module';
-import { PromoModule } from './promo/promo.module';
-import { DbModule } from './db/db.module';
 import { ConfigModule } from './config/config.module';
+import { ApiModule } from './api/api.module';
+import { LoggerModule } from './logger/logger.module';
+import { DbModule } from './db/db.module';
 
 @Module({
-  imports: [AuthenticationModule, UserModule, TrainingModule, ArticleModule, ItemModule, PromoModule, DbModule, ConfigModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    DbModule,
+    ConfigModule,
+    ApiModule,
+    LoggerModule,
+  ],
 })
-export class AppModule {}
+export class AppModule { }
