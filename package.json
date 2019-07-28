@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "yarn --cwd ./api install && yarn --cwd ./ui install",
-    "start": "concurrently --raw \"yarn --cwd ./api start:dev\" \"yarn --cwd ./ui start\""
+    "start": "concurrently --raw \"yarn --cwd ./api start:dev\" \"yarn --cwd ./ui start\"",
+    "start:mongo": "docker-compose -f docker-compose.dev.yml stop && docker-compose -f docker-compose.dev.yml up"
   },
   "author": "",
   "license": "ISC",
