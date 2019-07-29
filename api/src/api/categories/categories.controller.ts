@@ -1,13 +1,16 @@
 import { Controller, Post, Get, Put, Delete, HttpCode, HttpStatus, Body, Param } from '@nestjs/common';
 import { CategoryModel } from './category.model';
 import { CategoryDTO } from './category.dto';
+import { CategoriesService } from './categories.service';
 
 @Controller('categories')
 export class CategoriesController {
 
+    constructor(private readonly catergoryService: CategoriesService) {}
+
     @Post()
-    async create(@Body() category: CategoryDTO): Promise<CategoryModel> {
-        return null;
+    async create(@Body() categories: CategoryDTO): Promise<CategoryModel> {
+        return this.catergoryService.insert(categories);
     }
 
     @Get(':id')
