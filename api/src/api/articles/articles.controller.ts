@@ -1,33 +1,48 @@
+import { ApiBearerAuth, ApiUseTags, ApiOperation, ApiResponse, ApiImplicitQuery, ApiImplicitHeader } from '@nestjs/swagger';
 import { Controller, Post, Get, Put, Delete, HttpCode, HttpStatus, Body, Param } from '@nestjs/common';
 import { ArticleModel } from './article.model';
 import { ArticleDTO } from './article.dto';
+import { ArticlesService } from './articles.service';
 
 @Controller('articles')
+@ApiUseTags('Articles')
 export class ArticlesController {
 
-    @Post()
-    async create(@Body() article: ArticleDTO): Promise<ArticleModel> {
-        return null;
-    }
+  constructor(private readonly articlesService: ArticlesService) { }
 
-    @Get(':id')
-    async readOne(@Param('id') idArticle: string): Promise<ArticleModel> {
-        return null;
-    }
+  @Post()
+  @ApiBearerAuth()
+  @ApiOperation({ title: 'Create new article' })
+  @ApiResponse({ status: 201, description: 'Return article.' })
+  @ApiResponse({ status: 404, description: 'Not Found.' })
+  @ApiResponse({ status: 403, description: 'Forbidden.' })
+  async create(@Body() article: ArticleDTO): Promise<ArticleModel> {
+    return this.articlesService.insert(article);
+  }
 
-    @Get()
-    async readAll(): Promise<ArticleModel> {
-        return null;
-    }
+  @Get(':id')
+  @ApiOperation({ title: 'Get article by ID' })
+  @ApiResponse({ status: 200, description: 'Return article.' })
+  @ApiResponse({ status: 404, description: 'Not Found.' })
+  async readOne(@Param('id') idArticle: string): Promise<ArticleModel> {
+    return this.articlesService.findById(idArticle);
+  }
 
-    @Put(':id')
-    async update(@Param('id') idArticle: string, @Body() article: ArticleDTO): Promise<ArticleModel> {
-        return null;
-    }
+  @Get()
+  @ApiOperation({ title: 'Get all articles' })
+  @ApiResponse({ status: 200, description: 'Return an array of articles.' })
+  async readAll(): Promise<ArticleModel[]> {
+    return this.articlesService.findAll();
+  }
 
-    @Delete(':id')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    async delete(@Param('id') idArticle: string): Promise<void> {
-        return null;
-    }
+  @Put(':id')
+  async update(@Param('id') idArticle: string, @Body() article: ArticleDTO): Promise<ArticleModel> {
+    return null;
+  }
+
+  @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  async delete(@Param('id') idArticle: string): Promise<void> {
+    return null;
+  }
 }

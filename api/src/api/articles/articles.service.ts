@@ -7,11 +7,30 @@ import { ArticleDTO } from '../../../dist/api/articles/article.dto';
 @Injectable()
 export class ArticlesService {
 
-  constructor(@InjectModel(ArticleModel) private readonly articleModel: ModelType<ArticleModel>) {}
+  constructor(@InjectModel(ArticleModel) private readonly articleModel: ModelType<ArticleModel>) { }
 
+  /**
+   * Create new Article in database
+   * @param article Article to insert
+   */
   async insert(article: ArticleDTO): Promise<ArticleModel> {
     const createdArticle = new this.articleModel(article);
-    return await createdArticle.save();
-}
+    return createdArticle.save();
+  }
+
+  /**
+   * Find one article by his ID
+   * @param id ID of wanted article
+   */
+  async findById(id: string): Promise<ArticleModel> {
+    return this.articleModel.findById(id).exec();
+  }
+
+  /**
+   * Find all articles present in database
+   */
+  async findAll(): Promise<ArticleModel[]> {
+    return this.articleModel.find({}).exec();
+  }
 
 }
