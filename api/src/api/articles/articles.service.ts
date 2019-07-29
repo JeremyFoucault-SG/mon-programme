@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { ArticleModel } from './article.model';
 import { ModelType } from 'typegoose';
-import { ArticleDTO } from '../../../dist/api/articles/article.dto';
+import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
+import { ArticleDTO } from './article.dto';
 
 @Injectable()
 export class ArticlesService {
@@ -23,7 +24,11 @@ export class ArticlesService {
    * @param id ID of wanted article
    */
   async findById(id: string): Promise<ArticleModel> {
-    return this.articleModel.findById(id).exec();
+    const article = await this.articleModel.findById(id).exec();
+    if (!article) {
+      throw new EntityException(EntityExceptionCode.NOT_FOUND);
+    }
+    return article;
   }
 
   /**
