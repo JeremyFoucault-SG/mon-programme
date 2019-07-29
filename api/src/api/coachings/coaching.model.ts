@@ -10,6 +10,12 @@ export class CoachingModel extends Typegoose {
 
     @prop({min: 0, max: 5})
     rating: number;
+    
+    @prop()
+    title: string;
+
+    @prop()
+    content: string;
 
     @arrayProp({items: CategoryModel, _id: false})
     categories: CategoryModel[];

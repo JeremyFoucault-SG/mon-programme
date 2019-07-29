@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { ArticleModel } from './article.model';
 import { ModelType } from 'typegoose';
-import { ArticleDTO } from '../../../dist/api/articles/article.dto';
+import { ArticleDTO } from './article.dto';
 
 @Injectable()
 export class ArticlesService {
