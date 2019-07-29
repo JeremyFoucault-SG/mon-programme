@@ -4,6 +4,6 @@ import { BodiesService } from './bodies.service';
 
 @Module({
   controllers: [BodiesController],
-  providers: [BodiesService]
+  providers: [BodiesService],
 })
 export class BodiesModule {}

@@ -17,6 +17,6 @@ export class ArticleModel extends Typegoose {
     @prop()
     author: string;
 
-    /* @arrayProp({items: CategoryModel, _id: false})
-    categories: CategoryModel[]; */
+    @arrayProp({items: CategoryModel, _id: false})
+    categories: CategoryModel[];
 }

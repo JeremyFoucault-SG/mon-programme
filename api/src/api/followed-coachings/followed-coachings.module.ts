@@ -4,6 +4,6 @@ import { FollowedCoachingsService } from './followed-coachings.service';
 
 @Module({
   controllers: [FollowedCoachingsController],
-  providers: [FollowedCoachingsService]
+  providers: [FollowedCoachingsService],
 })
 export class FollowedCoachingsModule {}

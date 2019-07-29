@@ -10,7 +10,7 @@ import { SettingsModel } from '../settings/settings.model';
 
 export class UserModel extends Typegoose {
     @prop()
-    _id: Types.ObjectId;
+    id: Types.ObjectId;
 
     @prop()
     createdAt: Date;

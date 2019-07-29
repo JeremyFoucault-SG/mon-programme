@@ -36,7 +36,7 @@ export class AuthService {
         if (authFinded) {
             throw new UnauthorizedException();
         }
-        authFinded.update({user: user._id})
+        authFinded.update({user: user.id});
 
         return authFinded.save();
     }
