@@ -12,11 +12,11 @@ export class CoversService {
     async findAll(): Promise<CoverModel[]> {
         return this.coverModel.find({}).exec();
       }
-    
+
       async findById(id: string): Promise<CoverModel> {
         return this.coverModel.findById(id).exec();
       }
-    
+
       async insert(cover: CoverDTO): Promise<CoverModel> {
         const createdCover = new this.coverModel(cover);
         return createdCover.save();
