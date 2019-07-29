@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "export NODE_ENV=dev && export IN_MEMORY_DB=true && ts-node -r tsconfig-paths/register test/main.ts"
+  "exec": "cross-env NODE_ENV=dev IN_MEMORY_DB=true ts-node -r tsconfig-paths/register test/main.ts"
 }
