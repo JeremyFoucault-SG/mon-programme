@@ -1,5 +1,6 @@
 import { Typegoose, prop, arrayProp } from 'typegoose';
 import { CategoryModel } from '../categories/category.model';
+import { SubDocument, SubDocumentArray } from '../../../@types/typegoose';
 
 export class CoachingModel extends Typegoose {
     @prop()
@@ -21,5 +22,5 @@ export class CoachingModel extends Typegoose {
     content: string;
 
     @arrayProp({ items: CategoryModel, _id: false })
-    categories: CategoryModel[];
+    categories: SubDocumentArray<CategoryModel>;
 }

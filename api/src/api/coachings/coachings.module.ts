@@ -9,5 +9,6 @@ import { TypegooseModule } from 'nestjs-typegoose';
     TypegooseModule.forFeature([CoachingModel])],
   controllers: [CoachingsController],
   providers: [CoachingsService],
+  exports: [CoachingsService],
 })
 export class CoachingsModule { }
