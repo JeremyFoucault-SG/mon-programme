@@ -91,7 +91,8 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     };
 
     await usersService.insert(userDTO);
-    const user = await usersService.insert({});
-    console.log(user);
   }
+
+  await usersService.insert({});
+
 }
