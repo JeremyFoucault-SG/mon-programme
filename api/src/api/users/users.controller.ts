@@ -24,6 +24,7 @@ export class UsersController {
     @ApiOperation({ title: 'Get article by ID' })
     @ApiResponse({ status: 200, description: 'Return article.' })
     @ApiResponse({ status: 404, description: 'Not Found.' })
+    @ApiResponse({ status: 403, description: 'Forbidden.' })
     async readOne(@Param('id') idUser: string): Promise<UserModel> {
       return this.usersService.findById(idUser);
     }
@@ -33,6 +34,7 @@ export class UsersController {
     @ApiOperation({ title: 'Get article by ID' })
     @ApiResponse({ status: 200, description: 'Return article.' })
     @ApiResponse({ status: 404, description: 'Not Found.' })
+    @ApiResponse({ status: 403, description: 'Forbidden.' })
     async readAll(): Promise<UserModel[]> {
         return this.usersService.findAll();
     }
