@@ -6,5 +6,5 @@ export class CartModel extends Typegoose {
     createdAt: Date;
 
     @arrayProp({items: CoachingModel})
-    coaching: CoachingModel;
+    coaching: CoachingModel[];
 }

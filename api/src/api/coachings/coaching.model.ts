@@ -3,6 +3,9 @@ import { CategoryModel } from '../categories/category.model';
 
 export class CoachingModel extends Typegoose {
     @prop()
+    id: string;
+
+    @prop()
     createdAt: Date;
 
     @prop()
