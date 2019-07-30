@@ -9,5 +9,5 @@ export class CartDTO {
   @Type(() => CoachingDTO)
   @ValidateNested({each: true})
   @ApiModelProperty()
-  public readonly coaching: CoachingDTO[];
+  public readonly coachings: CoachingDTO[];
 }
