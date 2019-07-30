@@ -9,6 +9,8 @@ import { CoachingsService } from 'src/api/coachings/coachings.service';
 import { CoversService } from 'src/api/covers/covers.service';
 import { GoalsService } from '../src/api/goals/goals.service';
 import { insertGoalData } from './goal.fixture';
+import { UsersService } from '../src/api/users/users.service';
+import { insertUserData } from './user.fixture';
 
 async function bootstrap() {
   await startInMemoryDB();
@@ -16,18 +18,22 @@ async function bootstrap() {
   const app = await require('../src/main').bootstrap();
 
   const articlesService: ArticlesService = app.get('ArticlesService');
-  insertArticleData(articlesService);
+  await insertArticleData(articlesService);
 
   const goalsService: GoalsService = app.get('GoalsService');
-  insertGoalData(goalsService);
+  await insertGoalData(goalsService);
 
   const categoriesService: CategoriesService = app.get('CategoriesService');
-  insertCategoryData(categoriesService);
+  await insertCategoryData(categoriesService);
+
   const coachingsService: CoachingsService = app.get('CoachingsService');
-  insertCoachingData(coachingsService);
+  await insertCoachingData(coachingsService);
 
   const coversService: CoversService = app.get('CoversService');
-  insertCoverData(coversService);
+  await insertCoverData(coversService);
+
+  const usersService: UsersService = app.get('UsersService');
+  await insertUserData(articlesService, coachingsService, usersService);
 
 }
 bootstrap();
