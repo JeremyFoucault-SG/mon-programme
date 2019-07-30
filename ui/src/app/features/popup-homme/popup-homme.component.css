@@ -10,8 +10,8 @@
   letter-spacing: 7.38px;
   text-align: center;
   color: rgba(255, 255, 255, 0.85);
-  margin-top: 38px;
-  margin-left: 205px;
+  margin-top: -60px;
+  margin-left: 162px;
 }
 
 .homme {
@@ -68,4 +68,10 @@
     border: solid 1px #647bff;
     background-color: #000000;
       
+}
+
+.picture{
+	display: block;
+    margin-left: auto;
+	margin-right: auto;
 }
