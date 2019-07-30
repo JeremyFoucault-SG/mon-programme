@@ -2,6 +2,7 @@
 // Imports Modules //
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 // Imports Components //
@@ -56,7 +57,8 @@ import { HomeWomenComponent } from './features/home-women/home-women.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

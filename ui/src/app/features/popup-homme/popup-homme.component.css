@@ -1,0 +1,71 @@
+.category {
+ width: 300px;
+  height: 44px;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 7.38px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 38px;
+  margin-left: 205px;
+}
+
+.homme {
+	width: 1016px;
+	height: 120px;
+	opacity: 0.11;
+	font-family: Lato;
+	font-size: 100px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 16.61px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.line {
+	width: 0.1px;
+	height: 84px;
+	border: solid 2px #ffe264;
+  }
+
+  .border-yellow{
+	width: 196px;
+	height: 45px;
+	border-radius: 22.5px;
+	box-shadow: 1px 1px 17px 0 rgba(255, 226, 100, 0.69);
+	border-style: solid;
+	border-width: 1px;
+	border-image-source: linear-gradient(to bottom, #fff39d, #ffe264);
+	border-image-slice: 1;
+	background-image: #ffffff, linear-gradient(to bottom, #fff39d, #ffe264);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+  }
+  .copyright{
+	font-family: Lato;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 1.74px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.85);
+  }
+
+  .border-blue-900{
+    width: 196px;
+    height: 45px;
+    border-radius: 22.5px;
+    box-shadow: 1px 1px 21px 0 rgba(255, 226, 100, 0.16);
+    border: solid 1px #647bff;
+    background-color: #000000;
+      
+}
