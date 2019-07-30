@@ -12,6 +12,7 @@ import { SettingsModule } from './settings/settings.module';
 import { CategoriesModule } from './categories/categories.module';
 import { FollowedCoachingsModule } from './followed-coachings/followed-coachings.module';
 import { CoversModule } from './covers/covers.module';
+import { GoalsModule } from './goals/goals.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { CoversModule } from './covers/covers.module';
     NewsletterModule,
     CartsModule,
     CoversModule,
+    GoalsModule,
     BodiesModule,
     StatsModule,
     BookmarksModule,
