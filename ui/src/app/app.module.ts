@@ -25,6 +25,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { PopupAccueilComponent } from './features/popup-accueil/popup-accueil.component';
 import { PopupHommeComponent } from './features/popup-homme/popup-homme.component';
 import { PopupFemmeComponent } from './features/popup-femme/popup-femme.component';
+import { HomeMenComponent } from './features/home-men/home-men.component';
+import { HomeWomenComponent } from './features/home-women/home-women.component';
 
 
 
@@ -48,7 +50,9 @@ import { PopupFemmeComponent } from './features/popup-femme/popup-femme.componen
     HeaderComponent,
     PopupAccueilComponent,
     PopupHommeComponent,
-    PopupFemmeComponent
+    PopupFemmeComponent,
+    HomeMenComponent,
+    HomeWomenComponent
   ],
   imports: [
     BrowserModule,
