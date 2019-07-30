@@ -5,6 +5,9 @@ import { ModelType } from 'typegoose';
 import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
 import { ArticleDTO } from './article.dto';
 
+/**
+ * Service for manage articles save in database
+ */
 @Injectable()
 export class ArticlesService {
 
