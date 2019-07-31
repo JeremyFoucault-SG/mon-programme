@@ -1,0 +1,14 @@
+.test{
+    display: inline-block;
+    margin: auto;
+}
+.reduc{
+    width: 140px;
+    height: 60px
+
+}
+.team {
+    background: linear-gradient(180deg, transparent 50%, #000000 50%);
+
+    width: 100%;
+}
