@@ -7545,6 +7545,79 @@ video {
   z-index: auto;
 }
 
+.fs-1{
+  font-size: 80px;
+}
+
+.fs-2{
+  font-size: 60px;
+}
+
+.fs-3{
+  font-size: 40px;
+}
+
+.fs-4{
+  font-size: 30px;
+}
+
+.fs-5{
+  font-size: 26px;
+}
+
+.fs-6{
+  font-size: 24px;
+}
+
+.fs-7{
+  font-size: 20px;
+}
+
+.fs-8{
+  font-size: 18px;
+}
+
+.octogone {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  overflow: hidden;
+  transform: rotate(45deg);
+  background: transparent;
+  border: 3px solid ;
+  border-image-source: linear-gradient(45deg, rgba(255,255,0,2), rgba(247, 79, 79, 0.5));
+  border-image-slice: 1;
+}
+
+.octogone:before {
+  position: absolute;
+  top: -3px; right: -3px; bottom: -3px; left: -3px;
+  transform: rotate(45deg);
+  content: '';
+  border: inherit;
+}
+
+.octagonWrap {
+  width:600px;
+  height:600px;
+  margin-left:500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-img{
+  background-image: url('https://zupimages.net/up/19/31/elei.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-yellow{
+  background-color:  #fcdd77;
+}
+
+.text-grey{
+  color: #a0a0a0;
+}
+
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;
