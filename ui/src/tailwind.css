@@ -31,3 +31,9 @@
     position: relative;
     overflow: hidden;
 }
+
+.bg-img{
+    background-image: url('https://zupimages.net/up/19/31/elei.png');
+    background-position: center;
+    background-repeat: no-repeat; 
+}

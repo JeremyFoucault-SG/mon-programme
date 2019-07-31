@@ -13,13 +13,6 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-
-.bg-img
-{
-    background-image: url('/assets/images/background-page1.png');
-    background-position: center;
-    background-repeat: no-repeat; 
-}
 /* Sections
    ========================================================================== */
 
@@ -7577,6 +7570,12 @@ video {
   margin-left:500px;
   position: relative;
   overflow: hidden;
+}
+
+.bg-img{
+  background-image: url('https://zupimages.net/up/19/31/elei.png');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 640px) {
