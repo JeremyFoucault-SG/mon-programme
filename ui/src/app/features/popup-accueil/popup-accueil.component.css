@@ -1,38 +1,29 @@
-
-
-.border-blue-900 {
-   border: solid 2px;
-}
-
-.px-4{
+.px-4 {
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
-
-.border-blue-900{
-    width: 196px;
+.contact {
+    width: 171px;
     height: 45px;
     border-radius: 22.5px;
-    box-shadow: 1px 1px 21px 0 rgba(255, 226, 100, 0.16);
-    border: solid 1px #647bff;
-    background-color: #000000;
-      
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(254deg, #ef6562, #ffe264);
+    border-image-slice: 1;
 }
 
-.border-yellow-900{
+.homme {
     width: 196px;
     height: 45px;
     border-radius: 22.5px;
     box-shadow: 1px 1px 21px 0 rgba(255, 226, 100, 0.16);
     border: solid 1px #ffe264;
     background-color: #000000;
-    
+    display: flex;
 }
 
-
-
-.border-pink-900{
+.femme {
     width: 196px;
     height: 45px;
     border-radius: 22.5px;
@@ -41,29 +32,51 @@
     background-color: #000000;
 }
 
-.women{
-    
+.women {
     margin-right: 100px;
 }
 
-.men{
+.men {
     margin-left: 100px;
-    
 }
 
-
-.copyright{
-  font-family: Lato;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 1.74px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.85);
+.copyright {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.74px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-.background{
-    background-image: url('/src/assets/images//background-page1.png')
+.popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: url('https://zupimages.net/up/19/31/elei.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.octo {
+    width: 840px;
+    height: 840px;
+}
+
+.acces {
+    display: flex;
+    justify-content: space-around;
+}
+
+a.nav-link {
+    margin-top: 350px;
 }

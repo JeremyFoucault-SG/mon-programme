@@ -5,35 +5,3 @@
 @tailwind utilities;
 
 
-.octogone {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    overflow: hidden;
-    transform: rotate(45deg);
-    background: transparent;
-    border: 3px solid ;
-    border-image-source: linear-gradient(45deg, rgba(255,255,0,2), rgba(247, 79, 79, 0.5));
-    border-image-slice: 1;
-}
-
-.octogone:before {
-    position: absolute;
-    top: -3px; right: -3px; bottom: -3px; left: -3px;
-    transform: rotate(45deg);
-    content: '';
-    border: inherit;
-}
-
-.octagonWrap {
-    width:600px;
-    height:600px;
-    margin-left:500px;
-    position: relative;
-    overflow: hidden;
-}
-
-.bg-img{
-    background-image: url('https://zupimages.net/up/19/31/elei.png');
-    background-position: center;
-    background-repeat: no-repeat; 
-}
