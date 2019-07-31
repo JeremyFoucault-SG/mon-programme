@@ -1,90 +1,82 @@
-.category {
-  width: 300px;
-   height: 44px;
-   font-family: Montserrat;
-   font-size: 36px;
-   font-weight: bold;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: normal;
-   letter-spacing: 7.38px;
-   text-align: center;
-   color: rgba(255, 255, 255, 0.85);
-   margin-top: -60px;
-   margin-left: 162px;
- }
+.px-4 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
- .homme {
-   width: 1016px;
-   height: 120px;
-   opacity: 0.11;
-   font-family: Lato;
-   font-size: 100px;
-   font-weight: bold;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: normal;
-   letter-spacing: 16.61px;
-   text-align: center;
-   color: rgba(255, 255, 255, 0.85);
- }
+.contact {
+  width: 171px;
+  height: 45px;
+  border-radius: 22.5px;
+  border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(254deg, #ef6562, #ffe264);
+  border-image-slice: 1;
+}
 
- .line {
-   width: 0.1px;
-   height: 84px;
-   border: solid 2px #ffe264;
-   }
+.homme {
+  width: 196px;
+  height: 45px;
+  border-radius: 22.5px;
+  box-shadow: 1px 1px 21px 0 rgba(255, 226, 100, 0.16);
+  border: solid 1px #ffe264;
+  background-color: #000000;
+  display: flex;
+}
 
-   .enter{
-   width: 196px;
-   height: 45px;
-   border-radius: 22.5px;
-   box-shadow: 1px 1px 17px 0 #fff39d;
-   border-style: solid;
-   border-color: #fff39d;
-   border-width: 1px;
-   background-color: #fff39d;
-   background-origin: border-box;
-   }
-   .copyright{
-   font-family: Lato;
-   font-size: 18px;
-   font-weight: normal;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: normal;
-   letter-spacing: 1.74px;
-   text-align: center;
-   color: rgba(255, 255, 255, 0.85);
-   }
+.femme {
+  width: 196px;
+  height: 45px;
+  border-radius: 22.5px;
+  box-shadow: 1px 1px 21px 0 rgba(196, 83, 82, 0.23);
+  border: solid 1px #c45352;
+  background-color: #000000;
+}
 
-   .contact{
-     width: 196px;
-     height: 45px;
-     border-radius: 22.5px;
-     box-shadow: 1px 1px 21px 0 rgba(255, 226, 100, 0.16);
-     border: solid 1px #647bff;
-     background-color: #000000;
+.women {
+  margin-right: 100px;
+}
 
- }
+.men {
+  margin-left: 100px;
+}
 
- .picture{
-   display: block;
-     margin-left: auto;
-   margin-right: auto;
- }
+.copyright {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.74px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+}
 
- .women{
-   width: 212px;
-   height: 24px;
-   opacity: 0.72;
-   font-family: Montserrat;
-   font-size: 20px;
-   font-weight: bold;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: normal;
-   letter-spacing: 4.1px;
-   text-align: center;
-   color: rgba(255, 255, 255, 0.85);
- }
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: url('https://zupimages.net/up/19/31/elei.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.octo {
+  width: 840px;
+  height: 840px;
+}
+
+.acces {
+  display: flex;
+  justify-content: space-around;
+}
+
+a.nav-link {
+  margin-top: 350px;
+}

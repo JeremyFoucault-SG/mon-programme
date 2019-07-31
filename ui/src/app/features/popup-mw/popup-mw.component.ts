@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PopupAccueilComponent } from '../popup-accueil/popup-accueil.component';
 @Component({
   selector: 'app-popup-mw',
   templateUrl: './popup-mw.component.html',
