@@ -23,7 +23,7 @@ export class AuthController {
     @Post('signup')
     async signup(@Body() auth: AuthDTO): Promise<any> {
         await this.authService.createAuth(auth);
-        const user = await this.usersService.createUser(new UserDTO());
+        const user = await this.usersService.insert(new UserDTO());
         await this.authService.updateAuth(auth, user);
         return;
     }
