@@ -2,6 +2,7 @@
 // Imports Modules //
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 // Imports Components //
@@ -25,9 +26,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { PopupAccueilComponent } from './features/popup-accueil/popup-accueil.component';
 import { PopupHommeComponent } from './features/popup-homme/popup-homme.component';
 import { PopupFemmeComponent } from './features/popup-femme/popup-femme.component';
-import { HomeMenComponent } from './features/home-men/home-men.component';
-import { HomeWomenComponent } from './features/home-women/home-women.component';
-
+import { HomeComponent } from './features/home/home.component';
 
 
 @NgModule({
@@ -51,12 +50,12 @@ import { HomeWomenComponent } from './features/home-women/home-women.component';
     PopupAccueilComponent,
     PopupHommeComponent,
     PopupFemmeComponent,
-    HomeMenComponent,
-    HomeWomenComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

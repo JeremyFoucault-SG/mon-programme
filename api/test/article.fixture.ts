@@ -2,9 +2,9 @@ import * as faker from 'faker/locale/fr';
 import { ArticlesService } from '../src/api/articles/articles.service';
 import { ArticleDTO } from '../src/api/articles/article.dto';
 
-export async function insertData(articleService: ArticlesService) {
+export async function insertArticleData(articleService: ArticlesService) {
   // populate mongo
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 50; i++) {
     const articleDTO: ArticleDTO = {
         title: faker.lorem.sentence(50),
         author: faker.name.firstName(),

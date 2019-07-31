@@ -1,5 +1,5 @@
 {
-  "watch": ["dist"],
+  "watch": [".dist"],
   "ext": "js",
   "exec": "cross-env NODE_ENV=dev node dist/main"
 }

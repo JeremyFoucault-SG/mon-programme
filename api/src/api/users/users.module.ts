@@ -5,7 +5,10 @@ import { TypegooseModule } from 'nestjs-typegoose';
 import { UserModel } from './user.model';
 
 @Module({
-  imports: [TypegooseModule.forFeature([UserModel])],
+  imports: [
+    TypegooseModule.forFeature([UserModel]),
+    UsersModule,
+  ],
   controllers: [UsersController],
   providers: [UsersService],
   exports: [UsersService],

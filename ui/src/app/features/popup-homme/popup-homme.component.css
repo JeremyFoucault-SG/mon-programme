@@ -1,0 +1,90 @@
+.category {
+ width: 300px;
+  height: 44px;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 7.38px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: -60px;
+  margin-left: 162px;
+}
+
+.homme {
+	width: 1016px;
+	height: 120px;
+	opacity: 0.11;
+	font-family: Lato;
+	font-size: 100px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 16.61px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.line {
+	width: 0.1px;
+	height: 84px;
+	border: solid 2px #ffe264;
+  }
+
+  .enter{
+	width: 196px;
+  height: 45px;
+  border-radius: 22.5px;
+  box-shadow: 1px 1px 17px 0 #fff39d;
+  border-style: solid;
+  border-color: #fff39d;
+  border-width: 1px;
+  background-color: #fff39d;
+  background-origin: border-box;
+  }
+  .copyright{
+	font-family: Lato;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 1.74px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.85);
+  }
+
+  .contact{
+    width: 196px;
+    height: 45px;
+    border-radius: 22.5px;
+    box-shadow: 1px 1px 21px 0 rgba(255, 226, 100, 0.16);
+    border: solid 1px #647bff;
+    background-color: #000000;
+      
+}
+
+.picture{
+	display: block;
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.women{
+	width: 212px;
+  height: 24px;
+  opacity: 0.72;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 4.1px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+}

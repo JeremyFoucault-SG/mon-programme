@@ -6,7 +6,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { UsersModule } from '../users/users.module';
 import { ConfigService } from '../../config/config.service';
 import { TypegooseModule } from 'nestjs-typegoose';
-import { AuthModel } from '../../../dist/api/auth/auth.model';
+import { AuthModel } from './auth.model';
 
 @Module({
   imports: [
