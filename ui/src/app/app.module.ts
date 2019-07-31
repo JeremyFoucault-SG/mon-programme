@@ -21,7 +21,7 @@ import { CardMinNosProgrammesComponent } from './shared/components/card-min-nos-
 import { CardMinArticleComponent } from './shared/components/card-min-article/card-min-article.component';
 import { CardNosProgrammesComponent } from './shared/components/card-nos-programmes/card-nos-programmes.component';
 import { MenuNosProgrammeComponent } from './shared/components/menu-nos-programme/menu-nos-programme.component';
-import { HeaderComponent } from './shared/components/header/header.component';
+import { HeaderComponent } from './core/header/header.component';
 import { PopupAccueilComponent } from './features/popup-accueil/popup-accueil.component';
 import { PopupHommeComponent } from './features/popup-homme/popup-homme.component';
 import { PopupFemmeComponent } from './features/popup-femme/popup-femme.component';

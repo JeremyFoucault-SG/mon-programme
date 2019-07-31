@@ -5,6 +5,8 @@ import { PopupHommeComponent } from './features/popup-homme/popup-homme.componen
 import { PopupFemmeComponent } from './features/popup-femme/popup-femme.component';
 import { HomeMenComponent } from './features/home-men/home-men.component';
 import { HomeWomenComponent } from './features/home-women/home-women.component';
+import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
+import { CardBlogComponent } from './shared/components/card-blog/card-blog.component';
 
 const routes: Routes = [
   {path: '', component: PopupAccueilComponent},
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: 'femme', component: PopupFemmeComponent},
   {path: 'home-men', component: HomeMenComponent},
   {path: 'home-women', component: HomeWomenComponent},
+  {path: 'newsletter', component: NewsletterComponent},
+  {path: 'blog', component: CardBlogComponent},
 ];
 
 @NgModule({
