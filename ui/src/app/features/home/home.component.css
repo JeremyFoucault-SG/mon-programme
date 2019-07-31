@@ -124,15 +124,32 @@
     width: 145px;
     margin-top: 470px;
     border:solid #fcdd77;
-    margin-left:650px;
+    margin-left:720px;
     border-top: none;
     border-right: none;
     border-radius:20%;
+    z-index:2;
 }
 
 .composed{
     background-color:#fcdd77;
     display:flex;
-    margin-left: 730px;
+    margin-left: 840px;
     margin-top: -30px;
+    z-index:2;
+}
+
+form{
+z-index:1;
+margin-left:10px;
+margin: auto;
+margin-top: 0px;
+margin-left: 840px;
+}
+
+.buttonForm{
+    box-shadow: 0 0 6px 0 rgba(252, 221, 119, 0.36);
+  border: solid 1px #fcdd77;
+  background-color: #ffffff;
+  border-radius: 31px;
 }
