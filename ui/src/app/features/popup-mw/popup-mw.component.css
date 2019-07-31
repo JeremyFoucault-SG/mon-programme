@@ -4,140 +4,66 @@
   background-image: url("https://zupimages.net/up/19/31/elei.png");
 }
 
+.title {
+  letter-spacing: 15px;
+}
+
+.title-shadow {
+  opacity: 0.11;
+  font-family: Lato;
+  font-size: 100px;
+  font-style: normal;
+  font-stretch: normal;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.body {
+  width: 420px;
+  height: 420px;
+  background-image: url("https://zupimages.net/up/19/31/2n2z.png");
+  background-repeat: no-repeat;
+  background-position: 46.5% center;
+  background-size: 280% auto;
+}
+
+.line {
+  width: 0px;
+  height: 84px;
+  border: solid 1px #ffe264;
+  background-color: #ffe264;
+  top: 18px;
+}
+
 .enter {
-  width: 196px;
-  height: 45px;
-  border-radius: 22.5px;
-  box-shadow: 1px 1px 17px 0 #fff39d;
-  border-style: solid;
-  border-color: #fff39d;
-  border-width: 1px;
-  background-color: #fff39d;
-  background-origin: border-box;
+  border: 1px solid rgba(255, 226, 100, 0.69);
+  box-shadow: 1px 1px 17px 4px rgba(255, 226, 100, 0.69);
 }
 
 .btn-size {
   width: 171px;
   height: 45px;
 }
+
 .btn {
-	background-image: linear-gradient(to right, #ef6562 0%, #ffe264 100%);
-	/* border-radius: 40px; */
+  background-image: linear-gradient(to right, #ffe264 0%, #ef6562 100%);
   box-sizing: border-box;
-	/* color: #00a84f; */
-	/* display: block; */
-	font: 1.125rem 'Oswald', Arial, sans-serif; /*18*/
-	/* height: 80px; */
-	letter-spacing: 1px;
-	margin: 0 auto;
-	/* padding: 4px; */
-	position: relative;
-  text-decoration: none;
-	text-transform: uppercase;
-	/* width: 264px; */
-	z-index: 2;
+  letter-spacing: 1px;
+  position: relative;
 }
 
 .btn:hover {
-	color: #fff;
+  color: #fff;
 }
 
 .btn span {
-	align-items: center;
-	/* background: #e7e8e9; */
-	/* border-radius: 40px; */
-	display: flex;
-	justify-content: center;
-	height: 100%;
-	transition: background .5s ease;
-	width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background .5s ease;
+  width: 100%;
 }
 
 .btn:hover span {
-	background: transparent;
+  background: transparent;
 }
-
-/* .category {
-  width: 300px;
-   height: 44px;
-   font-family: Montserrat;
-   font-size: 36px;
-   font-weight: bold;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: normal;
-   letter-spacing: 7.38px;
-   text-align: center;
-   color: rgba(255, 255, 255, 0.85);
-   margin-top: -60px;
-   margin-left: 162px;
- }
-
-.contact {
-  width: 171px;
-  height: 45px;
-  border-radius: 22.5px;
-  border-style: solid;
-  border-width: 1px;
-  border-image: linear-gradient(254deg, #ef6562, #ffe264);
-  border-image-slice: 1;
-}
-
-.homme {
-  width: 196px;
-  height: 45px;
-  border-radius: 22.5px;
-  box-shadow: 1px 1px 21px 0 rgba(255, 226, 100, 0.16);
-  border: solid 1px #ffe264;
-  background-color: #000000;
-  display: flex;
-}
-
-
-   .copyright{
-   font-family: Lato;
-   font-size: 18px;
-   font-weight: normal;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: normal;
-   letter-spacing: 1.74px;
-   text-align: center;
-   color: rgba(255, 255, 255, 0.85);
-   }
-
-.women {
-  margin-right: 100px;
-}
-
-.men {
-  margin-left: 100px;
-}
-
-.copyright {
-  font-family: Lato;
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 1.74px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.85);
-}
-
- .women{
-   width: 212px;
-   height: 24px;
-   opacity: 0.72;
-   font-family: Montserrat;
-   font-size: 20px;
-   font-weight: bold;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: normal;
-   letter-spacing: 4.1px;
-   text-align: center;
-   color: rgba(255, 255, 255, 0.85);
- }
- */

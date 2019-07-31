@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
 
 /**
- * Popup component used both for men and women to enter in home view
+ * Popup component used both for home, men and women to enter into app
  */
 @Component({
   selector: 'app-popup-mw',
@@ -10,9 +11,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopupMwComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  isChoose: boolean;
+
+  @Input()
+  isMen: boolean;
+
+  @Input()
+  isWomen: boolean;
+
+  switchUrl: string;
+  sex: string;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.setProperty(this.isMen, this.isWomen, this.isChoose);
+
+    this.activatedRoute.data.subscribe((data: Data) => {
+      this.setProperty(data.isMen, data.isWomen, data.isChoose);
+    });
+  }
+
+  setProperty(isMen, isWomen, isChoose) {
+    if (isMen) {
+      this.switchUrl = '/women';
+      this.sex = 'homme';
+    } else if (isWomen) {
+      this.switchUrl = '/man';
+      this.sex = 'femme';
+    }
+
+    this.isChoose = isChoose ? true : false;
   }
 
 }

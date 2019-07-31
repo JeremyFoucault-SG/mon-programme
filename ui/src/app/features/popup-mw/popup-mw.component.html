@@ -1,38 +1,71 @@
 <div class="bg-popup bg-cover bg-center fixed inset-0 flex flex-col justify-between">
-  <div>
-    <button class="btn btn-size rounded-full p-1-1">
-      <span class="bg-black rounded-full text-white">Contact</span>
-    </button>
+
+  <!-- Header Homme or Wowem with Contact button -->
+  <div class="flex justify-between mt-5 flex-wrap">
+    <div *ngIf="!isChoose" class="relative pl-10 md:pl-48 text-white text-5xl font-bold uppercase flex">
+      <div class="ml-1 absolute line">
+      </div>
+      <span class="ml-4 title">{{sex}}</span>
+      <span
+      class="sm:ml-1 md:-ml-32 mt-8 sm:text-xs title title-shadow absolute text-white font-bold uppercase">{{sex}}</span>
+    </div>
+    <div class="flex flex-grow mr-5 mt-2 md:mt-0 flex-wrap justify-end">
+      <button class="btn btn-size rounded-full p-1-1" [routerLink]="['/contact']">
+        <span class="bg-black rounded-full text-white uppercase">Contact</span>
+      </button>
+    </div>
   </div>
 
-  <div class="flex justify-center">
-    <img src="https://zupimages.net/up/19/31/2n2z.png">
-  </div>
-
-  <div>
-    <div>Links</div>
-    <div class="text-white text-center"> &copy; Mon-programme 2019. All Rights Reserved.</div>
-  </div>
-</div>
-
-<!--   <div class="text-right m-2">
-    <a class="nav-link" [routerLink]="[ '/' ]" routerLinkActive="active-nav"><button type="button"
-        class="bg-black  text-white font-semibold  py-2 px-4 border contact  rounded-full m-2">
-        CONTACT
-      </button></a>
-    <div class="text-center">
-      <h3 class="women m-2">FEMME</h3>
+  <!-- Go to Men or Wowen -->
+  <div *ngIf="!isChoose" class="cursor-pointer switch mt-40 md:mt-48 tracking-widest text-gray-100 uppercase font-bold text-xl opacity-75 absolute right-0" [routerLink]="[switchUrl]">
+    <div class="mr-12">
+      {{sex}}
+    </div>
+    <div class="text-right mr-5 -mt-2">
+      <i class="fa fa-long-arrow-right text-red-600"
+      aria-hidden="true"></i>
     </div>
   </div>
 
 
-  <h3 class="category">H O M M E</h3>
-  <h1 class="homme">H O M M E</h1>
-  <div class="line"></div>
-  <h5>FEMME</h5>
-  <div class="text-center">
-    <a class="nav-link" [routerLink]="[ '/home-men' ]" routerLinkActive="active-nav"><button type="button"
-        class="hover:bg-yellow text-yellow font-semibold hover:text-white py-2 px-4  enter hover:border-transparent rounded-full mr-2">
-        ENTRER
-      </button></a>
-    <p class="copyright mb-3"> &copy; Mon-programme 2019. All Rights Reserved.</p> -->
+  <!-- Content center -->
+  <div class="flex justify-around items-center">
+
+    <button *ngIf="isChoose" class="acces cursor-pointer border-solid border border-yellow-500 btn-size bg-black text-white rounded-full font-bold uppercase">
+      acces homme
+    </button>
+
+    <div class="body py-10 flex flex-col items-center justify-end">
+      <div *ngIf="!isChoose" class="px-10 mb-10 text-justify text-white font-bold">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </div>
+      <button *ngIf="!isChoose" class="btn-size bg-white rounded-full font-bold uppercase enter hover:bg-yellow-500">
+        entrer
+      </button>
+    </div>
+
+    <button *ngIf="isChoose" class="acces cursor-pointer border-solid border border-red-600 btn-size bg-black text-white rounded-full font-bold uppercase">
+      acces femme
+    </button>
+  </div>
+
+  <!-- Footer links -->
+  <div>
+    <div class="flex justify-center m-5">
+      <i class="cursor-pointer fa fa-google-plus mx-2 md:mx-5 p-3 text-gray-700 border-solid rounded-full border-gray-700 border-2"
+      aria-hidden="true"></i>
+      <i class="cursor-pointer fa fa-facebook-official mx-2 md:mx-5 p-3 text-gray-700 border-solid rounded-full border-gray-700 border-2"
+      aria-hidden="true"></i>
+      <i class="cursor-pointer fa fa-linkedin mx-2 md:mx-5 p-3 text-gray-700 border-solid rounded-full border-gray-700 border-2"
+      aria-hidden="true"></i>
+      <i class="cursor-pointer fa fa-twitter mx-2 md:mx-5 p-3 text-gray-700 border-solid rounded-full border-gray-700 border-2"
+      aria-hidden="true"></i>
+      <i class="cursor-pointer fa fa-instagram mx-2 md:mx-5 p-3 text-gray-700 border-solid rounded-full border-gray-700 border-2"
+      aria-hidden="true"></i>
+    </div>
+    <div class="text-white text-xs subpixel-antialiased text-center m-1"> &copy; Mon-programme 2019. All Rights
+      Reserved.</div>
+    </div>
+  </div>

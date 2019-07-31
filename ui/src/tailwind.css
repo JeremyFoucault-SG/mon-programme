@@ -1,12 +1,29 @@
-
-
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
 
+/* .icon-footer {
+  @apply h-16 w-16 flex items-center justify-center text-gray-500 text-lg border-solid rounded-full border-gray-500 border
+}
+ */
 
+ html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+
+ .btn {
+    @apply rounded-full;
+    width: 170px;
+    height: 45px;
+ }
+
+ * {
+  font-family: Lato;
+ }
 .fs-1{
     font-size: 80px;
 }

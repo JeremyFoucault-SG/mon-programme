@@ -8,8 +8,21 @@ import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
   {path: '', component: PopupAccueilComponent},
-  {path: 'homme', component: PopupMwComponent},
-  {path: 'femme', component: PopupMwComponent},
+  {
+    path: 'men',
+    component: PopupMwComponent,
+    data: { isMen: true}
+  },
+  {
+    path: 'women',
+    component: PopupMwComponent,
+    data: { isWomen: true}
+  },
+  {
+    path: 'choose',
+    component: PopupMwComponent,
+    data: { isChoose: true}
+  },
   {path: 'home', component: HomeComponent},
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'blog', component: CardBlogComponent},
