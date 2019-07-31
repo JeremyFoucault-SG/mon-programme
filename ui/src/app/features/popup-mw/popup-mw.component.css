@@ -1,7 +1,77 @@
-.px-4 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+/* Background for "popup" */
+
+.bg-popup {
+  background-image: url("https://zupimages.net/up/19/31/elei.png");
 }
+
+.enter {
+  width: 196px;
+  height: 45px;
+  border-radius: 22.5px;
+  box-shadow: 1px 1px 17px 0 #fff39d;
+  border-style: solid;
+  border-color: #fff39d;
+  border-width: 1px;
+  background-color: #fff39d;
+  background-origin: border-box;
+}
+
+.btn-size {
+  width: 171px;
+  height: 45px;
+}
+.btn {
+	background-image: linear-gradient(to right, #ef6562 0%, #ffe264 100%);
+	/* border-radius: 40px; */
+  box-sizing: border-box;
+	/* color: #00a84f; */
+	/* display: block; */
+	font: 1.125rem 'Oswald', Arial, sans-serif; /*18*/
+	/* height: 80px; */
+	letter-spacing: 1px;
+	margin: 0 auto;
+	/* padding: 4px; */
+	position: relative;
+  text-decoration: none;
+	text-transform: uppercase;
+	/* width: 264px; */
+	z-index: 2;
+}
+
+.btn:hover {
+	color: #fff;
+}
+
+.btn span {
+	align-items: center;
+	/* background: #e7e8e9; */
+	/* border-radius: 40px; */
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	transition: background .5s ease;
+	width: 100%;
+}
+
+.btn:hover span {
+	background: transparent;
+}
+
+/* .category {
+  width: 300px;
+   height: 44px;
+   font-family: Montserrat;
+   font-size: 36px;
+   font-weight: bold;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: 7.38px;
+   text-align: center;
+   color: rgba(255, 255, 255, 0.85);
+   margin-top: -60px;
+   margin-left: 162px;
+ }
 
 .contact {
   width: 171px;
@@ -23,14 +93,18 @@
   display: flex;
 }
 
-.femme {
-  width: 196px;
-  height: 45px;
-  border-radius: 22.5px;
-  box-shadow: 1px 1px 21px 0 rgba(196, 83, 82, 0.23);
-  border: solid 1px #c45352;
-  background-color: #000000;
-}
+
+   .copyright{
+   font-family: Lato;
+   font-size: 18px;
+   font-weight: normal;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: 1.74px;
+   text-align: center;
+   color: rgba(255, 255, 255, 0.85);
+   }
 
 .women {
   margin-right: 100px;
@@ -52,31 +126,18 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-.popup {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: url('https://zupimages.net/up/19/31/elei.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.octo {
-  width: 840px;
-  height: 840px;
-}
-
-.acces {
-  display: flex;
-  justify-content: space-around;
-}
-
-a.nav-link {
-  margin-top: 350px;
-}
+ .women{
+   width: 212px;
+   height: 24px;
+   opacity: 0.72;
+   font-family: Montserrat;
+   font-size: 20px;
+   font-weight: bold;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: 4.1px;
+   text-align: center;
+   color: rgba(255, 255, 255, 0.85);
+ }
+ */

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PopupAccueilComponent } from '../popup-accueil/popup-accueil.component';
+
+/**
+ * Popup component used both for men and women to enter in home view
+ */
 @Component({
   selector: 'app-popup-mw',
   templateUrl: './popup-mw.component.html',
