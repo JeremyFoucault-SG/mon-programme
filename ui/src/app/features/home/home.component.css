@@ -1,0 +1,138 @@
+.title {
+    width: 405px;
+    height: 48px;
+    -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.98;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #b2c6d6;
+    z-index: 1;
+    position: relative;
+}
+
+.imageTop {
+    width: 1920px;
+    height: 900px;
+}
+
+.line {
+    width: 55px;
+    height: 8px;
+    background-color: #ffe264;
+}
+
+.nav {
+    width: 188px;
+    height: 183px;
+    opacity: 0.7;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #c1d0dc;
+}
+
+.video {
+    width: 700px;
+    height: 430px;
+}
+
+.programs {
+    width: 504px;
+    height: 85px;
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: 6.4px;
+    text-align: left;
+    color: #ffffff;
+    margin-left: 50px;
+    margin-top: 40px
+}
+
+.black {
+    background-color: black;
+    width: 720px;
+    height: 170px;
+}
+
+.yellow {
+    width: 1228px;
+    height: 260px;
+    background-color: #fcdd77;
+}
+
+@media screen and (max-width: 1313px) {
+    .video {
+        display: none;
+    }
+    .black {
+        display: none;
+    }
+}
+
+.objects{
+    margin-top:145px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.slogan {
+    width: 199px;
+    height: 32px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 1.35px;
+    text-align: left;
+    color: #000000;
+  
+}
+
+.sloganTitle{
+    width: 68px;
+  height: 21px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #000000;
+}
+
+.fleche{
+    height: 150px;
+    width: 145px;
+    margin-top: 470px;
+    border:solid #fcdd77;
+    margin-left:650px;
+    border-top: none;
+    border-right: none;
+    border-radius:20%;
+}
+
+.composed{
+    background-color:#fcdd77;
+    display:flex;
+    margin-left: 730px;
+    margin-top: -30px;
+}
