@@ -7545,6 +7545,22 @@ video {
   z-index: auto;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  border-radius: 9999px;
+  width: 170px;
+  height: 45px;
+}
+
+* {
+  font-family: Lato;
+}
+
 .fs-1{
   font-size: 80px;
 }
@@ -7575,6 +7591,10 @@ video {
 
 .fs-8{
   font-size: 18px;
+}
+
+.p-1-1 {
+  padding: 0.1rem;
 }
 
 .octogone {
@@ -7617,6 +7637,7 @@ video {
 .text-grey{
   color: #a0a0a0;
 }
+
 
 @media (min-width: 640px) {
   .sm\:appearance-none {
