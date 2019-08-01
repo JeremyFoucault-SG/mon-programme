@@ -7545,6 +7545,21 @@ video {
   z-index: auto;
 }
 
+.btn-blog{
+  background-color: transparent;
+  border-color: #ecc94b;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-width: 1px;
+  margin: 2rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
 .fs-1{
   font-size: 80px;
 }
@@ -7612,6 +7627,31 @@ video {
   background-image: url('https://zupimages.net/up/19/31/elei.png');
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.img-blog-right{
+  border-bottom-right-radius: 15% 80%;
+  border-top-right-radius: 15% 80%;
+  border-bottom-left-radius: 0% 0%;
+}
+
+.margin-left-blog{
+  margin-left: 90%;
+}
+
+.photo-blog-ecran{
+  min-height: 500px;
+  max-height: 500px;
+}
+
+.photo-blog-mobile{
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.img-blog-bottom{
+  border-bottom-right-radius: 80% 35%;
+  border-bottom-left-radius: 80% 35%;
 }
 
 @media (min-width: 640px) {
@@ -14537,6 +14577,35 @@ video {
 
   .sm\:z-auto {
     z-index: auto;
+  }
+
+  .sm\:fs-1{
+    font-size: 80px;
+  }
+
+  .sm\:img-blog-right{
+    border-bottom-right-radius: 15% 80%;
+    border-top-right-radius: 15% 80%;
+    border-bottom-left-radius: 0% 0%;
+  }
+
+  .sm\:margin-left-blog{
+    margin-left: 90%;
+  }
+
+  .sm\:photo-blog-ecran{
+    min-height: 500px;
+    max-height: 500px;
+  }
+
+  .sm\:photo-blog-mobile{
+    min-height: 300px;
+    max-height: 300px;
+  }
+
+  .sm\:img-blog-bottom{
+    border-bottom-right-radius: 80% 35%;
+    border-bottom-left-radius: 80% 35%;
   }
 }
 
@@ -21464,6 +21533,35 @@ video {
   .md\:z-auto {
     z-index: auto;
   }
+
+  .md\:fs-1{
+    font-size: 80px;
+  }
+
+  .md\:img-blog-right{
+    border-bottom-right-radius: 15% 80%;
+    border-top-right-radius: 15% 80%;
+    border-bottom-left-radius: 0% 0%;
+  }
+
+  .md\:margin-left-blog{
+    margin-left: 90%;
+  }
+
+  .md\:photo-blog-ecran{
+    min-height: 500px;
+    max-height: 500px;
+  }
+
+  .md\:photo-blog-mobile{
+    min-height: 300px;
+    max-height: 300px;
+  }
+
+  .md\:img-blog-bottom{
+    border-bottom-right-radius: 80% 35%;
+    border-bottom-left-radius: 80% 35%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -28390,6 +28488,35 @@ video {
   .lg\:z-auto {
     z-index: auto;
   }
+
+  .lg\:fs-1{
+    font-size: 80px;
+  }
+
+  .lg\:img-blog-right{
+    border-bottom-right-radius: 15% 80%;
+    border-top-right-radius: 15% 80%;
+    border-bottom-left-radius: 0% 0%;
+  }
+
+  .lg\:margin-left-blog{
+    margin-left: 90%;
+  }
+
+  .lg\:photo-blog-ecran{
+    min-height: 500px;
+    max-height: 500px;
+  }
+
+  .lg\:photo-blog-mobile{
+    min-height: 300px;
+    max-height: 300px;
+  }
+
+  .lg\:img-blog-bottom{
+    border-bottom-right-radius: 80% 35%;
+    border-bottom-left-radius: 80% 35%;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -35315,5 +35442,34 @@ video {
 
   .xl\:z-auto {
     z-index: auto;
+  }
+
+  .xl\:fs-1{
+    font-size: 80px;
+  }
+
+  .xl\:img-blog-right{
+    border-bottom-right-radius: 15% 80%;
+    border-top-right-radius: 15% 80%;
+    border-bottom-left-radius: 0% 0%;
+  }
+
+  .xl\:margin-left-blog{
+    margin-left: 90%;
+  }
+
+  .xl\:photo-blog-ecran{
+    min-height: 500px;
+    max-height: 500px;
+  }
+
+  .xl\:photo-blog-mobile{
+    min-height: 300px;
+    max-height: 300px;
+  }
+
+  .xl\:img-blog-bottom{
+    border-bottom-right-radius: 80% 35%;
+    border-bottom-left-radius: 80% 35%;
   }
 }
