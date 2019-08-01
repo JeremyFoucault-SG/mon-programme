@@ -1,5 +1,6 @@
 @tailwind base;
 
+
 @tailwind components;
 
 @tailwind utilities;
@@ -21,12 +22,23 @@
     height: 45px;
  }
 
+
+.btn-blog{
+    @apply bg-transparent border-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5;
+}
+@responsive{
+    .fs-1{
+        font-size: 80px;
+    }
+
  * {
   font-family: Lato;
  }
 .fs-1{
     font-size: 80px;
+
 }
+
 .fs-2{
     font-size: 60px;
 }
@@ -49,8 +61,13 @@
     font-size: 18px;
 }
 
+.ml-90{
+    margin-left: 90%;
+  }
+
 .p-1-1 {
   padding: 0.1rem;
+
 }
 .octogone {
     position: absolute;
@@ -89,4 +106,29 @@
 }
 .text-grey{
     color: #a0a0a0;
+}
+@responsive{
+    .img-blog-right{
+        border-bottom-right-radius: 15% 80%;
+        border-top-right-radius: 15% 80%;
+        border-bottom-left-radius: 0% 0%;
+    }
+    .margin-left-blog{
+        margin-left: 90%;
+    }
+
+    .photo-blog-ecran{
+        min-height: 500px;
+        max-height: 500px;
+    }
+    .photo-blog-mobile{
+        min-height: 300px;
+        max-height: 300px;
+    }
+}
+@responsive{
+    .img-blog-bottom{
+        border-bottom-right-radius: 80% 35%;
+        border-bottom-left-radius: 80% 35%;
+    }
 }
