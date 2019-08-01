@@ -8,8 +8,38 @@ import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
   {path: '', component: PopupAccueilComponent},
-  {path: 'homme', component: PopupMwComponent},
-  {path: 'femme', component: PopupMwComponent},
+  {
+    path: 'men',
+    component: PopupMwComponent,
+    data: {
+      isMen: true,
+      textContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.`,
+      imageUrl: 'https://zupimages.net/up/19/31/2n2z.png',
+
+
+    }
+  },
+  {
+    path: 'women',
+    component: PopupMwComponent,
+    data: {
+      isWomen: true,
+      textContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.`,
+      imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
+    }
+  },
+  {
+    path: 'choose',
+    component: PopupMwComponent,
+    data: {
+      isChoose: true,
+      imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
+    }
+  },
   {path: 'home', component: HomeComponent},
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'blog', component: CardBlogComponent},

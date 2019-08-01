@@ -1,11 +1,26 @@
-
-
 @tailwind base;
 
 
 @tailwind components;
 
 @tailwind utilities;
+
+/* .icon-footer {
+  @apply h-16 w-16 flex items-center justify-center text-gray-500 text-lg border-solid rounded-full border-gray-500 border
+}
+ */
+
+ html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+
+ .btn {
+    @apply rounded-full;
+    width: 170px;
+    height: 45px;
+ }
 
 
 .btn-blog{
@@ -15,6 +30,13 @@
     .fs-1{
         font-size: 80px;
     }
+
+ * {
+  font-family: Lato;
+ }
+.fs-1{
+    font-size: 80px;
+
 }
 
 .fs-2{
@@ -38,8 +60,14 @@
 .fs-8{
     font-size: 18px;
 }
+
 .ml-90{
     margin-left: 90%;
+  }
+
+.p-1-1 {
+  padding: 0.1rem;
+
 }
 .octogone {
     position: absolute;
@@ -71,7 +99,13 @@
 .bg-img{
     background-image: url('https://zupimages.net/up/19/31/elei.png');
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+}
+.bg-yellow{
+    background-color:  #fcdd77;
+}
+.text-grey{
+    color: #a0a0a0;
 }
 @responsive{
     .img-blog-right{
