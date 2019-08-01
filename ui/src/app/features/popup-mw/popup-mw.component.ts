@@ -38,7 +38,7 @@ export class PopupMwComponent implements OnInit {
   /**
    * URL of the background popup
    */
-  imageUrl: string
+  imageUrl: string;
 
   /**
    * Set url to switch to women or men template
