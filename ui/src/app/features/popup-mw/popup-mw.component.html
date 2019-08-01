@@ -27,25 +27,27 @@
     </div>
   </div>
 
-
   <!-- Content center -->
   <div class="flex justify-around items-center">
 
+    <!-- only for home popup-->
     <button *ngIf="isChoose" class="acces cursor-pointer border-solid border border-yellow-500 btn-size bg-black text-white rounded-full font-bold uppercase">
       acces homme
     </button>
 
+    <!-- only for handle background for home, men or women -->
     <div class="body py-10 flex flex-col items-center justify-end">
+      <!-- only for men/women popup-->
       <div *ngIf="!isChoose" class="px-10 mb-10 text-justify text-white font-bold">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.
+        {{textContent}}
       </div>
+      <!-- only for men/women popup-->
       <button *ngIf="!isChoose" class="btn-size bg-white rounded-full font-bold uppercase enter hover:bg-yellow-500">
         entrer
       </button>
     </div>
 
+    <!-- only for home popup-->
     <button *ngIf="isChoose" class="acces cursor-pointer border-solid border border-red-600 btn-size bg-black text-white rounded-full font-bold uppercase">
       acces femme
     </button>

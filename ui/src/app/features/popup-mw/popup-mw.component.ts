@@ -61,11 +61,11 @@ export class PopupMwComponent implements OnInit {
 
   ngOnInit() {
     // Set properties according to inputs
-    this.setProperties(this.isMen, this.isWomen, this.isChoose);
+    this.setProperties(this.isMen, this.isWomen, this.isChoose, this.textContent);
 
     // If component is not a part of another template component (no @Input set), it's route data component binding
     this.activatedRoute.data.subscribe((data: Data) => {
-      this.setProperties(data.isMen, data.isWomen, data.isChoose);
+      this.setProperties(data.isMen, data.isWomen, data.isChoose, data.textContent);
     });
   }
 
@@ -75,13 +75,15 @@ export class PopupMwComponent implements OnInit {
    * @param isWomen True for women template
    * @param isChoose True for choose template (access to men or women)
    */
-  setProperties(isMen, isWomen, isChoose) {
+  setProperties(isMen, isWomen, isChoose, textContent) {
     if (isMen) {
       this.switchUrl = '/women';
       this.sex = 'homme';
+      this.textContent = textContent;
     } else if (isWomen) {
       this.switchUrl = '/man';
       this.sex = 'femme';
+      this.textContent = textContent;
     }
 
     this.isChoose = isChoose ? true : false;
