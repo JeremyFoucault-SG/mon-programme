@@ -20,7 +20,7 @@
 .body {
   width: 420px;
   height: 420px;
-  background-image: url("https://zupimages.net/up/19/31/2n2z.png");
+  /* background-image: url("https://zupimages.net/up/19/31/2n2z.png"); */
   background-repeat: no-repeat;
   background-position: 46.5% center;
   background-size: 260% auto;
@@ -29,8 +29,6 @@
 .line {
   width: 0px;
   height: 84px;
-  border: solid 1px #ffe264;
-  background-color: #ffe264;
   top: 18px;
 }
 

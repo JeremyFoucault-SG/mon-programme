@@ -36,6 +36,11 @@ export class PopupMwComponent implements OnInit {
   textContent: string;
 
   /**
+   * URL of the background popup
+   */
+  imageUrl: string;
+
+  /**
    * Set url to switch to women or men template
    */
   switchUrl: string;
@@ -54,11 +59,11 @@ export class PopupMwComponent implements OnInit {
 
   ngOnInit() {
     // Set properties according to inputs
-    this.setProperties(this.isMen, this.isWomen, this.isChoose, this.textContent);
+    this.setProperties(this.isMen, this.isWomen, this.isChoose, this.textContent, this.imageUrl);
 
     // If component is not a part of another template component (no @Input set), it's route data component binding
     this.activatedRoute.data.subscribe((data: Data) => {
-      this.setProperties(data.isMen, data.isWomen, data.isChoose, data.textContent);
+      this.setProperties(data.isMen, data.isWomen, data.isChoose, data.textContent, data.imageUrl);
     });
   }
 
@@ -68,7 +73,7 @@ export class PopupMwComponent implements OnInit {
    * @param isWomen True for women template
    * @param isChoose True for choose template (access to men or women)
    */
-  setProperties(isMen, isWomen, isChoose, textContent) {
+  setProperties(isMen, isWomen, isChoose, textContent, imageUrl) {
     if (isMen) {
       this.switchUrl = '/women';
       this.switchTitle = 'femme';
@@ -81,6 +86,7 @@ export class PopupMwComponent implements OnInit {
       this.textContent = textContent;
     }
 
+    this.imageUrl = imageUrl;
     this.isChoose = isChoose ? true : false;
   }
 
