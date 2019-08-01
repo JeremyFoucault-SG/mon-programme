@@ -51,11 +51,18 @@ export class PopupMwComponent implements OnInit {
   switchUrl: string;
 
   /**
-   * Only for title, can take two values : "homme" or "femme"
+   * Only for switch title, can take two values : "homme" or "femme"
    * @type {string}
    * @memberof PopupMwComponent
    */
-  sex: string;
+  switchTitle: string;
+
+  /**
+   * Only for sex title, can take two values : "homme" or "femme"
+   * @type {string}
+   * @memberof PopupMwComponent
+   */
+  sexTitle: string;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -78,11 +85,13 @@ export class PopupMwComponent implements OnInit {
   setProperties(isMen, isWomen, isChoose, textContent) {
     if (isMen) {
       this.switchUrl = '/women';
-      this.sex = 'homme';
+      this.switchTitle = 'femme';
+      this.sexTitle = 'homme';
       this.textContent = textContent;
     } else if (isWomen) {
-      this.switchUrl = '/man';
-      this.sex = 'femme';
+      this.switchUrl = '/men';
+      this.switchTitle = 'homme';
+      this.sexTitle = 'femme';
       this.textContent = textContent;
     }
 
