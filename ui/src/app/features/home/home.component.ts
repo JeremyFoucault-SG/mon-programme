@@ -14,9 +14,9 @@ export class HomeComponent implements OnInit {
     const form = document.getElementById('leading-loose');
     form.style.display = 'none';
   }
-open(){
-  const form = document.getElementById('leading-loose');
-  form.style.display = 'block'
-}
+  open() {
+    const form = document.getElementById('leading-loose');
+    form.style.display = 'block';
+  }
 
 }
