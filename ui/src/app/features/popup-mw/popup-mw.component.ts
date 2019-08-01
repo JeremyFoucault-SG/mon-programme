@@ -13,54 +13,40 @@ export class PopupMwComponent implements OnInit {
 
   /**
    * True if popup is for choose between men and women
-   * @type {boolean}
-   * @memberof PopupMwComponent
    */
   @Input()
   isChoose: boolean;
 
   /**
    * True for Men template
-   * @type {boolean}
-   * @memberof PopupMwComponent
    */
   @Input()
   isMen: boolean;
 
   /**
    * True for Women template
-   * @type {boolean}
-   * @memberof PopupMwComponent
    */
   @Input()
   isWomen: boolean;
 
   /**
    * Set text content in middle of pupop (over background of men/wonem, not for choose template)
-   * @type {string}
-   * @memberof PopupMwComponent
    */
   @Input()
   textContent: string;
 
   /**
    * Set url to switch to women or men template
-   * @type {string}
-   * @memberof PopupMwComponent
    */
   switchUrl: string;
 
   /**
    * Only for switch title, can take two values : "homme" or "femme"
-   * @type {string}
-   * @memberof PopupMwComponent
    */
   switchTitle: string;
 
   /**
    * Only for sex title, can take two values : "homme" or "femme"
-   * @type {string}
-   * @memberof PopupMwComponent
    */
   sexTitle: string;
 
