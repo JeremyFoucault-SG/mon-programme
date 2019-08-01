@@ -1,4 +1,14 @@
 .b-radius{
-  border-top-right-radius: 120px;
-  border-bottom-right-radius: 120px;
+  /* border-radius: 0 125px 125px 0; */
+  min-height: 300px;
+}
+
+.photo{
+  min-width: 50%;
+}
+.rectangle {
+  width: 69px;
+  height: 6px;
+  background-color: #ffc400;
+  margin-bottom: 20px;
 }
