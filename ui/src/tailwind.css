@@ -84,3 +84,9 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+.bg-yellow{
+    background-color:  #fcdd77;
+}
+.text-grey{
+    color: #a0a0a0;
+}

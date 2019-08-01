@@ -7630,6 +7630,15 @@ html, body {
   background-repeat: no-repeat;
 }
 
+.bg-yellow{
+  background-color:  #fcdd77;
+}
+
+.text-grey{
+  color: #a0a0a0;
+}
+
+
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;
