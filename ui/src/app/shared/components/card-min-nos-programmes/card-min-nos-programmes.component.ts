@@ -16,7 +16,7 @@ export class CardMinNosProgrammesComponent implements OnInit {
    * If true set a darken overlay above background image
    */
   @Input()
-  hasOverlay: boolean;
+  hasBgOverlay: boolean;
 
   /**
    * If true append a menu (more like) in top-right of card
@@ -52,7 +52,7 @@ export class CardMinNosProgrammesComponent implements OnInit {
    * If true set title, content, inline stars and add to whishilt inside an overlay trigger on hover
    */
   @Input()
-  isContentLayer: boolean;
+  isContentOverlay = false;
 
   /**
    * Set number on inline start in right-bottom of card
@@ -66,9 +66,35 @@ export class CardMinNosProgrammesComponent implements OnInit {
   @Input()
   hasWish: boolean;
 
+  /**
+   * Open/hide content overlay
+   */
+  private showContentOverlay = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  /**
+   * Show content overlay on mousenter event
+   */
+  onShowContentOverlay() {
+    this.showContentOverlay = true;
+  }
+
+  /**
+   * Hide overlay on mouseleave event
+   */
+  onHideContentOverlay() {
+    this.showContentOverlay = false;
+  }
+
+  /**
+   * Add article to wish list
+   */
+  addToWishList() {
+    throw new Error('Not implemented !');
   }
 
 }
