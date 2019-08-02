@@ -4,7 +4,7 @@ import { PopupAccueilComponent } from './features/popup-accueil/popup-accueil.co
 import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
 import { CardBlogComponent } from './shared/components/card-blog/card-blog.component';
-import { HomeComponent } from './features/home/home.component';
+import { HomeComponent } from './features/home-container/home.component';
 
 const routes: Routes = [
   {path: '', component: PopupAccueilComponent},

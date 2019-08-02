@@ -14,6 +14,9 @@ import { CardMinNosProgrammesComponent } from './components/card-min-nos-program
 import { CardMinArticleComponent } from './components/card-min-article/card-min-article.component';
 import { CardNosProgrammesComponent } from './components/card-nos-programmes/card-nos-programmes.component';
 import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-nos-programme.component';
+import { NosProgrammeHomeComponent } from './components/nos-programme-home/nos-programme-home.component';
+import { SlideShowHomeComponent } from './components/slide-show-home/slide-show-home.component';
+import { VideoHomeComponent } from './components/video-home/video-home.component';
 
 
 
@@ -33,6 +36,9 @@ import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-
     CardMinArticleComponent,
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
+    NosProgrammeHomeComponent,
+    SlideShowHomeComponent,
+    VideoHomeComponent
   ],
   imports: [
     CommonModule
@@ -52,6 +58,9 @@ import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-
     CardMinArticleComponent,
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
+    NosProgrammeHomeComponent,
+    SlideShowHomeComponent,
+    VideoHomeComponent
   ]
 })
 export class SharedModule { }

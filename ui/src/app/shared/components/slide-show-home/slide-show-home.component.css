@@ -1,0 +1,13 @@
+.back{
+    height: 100vh;
+    background-size: cover;
+}
+
+
+
+.but {
+    z-index:2;
+    padding:5%;
+    top: 65%;
+    position: absolute;
+}

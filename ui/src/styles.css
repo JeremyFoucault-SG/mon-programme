@@ -7545,36 +7545,143 @@ video {
   z-index: auto;
 }
 
-.fs-1{
+.fs-1 {
   font-size: 80px;
 }
 
-.fs-2{
+.fs-2 {
   font-size: 60px;
 }
 
-.fs-3{
+.fs-3 {
   font-size: 40px;
 }
 
-.fs-4{
+.fs-4 {
   font-size: 30px;
 }
 
-.fs-5{
+.fs-5 {
   font-size: 26px;
 }
 
-.fs-6{
+.fs-6 {
   font-size: 24px;
 }
 
-.fs-7{
+.fs-7 {
   font-size: 20px;
 }
 
-.fs-8{
+.fs-8 {
   font-size: 18px;
+}
+
+/* .line {
+        width: 3%;
+        background-color: #fcdd77;
+        height: 1.5%;
+        z-index: 1;
+        position: absolute;
+        top: 35%;
+    } */
+
+.titre-home {
+  width: 405px;
+  height: 48px;
+  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
+  font-family: Lato;
+  font-size: 40px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.98;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #b2c6d6;
+  z-index: 1;
+  position: absolute;
+  top: 30%;
+  margin-left: 5%
+}
+
+.soustitre-home {
+  width: 250px;
+  height: 183px;
+  opacity: 0.7;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #c1d0dc;
+  cursor: pointer;
+}
+
+.groupe-soustitre {
+  top: 45%;
+  z-index: 1;
+  position: absolute;
+  margin-left: 5%;
+}
+
+.icone-home {
+  color: #fcdd77;
+  cursor: pointer;
+}
+
+.goupe-iconehome {
+  top: 90%;
+  z-index: 1;
+  position: absolute;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.video {
+  top: 50%;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+}
+
+.yellow {
+  background-color: #fcdd77;
+  margin-left: 40%;
+  top: 70%;
+  position: absolute;
+  z-index: 1;
+  width: 60%;
+  height: 30%;
+}
+
+.objectif {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #000000;
+  margin-top: 5%;
+}
+
+.result {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: 1.35px;
+  text-align: left;
+  color: #000000;
 }
 
 @media (min-width: 640px) {
@@ -14500,6 +14607,113 @@ video {
 
   .sm\:z-auto {
     z-index: auto;
+  }
+
+  /* .line {
+        width: 3%;
+        background-color: #fcdd77;
+        height: 1.5%;
+        z-index: 1;
+        position: absolute;
+        top: 35%;
+    } */
+
+  .sm\:titre-home {
+    width: 405px;
+    height: 48px;
+    -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.98;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #b2c6d6;
+    z-index: 1;
+    position: absolute;
+    top: 30%;
+    margin-left: 5%
+  }
+
+  .sm\:soustitre-home {
+    width: 250px;
+    height: 183px;
+    opacity: 0.7;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #c1d0dc;
+    cursor: pointer;
+  }
+
+  .sm\:groupe-soustitre {
+    top: 45%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 5%;
+  }
+
+  .sm\:icone-home {
+    color: #fcdd77;
+    cursor: pointer;
+  }
+
+  .sm\:goupe-iconehome {
+    top: 90%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .sm\:video {
+    top: 50%;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+  }
+
+  .sm\:yellow {
+    background-color: #fcdd77;
+    margin-left: 40%;
+    top: 70%;
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 30%;
+  }
+
+  .sm\:objectif {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #000000;
+    margin-top: 5%;
+  }
+
+  .sm\:result {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 1.35px;
+    text-align: left;
+    color: #000000;
   }
 }
 
@@ -21427,6 +21641,113 @@ video {
   .md\:z-auto {
     z-index: auto;
   }
+
+  /* .line {
+        width: 3%;
+        background-color: #fcdd77;
+        height: 1.5%;
+        z-index: 1;
+        position: absolute;
+        top: 35%;
+    } */
+
+  .md\:titre-home {
+    width: 405px;
+    height: 48px;
+    -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.98;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #b2c6d6;
+    z-index: 1;
+    position: absolute;
+    top: 30%;
+    margin-left: 5%
+  }
+
+  .md\:soustitre-home {
+    width: 250px;
+    height: 183px;
+    opacity: 0.7;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #c1d0dc;
+    cursor: pointer;
+  }
+
+  .md\:groupe-soustitre {
+    top: 45%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 5%;
+  }
+
+  .md\:icone-home {
+    color: #fcdd77;
+    cursor: pointer;
+  }
+
+  .md\:goupe-iconehome {
+    top: 90%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .md\:video {
+    top: 50%;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+  }
+
+  .md\:yellow {
+    background-color: #fcdd77;
+    margin-left: 40%;
+    top: 70%;
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 30%;
+  }
+
+  .md\:objectif {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #000000;
+    margin-top: 5%;
+  }
+
+  .md\:result {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 1.35px;
+    text-align: left;
+    color: #000000;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -28352,6 +28673,113 @@ video {
 
   .lg\:z-auto {
     z-index: auto;
+  }
+
+  /* .line {
+        width: 3%;
+        background-color: #fcdd77;
+        height: 1.5%;
+        z-index: 1;
+        position: absolute;
+        top: 35%;
+    } */
+
+  .lg\:titre-home {
+    width: 405px;
+    height: 48px;
+    -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.98;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #b2c6d6;
+    z-index: 1;
+    position: absolute;
+    top: 30%;
+    margin-left: 5%
+  }
+
+  .lg\:soustitre-home {
+    width: 250px;
+    height: 183px;
+    opacity: 0.7;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #c1d0dc;
+    cursor: pointer;
+  }
+
+  .lg\:groupe-soustitre {
+    top: 45%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 5%;
+  }
+
+  .lg\:icone-home {
+    color: #fcdd77;
+    cursor: pointer;
+  }
+
+  .lg\:goupe-iconehome {
+    top: 90%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .lg\:video {
+    top: 50%;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+  }
+
+  .lg\:yellow {
+    background-color: #fcdd77;
+    margin-left: 40%;
+    top: 70%;
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 30%;
+  }
+
+  .lg\:objectif {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #000000;
+    margin-top: 5%;
+  }
+
+  .lg\:result {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 1.35px;
+    text-align: left;
+    color: #000000;
   }
 }
 
@@ -35279,5 +35707,111 @@ video {
   .xl\:z-auto {
     z-index: auto;
   }
-}
 
+  /* .line {
+        width: 3%;
+        background-color: #fcdd77;
+        height: 1.5%;
+        z-index: 1;
+        position: absolute;
+        top: 35%;
+    } */
+
+  .xl\:titre-home {
+    width: 405px;
+    height: 48px;
+    -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.98;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #b2c6d6;
+    z-index: 1;
+    position: absolute;
+    top: 30%;
+    margin-left: 5%
+  }
+
+  .xl\:soustitre-home {
+    width: 250px;
+    height: 183px;
+    opacity: 0.7;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #c1d0dc;
+    cursor: pointer;
+  }
+
+  .xl\:groupe-soustitre {
+    top: 45%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 5%;
+  }
+
+  .xl\:icone-home {
+    color: #fcdd77;
+    cursor: pointer;
+  }
+
+  .xl\:goupe-iconehome {
+    top: 90%;
+    z-index: 1;
+    position: absolute;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .xl\:video {
+    top: 50%;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+  }
+
+  .xl\:yellow {
+    background-color: #fcdd77;
+    margin-left: 40%;
+    top: 70%;
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 30%;
+  }
+
+  .xl\:objectif {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #000000;
+    margin-top: 5%;
+  }
+
+  .xl\:result {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 1.35px;
+    text-align: left;
+    color: #000000;
+  }
+}
