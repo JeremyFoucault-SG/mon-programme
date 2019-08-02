@@ -1,1 +1,30 @@
-<p>card-min-nos-programmes works!</p>
+<div class="relative max-w-sm h-48 rounded-t-lg overflow-hidden shadow-lg flex flex-col">
+  <div class="flex-grow justify-end bg-cover bg-no-repeat" [ngStyle]="{'background-image': hasOverlay ? 'linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('+imageUrl+')' : 'url('+imageUrl+')'}">
+    <span *ngIf="hasMenu" class="float-right text-xs inline-block rounded px-2 py-1 bg-gray-200 rounded-md mt-5 font-semibold mr-2">
+      <i class="fa fa-ellipsis-h text-red-500"></i>
+    </span>
+    <span *ngIf="topStars"
+      class="float-right text-xs inline-block bg-gray-200 rounded-full mt-5 px-3 py-1 font-semibold text-gray-700 mr-2">
+      <i class="fa fa-star text-yellow-500 mr-2"></i>{{topStars}}</span>
+    <span *ngIf="tag"
+      class="tag float-right text-xs inline-block border border-green-500 rounded-full mt-5 px-3 py-1 font-semibold text-green-500 mr-2">{{tag}}</span>
+  </div>
+  <div class="absolute bottom-0 w-full px-4 pb-2 flex flex-row justify-between">
+    <div class="flex flex-col text-white">
+      <p>{{title}}</p>
+      <p class="text-xs">{{content}}</p>
+    </div>
+    <div *ngIf="inlineStars >= 0" class="self-end">
+      <i class="text-bold text-yellow-500 fa"
+        ngClass="{{inlineStars === 0 ? 'fa-star-o': inlineStars >= 1  ? 'fa-star': inlineStars > 0 && inlineStars < 1 ? 'fa-star-half-o': '' }}"></i>
+      <i class="text-bold text-yellow-500 fa"
+        ngClass="{{inlineStars === 0 || inlineStars < 2  ? 'fa-star-o': inlineStars >= 2  ? 'fa-star': inlineStars > 1 && inlineStars < 2 ? 'fa-star-half-o': '' }}"></i>
+      <i class="text-bold text-yellow-500 fa"
+        ngClass="{{inlineStars === 0 || inlineStars < 3  ? 'fa-star-o': inlineStars >= 3  ? 'fa-star': inlineStars > 2 && inlineStars < 3 ? 'fa-star-half-o': '' }}"></i>
+      <i class="text-bold text-yellow-500 fa"
+        ngClass="{{inlineStars === 0 || inlineStars < 4  ? 'fa-star-o': inlineStars >= 4  ? 'fa-star': inlineStars > 3 && inlineStars < 4 ? 'fa-star-half-o': '' }}"></i>
+      <i class="text-bold text-yellow-500 fa"
+        ngClass="{{inlineStars === 0 || inlineStars < 5  ? 'fa-star-o': inlineStars >= 5  ? 'fa-star': inlineStars > 4 && inlineStars < 5 ? 'fa-star-half-o': '' }}"></i>
+    </div>
+  </div>
+</div>
