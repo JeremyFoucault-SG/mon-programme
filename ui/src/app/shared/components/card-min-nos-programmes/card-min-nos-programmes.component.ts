@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+/**
+ * Card thumb is used for both thumbs of programs and article
+ */
 @Component({
   selector: 'app-card-min-nos-programmes',
   templateUrl: './card-min-nos-programmes.component.html',
