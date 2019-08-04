@@ -10,7 +10,7 @@ import { FooterHomeComponent } from './components/footer-home/footer-home.compon
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
-import { CardMinNosProgrammesComponent } from './components/card-min-nos-programmes/card-min-nos-programmes.component';
+import { CardThumbProgramComponent } from './components/card-thumb-program/card-thumb-program.component';
 import { CardMinArticleComponent } from './components/card-min-article/card-min-article.component';
 import { CardNosProgrammesComponent } from './components/card-nos-programmes/card-nos-programmes.component';
 import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-nos-programme.component';
@@ -29,7 +29,7 @@ import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
-    CardMinNosProgrammesComponent,
+    CardThumbProgramComponent,
     CardMinArticleComponent,
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
@@ -48,7 +48,7 @@ import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
-    CardMinNosProgrammesComponent,
+    CardThumbProgramComponent,
     CardMinArticleComponent,
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,

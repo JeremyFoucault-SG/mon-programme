@@ -4,11 +4,11 @@ import { Component, OnInit, Input } from '@angular/core';
  * Card thumb is used for both thumbs of programs and article
  */
 @Component({
-  selector: 'app-card-min-nos-programmes',
-  templateUrl: './card-min-nos-programmes.component.html',
-  styleUrls: ['./card-min-nos-programmes.component.css']
+  selector: 'app-thumb-program',
+  templateUrl: './card-thumb-program.html',
+  styleUrls: ['./card-thumb-program.css']
 })
-export class CardMinNosProgrammesComponent implements OnInit {
+export class CardThumbProgramComponent implements OnInit {
   /**
    * Set image in background of card
    */
