@@ -1,10 +1,10 @@
-
+<!-- Card Mobile article blog -->
     <div class="card max-w-sm rounded lg:card-lg overflow-hidden shadow-lg mr-1 ml-1 mt-5 mb-5">
-        <img class="w-full object-cover img-mobile" src="https://zupimages.net/up/19/31/4pis.jpeg" alt="photo">
+        <img class="w-full object-cover img-mobile" [src]=articlesBlog.photo alt="photo">
         <div class="px-6 py-2">
-            <div class="titre-mobile font-bold uppercase mb-2">Les fruit secs</div>
+            <div class="titre-mobile font-bold uppercase mb-2">{{articlesBlog.titre}}</div>
             <p class="p-mobile text-gray-700 text-base mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                {{articlesBlog.desc}}
             </p>
             <img src="https://zupimages.net/up/19/31/n69c.png" alt="heart" class="heart object-cover ">
         </div>
