@@ -6,6 +6,7 @@ import { NewsletterComponent } from './shared/components/newsletter/newsletter.c
 import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
 
+
 const routes: Routes = [
   {path: '', component: PopupAccueilComponent},
   {
@@ -42,7 +43,7 @@ const routes: Routes = [
   },
   {path: 'home', component: HomeComponent},
   {path: 'newsletter', component: NewsletterComponent},
-  {path: 'blog', component: ListBlogComponent}
+  {path: 'blog', component: ListBlogComponent},
 ];
 
 @NgModule({
