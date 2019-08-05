@@ -7545,6 +7545,23 @@ video {
   z-index: auto;
 }
 
+/* .icon-footer {
+  @apply h-16 w-16 flex items-center justify-center text-gray-500 text-lg border-solid rounded-full border-gray-500 border
+}
+ */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  border-radius: 9999px;
+  width: 170px;
+  height: 45px;
+}
+
 .btn-blog{
   background-color: transparent;
   border-color: #ecc94b;
@@ -7596,6 +7613,10 @@ video {
   margin-left: 90%;
 }
 
+.p-1-1 {
+  padding: 0.1rem;
+}
+
 .octogone {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -7627,6 +7648,22 @@ video {
   background-image: url('https://zupimages.net/up/19/31/elei.png');
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.bg-yellow{
+  background-color:  #fcdd77;
+}
+
+.text-grey{
+  color: #a0a0a0;
+}
+
+.woman{
+  color: #cc6666;
+}
+
+.bg-woman{
+  background-color: #cc6666;
 }
 
 .img-blog-right{

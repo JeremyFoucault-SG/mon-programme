@@ -1,0 +1,21 @@
+
+.reduc{
+    width: 160px;
+    height: 70px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 1px;
+
+}
+.team {
+    background: linear-gradient(180deg, transparent 50%, #000000 50%);
+
+    width: 100%;
+}
+
+img{
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
+}

@@ -5,8 +5,8 @@ import { Component, OnInit, Input } from '@angular/core';
  */
 @Component({
   selector: 'app-thumb-program',
-  templateUrl: './card-thumb-program.html',
-  styleUrls: ['./card-thumb-program.css']
+  templateUrl: './card-thumb-program.component.html',
+  styleUrls: ['./card-thumb-program.component.css']
 })
 export class CardThumbProgramComponent implements OnInit {
   /**
