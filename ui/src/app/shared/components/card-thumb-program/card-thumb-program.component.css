@@ -1,0 +1,9 @@
+/* Set background opacity of tag */
+.tag {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Set background opacity of background image */
+.content-overlay {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
