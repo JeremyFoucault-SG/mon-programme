@@ -13,7 +13,9 @@ export class CardBlogComponent implements OnInit {
    */
   @Input()
   public articlesBlog: ArticleBlog;
-
+  /**
+   * Look is the articles is even or odd
+   */
   @Input()
   public isReverse: boolean;
 
