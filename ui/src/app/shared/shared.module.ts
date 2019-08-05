@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormCustomizeProgrammeComponent } from './components/form-customize-programme/form-customize-programme.component';
 import { FormSelectionProgrammeComponent } from './components/form-selection-programme/form-selection-programme.component';
 import { CardProgrammesComponent } from './components/card-programmes/card-programmes.component';
-import { CardBlogComponent } from './components/card-blog/card-blog.component';
+import { CardBlogComponent } from './components/list-blog/card-blog-lg/card-blog.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { JoinTeamCodePromoComponent } from './components/join-team-code-promo/join-team-code-promo.component';
 import { FooterHomeComponent } from './components/footer-home/footer-home.component';
@@ -14,6 +14,8 @@ import { CardThumbProgramComponent } from './components/card-thumb-program/card-
 import { CardMinArticleComponent } from './components/card-min-article/card-min-article.component';
 import { CardNosProgrammesComponent } from './components/card-nos-programmes/card-nos-programmes.component';
 import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-nos-programme.component';
+import { ListBlogComponent } from './components/list-blog/list-blog.component';
+import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-blog-sm.component';
 
 
 
@@ -33,6 +35,8 @@ import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-
     CardMinArticleComponent,
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
+    ListBlogComponent,
+    CardBlogSmComponent,
   ],
   imports: [
     CommonModule
