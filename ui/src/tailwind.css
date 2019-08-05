@@ -94,7 +94,7 @@
 }
 @responsive{
     .img-blog-bottom{
-        border-bottom-right-radius: 80% 35%;
-        border-bottom-left-radius: 80% 35%;
+        border-bottom-right-radius: 80% 7%;
+        border-bottom-left-radius: 80% 7%;
     }
 }

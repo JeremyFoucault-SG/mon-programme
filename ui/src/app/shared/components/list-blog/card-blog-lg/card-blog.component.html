@@ -1,0 +1,42 @@
+<div [ngClass]="{'flex-row-reverse' : isReverse}"  class="flex mt-10 mb-10">
+    <div class="w-3/5 photo">
+        <img [src]=articlesBlog.photo alt="photo"
+            class="object-cover w-full img-blog-right photo-blog-ecran"
+            [ngClass]="{'img-blog-left' : isReverse}"
+            >
+    </div>
+    <div class="w-1/2 text-center mt-3 mr-10 ml-10">
+
+        <div class="article lg:mr-10">
+            <h3 
+            class="text-right fs-1 mt-6 mr-10"
+            [ngClass]="{'numero-blog-left' : isReverse}"
+            >01</h3>
+
+            <div 
+            class="inline-block mx-auto rectangle"
+            [ngClass]="{'rectangle-left' : isReverse}"
+            ></div>
+            <h1 
+            class="text-right uppercase fs-5 lg:text-5xl"
+            [ngClass]="{'text-blog-left' : isReverse}"
+            >{{articlesBlog.titre}}</h1>
+            <p 
+            class="text-right fs-8 mr-10 ml-10 lg:m-0"
+            [ngClass]="{'text-blog-left' : isReverse}"
+            >{{articlesBlog.desc}}
+            </p>
+            <div class="text-right"
+            [ngClass]="{'text-blog-left' : isReverse}">
+                <button class="btn-blog">
+                    Voir L'article
+                </button>
+            </div>
+            <div class="flex mt-10 border"
+            [ngClass]="{'btn-sauvegarde' : isReverse}">
+                <img src="https://zupimages.net/up/19/31/n69c.png" alt="heart" class="mr-2 ml-2 h-8 w-8">
+                <p>Sauvegarder l'article</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7650,8 +7650,8 @@ video {
 }
 
 .img-blog-bottom{
-  border-bottom-right-radius: 80% 35%;
-  border-bottom-left-radius: 80% 35%;
+  border-bottom-right-radius: 80% 7%;
+  border-bottom-left-radius: 80% 7%;
 }
 
 @media (min-width: 640px) {
@@ -14604,8 +14604,8 @@ video {
   }
 
   .sm\:img-blog-bottom{
-    border-bottom-right-radius: 80% 35%;
-    border-bottom-left-radius: 80% 35%;
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
   }
 }
 
@@ -21559,8 +21559,8 @@ video {
   }
 
   .md\:img-blog-bottom{
-    border-bottom-right-radius: 80% 35%;
-    border-bottom-left-radius: 80% 35%;
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
   }
 }
 
@@ -28514,8 +28514,8 @@ video {
   }
 
   .lg\:img-blog-bottom{
-    border-bottom-right-radius: 80% 35%;
-    border-bottom-left-radius: 80% 35%;
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
   }
 }
 
@@ -35469,7 +35469,7 @@ video {
   }
 
   .xl\:img-blog-bottom{
-    border-bottom-right-radius: 80% 35%;
-    border-bottom-left-radius: 80% 35%;
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
   }
 }
