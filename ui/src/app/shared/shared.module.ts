@@ -16,6 +16,9 @@ import { CardNosProgrammesComponent } from './components/card-nos-programmes/car
 import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-nos-programme.component';
 import { ListBlogComponent } from './components/list-blog/list-blog.component';
 import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-blog-sm.component';
+import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/newsletter-sm.component';
+import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
+import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
 
 
 
@@ -37,6 +40,9 @@ import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-bl
     MenuNosProgrammeComponent,
     ListBlogComponent,
     CardBlogSmComponent,
+    NewsletterSmComponent,
+    NewsletterLgComponent,
+    NewsletterBannerLgComponent,
   ],
   imports: [
     CommonModule

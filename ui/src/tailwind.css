@@ -26,6 +26,7 @@
 .btn-blog{
     @apply bg-transparent border-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5;
 }
+
 @responsive{
     .fs-1{
         font-size: 80px;
@@ -74,6 +75,12 @@
 }
 .text-grey{
     color: #a0a0a0;
+}
+.woman{
+    color: #cc6666;
+}
+.bg-woman{
+    background-color: #cc6666;
 }
 @responsive{
     .img-blog-right{
