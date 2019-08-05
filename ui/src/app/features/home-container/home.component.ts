@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.selected = this.programsInfos[0];
+    this.selected = this.programsInfos[3];
   }
 
-  onChange(programDetail: ProgramDetail) {
-    this.selected = programDetail;
+  onChange(programsInfos: ProgramDetail[]) {
+    this.selected = this.programsInfos[1];
     console.log(this.selected);
   }
 }

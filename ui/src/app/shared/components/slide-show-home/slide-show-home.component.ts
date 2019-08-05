@@ -22,8 +22,8 @@ export class SlideShowHomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onChange(programDetail: ProgramDetail) {
-    this.selected = programDetail;
+  onChange(programInfos: ProgramDetail[]) {
+    this.selected = programInfos[1];
     console.log(this.selected);
   }
 }
