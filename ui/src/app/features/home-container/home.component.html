@@ -2,7 +2,7 @@
 
 
 
-<app-slide-show-home [selected]="selected" [programInfos]="programsInfos" (changeSelected)="onChange($event)"></app-slide-show-home>
+<app-slide-show-home [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)"></app-slide-show-home>
 <app-nos-programme-home [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)"></app-nos-programme-home>
 <app-video-home [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)"></app-video-home>
 

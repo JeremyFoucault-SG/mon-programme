@@ -1,8 +1,8 @@
 
 export class ProgramDetail {
-    title: string;
-    photoUrl: string;
-    videoUrl: string;
+    public title: string;
+    public photoUrl: string;
+    public videoUrl: string;
 }
 export class ProgramsList {
     public static readonly infos: ProgramDetail[] = [

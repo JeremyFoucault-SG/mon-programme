@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-import { ProgramDetail } from '../../models/programs-infos';
+import { ProgramDetail, ProgramsList } from '../../models/programs-infos';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-slide-show-home',
@@ -8,7 +9,7 @@ import { ProgramDetail } from '../../models/programs-infos';
 })
 export class SlideShowHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _location: Location,) { }
 
   @Input()
   public selected: ProgramDetail;
@@ -16,14 +17,24 @@ export class SlideShowHomeComponent implements OnInit {
   @Input()
   public programInfos: ProgramDetail[];
 
+  @Input()
+  public infos: ProgramDetail[];
+
   @Output()
-  public selectChange = new EventEmitter();
+  selectChange = new EventEmitter();
+
 
   ngOnInit() {
   }
 
-  onChange(programInfos: ProgramDetail[]) {
-    this.selected = programInfos[1];
-    console.log(this.selected);
+  onChange(programDetail: ProgramDetail, index) {
+this.selected = programDetail;
+this.selectChange.emit(index + 1 );
   }
+
+  backClick() {
+    this._location.back();
+  }
+
+
 }
