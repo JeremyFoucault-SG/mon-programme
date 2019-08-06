@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { PopupAccueilComponent } from './popup-accueil/popup-accueil.component';
 import { PopupMwComponent } from './popup-mw/popup-mw.component';
 import { RouterModule } from '@angular/router';
+import { LoginModalComponent } from './login-modal/login-modal.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -12,10 +14,12 @@ import { RouterModule } from '@angular/router';
     PopupAccueilComponent,
     PopupMwComponent,
     HomeComponent,
+    LoginModalComponent
   ],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class FeaturesModule { }

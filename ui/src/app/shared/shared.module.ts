@@ -19,6 +19,7 @@ import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-bl
 import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/newsletter-sm.component';
 import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
 import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
+import { FunctionComponent } from './components/function/function.component';
 
 
 
@@ -43,6 +44,7 @@ import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-
     NewsletterSmComponent,
     NewsletterLgComponent,
     NewsletterBannerLgComponent,
+    FunctionComponent
   ],
   imports: [
     CommonModule
@@ -62,6 +64,7 @@ import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-
     CardMinArticleComponent,
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
+    FunctionComponent
   ]
 })
 export class SharedModule { }
