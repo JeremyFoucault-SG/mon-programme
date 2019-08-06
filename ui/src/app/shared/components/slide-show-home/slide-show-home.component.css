@@ -1,13 +1,98 @@
-.back{
+.back {
     height: 100vh;
     background-size: cover;
 }
 
-
-
 .but {
-    z-index:2;
-    padding:5%;
+    z-index: 2;
+    padding: 5%;
     top: 65%;
     position: absolute;
+}
+
+.black {
+    background-color: black;
+    z-index: 2;
+    width: 35%;
+    height: 15%;
+    position: absolute;
+    left: 30%;
+    top: 65%;
+}
+
+.black-text {
+    width: 504px;
+    height: 85px;
+    font-family: Lato;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: 6.4px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.rosette {
+    background-color: #cc6666;
+    z-index: 0;
+    position: absolute;
+    height: 30%;
+    width: 55%;
+    top: 70%;
+    left: 45%;
+}
+
+.objectif{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10%;
+    
+}
+.objects{
+    width: 102px;
+  height: 21px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.resultat{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2%;
+}
+.results{
+    width: 199px;
+    height: 32px;
+    font-family: Roboto;
+    font-size: 23px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 1.35px;
+    text-align: left;
+    color: #000000;
+}
+
+.fa{
+    color : #cc6666;
+    display: inline-flex;
+    margin-left: 2%;
+
+}
+
+.icons{
+    z-index: 0;
+    position: absolute;
+    top: 90%;
+    width: 100%;
 }

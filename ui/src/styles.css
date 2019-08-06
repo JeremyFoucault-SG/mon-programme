@@ -7659,31 +7659,6 @@ video {
   height: 30%;
 }
 
-.objectif {
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 3;
-  letter-spacing: 0.9px;
-  text-align: left;
-  color: #000000;
-  margin-top: 5%;
-}
-
-.result {
-  font-family: Roboto;
-  font-size: 20px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2;
-  letter-spacing: 1.35px;
-  text-align: left;
-  color: #000000;
-}
-
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;
@@ -14689,31 +14664,6 @@ video {
     z-index: 1;
     width: 60%;
     height: 30%;
-  }
-
-  .sm\:objectif {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 3;
-    letter-spacing: 0.9px;
-    text-align: left;
-    color: #000000;
-    margin-top: 5%;
-  }
-
-  .sm\:result {
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 2;
-    letter-spacing: 1.35px;
-    text-align: left;
-    color: #000000;
   }
 }
 
@@ -21723,31 +21673,6 @@ video {
     width: 60%;
     height: 30%;
   }
-
-  .md\:objectif {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 3;
-    letter-spacing: 0.9px;
-    text-align: left;
-    color: #000000;
-    margin-top: 5%;
-  }
-
-  .md\:result {
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 2;
-    letter-spacing: 1.35px;
-    text-align: left;
-    color: #000000;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -28756,31 +28681,6 @@ video {
     width: 60%;
     height: 30%;
   }
-
-  .lg\:objectif {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 3;
-    letter-spacing: 0.9px;
-    text-align: left;
-    color: #000000;
-    margin-top: 5%;
-  }
-
-  .lg\:result {
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 2;
-    letter-spacing: 1.35px;
-    text-align: left;
-    color: #000000;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -35788,30 +35688,5 @@ video {
     z-index: 1;
     width: 60%;
     height: 30%;
-  }
-
-  .xl\:objectif {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 3;
-    letter-spacing: 0.9px;
-    text-align: left;
-    color: #000000;
-    margin-top: 5%;
-  }
-
-  .xl\:result {
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 2;
-    letter-spacing: 1.35px;
-    text-align: left;
-    color: #000000;
   }
 }
