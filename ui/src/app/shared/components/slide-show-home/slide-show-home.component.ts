@@ -21,7 +21,7 @@ export class SlideShowHomeComponent implements OnInit {
   public infos: ProgramDetail[];
 
   @Output()
-  selectChange = new EventEmitter();
+  selectChange : EventEmitter<any>= new EventEmitter();
 
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class SlideShowHomeComponent implements OnInit {
 
   onChange(programDetail: ProgramDetail, index) {
 this.selected = programDetail;
-this.selectChange.emit(index + 1 );
+this.selectChange.emit(this.selected[index + 1 ]);
   }
 
   backClick() {
