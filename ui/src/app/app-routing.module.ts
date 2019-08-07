@@ -5,6 +5,7 @@ import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
 import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
+import { CardNosProgrammesComponent } from './shared/components/card-nos-programmes/card-nos-programmes.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'blog', component: ListBlogComponent},
+  {path: 'nos-programmes', component: CardNosProgrammesComponent}
 ];
 
 @NgModule({
