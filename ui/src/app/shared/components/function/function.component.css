@@ -1,0 +1,86 @@
+.check{
+    color: #33a764;
+    border: solid;
+    border-radius: 50%;
+    padding: 2%;
+}
+
+.text{
+    width: 300px;
+    height: 85px;
+    font-family: HelveticaNeue;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+    margin-left: 17%;
+}
+
+.titre {
+    width: 220px;
+    height: 29px;
+    font-family: HelveticaNeue;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1c1c1c;
+}
+
+.flex-col {
+    flex-direction: row;
+}
+
+.center{
+
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+
+}
+
+.p-4 {
+    padding: 4rem;
+}
+
+.bloc {
+    margin-left:5%
+}
+
+.full {
+    display: flex;
+    justify-content: center;
+}
+
+.lorem{
+    font-family: Lato;
+    font-size: 25px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: right;
+    color: #707070;
+}
+
+.marche{
+  font-family: Lato;
+  font-size: 40px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.7;
+  letter-spacing: 2.08px;
+  color: #cc6666;
+  text-align: right;
+}

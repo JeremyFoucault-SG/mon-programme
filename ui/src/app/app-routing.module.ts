@@ -6,10 +6,16 @@ import { NewsletterComponent } from './shared/components/newsletter/newsletter.c
 import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
 import { CardNosProgrammesComponent } from './shared/components/card-nos-programmes/card-nos-programmes.component';
+import { NutritionComponent } from './features/nutrition/nutrition.component';
+
+
+
+
+
 
 
 const routes: Routes = [
-  {path: '', component: PopupAccueilComponent},
+  { path: '', component: PopupAccueilComponent },
   {
     path: 'men',
     component: PopupMwComponent,
@@ -42,10 +48,15 @@ const routes: Routes = [
       imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
     }
   },
+
   {path: 'home', component: HomeComponent},
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'blog', component: ListBlogComponent},
-  {path: 'nos-programmes', component: CardNosProgrammesComponent}
+  {path: 'nos-programmes', component: CardNosProgrammesComponent},
+  { path: 'nutrition', component: NutritionComponent}
+
+
+
 ];
 
 @NgModule({
