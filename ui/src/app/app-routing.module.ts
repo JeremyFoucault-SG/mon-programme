@@ -5,14 +5,15 @@ import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
 import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
-import { FormCustomizeProgrammeComponent } from './shared/components/form-customize-programme/form-customize-programme.component';
-import { FunctionComponent } from './shared/components/function/function.component';
+import { NutritionComponent } from './features/nutrition/nutrition.component';
+
+
 
 
 
 
 const routes: Routes = [
-  {path: '', component: PopupAccueilComponent},
+  { path: '', component: PopupAccueilComponent },
   {
     path: 'men',
     component: PopupMwComponent,
@@ -45,11 +46,10 @@ const routes: Routes = [
       imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
     }
   },
-  {path: 'home', component: HomeComponent},
-  {path: 'newsletter', component: NewsletterComponent},
-  {path: 'blog', component: ListBlogComponent},
-  {path: 'form', component: FormCustomizeProgrammeComponent},
-  {path:'function', component: FunctionComponent}
+  { path: 'home', component: HomeComponent },
+  { path: 'newsletter', component: NewsletterComponent },
+  { path: 'blog', component: ListBlogComponent },
+  { path: 'nutrition', component: NutritionComponent}
 
 
 ];
