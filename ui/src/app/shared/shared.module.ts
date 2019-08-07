@@ -19,8 +19,8 @@ import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-bl
 import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/newsletter-sm.component';
 import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
 import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
-import { FunctionComponent } from './components/function/function.component';
-
+import { FunctionComponent } from './components/form-function/function/function.component';
+import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component'
 
 
 @NgModule({
@@ -44,7 +44,8 @@ import { FunctionComponent } from './components/function/function.component';
     NewsletterSmComponent,
     NewsletterLgComponent,
     NewsletterBannerLgComponent,
-    FunctionComponent
+    FunctionComponent,
+    FunctionSmComponent
   ],
   imports: [
     CommonModule
@@ -65,7 +66,8 @@ import { FunctionComponent } from './components/function/function.component';
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
     FunctionComponent,
-    ListBlogComponent
+    ListBlogComponent,
+    FunctionSmComponent
   ]
 })
 export class SharedModule { }
