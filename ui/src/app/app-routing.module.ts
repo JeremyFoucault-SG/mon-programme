@@ -8,6 +8,7 @@ import { ListBlogComponent } from './shared/components/list-blog/list-blog.compo
 import { CardNosProgrammesComponent } from './shared/components/card-nos-programmes/card-nos-programmes.component';
 import { NutritionComponent } from './features/nutrition/nutrition.component';
 import { FormSelectionProgrammeComponent } from './shared/components/form-selection-programme/form-selection-programme.component';
+import { FunctionSmComponent } from './shared/components/form-function/function-sm/function-sm.component';
 
 
 
@@ -53,7 +54,8 @@ const routes: Routes = [
   { path: 'newsletter', component: NewsletterComponent },
   { path: 'blog', component: ListBlogComponent },
   { path: 'nutrition', component: NutritionComponent },
-  { path: 'select', component: FormSelectionProgrammeComponent }
+  { path: 'select', component: FormSelectionProgrammeComponent },
+  { path: 'func', component: FunctionSmComponent }
 
 
 
