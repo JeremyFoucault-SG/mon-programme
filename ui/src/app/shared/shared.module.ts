@@ -20,6 +20,7 @@ import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/new
 import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
 import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
 import { FunctionComponent } from './components/function/function.component';
+import { ContactLgComponent } from './components/contact-lg/contact-lg.component';
 
 
 
@@ -44,7 +45,8 @@ import { FunctionComponent } from './components/function/function.component';
     NewsletterSmComponent,
     NewsletterLgComponent,
     NewsletterBannerLgComponent,
-    FunctionComponent
+    FunctionComponent,
+    ContactLgComponent
   ],
   imports: [
     CommonModule
@@ -64,7 +66,8 @@ import { FunctionComponent } from './components/function/function.component';
     CardMinArticleComponent,
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
-    FunctionComponent
+    FunctionComponent,
+    ContactLgComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,7 @@
+.back{
+    position: absolute;
+    z-index: 10;
+}
+.content{
+    z-index: 20;
+}
