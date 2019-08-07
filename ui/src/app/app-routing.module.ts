@@ -6,7 +6,7 @@ import { NewsletterComponent } from './shared/components/newsletter/newsletter.c
 import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
 import { NutritionComponent } from './features/nutrition/nutrition.component';
-
+import { FormSelectionProgrammeComponent } from './shared/components/form-selection-programme/form-selection-programme.component';
 
 
 
@@ -49,7 +49,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'newsletter', component: NewsletterComponent },
   { path: 'blog', component: ListBlogComponent },
-  { path: 'nutrition', component: NutritionComponent}
+  { path: 'nutrition', component: NutritionComponent },
+  { path: 'select', component: FormSelectionProgrammeComponent }
 
 
 ];
