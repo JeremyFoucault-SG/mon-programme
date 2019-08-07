@@ -5,6 +5,8 @@ import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
 import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
+import { FormCustomizeProgrammeComponent } from './shared/components/form-customize-programme/form-customize-programme.component';
+import { FunctionComponent } from './shared/components/function/function.component';
 
 
 
@@ -46,6 +48,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'blog', component: ListBlogComponent},
+  {path: 'form', component: FormCustomizeProgrammeComponent},
+  {path:'function', component: FunctionComponent}
 
 
 ];
