@@ -64,7 +64,8 @@ import { FunctionComponent } from './components/function/function.component';
     CardMinArticleComponent,
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
-    FunctionComponent
+    FunctionComponent,
+    ListBlogComponent
   ]
 })
 export class SharedModule { }
