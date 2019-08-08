@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SharedModule } from '../shared/shared.module';
 import { NutritionComponent } from './nutrition/nutrition.component';
+import {ArticleBlogComponent} from './article-blog/article-blog.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NutritionComponent } from './nutrition/nutrition.component';
     PopupMwComponent,
     HomeComponent,
     LoginModalComponent,
-    NutritionComponent
+    NutritionComponent,
+    ArticleBlogComponent
   ],
   imports: [
     RouterModule,
