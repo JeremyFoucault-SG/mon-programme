@@ -19,8 +19,9 @@ import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-bl
 import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/newsletter-sm.component';
 import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
 import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
-import { FunctionComponent } from './components/function/function.component';
+import { FunctionComponent } from './components/form-function/function/function.component';
 import { ContactLgComponent } from './components/contact-lg/contact-lg.component';
+import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component';
 
 
 
@@ -46,7 +47,8 @@ import { ContactLgComponent } from './components/contact-lg/contact-lg.component
     NewsletterLgComponent,
     NewsletterBannerLgComponent,
     FunctionComponent,
-    ContactLgComponent
+    ContactLgComponent,
+    FunctionSmComponent
   ],
   imports: [
     CommonModule
@@ -67,7 +69,9 @@ import { ContactLgComponent } from './components/contact-lg/contact-lg.component
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
     FunctionComponent,
-    ContactLgComponent
+    ContactLgComponent,
+    ListBlogComponent,
+    FunctionSmComponent
   ]
 })
 export class SharedModule { }
