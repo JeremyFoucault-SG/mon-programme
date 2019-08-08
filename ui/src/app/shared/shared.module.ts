@@ -20,7 +20,9 @@ import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/new
 import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
 import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
 import { FunctionComponent } from './components/form-function/function/function.component';
-import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component'
+import { ContactLgComponent } from './components/contact-lg/contact-lg.component';
+import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component';
+
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
     NewsletterLgComponent,
     NewsletterBannerLgComponent,
     FunctionComponent,
+    ContactLgComponent,
     FunctionSmComponent
   ],
   imports: [
@@ -66,6 +69,7 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
     FunctionComponent,
+    ContactLgComponent,
     ListBlogComponent,
     FunctionSmComponent
   ]
