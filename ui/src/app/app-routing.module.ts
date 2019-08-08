@@ -10,7 +10,7 @@ import { FormSelectionProgrammeComponent } from './shared/components/selection-p
 import { FunctionSmComponent } from './shared/components/form-function/function-sm/function-sm.component';
 import { FooterSmComponent } from './core/footer/footer-sm/footer-sm.component';
 import { FormSelectionProgrammeSmComponent } from './shared/components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
-
+import { ArticleBlogComponent } from './features/article-blog/article-blog.component';
 
 
 
@@ -58,6 +58,7 @@ const routes: Routes = [
   { path: 'func', component: FunctionSmComponent },
   { path: 'foot', component: FooterSmComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
+  { path: 'article', component: ArticleBlogComponent },
 
 
 
