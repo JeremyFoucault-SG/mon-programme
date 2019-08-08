@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PopupAccueilComponent } from './features/popup-accueil/popup-accueil.component';
 import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
 import { HomeComponent } from './features/home/home.component';
@@ -18,7 +17,7 @@ import { FormSelectionProgrammeSmComponent } from './shared/components/selection
 
 
 const routes: Routes = [
-  { path: '', component: PopupAccueilComponent },
+  { path: '', component: PopupMwComponent },
   {
     path: 'men',
     component: PopupMwComponent,
@@ -52,7 +51,6 @@ const routes: Routes = [
     }
   },
 
-  { path: 'home', component: HomeComponent },
   { path: 'newsletter', component: NewsletterComponent },
   { path: 'blog', component: ListBlogComponent },
   { path: 'nutrition', component: NutritionComponent },

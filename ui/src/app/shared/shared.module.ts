@@ -48,7 +48,7 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
     NewsletterLgComponent,
     NewsletterBannerLgComponent,
     FunctionComponent,
-    FormSelectionProgrammeSmComponent
+    FormSelectionProgrammeSmComponent,
     ContactLgComponent,
     FunctionSmComponent
 
