@@ -10,6 +10,7 @@ import { NutritionComponent } from './features/nutrition/nutrition.component';
 import { FormSelectionProgrammeComponent } from './shared/components/form-selection-programme/form-selection-programme.component';
 import { FunctionSmComponent } from './shared/components/form-function/function-sm/function-sm.component';
 import { FooterSmComponent } from './core/footer/footer-sm/footer-sm.component';
+import { MenuNosProgrammeComponent } from './shared/components/menu-nos-programme/menu-nos-programme.component';
 
 
 
@@ -58,6 +59,7 @@ const routes: Routes = [
   { path: 'select', component: FormSelectionProgrammeComponent },
   { path: 'func', component: FunctionSmComponent },
   { path: 'foot', component: FooterSmComponent },
+  { path: 'objectif', component: MenuNosProgrammeComponent}
 
 
 

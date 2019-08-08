@@ -22,6 +22,7 @@ import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-
 import { FunctionComponent } from './components/form-function/function/function.component';
 import { ContactLgComponent } from './components/contact-lg/contact-lg.component';
 import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component';
+import { ObjectifProgrammeComponent } from './components/menu-nos-programme/objectif-programme/objectif-programme.component';
 
 
 
@@ -48,7 +49,8 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
     NewsletterBannerLgComponent,
     FunctionComponent,
     ContactLgComponent,
-    FunctionSmComponent
+    FunctionSmComponent,
+    ObjectifProgrammeComponent
   ],
   imports: [
     CommonModule
