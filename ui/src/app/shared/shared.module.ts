@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormCustomizeProgrammeComponent } from './components/form-customize-programme/form-customize-programme.component';
+// tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './components/selection-programme/form-selection-programme/form-selection-programme.component';
 import { CardProgrammesComponent } from './components/card-programmes/card-programmes.component';
 import { CardBlogComponent } from './components/list-blog/card-blog-lg/card-blog.component';
@@ -20,9 +21,11 @@ import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/new
 import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
 import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
 import { FunctionComponent } from './components/form-function/function/function.component';
+// tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeSmComponent } from './components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
 import { ContactLgComponent } from './components/contact-lg/contact-lg.component';
 import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component';
+import { ObjectifProgrammeComponent } from './components/menu-nos-programme/objectif-programme/objectif-programme.component';
 
 
 
@@ -50,8 +53,8 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
     FunctionComponent,
     FormSelectionProgrammeSmComponent,
     ContactLgComponent,
-    FunctionSmComponent
-
+    FunctionSmComponent,
+    ObjectifProgrammeComponent
   ],
   imports: [
     CommonModule
