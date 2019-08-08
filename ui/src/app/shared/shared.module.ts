@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormCustomizeProgrammeComponent } from './components/form-customize-programme/form-customize-programme.component';
-import { FormSelectionProgrammeComponent } from './components/form-selection-programme/form-selection-programme.component';
+import { FormSelectionProgrammeComponent } from './components/selection-programme/form-selection-programme/form-selection-programme.component';
 import { CardProgrammesComponent } from './components/card-programmes/card-programmes.component';
 import { CardBlogComponent } from './components/list-blog/card-blog-lg/card-blog.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -20,7 +20,8 @@ import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/new
 import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
 import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
 import { FunctionComponent } from './components/form-function/function/function.component';
-import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component'
+import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component';
+import { FormSelectionProgrammeSmComponent } from './components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
     NewsletterLgComponent,
     NewsletterBannerLgComponent,
     FunctionComponent,
-    FunctionSmComponent
+    FunctionSmComponent,
+    FormSelectionProgrammeSmComponent
   ],
   imports: [
     CommonModule
@@ -67,7 +69,8 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
     MenuNosProgrammeComponent,
     FunctionComponent,
     ListBlogComponent,
-    FunctionSmComponent
+    FunctionSmComponent,
+    FormSelectionProgrammeSmComponent
   ]
 })
 export class SharedModule { }

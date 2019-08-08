@@ -7,9 +7,10 @@ import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
 import { CardNosProgrammesComponent } from './shared/components/card-nos-programmes/card-nos-programmes.component';
 import { NutritionComponent } from './features/nutrition/nutrition.component';
-import { FormSelectionProgrammeComponent } from './shared/components/form-selection-programme/form-selection-programme.component';
+import { FormSelectionProgrammeComponent } from './shared/components/selection-programme/form-selection-programme/form-selection-programme.component';
 import { FunctionSmComponent } from './shared/components/form-function/function-sm/function-sm.component';
 import { FooterSmComponent } from './core/footer/footer-sm/footer-sm.component';
+import { FormSelectionProgrammeSmComponent } from './shared/components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
 
 
 
@@ -58,7 +59,7 @@ const routes: Routes = [
   { path: 'select', component: FormSelectionProgrammeComponent },
   { path: 'func', component: FunctionSmComponent },
   { path: 'foot', component: FooterSmComponent },
-
+  { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
 
 
 
