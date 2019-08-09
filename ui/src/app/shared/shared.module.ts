@@ -26,6 +26,7 @@ import { FormSelectionProgrammeSmComponent } from './components/selection-progra
 import { ContactLgComponent } from './components/contact-lg/contact-lg.component';
 import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component';
 import { ObjectifProgrammeComponent } from './components/menu-nos-programme/objectif-programme/objectif-programme.component';
+import { ContactSmComponent } from './components/contact-sm/contact-sm.component';
 
 
 
@@ -54,7 +55,8 @@ import { ObjectifProgrammeComponent } from './components/menu-nos-programme/obje
     FormSelectionProgrammeSmComponent,
     ContactLgComponent,
     FunctionSmComponent,
-    ObjectifProgrammeComponent
+    ObjectifProgrammeComponent,
+    ContactSmComponent
   ],
   imports: [
     CommonModule
