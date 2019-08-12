@@ -27,6 +27,8 @@ import { ContactLgComponent } from './components/contact-lg/contact-lg.component
 import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component';
 import { ObjectifProgrammeComponent } from './components/menu-nos-programme/objectif-programme/objectif-programme.component';
 import { ContactSmComponent } from './components/contact-sm/contact-sm.component';
+import { DetailProgrammeComponent } from './components/detail-programme/detail-programme.component';
+import { DetailProgrammePhotoComponent } from './components/detail-programme/detail-programme-photo/detail-programme-photo.component';
 
 
 
@@ -56,7 +58,9 @@ import { ContactSmComponent } from './components/contact-sm/contact-sm.component
     ContactLgComponent,
     FunctionSmComponent,
     ObjectifProgrammeComponent,
-    ContactSmComponent
+    ContactSmComponent,
+    DetailProgrammeComponent,
+    DetailProgrammePhotoComponent
   ],
   imports: [
     CommonModule
