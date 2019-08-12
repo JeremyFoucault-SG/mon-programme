@@ -7617,6 +7617,14 @@ html, body {
   padding: 0.1rem;
 }
 
+.bg-objectif-brown{
+  background-color: #b13b2c;
+}
+
+.bg-objectif-black{
+  background-color: #29282d;
+}
+
 .bg-img{
   background-image: url('https://zupimages.net/up/19/31/elei.png');
   background-position: center;

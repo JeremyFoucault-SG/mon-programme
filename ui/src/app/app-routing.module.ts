@@ -16,6 +16,7 @@ import { FormSelectionProgrammeSmComponent } from './shared/components/selection
 import { ContactSmComponent } from './shared/components/contact-sm/contact-sm.component';
 
 import { ArticleBlogComponent } from './features/article-blog/article-blog.component';
+import { DetailProgrammeComponent } from './shared/components/detail-programme/detail-programme.component';
 
 
 
@@ -55,7 +56,6 @@ const routes: Routes = [
       imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
     }
   },
-
   { path: 'newsletter', component: NewsletterComponent },
   { path: 'blog', component: ListBlogComponent },
   { path: 'nutrition', component: NutritionComponent },
@@ -66,6 +66,7 @@ const routes: Routes = [
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
   { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
+  { path: 'detail-programme', component: DetailProgrammeComponent}
 
 
 
