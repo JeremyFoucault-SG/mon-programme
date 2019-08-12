@@ -80,7 +80,8 @@ import { ContactSmComponent } from './components/contact-sm/contact-sm.component
     ContactLgComponent,
     ListBlogComponent,
     FunctionSmComponent,
-    FormSelectionProgrammeSmComponent
+    FormSelectionProgrammeSmComponent,
+    ObjectifProgrammeComponent
   ]
 })
 export class SharedModule { }
