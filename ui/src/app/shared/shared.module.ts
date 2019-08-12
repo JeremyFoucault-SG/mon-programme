@@ -84,7 +84,8 @@ import { DetailProgrammePhotoComponent } from './components/detail-programme/det
     ContactLgComponent,
     ListBlogComponent,
     FunctionSmComponent,
-    FormSelectionProgrammeSmComponent
+    FormSelectionProgrammeSmComponent,
+    ObjectifProgrammeComponent
   ]
 })
 export class SharedModule { }
