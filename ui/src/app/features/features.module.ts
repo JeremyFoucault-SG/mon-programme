@@ -8,6 +8,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SharedModule } from '../shared/shared.module';
 import { NutritionComponent } from './nutrition/nutrition.component';
 import {ArticleBlogComponent} from './article-blog/article-blog.component';
+import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ArticleBlogComponent} from './article-blog/article-blog.component';
     HomeComponent,
     LoginModalComponent,
     NutritionComponent,
-    ArticleBlogComponent
+    ArticleBlogComponent,
+    NosProgrammesComponent
   ],
   imports: [
     RouterModule,
