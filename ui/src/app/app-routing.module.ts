@@ -12,7 +12,6 @@ import { FooterSmComponent } from './core/footer/footer-sm/footer-sm.component';
 import { MenuNosProgrammeComponent } from './shared/components/menu-nos-programme/menu-nos-programme.component';
 import { FormSelectionProgrammeSmComponent } from './shared/components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
 import { ContactSmComponent } from './shared/components/contact-sm/contact-sm.component';
-
 import { ArticleBlogComponent } from './features/article-blog/article-blog.component';
 
 
