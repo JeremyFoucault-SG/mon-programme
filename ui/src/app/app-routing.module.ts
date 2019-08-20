@@ -19,6 +19,9 @@ import { DetailProgrammeComponent } from './shared/components/detail-programme/d
 
 import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes.component';
 import { FooterInformationSmComponent } from './core/footer/footer-information-sm/footer-information-sm.component';
+import { LoginAccueilComponent } from './shared/components/login-sm/login-accueil/login-accueil.component';
+import { Inscription1Component } from './shared/components/login-sm/inscription1/inscription1.component';
+import { Inscription2Component } from './shared/components/login-sm/inscription2/inscription2.component';
 
 
 
@@ -69,6 +72,9 @@ const routes: Routes = [
   { path: 'detail-programme', component: DetailProgrammeComponent},
   {path: 'footer-sm', component: FooterInformationSmComponent},
   { path: 'nos-programmes', component: NosProgrammesComponent },
+  {path: 'login-sm', component: LoginAccueilComponent},
+  {path: 'inscription-1', component: Inscription1Component},
+  {path: 'inscription-2', component: Inscription2Component}
 
 
 ];
