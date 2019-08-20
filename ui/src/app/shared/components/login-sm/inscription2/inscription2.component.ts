@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -15,10 +15,16 @@ export class Inscription2Component implements OnInit {
 
   ngOnInit() {
     this.myForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      prenom: new FormControl('', Validators.required),
-      age: new FormControl('', Validators.required)
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      confirmation: new FormControl('', Validators.required),
     });
   }
 
+  submit() {
+    console.log(this.myForm);
+    if (this.myForm.valid) {
+      this.router.navigateByUrl(`inscription-3`);
+    }
+  }
 }

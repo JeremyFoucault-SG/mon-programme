@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -37,6 +38,8 @@ import { DetailProgrammePhotoComponent } from './components/detail-programme/det
 import { LoginAccueilComponent } from './components/login-sm/login-accueil/login-accueil.component';
 import { Inscription1Component } from './components/login-sm/inscription1/inscription1.component';
 import { Inscription2Component } from './components/login-sm/inscription2/inscription2.component';
+import { Inscription3Component } from './components/login-sm/inscription3/inscription3.component';
+import { Inscription4Component } from './components/login-sm/inscription4/inscription4.component';
 
 
 
@@ -71,12 +74,15 @@ import { Inscription2Component } from './components/login-sm/inscription2/inscri
     DetailProgrammePhotoComponent,
     LoginAccueilComponent,
     Inscription1Component,
-    Inscription2Component
+    Inscription2Component,
+    Inscription3Component,
+    Inscription4Component
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
 
 
   ],

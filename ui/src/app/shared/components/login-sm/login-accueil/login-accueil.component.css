@@ -1,10 +1,10 @@
 .login {
   width: 100vw;
-  height: 722.5px;
-  background-color: #fda9a9;
+  height: 100vh;
+  background-image: url("https://zupimages.net/up/19/34/h069.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   position: absolute;
-  z-index: 10;
-
 }
 .return {
   border-radius: 100%;
@@ -12,10 +12,10 @@
   height: 47px;
   background-color: white;
   box-shadow: 0 6px 17px 0 rgba(204, 102, 102, 0.49);
-  margin-right: 2%
+  margin-right: 2%;
 }
-i{
-    color: #cc6666;
+i {
+  color: #cc6666;
 }
 .home {
   justify-content: center;
@@ -39,12 +39,12 @@ h1 {
   text-align: left;
   color: #1c1c1c;
 }
-.excuse{
-    color: #cc6666;
-    text-decoration: line-through;
+.excuse {
+  color: #cc6666;
+  text-decoration: line-through;
 }
-.space{
-    height: 60vh;
+.space {
+  height: 60vh;
 }
 .ellipse-current {
   width: 12px;
