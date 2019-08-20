@@ -1,9 +1,9 @@
 
 // Imports Modules //
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Imports Components //
 import { AppRoutingModule } from './app-routing.module';
@@ -30,9 +30,13 @@ import { FeaturesModule } from './features/features.module';
     FeaturesModule,
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

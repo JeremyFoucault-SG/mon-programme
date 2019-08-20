@@ -292,6 +292,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@github/details-dialog-element@^3.0.9":
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/@github/details-dialog-element/-/details-dialog-element-3.0.9.tgz#416c0f7cf163ff7f2372fddd96850bef048f505a"
+  integrity sha512-PZwWM1brGTdvw1dPba6vmfbf3hJ9AdgSTvIeXxyFy1+X71ucDTX8tb7vpGt2jH9SOijaEgGXEFKfwiGIU+4Teg==
+
 "@ngtools/webpack@8.1.2":
   version "8.1.2"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.1.2.tgz#5f96371d51a7f338a29990916b5b77f55bbf1ca6"

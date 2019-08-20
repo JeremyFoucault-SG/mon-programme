@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import '@github/details-dialog-element';
+import { FacebookService, InitParams,  LoginResponse } from 'ngx-facebook';
 
 
 @Component({
@@ -9,14 +12,56 @@ import { Component, OnInit } from '@angular/core';
 export class LoginModalComponent implements OnInit {
 
 
+  inscription = false;
+  isHidden = false;
+  login = false;
+  isHidden2 = false;
 
-  constructor() { }
+  constructor(private fb: FacebookService) {
+    let initParams: InitParams = {
+      appId: '1369599999853758',
+      xfbml: true,
+      version: 'v4.0'
+    };
 
-  ngOnInit() {}
+    fb.init(initParams);
+
+  }
+
+  loginWithFacebook(): void {
+ 
+    this.fb.login()
+      .then((response: LoginResponse) => console.log(response))
+      .catch((error: any) => console.error(error));
+ 
+  }
+
+
+  ngOnInit() {
 
 
 
+  }
+
+  onFormSubmit(userForm: NgForm) {
+    console.log(userForm);
+  }
+  nextPage() {
+    this.inscription = true;
+    this.isHidden = !this.isHidden;
+  }
+
+  nextPage2() {
+    this.inscription = false;
+    this.login = true;
+    this.isHidden2 = !this.isHidden2;
+  }
+
+  submit() {
+  }
 
 }
+
+
 
 
