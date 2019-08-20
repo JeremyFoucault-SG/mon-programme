@@ -18,6 +18,7 @@ import { ArticleBlogComponent } from './features/article-blog/article-blog.compo
 import { DetailProgrammeComponent } from './shared/components/detail-programme/detail-programme.component';
 import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes.component';
 import { LoginModalComponent } from './features/login-modal/login-modal.component';
+import { FooterInformationSmComponent } from './core/footer/footer-information-sm/footer-information-sm.component';
 
 
 
@@ -66,7 +67,8 @@ const routes: Routes = [
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
   { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
-  { path: 'detail-programme', component: DetailProgrammeComponent},
+  { path: 'detail-programme', component: DetailProgrammeComponent },
+  { path: 'footer-sm', component: FooterInformationSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
   { path: 'login', component: LoginModalComponent },
 
