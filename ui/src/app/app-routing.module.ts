@@ -22,6 +22,7 @@ import { LoginModalComponent } from './features/login-modal/login-modal.componen
 
 
 
+
 const routes: Routes = [
   {
     path: 'men',
@@ -68,6 +69,7 @@ const routes: Routes = [
   { path: 'detail-programme', component: DetailProgrammeComponent},
   { path: 'nos-programmes', component: NosProgrammesComponent },
   { path: 'login', component: LoginModalComponent },
+
 
 
 ];

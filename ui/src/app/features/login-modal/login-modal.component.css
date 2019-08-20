@@ -13,8 +13,6 @@
   z-index: 1;
 }
 
-
-
 .narrow {
   width: 90%;
   height: 90%;
@@ -181,4 +179,35 @@ a {
   border: white solid;
   color: white;
   background-image: none;
+}
+
+img{
+  width: 30%;
+  height: 35%;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.box-image{
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6%;
+}
+
+.circle{
+  color: #1c884a;
+}
+
+a{
+  margin-top: 22%;
+}
+
+.pseudo{
+  display: flex;
+  justify-content: center;
 }

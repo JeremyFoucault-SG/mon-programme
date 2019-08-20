@@ -7,9 +7,10 @@ import { RouterModule } from '@angular/router';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SharedModule } from '../shared/shared.module';
 import { NutritionComponent } from './nutrition/nutrition.component';
-import {ArticleBlogComponent} from './article-blog/article-blog.component';
+import { ArticleBlogComponent } from './article-blog/article-blog.component';
 import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FacebookModule } from 'ngx-facebook';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,15 @@ import { NosProgrammesComponent } from './nos-programmes/nos-programmes.componen
     LoginModalComponent,
     NutritionComponent,
     ArticleBlogComponent,
-    NosProgrammesComponent
+    NosProgrammesComponent,
   ],
   imports: [
     RouterModule,
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FacebookModule.forRoot()
   ],
   exports: [
     LoginModalComponent
