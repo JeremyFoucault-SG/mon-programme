@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import '@github/details-dialog-element'
 
 
 @Component({
@@ -12,11 +13,13 @@ export class LoginModalComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
 
+  ngOnInit() {
+  
 
+  }
 
-
+  
 }
 
 

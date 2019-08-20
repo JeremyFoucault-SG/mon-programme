@@ -16,8 +16,8 @@ import { FormSelectionProgrammeSmComponent } from './shared/components/selection
 import { ContactSmComponent } from './shared/components/contact-sm/contact-sm.component';
 import { ArticleBlogComponent } from './features/article-blog/article-blog.component';
 import { DetailProgrammeComponent } from './shared/components/detail-programme/detail-programme.component';
-
 import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes.component';
+import { LoginModalComponent } from './features/login-modal/login-modal.component';
 
 
 
@@ -66,8 +66,8 @@ const routes: Routes = [
   { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent},
-
   { path: 'nos-programmes', component: NosProgrammesComponent },
+  { path: 'login', component: LoginModalComponent },
 
 
 ];

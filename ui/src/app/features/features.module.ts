@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { PopupAccueilComponent } from './popup-accueil/popup-accueil.component';
@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NutritionComponent } from './nutrition/nutrition.component';
 import {ArticleBlogComponent} from './article-blog/article-blog.component';
 import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +25,11 @@ import { NosProgrammesComponent } from './nos-programmes/nos-programmes.componen
     RouterModule,
     CommonModule,
     SharedModule
-  ]
+  ],
+  exports: [
+    LoginModalComponent
+  ],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeaturesModule { }
