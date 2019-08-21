@@ -33,11 +33,11 @@ export class StatsComponent implements OnInit {
           color: 'transparent'
         }
       }],
-      xAxes :[{
+      xAxes : [{
           ticks: {
             fontColor: '#d28e62',
           },
-        gridLines:{
+        gridLines: {
           color: 'transparent',
         }
       }]

@@ -28,7 +28,7 @@ export class LoginModalComponent implements OnInit {
 
   }
 
-  loginWithFacebook(): void { 
+  loginWithFacebook(): void {
     this.fb.login()
       .then((response: LoginResponse) => console.log(response))
       .catch((error: any) => console.error(error));
