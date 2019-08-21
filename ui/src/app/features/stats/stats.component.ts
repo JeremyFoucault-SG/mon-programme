@@ -29,7 +29,7 @@ export class StatsComponent implements OnInit {
           stepSize: 50,
           fontColor: '#6271d2',
         },
-        gridLines:{
+        gridLines: {
           color: 'transparent'
         }
       }],
@@ -58,10 +58,6 @@ export class StatsComponent implements OnInit {
       pointBackgroundColor: '#6271d2'
     },
   ];
-
-
-
-  // option deuxieme graphique (barre) //
 
 
   ngOnInit() {
