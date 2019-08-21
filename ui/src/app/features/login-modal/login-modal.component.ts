@@ -18,7 +18,7 @@ export class LoginModalComponent implements OnInit {
   isHidden2 = false;
 
   constructor(private fb: FacebookService) {
-    let initParams: InitParams = {
+    const initParams: InitParams = {
       appId: '1369599999853758',
       xfbml: true,
       version: 'v4.0'
@@ -29,11 +29,9 @@ export class LoginModalComponent implements OnInit {
   }
 
   loginWithFacebook(): void {
- 
     this.fb.login()
       .then((response: LoginResponse) => console.log(response))
       .catch((error: any) => console.error(error));
- 
   }
 
 

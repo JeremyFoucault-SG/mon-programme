@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+
+
+// Component
 import { FormCustomizeProgrammeComponent } from './components/form-customize-programme/form-customize-programme.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './components/selection-programme/form-selection-programme/form-selection-programme.component';
@@ -29,6 +35,12 @@ import { ObjectifProgrammeComponent } from './components/menu-nos-programme/obje
 import { ContactSmComponent } from './components/contact-sm/contact-sm.component';
 import { DetailProgrammeComponent } from './components/detail-programme/detail-programme.component';
 import { DetailProgrammePhotoComponent } from './components/detail-programme/detail-programme-photo/detail-programme-photo.component';
+import { LoginAccueilComponent } from './components/login-sm/login-accueil/login-accueil.component';
+import { Inscription1Component } from './components/login-sm/inscription1/inscription1.component';
+import { Inscription2Component } from './components/login-sm/inscription2/inscription2.component';
+import { Inscription3Component } from './components/login-sm/inscription3/inscription3.component';
+import { Inscription4Component } from './components/login-sm/inscription4/inscription4.component';
+import { ConnexionComponent } from './components/login-sm/connexion/connexion.component';
 
 
 
@@ -60,10 +72,21 @@ import { DetailProgrammePhotoComponent } from './components/detail-programme/det
     ObjectifProgrammeComponent,
     ContactSmComponent,
     DetailProgrammeComponent,
-    DetailProgrammePhotoComponent
+    DetailProgrammePhotoComponent,
+    LoginAccueilComponent,
+    Inscription1Component,
+    Inscription2Component,
+    Inscription3Component,
+    Inscription4Component,
+    ConnexionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule
+
+
   ],
   exports: [
     FormCustomizeProgrammeComponent,

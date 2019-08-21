@@ -19,6 +19,12 @@ import { DetailProgrammeComponent } from './shared/components/detail-programme/d
 import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes.component';
 import { LoginModalComponent } from './features/login-modal/login-modal.component';
 import { FooterInformationSmComponent } from './core/footer/footer-information-sm/footer-information-sm.component';
+import { LoginAccueilComponent } from './shared/components/login-sm/login-accueil/login-accueil.component';
+import { Inscription1Component } from './shared/components/login-sm/inscription1/inscription1.component';
+import { Inscription2Component } from './shared/components/login-sm/inscription2/inscription2.component';
+import { Inscription3Component } from './shared/components/login-sm/inscription3/inscription3.component';
+import { Inscription4Component } from './shared/components/login-sm/inscription4/inscription4.component';
+import { ConnexionComponent } from './shared/components/login-sm/connexion/connexion.component';
 
 
 
@@ -70,6 +76,12 @@ const routes: Routes = [
   { path: 'detail-programme', component: DetailProgrammeComponent },
   { path: 'footer-sm', component: FooterInformationSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
+  {path: 'login-sm', component: LoginAccueilComponent},
+  {path: 'inscription-1', component: Inscription1Component},
+  {path: 'inscription-2', component: Inscription2Component},
+  {path: 'inscription-3', component: Inscription3Component},
+  {path: 'inscription-4', component: Inscription4Component},
+  {path: 'connexion', component: ConnexionComponent},
   { path: 'login', component: LoginModalComponent },
 
 
