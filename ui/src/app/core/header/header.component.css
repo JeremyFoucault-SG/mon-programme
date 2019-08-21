@@ -1,11 +1,7 @@
-
-.profil{
-    height: 60px;
-    width: 60px;
+.menu-overlay {
+  opacity: 0.95;
 }
 
-nav{
-    position: absolute;
-    z-index:1;
-    width: 100%;
+.active {
+  color: #F6E05E;
 }
