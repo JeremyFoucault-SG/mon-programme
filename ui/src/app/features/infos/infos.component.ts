@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Validators } from '@angular/forms';
+import { Users } from 'src/app/shared/models/users.model';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { NgForm, Validators } from '@angular/forms';
   styleUrls: ['./infos.component.css']
 })
 export class InfosComponent implements OnInit {
+
+public users: Users;
 
   constructor() { }
 
