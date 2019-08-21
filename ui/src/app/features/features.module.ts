@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { PopupAccueilComponent } from './popup-accueil/popup-accueil.component';
@@ -7,8 +7,10 @@ import { RouterModule } from '@angular/router';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SharedModule } from '../shared/shared.module';
 import { NutritionComponent } from './nutrition/nutrition.component';
-import {ArticleBlogComponent} from './article-blog/article-blog.component';
+import { ArticleBlogComponent } from './article-blog/article-blog.component';
 import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FacebookModule } from 'ngx-facebook';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,20 @@ import { NosProgrammesComponent } from './nos-programmes/nos-programmes.componen
     LoginModalComponent,
     NutritionComponent,
     ArticleBlogComponent,
-    NosProgrammesComponent
+    NosProgrammesComponent,
   ],
   imports: [
     RouterModule,
     CommonModule,
-    SharedModule
-  ]
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FacebookModule.forRoot()
+  ],
+  exports: [
+    LoginModalComponent
+  ],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeaturesModule { }

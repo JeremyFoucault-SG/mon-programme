@@ -1,0 +1,187 @@
+<details class="details-reset details-with-dialog text-center">
+  <summary class="btn">Inscription</summary>
+  <details-dialog class="details-dialog anim-fade-in fast wide" aria-label="Dialog">
+    <div class="Box d-flex flex-row">
+      <div class="Box-body overflow-auto">
+      </div>
+      <div class="Box-footer h-100" *ngIf="!isHidden && !isHidden2">
+        <form class="w-full max-w-lg" #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+          <div class="form-group">
+            <p class="text-center title mt-4">SOIS PLUS FORT QUE TES <span class="excuses">EXCUSES</span></p>
+            <p class="text-center inscription mt-2">INSCRIPTION</p>
+            <p class="text-center connexion mb-2 mt-2">Déjà inscrit ?<a class="ml-2" (click)="nextPage2()" ngHide="isHidden2">Connexion</a></p>
+            <button type="button" class="facebook mb-4 mt-2" (click)="loginWithFacebook()"><i class="fa fa-facebook-square fa-2x mr-2"
+                aria-hidden="true"></i>S'inscrire avec
+              facebook</button>
+            <div class="flex flex-wrap -mx-3 mb-2">
+              <div class="px-3  md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold red" for="grid-first-name">
+                  Prénom
+                </label>
+                <input
+                  class="appearance-none block  bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                  id="FirstName" type="text" placeholder="Sophie" ngModel name="FirstName">
+              </div>
+              <div class="px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold red" for="grid-last-name">
+                  Nom
+                </label>
+                <input
+                  class="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="LastName" type="text" placeholder="Smith" ngModel name="LastName">
+              </div>
+            </div>
+            <div class="flex flex-wrap  ">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 red" for="grid-email">
+                Email
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="Email" type="email" placeholder="sophiesmith@gmail.com" ngModel name="Email">
+            </div>
+            <div class="flex flex-wrap  ">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mdp" for="grid-password">
+                Mot de passe
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="Password" type="password" ngModel name="Password">
+            </div>
+            <div class="flex flex-wrap ">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mdp" for="grid-password">
+                Confirmation du mot de passe
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="Confirm" type="password" ngModel name="Confirm">
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-2">
+              <div class="px-3  md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold red" for="grid-age">
+                  Age
+                </label>
+                <input
+                  class="appearance-none block  bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                  id="Age" type="text" placeholder="26 ans" ngModel name="Age">
+              </div>
+              <div class="px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold next" for="grid-next">
+                  next
+                </label>
+                <button type="submit" class="px-4 py-3 valid" (click)="nextPage()" ngHide="isHidden">ETAPE
+                  SUIVANTE<i class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <p class="text-center reserved mt-6">© Mon-Programme 2019. All Rights Reserved</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="Box-footer h-100" *ngIf="isHidden">
+        <form class="w-full max-w-lg" #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+          <div class="form-group">
+            <p class="text-center title mt-4">SOIS PLUS FORT QUE TES <span class="excuses">EXCUSES</span></p>
+            <p class="text-center inscription mt-2">INSCRIPTION</p>
+            <div class="box-image">
+              <img src="https://zupimages.net/up/19/34/tv1b.png">
+              <a><i class="fa fa-plus-circle circle" aria-hidden="true"></i></a>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-2">
+              <div class="px-3  md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold red" for="grid-first-name">
+                  Pseudo
+                </label>
+                <input
+                  class="appearance-none block  bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                  id="Pseudo" type="text" placeholder="Sophie37" ngModel name="Pseudo">
+              </div>
+            </div>
+            <div class="flex flex-wrap  ">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 red" for="grid-email">
+                Quel est ton objectif ?
+              </label>
+              <select
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="Email" type="email" placeholder="sophiesmith@gmail.com" ngModel name="Email">
+                <option value="">--Choisis ton objectif--</option>
+                <option value="masse">Prise de masse</option>
+                <option value="seche">Séche</option>
+                <option value="entretien">Entretien</option>
+                <option value="perte">Perte de poids</option>
+              </select>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-2">
+              <div class="px-3  md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold red" for="grid-first-name">
+                  Poids
+                </label>
+                <input
+                  class="appearance-none block  bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                  id="Poids" type="text" placeholder="70 kg" ngModel name="Poids">
+              </div>
+              <div class="px-3  md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold red" for="grid-first-name">
+                  Taille
+                </label>
+                <input
+                  class="appearance-none block  bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                  id="Taille" type="text" placeholder="180 cm" ngModel name="Taille">
+              </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-3 mb-2">
+              <div class="px-3  md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold next" for="grid-next">
+                  next
+                </label>
+                <button type="submit" class="px-4 py-3 valid" (click)="submit()">Inscription<i
+                    class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <p class="text-center reserved mt-6">© Mon-Programme 2019. All Rights Reserved</p>
+
+          </div>
+
+        </form>
+      </div>
+
+
+      <div class="Box-footer h-100" *ngIf="isHidden2">
+          <form class="w-full max-w-lg" #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+            <div class="form-group">
+              <p class="text-center title mt-4">SOIS PLUS FORT QUE TES <span class="excuses">EXCUSES</span></p>
+              <p class="text-center inscription mt-2">Connexion</p>
+              <button type="button" class="facebook mb-4 mt-2" (click)="loginWithFacebook()"><i class="fa fa-facebook-square fa-2x mr-2"
+                  aria-hidden="true"></i>Se connecter avec
+                facebook</button>
+              <div class="flex flex-wrap  ">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 red" for="grid-email">
+                  Email
+                </label>
+                <input
+                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="Email" type="email" placeholder="sophiesmith@gmail.com" ngModel name="Email">
+              </div>
+              <div class="flex flex-wrap  ">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mdp" for="grid-password">
+                  Mot de passe
+                </label>
+                <input
+                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="Password" type="password" ngModel name="Password">
+              </div>
+              <div class="flex flex-wrap -mx-3 mb-2">
+                <div class="px-3">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold next" for="grid-next">
+                    next
+                  </label>
+                  <button type="submit" class="px-4 py-3 valid" (click)="submit()">CONNEXION</button>
+                </div>
+              </div>
+              <p class="text-center reserved mt-6">© Mon-Programme 2019. All Rights Reserved</p>
+            </div>
+          </form>
+        </div>
+    </div>
+  </details-dialog>
+</details>
