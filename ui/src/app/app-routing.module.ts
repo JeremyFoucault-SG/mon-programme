@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
-import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
 import { CardNosProgrammesComponent } from './shared/components/card-nos-programmes/card-nos-programmes.component';
 import { NutritionComponent } from './features/nutrition/nutrition.component';
@@ -25,10 +24,7 @@ import { Inscription2Component } from './shared/components/login-sm/inscription2
 import { Inscription3Component } from './shared/components/login-sm/inscription3/inscription3.component';
 import { Inscription4Component } from './shared/components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './shared/components/login-sm/connexion/connexion.component';
-
-
-
-
+import { HomeComponent } from './features/home-container/home.component';
 
 const routes: Routes = [
   {
@@ -69,22 +65,21 @@ const routes: Routes = [
   { path: 'select', component: FormSelectionProgrammeComponent },
   { path: 'func', component: FunctionSmComponent },
   { path: 'foot', component: FooterSmComponent },
-  { path: 'objectif', component: MenuNosProgrammeComponent},
+  { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
   { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
   { path: 'footer-sm', component: FooterInformationSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
-  {path: 'login-sm', component: LoginAccueilComponent},
-  {path: 'inscription-1', component: Inscription1Component},
-  {path: 'inscription-2', component: Inscription2Component},
-  {path: 'inscription-3', component: Inscription3Component},
-  {path: 'inscription-4', component: Inscription4Component},
-  {path: 'connexion', component: ConnexionComponent},
+  { path: 'login-sm', component: LoginAccueilComponent },
+  { path: 'inscription-1', component: Inscription1Component },
+  { path: 'inscription-2', component: Inscription2Component },
+  { path: 'inscription-3', component: Inscription3Component },
+  { path: 'inscription-4', component: Inscription4Component },
+  { path: 'connexion', component: ConnexionComponent },
   { path: 'login', component: LoginModalComponent },
-
-
+  {path: 'home', component: HomeComponent},
 
 ];
 

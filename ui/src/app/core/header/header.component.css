@@ -3,3 +3,9 @@
     height: 60px;
     width: 60px;
 }
+
+nav{
+    position: absolute;
+    z-index:1;
+    width: 100%;
+}

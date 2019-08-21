@@ -1,0 +1,21 @@
+<!-- <div class="line" *ngIf="selected===programInfos[0]">
+</div>
+<div class="line2" *ngIf="selected===programInfos[1]">
+</div>
+<div class="line3" *ngIf="selected===programInfos[2]">
+</div>
+<div class="line4" *ngIf="selected===programInfos[3]">
+</div>
+
+ -->
+
+<div class="lists">
+    <ul>
+        <li class="texte" *ngFor="let program of programInfos">
+            <div class="flex flex-row items-center">
+                <div class="pl-8" [ngClass]="{line: selected.title===program.title}"></div>
+                <div class="ml-3 titre" [ngClass]="{titre: selected.title===program.title}">{{program.title}}</div>
+            </div>
+        </li>
+    </ul>
+</div>

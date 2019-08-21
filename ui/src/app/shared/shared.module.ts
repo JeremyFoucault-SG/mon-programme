@@ -41,6 +41,9 @@ import { Inscription2Component } from './components/login-sm/inscription2/inscri
 import { Inscription3Component } from './components/login-sm/inscription3/inscription3.component';
 import { Inscription4Component } from './components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './components/login-sm/connexion/connexion.component';
+import { NosProgrammeHomeComponent } from './components/nos-programme-home/nos-programme-home.component';
+import { SlideShowHomeComponent } from './components/slide-show-home/slide-show-home.component';
+import { VideoHomeComponent } from './components/video-home/video-home.component';
 
 
 
@@ -78,7 +81,10 @@ import { ConnexionComponent } from './components/login-sm/connexion/connexion.co
     Inscription2Component,
     Inscription3Component,
     Inscription4Component,
-    ConnexionComponent
+    ConnexionComponent,
+    NosProgrammeHomeComponent,
+    SlideShowHomeComponent,
+    VideoHomeComponent
   ],
   imports: [
     CommonModule,
@@ -108,7 +114,10 @@ import { ConnexionComponent } from './components/login-sm/connexion/connexion.co
     ListBlogComponent,
     FunctionSmComponent,
     FormSelectionProgrammeSmComponent,
-    ObjectifProgrammeComponent
+    ObjectifProgrammeComponent,
+    NosProgrammeHomeComponent,
+    SlideShowHomeComponent,
+    VideoHomeComponent
   ]
 })
 export class SharedModule { }
