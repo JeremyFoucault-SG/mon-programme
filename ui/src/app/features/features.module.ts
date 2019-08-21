@@ -11,6 +11,8 @@ import { ArticleBlogComponent } from './article-blog/article-blog.component';
 import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacebookModule } from 'ngx-facebook';
+import { StatsComponent } from './stats/stats.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { FacebookModule } from 'ngx-facebook';
     NutritionComponent,
     ArticleBlogComponent,
     NosProgrammesComponent,
+    StatsComponent
+
   ],
   imports: [
     RouterModule,
@@ -28,7 +32,8 @@ import { FacebookModule } from 'ngx-facebook';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    ChartsModule
   ],
   exports: [
     LoginModalComponent

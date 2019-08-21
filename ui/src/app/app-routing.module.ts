@@ -19,7 +19,7 @@ import { DetailProgrammeComponent } from './shared/components/detail-programme/d
 import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes.component';
 import { LoginModalComponent } from './features/login-modal/login-modal.component';
 import { FooterInformationSmComponent } from './core/footer/footer-information-sm/footer-information-sm.component';
-
+import { StatsComponent } from './features/stats/stats.component';
 
 
 
@@ -71,7 +71,7 @@ const routes: Routes = [
   { path: 'footer-sm', component: FooterInformationSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
   { path: 'login', component: LoginModalComponent },
-
+  { path: 'mon-suivi', component: StatsComponent },
 
 
 ];

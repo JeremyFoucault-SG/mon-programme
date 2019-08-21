@@ -1,113 +1,125 @@
 @tailwind base;
-
-
 @tailwind components;
-
 @tailwind utilities;
-
 /* .icon-footer {
   @apply h-16 w-16 flex items-center justify-center text-gray-500 text-lg border-solid rounded-full border-gray-500 border
 }
  */
 
- html, body {
-   height: 100%;
-   margin: 0;
-   padding: 0;
- }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
- .btn {
+.btn {
     @apply rounded-full;
     width: 170px;
     height: 45px;
- }
+}
 
-
-.btn-blog{
+.btn-blog {
     @apply bg-transparent border-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5;
 }
 
-@responsive{
-    .fs-1{
+@responsive {
+    .fs-1 {
         font-size: 80px;
     }
-
 }
-.fs-2{
+
+.fs-2 {
     font-size: 60px;
 }
-.fs-3{
+
+.fs-3 {
     font-size: 40px;
 }
-.fs-4{
+
+.fs-4 {
     font-size: 30px;
 }
-.fs-5{
+
+.fs-5 {
     font-size: 26px;
 }
-.fs-6{
+
+.fs-6 {
     font-size: 24px;
 }
-.fs-7{
+
+.fs-7 {
     font-size: 20px;
 }
-.fs-8{
+
+.fs-8 {
     font-size: 18px;
 }
 
-.ml-90{
+.ml-90 {
     margin-left: 90%;
-  }
+}
 
 .p-1-1 {
-  padding: 0.1rem;
-
+    padding: 0.1rem;
 }
-.bg-objectif-brown{
+
+.bg-objectif-brown {
     background-color: #b13b2c;
 }
-.bg-objectif-black{
+
+.bg-objectif-black {
     background-color: #29282d;
 }
-.bg-img{
+
+.bg-img {
     background-image: url('https://zupimages.net/up/19/31/elei.png');
     background-position: center;
     background-repeat: no-repeat;
 }
-.bg-yellow{
-    background-color:  #fcdd77;
+
+.bg-yellow {
+    background-color: #fcdd77;
 }
-.text-grey{
+
+.text-grey {
     color: #a0a0a0;
 }
-.woman{
+
+.woman {
     color: #cc6666;
 }
-.bg-woman{
+
+.bg-woman {
     background-color: #cc6666;
 }
-@responsive{
-    .img-blog-right{
+
+@responsive {
+    .img-blog-right {
         border-bottom-right-radius: 15% 80%;
         border-top-right-radius: 15% 80%;
         border-bottom-left-radius: 0% 0%;
     }
-    .margin-left-blog{
+    .margin-left-blog {
         margin-left: 90%;
     }
-
-    .photo-blog-ecran{
+    .photo-blog-ecran {
         min-height: 500px;
         max-height: 500px;
     }
-    .photo-blog-mobile{
+    .photo-blog-mobile {
         min-height: 300px;
         max-height: 300px;
     }
 }
-@responsive{
-    .img-blog-bottom{
+
+@responsive {
+    .img-blog-bottom {
         border-bottom-right-radius: 80% 7%;
         border-bottom-left-radius: 80% 7%;
     }
+}
+
+.bg-purpleprog {
+    background-color: #7467f0
 }

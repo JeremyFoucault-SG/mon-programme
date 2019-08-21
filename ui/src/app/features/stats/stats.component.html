@@ -1,0 +1,103 @@
+
+
+<h1 class="text-center main-title mt-4">Mon suivi</h1>
+
+<div class="flex flex-row flex-wrap flex-grow mt-2">
+    <div class="w-full md:w-3/4 p-3">
+        <!--Graph Card-->
+        <div class="bg-white border rounded shadow">
+            <div class=" p-3">
+                <h5 class="font-bold uppercase text-gray-600 title">STATISTIQUES DE PROGRESSION</h5>
+            </div>
+            <div class="p-5">
+                <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                    [legend]="lineChartLegend" [chartType]="lineChartType">
+
+                </canvas>
+            </div>
+        </div>
+        <!--/Graph Card-->
+    </div>
+
+    <div class="w-full md:w-1/4 p-3">
+        <!--Graph Card-->
+        <div class="bg-white border rounded shadow">
+            <div class="p-3">
+                <h5 class="font-bold uppercase text-gray-600 text-center title">INFORMATIONS CORPORELLES</h5>
+            </div>
+            <div class="p-5">
+                <p class="mt-4 describ">SEXE</p>
+                <div class="line mt-2"></div>
+                <p class="mt-4 describ">TAILLE</p>
+                <div class="line  mt-2"></div>
+                <p class="mt-4 describ">POIDS</p>
+                <div class="line  mt-2"></div>
+            </div>
+            <div class="text-right mr-4">
+                <button type="submit" class="px-4 py-2 valid" ngHide="isHidden">METTRE A JOUR<i
+                        class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button></div>
+            <div class="mt-4 text-center">
+                <p class="corpulence">LOREM IPSUM BLABLABLA</p>
+                <p class="corpulence2">Bldo kdkjffk fjf</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full md:w-3/4 p-3">
+        <!--Graph Card-->
+        <div class="bg-white border rounded shadow">
+            <div class=" p-3">
+                <h5 class="font-bold uppercase text-gray-600 title">MES PROGRAMMES</h5>
+            </div>
+            <div class="p-5">
+                <div class="w-full">
+                    <p class="prog mb-1">Programme 1</p>
+                    <div class="shadow w-full bg-grey-light">
+                        <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 63%">
+                            63 %</div>
+                    </div>
+                    <p class="mt-4 prog mb-1">Programme 1</p>
+                    <div class="shadow w-full bg-grey-light">
+                        <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 30%">
+                            30 %</div>
+                    </div>
+                    <p class="mt-4 prog mb-1">Programme 1</p>
+                    <div class="shadow w-full bg-grey-light">
+                        <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 15%">
+                            15 %</div>
+                    </div>
+                    <p class="mt-4 prog mb-1">Programme 1</p>
+                    <div class="shadow w-full bg-grey-light">
+                        <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 100%">
+                            100 %</div>
+                    </div>
+                    <p class="mt-4 prog mb-1">Programme 1</p>
+                    <div class="shadow w-full bg-grey-light">
+                        <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 9%">9
+                            %</div>
+                    </div>
+                </div>
+                <a>
+                    <p class="mt-6 text-right charger">CHARGER PLUS</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full md:w-1/4 p-3">
+        <!--Graph Card-->
+        <div class="bg-white border rounded shadow">
+            <div class="p-3">
+                <h5 class="font-bold uppercase text-gray-600 title">OBJECTIFS</h5>
+            </div>
+            <div class="p-5">
+
+            </div>
+            <div class="p-5">
+                <p class="mt-4 text-center finish">PROGRAMMES EN COURS</p>
+                <p class="mt-4  text-center finish">PROGRAMMES TERMINES</p>
+            </div>
+        </div>
+        <!--/Graph Card-->
+    </div>
+</div>
