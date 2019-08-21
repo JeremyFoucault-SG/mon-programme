@@ -25,6 +25,7 @@ import { Inscription2Component } from './shared/components/login-sm/inscription2
 import { Inscription3Component } from './shared/components/login-sm/inscription3/inscription3.component';
 import { Inscription4Component } from './shared/components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './shared/components/login-sm/connexion/connexion.component';
+import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashboard-compte-sm.component';
 
 
 
@@ -83,6 +84,7 @@ const routes: Routes = [
   {path: 'inscription-4', component: Inscription4Component},
   {path: 'connexion', component: ConnexionComponent},
   { path: 'login', component: LoginModalComponent },
+  {path: 'dashboard-2', component: DashboardCompteSmComponent}
 
 
 
