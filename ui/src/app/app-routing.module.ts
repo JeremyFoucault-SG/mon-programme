@@ -28,6 +28,14 @@ import { HomeComponent } from './features/home-container/home.component';
 
 const routes: Routes = [
   {
+    path: 'choose',
+    component: PopupMwComponent,
+    data: {
+      isChoose: true,
+      imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
+    }
+  },
+  {
     path: 'men',
     component: PopupMwComponent,
     data: {
@@ -52,11 +60,11 @@ const routes: Routes = [
     }
   },
   {
-    path: 'choose',
-    component: PopupMwComponent,
+    path: 'accueil',
+    component: HomeComponent,
     data: {
-      isChoose: true,
-      imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
+      title: 'Accueil',
+      isTransparent: true,
     }
   },
   { path: 'newsletter', component: NewsletterComponent },
@@ -79,7 +87,6 @@ const routes: Routes = [
   { path: 'inscription-4', component: Inscription4Component },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'login', component: LoginModalComponent },
-  {path: 'home', component: HomeComponent},
 
 ];
 
