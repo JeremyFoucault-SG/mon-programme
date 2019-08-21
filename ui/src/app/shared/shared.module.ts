@@ -110,7 +110,8 @@ import { DashboardInfoPersoComponent } from './components/dashboard-sm/dashboard
     ListBlogComponent,
     FunctionSmComponent,
     FormSelectionProgrammeSmComponent,
-    ObjectifProgrammeComponent
+    ObjectifProgrammeComponent,
+    DashboardInfoPersoComponent
   ]
 })
 export class SharedModule { }
