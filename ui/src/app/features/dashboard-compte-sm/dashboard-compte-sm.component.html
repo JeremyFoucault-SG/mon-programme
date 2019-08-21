@@ -1,6 +1,5 @@
 <div class="dashboard w-full h-full">
-
-<!-- Menu du dashboard -->
+  <!-- Menu du dashboard -->
   <div class="flex justify-between absolute z-0 bg-black h-32 pt-3 w-full">
     <div class="flex ml-5">
       <div class="flex justify-center w-6 h-6 bg-white rounded-full ">
@@ -17,13 +16,14 @@
   </div>
 
   <div class="content p-8 absolute z-10">
-      <!-- Info personnelles -->
-      <div>
-            <app-dashboard-info-perso></app-dashboard-info-perso>
-      </div>
-      <!-- Info facturation -->
-      <app-dashboard-info-facturation></app-dashboard-info-facturation>
 
+    <!-- Info personnelles -->
+    <app-dashboard-info-perso></app-dashboard-info-perso>
+
+    <!-- Info facturation -->
+    <app-dashboard-info-facturation></app-dashboard-info-facturation>
+
+    <!-- Paiement -->
+    <app-dashboard-paiement></app-dashboard-paiement>
   </div>
-
 </div>
