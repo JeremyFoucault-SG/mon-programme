@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacebookModule } from 'ngx-facebook';
 import { StatsComponent } from './stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
+import { InfosComponent } from './infos/infos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ChartsModule } from 'ng2-charts';
     NutritionComponent,
     ArticleBlogComponent,
     NosProgrammesComponent,
-    StatsComponent
+    StatsComponent,
+    InfosComponent
 
   ],
   imports: [

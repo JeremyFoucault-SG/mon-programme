@@ -20,6 +20,7 @@ import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes
 import { LoginModalComponent } from './features/login-modal/login-modal.component';
 import { FooterInformationSmComponent } from './core/footer/footer-information-sm/footer-information-sm.component';
 import { StatsComponent } from './features/stats/stats.component';
+import { InfosComponent } from './features/infos/infos.component';
 
 
 
@@ -72,7 +73,7 @@ const routes: Routes = [
   { path: 'nos-programmes', component: NosProgrammesComponent },
   { path: 'login', component: LoginModalComponent },
   { path: 'mon-suivi', component: StatsComponent },
-
+  { path: 'infos', component: InfosComponent },
 
 ];
 
