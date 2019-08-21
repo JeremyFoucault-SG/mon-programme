@@ -10,7 +10,8 @@ import { Users } from 'src/app/shared/models/users.model';
 })
 export class InfosComponent implements OnInit {
 
-public users: Users;
+  public users: Users;
+  submitted = false;
 
   constructor() { }
 
@@ -21,8 +22,7 @@ public users: Users;
   onFormSubmit(userForm: NgForm) {
     console.log(userForm);
   }
-
-  submit() {
-  }
+  onSubmit() {
+    this.submitted = true; }
 
 }
