@@ -24,6 +24,7 @@ import { Inscription1Component } from './shared/components/login-sm/inscription1
 import { Inscription2Component } from './shared/components/login-sm/inscription2/inscription2.component';
 import { Inscription3Component } from './shared/components/login-sm/inscription3/inscription3.component';
 import { Inscription4Component } from './shared/components/login-sm/inscription4/inscription4.component';
+import { ConnexionComponent } from './shared/components/login-sm/connexion/connexion.component';
 
 
 
@@ -79,6 +80,7 @@ const routes: Routes = [
   {path: 'inscription-2', component: Inscription2Component},
   {path: 'inscription-3', component: Inscription3Component},
   {path: 'inscription-4', component: Inscription4Component},
+  {path: 'connexion', component: ConnexionComponent},
 
 ];
 

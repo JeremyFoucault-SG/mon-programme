@@ -40,6 +40,7 @@ import { Inscription1Component } from './components/login-sm/inscription1/inscri
 import { Inscription2Component } from './components/login-sm/inscription2/inscription2.component';
 import { Inscription3Component } from './components/login-sm/inscription3/inscription3.component';
 import { Inscription4Component } from './components/login-sm/inscription4/inscription4.component';
+import { ConnexionComponent } from './components/login-sm/connexion/connexion.component';
 
 
 
@@ -76,7 +77,8 @@ import { Inscription4Component } from './components/login-sm/inscription4/inscri
     Inscription1Component,
     Inscription2Component,
     Inscription3Component,
-    Inscription4Component
+    Inscription4Component,
+    ConnexionComponent
   ],
   imports: [
     CommonModule,

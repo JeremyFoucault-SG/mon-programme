@@ -1,5 +1,6 @@
+
 .login {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-image: url("https://zupimages.net/up/19/34/bsm3.png");
     background-size: cover;
@@ -33,16 +34,6 @@
     margin-top: 20%;
     margin-bottom: 15%;
     font-family: Avenir;
-  }
-  .profil{
-    width: 35%;
-  }
-  a{
-    margin-top: 22%;
-  }
-  .fa{
-    color: green;
-  
   }
   h1 {
     font-size: 29px;
@@ -89,6 +80,39 @@
     margin-bottom: 2%;
   }
   .validation {
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.54);
+    background-image: linear-gradient(98deg, #e2a3a3, #cc6666);
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    color: #ffffff;
+  }
+  .connexion {
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.54);
+    background-color: #ffffff;
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    color: #cc6666;
+  }
+  .forget{
+    margin-bottom: 5vh;
+    font-family: Avenir;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: oblique;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+  .inscription {
+      margin-top: 10vh;
     border-radius: 5px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.54);
     background-image: linear-gradient(98deg, #e2a3a3, #cc6666);
