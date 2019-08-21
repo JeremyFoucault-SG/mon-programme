@@ -42,6 +42,7 @@ import { Inscription3Component } from './components/login-sm/inscription3/inscri
 import { Inscription4Component } from './components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './components/login-sm/connexion/connexion.component';
 import { DashboardInfoPersoComponent } from './components/dashboard-sm/dashboard-info-perso/dashboard-info-perso.component';
+import { DashboardInfoFacturationComponent } from './components/dashboard-sm/dashboard-info-facturation/dashboard-info-facturation.component';
 
 
 
@@ -80,7 +81,8 @@ import { DashboardInfoPersoComponent } from './components/dashboard-sm/dashboard
     Inscription3Component,
     Inscription4Component,
     ConnexionComponent,
-    DashboardInfoPersoComponent
+    DashboardInfoPersoComponent,
+    DashboardInfoFacturationComponent
   ],
   imports: [
     CommonModule,
@@ -111,7 +113,8 @@ import { DashboardInfoPersoComponent } from './components/dashboard-sm/dashboard
     FunctionSmComponent,
     FormSelectionProgrammeSmComponent,
     ObjectifProgrammeComponent,
-    DashboardInfoPersoComponent
+    DashboardInfoPersoComponent,
+    DashboardInfoFacturationComponent
   ]
 })
 export class SharedModule { }
