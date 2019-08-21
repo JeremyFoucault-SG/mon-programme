@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class SlideShowHomeComponent implements OnInit {
 
-  constructor(private _location: Location,) { }
+  constructor(private location: Location, ) { }
 
   @Input()
   public selected: ProgramDetail;
@@ -21,19 +21,19 @@ export class SlideShowHomeComponent implements OnInit {
   public infos: ProgramDetail[];
 
   @Output()
-  selectChange : EventEmitter<any>= new EventEmitter();
+  selectChange: EventEmitter<any> = new EventEmitter();
 
 
   ngOnInit() {
   }
 
   onChange(programDetail: ProgramDetail, index) {
-this.selected = programDetail;
-this.selectChange.emit(this.selected[index + 1 ]);
+    this.selected = programDetail;
+    this.selectChange.emit(this.selected[index + 1]);
   }
 
   backClick() {
-    this._location.back();
+    this.location.back();
   }
 
 

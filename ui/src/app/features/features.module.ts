@@ -34,8 +34,6 @@ import { FacebookModule } from 'ngx-facebook';
   exports: [
     LoginModalComponent
   ],
-
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  ]
 })
 export class FeaturesModule { }

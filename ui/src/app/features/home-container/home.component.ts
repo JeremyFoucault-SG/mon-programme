@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProgramsList, ProgramDetail} from '../../shared/models/programs-infos';
-import { NosProgrammeHomeComponent } from '../../shared/components/nos-programme-home/nos-programme-home.component'
+import { NosProgrammeHomeComponent } from '../../shared/components/nos-programme-home/nos-programme-home.component';
 
 @Component({
   selector: 'app-home',
