@@ -8,7 +8,6 @@ import { NgForm, Validators } from '@angular/forms';
   styleUrls: ['./infos.component.css']
 })
 export class InfosComponent implements OnInit {
-  
 
   constructor() { }
 
