@@ -8,6 +8,9 @@ import { FormGroup } from '@angular/forms';
 })
 export class DashboardPaiementComponent implements OnInit {
 
+  /**
+   * liason formulaire payment
+   */
   @Input()
   public formPaiement: FormGroup;
 

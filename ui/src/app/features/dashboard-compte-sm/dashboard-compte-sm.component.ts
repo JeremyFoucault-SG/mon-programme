@@ -11,6 +11,7 @@ export class DashboardCompteSmComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder) { }
 
   myForm = this.fb.group({
+
     infos: this.fb.group({
       name: ['', Validators.required],
       prenom: ['', Validators.required],
@@ -21,16 +22,18 @@ export class DashboardCompteSmComponent implements OnInit {
       pseudo: ['', Validators.required],
       objectif: ['', Validators.required]
     }),
+
     facturation: this.fb.group({
       address: ['', Validators.required],
       ville: ['', Validators.required],
       cp: ['', Validators.required],
     }),
+
     paiement: this.fb.group({
       iban: ['', Validators.required],
       rib: ['', Validators.required],
     })
-  })
+  });
 
   ngOnInit() {
   }

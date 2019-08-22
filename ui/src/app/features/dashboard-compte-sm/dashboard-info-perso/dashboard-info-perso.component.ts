@@ -6,7 +6,10 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./dashboard-info-perso.component.css']
 })
 export class DashboardInfoPersoComponent implements OnInit {
-  
+
+  /**
+   * liason formulaire personels payment
+   */
   @Input()
   public formInfo: FormGroup;
 

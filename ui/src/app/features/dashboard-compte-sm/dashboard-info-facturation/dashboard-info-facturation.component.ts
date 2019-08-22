@@ -7,8 +7,12 @@ import { FormGroup } from '@angular/forms';
 })
 export class DashboardInfoFacturationComponent implements OnInit {
 
+  /**
+   * liason formulaire facturation
+   */
   @Input()
   public formFacturation: FormGroup;
+
   constructor() { }
 
   ngOnInit() {
