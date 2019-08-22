@@ -1,4 +1,4 @@
-<div class="content w-full mt-5 mb-5 bg-white">
+<div class="content w-full mt-5 mb-5 bg-white" [formGroup]="formInfo">
   <div class="p-3">
     <h1 class="uppercase">
       Mes Infos Personnelles
@@ -28,11 +28,11 @@
       </div>
       <div class="mt-3 mb-3">
         <label>Age</label>
-        <input class="w-full" type="email" formControlName="number" />
+        <input class="w-full" type="email" formControlName="age" />
       </div>
       <div class="mt-3 mb-3">
         <label>Pseudo</label>
-        <input class="w-full" type="email" formControlName="text" />
+        <input class="w-full" type="email" formControlName="pseudo" />
       </div>
       <div class="mt-3 mb-3">
         <label>Objectif</label>

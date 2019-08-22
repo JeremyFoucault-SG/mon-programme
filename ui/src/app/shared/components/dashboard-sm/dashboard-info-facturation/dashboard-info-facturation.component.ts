@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-dashboard-info-facturation',
   templateUrl: './dashboard-info-facturation.component.html',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardInfoFacturationComponent implements OnInit {
 
+  @Input()
+  public formFacturation: FormGroup;
   constructor() { }
 
   ngOnInit() {
