@@ -42,6 +42,7 @@ import { Inscription3Component } from './components/login-sm/inscription3/inscri
 import { Inscription4Component } from './components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './components/login-sm/connexion/connexion.component';
 import { DashboardInfoPersoComponent } from './components/dashboard-sm/dashboard-info-perso/dashboard-info-perso.component';
+// tslint:disable-next-line: max-line-length
 import { DashboardInfoFacturationComponent } from './components/dashboard-sm/dashboard-info-facturation/dashboard-info-facturation.component';
 import { DashboardPaiementComponent } from './components/dashboard-sm/dashboard-paiement/dashboard-paiement.component';
 import { DashboardHistoriqueComponent } from './components/dashboard-sm/dashboard-historique/dashboard-historique.component';
