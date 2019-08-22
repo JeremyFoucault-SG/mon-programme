@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Validators } from '@angular/forms';
 import { User } from 'src/app/shared/models/user.model';
-
+import { Programmes } from 'src/app/shared/models/programmes.model';
 
 @Component({
   selector: 'app-infos',
@@ -10,7 +10,7 @@ import { User } from 'src/app/shared/models/user.model';
 })
 export class InfosComponent implements OnInit {
 
-
+  programmes: Programmes;
   model: User = new User();
 
   constructor() { }
@@ -18,8 +18,12 @@ export class InfosComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
-    console.log(NgForm);
+
+  onSubmit(myForm) {
+    if (myForm.form.valid) {
+      alert('Form submitted sucessfully');
+
+    }
   }
 
 }
