@@ -46,6 +46,9 @@ import { DashboardInfoPersoComponent } from './components/dashboard-sm/dashboard
 import { DashboardInfoFacturationComponent } from './components/dashboard-sm/dashboard-info-facturation/dashboard-info-facturation.component';
 import { DashboardPaiementComponent } from './components/dashboard-sm/dashboard-paiement/dashboard-paiement.component';
 import { DashboardHistoriqueComponent } from './components/dashboard-sm/dashboard-historique/dashboard-historique.component';
+import { NosProgrammeHomeComponent } from './components/nos-programme-home/nos-programme-home.component';
+import { SlideShowHomeComponent } from './components/slide-show-home/slide-show-home.component';
+import { VideoHomeComponent } from './components/video-home/video-home.component';
 
 
 
@@ -87,7 +90,10 @@ import { DashboardHistoriqueComponent } from './components/dashboard-sm/dashboar
     DashboardInfoPersoComponent,
     DashboardInfoFacturationComponent,
     DashboardPaiementComponent,
-    DashboardHistoriqueComponent
+    DashboardHistoriqueComponent,
+    NosProgrammeHomeComponent,
+    SlideShowHomeComponent,
+    VideoHomeComponent
   ],
   imports: [
     CommonModule,
@@ -121,7 +127,10 @@ import { DashboardHistoriqueComponent } from './components/dashboard-sm/dashboar
     DashboardInfoPersoComponent,
     DashboardInfoFacturationComponent,
     DashboardPaiementComponent,
-    DashboardHistoriqueComponent
+    DashboardHistoriqueComponent,
+    NosProgrammeHomeComponent,
+    SlideShowHomeComponent,
+    VideoHomeComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,47 @@
+.line{
+    height: 8px;
+    background-color: #cc6666;
+}
+
+/* .line2{
+    height: 2%;
+    width: 2.5%;
+    background-color: #cc6666;
+} */
+
+
+
+ .texte {
+    display: flex;
+    opacity: 0.7;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 3;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #c1d0dc;
+    z-index: 2;
+} 
+
+.titre{
+    -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.98;
+    letter-spacing: 2px;
+    text-align: left;
+    color: #b2c6d6;
+}
+
+.lists {
+    top: 20%;
+    position: absolute;
+    z-index: 2;
+}

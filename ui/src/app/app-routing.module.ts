@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
-import { HomeComponent } from './features/home/home.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
 import { CardNosProgrammesComponent } from './shared/components/card-nos-programmes/card-nos-programmes.component';
 import { NutritionComponent } from './features/nutrition/nutrition.component';
@@ -30,8 +29,17 @@ import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashb
 
 
 
+import { HomeComponent } from './features/home-container/home.component';
 
 const routes: Routes = [
+  {
+    path: 'choose',
+    component: PopupMwComponent,
+    data: {
+      isChoose: true,
+      imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
+    }
+  },
   {
     path: 'men',
     component: PopupMwComponent,
@@ -57,11 +65,11 @@ const routes: Routes = [
     }
   },
   {
-    path: 'choose',
-    component: PopupMwComponent,
+    path: 'accueil',
+    component: HomeComponent,
     data: {
-      isChoose: true,
-      imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
+      title: 'Accueil',
+      isTransparent: true,
     }
   },
   { path: 'newsletter', component: NewsletterComponent },
@@ -70,23 +78,21 @@ const routes: Routes = [
   { path: 'select', component: FormSelectionProgrammeComponent },
   { path: 'func', component: FunctionSmComponent },
   { path: 'foot', component: FooterSmComponent },
-  { path: 'objectif', component: MenuNosProgrammeComponent},
+  { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
   { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
   { path: 'footer-sm', component: FooterInformationSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
-  {path: 'login-sm', component: LoginAccueilComponent},
-  {path: 'inscription-1', component: Inscription1Component},
-  {path: 'inscription-2', component: Inscription2Component},
-  {path: 'inscription-3', component: Inscription3Component},
-  {path: 'inscription-4', component: Inscription4Component},
-  {path: 'connexion', component: ConnexionComponent},
+  { path: 'login-sm', component: LoginAccueilComponent },
+  { path: 'inscription-1', component: Inscription1Component },
+  { path: 'inscription-2', component: Inscription2Component },
+  { path: 'inscription-3', component: Inscription3Component },
+  { path: 'inscription-4', component: Inscription4Component },
+  { path: 'connexion', component: ConnexionComponent },
   { path: 'login', component: LoginModalComponent },
   {path: 'dashboard-2', component: DashboardCompteSmComponent}
-
-
 
 ];
 

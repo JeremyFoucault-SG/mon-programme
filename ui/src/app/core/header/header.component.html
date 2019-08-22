@@ -1,24 +1,137 @@
-<nav class="flex items-center justify-between flex-wrap bg-black p-6">
-  <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <img src="https://zupimages.net/up/19/31/f50q.png" alt="logo">
+<!-- Background navbar can be set to transparent or black -->
+<nav class="flex items-center justify-between flex-wrap p-4 w-full fixed z-20"
+  [ngClass]="isTransparent || isOpen  ? 'bg-transparent' : 'bg-gray-900'">
+
+  <!-- Mon programme logo (only desktop) -->
+  <div class="hidden lg:flex items-center mr-6">
+    <img src="https://zupimages.net/up/19/31/f50q.png" alt="logo">
   </div>
-  <div class="block lg:hidden">
-      <button
-          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
+
+  <!-- Buger menu (only on medium and smaller) -->
+  <div class="lg:hidden">
+    <i class="cursor-pointer text-white fa fa-2x" [ngClass]="isOpen ? 'fa-times' : 'fa-bars'" (click)="open()"></i>
+  </div>
+
+  <!-- Buger menu (only on medium and smaller) -->
+  <div class="lg:hidden">
+    <h3 class="text-white text-3xl font-semibold">{{title}}</h3>
+  </div>
+
+  <!-- Right block (only desktop) -->
+  <div class="flex items-center hidden lg:flex">
+
+    <!-- Show signin and signup button  -->
+    <div *ngIf="!isLogin" class="flex flex-row">
+      <app-login-modal></app-login-modal>
+      <button class="ml-4 bg-transparent text-white font-semibold py-2 px-4 border-4 border-white rounded-full">
+        Connexion
       </button>
+    </div>
+
+    <!-- Show user information  -->
+    <div *ngIf="isLogin" class="flex items-center">
+      <i class="cursor-pointer fa fa-shopping-basket fa-lg text-white mr-4"></i>
+      <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, <strong>Pierre</strong></h3>
+      <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="cursor-pointer h-16 w-16 ml-2">
+      <i class="cursor-pointer text-white fa fa-2x ml-4 mr-2" [ngClass]="isOpen ? 'fa-times' : 'fa-bars'" (click)="open()"></i>
+    </div>
   </div>
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <div class="text-sm lg:flex-grow">
-      </div>
-      <div>
-            <app-login-modal></app-login-modal>
-          <img src="https://zupimages.net/up/19/31/uz2b.png" alt="panier" class="inline-block lg:mt-0">
-          <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, Pierre</h3>
-          <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="profil inline-block lg:ml-5">
-      </div>
+
+  <!-- Search button (only on medium and smaller) -->
+  <div class="lg:hidden">
+    <i class="cursor-pointer text-white fa fa-search fa-2x"></i>
+  </div>
+
+  <!-- divider -->
+  <div class="w-full pt-4 border-b border-gray-800" [ngClass]="{'hidden': !isOpen}"></div>
+
+  <!-- Navigation menu -->
+  <div class="w-full text-lg flex flex-col pt-5" [ngClass]="{'hidden': !isOpen}">
+    <ul>
+      <li>
+        <div class="flex flex-row">
+          <a
+            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400">
+            Connexion
+          </a>
+
+          <a
+            class="ml-4 inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400">
+            Inscription
+          </a>
+        </div>
+      </li>
+
+      <!-- divider -->
+      <div class="w-full pt-5 border-b border-gray-800"></div>
+
+      <li class="py-2 pt-4">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/accueil']" routerLinkActive="active" (click)="open()" >
+          Accueil
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/nutrition']" routerLinkActive="active" (click)="open()">
+          Nutrition
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/sante']" routerLinkActive="active" (click)="open()">
+          Santé
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/pratique-sportive']" routerLinkActive="active" (click)="open()">
+          Pratique sportive
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/nos-programmes']" routerLinkActive="active" (click)="open()">
+          Nos programmes
+        </a>
+      </li>
+
+      <!-- divider -->
+      <div class="w-full pt-4 border-b border-gray-800"></div>
+
+      <li class="py-2 pt-4">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte']" routerLinkActive="active" (click)="open()">
+          Mon compte
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/infos']" routerLinkActive="active" (click)="open()">
+          Mes infos
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/favoris']" routerLinkActive="active" (click)="open()">
+          Mes favoris
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/suivis']" routerLinkActive="active" (click)="open()">
+          Mon suivis
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/panier']" routerLinkActive="active" (click)="open()">
+          Mon Panier
+        </a>
+      </li>
+
+      <!-- divider -->
+      <div class="w-full pt-4 border-b border-gray-800"></div>
+
+      <li class="py-4">
+        <div>
+          <a href="#"
+            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400">Deconnexion</a>
+        </div>
+      </li>
+    </ul>
   </div>
 </nav>
+
+<!-- Overlay when menu is open -->
+<div class="menu-overlay fixed inset-0 z-10 bg-gray-900 opacity-75" [ngClass]="{'hidden': !isOpen}"></div>

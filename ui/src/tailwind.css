@@ -1,116 +1,194 @@
 @tailwind base;
-
-
 @tailwind components;
-
 @tailwind utilities;
-
 /* .icon-footer {
   @apply h-16 w-16 flex items-center justify-center text-gray-500 text-lg border-solid rounded-full border-gray-500 border
 }
  */
 
- html, body {
-   height: 100%;
-   margin: 0;
-   padding: 0;
- }
-
- .btn {
-    @apply rounded-full;
-    width: 170px;
-    height: 45px;
- }
-
-
-.btn-blog{
-    @apply bg-transparent border-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@responsive{
-    .fs-1{
-        font-size: 80px;
-    }
-
+.btn {
+  @apply rounded-full;
+  width: 170px;
+  height: 45px;
 }
-.fs-2{
+
+.btn-blog {
+  @apply bg-transparent border-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5;
+}
+
+@responsive {
+  .fs-1 {
+    font-size: 80px;
+  }
+  .fs-1 {
+    font-size: 80px;
+  }
+  .fs-2 {
     font-size: 60px;
-}
-.fs-3{
+  }
+  .fs-3 {
     font-size: 40px;
-}
-.fs-4{
+  }
+  .fs-4 {
     font-size: 30px;
-}
-.fs-5{
+  }
+  .fs-5 {
     font-size: 26px;
-}
-.fs-6{
+  }
+  .fs-6 {
     font-size: 24px;
-}
-.fs-7{
+  }
+  .fs-7 {
     font-size: 20px;
-}
-.fs-8{
+  }
+  .fs-8 {
     font-size: 18px;
 }
 .fs-9{
     font-size: 10px;
 }
 
-.ml-90{
+
+
+  .ml-90 {
     margin-left: 90%;
   }
-
-.p-1-1 {
-  padding: 0.1rem;
-
-}
-.bg-objectif-brown{
+  .p-1-1 {
+    padding: 0.1rem;
+  }
+  .bg-objectif-brown {
     background-color: #b13b2c;
-}
-.bg-objectif-black{
+  }
+  .bg-objectif-black {
     background-color: #29282d;
-}
-.bg-img{
+  }
+  .bg-img {
     background-image: url('https://zupimages.net/up/19/31/elei.png');
     background-position: center;
     background-repeat: no-repeat;
-}
-.bg-yellow{
-    background-color:  #fcdd77;
-}
-.text-grey{
+  }
+  .bg-yellow {
+    background-color: #fcdd77;
+  }
+  .text-grey {
     color: #a0a0a0;
-}
-.woman{
+  }
+  .woman {
     color: #cc6666;
-}
-.bg-woman{
+  }
+  .bg-woman {
     background-color: #cc6666;
-}
-@responsive{
-    .img-blog-right{
-        border-bottom-right-radius: 15% 80%;
-        border-top-right-radius: 15% 80%;
-        border-bottom-left-radius: 0% 0%;
+  }
+  @responsive {
+    .img-blog-right {
+      border-bottom-right-radius: 15% 80%;
+      border-top-right-radius: 15% 80%;
+      border-bottom-left-radius: 0% 0%;
     }
-    .margin-left-blog{
-        margin-left: 90%;
+    .margin-left-blog {
+      margin-left: 90%;
     }
-
-    .photo-blog-ecran{
-        min-height: 500px;
-        max-height: 500px;
+    .photo-blog-ecran {
+      min-height: 500px;
+      max-height: 500px;
     }
-    .photo-blog-mobile{
-        min-height: 300px;
-        max-height: 300px;
+    .photo-blog-mobile {
+      min-height: 300px;
+      max-height: 300px;
     }
-}
-@responsive{
-    .img-blog-bottom{
-        border-bottom-right-radius: 80% 7%;
-        border-bottom-left-radius: 80% 7%;
+  }
+  @responsive {
+    .img-blog-bottom {
+      border-bottom-right-radius: 80% 7%;
+      border-bottom-left-radius: 80% 7%;
     }
+  }
+  .fs-7 {
+    font-size: 20px;
+  }
+  .fs-8 {
+    font-size: 18px;
+  }
+  @responsive {
+    /* .line {
+        width: 3%;
+        background-color: #fcdd77;
+        height: 1.5%;
+        z-index: 1;
+        position: absolute;
+        top: 35%;
+    } */
+    .titre-home {
+      width: 405px;
+      height: 48px;
+      -webkit-backdrop-filter: blur(32px);
+      backdrop-filter: blur(32px);
+      font-family: Lato;
+      font-size: 40px;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.98;
+      letter-spacing: 2px;
+      text-align: left;
+      color: #b2c6d6;
+      z-index: 1;
+      position: absolute;
+      top: 30%;
+      margin-left: 5%
+    }
+    .soustitre-home {
+      width: 250px;
+      height: 183px;
+      opacity: 0.7;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 3;
+      letter-spacing: 0.9px;
+      text-align: left;
+      color: #c1d0dc;
+      cursor: pointer;
+    }
+    .groupe-soustitre {
+      top: 45%;
+      z-index: 1;
+      position: absolute;
+      margin-left: 5%;
+    }
+    .icone-home {
+      color: #fcdd77;
+      cursor: pointer;
+    }
+    .goupe-iconehome {
+      top: 90%;
+      z-index: 1;
+      position: absolute;
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+    .video {
+      top: 50%;
+      z-index: 1;
+      position: absolute;
+      display: flex;
+    }
+    .yellow {
+      background-color: #fcdd77;
+      margin-left: 40%;
+      top: 70%;
+      position: absolute;
+      z-index: 1;
+      width: 60%;
+      height: 30%;
+    }
+  }
 }
