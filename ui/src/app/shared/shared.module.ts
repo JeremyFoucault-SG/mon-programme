@@ -44,6 +44,7 @@ import { ConnexionComponent } from './components/login-sm/connexion/connexion.co
 import { DashboardInfoPersoComponent } from './components/dashboard-sm/dashboard-info-perso/dashboard-info-perso.component';
 import { DashboardInfoFacturationComponent } from './components/dashboard-sm/dashboard-info-facturation/dashboard-info-facturation.component';
 import { DashboardPaiementComponent } from './components/dashboard-sm/dashboard-paiement/dashboard-paiement.component';
+import { DashboardHistoriqueComponent } from './components/dashboard-sm/dashboard-historique/dashboard-historique.component';
 
 
 
@@ -84,7 +85,8 @@ import { DashboardPaiementComponent } from './components/dashboard-sm/dashboard-
     ConnexionComponent,
     DashboardInfoPersoComponent,
     DashboardInfoFacturationComponent,
-    DashboardPaiementComponent
+    DashboardPaiementComponent,
+    DashboardHistoriqueComponent
   ],
   imports: [
     CommonModule,
@@ -117,7 +119,8 @@ import { DashboardPaiementComponent } from './components/dashboard-sm/dashboard-
     ObjectifProgrammeComponent,
     DashboardInfoPersoComponent,
     DashboardInfoFacturationComponent,
-    DashboardPaiementComponent
+    DashboardPaiementComponent,
+    DashboardHistoriqueComponent
   ]
 })
 export class SharedModule { }
