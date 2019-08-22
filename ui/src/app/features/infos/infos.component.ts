@@ -17,7 +17,7 @@ export class InfosComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   onSubmit() {
     console.log(NgForm);
   }
