@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, Validators } from '@angular/forms';
-import { Users } from 'src/app/shared/models/users.model';
+import { User } from 'src/app/shared/models/user.model';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { Users } from 'src/app/shared/models/users.model';
 export class InfosComponent implements OnInit {
 
 
-  model: Users = new Users();
+  model: User = new User();
 
   constructor() { }
 
