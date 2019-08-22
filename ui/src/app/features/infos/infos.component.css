@@ -66,3 +66,16 @@
     background-color: #ffffff;
     border: none;
 }
+
+
+.menu{
+    display: flex;
+    justify-content: center;
+border: none;
+}
+
+.onglet:hover {
+    border-radius: 19px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #cc6666;
+}

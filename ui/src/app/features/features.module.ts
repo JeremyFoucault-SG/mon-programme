@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home-container/home.component';
 import { PopupAccueilComponent } from './popup-accueil/popup-accueil.component';
 import { PopupMwComponent } from './popup-mw/popup-mw.component';
 import { RouterModule } from '@angular/router';
@@ -14,6 +14,7 @@ import { FacebookModule } from 'ngx-facebook';
 import { StatsComponent } from './stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
 import { InfosComponent } from './infos/infos.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +41,6 @@ import { InfosComponent } from './infos/infos.component';
   exports: [
     LoginModalComponent
   ],
-
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeaturesModule { }

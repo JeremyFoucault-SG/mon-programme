@@ -15,17 +15,9 @@ import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 
 
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     CoreModule,

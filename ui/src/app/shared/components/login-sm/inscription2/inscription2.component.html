@@ -1,0 +1,49 @@
+<div class="login">
+  <div class="return flex justify-center items-center">
+    <img [routerLink]="['/inscription-1']" src="https://zupimages.net/up/19/34/n48y.png" alt="arrow" />
+  </div>
+  <div class="text-center etapes">
+    <h1>Inscription</h1>
+    <p>2 étapes sur 4</p>
+  </div>
+  <div class="fex justify-center p-8">
+  <form [formGroup]="myForm" (ngSubmit)="submit()" class="flex-col text-center ">
+    <div class="form-group">
+      <input
+        class="form-control w-full"
+        placeholder="Email"
+        type="email"
+        formControlName="email"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control w-full"
+        placeholder="Mot de passe"
+        type="password"
+        formControlName="password"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control w-full"
+        placeholder="Confimation"
+        type="password"
+        formControlName="confirmation"
+      />
+    </div>
+    <input
+      [ngClass]="{ 'opacity-50': !myForm.valid }"
+      type="submit"
+      class="btn validation w-full"
+    />
+  </form>
+  </div>
+
+  <div class="flex justify-center pb-10 pt-10">
+    <div class="ellipse"></div>
+    <div class="ellipse-current"></div>
+    <div class="ellipse"></div>
+    <div class="ellipse"></div>
+  </div>
+</div>

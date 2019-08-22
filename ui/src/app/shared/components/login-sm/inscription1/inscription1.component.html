@@ -1,0 +1,56 @@
+<div class="login">
+  <div class="return flex justify-center items-center">
+    <img
+      [routerLink]="['/login-sm']"
+      src="https://zupimages.net/up/19/34/n48y.png"
+      alt="arrow"
+    />
+  </div>
+  <div class="text-center etapes">
+    <h1>Inscription</h1>
+    <p>1 étapes sur 4</p>
+  </div>
+  <div class="fex justify-center p-8">
+    <form
+      [formGroup]="myForm"
+      (ngSubmit)="submit()"
+      class="flex-col text-center"
+    >
+      <div class="form-group">
+        <input
+          class="form-control w-full"
+          placeholder="Nom"
+          type="text"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          class="form-control w-full"
+          placeholder="Prénom"
+          type="text"
+          formControlName="prenom"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          class="form-control w-full"
+          placeholder="Age"
+          type="text"
+          formControlName="age"
+        />
+      </div>
+      <input
+        [ngClass]="{ 'opacity-50': !myForm.valid }"
+        type="submit"
+        class="btn validation"
+      />
+    </form>
+  </div>
+  <div class="flex justify-center pb-10 pt-10">
+    <div class="ellipse-current"></div>
+    <div class="ellipse"></div>
+    <div class="ellipse"></div>
+    <div class="ellipse"></div>
+  </div>
+</div>

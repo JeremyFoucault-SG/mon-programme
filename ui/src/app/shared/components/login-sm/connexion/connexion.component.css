@@ -1,0 +1,124 @@
+
+.login {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://zupimages.net/up/19/34/bsm3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    box-shadow: inset 2000px 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+  .return {
+    border-radius: 100%;
+    width: 47px;
+    height: 47px;
+    background-color: white;
+    box-shadow: 0 6px 17px 0 rgba(204, 102, 102, 0.49);
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  i {
+    color: #cc6666;
+  }
+  .home {
+    justify-content: center;
+    display: flex;
+    margin-top: 25%;
+    margin-left: 25%;
+    width: 22.6px;
+    height: 21.1px;
+    object-fit: contain;
+  }
+  .etapes {
+    color: white;
+    margin-top: 20%;
+    margin-bottom: 15%;
+    font-family: Avenir;
+  }
+  h1 {
+    font-size: 29px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 22px;
+    font-weight: 400;
+  }
+  input {
+    height: 66px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    margin-bottom: 13px;
+    padding-left: 10%;
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    color: #cc6666;
+  }
+  .ellipse-current {
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.54);
+    border: solid 1px #cc6666;
+    background-color: #cc6666;
+    border-radius: 50%;
+    margin: 2%;
+  }
+  .ellipse {
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 2%;
+  }
+  button {
+    width: 295px;
+    height: 50px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .validation {
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.54);
+    background-image: linear-gradient(98deg, #e2a3a3, #cc6666);
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    color: #ffffff;
+  }
+  .connexion {
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.54);
+    background-color: #ffffff;
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    color: #cc6666;
+  }
+  .forget{
+    margin-bottom: 5vh;
+    font-family: Avenir;
+    font-size: 13px;
+    font-weight: 500;
+    font-style: oblique;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+  }
+  .inscription {
+      margin-top: 10vh;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.54);
+    background-image: linear-gradient(98deg, #e2a3a3, #cc6666);
+    font-family: Avenir;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    color: #ffffff;
+  }
