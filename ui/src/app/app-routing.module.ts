@@ -18,6 +18,8 @@ import { DetailProgrammeComponent } from './shared/components/detail-programme/d
 import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes.component';
 import { LoginModalComponent } from './features/login-modal/login-modal.component';
 import { FooterInformationSmComponent } from './core/footer/footer-information-sm/footer-information-sm.component';
+import { StatsComponent } from './features/stats/stats.component';
+import { InfosComponent } from './features/infos/infos.component';
 import { LoginAccueilComponent } from './shared/components/login-sm/login-accueil/login-accueil.component';
 import { Inscription1Component } from './shared/components/login-sm/inscription1/inscription1.component';
 import { Inscription2Component } from './shared/components/login-sm/inscription2/inscription2.component';
@@ -92,6 +94,8 @@ const routes: Routes = [
   { path: 'inscription-4', component: Inscription4Component },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'login', component: LoginModalComponent },
+  { path: 'mon-suivi', component: StatsComponent },
+  { path: 'infos', component: InfosComponent },
   {path: 'dashboard-2', component: DashboardCompteSmComponent}
 
 ];
