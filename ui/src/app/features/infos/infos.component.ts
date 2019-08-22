@@ -10,19 +10,16 @@ import { Users } from 'src/app/shared/models/users.model';
 })
 export class InfosComponent implements OnInit {
 
-  public users: Users;
-  submitted = false;
+
+  model: Users = new Users();
 
   constructor() { }
 
   ngOnInit() {
   }
-
-
-  onFormSubmit(userForm: NgForm) {
-    console.log(userForm);
-  }
+  
   onSubmit() {
-    this.submitted = true; }
+    console.log(NgForm);
+  }
 
 }

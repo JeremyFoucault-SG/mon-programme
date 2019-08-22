@@ -3,7 +3,7 @@
             aria-hidden="true"></i>PAGE D'ACCUEIL</a>
 </div>
 <div class="flex flex-row flex-wrap flex-grow mt-6 ml-6 bloc">
-    <form class="w-2/4 max-w-lg" #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <form class="w-2/4 max-w-lg" #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
         <div class="form-group">
             <p class="title mb-6">Mes informations personnelles</p>
             <div class="flex flex-wrap -mx-3">
@@ -13,14 +13,13 @@
                         Prénom
                     </label>
                     <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white form-control"
-                         type="text" placeholder="Sophie" [(ngModel)]="users.firstname"
-                        name="firstname" required #firstname="ngModel">
-                        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger">
-                                <div *ngIf="lastname.errors.required">
-                                    Le nom est requis.
-                                </div>
-                            </div>
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        type="text" placeholder="Sophie" [(ngModel)]="model.firstname" name="firstname"
+                        #firstname="ngModel" required firstname>
+                    <div *ngIf="firstname.errors && myForm.submitted">
+                        <span *ngIf="firstname.errors.required" style="color: red">Le champs prénom est invalide</span>
+                        <span *ngIf="firstname.errors.firstname" style="color: red">Le prénom doit être valide</span>
+                    </div>
 
                 </div>
                 <div class="w-full md:w-1/2 px-3">
@@ -29,14 +28,14 @@
                         Nom
                     </label>
                     <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control"
-                        id="grid-last-name" type="text" placeholder="Smith" [(ngModel)]="users.lastname" name="lastname"
-                        required #lastname="ngModel">
-                        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger">
-                                <div *ngIf="lastname.errors.required">
-                                    Le nom est requis.
-                                </div>
-                            </div>
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-last-name" type="text" placeholder="Smith" [(ngModel)]="model.lastname" name="lastname"
+                        required lastname #lastname="ngModel">
+                        <div *ngIf="lastname.errors && myForm.submitted">
+                            <span *ngIf="lastname.errors.required" style="color: red">Le champs nom est invalide</span>
+                            <span *ngIf="lastname.errors.lastname" style="color: red">Le nom doit être valide</span>
+                        </div>
+    
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3">
@@ -46,14 +45,14 @@
                         Email
                     </label>
                     <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control"
-                        id="grid-email" type="email" placeholder="sophie37@gmail.com" [(ngModel)]="users.email"
-                        name="email" required #email="ngModel">
-                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                                <div *ngIf="email.errors.required">
-                                    L'email est requis.
-                                </div>
-                            </div>
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-email" type="email" placeholder="sophie37@gmail.com" [(ngModel)]="model.email"
+                        name="email" required email #email="ngModel">
+                        <div *ngIf="email.errors && myForm.submitted">
+                            <span *ngIf="email.errors.required" style="color: red">Le champs email est invalide</span>
+                            <span *ngIf="email.errors.email" style="color: red">L'email doit être valide</span>
+                        </div>
+    
                 </div>
                 <div class="w-full px-3">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 red"
@@ -61,14 +60,14 @@
                         Mot de passe
                     </label>
                     <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control"
-                        id="grid-password" type="password" placeholder="******************" [(ngModel)]="users.password"
-                        name="password" required #password="ngModel">
-                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-                                <div *ngIf="password.errors.required">
-                                    Le mot de passe est requis.
-                                </div>
-                            </div>
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-password" type="password" placeholder="******************" [(ngModel)]="model.password"
+                        name="password" required password #password="ngModel">
+                        <div *ngIf="password.errors && myForm.submitted">
+                            <span *ngIf="password.errors.required" style="color: red">Le champs mot de passe est invalide</span>
+                            <span *ngIf="password.errors.password" style="color: red">Le mot de passe doit être valide</span>
+                        </div>
+    
                 </div>
                 <div class="w-full px-3">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 red"
@@ -87,14 +86,14 @@
                         Age
                     </label>
                     <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control"
-                        id="grid-age" type="text" placeholder="26 ans" [(ngModel)]="users.age" name="age" required
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-age" type="text" placeholder="26 ans" [(ngModel)]="model.age" name="age" required age
                         #age="ngModel">
-                        <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
-                                <div *ngIf="age.errors.required">
-                                    L'age est requis.
-                                </div>
-                            </div>
+                        <div *ngIf="age.errors && myForm.submitted">
+                            <span *ngIf="age.errors.required" style="color: red">Le champs age est invalide</span>
+                            <span *ngIf="age.errors.age" style="color: red">L'age doit être valide</span>
+                        </div>
+    
                 </div>
 
             </div>
@@ -105,14 +104,14 @@
                         Pseudo
                     </label>
                     <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 form-control"
-                        id="grid-pseudo" type="text" placeholder="sophie37" [(ngModel)]="users.pseudo" name="pseudo"
-                        required #pseudo="ngModel">
-                        <div *ngIf="pseudo.invalid && (pseudo.dirty || pseudo.touched)" class="alert alert-danger">
-                                <div *ngIf="pseudo.errors.required">
-                                    Le pseudo est requis.
-                                </div>
-                            </div>
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-pseudo" type="text" placeholder="sophie37" [(ngModel)]="model.pseudo" name="pseudo"
+                        required pseudo #pseudo="ngModel">
+                        <div *ngIf="pseudo.errors && myForm.submitted">
+                            <span *ngIf="pseudo.errors.required" style="color: red">Le champs pseudo est invalide</span>
+                            <span *ngIf="pseudo.errors.pseudo" style="color: red">Le pseudo doit être valide</span>
+                        </div>
+    
                 </div>
 
             </div>
@@ -122,20 +121,25 @@
                 </label>
                 <select
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="Objectif" type="text" [(ngModel)]="users.objectif" name="objectif" required #objectif="ngModel">
+                    id="Objectif" type="text" [(ngModel)]="model.objectif" name="objectif" required objectif #objectif="ngModel">
                     <option value="">--Choisis ton objectif--</option>
                     <option value="masse">Prise de masse</option>
                     <option value="seche">Séche</option>
                     <option value="entretien">Entretien</option>
                     <option value="perte">Perte de poids</option>
                 </select>
+                <div *ngIf="objectif.errors && myForm.submitted">
+                    <span *ngIf="objectif.errors.required" style="color: red">Le champs objectif est invalide</span>
+                    <span *ngIf="objectif.errors.objectif" style="color: red">L'objectif doit être valide</span>
+                </div>
+
             </div>
         </div>
     </form>
 
 
 
-    <form class="w-2/4 max-w-lg  mt-2 " #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <form class="w-2/4 max-w-lg  mt-2 " #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
         <p class="title mb-6">Informations de facturation</p>
         <div class="flex flex-wrap -mx-3 ">
             <div class="w-full  px-3  md:mb-0">
@@ -145,8 +149,13 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="grid-first-street" type="text" [(ngModel)]="users.adresse" name="adresse" required
+                    id="grid-first-street" type="text" [(ngModel)]="model.adresse" name="adresse" required adresse
                     #adresse="ngModel">
+                    <div *ngIf="adresse.errors && myForm.submitted">
+                        <span *ngIf="adresse.errors.required" style="color: red">Le champs adresse est invalide</span>
+                        <span *ngIf="adresse.errors.adresse" style="color: red">L'adresse doit être valide</span>
+                    </div>
+
             </div>
             <div class="w-full md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 red"
@@ -155,7 +164,12 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-last-ville" type="text" [(ngModel)]="users.city" name="city" required #city="ngModel">
+                    id="grid-last-ville" type="text" [(ngModel)]="model.city" name="city" required city #city="ngModel">
+                    <div *ngIf="city.errors && myForm.submitted">
+                        <span *ngIf="city.errors.required" style="color: red">Le champs ville est invalide</span>
+                        <span *ngIf="city.errors.city" style="color: red">La ville doit être valide</span>
+                    </div>
+
             </div>
             <div class="w-full md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 red"
@@ -164,7 +178,12 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-last-cp" type="text" [(ngModel)]="users.cp" name="cp" required #cp="ngModel">
+                    id="grid-last-cp" type="text" [(ngModel)]="model.cp" name="cp" required cp #cp="ngModel">
+                    <div *ngIf="cp.errors && myForm.submitted">
+                        <span *ngIf="cp.errors.required" style="color: red">Le champs code postal est invalide</span>
+                        <span *ngIf="cp.errors.cp" style="color: red">Le code postal doit être valide</span>
+                    </div>
+
             </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6 mt-6">
@@ -175,7 +194,12 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-iban" type="text" [(ngModel)]="users.iban" name="iban" required #iban="ngModel">
+                    id="grid-iban" type="text" [(ngModel)]="model.iban" name="iban" required iban #iban="ngModel">
+                    <div *ngIf="iban.errors && myForm.submitted">
+                        <span *ngIf="iban.errors.required" style="color: red">Le champs Iban est invalide</span>
+                        <span *ngIf="iban.errors.iban" style="color: red">L'Iban doit être valide</span>
+                    </div>
+
             </div>
             <div class="w-full px-3">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 red" for="grid-rib">
@@ -183,12 +207,42 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-rib" type="text" [(ngModel)]="users.rib" name="rib" required #rib="ngModel">
+                    id="grid-rib" type="text" [(ngModel)]="model.rib" name="rib" required rib #rib="ngModel">
+                    <div *ngIf="rib.errors && myForm.submitted">
+                        <span *ngIf="rib.errors.required" style="color: red">Le champs rib est invalide</span>
+                        <span *ngIf="rib.errors.rib" style="color: red">Le rib doit être valide</span>
+                    </div>
+
             </div>
         </div>
         <div class="w-full px-3 text-right mt-6">
-                <button type="submit" class="px-4 py-2 valid" [disabled]="!userForm.form.valid">METTRE A JOUR<i
-                        class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button>
-            </div>
+            <button type="submit" class="px-4 py-2 valid">METTRE
+                A JOUR<i class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button>
+        </div>
     </form>
 </div>
+
+
+<div class="max-w-sm w-full lg:max-w-full lg:flex flex historique mt-6 title">
+    <p>Historique des commandes</p>
+</div>
+<div class="max-w-sm w-full lg:max-w-full lg:flex flex historique mt-6">
+    <div class=" p-4 flex flex-col justify-between leading-normal decoration">
+      <div class="mb-8">
+        <div class="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
+        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+      </div>
+      <div class="flex items-center">
+          <div class="date">
+              <p>12/07</p>
+          </div>
+          <div class="line ml-6 mr-6">
+          </div>
+        <div class="text-sm">
+          <p class="text-gray-900 leading-none">Programme 1</p>
+          <p class="text-gray-600 text-sm">Intro du programme</p>
+          <p class="text-black-500 leading-none font-bold text-xs">Prise de masse</p>
+        </div>
+      </div>
+    </div>
+  </div>
