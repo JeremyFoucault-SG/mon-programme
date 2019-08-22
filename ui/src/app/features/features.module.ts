@@ -11,6 +11,7 @@ import { ArticleBlogComponent } from './article-blog/article-blog.component';
 import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacebookModule } from 'ngx-facebook';
+import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-compte-sm.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { FacebookModule } from 'ngx-facebook';
     NutritionComponent,
     ArticleBlogComponent,
     NosProgrammesComponent,
+    DashboardCompteSmComponent,
   ],
   imports: [
     RouterModule,

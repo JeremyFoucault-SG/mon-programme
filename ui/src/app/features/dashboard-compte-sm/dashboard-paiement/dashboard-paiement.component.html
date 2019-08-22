@@ -1,0 +1,22 @@
+<!-- Show form average payment -->
+<div class="content w-full mt-5 mb-5 bg-white" [formGroup]="formPaiement">
+  <div class="p-3">
+
+    <!-- Title -->
+    <h1 class="uppercase">
+      Moyen de paiement
+    </h1>
+
+    <!-- Iban user -->
+    <div class="mt-3 mb-3">
+      <label>IBAN</label>
+      <input class="w-full" type="text" formControlName="iban" />
+    </div>
+
+    <!-- RIB user -->
+    <div class="mt-3 mb-3">
+      <label>RIB</label>
+      <input class="w-full" type="text" formControlName="rib" />
+    </div>
+  </div>
+</div>

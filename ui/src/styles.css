@@ -7613,6 +7613,10 @@ html, body {
   font-size: 18px;
 }
 
+.fs-9{
+  font-size: 10px;
+}
+
 .ml-90 {
   margin-left: 90%;
 }
@@ -14731,6 +14735,10 @@ html, body {
 
   .sm\:fs-8 {
     font-size: 18px;
+  }
+
+  .sm\:fs-9{
+    font-size: 10px;
   }
 
   .sm\:ml-90 {
@@ -21854,6 +21862,10 @@ html, body {
     font-size: 18px;
   }
 
+  .md\:fs-9{
+    font-size: 10px;
+  }
+
   .md\:ml-90 {
     margin-left: 90%;
   }
@@ -28975,6 +28987,10 @@ html, body {
     font-size: 18px;
   }
 
+  .lg\:fs-9{
+    font-size: 10px;
+  }
+
   .lg\:ml-90 {
     margin-left: 90%;
   }
@@ -36094,6 +36110,10 @@ html, body {
 
   .xl\:fs-8 {
     font-size: 18px;
+  }
+
+  .xl\:fs-9{
+    font-size: 10px;
   }
 
   .xl\:ml-90 {
