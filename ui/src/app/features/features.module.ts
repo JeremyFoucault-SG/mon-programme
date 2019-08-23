@@ -26,9 +26,8 @@ import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-comp
     NutritionComponent,
     ArticleBlogComponent,
     NosProgrammesComponent,
-    cmp-stats
     StatsComponent,
-    InfosComponent
+    InfosComponent,
     DashboardCompteSmComponent,
 
   ],
