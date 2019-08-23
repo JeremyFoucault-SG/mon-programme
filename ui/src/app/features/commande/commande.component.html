@@ -3,13 +3,14 @@
       aria-hidden="true"></i>PAGE D'ACCUEIL</a>
 </div>
 
-<div class="mt-6" *ngIf="!isHidden">
 
-  <p class="mb-6 title">Information de commande</p>
+
+<div class="mt-6" *ngIf="!isHidden">
+  <p class="mb-6 text-2xl text-black-500">Information de commande</p>
   <form class="w-full max-w-lg mt-6">
     <div class="flex flex-wrap -mx-3 ">
       <div class="w-full md:w-1/2 px-3  md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-first-name">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-first-name">
           PRENOM
         </label>
         <input
@@ -17,7 +18,7 @@
           id="grid-first-name" type="text">
       </div>
       <div class="w-full md:w-1/2 px-3">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-last-name">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-last-name">
           NOM
         </label>
         <input
@@ -27,7 +28,7 @@
     </div>
     <div class="flex flex-wrap -mx-3 ">
       <div class="w-full px-3">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-email">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-email">
           EMAIL
         </label>
         <input
@@ -37,7 +38,7 @@
     </div>
     <div class="flex flex-wrap -mx-3 ">
       <div class="w-full px-3">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-password">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-password">
           Password
         </label>
         <input
@@ -47,7 +48,7 @@
     </div>
     <div class="flex flex-wrap -mx-3 ">
       <div class="w-full md:w-1/2 px-3  md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-state">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-state">
           PAYS
         </label>
         <div class="relative">
@@ -65,7 +66,7 @@
         </div>
       </div>
       <div class="w-full md:w-1/2 px-3  md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-first-name">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-first-name">
           VILLE
         </label>
         <input
@@ -75,7 +76,7 @@
     </div>
     <div class="flex flex-wrap -mx-3 ">
       <div class="w-full md:w-1/2 px-3  md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-first-name">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-first-name">
           CODE POSTAL
         </label>
         <input
@@ -83,7 +84,7 @@
           id="grid-first-name" type="text">
       </div>
       <div class="w-full md:w-1/2 px-3  md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-first-name">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-first-name">
           TELEPHONE
         </label>
         <input
@@ -91,25 +92,23 @@
           id="grid-first-name" type="text">
       </div>
     </div>
-    <a class="label"><i class="fa fa-long-arrow-left mr-2" aria-hidden="true"></i>Retour au programme</a>
+    <a class="text-gray-700 text-xs font-bold mb-2 opacity-25"><i class="fa fa-long-arrow-left mr-2" aria-hidden="true"></i>Retour au programme</a>
     <div class="w-full px-3 text-right mt-6">
-      <button type="submit" ngHide="isHidden" (click)="nextPage()" class="px-4 py-2 valid">PAIEMENT<i
-          class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button>
+      <button type="submit" ngHide="isHidden" (click)="nextPage()" class="px-4 py-2 bg-woman font-lato">PAIEMENT<i
+          class="fa fa-long-arrow-right ml-4 " aria-hidden="true"></i></button>
     </div>
   </form>
-
 </div>
 
 
 
 
 <div class="mt-6" *ngIf="isHidden">
-
-  <p class="mb-6 title">Paiement</p>
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-6">
+  <p class="mb-6 text-2xl text-black-500">Paiement</p>
+  <div class="max-w-sm w-full lg:max-w-full mb-6">
     <div
       class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-      <label class="block text-gray-500 font-bold">
+      <label class="block uppercase tracking-wide text-black-700 text-xs font-bold mb-2">
         <input class="mr-2 leading-tight" type="checkbox">
         <span class="text-black">
           Carte de crédit
@@ -122,7 +121,7 @@
         <form class="w-full max-w-lg">
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
-              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 label" for="grid-carte">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-carte">
                 NUMERO DE CARTE
               </label>
               <input
@@ -132,7 +131,7 @@
           </div>
           <div class="flex flex-wrap -mx-3 mb-2">
             <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-              <label class="block uppercase label tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-name">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-name">
                 NOM
               </label>
               <input
@@ -140,7 +139,7 @@
                 id="grid-name" type="text">
             </div>
             <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-              <label class="block uppercase label tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-name">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-name">
                 DATE
               </label>
               <input
@@ -148,7 +147,7 @@
                 id="grid-name" type="text" placeholder="MM/YY">
             </div>
             <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-              <label class="block uppercase label tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-name">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-name">
                 CCV CODE
               </label>
               <input
@@ -157,17 +156,16 @@
             </div>
           </div>
         </form>
-
       </div>
     </div>
   </div>
 
 
 
-  <div class="max-w-sm w-full lg:max-w-full lg:flex mb-6">
+  <div class="max-w-sm w-full lg:max-w-full mb-6">
     <div
       class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-      <label class="block text-gray-500 font-bold">
+      <label class="block uppercase tracking-wide text-black-700 text-xs font-bold mb-2">
         <input class="mr-2 leading-tight" type="checkbox">
         <span class="text-black">
           PayPal
@@ -178,8 +176,9 @@
       </label>
     </div>
   </div>
-
-
-
+  <div class="w-full px-3 text-right mt-6"> 
+    <button type="submit" ngHide="isHidden" class="px-4 py-2 bg-woman font-lato">PAIEMENT<i
+        class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button>
+  </div>
 
 </div>
