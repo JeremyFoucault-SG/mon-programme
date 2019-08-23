@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home-container/home.component';
+import { HomeComponent } from './home/home.component';
 import { PopupAccueilComponent } from './popup-accueil/popup-accueil.component';
 import { PopupMwComponent } from './popup-mw/popup-mw.component';
 import { RouterModule } from '@angular/router';
@@ -12,6 +12,9 @@ import { NosProgrammesComponent } from './nos-programmes/nos-programmes.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacebookModule } from 'ngx-facebook';
 import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-compte-sm.component';
+import { HomeHeaderMenuComponent } from './home/header/menu/home-header-menu.component';
+import { HomeHeaderComponent } from './home/header/home-header.component';
+import { HomeHeaderVideoComponent } from './home/header/video/home-header-video.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-comp
     ArticleBlogComponent,
     NosProgrammesComponent,
     DashboardCompteSmComponent,
+    HomeHeaderMenuComponent,
+    HomeHeaderComponent,
+    HomeHeaderVideoComponent
   ],
   imports: [
     RouterModule,

@@ -1,15 +1,17 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-import { ProgramDetail, ProgramsList } from '../../models/programs-infos';
+import { ProgramDetail, ProgramsList } from '../../../shared/models/programs-infos';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-slide-show-home',
-  templateUrl: './slide-show-home.component.html',
-  styleUrls: ['./slide-show-home.component.css']
+  selector: 'app-home-header',
+  templateUrl: './home-header.component.html',
+  styleUrls: ['./home-header.component.css']
 })
-export class SlideShowHomeComponent implements OnInit {
+export class HomeHeaderComponent implements OnInit {
 
   constructor(private location: Location, ) { }
+
+  public programsInfos: ProgramDetail[] = ProgramsList.infos;
 
   @Input()
   public selected: ProgramDetail;

@@ -29,7 +29,7 @@ import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashb
 
 
 
-import { HomeComponent } from './features/home-container/home.component';
+import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
   {
