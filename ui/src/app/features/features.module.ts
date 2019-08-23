@@ -15,6 +15,7 @@ import { StatsComponent } from './stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
 import { InfosComponent } from './infos/infos.component';
 import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-compte-sm.component';
+import { CommandeComponent } from './commande/commande.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-comp
     StatsComponent,
     InfosComponent,
     DashboardCompteSmComponent,
+    CommandeComponent
 
   ],
   imports: [

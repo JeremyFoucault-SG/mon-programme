@@ -27,11 +27,9 @@ import { Inscription3Component } from './shared/components/login-sm/inscription3
 import { Inscription4Component } from './shared/components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './shared/components/login-sm/connexion/connexion.component';
 import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashboard-compte-sm.component';
-
-
-
-
 import { HomeComponent } from './features/home-container/home.component';
+import { CommandeComponent } from './features/commande/commande.component';
+
 
 const routes: Routes = [
   {
@@ -96,7 +94,8 @@ const routes: Routes = [
   { path: 'login', component: LoginModalComponent },
   { path: 'mon-suivi', component: StatsComponent },
   { path: 'infos', component: InfosComponent },
-  {path: 'dashboard-2', component: DashboardCompteSmComponent}
+  {path: 'dashboard-2', component: DashboardCompteSmComponent},
+  { path: 'commande', component: CommandeComponent }
 
 ];
 
