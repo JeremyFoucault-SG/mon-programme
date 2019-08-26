@@ -42,6 +42,6 @@ import { HomeHeaderVideoComponent } from './home/header/video/home-header-video.
   exports: [
     LoginModalComponent
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeaturesModule { }
