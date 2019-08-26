@@ -1,28 +1,28 @@
-<div class="h-screen relative bg-cover"
+<div class="h-screen relative bg-cover pt-20"
   [ngStyle]="{'background-image': 'url(https://zupimages.net/up/19/31/hmhq.png)'}">
 
-  <app-home-header-menu class="absolute mt-64" [selected]="selected" [programInfos]="programsInfos"
+  <app-home-header-menu class="hidden lg:block absolute mt-64" [selected]="selected" [programInfos]="programsInfos"
     (selectChange)="onChange($event)"></app-home-header-menu>
 
-  <div class="absolute bottom-0 right-0 flex flex-col w-full">
+  <div class="lg:absolute lg:bottom-0 lg:right-0 flex flex-col w-full pt-64 lg:pt-0">
 
-    <div class="absolute -mt-32 w-full flex flex-row">
+    <div class="lg:absolute lg:-mt-32 w-full flex flex-col lg:flex-row">
 
-      <div class="flex flex-row items-center justify-center w-3/12">
+      <div class="hidden lg:flex flex-row items-center justify-center w-3/12">
         <i class="cursor-pointer text-white opacity-50 fa fa-angle-left fa-5x mr-24" aria-hidden="true"></i>
         <i class="cursor-pointer text-white fa fa-angle-right fa-5x hover:text-red-400" aria-hidden="true"></i>
       </div>
 
-      <div class="bg-black p-2 py-8 w-5/12">
+      <div class="bg-black p-2 lg:py-8 w-10/12 lg:w-5/12 whitespace-no-wrap">
         <p class="text-white text-3xl font-bold text-left px-4 py-2 m-2 tracking-widest">PROGRAMMES SPORTIFS<br>POUR DEBUTANT
         </p>
       </div>
 
-      <app-home-header-video class="absolute right-0 -mt-48" [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)"></app-home-header-video>
+      <app-home-header-video class="block lg:absolute lg:right-0 lg:-mt-48 ml-12 -mt-4" [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)"></app-home-header-video>
 
     </div>
 
-    <div class="flex flex-row justify-end">
+    <div class="hidden lg:flex flex-row justify-end">
       <div class="w-2/3 flex flex-row justify-between bg-red-400 px-8 pl-32 pb-16 pt-24">
         <ul>
           <li class="text-white font-semibold tracking-wide">ATTEINDRE</li>
@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <div class="absolute left-0 bottom-0 w-1/12 flex pb-16 flex-row justify-between">
+  <div class="hidden lg:block absolute left-0 bottom-0 w-2/12 flex pb-16 flex-row justify-between">
     <a href="https://facebook.fr"><i class="cursor-pointer text-red-400 ml-8 fa fa-share-alt fa-2x" aria-hidden="true"></i></a>
     <a href="https://facebook.fr"><i class="cursor-pointer text-red-400 ml-10 fa fa-facebook fa-2x" aria-hidden="true"></i></a>
     <a href="https://facebook.fr"><i class="cursor-pointer text-red-400 ml-10 fa fa-instagram fa-2x" aria-hidden="true"></i></a>
