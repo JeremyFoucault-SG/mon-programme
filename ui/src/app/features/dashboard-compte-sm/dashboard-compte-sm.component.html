@@ -1,9 +1,7 @@
 <!-- width and height content information personnelles -->
 <div class="dashboard w-full h-full pt-16">
-
   <!-- Menu dashboard -->
   <div class="flex justify-between absolute z-10 bg-black h-32 pt-3 w-full">
-
     <!-- Show button navigation right -->
     <div class="flex ml-5">
       <div class="flex justify-center w-6 h-6 bg-white rounded-full ">
@@ -12,7 +10,7 @@
       <h3 class="uppercase text-white ml-3 fs-9 pt-1">Resume du compte</h3>
     </div>
 
-     <!-- Show button navigation left -->
+    <!-- Show button navigation left -->
     <div class="flex mr-5">
       <h3 class="uppercase text-white mr-3 fs-9 pt-1">Suivi</h3>
       <div class="flex justify-center w-6 h-6 bg-white rounded-full">
@@ -23,29 +21,39 @@
 
   <!-- Show content page information -->
   <div class="content p-2 pt-10 absolute z-20 ">
-
     <!-- Show formulaire user -->
     <form [formGroup]="myForm" (ngSubmit)="submit()">
-
       <!-- Info personnelles -->
-      <app-dashboard-info-perso [formInfo]="myForm.get('infos')"></app-dashboard-info-perso>
+      <app-dashboard-info-perso
+        [formInfo]="myForm.get('infos')"
+      ></app-dashboard-info-perso>
 
       <!-- Info facturation -->
-      <app-dashboard-info-facturation [formFacturation]="myForm.get('facturation')"></app-dashboard-info-facturation>
+      <app-dashboard-info-facturation
+        [formFacturation]="myForm.get('facturation')"
+      ></app-dashboard-info-facturation>
 
       <!-- Paiement -->
-      <app-dashboard-paiement [formPaiement]="myForm.get('paiement')"></app-dashboard-paiement>
+      <app-dashboard-paiement
+        [formPaiement]="myForm.get('paiement')"
+      ></app-dashboard-paiement>
 
       <!-- Show button submit -->
-      <button type="submit" class="bg-woman text-white font-bold py-2 px-4 border border-blue-700 rounded uppercase">
-                Mettre a jour
-            <i class="fa fa-arrow-right text-white self-center ml-5" aria-hidden="true"></i>
-          </button>
-
+      <div class="text-center">
+        <button
+          type="submit"
+          class="bg-woman text-white font-bold py-2 px-4 border border-blue-700 rounded uppercase"
+        >
+          Mettre a jour
+          <i
+            class="fa fa-arrow-right text-white self-center ml-5"
+            aria-hidden="true"
+          ></i>
+        </button>
+      </div>
     </form>
 
     <!-- Historique -->
     <app-dashboard-historique></app-dashboard-historique>
-
   </div>
 </div>
