@@ -98,6 +98,7 @@ const routes: Routes = [
   { path: 'login', component: LoginModalComponent },
   { path: 'mon-suivi', component: StatsComponent },
   { path: 'infos', component: InfosComponent },
+  {path: 'dashboard-1', component: DashboardCompteSmComponent},
   {path: 'dashboard-2', component: DashboardInfoSmComponent},
   {path: 'dashboard-3', component: DashboardSuiviComponent}
 

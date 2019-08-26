@@ -16,11 +16,12 @@ import { ChartsModule } from 'ng2-charts';
 import { InfosComponent } from './infos/infos.component';
 import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-compte-sm.component';
 import { DashboardSuiviComponent } from './dashboard-suivi/dashboard-suivi.component';
-import { DashboardStatistiqueComponent } from './dashboard-suivi/dashboard-statistique/dashboard-statistique.component';
+import { DashboardStatistiqueComponent } from './dashboard-statistique/dashboard-statistique.component';
 import { DashboardInfoCorporellesComponent } from './dashboard-suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
 import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progress-bar/dashboard-progress-bar.component';
 import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
 import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.component';
+import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/dashboard-avis.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.
     DashboardProgressBarComponent,
     DashboardGoalComponent,
     DashboardInfoSmComponent,
+    DashboardAvisComponent,
 
   ],
   imports: [

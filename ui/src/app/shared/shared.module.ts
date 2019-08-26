@@ -49,6 +49,7 @@ import { DashboardHistoriqueComponent } from '../features/dashboard-info-sm/dash
 import { NosProgrammeHomeComponent } from './components/nos-programme-home/nos-programme-home.component';
 import { SlideShowHomeComponent } from './components/slide-show-home/slide-show-home.component';
 import { VideoHomeComponent } from './components/video-home/video-home.component';
+import { TagComponent } from './components/tag/tag.component';
 
 
 
@@ -93,7 +94,8 @@ import { VideoHomeComponent } from './components/video-home/video-home.component
     DashboardHistoriqueComponent,
     NosProgrammeHomeComponent,
     SlideShowHomeComponent,
-    VideoHomeComponent
+    VideoHomeComponent,
+    TagComponent
   ],
   imports: [
     CommonModule,
@@ -130,7 +132,8 @@ import { VideoHomeComponent } from './components/video-home/video-home.component
     DashboardHistoriqueComponent,
     NosProgrammeHomeComponent,
     SlideShowHomeComponent,
-    VideoHomeComponent
+    VideoHomeComponent,
+    TagComponent
   ]
 })
 export class SharedModule { }
