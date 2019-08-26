@@ -1,0 +1,70 @@
+<div class="content w-full mt-5 mb-5 bg-white rounded">
+  <div class=" p-10">
+    <!-- Title -->
+    <h1 class="title-dashboard-sm">
+      Information corporelles
+    </h1>
+  </div>
+
+  <!-- form for infos corporelles -->
+  <form [formGroup]="myForm" (ngSubmit)="submit()">
+    <!-- Sexe user -->
+    <div class="flex justify-around uppercase mb-3 ">
+      <label>Sexe</label>
+      <input type="text" formControlName="sexe" placeholder="FEMME" />
+    </div>
+
+    <!-- border-bottom -->
+    <div class="flex justify-center">
+      <div class="border-b h-2 w-11/12"></div>
+    </div>
+
+    <!-- Taille user -->
+    <div class="flex justify-around uppercase mb-3 mt-3">
+      <label>Taille</label>
+      <input
+        type="text"
+        formControlName="taille"
+        placeholder="168"
+        class="w-1/4"
+      />
+      <p>KG</p>
+    </div>
+
+    <!-- border-bottom -->
+    <div class="flex justify-center">
+      <div class="border-b h-2 w-11/12"></div>
+    </div>
+
+    <!-- Poids user -->
+    <div class="flex justify-around uppercase pb-10 mt-3">
+      <label>Poids</label>
+      <input
+        type="text"
+        formControlName="poids"
+        placeholder="52"
+        class="w-1/4"
+      />
+      <p>CM</p>
+    </div>
+
+    <!-- Show button submit -->
+    <div class="text-center pb-10">
+      <button
+        type="submit"
+        class="bg-woman text-white font-semibold py-2 px-2 border rounded uppercase text-xs"
+      >
+        Mettre a jour
+        <i
+          class="fa fa-arrow-right text-white self-center ml-5"
+          aria-hidden="true"
+        ></i>
+      </button>
+    </div>
+
+    <div class="text-center pb-5">
+        <h1 class="text-green-600 font-bold text-lg">Entre 18.5 et 25 </h1>
+        <p class="text-green-600">Corpulence normal</p>
+    </div>
+  </form>
+</div>
