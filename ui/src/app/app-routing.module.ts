@@ -7,7 +7,7 @@ import { CardNosProgrammesComponent } from './shared/components/card-nos-program
 import { NutritionComponent } from './features/nutrition/nutrition.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './shared/components/selection-programme/form-selection-programme/form-selection-programme.component';
-import { FunctionSmComponent } from './shared/components/form-function/function-sm/function-sm.component';
+import { FunctionComponent } from './shared/components/form-function/function/function.component';
 import { FooterSmComponent } from './core/footer/footer-sm/footer-sm.component';
 import { MenuNosProgrammeComponent } from './shared/components/menu-nos-programme/menu-nos-programme.component';
 // tslint:disable-next-line: max-line-length
@@ -27,16 +27,13 @@ import { Inscription3Component } from './shared/components/login-sm/inscription3
 import { Inscription4Component } from './shared/components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './shared/components/login-sm/connexion/connexion.component';
 import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashboard-compte-sm.component';
-
-
-
-
 import { HomeComponent } from './features/home-container/home.component';
+import { CommandeComponent } from './features/commande/commande.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
 
 const routes: Routes = [
   {
-    path: 'choose',
+    path: '',
     component: PopupMwComponent,
     data: {
       isChoose: true,
@@ -79,7 +76,7 @@ const routes: Routes = [
   { path: 'blog', component: ListBlogComponent },
   { path: 'nutrition', component: NutritionComponent },
   { path: 'select', component: FormSelectionProgrammeComponent },
-  { path: 'func', component: FunctionSmComponent },
+  { path: 'func', component: FunctionComponent },
   { path: 'foot', component: FooterSmComponent },
   { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
@@ -98,7 +95,8 @@ const routes: Routes = [
   { path: 'mon-suivi', component: StatsComponent },
   { path: 'infos', component: InfosComponent },
   {path: 'dashboard-2', component: DashboardCompteSmComponent},
-  {path: 'dashboard-3', component: DashboardSuiviComponent}
+  { path: 'commande', component: CommandeComponent },
+  {path: 'dashboard-3', component: DashboardSuiviComponent},
 
 ];
 
