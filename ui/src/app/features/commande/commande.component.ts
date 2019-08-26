@@ -21,5 +21,4 @@ export class CommandeComponent implements OnInit {
     this.isHidden = !this.isHidden;
   }
 
-
 }

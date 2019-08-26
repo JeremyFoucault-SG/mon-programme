@@ -9,3 +9,8 @@ td {
     margin-top: 5%;
 }
 
+
+a{
+    cursor: pointer;
+    text-decoration: underline;
+}

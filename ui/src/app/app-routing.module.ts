@@ -7,7 +7,7 @@ import { CardNosProgrammesComponent } from './shared/components/card-nos-program
 import { NutritionComponent } from './features/nutrition/nutrition.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './shared/components/selection-programme/form-selection-programme/form-selection-programme.component';
-import { FunctionSmComponent } from './shared/components/form-function/function-sm/function-sm.component';
+import { FunctionComponent } from './shared/components/form-function/function/function.component';
 import { FooterSmComponent } from './core/footer/footer-sm/footer-sm.component';
 import { MenuNosProgrammeComponent } from './shared/components/menu-nos-programme/menu-nos-programme.component';
 // tslint:disable-next-line: max-line-length
@@ -76,7 +76,7 @@ const routes: Routes = [
   { path: 'blog', component: ListBlogComponent },
   { path: 'nutrition', component: NutritionComponent },
   { path: 'select', component: FormSelectionProgrammeComponent },
-  { path: 'func', component: FunctionSmComponent },
+  { path: 'func', component: FunctionComponent },
   { path: 'foot', component: FooterSmComponent },
   { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
