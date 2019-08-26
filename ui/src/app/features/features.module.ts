@@ -17,10 +17,14 @@ import { InfosComponent } from './infos/infos.component';
 import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-compte-sm.component';
 import { CommandeComponent } from './commande/commande.component';
 import { DashboardSuiviComponent } from './dashboard-suivi/dashboard-suivi.component';
-import { DashboardStatistiqueComponent } from './dashboard-suivi/dashboard-statistique/dashboard-statistique.component';
+import { DashboardStatistiqueComponent } from './dashboard-statistique/dashboard-statistique.component';
 import { DashboardInfoCorporellesComponent } from './dashboard-suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
 import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progress-bar/dashboard-progress-bar.component';
 import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
+import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.component';
+import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/dashboard-avis.component';
+import { DashboardProgrammeComponent } from './dashboard-compte-sm/dashboard-programme/dashboard-programme.component';
+import { DashboardArticleComponent } from './dashboard-compte-sm/dashboard-article/dashboard-article.component';
 
 
 @NgModule({
@@ -41,6 +45,10 @@ import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboa
     DashboardInfoCorporellesComponent,
     DashboardProgressBarComponent,
     DashboardGoalComponent,
+    DashboardInfoSmComponent,
+    DashboardAvisComponent,
+    DashboardProgrammeComponent,
+    DashboardArticleComponent,
 
   ],
   imports: [

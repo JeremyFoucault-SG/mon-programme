@@ -30,6 +30,7 @@ import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashb
 import { HomeComponent } from './features/home-container/home.component';
 import { CommandeComponent } from './features/commande/commande.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
+import { DashboardInfoSmComponent } from './features/dashboard-info-sm/dashboard-info-sm.component';
 
 const routes: Routes = [
   {
