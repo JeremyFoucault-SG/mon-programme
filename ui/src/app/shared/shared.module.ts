@@ -46,6 +46,7 @@ import { DashboardInfoPersoComponent } from '../features/dashboard-compte-sm/das
 import { DashboardInfoFacturationComponent } from '../features/dashboard-compte-sm/dashboard-info-facturation/dashboard-info-facturation.component';
 import { DashboardPaiementComponent } from '../features/dashboard-compte-sm/dashboard-paiement/dashboard-paiement.component';
 import { DashboardHistoriqueComponent } from '../features/dashboard-compte-sm/dashboard-historique/dashboard-historique.component';
+import { TitleComponent } from './components/title/title.component';
 
 
 
@@ -88,6 +89,7 @@ import { DashboardHistoriqueComponent } from '../features/dashboard-compte-sm/da
     DashboardInfoFacturationComponent,
     DashboardPaiementComponent,
     DashboardHistoriqueComponent,
+    TitleComponent,
   ],
   imports: [
     CommonModule,
@@ -122,6 +124,7 @@ import { DashboardHistoriqueComponent } from '../features/dashboard-compte-sm/da
     DashboardInfoFacturationComponent,
     DashboardPaiementComponent,
     DashboardHistoriqueComponent,
+    TitleComponent,
   ]
 })
 export class SharedModule { }
