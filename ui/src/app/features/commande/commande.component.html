@@ -1,19 +1,26 @@
+<!-- Bouton pour retour à l'acceuil -->
 <div class="ml-5 mt-5 mb-6">
-  <a class="nav-link return text-black font-bold" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i class="fa fa-undo mr-2"
-      aria-hidden="true"></i>PAGE D'ACCUEIL</a>
+  <a class="nav-link return text-black font-bold" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i
+      class="fa fa-undo mr-2" aria-hidden="true"></i>PAGE D'ACCUEIL</a>
 </div>
 
 
 
+
+<!-- Premier formulaire pour information de commande, caché si deuxieme formulaire paiement actif -->
 <div class="mt-6 w-3/3 flex" *ngIf="!isHidden">
   <div>
   </div>
+
+  <!-- Rappel du composant function -->
   <div class="w-1/3 mr-16">
     <app-function></app-function>
   </div>
+
+  <!-- Début du premier formulaire -->
   <div class="w-1/3 ">
     <div class="mb-10">
-    <a>01 INFORMATION DE COMMANDE</a><a class="ml-10" ngHide="isHidden" (click)="nextPage()">02 PAIMENT</a></div>
+      <a>01 INFORMATION DE COMMANDE</a><a class="ml-10" ngHide="isHidden" (click)="nextPage()">02 PAIMENT</a></div>
     <p class="mb-6 text-2xl text-black-500">Information de commande</p>
     <form class="w-full max-w-lg mt-6">
       <div class="flex flex-wrap -mx-3 ">
@@ -113,189 +120,182 @@
             class="fa fa-long-arrow-right ml-4 " aria-hidden="true"></i></button>
       </div>
     </form>
+    <!-- Fin du premier formulaire -->
 
+    <!-- panier présent sur les 2 formulaires -->
   </div>
   <div class="w-1/3 bg-gray-500 opacity-50 ml-16 flex-col">
     <div class="ml-10">
-    <p class="text-black font-bold">
-      PANIER
-    </p>
-    <table>
-      <tr>
-        <td>
-          Programme 1<br>
-          Programme 2
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Code promo ? <i class="fa fa-arrow-down ml-6" aria-hidden="true"></i>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Total
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Livraison
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Total
-        </td>
-      </tr>
-    </table>
-  </div>
+      <p class="text-black font-bold">
+        PANIER
+      </p>
+      <table>
+        <tr>
+          <td>
+            Programme 1<br>
+            Programme 2
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Code promo ? <i class="fa fa-arrow-down ml-6" aria-hidden="true"></i>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Total
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Livraison
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Total
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Changement de formulaire aprés validation de la premiere etape (information de commande), apparition du deuxieme formulaire -->
 <div class="mt-6 w-3/3 flex" *ngIf="isHidden">
   <div>
   </div>
+  <!-- 
+  rappel du composant comment ca marche (function) -->
   <div class="w-1/3 mr-16">
     <app-function></app-function>
   </div>
+
+  <!-- Deuxieme formulaire paiement -->
   <div class="w-1/3">
     <div class="mb-10">
-    <a>01 INFORMATION DE COMMANDE</a><a class="ml-10">02 PAIMENT</a></div>
+      <a>01 INFORMATION DE COMMANDE</a><a class="ml-10">02 PAIMENT</a></div>
     <p class="mb-6 text-2xl text-black-500">Paiment</p>
     <form class="w-full mt-6">
-        <div class=" lg:max-w-full mb-6">
-          <div
-            class="border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-            <label class="block uppercase tracking-wide text-black-700 text-xs font-bold mb-2">
-              <input class="mr-2 leading-tight" type="radio">
-              <span class="text-black">
-                Carte de crédit
-              </span>
-              <div class="flex justify-end">
-                <img class="image" src="https://zupimages.net/up/19/34/d08m.png">
-              </div>
-            </label>
-            <div class="flex justify-center">
-              <form class="w-full">
-                <div class="flex flex-wrap -mx-3 mb-6">
-                  <div class="w-full px-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-                      for="grid-carte">
-                      NUMERO DE CARTE
-                    </label>
-                    <input
-                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-carte" type="text" placeholder="0000 0000 0000 0000">
-                  </div>
-                </div>
-                <div class="flex flex-wrap -mx-3 mb-2">
-                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-                      for="grid-name">
-                      NOM
-                    </label>
-                    <input
-                      class="appearance-none block w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-name" type="text">
-                  </div>
-                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-                      for="grid-name">
-                      DATE
-                    </label>
-                    <input
-                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-name" type="text" placeholder="MM/YY">
-                  </div>
-                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-                      for="grid-name">
-                      CCV CODE
-                    </label>
-                    <input
-                      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-name" type="text">
-                  </div>
-                </div>
-              </form>
+      <div class=" lg:max-w-full mb-6">
+
+        <!-- premiere option carte de crédit -->
+        <div
+          class="border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+          <label class="block uppercase tracking-wide text-black-700 text-xs font-bold mb-2">
+            <input class="mr-2 leading-tight" type="radio">
+            <span class="text-black">
+              Carte de crédit
+            </span>
+            <div class="flex justify-end">
+              <img class="image" src="https://zupimages.net/up/19/34/d08m.png">
             </div>
-          </div>
-        </div>
-      
-      
-      
-        <div class="lg:max-w-full mb-6">
-          <div
-            class="border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-            <label class="block uppercase tracking-wide text-black-700 text-xs font-bold mb-2">
-              <input class="mr-2 leading-tight" type="radio">
-              <span class="text-black">
-                PayPal
-              </span>
-              <div class="flex justify-end">
-                <img class="image" src="https://zupimages.net/up/19/34/fn9h.png">
+          </label>
+          <div class="flex justify-center">
+            <form class="w-full">
+              <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full px-3">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
+                    for="grid-carte">
+                    NUMERO DE CARTE
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-carte" type="text" placeholder="0000 0000 0000 0000">
+                </div>
               </div>
-            </label>
+              <div class="flex flex-wrap -mx-3 mb-2">
+                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
+                    for="grid-name">
+                    NOM
+                  </label>
+                  <input
+                    class="appearance-none block w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-name" type="text">
+                </div>
+                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
+                    for="grid-name">
+                    DATE
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-name" type="text" placeholder="MM/YY">
+                </div>
+                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
+                    for="grid-name">
+                    CCV CODE
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-name" type="text">
+                </div>
+              </div>
+            </form>
           </div>
         </div>
+      </div>
+
+      <!--  Deuxieme option paypal -->
+      <div class="lg:max-w-full mb-6">
+        <div
+          class="border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+          <label class="block uppercase tracking-wide text-black-700 text-xs font-bold mb-2">
+            <input class="mr-2 leading-tight" type="radio">
+            <span class="text-black">
+              PayPal
+            </span>
+            <div class="flex justify-end">
+              <img class="image" src="https://zupimages.net/up/19/34/fn9h.png">
+            </div>
+          </label>
+        </div>
+      </div>
     </form>
     <div class="w-2/4 px-3 mt-6">
       <button type="submit" ngHide="isHidden" class="px-4 py-2 bg-woman font-lato">CONFIRMER<i
           class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button>
     </div>
 
+
+    <!-- Panier rappelé sur les deux formulaires -->
   </div>
   <div class="w-1/3 bg-gray-500 opacity-50 ml-16 flex-col">
     <div class="ml-10">
-    <p class="text-black font-bold">
-      PANIER
-    </p>
-    <table>
-      <tr>
-        <td>
-          Programme 1<br>
-          Programme 2
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Code promo ? <i class="fa fa-arrow-down ml-6" aria-hidden="true"></i>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Total
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Livraison
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Total
-        </td>
-      </tr>
-    </table>
-  </div>
+      <p class="text-black font-bold">
+        PANIER
+      </p>
+      <table>
+        <tr>
+          <td>
+            Programme 1<br>
+            Programme 2
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Code promo ? <i class="fa fa-arrow-down ml-6" aria-hidden="true"></i>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Total
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Livraison
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Total
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
-
