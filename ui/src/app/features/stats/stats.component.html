@@ -89,7 +89,37 @@
                             %</div>
                     </div>
                 </div>
-                <a>
+
+                        <div class="w-full" *ngIf="isHidden">
+                            <p class="prog mb-1">Programme 1</p>
+                            <div class="shadow w-full bg-grey-light">
+                                <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 63%">
+                                    63 %</div>
+                            </div>
+                            <p class="mt-4 prog mb-1">Programme 1</p>
+                            <div class="shadow w-full bg-grey-light">
+                                <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 30%">
+                                    30 %</div>
+                            </div>
+                            <p class="mt-4 prog mb-1">Programme 1</p>
+                            <div class="shadow w-full bg-grey-light">
+                                <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 15%">
+                                    15 %</div>
+                            </div>
+                            <p class="mt-4 prog mb-1">Programme 1</p>
+                            <div class="shadow w-full bg-grey-light">
+                                <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 100%">
+                                    100 %</div>
+                            </div>
+                            <p class="mt-4 prog mb-1">Programme 1</p>
+                            <div class="shadow w-full bg-grey-light">
+                                <div class="bg-purpleprog text-xs leading-none py-1 text-center text-white" style="width: 9%">9
+                                    %</div>
+                            </div>
+                        </div>
+
+
+                <a (click)="nextPage()" ngHide="isHidden">
                     <p class="mt-6 text-right charger">CHARGER PLUS</p>
                 </a>
             </div>

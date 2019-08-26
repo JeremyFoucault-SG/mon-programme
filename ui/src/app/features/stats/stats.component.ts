@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
+import { User } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-stats',
@@ -7,6 +8,10 @@ import { ChartsModule } from 'ng2-charts';
   styleUrls: ['./stats.component.css']
 })
 export class StatsComponent implements OnInit {
+
+  inscription = false;
+  isHidden = false;
+  public user: User;
 
   constructor() { }
 
@@ -33,10 +38,10 @@ export class StatsComponent implements OnInit {
           color: 'transparent'
         }
       }],
-      xAxes : [{
-          ticks: {
-            fontColor: '#d28e62',
-          },
+      xAxes: [{
+        ticks: {
+          fontColor: '#d28e62',
+        },
         gridLines: {
           color: 'transparent',
         }
@@ -64,7 +69,10 @@ export class StatsComponent implements OnInit {
 
   }
 
-
+  nextPage() {
+    this.inscription = true;
+    this.isHidden = !this.isHidden;
+  }
 
 
 }

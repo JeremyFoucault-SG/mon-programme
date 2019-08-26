@@ -7694,6 +7694,10 @@ body {
   height: 45px;
 }
 
+.fs-8 {
+  font-size: 18px;
+}
+
 .fs-1 {
   font-size: 80px;
 }
@@ -7795,6 +7799,130 @@ body {
 .img-blog-bottom {
   border-bottom-right-radius: 80% 7%;
   border-bottom-left-radius: 80% 7%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  border-radius: 9999px;
+  width: 170px;
+  height: 45px;
+}
+
+.fs-1 {
+  font-size: 80px;
+}
+
+.fs-1 {
+  font-size: 80px;
+}
+
+.fs-1 {
+  font-size: 80px;
+}
+
+.fs-2 {
+  font-size: 60px;
+}
+
+.fs-3 {
+  font-size: 40px;
+}
+
+.fs-4 {
+  font-size: 30px;
+}
+
+.fs-5 {
+  font-size: 26px;
+}
+
+.fs-6 {
+  font-size: 24px;
+}
+
+.fs-7 {
+  font-size: 20px;
+}
+
+.fs-8 {
+  font-size: 18px;
+}
+
+.fs-9 {
+  font-size: 10px;
+}
+
+.ml-90 {
+  margin-left: 90%;
+}
+
+.p-1-1 {
+  padding: 0.1rem;
+}
+
+.bg-objectif-brown {
+  background-color: #b13b2c;
+}
+
+.bg-objectif-black {
+  background-color: #29282d;
+}
+
+.bg-img {
+  background-image: url('https://zupimages.net/up/19/31/elei.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-yellow {
+  background-color: #fcdd77;
+}
+
+.text-grey {
+  color: #a0a0a0;
+}
+
+.woman {
+  color: #cc6666;
+}
+
+.bg-woman {
+  background-color: #cc6666;
+}
+
+.img-blog-right {
+  border-bottom-right-radius: 15% 80%;
+  border-top-right-radius: 15% 80%;
+  border-bottom-left-radius: 0% 0%;
+}
+
+.margin-left-blog {
+  margin-left: 90%;
+}
+
+.photo-blog-ecran {
+  min-height: 500px;
+  max-height: 500px;
+}
+
+.photo-blog-mobile {
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.img-blog-bottom {
+  border-bottom-right-radius: 80% 7%;
+  border-bottom-left-radius: 80% 7%;
+}
+
+.fs-7 {
+  font-size: 20px;
+}
+
+.fs-8 {
+  font-size: 18px;
 }
 
 /* .line {
@@ -14872,6 +15000,113 @@ body {
     font-size: 10px;
   }
 
+  .sm\:img-blog-bottom {
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sm\:btn {
+    border-radius: 9999px;
+    width: 170px;
+    height: 45px;
+  }
+
+  .sm\:btn-blog {
+    background-color: transparent;
+    border-color: #ecc94b;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-width: 1px;
+    margin: 2rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .sm\:fs-1 {
+    font-size: 80px;
+  }
+
+  .sm\:fs-1 {
+    font-size: 80px;
+  }
+
+  .sm\:fs-2 {
+    font-size: 60px;
+  }
+
+  .sm\:fs-3 {
+    font-size: 40px;
+  }
+
+  .sm\:fs-4 {
+    font-size: 30px;
+  }
+
+  .sm\:fs-5 {
+    font-size: 26px;
+  }
+
+  .sm\:fs-6 {
+    font-size: 24px;
+  }
+
+  .sm\:fs-7 {
+    font-size: 20px;
+  }
+
+  .sm\:fs-8 {
+    font-size: 18px;
+  }
+
+  .sm\:fs-9 {
+    font-size: 10px;
+  }
+
+  .sm\:ml-90 {
+    margin-left: 90%;
+  }
+
+  .sm\:p-1-1 {
+    padding: 0.1rem;
+  }
+
+  .sm\:bg-objectif-brown {
+    background-color: #b13b2c;
+  }
+
+  .sm\:bg-objectif-black {
+    background-color: #29282d;
+  }
+
+  .sm\:bg-img {
+    background-image: url('https://zupimages.net/up/19/31/elei.png');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .sm\:bg-yellow {
+    background-color: #fcdd77;
+  }
+
+  .sm\:text-grey {
+    color: #a0a0a0;
+  }
+
+  .sm\:woman {
+    color: #cc6666;
+  }
+
+  .sm\:bg-woman {
+    background-color: #cc6666;
+  }
+
   .sm\:img-blog-right {
     border-bottom-right-radius: 15% 80%;
     border-top-right-radius: 15% 80%;
@@ -14895,6 +15130,14 @@ body {
   .sm\:img-blog-bottom {
     border-bottom-right-radius: 80% 7%;
     border-bottom-left-radius: 80% 7%;
+  }
+
+  .sm\:fs-7 {
+    font-size: 20px;
+  }
+
+  .sm\:fs-8 {
+    font-size: 18px;
   }
 
   /* .line {
@@ -14967,6 +15210,16 @@ body {
     z-index: 1;
     position: absolute;
     display: flex;
+  }
+
+  .sm\:yellow {
+    background-color: #fcdd77;
+    margin-left: 40%;
+    top: 70%;
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 30%;
   }
 
   .sm\:yellow {
@@ -21969,6 +22222,113 @@ body {
     font-size: 10px;
   }
 
+  .md\:img-blog-bottom {
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .md\:btn {
+    border-radius: 9999px;
+    width: 170px;
+    height: 45px;
+  }
+
+  .md\:btn-blog {
+    background-color: transparent;
+    border-color: #ecc94b;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-width: 1px;
+    margin: 2rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .md\:fs-1 {
+    font-size: 80px;
+  }
+
+  .md\:fs-1 {
+    font-size: 80px;
+  }
+
+  .md\:fs-2 {
+    font-size: 60px;
+  }
+
+  .md\:fs-3 {
+    font-size: 40px;
+  }
+
+  .md\:fs-4 {
+    font-size: 30px;
+  }
+
+  .md\:fs-5 {
+    font-size: 26px;
+  }
+
+  .md\:fs-6 {
+    font-size: 24px;
+  }
+
+  .md\:fs-7 {
+    font-size: 20px;
+  }
+
+  .md\:fs-8 {
+    font-size: 18px;
+  }
+
+  .md\:fs-9 {
+    font-size: 10px;
+  }
+
+  .md\:ml-90 {
+    margin-left: 90%;
+  }
+
+  .md\:p-1-1 {
+    padding: 0.1rem;
+  }
+
+  .md\:bg-objectif-brown {
+    background-color: #b13b2c;
+  }
+
+  .md\:bg-objectif-black {
+    background-color: #29282d;
+  }
+
+  .md\:bg-img {
+    background-image: url('https://zupimages.net/up/19/31/elei.png');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .md\:bg-yellow {
+    background-color: #fcdd77;
+  }
+
+  .md\:text-grey {
+    color: #a0a0a0;
+  }
+
+  .md\:woman {
+    color: #cc6666;
+  }
+
+  .md\:bg-woman {
+    background-color: #cc6666;
+  }
+
   .md\:img-blog-right {
     border-bottom-right-radius: 15% 80%;
     border-top-right-radius: 15% 80%;
@@ -21992,6 +22352,14 @@ body {
   .md\:img-blog-bottom {
     border-bottom-right-radius: 80% 7%;
     border-bottom-left-radius: 80% 7%;
+  }
+
+  .md\:fs-7 {
+    font-size: 20px;
+  }
+
+  .md\:fs-8 {
+    font-size: 18px;
   }
 
   /* .line {
@@ -22064,6 +22432,16 @@ body {
     z-index: 1;
     position: absolute;
     display: flex;
+  }
+
+  .md\:yellow {
+    background-color: #fcdd77;
+    margin-left: 40%;
+    top: 70%;
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 30%;
   }
 
   .md\:yellow {
@@ -29066,6 +29444,113 @@ body {
     font-size: 10px;
   }
 
+  .lg\:img-blog-bottom {
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .lg\:btn {
+    border-radius: 9999px;
+    width: 170px;
+    height: 45px;
+  }
+
+  .lg\:btn-blog {
+    background-color: transparent;
+    border-color: #ecc94b;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-width: 1px;
+    margin: 2rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .lg\:fs-1 {
+    font-size: 80px;
+  }
+
+  .lg\:fs-1 {
+    font-size: 80px;
+  }
+
+  .lg\:fs-2 {
+    font-size: 60px;
+  }
+
+  .lg\:fs-3 {
+    font-size: 40px;
+  }
+
+  .lg\:fs-4 {
+    font-size: 30px;
+  }
+
+  .lg\:fs-5 {
+    font-size: 26px;
+  }
+
+  .lg\:fs-6 {
+    font-size: 24px;
+  }
+
+  .lg\:fs-7 {
+    font-size: 20px;
+  }
+
+  .lg\:fs-8 {
+    font-size: 18px;
+  }
+
+  .lg\:fs-9 {
+    font-size: 10px;
+  }
+
+  .lg\:ml-90 {
+    margin-left: 90%;
+  }
+
+  .lg\:p-1-1 {
+    padding: 0.1rem;
+  }
+
+  .lg\:bg-objectif-brown {
+    background-color: #b13b2c;
+  }
+
+  .lg\:bg-objectif-black {
+    background-color: #29282d;
+  }
+
+  .lg\:bg-img {
+    background-image: url('https://zupimages.net/up/19/31/elei.png');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .lg\:bg-yellow {
+    background-color: #fcdd77;
+  }
+
+  .lg\:text-grey {
+    color: #a0a0a0;
+  }
+
+  .lg\:woman {
+    color: #cc6666;
+  }
+
+  .lg\:bg-woman {
+    background-color: #cc6666;
+  }
+
   .lg\:img-blog-right {
     border-bottom-right-radius: 15% 80%;
     border-top-right-radius: 15% 80%;
@@ -29089,6 +29574,14 @@ body {
   .lg\:img-blog-bottom {
     border-bottom-right-radius: 80% 7%;
     border-bottom-left-radius: 80% 7%;
+  }
+
+  .lg\:fs-7 {
+    font-size: 20px;
+  }
+
+  .lg\:fs-8 {
+    font-size: 18px;
   }
 
   /* .line {
@@ -29161,6 +29654,16 @@ body {
     z-index: 1;
     position: absolute;
     display: flex;
+  }
+
+  .lg\:yellow {
+    background-color: #fcdd77;
+    margin-left: 40%;
+    top: 70%;
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 30%;
   }
 
   .lg\:yellow {
@@ -36163,6 +36666,50 @@ body {
     font-size: 10px;
   }
 
+  .xl\:img-blog-bottom {
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .xl\:fs-1 {
+    font-size: 80px;
+  }
+
+  .xl\:fs-2 {
+    font-size: 60px;
+  }
+
+  .xl\:fs-3 {
+    font-size: 40px;
+  }
+
+  .xl\:fs-4 {
+    font-size: 30px;
+  }
+
+  .xl\:fs-5 {
+    font-size: 26px;
+  }
+
+  .xl\:fs-6 {
+    font-size: 24px;
+  }
+
+  .xl\:fs-7 {
+    font-size: 20px;
+  }
+
+  .xl\:fs-8 {
+    font-size: 18px;
+  }
+
+  .xl\:fs-9 {
+    font-size: 10px;
+  }
+
   .xl\:img-blog-right {
     border-bottom-right-radius: 15% 80%;
     border-top-right-radius: 15% 80%;
@@ -36186,6 +36733,117 @@ body {
   .xl\:img-blog-bottom {
     border-bottom-right-radius: 80% 7%;
     border-bottom-left-radius: 80% 7%;
+  }
+
+  .xl\:fs-1 {
+    font-size: 80px;
+  }
+
+  .xl\:fs-1 {
+    font-size: 80px;
+  }
+
+  .xl\:fs-2 {
+    font-size: 60px;
+  }
+
+  .xl\:fs-3 {
+    font-size: 40px;
+  }
+
+  .xl\:fs-4 {
+    font-size: 30px;
+  }
+
+  .xl\:fs-5 {
+    font-size: 26px;
+  }
+
+  .xl\:fs-6 {
+    font-size: 24px;
+  }
+
+  .xl\:fs-7 {
+    font-size: 20px;
+  }
+
+  .xl\:fs-8 {
+    font-size: 18px;
+  }
+
+  .xl\:fs-9 {
+    font-size: 10px;
+  }
+
+  .xl\:ml-90 {
+    margin-left: 90%;
+  }
+
+  .xl\:p-1-1 {
+    padding: 0.1rem;
+  }
+
+  .xl\:bg-objectif-brown {
+    background-color: #b13b2c;
+  }
+
+  .xl\:bg-objectif-black {
+    background-color: #29282d;
+  }
+
+  .xl\:bg-img {
+    background-image: url('https://zupimages.net/up/19/31/elei.png');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .xl\:bg-yellow {
+    background-color: #fcdd77;
+  }
+
+  .xl\:text-grey {
+    color: #a0a0a0;
+  }
+
+  .xl\:woman {
+    color: #cc6666;
+  }
+
+  .xl\:bg-woman {
+    background-color: #cc6666;
+  }
+
+  .xl\:img-blog-right {
+    border-bottom-right-radius: 15% 80%;
+    border-top-right-radius: 15% 80%;
+    border-bottom-left-radius: 0% 0%;
+  }
+
+  .xl\:margin-left-blog {
+    margin-left: 90%;
+  }
+
+  .xl\:photo-blog-ecran {
+    min-height: 500px;
+    max-height: 500px;
+  }
+
+  .xl\:photo-blog-mobile {
+    min-height: 300px;
+    max-height: 300px;
+  }
+
+  .xl\:img-blog-bottom {
+    border-bottom-right-radius: 80% 7%;
+    border-bottom-left-radius: 80% 7%;
+  }
+
+  .xl\:fs-7 {
+    font-size: 20px;
+  }
+
+  .xl\:fs-8 {
+    font-size: 18px;
   }
 
   /* .line {
@@ -36269,4 +36927,16 @@ body {
     width: 60%;
     height: 30%;
   }
+
+  .xl\:yellow {
+    background-color: #fcdd77;
+    margin-left: 40%;
+    top: 70%;
+    position: absolute;
+    z-index: 1;
+    width: 60%;
+    height: 30%;
+  }
 }
+
+

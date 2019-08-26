@@ -34,7 +34,7 @@
                         Prénom
                     </label>
                     <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         type="text" placeholder="Sophie" [(ngModel)]="model.firstname" name="firstname"
                         #firstname="ngModel" required firstname>
                     <div *ngIf="firstname.errors && myForm.submitted">
@@ -173,7 +173,7 @@
                     Adresse postale
                 </label>
                 <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-street" type="text" [(ngModel)]="model.adresse" name="adresse" required adresse
                     #adresse="ngModel">
                 <div *ngIf="adresse.errors && myForm.submitted">
