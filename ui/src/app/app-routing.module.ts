@@ -29,7 +29,7 @@ import { ConnexionComponent } from './shared/components/login-sm/connexion/conne
 import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashboard-compte-sm.component';
 import { HomeComponent } from './features/home-container/home.component';
 import { CommandeComponent } from './features/commande/commande.component';
-
+import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
 
 const routes: Routes = [
   {
@@ -95,7 +95,8 @@ const routes: Routes = [
   { path: 'mon-suivi', component: StatsComponent },
   { path: 'infos', component: InfosComponent },
   {path: 'dashboard-2', component: DashboardCompteSmComponent},
-  { path: 'commande', component: CommandeComponent }
+  { path: 'commande', component: CommandeComponent },
+  {path: 'dashboard-3', component: DashboardSuiviComponent},
 
 ];
 
