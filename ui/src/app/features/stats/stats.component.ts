@@ -11,9 +11,8 @@ export class StatsComponent implements OnInit {
 
   inscription = false;
   isHidden = false;
-
   public user: User;
-  
+
   constructor() { }
 
 
