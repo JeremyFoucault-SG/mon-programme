@@ -33,6 +33,7 @@ import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashb
 
 import { HomeComponent } from './features/home-container/home.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
+import { DashboardInfoSmComponent } from './features/dashboard-info-sm/dashboard-info-sm.component';
 
 const routes: Routes = [
   {
@@ -97,7 +98,7 @@ const routes: Routes = [
   { path: 'login', component: LoginModalComponent },
   { path: 'mon-suivi', component: StatsComponent },
   { path: 'infos', component: InfosComponent },
-  {path: 'dashboard-2', component: DashboardCompteSmComponent},
+  {path: 'dashboard-2', component: DashboardInfoSmComponent},
   {path: 'dashboard-3', component: DashboardSuiviComponent}
 
 ];

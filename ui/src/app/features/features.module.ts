@@ -20,6 +20,7 @@ import { DashboardStatistiqueComponent } from './dashboard-suivi/dashboard-stati
 import { DashboardInfoCorporellesComponent } from './dashboard-suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
 import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progress-bar/dashboard-progress-bar.component';
 import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
+import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboa
     DashboardInfoCorporellesComponent,
     DashboardProgressBarComponent,
     DashboardGoalComponent,
+    DashboardInfoSmComponent,
 
   ],
   imports: [
