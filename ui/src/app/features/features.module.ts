@@ -22,6 +22,8 @@ import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progr
 import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
 import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.component';
 import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/dashboard-avis.component';
+import { DashboardProgrammeComponent } from './dashboard-compte-sm/dashboard-programme/dashboard-programme.component';
+import { DashboardArticleComponent } from './dashboard-compte-sm/dashboard-article/dashboard-article.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/das
     DashboardGoalComponent,
     DashboardInfoSmComponent,
     DashboardAvisComponent,
+    DashboardProgrammeComponent,
+    DashboardArticleComponent,
 
   ],
   imports: [
