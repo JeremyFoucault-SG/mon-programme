@@ -33,7 +33,7 @@ import { CommandeComponent } from './features/commande/commande.component';
 
 const routes: Routes = [
   {
-    path: 'choose',
+    path: '',
     component: PopupMwComponent,
     data: {
       isChoose: true,
