@@ -26,11 +26,11 @@ import { Inscription2Component } from './shared/components/login-sm/inscription2
 import { Inscription3Component } from './shared/components/login-sm/inscription3/inscription3.component';
 import { Inscription4Component } from './shared/components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './shared/components/login-sm/connexion/connexion.component';
-import { DashboardCompteSmComponent } from './features/dashboard-compte-sm/dashboard-compte-sm.component';
+import { DashboardCompteSmComponent } from './features/dashboard-compte/dashboard-compte-sm/dashboard-compte-sm.component';
 import { HomeComponent } from './features/home-container/home.component';
 import { CommandeComponent } from './features/commande/commande.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
-import { DashboardInfoSmComponent } from './features/dashboard-info-sm/dashboard-info-sm.component';
+import { DashboardInfoSmComponent } from './features/dashboard-infos-personnelles/dashboard-info-sm/dashboard-info-sm.component';
 import { DashboardInfosPersonnellesComponent } from './features/dashboard-infos-personnelles/dashboard-infos-personnelles.component';
 
 const routes: Routes = [

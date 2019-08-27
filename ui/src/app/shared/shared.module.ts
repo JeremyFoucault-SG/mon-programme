@@ -41,11 +41,11 @@ import { Inscription2Component } from './components/login-sm/inscription2/inscri
 import { Inscription3Component } from './components/login-sm/inscription3/inscription3.component';
 import { Inscription4Component } from './components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './components/login-sm/connexion/connexion.component';
-import { DashboardInfoPersoComponent } from '../features/dashboard-info-sm/dashboard-info-perso/dashboard-info-perso.component';
+import { DashboardInfoPersoComponent } from '../features/dashboard-infos-personnelles/dashboard-info-perso/dashboard-info-perso.component';
 // tslint:disable-next-line: max-line-length
-import { DashboardInfoFacturationComponent } from '../features/dashboard-info-sm/dashboard-info-facturation/dashboard-info-facturation.component';
-import { DashboardPaiementComponent } from '../features/dashboard-info-sm/dashboard-paiement/dashboard-paiement.component';
-import { DashboardHistoriqueComponent } from '../features/dashboard-info-sm/dashboard-historique/dashboard-historique.component';
+import { DashboardInfoFacturationComponent } from '../features/dashboard-infos-personnelles/dashboard-info-facturation/dashboard-info-facturation.component';
+import { DashboardPaiementComponent } from '../features/dashboard-infos-personnelles/dashboard-info-sm/dashboard-paiement/dashboard-paiement.componentt.component';
+import { DashboardHistoriqueComponent } from '../features/dashboard-infos-personnelles/dashboard-historique/dashboard-historique.component';
 import { NosProgrammeHomeComponent } from './components/nos-programme-home/nos-programme-home.component';
 import { SlideShowHomeComponent } from './components/slide-show-home/slide-show-home.component';
 import { VideoHomeComponent } from './components/video-home/video-home.component';

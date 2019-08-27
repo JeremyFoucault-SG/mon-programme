@@ -14,19 +14,21 @@ import { FacebookModule } from 'ngx-facebook';
 import { StatsComponent } from './dashboard-suivi/stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
 import { InfosComponent } from './dashboard-infos-personnelles/infos/infos.component';
-import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-compte-sm.component';
+import { DashboardCompteSmComponent } from './dashboard-compte/dashboard-compte-sm/dashboard-compte-sm.component';
 import { CommandeComponent } from './commande/commande.component';
 import { DashboardSuiviComponent } from './dashboard-suivi/dashboard-suivi.component';
 import { DashboardStatistiqueComponent } from './dashboard-suivi/dashboard-statistique/dashboard-statistique.component';
 import { DashboardInfoCorporellesComponent } from './dashboard-suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
 import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progress-bar/dashboard-progress-bar.component';
 import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
-import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.component';
-import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/dashboard-avis.component';
-import { DashboardProgrammeComponent } from './dashboard-compte-sm/dashboard-programme/dashboard-programme.component';
-import { DashboardArticleComponent } from './dashboard-compte-sm/dashboard-article/dashboard-article.component';
+import { DashboardInfoSmComponent } from './dashboard-infos-personnelles/dashboard-info-sm/dashboard-info-sm.component';
+import { DashboardAvisComponent } from './dashboard-compte/dashboard-avis/dashboard-avis.component';
+import { DashboardProgrammeComponent } from './dashboard-compte/dashboard-programme/dashboard-programme.component';
+import { DashboardArticleComponent } from './dashboard-compte/dashboard-article/dashboard-article.component';
 import { DashboardInfosPersonnellesComponent } from './dashboard-infos-personnelles/dashboard-infos-personnelles.component';
 import { DashboardSuiviSmComponent } from './dashboard-suivi/dashboard-suivi-sm/dashboard-suivi-sm.component';
+import { DashboardCompteComponent } from './dashboard-compte/dashboard-compte.component';
+import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-lg/dashboard-compte-lg.component';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { DashboardSuiviSmComponent } from './dashboard-suivi/dashboard-suivi-sm/
     DashboardArticleComponent,
     DashboardInfosPersonnellesComponent,
     DashboardSuiviSmComponent,
+    DashboardCompteComponent,
+    DashboardCompteLgComponent,
 
   ],
   imports: [
