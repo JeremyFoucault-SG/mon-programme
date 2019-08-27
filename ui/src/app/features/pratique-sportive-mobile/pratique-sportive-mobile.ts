@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ProgramDetail } from '../../shared/models/programs-infos';
 
 @Component({
-  selector: 'app-nos-programme-mobile',
-  templateUrl: './nos-programme-mobile.component.html',
-  styleUrls: ['./nos-programme-mobile.component.css']
+  selector: 'app-pratique-sportive-mobile',
+  templateUrl: './pratique-sportive-mobile.html',
+  styleUrls: ['./pratique-sportive-mobile.css']
 })
-export class NosProgrammeMobileComponent implements OnInit {
+export class PratiqueSportiveMobileComponent implements OnInit {
 
   constructor() { }
 

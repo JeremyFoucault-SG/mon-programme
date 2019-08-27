@@ -25,7 +25,7 @@ import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.
 import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/dashboard-avis.component';
 import { DashboardProgrammeComponent } from './dashboard-compte-sm/dashboard-programme/dashboard-programme.component';
 import { DashboardArticleComponent } from './dashboard-compte-sm/dashboard-article/dashboard-article.component';
-import { NosProgrammeMobileComponent } from './nos-programme-mobile/nos-programme-mobile.component';
+import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
 
 
@@ -51,7 +51,7 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
     DashboardAvisComponent,
     DashboardProgrammeComponent,
     DashboardArticleComponent,
-    NosProgrammeMobileComponent,
+    PratiqueSportiveMobileComponent,
     BlogMobileComponent
 
   ],
