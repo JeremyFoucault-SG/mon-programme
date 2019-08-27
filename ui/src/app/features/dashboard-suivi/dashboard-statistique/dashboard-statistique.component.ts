@@ -24,7 +24,7 @@ export class DashboardStatistiqueComponent implements OnInit {
         ticks: {
           beginAtZero: true,
           min: 50,
-          max: 300,
+          max: 250,
           stepSize: 50,
           fontColor: '#6271d2',
         },

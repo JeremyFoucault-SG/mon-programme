@@ -1,0 +1,13 @@
+button {
+  font-size: 9px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.78;
+  letter-spacing: 0.23px;
+  text-align: center;
+  color: #ffffff;
+}
+.content {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
+}

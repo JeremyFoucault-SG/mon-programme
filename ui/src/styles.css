@@ -7810,8 +7810,19 @@ body {
   height: 45px;
 }
 
-.fs-1 {
-  font-size: 80px;
+.btn-blog {
+  background-color: transparent;
+  border-color: #ecc94b;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-width: 1px;
+  margin: 2rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
 }
 
 .fs-1 {
@@ -8008,7 +8019,7 @@ body {
 }
 
 .bg-purpleprog {
-  background-color: #7467f0;
+  background-color: #7467f0
 }
 
 @media (min-width: 640px) {
@@ -15222,14 +15233,8 @@ body {
     height: 30%;
   }
 
-  .sm\:yellow {
-    background-color: #fcdd77;
-    margin-left: 40%;
-    top: 70%;
-    position: absolute;
-    z-index: 1;
-    width: 60%;
-    height: 30%;
+  .sm\:bg-purpleprog {
+    background-color: #7467f0
   }
 }
 
@@ -22444,14 +22449,8 @@ body {
     height: 30%;
   }
 
-  .md\:yellow {
-    background-color: #fcdd77;
-    margin-left: 40%;
-    top: 70%;
-    position: absolute;
-    z-index: 1;
-    width: 60%;
-    height: 30%;
+  .md\:bg-purpleprog {
+    background-color: #7467f0
   }
 }
 
@@ -29666,14 +29665,8 @@ body {
     height: 30%;
   }
 
-  .lg\:yellow {
-    background-color: #fcdd77;
-    margin-left: 40%;
-    top: 70%;
-    position: absolute;
-    z-index: 1;
-    width: 60%;
-    height: 30%;
+  .lg\:bg-purpleprog {
+    background-color: #7467f0
   }
 }
 
@@ -36674,65 +36667,25 @@ body {
     padding: 0;
   }
 
-  .xl\:fs-1 {
-    font-size: 80px;
+  .xl\:btn {
+    border-radius: 9999px;
+    width: 170px;
+    height: 45px;
   }
 
-  .xl\:fs-2 {
-    font-size: 60px;
-  }
-
-  .xl\:fs-3 {
-    font-size: 40px;
-  }
-
-  .xl\:fs-4 {
-    font-size: 30px;
-  }
-
-  .xl\:fs-5 {
-    font-size: 26px;
-  }
-
-  .xl\:fs-6 {
-    font-size: 24px;
-  }
-
-  .xl\:fs-7 {
-    font-size: 20px;
-  }
-
-  .xl\:fs-8 {
-    font-size: 18px;
-  }
-
-  .xl\:fs-9 {
-    font-size: 10px;
-  }
-
-  .xl\:img-blog-right {
-    border-bottom-right-radius: 15% 80%;
-    border-top-right-radius: 15% 80%;
-    border-bottom-left-radius: 0% 0%;
-  }
-
-  .xl\:margin-left-blog {
-    margin-left: 90%;
-  }
-
-  .xl\:photo-blog-ecran {
-    min-height: 500px;
-    max-height: 500px;
-  }
-
-  .xl\:photo-blog-mobile {
-    min-height: 300px;
-    max-height: 300px;
-  }
-
-  .xl\:img-blog-bottom {
-    border-bottom-right-radius: 80% 7%;
-    border-bottom-left-radius: 80% 7%;
+  .xl\:btn-blog {
+    background-color: transparent;
+    border-color: #ecc94b;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-width: 1px;
+    margin: 2rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
   }
 
   .xl\:fs-1 {
@@ -36928,14 +36881,8 @@ body {
     height: 30%;
   }
 
-  .xl\:yellow {
-    background-color: #fcdd77;
-    margin-left: 40%;
-    top: 70%;
-    position: absolute;
-    z-index: 1;
-    width: 60%;
-    height: 30%;
+  .xl\:bg-purpleprog {
+    background-color: #7467f0
   }
 }
 
