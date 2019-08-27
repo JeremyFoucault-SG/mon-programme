@@ -85,7 +85,7 @@ const routes: Routes = [
   { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
-  { path: 'footer-sm', component: FooterInformationSmComponent },
+  { path: 'footer-sm', component: FooterSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
   { path: 'login-sm', component: LoginAccueilComponent },
   { path: 'inscription-1', component: Inscription1Component },
