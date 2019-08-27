@@ -31,6 +31,7 @@ import { HomeComponent } from './features/home-container/home.component';
 import { CommandeComponent } from './features/commande/commande.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
 import { DashboardInfoSmComponent } from './features/dashboard-info-sm/dashboard-info-sm.component';
+import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
 
 const routes: Routes = [
   {
@@ -98,6 +99,7 @@ const routes: Routes = [
   {path: 'dashboard-2', component: DashboardCompteSmComponent},
   { path: 'commande', component: CommandeComponent },
   {path: 'dashboard-3', component: DashboardSuiviComponent},
+  { path: 'blog-mobile', component: BlogMobileComponent },
 
 ];
 
