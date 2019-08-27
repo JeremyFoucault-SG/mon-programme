@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProgramDetail } from '../../shared/models/programs-infos'
 
 @Component({
   selector: 'app-nos-programme-mobile',
@@ -8,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class NosProgrammeMobileComponent implements OnInit {
 
   constructor() { }
+
+
+  @Input()
+  public selected: ProgramDetail;
+
 
   ngOnInit() {
   }
