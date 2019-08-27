@@ -26,6 +26,8 @@ import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/das
 import { DashboardProgrammeComponent } from './dashboard-compte-sm/dashboard-programme/dashboard-programme.component';
 import { DashboardArticleComponent } from './dashboard-compte-sm/dashboard-article/dashboard-article.component';
 import { NosProgrammeMobileComponent } from './nos-programme-mobile/nos-programme-mobile.component';
+import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { NosProgrammeMobileComponent } from './nos-programme-mobile/nos-program
     DashboardAvisComponent,
     DashboardProgrammeComponent,
     DashboardArticleComponent,
-    NosProgrammeMobileComponent
+    NosProgrammeMobileComponent,
+    BlogMobileComponent
 
   ],
   imports: [

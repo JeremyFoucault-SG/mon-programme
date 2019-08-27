@@ -32,6 +32,7 @@ import { CommandeComponent } from './features/commande/commande.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
 import { DashboardInfoSmComponent } from './features/dashboard-info-sm/dashboard-info-sm.component';
 import { NosProgrammeMobileComponent } from './features/nos-programme-mobile/nos-programme-mobile.component';
+import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
 
 const routes: Routes = [
   {
@@ -85,7 +86,7 @@ const routes: Routes = [
   { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
-  { path: 'footer-sm', component: FooterInformationSmComponent },
+  { path: 'footer-sm', component: FooterSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
   { path: 'login-sm', component: LoginAccueilComponent },
   { path: 'inscription-1', component: Inscription1Component },
@@ -100,6 +101,7 @@ const routes: Routes = [
   { path: 'commande', component: CommandeComponent },
   {path: 'dashboard-3', component: DashboardSuiviComponent},
   { path: 'nos-prog-mobile', component: NosProgrammeMobileComponent},
+  { path: 'blog-mobile', component: BlogMobileComponent },
 
 ];
 
