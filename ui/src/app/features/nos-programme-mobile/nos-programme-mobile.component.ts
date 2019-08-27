@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProgramDetail } from '../../shared/models/programs-infos'
+import { ProgramDetail } from '../../shared/models/programs-infos';
 
 @Component({
   selector: 'app-nos-programme-mobile',
