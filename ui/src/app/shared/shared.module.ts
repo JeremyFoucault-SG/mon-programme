@@ -47,6 +47,8 @@ import { DashboardInfoFacturationComponent } from '../features/dashboard-compte-
 import { DashboardPaiementComponent } from '../features/dashboard-compte-sm/dashboard-paiement/dashboard-paiement.component';
 import { DashboardHistoriqueComponent } from '../features/dashboard-compte-sm/dashboard-historique/dashboard-historique.component';
 import { TitleComponent } from './components/title/title.component';
+import { CardThumbListComponent } from './components/card-thumb-list/card-thumb-list.component';
+import { SubTitleComponent } from './components/sub-title/sub-title.component';
 
 
 
@@ -90,6 +92,8 @@ import { TitleComponent } from './components/title/title.component';
     DashboardPaiementComponent,
     DashboardHistoriqueComponent,
     TitleComponent,
+    CardThumbListComponent,
+    SubTitleComponent,
   ],
   imports: [
     CommonModule,
@@ -125,6 +129,8 @@ import { TitleComponent } from './components/title/title.component';
     DashboardPaiementComponent,
     DashboardHistoriqueComponent,
     TitleComponent,
+    CardThumbListComponent,
+    SubTitleComponent,
   ]
 })
 export class SharedModule { }
