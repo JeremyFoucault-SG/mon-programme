@@ -1,0 +1,10 @@
+.menu{
+    width: 100%;
+    height: 5vh;
+    background-color: black;
+}
+
+.perform{
+    width: 90%;
+    height: 20vh;
+}
