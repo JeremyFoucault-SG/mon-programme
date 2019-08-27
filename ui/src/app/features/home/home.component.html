@@ -1,5 +1,33 @@
-<app-home-header [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)"></app-home-header>
+<app-home-header [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)">
+</app-home-header>
 
 <!-- <div><h1 class="programs"> TON PROGRAMME SUR-MESURE</h1></div> -->
 <app-title>TON PROGRAMME SUR-MESURE</app-title>
 <!-- <img class="imagine"src="https://zupimages.net/up/19/32/exh6.jpeg"> -->
+
+<div class="pt-24 md:pt-32">
+  <app-card-thumb-list [items]="programs">
+    <app-title class="list-title">NOS MEILLEURS PROGRAMME</app-title>
+    <app-sub-title class="list-subtitle">PROGRAMME</app-sub-title>
+  </app-card-thumb-list>
+</div>
+
+<div class="pt-24 md:pt-32">
+  <app-card-thumb-list [items]="programs" [titleOnRight]="true">
+    <app-title class="list-title">STYLE DE VIE ET NUTRITION</app-title>
+    <app-sub-title class="list-subtitle">BLOG</app-sub-title>
+  </app-card-thumb-list>
+</div>
+
+<div class="pt-24 md:pt-32">
+  <app-card-thumb-list [items]="programs">
+    <app-title class="list-title">NOS DERNIERS ARTICLES</app-title>
+    <app-sub-title class="list-subtitle">BLOG</app-sub-title>
+  </app-card-thumb-list>
+</div>
+
+<app-newsletter></app-newsletter>
+
+<app-contact-lg></app-contact-lg>
+
+<app-footer></app-footer>
