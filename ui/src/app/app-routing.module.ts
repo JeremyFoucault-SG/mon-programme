@@ -33,6 +33,8 @@ import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-su
 import { DashboardInfoSmComponent } from './features/dashboard-infos-personnelles/dashboard-info-sm/dashboard-info-sm.component';
 import { DashboardInfosPersonnellesComponent } from './features/dashboard-infos-personnelles/dashboard-infos-personnelles.component';
 import { DashboardCompteComponent } from './features/dashboard-compte/dashboard-compte.component';
+import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
+import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
 
 const routes: Routes = [
   {
@@ -86,7 +88,7 @@ const routes: Routes = [
   { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
-  { path: 'footer-sm', component: FooterInformationSmComponent },
+  { path: 'footer-sm', component: FooterSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
   { path: 'login-sm', component: LoginAccueilComponent },
   { path: 'inscription-1', component: Inscription1Component },
@@ -101,6 +103,8 @@ const routes: Routes = [
   {path: 'dashboard-2', component: DashboardCompteSmComponent},
   { path: 'commande', component: CommandeComponent },
   {path: 'dashboard-3', component: DashboardSuiviComponent},
+  { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent},
+  { path: 'blog-mobile', component: BlogMobileComponent },
 
 ];
 

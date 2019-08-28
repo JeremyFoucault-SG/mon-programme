@@ -32,6 +32,8 @@ import { DashboardCompteComponent } from './dashboard-compte/dashboard-compte.co
 import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-lg/dashboard-compte-lg.component';
 import { DashboardInfoLgComponent } from './dashboard-infos-personnelles/dashboard-info-lg/dashboard-info-lg.component';
 import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/dashboard-suivi-lg.component';
+import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
+import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
 
 
 @NgModule({
@@ -61,6 +63,8 @@ import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/
     DashboardCompteLgComponent,
     DashboardInfoLgComponent,
     DashboardSuiviLgComponent,
+    PratiqueSportiveMobileComponent,
+    BlogMobileComponent
 
   ],
   imports: [
