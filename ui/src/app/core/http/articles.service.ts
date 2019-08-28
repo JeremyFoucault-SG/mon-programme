@@ -28,7 +28,7 @@ export class ArticlesService {
 
 
     // Recuperation de tous les articles de blog//
-    public getArticles(): Observable<ArticleBlog[]> {
+    public getAllArticles(): Observable<ArticleBlog[]> {
         return this.http.get(`${this.api}/articles`).pipe(
             map((allArticlesBlog: any) => {
                 return allArticlesBlog as ArticleBlog[];
@@ -57,4 +57,5 @@ export class ArticlesService {
     public updateArticle(id: string, article: ArticleBlog): Observable<ArticleBlog> {
         return this.http.put<ArticleBlog>(`${this.api}/articles/${id}`, article);
     }
+
 }
