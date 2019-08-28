@@ -1,5 +1,5 @@
-<div>
-  <div class="px-5 md:px-10 pb-5 md:pb-12 flex lg:flex-col flex-col-reverse">
+<div class="px-5 md:px-10">
+  <div class="pb-5 md:pb-12 flex lg:flex-col flex-col-reverse">
     <div>
       <ng-content select=".list-title"></ng-content>
     </div>
@@ -8,7 +8,7 @@
       <div class="font-sm text-black opacity-25 hover:opacity-100 font-semibold"><a [routerLink]="['/routePath']">Voir tout</a></div>
     </div>
   </div>
-  <div class="overflow-x-auto flex flex-row flex-no-wrap px-5 md:px-10">
+  <div class="overflow-x-auto flex flex-row flex-no-wrap">
     <app-card-thumb-program *ngFor="let item of items" class="mr-2" [imageUrl]="item.imageUrl" [title]="item.title"
       [content]="item.content" [hasBgOverlay]="true">
     </app-card-thumb-program>
