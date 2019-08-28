@@ -4,11 +4,11 @@ import { User } from 'src/app/shared/models/user.model';
 import { Programmes } from 'src/app/shared/models/programmes.model';
 
 @Component({
-  selector: 'app-infos',
-  templateUrl: './infos.component.html',
-  styleUrls: ['./infos.component.css']
+  selector: 'app-dashboard-info-lg',
+  templateUrl: './dashboard-info-lg.component.html',
+  styleUrls: ['./dashboard-info-lg.component.css']
 })
-export class InfosComponent implements OnInit {
+export class DashboardInfoLgComponent implements OnInit {
 
   programmes: Programmes;
   model: User = new User();
@@ -19,11 +19,10 @@ export class InfosComponent implements OnInit {
   }
 
 
-  onSubmit(myForm) {
-    if (myForm.form.valid) {
-      alert('Form submitted sucessfully');
+  // onSubmit(myForm) {
+  //   if (myForm.form.valid) {
+  //     alert('Form submitted sucessfully');
 
-    }
-  }
-
+  //   }
+  // }
 }

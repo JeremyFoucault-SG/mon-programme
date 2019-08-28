@@ -1,1 +1,59 @@
-<p>dashboard-compte-lg works!</p>
+<div>
+  <ul class="flex menu bg-black ">
+    <li class="mr-6 mb-4 mt-3">
+      <a class="text-white" [routerLink]="'/'"
+        ><button type="submit" class="px-4 py-2 onglet active">
+          Résumé du compte
+        </button></a
+      >
+    </li>
+    <li class="mr-6 mb-4 mt-3">
+      <a class="text-white" [routerLink]="'/dashboard-infos'"
+        ><button type="submit" class="px-4 py-2 onglet">
+          Mes informations personnelles
+        </button></a
+      >
+    </li>
+    <li class="mr-6 mb-4 mt-3">
+      <a class="text-white" [routerLink]="'/dashboard-compte'"
+        ><button type="submit" class="px-4 py-2 onglet">Mon suivi</button></a
+      >
+    </li>
+  </ul>
+</div>
+
+<!-- Button for return home - page -->
+<div class="ml-5 mt-5">
+        <a class="nav-link return" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i class="fa fa-undo mr-2"
+                aria-hidden="true"></i>PAGE D'ACCUEIL</a>
+    </div>
+
+<div class="flex justify-around content-center items-center mt-5">
+  <!-- Table user statistic -->
+  <div class="w-2/6 ">
+        <h1 class="text-gray-800 text-2xl font-semibold mb-3">Résumé Mon Suivi</h1>
+        <div class="content bg-white rounded">
+            <app-dashboard-statistique></app-dashboard-statistique>
+          </div>
+  </div>
+  <!-- Show content avis -->
+  <div class="content w-1/4  bg-white rounded ">
+    <app-dashboard-avis></app-dashboard-avis>
+  </div>
+</div>
+
+<div class="flex justify-around content-center items-center mt-10 mb-10">
+  <div class="w-2/5">
+    <h1 class="text-gray-800 text-2xl font-semibold mb-3">Mes programmes favoris</h1>
+    <div class="content bg-white rounded ">
+      <app-dashboard-programme></app-dashboard-programme>
+    </div>
+  </div>
+
+  <div class="w-2/5">
+    <h1 class="text-gray-800 text-2xl font-semibold mb-3">Mes articles favoris</h1>
+    <div class="content bg-white rounded ">
+      <app-dashboard-article></app-dashboard-article>
+    </div>
+  </div>
+</div>

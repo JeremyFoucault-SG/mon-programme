@@ -8,3 +8,6 @@ button{
     text-align: center;
     color: #ffffff;
 }
+.bg-gradient{
+    background: linear-gradient(0deg, transparent 80%, #000000 20%);
+}

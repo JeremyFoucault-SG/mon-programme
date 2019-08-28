@@ -1,42 +1,58 @@
 <!-- width and height content suivi -->
 <div class="dashboard w-full h-full pt-16">
   <!-- Menu dashboard -->
-  <div class="flex justify-between absolute z-10 bg-black h-32 pt-3 w-full">
+  <div class="flex justify-between bg-black h-8 pt-3 w-full">
     <!-- Show button navigation right -->
     <div class="flex ml-5">
       <div class="flex justify-center w-6 h-6 bg-white rounded-full ">
-        <i class="fa fa-arrow-left woman self-center" aria-hidden="true"></i>
+        <a [routerLink]="['/dashboard-compte']"><i class="fa fa-arrow-left woman self-center" aria-hidden="true"></i></a>
       </div>
-      <h3 class="uppercase text-white ml-3 text-sm pt-1">Resume du compte</h3>
+      <a [routerLink]="['/dashboard-compte']"><h3 class="uppercase text-white ml-3 text-sm pt-1">Resume du compte</h3></a>
     </div>
 
     <!-- Show button navigation left -->
     <div class="flex mr-5">
-      <h3 class="uppercase text-white mr-3 text-sm pt-1">Info personnelles</h3>
+      <a [routerLink]="['/dashboard-infos']">  <h3 class="uppercase text-white mr-3 text-sm pt-1">Info personnelles</h3></a>
       <div class="flex justify-center w-6 h-6 bg-white rounded-full">
-        <i class="fa fa-arrow-right woman self-center" aria-hidden="true"></i>
+        <a [routerLink]="['/dashboard-infos']">  <i class="fa fa-arrow-right woman self-center" aria-hidden="true"></i> </a>
       </div>
     </div>
   </div>
-  <div class="p-3 pt-10 absolute z-20">
+  <div>
     <!-- Table user statistic -->
-    <div class="content border w-full mt-5 mb-5 bg-white rounded">
-      <app-dashboard-statistique></app-dashboard-statistique>
+    <div class="w-full bg-gradient">
+      <div class="p-2">
+        <div class="content border w-full mt-5 mb-5 bg-white rounded">
+          <app-dashboard-statistique></app-dashboard-statistique>
+        </div>
+      </div>
     </div>
 
     <!-- Info corporelles -->
-    <div class="content w-full mt-5 mb-5 bg-white rounded">
-      <app-dashboard-info-corporelles></app-dashboard-info-corporelles>
-    </div>
+
+      <div class="p-2">
+        <div class="content w-full mt-5 mb-5 bg-white rounded">
+          <app-dashboard-info-corporelles></app-dashboard-info-corporelles>
+        </div>
+      </div>
+ 
 
     <!-- Progress bar -->
-    <div class="content w-full mt-5 mb-5 bg-white rounded">
-    <app-dashboard-progress-bar></app-dashboard-progress-bar>
-    </div>
+ 
+      <div class="p-2">
+        <div class="content w-full mt-5 mb-5 bg-white rounded">
+          <app-dashboard-progress-bar></app-dashboard-progress-bar>
+        </div>
+      </div>
+
 
     <!-- Progress bar goal -->
-    <div class="content w-full mt-5 mb-5 bg-white rounded">
-    <app-dashboard-goal></app-dashboard-goal>
-    </div>
+
+      <div class="p-2">
+        <div class="content w-full mt-5 mb-5 bg-white rounded">
+          <app-dashboard-goal></app-dashboard-goal>
+        </div>
+      </div>
+
   </div>
 </div>

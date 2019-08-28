@@ -44,7 +44,7 @@ import { ConnexionComponent } from './components/login-sm/connexion/connexion.co
 import { DashboardInfoPersoComponent } from '../features/dashboard-infos-personnelles/dashboard-info-perso/dashboard-info-perso.component';
 // tslint:disable-next-line: max-line-length
 import { DashboardInfoFacturationComponent } from '../features/dashboard-infos-personnelles/dashboard-info-facturation/dashboard-info-facturation.component';
-import { DashboardPaiementComponent } from '../features/dashboard-infos-personnelles/dashboard-info-sm/dashboard-paiement/dashboard-paiement.componentt.component';
+
 import { DashboardHistoriqueComponent } from '../features/dashboard-infos-personnelles/dashboard-historique/dashboard-historique.component';
 import { NosProgrammeHomeComponent } from './components/nos-programme-home/nos-programme-home.component';
 import { SlideShowHomeComponent } from './components/slide-show-home/slide-show-home.component';
@@ -90,7 +90,6 @@ import { TagComponent } from './components/tag/tag.component';
     ConnexionComponent,
     DashboardInfoPersoComponent,
     DashboardInfoFacturationComponent,
-    DashboardPaiementComponent,
     DashboardHistoriqueComponent,
     NosProgrammeHomeComponent,
     SlideShowHomeComponent,
@@ -128,7 +127,6 @@ import { TagComponent } from './components/tag/tag.component';
     ObjectifProgrammeComponent,
     DashboardInfoPersoComponent,
     DashboardInfoFacturationComponent,
-    DashboardPaiementComponent,
     DashboardHistoriqueComponent,
     NosProgrammeHomeComponent,
     SlideShowHomeComponent,

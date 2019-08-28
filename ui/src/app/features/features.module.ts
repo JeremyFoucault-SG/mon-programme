@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacebookModule } from 'ngx-facebook';
 import { StatsComponent } from './dashboard-suivi/stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
-import { InfosComponent } from './dashboard-infos-personnelles/infos/infos.component';
+
+
 import { DashboardCompteSmComponent } from './dashboard-compte/dashboard-compte-sm/dashboard-compte-sm.component';
 import { CommandeComponent } from './commande/commande.component';
 import { DashboardSuiviComponent } from './dashboard-suivi/dashboard-suivi.component';
@@ -29,6 +30,8 @@ import { DashboardInfosPersonnellesComponent } from './dashboard-infos-personnel
 import { DashboardSuiviSmComponent } from './dashboard-suivi/dashboard-suivi-sm/dashboard-suivi-sm.component';
 import { DashboardCompteComponent } from './dashboard-compte/dashboard-compte.component';
 import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-lg/dashboard-compte-lg.component';
+import { DashboardInfoLgComponent } from './dashboard-infos-personnelles/dashboard-info-lg/dashboard-info-lg.component';
+import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/dashboard-suivi-lg.component';
 
 
 @NgModule({
@@ -41,7 +44,6 @@ import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-
     ArticleBlogComponent,
     NosProgrammesComponent,
     StatsComponent,
-    InfosComponent,
     DashboardCompteSmComponent,
     CommandeComponent,
     DashboardSuiviComponent,
@@ -57,6 +59,8 @@ import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-
     DashboardSuiviSmComponent,
     DashboardCompteComponent,
     DashboardCompteLgComponent,
+    DashboardInfoLgComponent,
+    DashboardSuiviLgComponent,
 
   ],
   imports: [

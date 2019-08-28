@@ -19,7 +19,7 @@ import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes
 import { LoginModalComponent } from './features/login-modal/login-modal.component';
 import { FooterInformationSmComponent } from './core/footer/footer-information-sm/footer-information-sm.component';
 import { StatsComponent } from './features/dashboard-suivi/stats/stats.component';
-import { InfosComponent } from './features/dashboard-infos-personnelles/infos/infos.component';
+
 import { LoginAccueilComponent } from './shared/components/login-sm/login-accueil/login-accueil.component';
 import { Inscription1Component } from './shared/components/login-sm/inscription1/inscription1.component';
 import { Inscription2Component } from './shared/components/login-sm/inscription2/inscription2.component';
@@ -32,6 +32,7 @@ import { CommandeComponent } from './features/commande/commande.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
 import { DashboardInfoSmComponent } from './features/dashboard-infos-personnelles/dashboard-info-sm/dashboard-info-sm.component';
 import { DashboardInfosPersonnellesComponent } from './features/dashboard-infos-personnelles/dashboard-infos-personnelles.component';
+import { DashboardCompteComponent } from './features/dashboard-compte/dashboard-compte.component';
 
 const routes: Routes = [
   {
@@ -94,8 +95,9 @@ const routes: Routes = [
   { path: 'inscription-4', component: Inscription4Component },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'login', component: LoginModalComponent },
-  { path: 'mon-suivi', component: DashboardSuiviComponent },
-  { path: 'infos', component: DashboardInfosPersonnellesComponent },
+  { path: 'dashboard-suivi', component: DashboardSuiviComponent },
+  { path: 'dashboard-infos', component: DashboardInfosPersonnellesComponent },
+  {path: 'dashboard-compte', component: DashboardCompteComponent},
   {path: 'dashboard-2', component: DashboardCompteSmComponent},
   { path: 'commande', component: CommandeComponent },
   {path: 'dashboard-3', component: DashboardSuiviComponent},

@@ -79,5 +79,9 @@ border: none;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #cc6666;
 }
-
+.active{
+    border-radius: 19px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #cc6666;
+}
 
