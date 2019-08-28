@@ -98,7 +98,7 @@ export class HomeComponent implements OnInit {
         content: 'content 3',
         imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
       },
-    ]
+    ];
   }
 
   onChange(programDetail: ProgramDetail, index) {
