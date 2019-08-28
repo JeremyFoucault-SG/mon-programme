@@ -4,4 +4,3 @@ export class Login {
       public password: string,
     ) {}
   }
-  

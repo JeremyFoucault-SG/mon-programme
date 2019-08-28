@@ -6,7 +6,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin'
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 // Imports Components //
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +34,6 @@ import { NgxsModule } from '@ngxs/store';
     ReactiveFormsModule,
     ChartsModule,
     NgxsModule.forRoot([
-   
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot()
