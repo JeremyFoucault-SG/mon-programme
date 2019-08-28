@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { ArticleBlog } from '../../shared/models/articles-blog.model'
+import { ArticleBlog } from '../../shared/models/articles-blog.model';
 import { map } from 'rxjs/operators';
 
 
@@ -37,7 +37,7 @@ export class ArticlesService {
     }
 
 
-    //Suprimer un article par son id/
+    // Suprimer un article par son id/
     public deleteArticle(id: string): Observable<ArticleBlog> {
         return this.http.delete(`${this.api}/articles/${id}`).pipe(
             map((articleBlog: any) => {
@@ -47,13 +47,13 @@ export class ArticlesService {
     }
 
 
-    //creation d'un article de blog//
+    // creation d'un article de blog//
     public createArticle(article: ArticleBlog): Observable<ArticleBlog> {
         return this.http.post<ArticleBlog>(`${this.api}/articles`, article);
     }
 
 
-    //mise a jour d'un article de blog par l'id//
+    // mise a jour d'un article de blog par l'id//
     public updateArticle(id: string, article: ArticleBlog): Observable<ArticleBlog> {
         return this.http.put<ArticleBlog>(`${this.api}/articles/${id}`, article);
     }
