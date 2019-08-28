@@ -25,8 +25,9 @@ import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.
 import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/dashboard-avis.component';
 import { DashboardProgrammeComponent } from './dashboard-compte-sm/dashboard-programme/dashboard-programme.component';
 import { DashboardArticleComponent } from './dashboard-compte-sm/dashboard-article/dashboard-article.component';
-import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
+import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
+
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
     DashboardProgrammeComponent,
     DashboardArticleComponent,
     PratiqueSportiveMobileComponent,
-    BlogMobileComponent
+    BlogMobileComponent,
 
   ],
   imports: [
@@ -62,7 +63,7 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
     FormsModule,
     ReactiveFormsModule,
     FacebookModule.forRoot(),
-    ChartsModule
+    ChartsModule,
   ],
   exports: [
     LoginModalComponent
