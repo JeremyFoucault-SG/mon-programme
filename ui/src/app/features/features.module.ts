@@ -11,20 +11,27 @@ import { ArticleBlogComponent } from './article-blog/article-blog.component';
 import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacebookModule } from 'ngx-facebook';
-import { StatsComponent } from './stats/stats.component';
+import { StatsComponent } from './dashboard-suivi/stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
-import { InfosComponent } from './infos/infos.component';
-import { DashboardCompteSmComponent } from './dashboard-compte-sm/dashboard-compte-sm.component';
+
+
+import { DashboardCompteSmComponent } from './dashboard-compte/dashboard-compte-sm/dashboard-compte-sm.component';
 import { CommandeComponent } from './commande/commande.component';
 import { DashboardSuiviComponent } from './dashboard-suivi/dashboard-suivi.component';
-import { DashboardStatistiqueComponent } from './dashboard-statistique/dashboard-statistique.component';
+import { DashboardStatistiqueComponent } from './dashboard-suivi/dashboard-statistique/dashboard-statistique.component';
 import { DashboardInfoCorporellesComponent } from './dashboard-suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
 import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progress-bar/dashboard-progress-bar.component';
 import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
-import { DashboardInfoSmComponent } from './dashboard-info-sm/dashboard-info-sm.component';
-import { DashboardAvisComponent } from './dashboard-compte-sm/dashboard-avis/dashboard-avis.component';
-import { DashboardProgrammeComponent } from './dashboard-compte-sm/dashboard-programme/dashboard-programme.component';
-import { DashboardArticleComponent } from './dashboard-compte-sm/dashboard-article/dashboard-article.component';
+import { DashboardInfoSmComponent } from './dashboard-infos-personnelles/dashboard-info-sm/dashboard-info-sm.component';
+import { DashboardAvisComponent } from './dashboard-compte/dashboard-avis/dashboard-avis.component';
+import { DashboardProgrammeComponent } from './dashboard-compte/dashboard-programme/dashboard-programme.component';
+import { DashboardArticleComponent } from './dashboard-compte/dashboard-article/dashboard-article.component';
+import { DashboardInfosPersonnellesComponent } from './dashboard-infos-personnelles/dashboard-infos-personnelles.component';
+import { DashboardSuiviSmComponent } from './dashboard-suivi/dashboard-suivi-sm/dashboard-suivi-sm.component';
+import { DashboardCompteComponent } from './dashboard-compte/dashboard-compte.component';
+import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-lg/dashboard-compte-lg.component';
+import { DashboardInfoLgComponent } from './dashboard-infos-personnelles/dashboard-info-lg/dashboard-info-lg.component';
+import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/dashboard-suivi-lg.component';
 import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
 
@@ -39,7 +46,6 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
     ArticleBlogComponent,
     NosProgrammesComponent,
     StatsComponent,
-    InfosComponent,
     DashboardCompteSmComponent,
     CommandeComponent,
     DashboardSuiviComponent,
@@ -51,6 +57,12 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
     DashboardAvisComponent,
     DashboardProgrammeComponent,
     DashboardArticleComponent,
+    DashboardInfosPersonnellesComponent,
+    DashboardSuiviSmComponent,
+    DashboardCompteComponent,
+    DashboardCompteLgComponent,
+    DashboardInfoLgComponent,
+    DashboardSuiviLgComponent,
     PratiqueSportiveMobileComponent,
     BlogMobileComponent
 

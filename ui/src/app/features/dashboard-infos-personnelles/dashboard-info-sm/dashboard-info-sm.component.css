@@ -1,0 +1,13 @@
+button{
+    font-size: 9px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.78;
+    letter-spacing: 0.23px;
+    text-align: center;
+    color: #ffffff;
+}
+.bg-gradient{
+    background: linear-gradient(0deg, transparent 80%, #000000 20%);
+}
