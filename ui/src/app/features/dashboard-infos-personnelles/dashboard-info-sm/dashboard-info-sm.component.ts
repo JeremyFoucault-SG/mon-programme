@@ -31,7 +31,7 @@ export class DashboardInfoSmComponent implements OnInit {
       iban: ['', Validators.required],
       rib: ['', Validators.required],
     })
-  })
+  });
 
   ngOnInit() {
   }
