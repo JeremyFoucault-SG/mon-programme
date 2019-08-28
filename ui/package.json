@@ -17,6 +17,7 @@
     "@angular/compiler": "~8.1.2",
     "@angular/core": "~8.1.2",
     "@angular/forms": "~8.1.2",
+    "@angular/http": "^7.2.15",
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
@@ -30,7 +31,8 @@
     "font-awesome": "^4.7.0",
     "ng2-charts": "^2.3.0",
     "ngx-facebook": "^2.4.0",
-    "rxjs": "~6.4.0",
+    "rxjs": "^6.4.0",
+    "rxjs-compat": "^6.5.2",
     "tailwindcss": "^1.0.5",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

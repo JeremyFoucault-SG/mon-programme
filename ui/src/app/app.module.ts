@@ -15,7 +15,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { NgxsModule } from '@ngxs/store';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -31,6 +31,7 @@ import { NgxsModule } from '@ngxs/store';
     AppRoutingModule,
     AngularFontAwesomeModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     ChartsModule,
     NgxsModule.forRoot([
