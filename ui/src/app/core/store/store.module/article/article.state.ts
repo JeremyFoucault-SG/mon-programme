@@ -41,7 +41,7 @@ export class ArticleState {
 
     @Action(GetAllArticles)
     getAll(ctx: StateContext<ArticleStateModel>, action: GetAllArticles) {
-        console.log('ffffffff')
+        console.log('ffffffff');
         return this.service.getAllArticles().pipe(tap((articles: ArticleBlog[]) => {
             ctx.setState(patch({
                 items: articles

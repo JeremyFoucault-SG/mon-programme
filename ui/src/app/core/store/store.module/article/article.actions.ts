@@ -2,7 +2,7 @@ import { ArticleBlog } from '../../../../shared/models/articles-blog.model';
 
 
 
-// Création d'un article // 
+// Création d'un article //
 export class AddArticle {
     static readonly type = '[Blog] Add';
     constructor(public payload: ArticleBlog) { }
