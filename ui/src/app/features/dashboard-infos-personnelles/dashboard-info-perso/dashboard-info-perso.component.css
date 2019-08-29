@@ -1,0 +1,23 @@
+.content {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 2%;
+}
+input {
+  border-radius: 5px;
+  border: solid 1px rgba(149, 152, 154, 0.3);
+  background-color: #fcfcfc;
+}
+select{
+  border-radius: 5px;
+  border: solid 1px rgba(149, 152, 154, 0.3);
+  background-color: #fcfcfc;
+}
+label {
+  font-family: Avenir;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 2;
+  letter-spacing: 0.25px;
+  float: left;
+  color: #cc6666;
+}

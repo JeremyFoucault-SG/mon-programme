@@ -1,0 +1,146 @@
+.prog {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  text-align: left;
+  color: #606060;
+}
+
+.finish {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: 1.61px;
+  text-align: left;
+  color: #a0a0a0;
+}
+
+.describ {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #42505c;
+}
+
+.title {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.68;
+  letter-spacing: 2.36px;
+  text-align: left;
+  color: #79828b;
+}
+
+.charger {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.06;
+  letter-spacing: 1.93px;
+  text-align: right;
+  color: #cc6666;
+}
+
+a {
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #aaa1a1a2;
+}
+
+.valid {
+  border-radius: 5px;
+  border: solid 1px #fafafa;
+  background-color: #cc6666;
+  width: 60%;
+  height: 25%;
+  font-family: Avenir;
+  font-size: 11px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.78;
+  letter-spacing: 0.45px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.corpulence {
+  font-family: Lato;
+  font-size: 15px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #00a747;
+  font-weight: bold;
+}
+
+.corpulence2 {
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #00a747;
+}
+
+.main-title {
+  font-family: Lato;
+  font-size: 30px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: 0.38px;
+  text-align: left;
+  color: #42505c;
+}
+
+.onglet:hover {
+  border-radius: 19px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #cc6666;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.bg-purpleprog {
+  background-color: #7467f0;
+}
+.content {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
+}
+.active {
+  border-radius: 19px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #cc6666;
+}

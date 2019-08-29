@@ -1,0 +1,29 @@
+<!-- Show form biling content -->
+<div class="content w-full mt-5 mb-5 bg-white" [formGroup]="formFacturation">
+  <div class="p-3">
+    <!-- Title -->
+    <h1 class="title-dashboard-sm">
+      Infos facturation
+    </h1>
+
+    <!-- adress user -->
+    <div class="mt-3 mb-3">
+      <label>Adresse postale</label>
+      <input class="w-full" type="text" formControlName="address" />
+    </div>
+
+    <!-- city user -->
+    <div class="flex justify-between mt-3 mb-3">
+      <div class="mr-5">
+        <label>Ville</label>
+        <input class="w-full" type="text" formControlName="ville" />
+      </div>
+
+    <!-- ZIP code user -->
+    <div class="ml-5">
+        <label>CP</label>
+        <input class="w-full" type="text" formControlName="cp" />
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+.content {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
+}
+.main-title {
+  font-family: Lato;
+  font-size: 30px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: 0.38px;
+  text-align: left;
+  color: #42505c;
+}
+.onglet:hover {
+    border-radius: 19px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #cc6666;
+}
+.active{
+    border-radius: 19px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #cc6666;
+}
