@@ -29,10 +29,9 @@ import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-
 import { FunctionComponent } from './components/form-function/function/function.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeSmComponent } from './components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
-import { ContactLgComponent } from './components/contact-lg/contact-lg.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { FunctionSmComponent } from './components/form-function/function-sm/function-sm.component';
 import { ObjectifProgrammeComponent } from './components/menu-nos-programme/objectif-programme/objectif-programme.component';
-import { ContactSmComponent } from './components/contact-sm/contact-sm.component';
 import { DetailProgrammeComponent } from './components/detail-programme/detail-programme.component';
 import { DetailProgrammePhotoComponent } from './components/detail-programme/detail-programme-photo/detail-programme-photo.component';
 import { LoginAccueilComponent } from './components/login-sm/login-accueil/login-accueil.component';
@@ -75,10 +74,9 @@ import { SubTitleComponent } from './components/sub-title/sub-title.component';
     NewsletterBannerLgComponent,
     FunctionComponent,
     FormSelectionProgrammeSmComponent,
-    ContactLgComponent,
+    ContactComponent,
     FunctionSmComponent,
     ObjectifProgrammeComponent,
-    ContactSmComponent,
     DetailProgrammeComponent,
     DetailProgrammePhotoComponent,
     LoginAccueilComponent,
@@ -119,7 +117,7 @@ import { SubTitleComponent } from './components/sub-title/sub-title.component';
     CardNosProgrammesComponent,
     MenuNosProgrammeComponent,
     FunctionComponent,
-    ContactLgComponent,
+    ContactComponent,
     ListBlogComponent,
     FunctionSmComponent,
     FormSelectionProgrammeSmComponent,

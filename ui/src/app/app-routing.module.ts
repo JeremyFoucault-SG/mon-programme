@@ -12,7 +12,6 @@ import { FooterSmComponent } from './core/footer/footer-sm/footer-sm.component';
 import { MenuNosProgrammeComponent } from './shared/components/menu-nos-programme/menu-nos-programme.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeSmComponent } from './shared/components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
-import { ContactSmComponent } from './shared/components/contact-sm/contact-sm.component';
 import { ArticleBlogComponent } from './features/article-blog/article-blog.component';
 import { DetailProgrammeComponent } from './shared/components/detail-programme/detail-programme.component';
 import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes.component';
@@ -80,7 +79,6 @@ const routes: Routes = [
   { path: 'foot', component: FooterSmComponent },
   { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
-  { path: 'contact-sm', component: ContactSmComponent },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
   { path: 'footer-sm', component: FooterInformationSmComponent },
