@@ -13,7 +13,8 @@ module.exports = {
     extend: {
       spacing: {
         '2screen': '200vw',
-        '1/3-screen': 'calc(100vw /3)',
+        '1/3-screen': '23vw',
+        '1/2-screen': '42vw',
         '3/4-screen': '75vw'
       },
       lineHeight: {
