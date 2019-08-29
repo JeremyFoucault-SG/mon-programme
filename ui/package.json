@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@dimpu/ngx-quill": "^7.0.10",
     "@github/details-dialog-element": "^3.0.9",
     "@ngxs/devtools-plugin": "^3.5.0",
     "@ngxs/logger-plugin": "^3.5.0",

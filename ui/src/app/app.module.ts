@@ -15,6 +15,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { NgxsModule } from '@ngxs/store';
+import { AdminModule } from './admin/admin.modules';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -34,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ReactiveFormsModule,
     ChartsModule,
+    AdminModule,
     NgxsModule.forRoot([
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
