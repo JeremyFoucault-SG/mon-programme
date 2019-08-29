@@ -41,20 +41,13 @@ import { Inscription4Component } from './components/login-sm/inscription4/inscri
 import { ConnexionComponent } from './components/login-sm/connexion/connexion.component';
 import { DashboardInfoPersoComponent } from '../features/dashboard-infos-personnelles/dashboard-info-perso/dashboard-info-perso.component';
 // tslint:disable-next-line: max-line-length
-import { DashboardInfoFacturationComponent } from '../features/dashboard-compte-sm/dashboard-info-facturation/dashboard-info-facturation.component';
-import { DashboardPaiementComponent } from '../features/dashboard-compte-sm/dashboard-paiement/dashboard-paiement.component';
-import { DashboardHistoriqueComponent } from '../features/dashboard-compte-sm/dashboard-historique/dashboard-historique.component';
 import { TitleComponent } from './components/title/title.component';
 import { CardThumbListComponent } from './components/card-thumb-list/card-thumb-list.component';
 import { SubTitleComponent } from './components/sub-title/sub-title.component';
 import { DashboardInfoFacturationComponent } from '../features/dashboard-infos-personnelles/dashboard-info-facturation/dashboard-info-facturation.component';
 import { DashboardHistoriqueComponent } from '../features/dashboard-infos-personnelles/dashboard-historique/dashboard-historique.component';
-import { NosProgrammeHomeComponent } from './components/nos-programme-home/nos-programme-home.component';
-import { SlideShowHomeComponent } from './components/slide-show-home/slide-show-home.component';
-import { VideoHomeComponent } from './components/video-home/video-home.component';
 import { TagComponent } from './components/tag/tag.component';
-
-
+import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
 
 @NgModule({
   declarations: [
@@ -95,18 +88,14 @@ import { TagComponent } from './components/tag/tag.component';
     TitleComponent,
     CardThumbListComponent,
     SubTitleComponent,
-    NosProgrammeHomeComponent,
-    SlideShowHomeComponent,
-    VideoHomeComponent,
-    TagComponent
+    TagComponent,
+    FooterSmComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     RouterModule
-
-
   ],
   exports: [
     FormCustomizeProgrammeComponent,
@@ -134,10 +123,8 @@ import { TagComponent } from './components/tag/tag.component';
     TitleComponent,
     CardThumbListComponent,
     SubTitleComponent,
-    NosProgrammeHomeComponent,
-    SlideShowHomeComponent,
-    VideoHomeComponent,
-    TagComponent
+    TagComponent,
+    FooterSmComponent
   ]
 })
 export class SharedModule { }

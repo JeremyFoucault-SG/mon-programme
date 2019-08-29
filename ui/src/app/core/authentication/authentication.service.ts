@@ -1,5 +1,5 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { tokenNotExpired } from 'angular2-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -15,9 +15,9 @@ export class AuthenticationService {
     }
   }
 
-  public isAuthenticated(): boolean {
+/*   public isAuthenticated(): boolean {
     const token = this.getToken();
     return tokenNotExpired(null, token);
-  }
+  } */
 
 }
