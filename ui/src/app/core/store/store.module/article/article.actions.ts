@@ -2,35 +2,19 @@ import { ArticleBlog } from '../../../../shared/models/articles-blog.model';
 
 
 
-// Recuperation d'un article //
-export class RecupArticle {
-    static readonly type = '[ArticleBlog] Recup';
-    constructor(public titre: string, public photo: string, public desc: string) { }
-}
-
-// Recuperation de tous les articles //
-export class RecupAlllArticles {
-    static readonly type = '[ArticleBlog] RecupAll';
-    constructor(public titre: string, public photo: string, public desc: string) { }
-}
-
-
-// Supression d'un article //
-export class RemoveArticle {
-    static readonly type = '[ArticleBlog] Remove';
-    constructor(public titre: string, public photo: string, public desc: string) { }
-}
-
-
-// Ajout d'un article //
+// Création d'un article // 
 export class AddArticle {
-    static readonly type = '[ArticleBlog] Add';
-    constructor(public titre: string, public photo: string, public desc: string) { }
+    static readonly type = '[Blog] Add';
+    constructor(public payload: ArticleBlog) { }
+}
+
+export class GetAllArticles {
+    static readonly type = '[Blog] Get all article';
+    constructor() { }
 }
 
 
-// Mise a jour d'un article //
-export class ChangeArticle {
-    static readonly type = '[ArticleBlog] Change';
-    constructor(public titre: string, public photo: string, public desc: string) { }
+export class GetByIdArticle {
+    static readonly type = '[Blog] Get all article';
+    constructor(public id: string) { }
 }

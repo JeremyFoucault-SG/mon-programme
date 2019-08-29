@@ -5,8 +5,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
-import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+
 
 // Imports Components //
 import { AppRoutingModule } from './app-routing.module';
@@ -14,13 +13,20 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
-import { NgxsModule } from '@ngxs/store';
+import { StoreModule } from '../app/core/store/store.module';
+
 import { HttpClientModule } from '@angular/common/http';
+
+
+
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
 
   ],
   imports: [
@@ -34,10 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ReactiveFormsModule,
     ChartsModule,
-    NgxsModule.forRoot([
-    ]),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot()
+    StoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

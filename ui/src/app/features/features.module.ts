@@ -52,7 +52,9 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
     DashboardProgrammeComponent,
     DashboardArticleComponent,
     PratiqueSportiveMobileComponent,
-    BlogMobileComponent
+    BlogMobileComponent,
+
+
 
   ],
   imports: [
@@ -65,7 +67,7 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
     ChartsModule
   ],
   exports: [
-    LoginModalComponent
+    LoginModalComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
