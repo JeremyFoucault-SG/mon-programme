@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
-
-
-// Component
 import { FormCustomizeProgrammeComponent } from './components/form-customize-programme/form-customize-programme.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './components/selection-programme/form-selection-programme/form-selection-programme.component';
@@ -22,9 +18,7 @@ import { CardNosProgrammesComponent } from './components/card-nos-programmes/car
 import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-nos-programme.component';
 import { ListBlogComponent } from './components/list-blog/list-blog.component';
 import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-blog-sm.component';
-import { NewsletterSmComponent } from './components/newsletter/newsletter-sm/newsletter-sm.component';
-import { NewsletterLgComponent } from './components/newsletter/newsletter-lg/newsletter-lg.component';
-import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner-lg/newsletter-banner-lg.component';
+import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner/newsletter-banner.component';
 import { FunctionComponent } from './components/form-function/function/function.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeSmComponent } from './components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
@@ -44,6 +38,7 @@ import { DashboardInfoPersoComponent } from '../features/dashboard-infos-personn
 import { TitleComponent } from './components/title/title.component';
 import { CardThumbListComponent } from './components/card-thumb-list/card-thumb-list.component';
 import { SubTitleComponent } from './components/sub-title/sub-title.component';
+// tslint:disable-next-line: max-line-length
 import { DashboardInfoFacturationComponent } from '../features/dashboard-infos-personnelles/dashboard-info-facturation/dashboard-info-facturation.component';
 import { DashboardHistoriqueComponent } from '../features/dashboard-infos-personnelles/dashboard-historique/dashboard-historique.component';
 import { TagComponent } from './components/tag/tag.component';
@@ -66,8 +61,7 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     MenuNosProgrammeComponent,
     ListBlogComponent,
     CardBlogSmComponent,
-    NewsletterSmComponent,
-    NewsletterLgComponent,
+    NewsletterComponent,
     NewsletterBannerLgComponent,
     FunctionComponent,
     FormSelectionProgrammeSmComponent,
