@@ -1,4 +1,4 @@
-<div class="relative max-w-sm h-48 rounded-t-lg overflow-hidden shadow-lg flex flex-col"
+<div class="w-3/4-screen md:w-1/2-screen lg:w-1/3-screen relative h-64 rounded-t-lg overflow-hidden shadow-lg flex flex-col"
   (mouseenter)="isContentOverlay && onShowContentOverlay()" (mouseleave)="isContentOverlay && onHideContentOverlay()">
 
   <!-- Card background (see @Inputs) -->
@@ -26,8 +26,8 @@
 
     <!-- Title and description (see @Inputs)-->
     <div class="px-4 pb-2 flex flex-col text-white">
-      <p class="py-2">{{title}}</p>
-      <p class="text-xs">{{content}}</p>
+      <p class="py-2 text-xl font-lato font-bold tracking-widest">{{title}}</p>
+      <p class="text-basic tracking-widest">{{content}}</p>
     </div>
     <div class="self-end">
 

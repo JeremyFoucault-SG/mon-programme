@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ProgramDetail } from '../../models/programs-infos';
+import { ProgramDetail } from '../../../../shared/models/programs-infos';
 
 @Component({
-  selector: 'app-nos-programme-home',
-  templateUrl: './nos-programme-home.component.html',
-  styleUrls: ['./nos-programme-home.component.css']
+  selector: 'app-home-header-video',
+  templateUrl: './home-header-video.component.html',
+  styleUrls: ['./home-header-video.component.css']
 })
-export class NosProgrammeHomeComponent implements OnInit {
+export class HomeHeaderVideoComponent implements OnInit {
 
   constructor() { }
 
