@@ -36,6 +36,7 @@ import { DashboardCompteComponent } from './features/dashboard-compte/dashboard-
 import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -86,7 +87,7 @@ const routes: Routes = [
   { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
   { path: 'contact-sm', component: ContactSmComponent },
-  { path: 'article', component: ArticleBlogComponent },
+  { path: 'article-blog', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
   { path: 'footer-sm', component: FooterSmComponent },
   { path: 'nos-programmes', component: NosProgrammesComponent },
@@ -105,6 +106,7 @@ const routes: Routes = [
   {path: 'dashboard-3', component: DashboardSuiviComponent},
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent},
   { path: 'blog-mobile', component: BlogMobileComponent },
+
 
 ];
 
