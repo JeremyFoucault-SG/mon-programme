@@ -13,7 +13,6 @@ import { CardProgrammesComponent } from './components/card-programmes/card-progr
 import { CardBlogComponent } from './components/list-blog/card-blog-lg/card-blog.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { JoinTeamCodePromoComponent } from './components/join-team-code-promo/join-team-code-promo.component';
-import { FooterHomeComponent } from './components/footer-home/footer-home.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
@@ -59,7 +58,6 @@ import { SubTitleComponent } from './components/sub-title/sub-title.component';
     CardBlogComponent,
     MenuComponent,
     JoinTeamCodePromoComponent,
-    FooterHomeComponent,
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
@@ -108,7 +106,6 @@ import { SubTitleComponent } from './components/sub-title/sub-title.component';
     CardBlogComponent,
     MenuComponent,
     JoinTeamCodePromoComponent,
-    FooterHomeComponent,
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
