@@ -12,7 +12,7 @@ export class CardBlogComponent implements OnInit {
    * Set photo, titre, desc in article-blog
    */
   @Input()
-  public articlesBlog: ArticleBlog;
+  public article: ArticleBlog;
   /**
    * Look is the articles is even or odd
    */

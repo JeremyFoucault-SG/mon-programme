@@ -34,6 +34,7 @@ import { DashboardInfoLgComponent } from './dashboard-infos-personnelles/dashboa
 import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/dashboard-suivi-lg.component';
 import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
     FormsModule,
     ReactiveFormsModule,
     FacebookModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    CoreModule,
   ],
   exports: [
     LoginModalComponent,

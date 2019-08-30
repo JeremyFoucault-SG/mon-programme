@@ -12,7 +12,7 @@ export class CardBlogSmComponent implements OnInit {
    * Set photo, titre, desc in article-blog
    */
   @Input()
-  public articlesBlog: ArticleBlog;
+  public article: ArticleBlog;
 
   constructor() { }
 

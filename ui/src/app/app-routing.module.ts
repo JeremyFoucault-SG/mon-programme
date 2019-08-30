@@ -35,6 +35,7 @@ import { DashboardInfosPersonnellesComponent } from './features/dashboard-infos-
 import { DashboardCompteComponent } from './features/dashboard-compte/dashboard-compte.component';
 import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
+import { CreateArticleComponent } from './admin/article/create-article/create-article.component';
 
 
 const routes: Routes = [
@@ -106,6 +107,7 @@ const routes: Routes = [
   {path: 'dashboard-3', component: DashboardSuiviComponent},
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent},
   { path: 'blog-mobile', component: BlogMobileComponent },
+  { path: 'create-article', component: CreateArticleComponent}
 
 
 ];
