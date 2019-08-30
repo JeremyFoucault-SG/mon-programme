@@ -3,34 +3,27 @@ import { Routes, RouterModule } from '@angular/router';
 import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
-import { CardNosProgrammesComponent } from './shared/components/card-nos-programmes/card-nos-programmes.component';
 import { NutritionComponent } from './features/nutrition/nutrition.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './shared/components/selection-programme/form-selection-programme/form-selection-programme.component';
 import { FunctionComponent } from './shared/components/form-function/function/function.component';
-import { FooterSmComponent } from './core/footer/footer-sm/footer-sm.component';
+import { FooterSmComponent } from './shared/components/footer-sm/footer-sm.component';
 import { MenuNosProgrammeComponent } from './shared/components/menu-nos-programme/menu-nos-programme.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeSmComponent } from './shared/components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
-import { ContactSmComponent } from './shared/components/contact-sm/contact-sm.component';
 import { ArticleBlogComponent } from './features/article-blog/article-blog.component';
 import { DetailProgrammeComponent } from './shared/components/detail-programme/detail-programme.component';
 import { NosProgrammesComponent } from './features/nos-programmes/nos-programmes.component';
-import { LoginModalComponent } from './features/login-modal/login-modal.component';
-import { FooterInformationSmComponent } from './core/footer/footer-information-sm/footer-information-sm.component';
-import { StatsComponent } from './features/dashboard-suivi/stats/stats.component';
-
 import { LoginAccueilComponent } from './shared/components/login-sm/login-accueil/login-accueil.component';
 import { Inscription1Component } from './shared/components/login-sm/inscription1/inscription1.component';
 import { Inscription2Component } from './shared/components/login-sm/inscription2/inscription2.component';
 import { Inscription3Component } from './shared/components/login-sm/inscription3/inscription3.component';
 import { Inscription4Component } from './shared/components/login-sm/inscription4/inscription4.component';
 import { ConnexionComponent } from './shared/components/login-sm/connexion/connexion.component';
+import { HomeComponent } from './features/home/home.component';
 import { DashboardCompteSmComponent } from './features/dashboard-compte/dashboard-compte-sm/dashboard-compte-sm.component';
-import { HomeComponent } from './features/home-container/home.component';
 import { CommandeComponent } from './features/commande/commande.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
-import { DashboardInfoSmComponent } from './features/dashboard-infos-personnelles/dashboard-info-sm/dashboard-info-sm.component';
 import { DashboardInfosPersonnellesComponent } from './features/dashboard-infos-personnelles/dashboard-infos-personnelles.component';
 import { DashboardCompteComponent } from './features/dashboard-compte/dashboard-compte.component';
 import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
@@ -87,7 +80,7 @@ const routes: Routes = [
   { path: 'foot', component: FooterSmComponent },
   { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
-  { path: 'contact-sm', component: ContactSmComponent },
+  { path: 'article', component: ArticleBlogComponent },
   { path: 'article-blog', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
   { path: 'footer-sm', component: FooterSmComponent },
@@ -98,7 +91,6 @@ const routes: Routes = [
   { path: 'inscription-3', component: Inscription3Component },
   { path: 'inscription-4', component: Inscription4Component },
   { path: 'connexion', component: ConnexionComponent },
-  { path: 'login', component: LoginModalComponent },
   { path: 'dashboard-suivi', component: DashboardSuiviComponent },
   { path: 'dashboard-infos', component: DashboardInfosPersonnellesComponent },
   {path: 'dashboard-compte', component: DashboardCompteComponent},

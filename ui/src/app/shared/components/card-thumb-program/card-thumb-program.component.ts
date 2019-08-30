@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
  * Card thumb is used for both thumbs of programs and article
  */
 @Component({
-  selector: 'app-thumb-program',
+  selector: 'app-card-thumb-program',
   templateUrl: './card-thumb-program.component.html',
   styleUrls: ['./card-thumb-program.component.css']
 })

@@ -1,0 +1,3 @@
+.bg-linear-gradien-white-to-black {
+    background: linear-gradient(180deg, transparent 50%, #000000 50%);
+}
