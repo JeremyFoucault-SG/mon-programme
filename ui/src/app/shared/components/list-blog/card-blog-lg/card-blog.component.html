@@ -1,41 +1,27 @@
-<div [ngClass]="{'flex-row-reverse' : isReverse}"  class="flex mt-10 mb-10">
-    <div class="w-3/5 photo">
-        <img [src]=articlesBlog.photo alt="photo"
-            class="object-cover w-full img-blog-right photo-blog-ecran"
-            [ngClass]="{'img-blog-left' : isReverse}"
-            >
-    </div>
-    <div class="w-1/2 text-center mt-3 mr-10 ml-10">
+<div [ngClass]="{'flex-row-reverse' : isReverse}" class="w-full flex mt-10 mb-10">
+  <div class="w-3/5 bg-cover bg-center img-blog-right" [ngStyle]="{'background-image': 'url('+article.photoUrl+')'}" [ngClass]="{'img-blog-left' : isReverse}">
+  </div>
+  <div class="w-1/2 text-center">
 
-        <div class="article lg:mr-10">
-            <h3 
-            class="text-right fs-1 mt-6 mr-10"
-            [ngClass]="{'numero-blog-left' : isReverse}"
-            >01</h3>
+    <div class="px-20">
+      <div class="flex flex-col" [ngClass]="isReverse ? 'items-start' : 'items-end'">
+        <h3 class="text-5xl"
+          [ngClass]="{'text-left': isReverse, 'text-right': !isReverse, 'pl-10': isReverse, 'pr-10': !isReverse}">01
+        </h3>
+        <div class="inline-block bg-yellow-500 rectangle" [ngClass]="isReverse ? 'text-left' : 'text-right'"></div>
+      </div>
 
-            <div 
-            class="inline-block mx-auto rectangle"
-            [ngClass]="{'rectangle-left' : isReverse}"
-            ></div>
-            <h1 
-            class="text-right uppercase fs-5 lg:text-5xl"
-            [ngClass]="{'text-blog-left' : isReverse}"
-            >{{articlesBlog.titre}}</h1>
-            <p 
-            class="text-right fs-8 mr-10 ml-10 lg:m-0"
-            [ngClass]="{'text-blog-left' : isReverse}"
-            >{{articlesBlog.desc}}
-            </p>
-            <div class="text-right"
-            [ngClass]="{'text-blog-left' : isReverse}">
-                <button class="btn-blog">
-                    Voir L'article
-                </button>
-            </div>
-            <div class="flex mt-10 border heart"
-            [ngClass]="{'btn-sauvegarde' : isReverse}">
-               <img src="https://zupimages.net/up/19/31/n69c.png" alt="heart" class="mr-2 ml-2 h-8 w-8 ">
-                <p class="save">Sauvegarder l'article</p>
-        </div>
+      <h1 class="uppercase py-10 text-5xl" [ngClass]="isReverse ? 'text-left' : 'text-right'">{{article.titre}}</h1>
+      <p class="text-xl" [ngClass]="isReverse ? 'text-left' : 'text-right'">{{article.content}}</p>
+      <div [ngClass]="isReverse ? 'text-left' : 'text-right'">
+        <button
+          class="bg-transparent border-yellow-500 hover:bg-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5">
+          Voir L'article
+        </button>
+      </div>
+      <div class="flex items-center mt-10 w-full" [ngClass]="isReverse ? 'justify-end' : 'justify-start'">
+        <i class="cursor-pointer text-red-700 fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        <p class="cursor-pointer ml-5 italic text-gray-600 tracking-wider">Sauvegarder l'article</p>
+      </div>
     </div>
-</div>
+  </div>
