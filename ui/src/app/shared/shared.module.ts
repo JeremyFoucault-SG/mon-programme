@@ -6,7 +6,7 @@ import { FormCustomizeProgrammeComponent } from './components/form-customize-pro
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './components/selection-programme/form-selection-programme/form-selection-programme.component';
 import { CardProgrammesComponent } from './components/card-programmes/card-programmes.component';
-import { CardBlogComponent } from './components/card-blog-lg/card-blog.component';
+import { CardArticleComponent } from './components/card-article/card-article.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { JoinTeamCodePromoComponent } from './components/join-team-code-promo/join-team-code-promo.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
@@ -47,7 +47,7 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     FormCustomizeProgrammeComponent,
     FormSelectionProgrammeComponent,
     CardProgrammesComponent,
-    CardBlogComponent,
+    CardArticleComponent,
     MenuComponent,
     JoinTeamCodePromoComponent,
     NewsletterComponent,
@@ -91,7 +91,7 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     FormCustomizeProgrammeComponent,
     FormSelectionProgrammeComponent,
     CardProgrammesComponent,
-    CardBlogComponent,
+    CardArticleComponent,
     MenuComponent,
     JoinTeamCodePromoComponent,
     NewsletterComponent,
