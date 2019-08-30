@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
-import { NewsletterComponent } from './shared/components/newsletter/newsletter.component';
 import { ListBlogComponent } from './shared/components/list-blog/list-blog.component';
 import { NutritionComponent } from './features/nutrition/nutrition.component';
 // tslint:disable-next-line: max-line-length
@@ -71,12 +70,10 @@ const routes: Routes = [
       isTransparent: true,
     }
   },
-  { path: 'newsletter', component: NewsletterComponent },
   { path: 'blog', component: ListBlogComponent },
   { path: 'nutrition', component: NutritionComponent },
   { path: 'select', component: FormSelectionProgrammeComponent },
   { path: 'func', component: FunctionComponent },
-  { path: 'foot', component: FooterSmComponent },
   { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
   { path: 'article', component: ArticleBlogComponent },
