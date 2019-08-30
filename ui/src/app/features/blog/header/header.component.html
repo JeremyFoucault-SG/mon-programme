@@ -1,1 +1,19 @@
-<p>header works!</p>
+<div class="h-full bg-cover" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
+  <div class="index">
+    <h6 class="blog">BLOG</h6>
+    <h1 class="vie uppercase">{{title}}</h1>
+    <div class="line-rosette"></div>
+  </div>
+  <div class="div-rose flex-row">
+    <a class="lien flex-row uppercase" [routerLink]="['/style-de-vie-et-nutrition']" routerLinkActive="active">style de
+      vie et nutrition</a>
+    <a class="lien flex-row uppercase" [routerLink]="['/sante']" routerLinkActive="active">santé</a>
+    <a class="lien flex-row uppercase" [routerLink]="['/pratique-sportive']" routerLinkActive="active">pratique
+      sportive</a>
+  </div>
+
+  <div class="group">
+    <a class="nav-link return" [routerLink]="[ '/home' ]" routerLinkActive="active-nav"><i class="fa fa-undo mr-4"
+        aria-hidden="true"></i>PAGE D'ACCUEIL</a>
+  </div>
+</div>

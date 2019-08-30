@@ -1,0 +1,90 @@
+.index {
+  z-index: 1;
+  position: absolute;
+}
+
+.line-rosette {
+  background-color: #cc6666;
+  height: 8px;
+  width: 100%;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+.blog {
+  width: 64px;
+  height: 28px;
+  font-family: Lato;
+  font-size: 23px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.87;
+  letter-spacing: 1.2px;
+  text-align: left;
+  color: #1c1c1c;
+  padding-left: 10%;
+  padding-top: 20%;
+}
+
+.vie {
+  width: 445px;
+  height: 288px;
+  font-family: Lato;
+  font-size: 80px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1c1c1c;
+  padding-left: 10%;
+  padding-top: 10%;
+}
+
+.group {
+  padding-top: 50%;
+  padding-left: 10%;
+}
+
+.return {
+  width: 194px;
+  height: 28px;
+  font-family: Lato;
+  font-size: 23px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.87;
+  letter-spacing: 1.2px;
+  text-align: left;
+  color: #1c1c1c;
+}
+
+.div-rose {
+  background-color: #cc6666;
+  z-index: 1;
+  position: absolute;
+  width: 70%;
+  height: 20%;
+  left: 30%;
+  top: 108%;
+}
+
+.lien {
+  display: inline-flex;
+  justify-content: space-between;
+  margin-left: 7%;
+  margin-right: 3%;
+  padding-top: 5%;
+  font-family: Lato;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.67;
+  letter-spacing: 1.56px;
+  text-align: left;
+  color: #ffffff;
+}

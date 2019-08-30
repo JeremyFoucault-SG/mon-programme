@@ -1,6 +1,6 @@
 <!-- Background navbar can be set to transparent or black -->
-<nav class="flex items-center justify-between flex-wrap p-4 w-full z-20"
-  [ngClass]="{'bg-transparent' : isTransparent, 'bg-gray-900': isOpen, 'absolute': isOpen}">
+<nav class="absolute flex items-center justify-between flex-wrap p-4 w-full z-20"
+  [ngClass]="{'bg-transparent' : isTransparent, 'bg-gray-900': isOpen || !isTransparent}">
   <!-- [ngClass]="isTransparent || !isOpen  ? 'bg-transparent' : 'bg-gray-900'"> -->
 
   <!-- Mon programme logo (only desktop) -->

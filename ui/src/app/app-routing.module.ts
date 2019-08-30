@@ -54,9 +54,33 @@ const routes: Routes = [
       isTransparent: true,
     }
   },
-  { path: 'sante', component: BlogComponent },
-  { path: 'pratique-sportive', component: BlogComponent },
-  { path: 'style-de-vie-et-nutrition', component: BlogComponent },
+  {
+    path: 'sante',
+    component: BlogComponent,
+    data: {
+      title: 'santé',
+      isTransparent: false,
+      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
+    }
+  },
+  {
+    path: 'pratique-sportive',
+    component: BlogComponent,
+    data: {
+      title: 'pratique sportive',
+      isTransparent: false,
+      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
+    }
+  },
+  {
+    path: 'style-de-vie-et-nutrition',
+    component: BlogComponent,
+    data: {
+      title: 'style de vie & nutrition',
+      isTransparent: false,
+      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
+    }
+  },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'article-blog', component: ArticleBlogComponent },
   { path: 'dashboard-suivi', component: DashboardSuiviComponent },

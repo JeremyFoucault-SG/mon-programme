@@ -1,6 +1,15 @@
+<app-blog-header></app-blog-header>
 <div class="flex flex-row flex-wrap justify-around">
   <div *ngFor="let article of articles; odd as isReverse" class="w-104 mr-1 mt-5 lg:mt-10 lg:w-full">
     <app-card-article [article]="article" [isReverse]="isReverse">
     </app-card-article>
   </div>
+</div>
+
+<div class="pt-24 md:pt-32">
+  <app-newsletter></app-newsletter>
+</div>
+
+<div class="py-5 md:pt-10 xl:pt-32">
+  <app-footer></app-footer>
 </div>
