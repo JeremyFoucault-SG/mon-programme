@@ -11,6 +11,17 @@ module.exports = {
         '1/2-screen': '42vw',
         '3/4-screen': '75vw'
       },
+      height: {
+        'inherit': 'inherit'
+      },
+      width: {
+        '72': '18rem',
+        '80': '20rem',
+        '88': '22rem',
+        '96': '24rem',
+        '104': '26rem',
+        '112': '28rem',
+      },
       lineHeight: {
         '2loose': '3'
       },
