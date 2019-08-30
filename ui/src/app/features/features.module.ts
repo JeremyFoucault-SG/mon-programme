@@ -5,7 +5,6 @@ import { PopupAccueilComponent } from './popup-accueil/popup-accueil.component';
 import { PopupMwComponent } from './popup-mw/popup-mw.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { NutritionComponent } from './nutrition/nutrition.component';
 import { ArticleBlogComponent } from './article-blog/article-blog.component';
 import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -44,7 +43,6 @@ import { HeaderComponent } from './blog/header/header.component';
     PopupAccueilComponent,
     PopupMwComponent,
     HomeComponent,
-    NutritionComponent,
     ArticleBlogComponent,
     NosProgrammesComponent,
     StatsComponent,
