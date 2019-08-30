@@ -1,8 +1,0 @@
-
-<app-card-blog-lg class="hidden xl:flex"
-*ngFor="let articles of articlesBlog; odd as isReverse" [articlesBlog]="articles"
-    [isReverse]="isReverse">
-</app-card-blog-lg>
-<div class="flex flex-wrap justify-around mr-1 ml-1">
-<app-card-blog-sm *ngFor="let articles of articlesBlog" [articlesBlog]="articles" class="flex xl:hidden"></app-card-blog-sm>
-</div>

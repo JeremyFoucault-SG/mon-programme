@@ -6,7 +6,7 @@ import { FormCustomizeProgrammeComponent } from './components/form-customize-pro
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './components/selection-programme/form-selection-programme/form-selection-programme.component';
 import { CardProgrammesComponent } from './components/card-programmes/card-programmes.component';
-import { CardBlogComponent } from './components/list-blog/card-blog-lg/card-blog.component';
+import { CardBlogComponent } from './components/card-blog-lg/card-blog.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { JoinTeamCodePromoComponent } from './components/join-team-code-promo/join-team-code-promo.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
@@ -16,7 +16,6 @@ import { CardThumbProgramComponent } from './components/card-thumb-program/card-
 import { CardMinArticleComponent } from './components/card-min-article/card-min-article.component';
 import { CardNosProgrammesComponent } from './components/card-nos-programmes/card-nos-programmes.component';
 import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-nos-programme.component';
-import { ListBlogComponent } from './components/list-blog/list-blog.component';
 import { NewsletterBannerComponent } from './components/newsletter/newsletter-banner/newsletter-banner.component';
 import { FunctionComponent } from './components/form-function/function/function.component';
 // tslint:disable-next-line: max-line-length
@@ -58,7 +57,6 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     CardNosProgrammesComponent,
     CardThumbProgramComponent,
     MenuNosProgrammeComponent,
-    ListBlogComponent,
     NewsletterComponent,
     NewsletterBannerComponent,
     FunctionComponent,
@@ -105,7 +103,6 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     MenuNosProgrammeComponent,
     FunctionComponent,
     ContactComponent,
-    ListBlogComponent,
     FunctionSmComponent,
     FormSelectionProgrammeSmComponent,
     ObjectifProgrammeComponent,
