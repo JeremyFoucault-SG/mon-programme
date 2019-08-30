@@ -17,8 +17,7 @@ import { CardMinArticleComponent } from './components/card-min-article/card-min-
 import { CardNosProgrammesComponent } from './components/card-nos-programmes/card-nos-programmes.component';
 import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-nos-programme.component';
 import { ListBlogComponent } from './components/list-blog/list-blog.component';
-import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-blog-sm.component';
-import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner/newsletter-banner.component';
+import { NewsletterBannerComponent } from './components/newsletter/newsletter-banner/newsletter-banner.component';
 import { FunctionComponent } from './components/form-function/function/function.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeSmComponent } from './components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
@@ -60,9 +59,8 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     CardThumbProgramComponent,
     MenuNosProgrammeComponent,
     ListBlogComponent,
-    CardBlogSmComponent,
     NewsletterComponent,
-    NewsletterBannerLgComponent,
+    NewsletterBannerComponent,
     FunctionComponent,
     FormSelectionProgrammeSmComponent,
     ContactComponent,
