@@ -18,8 +18,6 @@ export class ArticleStateModel {
         item : null,
     }
 })
-
-
 export class ArticleState {
 
     constructor(private service: ArticlesService) {
@@ -30,14 +28,23 @@ export class ArticleState {
         console.log('heyyyy');
         return state.items;
     }
+    @Selector()
+    static article(state: ArticleStateModel) {
+        console.log('hoooo');
+        return state.item;
+    }
 
     @Action(AddArticle)
     add({ getState, patchState }: StateContext<ArticleStateModel>, { payload }: AddArticle) {
-        const state = getState();
-        patchState({
-            items: [...state.items, payload]
-        });
-    }
+        console.log('ha')
+        return this.service.createArticle(payload).pipe(tap(response => {
+            const state = getState();
+            patchState({
+          items: [...state.items, response]
+         })
+
+    }))
+}
 
     @Action(GetAllArticles)
     getAll(ctx: StateContext<ArticleStateModel>, action: GetAllArticles) {
@@ -52,9 +59,9 @@ export class ArticleState {
 
     @Action(GetByIdArticle)
     getById({getState, setState, patchState}: StateContext<ArticleStateModel>, {id}: GetByIdArticle) {
-        return this.service.getArticle(id).pipe(tap(respons => {
+        return this.service.getArticle(id).pipe(tap(response => {
             const state = getState();
-            patchState({...state, item: respons});
+            patchState({...state, item: response});
         }));
     }
 }

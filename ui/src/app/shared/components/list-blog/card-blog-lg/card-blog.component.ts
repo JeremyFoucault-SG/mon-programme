@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ArticleBlog } from '../../../models/articles-blog.model';
-
+import { Store, Select} from '@ngxs/store';
 @Component({
   selector: 'app-card-blog-lg',
   templateUrl: './card-blog.component.html',
@@ -19,7 +19,7 @@ export class CardBlogComponent implements OnInit {
   @Input()
   public isReverse: boolean;
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit() {
   }

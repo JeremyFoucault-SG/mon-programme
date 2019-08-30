@@ -3,6 +3,8 @@ import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
 import { GetByIdArticle } from '../../core/store/store.module/article/article.actions';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 
 @Component({
   selector: 'app-article-blog',
@@ -11,19 +13,21 @@ import { GetByIdArticle } from '../../core/store/store.module/article/article.ac
 })
 export class ArticleBlogComponent implements OnInit {
 
-
+  public id: string;
   @Input()
   tag: string;
 
 
-  @Select(ArticleState.articles)
-  articles: Observable<any>;
+  @Select(ArticleState.article)
+  article: Observable<ArticleBlog>;
 
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.store.dispatch(new GetByIdArticle('5d67b0e858f61a1e16294c2a'));
-  }
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.id = params.get('id');
+      this.store.dispatch(new GetByIdArticle(this.id));
+  })}
 
 }

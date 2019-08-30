@@ -35,6 +35,7 @@ import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/
 import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
 import { DashboardPaiementComponent } from './dashboard-infos-personnelles/dashboard-paiement/dashboard-paiement.component';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({

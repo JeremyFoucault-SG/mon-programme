@@ -80,7 +80,7 @@ const routes: Routes = [
   { path: 'foot', component: FooterSmComponent },
   { path: 'objectif', component: MenuNosProgrammeComponent },
   { path: 'select-sm', component: FormSelectionProgrammeSmComponent },
-  { path: 'article', component: ArticleBlogComponent },
+  { path: 'article/:id', component: ArticleBlogComponent },
   { path: 'article-blog', component: ArticleBlogComponent },
   { path: 'detail-programme', component: DetailProgrammeComponent },
   { path: 'footer-sm', component: FooterSmComponent },

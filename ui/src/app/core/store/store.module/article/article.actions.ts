@@ -15,6 +15,6 @@ export class GetAllArticles {
 
 
 export class GetByIdArticle {
-    static readonly type = '[Blog] Get all article';
+    static readonly type = '[Blog] Get article by id';
     constructor(public id: string) { }
 }

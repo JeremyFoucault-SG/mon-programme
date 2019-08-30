@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-
+import { Store } from '@ngxs/store';
+import { AddArticle } from '../../../core/store/store.module/article/article.actions';
 @Component({
   selector: 'app-create-article',
   templateUrl: './create-article.component.html',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class CreateArticleComponent implements OnInit {
 
   articleForm: FormGroup
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit() {
     this.articleForm = new FormGroup({
@@ -20,6 +21,6 @@ export class CreateArticleComponent implements OnInit {
     })
   }
   submit(){
-    console.log(this.articleForm.value);
+    this.store.dispatch(new AddArticle(this.articleForm.value));
   }
 }
