@@ -35,6 +35,8 @@ import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/
 import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
 import { DashboardPaiementComponent } from './dashboard-infos-personnelles/dashboard-paiement/dashboard-paiement.component';
+import { BlogComponent } from './blog/blog.component';
+import { HeaderComponent } from './blog/header/header.component';
 
 
 @NgModule({
@@ -69,6 +71,8 @@ import { DashboardPaiementComponent } from './dashboard-infos-personnelles/dashb
     DashboardPaiementComponent,
     PratiqueSportiveMobileComponent,
     BlogMobileComponent,
+    BlogComponent,
+    HeaderComponent,
   ],
   imports: [
     RouterModule,

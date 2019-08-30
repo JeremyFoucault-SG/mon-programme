@@ -1,0 +1,6 @@
+<div class="flex flex-row flex-wrap justify-around">
+  <div *ngFor="let article of articlesBlog; odd as isReverse" class="w-104 mr-1 mt-5 lg:mt-10 lg:w-full">
+    <app-card-blog-lg [article]="article" [isReverse]="isReverse">
+    </app-card-blog-lg>
+  </div>
+</div>
