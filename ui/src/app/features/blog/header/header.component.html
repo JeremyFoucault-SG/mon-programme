@@ -1,19 +1,43 @@
-<div class="h-full bg-cover" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
-  <div class="index">
-    <h6 class="blog">BLOG</h6>
-    <h1 class="vie uppercase">{{title}}</h1>
-    <div class="line-rosette"></div>
-  </div>
-  <div class="div-rose flex-row">
-    <a class="lien flex-row uppercase" [routerLink]="['/style-de-vie-et-nutrition']" routerLinkActive="active">style de
-      vie et nutrition</a>
-    <a class="lien flex-row uppercase" [routerLink]="['/sante']" routerLinkActive="active">santé</a>
-    <a class="lien flex-row uppercase" [routerLink]="['/pratique-sportive']" routerLinkActive="active">pratique
-      sportive</a>
+<div class="h-full">
+
+  <div class="-z-1 absolute bg-cover w-full" style="height: 90vh" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
   </div>
 
-  <div class="group">
-    <a class="nav-link return" [routerLink]="[ '/home' ]" routerLinkActive="active-nav"><i class="fa fa-undo mr-4"
-        aria-hidden="true"></i>PAGE D'ACCUEIL</a>
+  <div class="flex flex-row h-full">
+
+    <div class="flex flex-col flex-grow justify-around w-1/4">
+      <div class="pt-64 pl-12" style="height: 90vh">
+        <h6 class="text-xl font-bold font-lato uppercase">blog</h6>
+        <h1 class="text-5xl font-bold font-lato uppercase">{{title}}</h1>
+        <div class="line-rosette w-full bg-red-400"></div>
+      </div>
+
+      <div class="flex flex-row justify-center items-center" style="height: 10vh">
+        <a class="font-lato font-bold text-2xl" [routerLink]="[ '/home' ]" routerLinkActive="active-nav">
+          <i class="fa fa-undo mr-4 uppercase" aria-hidden="true"></i>page d'accueil</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col flex-grow justify-end w-3/4">
+      <div class="flex flex-row bg-red-400 justify-between" style="padding: 1vh 0 1vh 0;">
+        <a class="ml-2 mx-1 flex-grow py-16 px-16 hover:shadow-xl hover:bg-white hover:text-black text-center font-lato text-white font-bold text-3xl tracking-wider flex-row uppercase"
+          [routerLink]="['/style-de-vie-et-nutrition']" routerLinkActive="active">
+          style de vie et nutrition
+          <div class="mt-2 mx-auto pb-1 w-3/4" routerLinkActive="active-underline"></div>
+        </a>
+        <a class="mx-1 flex-grow py-16 px-16 hover:shadow-xl hover:bg-white hover:text-black text-center font-lato text-white font-bold text-3xl tracking-wider flex-row uppercase"
+          [routerLink]="['/sante']" routerLinkActive="active">
+          santé
+          <div class="mt-2 mx-auto pb-1 w-3/4" routerLinkActive="active-underline"></div>
+        </a>
+        <a class="mr-2 mx-1 flex-grow py-16 px-16 hover:shadow-xl hover:bg-white hover:text-black text-center font-lato text-white font-bold text-3xl tracking-wider flex-row uppercase"
+          [routerLink]="['/pratique-sportive']" routerLinkActive="active">
+          pratique sportive
+          <div class="mt-2 mx-auto pb-1 w-3/4" routerLinkActive="active-underline"></div>
+
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
