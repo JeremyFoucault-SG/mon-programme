@@ -36,14 +36,14 @@ export class ArticleState {
 
     @Action(AddArticle)
     add({ getState, patchState }: StateContext<ArticleStateModel>, { payload }: AddArticle) {
-        console.log('ha')
+        console.log('ha');
         return this.service.createArticle(payload).pipe(tap(response => {
             const state = getState();
             patchState({
           items: [...state.items, response]
-         })
+         });
 
-    }))
+    }));
 }
 
     @Action(GetAllArticles)
@@ -66,14 +66,14 @@ export class ArticleState {
     }
 
     @Action(DeleteArticle)
-    DeleteArticle({getState, setState}: StateContext<ArticleStateModel>, {id}: DeleteArticle){
+    DeleteArticle({getState, setState}: StateContext<ArticleStateModel>, {id}: DeleteArticle) {
       const previousState = getState();
       const state = getState();
       const filteredArray = state.items.filter(a => a._id !== id);
       setState({
         ...state,
         items: filteredArray
-      })
-      return this.service.deleteArticle(id).pipe()
+      });
+      return this.service.deleteArticle(id).pipe();
     }
 }

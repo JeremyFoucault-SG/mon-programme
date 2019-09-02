@@ -36,6 +36,7 @@ export class CoachingsService {
     }
 
     // Mise à jour d'un programme //
+    // tslint:disable-next-line: variable-name
     public updateProgramme(payload: Programmes, _id: string) {
         console.log(_id);
         return this.http.put<Programmes>(`${this.api}/coachings/${_id}` , payload);
@@ -48,6 +49,7 @@ export class CoachingsService {
     }
 
     // Supression d'un programme //
+    // tslint:disable-next-line: variable-name
     public deleteProgramme(_id: string) {
         return this.http.delete(`${this.api}/coachings/${_id}`);
     }

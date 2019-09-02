@@ -93,7 +93,7 @@ const routes: Routes = [
   { path: 'dashboard-3', component: DashboardSuiviComponent },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },
-  { path: 'create-article', component: CreateArticleComponent}
+  { path: 'create-article', component: CreateArticleComponent},
   { path: 'create-programme', component: ProgrammesComponent },
 
 

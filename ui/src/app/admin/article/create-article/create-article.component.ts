@@ -9,7 +9,7 @@ import { AddArticle } from '../../../core/store/store.module/article/article.act
 })
 export class CreateArticleComponent implements OnInit {
 
-  articleForm: FormGroup
+  articleForm: FormGroup;
   constructor(private store: Store) { }
 
   ngOnInit() {
@@ -18,9 +18,9 @@ export class CreateArticleComponent implements OnInit {
       photoUrl: new FormControl(''),
       author: new FormControl(''),
       content: new FormControl(''),
-    })
+    });
   }
-  submit(){
+  submit() {
     this.store.dispatch(new AddArticle(this.articleForm.value));
   }
 }
