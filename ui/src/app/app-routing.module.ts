@@ -23,7 +23,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'men',
+    path: 'homme',
     component: PopupMwComponent,
     data: {
       isMen: true,
@@ -36,7 +36,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'women',
+    path: 'femme',
     component: PopupMwComponent,
     data: {
       isWomen: true,

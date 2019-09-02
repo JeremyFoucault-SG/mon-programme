@@ -11,7 +11,8 @@
     </div>
     <div class="flex flex-grow mr-5 mt-2 md:mt-0 flex-wrap justify-end">
       <span class="md:hidden">
-        <i class="fs-8 fa fa-question-circle-o text-yellow-500 fa-2x" aria-hidden="true" [routerLink]="['/contact']"></i>
+        <i class="fs-8 fa fa-question-circle-o text-yellow-500 fa-2x" aria-hidden="true"
+          [routerLink]="['/contact']"></i>
       </span>
       <button class="hidden md:block btn btn-size rounded-full p-1-1" [routerLink]="['/contact']">
         <span class="bg-black rounded-full text-white uppercase">Contact</span>
@@ -20,7 +21,7 @@
   </div>
 
   <!-- Go to Men or Wowen (not for "choose" popup) -->
-  <div *ngIf="!isChoose"
+  <a *ngIf="!isChoose"
     class="cursor-pointer switch mt-24 md:mt-48 tracking-widest text-gray-100 uppercase font-bold text-xl opacity-75 absolute right-0"
     [routerLink]="[switchUrl]">
     <div class="mr-12">
@@ -29,36 +30,38 @@
     <div class="text-right mr-5 -mt-2">
       <i class="fa fa-long-arrow-right text-red-600" aria-hidden="true"></i>
     </div>
-  </div>
+  </a>
 
   <!-- Content center -->
   <div class="flex flex-col md:flex-row justify-around items-center">
 
     <!-- only for "choose" popup-->
-    <button *ngIf="isChoose"
-      class="mb-5 md:mb-0 acces cursor-pointer border-solid border border-yellow-500 btn-size bg-black text-white rounded-full font-bold uppercase"
-      [routerLink]="['/men']">
+    <a *ngIf="isChoose"
+      class="flex flex-row items-center justify-center mb-5 md:mb-0 acces cursor-pointer border-solid border border-yellow-500 btn-size bg-black text-white rounded-full font-bold uppercase"
+      [routerLink]="['/homme']">
       acces homme
-    </button>
+    </a>
 
     <!-- only for handle background for home, men or women -->
-    <div class="body py-10 flex flex-col items-center justify-end" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
+    <div class="body py-10 flex flex-col items-center justify-end"
+      [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
       <!-- only for men/women popup-->
       <div *ngIf="!isChoose" class="px-10 mb-10 text-justify text-white font-bold">
         {{textContent}}
       </div>
       <!-- only for men/women popup-->
-      <button *ngIf="!isChoose" class="btn-size bg-white rounded-full font-bold uppercase enter hover:bg-yellow-500">
+      <a *ngIf="!isChoose" [routerLink]="['/accueil']"
+        class="flex flex-row items-center justify-center cursor pointer btn-size bg-white rounded-full font-bold uppercase enter hover:bg-yellow-500">
         entrer
-      </button>
+      </a>
     </div>
 
     <!-- only for choose popup-->
-    <button *ngIf="isChoose"
-      class="mt-5 md:mt-0 acces cursor-pointer border-solid border border-red-600 btn-size bg-black text-white rounded-full font-bold uppercase"
-      [routerLink]="['/women']">
+    <a *ngIf="isChoose"
+      class="flex flex-row items-center justify-center mt-5 md:mt-0 acces cursor-pointer border-solid border border-red-600 btn-size bg-black text-white rounded-full font-bold uppercase"
+      [routerLink]="['/femme']">
       acces femme
-    </button>
+    </a>
   </div>
 
   <!-- Footer links -->
