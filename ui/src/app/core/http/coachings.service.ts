@@ -37,7 +37,7 @@ export class CoachingsService {
 
     // Mise à jour d'un programme //
     public updateProgramme(payload: Programmes, _id: string) {
-        console.log(_id)
+        console.log(_id);
         return this.http.put<Programmes>(`${this.api}/coachings/${_id}` , payload);
     }
 
