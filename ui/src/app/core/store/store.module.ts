@@ -6,6 +6,7 @@ import { ArticleState } from './store.module/article/article.state';
 import { ProgrammeState } from './store.module/programme/programme.state';
 import { BookmarkState } from './store.module/bookmark/bookmark.state';
 import { NewsletterState } from './store.module/newsletter/newsletter.state';
+import { FollowedState } from './store.module/followed-coaching/followed.state';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { NewsletterState } from './store.module/newsletter/newsletter.state';
             ArticleState,
             ProgrammeState,
             BookmarkState,
-            NewsletterState
+            NewsletterState,
+            FollowedState
         ]),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         NgxsLoggerPluginModule.forRoot()
