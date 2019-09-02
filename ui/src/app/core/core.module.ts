@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
-import { StoreModule } from '../core/store/store.module'
+import { StoreModule } from './store/store.module';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -10,7 +11,7 @@ import { StoreModule } from '../core/store/store.module'
   imports: [
     RouterModule,
     CommonModule,
-    StoreModule
+    StoreModule,
   ],
   exports: [
     HeaderComponent,

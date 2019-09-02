@@ -1,0 +1,18 @@
+
+    
+        <form [formGroup]="programmeForm" (ngSubmit)="onSubmit()">
+            <h2 class="flex justify-center mt-12">Modifié le contenu</h2>
+            <div class="form-group">
+            <div class="flex justify-center">
+                    <ngx-quill 
+                    class="form-control ml-12" [formControl]="programmeForm.controls['content']"
+                     (ngSubmit)="onSubmit()"></ngx-quill>
+            <div >
+                    <button 
+                            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-center"
+                            [disabled]="programmeForm.pristine || programmeForm.invalid">Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+        </form>  

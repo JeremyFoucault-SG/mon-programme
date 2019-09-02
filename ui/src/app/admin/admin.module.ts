@@ -1,23 +1,30 @@
 import { NgxQuillModule } from '@dimpu/ngx-quill';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ProgrammesComponent } from './programmes/programmes/programmes.component';
 import { CreateArticleComponent } from './article/create-article/create-article.component';
-// import { QuillModule } from 'ngx-quill';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteArticleComponent } from './article/delete-article/delete-article.component';
-
+import { CoreModule } from '../core/core.module';
+import { EditProgrammeComponent } from './programmes/edit-programme/edit-programme.component';
 @NgModule({
 declarations: [
+  ProgrammesComponent,
     CreateArticleComponent,
-    DeleteArticleComponent
+    DeleteArticleComponent,
+    ProgrammesComponent,
+    EditProgrammeComponent
 ],
 
   imports: [
+    CoreModule,
     NgxQuillModule,
     ReactiveFormsModule,
-    // QuillModule
+    BrowserAnimationsModule
   ],
   exports: [
     DeleteArticleComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AdminModule {}
