@@ -1,7 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { PopupAccueilComponent } from './popup-accueil/popup-accueil.component';
 import { PopupMwComponent } from './popup-mw/popup-mw.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
@@ -40,7 +39,6 @@ import { HeaderComponent } from './blog/header/header.component';
 
 @NgModule({
   declarations: [
-    PopupAccueilComponent,
     PopupMwComponent,
     HomeComponent,
     ArticleBlogComponent,
