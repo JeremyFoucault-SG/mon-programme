@@ -83,7 +83,7 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
-  { path: 'article', component: ArticleBlogComponent },
+  { path: 'article/:id', component: ArticleBlogComponent },
   { path: 'article-blog', component: ArticleBlogComponent },
   { path: 'dashboard-suivi', component: DashboardSuiviComponent },
   { path: 'dashboard-infos', component: DashboardInfosPersonnellesComponent },

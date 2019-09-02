@@ -7,13 +7,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteArticleComponent } from './article/delete-article/delete-article.component';
 import { CoreModule } from '../core/core.module';
 import { EditProgrammeComponent } from './programmes/edit-programme/edit-programme.component';
+import { UpdateArticleComponent } from './article/update-article/update-article.component';
 @NgModule({
 declarations: [
   ProgrammesComponent,
     CreateArticleComponent,
     DeleteArticleComponent,
     ProgrammesComponent,
-    EditProgrammeComponent
+    EditProgrammeComponent,
+    UpdateArticleComponent
 ],
 
   imports: [

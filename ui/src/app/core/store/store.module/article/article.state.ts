@@ -67,13 +67,13 @@ export class ArticleState {
 
     @Action(DeleteArticle)
     DeleteArticle({getState, setState}: StateContext<ArticleStateModel>, {id}: DeleteArticle) {
-      const previousState = getState();
-      const state = getState();
-      const filteredArray = state.items.filter(a => a._id !== id);
-      setState({
+        return this.service.deleteArticle(id).pipe(tap(() => {
+            const state = getState();
+            const filteredArray = state.items.filter(a => a._id !== id);
+            setState({
         ...state,
         items: filteredArray
       });
-      return this.service.deleteArticle(id).pipe();
+        }));
     }
 }

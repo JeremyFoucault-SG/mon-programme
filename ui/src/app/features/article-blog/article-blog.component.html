@@ -27,6 +27,12 @@
       {{ (article|async).content }}
     </div>
 
-    <app-delete-article></app-delete-article>
+    <button type="button" (click)="deleteArticle()" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
+      Delete Article
+  </button>
+  <button class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded"
+  [routerLink]="['/article/']">
+    Mettre a jour
+  </button>
 </div>
 <app-newsletter class="mt-6"></app-newsletter>

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
-import { GetByIdArticle } from '../../core/store/store.module/article/article.actions';
+import { GetByIdArticle, DeleteArticle } from '../../core/store/store.module/article/article.actions';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 
@@ -21,6 +21,9 @@ export class ArticleBlogComponent implements OnInit {
   @Select(ArticleState.article)
   article: Observable<ArticleBlog>;
 
+  deleteArticle() {
+    this.store.dispatch(new DeleteArticle(this.id));
+  }
 
   constructor(private store: Store, private route: ActivatedRoute) { }
 
