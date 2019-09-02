@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./create-programme.component.css']
 })
 export class CreateProgrammeComponent implements OnInit {
-  
+
   @Select(ProgrammeState.Getprogrammes) selectedProgramme: Observable<Programmes>;
   programmeForm: FormGroup;
   editProgramme = false;
@@ -24,7 +24,7 @@ export class CreateProgrammeComponent implements OnInit {
     this.createForm();
   }
 
- 
+
   ngOnInit() {
     this.programmeForm = new FormGroup({
       content: new FormControl(''),
