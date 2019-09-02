@@ -36,6 +36,7 @@ import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pra
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
 import { DashboardPaiementComponent } from './dashboard-infos-personnelles/dashboard-paiement/dashboard-paiement.component';
 import { CoreModule } from '../core/core.module';
+import { AdminModule } from '../admin/admin.module';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { CoreModule } from '../core/core.module';
     FacebookModule.forRoot(),
     ChartsModule,
     CoreModule,
+    AdminModule
   ],
   exports: [
   ],

@@ -18,3 +18,8 @@ export class GetByIdArticle {
     static readonly type = '[Blog] Get article by id';
     constructor(public id: string) { }
 }
+export class DeleteArticle {
+    static readonly type = '[Blog] Delete article by id';
+    constructor(public id: string) { }
+}
+

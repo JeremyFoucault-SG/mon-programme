@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { CreateArticleComponent } from './article/create-article/create-article.component';
 // import { QuillModule } from 'ngx-quill';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DeleteArticleComponent } from './article/delete-article/delete-article.component';
 
 @NgModule({
 declarations: [
-    CreateArticleComponent
+    CreateArticleComponent,
+    DeleteArticleComponent
 ],
 
   imports: [
@@ -14,6 +16,8 @@ declarations: [
     ReactiveFormsModule,
     // QuillModule
   ],
-  exports: [],
+  exports: [
+    DeleteArticleComponent
+  ],
 })
 export class AdminModule {}

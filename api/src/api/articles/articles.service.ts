@@ -41,4 +41,16 @@ export class ArticlesService {
     return this.articleModel.find({}).exec();
   }
 
+  /**
+   * Delete article by id
+   * @param id Id of article
+   */
+  async delete(id: string): Promise<ArticleModel> {
+    const article = await this.articleModel.findByIdAndRemove(id);
+    if (!article) {
+      throw new EntityException(EntityExceptionCode.NOT_FOUND);
+    }
+    return article;
+  }
+
 }

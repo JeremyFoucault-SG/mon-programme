@@ -1,6 +1,6 @@
 import { State, Action, StateContext, Selector, Store } from '@ngxs/store';
 import { ArticleBlog } from '../../../../shared/models/articles-blog.model';
-import { AddArticle, GetAllArticles, GetByIdArticle } from '../article/article.actions';
+import { AddArticle, GetAllArticles, GetByIdArticle, DeleteArticle } from '../article/article.actions';
 import { ArticlesService } from 'src/app/core/http/articles.service';
 import { tap } from 'rxjs/operators';
 import { patch } from '@ngxs/store/operators';
@@ -63,5 +63,17 @@ export class ArticleState {
             const state = getState();
             patchState({...state, item: response});
         }));
+    }
+
+    @Action(DeleteArticle)
+    DeleteArticle({getState, setState}: StateContext<ArticleStateModel>, {id}: DeleteArticle){
+      const previousState = getState();
+      const state = getState();
+      const filteredArray = state.items.filter(a => a._id !== id);
+      setState({
+        ...state,
+        items: filteredArray
+      })
+      return this.service.deleteArticle(id).pipe()
     }
 }

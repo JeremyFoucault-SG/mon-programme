@@ -24,7 +24,9 @@
       <img class="facebook" src="https://zupimages.net/up/19/32/van1.png" />
       <img class=" twitter" src="https://zupimages.net/up/19/32/al3u.png" />
       <div class="line"></div>
-      <p>{{ (article|async).content }}</p>
+      {{ (article|async).content }}
     </div>
+
+    <app-delete-article></app-delete-article>
 </div>
 <app-newsletter class="mt-6"></app-newsletter>
