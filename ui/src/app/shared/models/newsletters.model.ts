@@ -1,3 +1,5 @@
 export class Newsletters {
-    constructor() { }
+    constructor(
+        public _id: string,
+    ) { }
 }

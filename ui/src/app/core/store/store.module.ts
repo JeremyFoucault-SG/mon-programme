@@ -5,6 +5,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ArticleState } from './store.module/article/article.state';
 import { ProgrammeState } from './store.module/programme/programme.state';
 import { BookmarkState } from './store.module/bookmark/bookmark.state';
+import { NewsletterState } from './store.module/newsletter/newsletter.state';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { BookmarkState } from './store.module/bookmark/bookmark.state';
         NgxsModule.forRoot([
             ArticleState,
             ProgrammeState,
-            BookmarkState
+            BookmarkState,
+            NewsletterState
         ]),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         NgxsLoggerPluginModule.forRoot()
