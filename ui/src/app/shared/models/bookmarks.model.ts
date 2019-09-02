@@ -1,4 +1,6 @@
 export class Bookmarks {
-    constructor() { }
+    constructor(
+        public _id: string,
+    ) { }
 
 }
