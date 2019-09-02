@@ -28,6 +28,6 @@ export class ArticleBlogComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
       this.store.dispatch(new GetByIdArticle(this.id));
-  })};
+  }); }
 
 }
