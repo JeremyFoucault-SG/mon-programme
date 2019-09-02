@@ -48,7 +48,7 @@ export class CoachingsService {
     }
 
     // Supression d'un programme //
-    public deleteProgramme(_id: string){
+    public deleteProgramme(_id: string) {
         return this.http.delete(`${this.api}/coachings/${_id}`);
     }
 

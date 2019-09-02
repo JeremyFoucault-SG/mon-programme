@@ -3,7 +3,7 @@ import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
 import {
-  GetByIdProgramme, 
+  GetByIdProgramme,
   GetAllProgramme,
   DeleteProgramme,
   SetSelectedProgramme
