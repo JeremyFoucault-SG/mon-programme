@@ -8,6 +8,8 @@ import { DeleteArticleComponent } from './article/delete-article/delete-article.
 import { CoreModule } from '../core/core.module';
 import { EditProgrammeComponent } from './programmes/edit-programme/edit-programme.component';
 import { UpdateArticleComponent } from './article/update-article/update-article.component';
+import { CreateProgrammeComponent } from './programmes/create-programme/create-programme.component';
+
 @NgModule({
 declarations: [
   ProgrammesComponent,
@@ -15,7 +17,8 @@ declarations: [
     DeleteArticleComponent,
     ProgrammesComponent,
     EditProgrammeComponent,
-    UpdateArticleComponent
+    UpdateArticleComponent,
+    CreateProgrammeComponent
 ],
 
   imports: [

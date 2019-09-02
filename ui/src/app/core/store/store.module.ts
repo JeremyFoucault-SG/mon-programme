@@ -4,6 +4,7 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ArticleState } from './store.module/article/article.state';
 import { ProgrammeState } from './store.module/programme/programme.state';
+import { BookmarkState } from './store.module/bookmark/bookmark.state';
 
 @NgModule({
     declarations: [
@@ -13,7 +14,8 @@ import { ProgrammeState } from './store.module/programme/programme.state';
 
         NgxsModule.forRoot([
             ArticleState,
-            ProgrammeState
+            ProgrammeState,
+            BookmarkState
         ]),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         NgxsLoggerPluginModule.forRoot()
