@@ -7,7 +7,6 @@ import { FormCustomizeProgrammeComponent } from './components/form-customize-pro
 import { FormSelectionProgrammeComponent } from './components/selection-programme/form-selection-programme/form-selection-programme.component';
 import { CardProgrammesComponent } from './components/card-programmes/card-programmes.component';
 import { CardArticleComponent } from './components/card-article/card-article.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
@@ -48,7 +47,6 @@ import { GroupTitleComponent } from './components/group-title/group-title.compon
     FormSelectionProgrammeComponent,
     CardProgrammesComponent,
     CardArticleComponent,
-    MenuComponent,
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
@@ -92,7 +90,6 @@ import { GroupTitleComponent } from './components/group-title/group-title.compon
     FormSelectionProgrammeComponent,
     CardProgrammesComponent,
     CardArticleComponent,
-    MenuComponent,
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
