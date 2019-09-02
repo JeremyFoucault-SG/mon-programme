@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+/**
+ * Group title component, can display title, subtitle and action.
+ * Use with card-list-thumb in home page, blog articles etc
+ */
 @Component({
   selector: 'app-group-title',
   templateUrl: './group-title.component.html',
