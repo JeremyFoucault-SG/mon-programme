@@ -14,6 +14,9 @@ module.exports = {
       height: {
         'inherit': 'inherit'
       },
+      padding:{
+        '1v': '1vh',
+      },
       width: {
         '72': '18rem',
         '80': '20rem',
@@ -21,6 +24,7 @@ module.exports = {
         '96': '24rem',
         '104': '26rem',
         '112': '28rem',
+        '1v': '1vh',
       },
       lineHeight: {
         '2loose': '3'

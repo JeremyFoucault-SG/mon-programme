@@ -41,6 +41,7 @@ import { DashboardInfoFacturationComponent } from '../features/dashboard-infos-p
 import { DashboardHistoriqueComponent } from '../features/dashboard-infos-personnelles/dashboard-historique/dashboard-historique.component';
 import { TagComponent } from './components/tag/tag.component';
 import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
+import { GroupTitleComponent } from './components/group-title/group-title.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     CardThumbListComponent,
     SubTitleComponent,
     TagComponent,
-    FooterSmComponent
+    FooterSmComponent,
+    GroupTitleComponent
   ],
   imports: [
     CommonModule,
@@ -113,7 +115,8 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     CardThumbListComponent,
     SubTitleComponent,
     TagComponent,
-    FooterSmComponent
+    FooterSmComponent,
+    GroupTitleComponent,
   ]
 })
 export class SharedModule { }
