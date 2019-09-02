@@ -8,7 +8,6 @@ import { FormSelectionProgrammeComponent } from './components/selection-programm
 import { CardProgrammesComponent } from './components/card-programmes/card-programmes.component';
 import { CardArticleComponent } from './components/card-article/card-article.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { JoinTeamCodePromoComponent } from './components/join-team-code-promo/join-team-code-promo.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
@@ -50,7 +49,6 @@ import { GroupTitleComponent } from './components/group-title/group-title.compon
     CardProgrammesComponent,
     CardArticleComponent,
     MenuComponent,
-    JoinTeamCodePromoComponent,
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
@@ -95,7 +93,6 @@ import { GroupTitleComponent } from './components/group-title/group-title.compon
     CardProgrammesComponent,
     CardArticleComponent,
     MenuComponent,
-    JoinTeamCodePromoComponent,
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
