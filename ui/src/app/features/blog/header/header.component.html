@@ -1,40 +1,51 @@
-<div class="h-full">
+<div class="h-inherit lg:h-full">
 
-  <div class="-z-1 absolute bg-cover w-full" style="height: 90vh" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
+  <!-- Backgroug image (hidden on mobile) -->
+  <div class="hidden lg:block -z-1 absolute bg-cover w-full" style="height: 90vh"
+    [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
   </div>
 
-  <div class="flex flex-row h-full">
+  <div class="flex flex-row h-inherit lg:h-full">
 
-    <div class="flex flex-col flex-grow justify-around w-1/4">
+    <!-- Column contains Title and go back to home page (hidden on mobile) -->
+    <div class="hidden lg:flex flex-col flex-grow justify-around w-1/4">
+      <!-- Page title -->
       <div class="pt-64 pl-12" style="height: 90vh">
         <h6 class="text-xl font-bold font-lato uppercase">blog</h6>
         <h1 class="text-5xl font-bold font-lato uppercase">{{title}}</h1>
         <div class="line-rosette w-full bg-red-400"></div>
       </div>
 
+      <!-- Go to home page-->
       <div class="flex flex-row justify-center items-center" style="height: 10vh">
         <a class="font-lato font-bold text-2xl" [routerLink]="[ '/accueil' ]" routerLinkActive="active-nav">
           <i class="fa fa-undo mr-4 uppercase" aria-hidden="true"></i>page d'accueil</a>
       </div>
     </div>
 
-    <div class="flex flex-col flex-grow justify-end w-3/4">
-      <div class="flex flex-row bg-red-400 justify-between" style="padding: 1vh 0 1vh 0;">
-        <a class="ml-2 mx-1 flex-grow py-16 px-16 hover:shadow-xl hover:bg-white hover:text-black text-center font-lato text-white font-bold text-3xl tracking-wider flex-row uppercase"
-          [routerLink]="['/style-de-vie-et-nutrition']" routerLinkActive="active">
-          style de vie et nutrition
-          <div class="mt-2 mx-auto pb-1 w-3/4" routerLinkActive="active-underline"></div>
+    <!-- Navigation between blog categories -->
+    <div class="flex flex-col flex-grow justify-end w-full mt-20 lg:mt-0 lg:w-3/4">
+      <div class="flex flex-row bg-gray-900 lg:bg-red-400 justify-between py-0 lg:py-1v">
+        <!-- Style de vie et nutrition -->
+        <a class="flex flex-row flex-grow text-center lg:flex-col items-center ml-2 mx-1 py-2 lg:py-16 px-0 lg:px-16 hover:shadow-xl lg:hover:bg-white lg:hover:text-black text-center font-lato text-white font-bold text-basic md:text-xl lg:text-3xl tracking-wider uppercase"
+          [routerLink]="['/style-de-vie-et-nutrition']"
+          routerLinkActive="border-b-4 border-red-400 text-red-400 lg:border-none lg:active-blog-link">
+          <span class="w-full">style de vie et nutrition</span>
+          <div class="hidden lg:block mt-2 mx-auto pb-1 w-3/4" routerLinkActive="lg:active-blog-link-underline"></div>
         </a>
-        <a class="mx-1 flex-grow py-16 px-16 hover:shadow-xl hover:bg-white hover:text-black text-center font-lato text-white font-bold text-3xl tracking-wider flex-row uppercase"
-          [routerLink]="['/sante']" routerLinkActive="active">
-          santé
-          <div class="mt-2 mx-auto pb-1 w-3/4" routerLinkActive="active-underline"></div>
+        <!-- santé -->
+        <a class="flex flex-row flex-grow text-center lg:flex-col items-center mx-1 py-2 lg:py-16 px-0 lg:px-16 hover:shadow-xl lg:hover:bg-white lg:hover:text-black text-center font-lato text-white font-bold text-basic md:text-xl lg:text-3xl tracking-wider uppercase"
+          [routerLink]="['/sante']"
+          routerLinkActive="border-b-4 border-red-400 text-red-400 lg:border-none lg:active-blog-link">
+          <span class="w-full">santé</span>
+          <div class="hidden lg:block  mt-2 mx-auto pb-1 w-3/4" routerLinkActive="lg:active-blog-link-underline"></div>
         </a>
-        <a class="mr-2 mx-1 flex-grow py-16 px-16 hover:shadow-xl hover:bg-white hover:text-black text-center font-lato text-white font-bold text-3xl tracking-wider flex-row uppercase"
-          [routerLink]="['/pratique-sportive']" routerLinkActive="active">
-          pratique sportive
-          <div class="mt-2 mx-auto pb-1 w-3/4" routerLinkActive="active-underline"></div>
-
+        <!-- pratique sportive -->
+        <a class="flex flex-row flex-grow text-center lg:flex-col items-center mr-2 mx-1 py-2 lg:py-16 px-0 lg:px-16 hover:shadow-xl lg:hover:bg-white lg:hover:text-black text-center font-lato text-white font-bold text-basic md:text-xl lg:text-3xl tracking-wider uppercase"
+          [routerLink]="['/pratique-sportive']"
+          routerLinkActive="border-b-4 border-red-400 text-red-400 lg:border-none lg:active-blog-link">
+          <span class="w-full">pratique sportive</span>
+          <div class="hidden lg:block  mt-2 mx-auto pb-1 w-3/4" routerLinkActive="lg:active-blog-link-underline"></div>
         </a>
       </div>
     </div>
