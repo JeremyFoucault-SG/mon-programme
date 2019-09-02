@@ -3,6 +3,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ArticleState } from './store.module/article/article.state';
+import { ProgrammeState } from './store.module/programme/programme.state';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { ArticleState } from './store.module/article/article.state';
     imports: [
 
         NgxsModule.forRoot([
-            ArticleState
+            ArticleState,
+            ProgrammeState
         ]),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         NgxsLoggerPluginModule.forRoot()

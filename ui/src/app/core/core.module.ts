@@ -5,6 +5,7 @@ import { FooterSmComponent } from './footer/footer-sm/footer-sm.component';
 import { FeaturesModule } from '../features/features.module';
 import { FooterInformationSmComponent } from './footer/footer-information-sm/footer-information-sm.component';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from './store/store.module';
 
 
 
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule,
     CommonModule,
-    FeaturesModule
+    FeaturesModule,
+    StoreModule,
   ],
   exports: [
     HeaderComponent,

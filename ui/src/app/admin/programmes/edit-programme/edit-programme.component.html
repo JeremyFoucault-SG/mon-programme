@@ -1,0 +1,59 @@
+
+    
+        <form [formGroup]="programmeForm" (ngSubmit)="onSubmit()">
+            <!-- <div class="form-group">
+                <label class="col-md-4">Title</label>
+                <input type="title" class="form-control ml-12" formControlName="title" #title/>
+                <div *ngIf="programmeForm.controls['title'].invalid && (programmeForm.controls['title'].dirty || programmeForm.controls['title'].touched)"
+                     class="alert alert-danger">
+                    <div *ngIf="programmeForm.controls['title'].errors.required">
+                        Title is required.
+                    </div>
+                </div>
+            </div>        
+            <div class="form-group">
+                    <label class="col-md-4">Content</label>
+                    <input type="content" class="form-control ml-12" formControlName="content" #content/>
+                    <div *ngIf="programmeForm.controls['content'].invalid && (programmeForm.controls['content'].dirty || programmeForm.controls['content'].touched)"
+                         class="alert alert-danger">
+                        <div *ngIf="programmeForm.controls['content'].errors.required">
+                            content is required.
+                        </div>
+                    </div>
+                </div>        
+                <div class="form-group">
+                        <label class="col-md-4">rating</label>
+                        <input type="number" class="form-control ml-12" formControlName="rating" #rating/>
+                        <div *ngIf="programmeForm.controls['rating'].invalid && (programmeForm.controls['rating'].dirty || programmeForm.controls['rating'].touched)"
+                             class="alert alert-danger">
+                            <div *ngIf="programmeForm.controls['rating'].errors.required">
+                                rating is required.
+                            </div>
+                        </div>
+                    </div>        
+            <div class="form-group">
+                <button 
+                        class="btn btn-primary mr-1"
+                        [disabled]="programmeForm.pristine || programmeForm.invalid">Submit
+                </button>
+            </div> -->
+
+
+            <h2 class="flex justify-center mt-12">Modifié le contenu</h2>
+            <div class="form-group">
+            <div class="flex justify-center">
+                    <ngx-quill 
+                    class="form-control ml-12" [formControl]="programmeForm.controls['content']"
+                     (ngSubmit)="onSubmit()"></ngx-quill>
+                    
+            
+       
+            <div >
+                    <button 
+                            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-center"
+                            [disabled]="programmeForm.pristine || programmeForm.invalid">Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+        </form>  
