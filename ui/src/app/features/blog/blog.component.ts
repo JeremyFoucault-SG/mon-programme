@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleBlog } from '../../models/articles-blog.model';
+import { ArticleBlog } from '../../shared/models/articles-blog.model';
 import { Store, Select} from '@ngxs/store';
 import { Observable } from 'rxjs/Observable';
-import { GetAllArticles } from './../../../core/store/store.module/article/article.actions';
+import { GetAllArticles } from './../../core/store/store.module/article/article.actions';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
 
 
