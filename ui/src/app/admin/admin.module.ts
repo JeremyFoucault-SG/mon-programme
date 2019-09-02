@@ -28,7 +28,8 @@ declarations: [
     BrowserAnimationsModule
   ],
   exports: [
-    DeleteArticleComponent
+    DeleteArticleComponent,
+    UpdateArticleComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

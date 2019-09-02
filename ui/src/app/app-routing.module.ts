@@ -13,6 +13,7 @@ import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.componen
 import { CreateArticleComponent } from './admin/article/create-article/create-article.component';
 import { ProgrammesComponent } from './admin/programmes/programmes/programmes.component';
 import { BlogComponent } from './features/blog/blog.component';
+import { UpdateArticleComponent } from './admin/article/update-article/update-article.component';
 
 
 const routes: Routes = [
@@ -94,7 +95,7 @@ const routes: Routes = [
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },
   { path: 'create-article', component: CreateArticleComponent},
-  { path: 'create-programme', component: ProgrammesComponent },
+  { path: 'create-programme', component: ProgrammesComponent }
 
 
 ];

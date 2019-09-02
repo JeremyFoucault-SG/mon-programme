@@ -31,7 +31,7 @@
       Delete Article
   </button>
   <button class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded"
-  [routerLink]="['/article/']">
+  [routerLink]="['/update-article/', (article|async)._id]">
     Mettre a jour
   </button>
 </div>
