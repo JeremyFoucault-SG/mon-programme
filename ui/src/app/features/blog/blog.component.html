@@ -1,4 +1,19 @@
+<!-- Blog header -->
 <app-blog-header></app-blog-header>
+
+<!-- -->
+<div class="mt-16 px-4">
+  <app-group-title>
+    <app-title class="group-title">nos derniers articles</app-title>
+    <app-sub-title class="group-subtitle">blog</app-sub-title>
+    <span class="group-action -mt-10 cursor-pointer fa-stack fa-2x">
+      <i class="text-gray-200 text-white fa fa-circle fa-stack-2x"></i>
+      <i class="text-red-400 fa fa-list fa-stack-1x"></i>
+    </span>
+  </app-group-title>
+</div>
+
+<!-- Card list -->
 <div class="flex flex-row flex-wrap justify-around">
   <div *ngFor="let article of articles; odd as isReverse" class="w-104 mr-1 mt-5 lg:mt-10 lg:w-full">
     <app-card-article [article]="article" [isReverse]="isReverse">
@@ -6,10 +21,23 @@
   </div>
 </div>
 
+<!-- Load more article -->
+<div class="mt-16 flex flex-row justify-center">
+  <div class="cursor-pointer flex flex-row items-center">
+    <span class="uppercase text-2xl mr-2">+ d'articles</span>
+    <span class="fa-stack fa-2x ml-2">
+      <i class="text-red-400 fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-angle-right fa-stack-1x fa-inverse"></i>
+    </span>
+  </div>
+</div>
+
+<!-- Newsletter -->
 <div class="pt-24 md:pt-32">
   <app-newsletter></app-newsletter>
 </div>
 
-<div class="py-5 md:pt-10 xl:pt-32">
+<!-- Footer -->
+<div class="pt-5 md:pt-10 xl:pt-32">
   <app-footer></app-footer>
 </div>
