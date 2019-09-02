@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ProgramsList, ProgramDetail} from '../../shared/models/programs-infos';
 import { HomeHeaderMenuComponent } from './header/menu/home-header-menu.component';
 
+/**
+ * Home component show cards of blog, programs and more
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

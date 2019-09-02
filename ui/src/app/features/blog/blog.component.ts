@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleBlog } from '../../shared/models/articles-blog.model';
 
+/**
+ * BLog component use to display blog articles
+ */
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 
+/**
+ * Blog header component
+ */
 @Component({
   selector: 'app-blog-header',
   templateUrl: './header.component.html',

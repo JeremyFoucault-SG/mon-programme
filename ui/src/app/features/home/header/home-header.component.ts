@@ -2,6 +2,9 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { ProgramDetail, ProgramsList } from '../../../shared/models/programs-infos';
 import { Location } from '@angular/common';
 
+/**
+ * Home header component
+ */
 @Component({
   selector: 'app-home-header',
   templateUrl: './home-header.component.html',
