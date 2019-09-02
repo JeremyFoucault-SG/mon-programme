@@ -1,40 +1,64 @@
+<!-- Home header -->
 <app-home-header [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)">
 </app-home-header>
 
-<!-- <div><h1 class="programs"> TON PROGRAMME SUR-MESURE</h1></div> -->
+<!-- TODO: Ton programe sur mesure -->
 <app-title>TON PROGRAMME SUR-MESURE</app-title>
-<!-- <img class="imagine"src="https://zupimages.net/up/19/32/exh6.jpeg"> -->
 
-<div class="pt-24 md:pt-32">
-  <app-card-thumb-list [items]="programs">
-    <app-title class="list-title">NOS MEILLEURS PROGRAMME</app-title>
-    <app-sub-title class="list-subtitle">PROGRAMME</app-sub-title>
-  </app-card-thumb-list>
+<!-- Programs list -->
+<div class="pt-24 md:pt-32 px-5 md:px-10">
+  <app-group-title>
+    <app-title class="group-title">NOS MEILLEURS PROGRAMME</app-title>
+    <app-sub-title class="group-subtitle">PROGRAMME</app-sub-title>
+    <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
+      <a [routerLink]="['/routePath']">
+        Voir tout
+      </a>
+    </div>
+  </app-group-title>
+  <app-card-thumb-list [items]="programs"></app-card-thumb-list>
 </div>
 
-<div class="pt-24 md:pt-32">
-  <app-card-thumb-list [items]="programs" [titleOnRight]="true">
-    <app-title class="list-title">STYLE DE VIE ET NUTRITION</app-title>
-    <app-sub-title class="list-subtitle">BLOG</app-sub-title>
-  </app-card-thumb-list>
+<!-- Article list -->
+<div class="pt-24 md:pt-32 px-5 md:px-10">
+  <app-group-title>
+    <app-title class="group-title">STYLE DE VIE ET NUTRITION</app-title>
+    <app-sub-title class="group-subtitle">BLOG</app-sub-title>
+    <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
+      <a [routerLink]="['/style-de-vie-et-nutrition']">
+        Voir tout
+      </a>
+    </div>
+  </app-group-title>
+  <app-card-thumb-list [items]="programs" [titleOnRight]="true"></app-card-thumb-list>
 </div>
 
-<div class="pt-24 md:pt-32">
-  <app-card-thumb-list [items]="programs">
-    <app-title class="list-title">NOS DERNIERS ARTICLES</app-title>
-    <app-sub-title class="list-subtitle">BLOG</app-sub-title>
-  </app-card-thumb-list>
+<!-- Article list -->
+<div class="pt-24 md:pt-32 px-5 md:px-10">
+  <app-group-title>
+    <app-title class="group-title">NOS DERNIERS ARTICLES</app-title>
+    <app-sub-title class="group-subtitle">BLOG</app-sub-title>
+    <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
+      <a [routerLink]="['/routePath']">
+        Voir tout
+      </a>
+    </div>
+  </app-group-title>
+  <app-card-thumb-list [items]="programs"></app-card-thumb-list>
 </div>
 
+<!-- Newsletter form -->
 <div class="pt-24 md:pt-32">
   <app-newsletter></app-newsletter>
 </div>
 
+<!-- Contact form -->
 <div class="py-5 md:py-10 xl:pt-32 xl:-mb-12">
   <app-contact></app-contact>
 </div>
 
 
+<!-- Footer -->
 <div>
   <app-footer></app-footer>
 </div>

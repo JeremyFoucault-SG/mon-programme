@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './newsletter-banner.component.html',
   styleUrls: ['./newsletter-banner.component.css']
 })
-export class NewsletterBannerLgComponent implements OnInit {
+export class NewsletterBannerComponent implements OnInit {
 
   constructor() { }
 

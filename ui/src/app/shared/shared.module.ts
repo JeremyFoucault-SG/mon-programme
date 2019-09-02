@@ -6,9 +6,7 @@ import { FormCustomizeProgrammeComponent } from './components/form-customize-pro
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeComponent } from './components/selection-programme/form-selection-programme/form-selection-programme.component';
 import { CardProgrammesComponent } from './components/card-programmes/card-programmes.component';
-import { CardBlogComponent } from './components/list-blog/card-blog-lg/card-blog.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { JoinTeamCodePromoComponent } from './components/join-team-code-promo/join-team-code-promo.component';
+import { CardArticleComponent } from './components/card-article/card-article.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
@@ -16,9 +14,7 @@ import { CardThumbProgramComponent } from './components/card-thumb-program/card-
 import { CardMinArticleComponent } from './components/card-min-article/card-min-article.component';
 import { CardNosProgrammesComponent } from './components/card-nos-programmes/card-nos-programmes.component';
 import { MenuNosProgrammeComponent } from './components/menu-nos-programme/menu-nos-programme.component';
-import { ListBlogComponent } from './components/list-blog/list-blog.component';
-import { CardBlogSmComponent } from './components/list-blog/card-blog-sm/card-blog-sm.component';
-import { NewsletterBannerLgComponent } from './components/newsletter/newsletter-banner/newsletter-banner.component';
+import { NewsletterBannerComponent } from './components/newsletter/newsletter-banner/newsletter-banner.component';
 import { FunctionComponent } from './components/form-function/function/function.component';
 // tslint:disable-next-line: max-line-length
 import { FormSelectionProgrammeSmComponent } from './components/selection-programme/form-selection-programme-sm/form-selection-programme-sm.component';
@@ -43,15 +39,14 @@ import { DashboardInfoFacturationComponent } from '../features/dashboard-infos-p
 import { DashboardHistoriqueComponent } from '../features/dashboard-infos-personnelles/dashboard-historique/dashboard-historique.component';
 import { TagComponent } from './components/tag/tag.component';
 import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
+import { GroupTitleComponent } from './components/group-title/group-title.component';
 
 @NgModule({
   declarations: [
     FormCustomizeProgrammeComponent,
     FormSelectionProgrammeComponent,
     CardProgrammesComponent,
-    CardBlogComponent,
-    MenuComponent,
-    JoinTeamCodePromoComponent,
+    CardArticleComponent,
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
@@ -59,10 +54,8 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     CardNosProgrammesComponent,
     CardThumbProgramComponent,
     MenuNosProgrammeComponent,
-    ListBlogComponent,
-    CardBlogSmComponent,
     NewsletterComponent,
-    NewsletterBannerLgComponent,
+    NewsletterBannerComponent,
     FunctionComponent,
     FormSelectionProgrammeSmComponent,
     ContactComponent,
@@ -83,7 +76,8 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     CardThumbListComponent,
     SubTitleComponent,
     TagComponent,
-    FooterSmComponent
+    FooterSmComponent,
+    GroupTitleComponent
   ],
   imports: [
     CommonModule,
@@ -95,9 +89,7 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     FormCustomizeProgrammeComponent,
     FormSelectionProgrammeComponent,
     CardProgrammesComponent,
-    CardBlogComponent,
-    MenuComponent,
-    JoinTeamCodePromoComponent,
+    CardArticleComponent,
     NewsletterComponent,
     FooterComponent,
     CardHomeComponent,
@@ -107,7 +99,6 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     MenuNosProgrammeComponent,
     FunctionComponent,
     ContactComponent,
-    ListBlogComponent,
     FunctionSmComponent,
     FormSelectionProgrammeSmComponent,
     ObjectifProgrammeComponent,
@@ -118,7 +109,8 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
     CardThumbListComponent,
     SubTitleComponent,
     TagComponent,
-    FooterSmComponent
+    FooterSmComponent,
+    GroupTitleComponent,
   ]
 })
 export class SharedModule { }

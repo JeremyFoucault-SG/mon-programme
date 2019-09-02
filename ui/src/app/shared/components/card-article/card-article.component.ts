@@ -1,18 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ArticleBlog } from '../../../models/articles-blog.model';
+import { ArticleBlog } from '../../models/articles-blog.model';
 
 @Component({
-  selector: 'app-card-blog-lg',
-  templateUrl: './card-blog.component.html',
-  styleUrls: ['./card-blog.component.css']
+  selector: 'app-card-article',
+  templateUrl: './card-article.component.html',
+  styleUrls: ['./card-article.component.css']
 })
-export class CardBlogComponent implements OnInit {
+export class CardArticleComponent implements OnInit {
 
   /**
    * Set photo, titre, desc in article-blog
    */
   @Input()
-  public articlesBlog: ArticleBlog;
+  public article: ArticleBlog;
   /**
    * Look is the articles is even or odd
    */
