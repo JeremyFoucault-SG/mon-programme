@@ -1,0 +1,12 @@
+  <div class="pb-5 md:pb-12 flex lg:flex-col flex-col-reverse" [ngClass]="{'lg:items-end': titleOnRight}">
+    <div>
+      <!-- Group title-->
+      <ng-content select=".group-title"></ng-content>
+    </div>
+    <div class="flex flex-row w-full items-center justify-between" [ngClass]="{'lg:flex-row-reverse': titleOnRight}">
+      <!-- Group sub title-->
+      <ng-content select=".group-subtitle"></ng-content>
+      <!-- Group action-->
+      <ng-content select=".group-action"></ng-content>
+    </div>
+  </div>

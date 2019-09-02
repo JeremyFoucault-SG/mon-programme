@@ -4,12 +4,17 @@ import { Store, Select} from '@ngxs/store';
 import { Observable } from 'rxjs/Observable';
 import { GetAllArticles } from './../../../core/store/store.module/article/article.actions';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
+
+
+/**
+ * BLog component use to display blog articles
+ */
 @Component({
-  selector: 'app-list-blog',
-  templateUrl: './list-blog.component.html',
-  styleUrls: ['./list-blog.component.css']
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.css']
 })
-export class ListBlogComponent implements OnInit {
+export class BlogComponent implements OnInit {
 
   @Select(ArticleState.articles )
   articles: Observable<ArticleBlog[]>;

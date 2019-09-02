@@ -1,11 +1,9 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { PopupAccueilComponent } from './popup-accueil/popup-accueil.component';
 import { PopupMwComponent } from './popup-mw/popup-mw.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { NutritionComponent } from './nutrition/nutrition.component';
 import { ArticleBlogComponent } from './article-blog/article-blog.component';
 import { NosProgrammesComponent } from './nos-programmes/nos-programmes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,14 +35,14 @@ import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
 import { DashboardPaiementComponent } from './dashboard-infos-personnelles/dashboard-paiement/dashboard-paiement.component';
 import { CoreModule } from '../core/core.module';
 import { AdminModule } from '../admin/admin.module';
+import { BlogComponent } from './blog/blog.component';
+import { HeaderComponent } from './blog/header/header.component';
 
 
 @NgModule({
   declarations: [
-    PopupAccueilComponent,
     PopupMwComponent,
     HomeComponent,
-    NutritionComponent,
     ArticleBlogComponent,
     NosProgrammesComponent,
     StatsComponent,
@@ -71,6 +69,8 @@ import { AdminModule } from '../admin/admin.module';
     DashboardPaiementComponent,
     PratiqueSportiveMobileComponent,
     BlogMobileComponent,
+    BlogComponent,
+    HeaderComponent,
   ],
   imports: [
     RouterModule,
