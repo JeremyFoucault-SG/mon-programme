@@ -75,12 +75,12 @@ export class PopupMwComponent implements OnInit {
    */
   setProperties(isMen, isWomen, isChoose, textContent, imageUrl) {
     if (isMen) {
-      this.switchUrl = '/women';
+      this.switchUrl = '/femme';
       this.switchTitle = 'femme';
       this.sexTitle = 'homme';
       this.textContent = textContent;
     } else if (isWomen) {
-      this.switchUrl = '/men';
+      this.switchUrl = '/homme';
       this.switchTitle = 'homme';
       this.sexTitle = 'femme';
       this.textContent = textContent;

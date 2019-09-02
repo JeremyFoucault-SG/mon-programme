@@ -12,4 +12,5 @@ export class BookmarksService {
     constructor(private http: HttpClient) { }
 
     public api = `${environment.apiUrl}`;
+
 }
