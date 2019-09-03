@@ -1,3 +1,5 @@
 export class Wishes {
-    constructor() { }
+    constructor(
+        public _id: string,
+    ) { }
 }

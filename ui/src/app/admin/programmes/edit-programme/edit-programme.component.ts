@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Programmes } from '../../../shared/models/programmes.model';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
 import { UpdateProgramme, AddProgramme, SetSelectedProgramme } from 'src/app/core/store/store.module/programme/programme.action';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-programme',
@@ -18,17 +18,13 @@ export class EditProgrammeComponent implements OnInit {
   @Select(ProgrammeState.Getprogrammes) selectedProgramme: Observable<Programmes>;
   programmeForm: FormGroup;
   editProgramme = false;
-
   public content: AbstractControl;
 
-
-
-
-  onContentChange(e) {
-
-  }
-
-  constructor(private fb: FormBuilder, private store: Store, private route: ActivatedRoute, private router: Router) {
+  constructor(private fb: FormBuilder,
+              private store: Store,
+              private route: ActivatedRoute,
+              private router: Router,
+              private toastr: ToastrService) {
     this.createForm();
   }
 
@@ -79,6 +75,17 @@ export class EditProgrammeComponent implements OnInit {
   clearForm() {
     this.programmeForm.reset();
     this.store.dispatch(new SetSelectedProgramme(this.programmeForm.value));
+    this.showSuccessUpdate();
+  }
+
+
+
+  showSuccessUpdate() {
+    this.toastr.success('Programme mis à jour.');
+  }
+
+  showError() {
+    this.toastr.error('Impossible de mettre à jour le programme');
   }
 
 }
