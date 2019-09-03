@@ -26,13 +26,13 @@ export class WishesService {
     }
 
     // Ajout d'un wish //
-    public addWishe(payload: Wishes) {
+    public addWish(payload: Wishes) {
         return this.http.post<Wishes>(`${this.api}/wishes`, payload);
     }
 
     // Supression d'un wish //
     // tslint:disable-next-line: variable-name
-    public deletewishe(_id: string) {
+    public deleteWish(_id: string) {
         return this.http.delete(`${this.api}/wishes/${_id}`);
     }
 }

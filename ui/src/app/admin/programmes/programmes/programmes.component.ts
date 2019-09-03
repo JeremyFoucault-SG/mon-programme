@@ -9,6 +9,7 @@ import {
   SetSelectedProgramme
 } from 'src/app/core/store/store.module/programme/programme.action';
 import { Programmes } from 'src/app/shared/models/programmes.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-programmes',
@@ -22,7 +23,7 @@ export class ProgrammesComponent implements OnInit {
   programmes: Observable<Programmes[]>;
 
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private toastr: ToastrService) { }
 
 
 
@@ -33,10 +34,16 @@ export class ProgrammesComponent implements OnInit {
 
   deleteProgramme(id: string) {
     this.store.dispatch(new DeleteProgramme(id));
+    this.showSuccessUpdate();
   }
 
   editProgramme(payload: Programmes) {
     this.store.dispatch(new SetSelectedProgramme(payload));
+  }
+
+
+  showSuccessUpdate() {
+    this.toastr.success('Programme Supprimé avec succés');
   }
 
 }

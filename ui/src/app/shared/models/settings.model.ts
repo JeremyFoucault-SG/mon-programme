@@ -1,3 +1,5 @@
 export class Settings {
-    constructor() { }
+    constructor(
+        public _id: string,
+    ) { }
 }
