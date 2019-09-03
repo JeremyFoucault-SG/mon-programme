@@ -38,7 +38,7 @@ export class BodyState {
     }
 
 
-    
+
     @Action(UpdateBody)
     UpdateProgramme({ getState, setState }: StateContext<BodyStateModel>, { payload, id }: UpdateBody) {
         return this.service.updateBody(payload, id).pipe(tap((result) => {
