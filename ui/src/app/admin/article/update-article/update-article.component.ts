@@ -41,6 +41,7 @@ export class UpdateArticleComponent implements OnInit {
   }
   createForm() {
     this.articleForm = new FormGroup({
+      id: new FormControl(''),
       title: new FormControl(''),
       photoUrl: new FormControl(''),
       author: new FormControl(''),

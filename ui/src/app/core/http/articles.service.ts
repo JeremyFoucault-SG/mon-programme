@@ -54,8 +54,8 @@ export class ArticlesService {
 
 
     // mise a jour d'un article de blog par l'id//
-    public updateArticle(payload: ArticleBlog, id: string): Observable<ArticleBlog> {
-        return this.http.put<ArticleBlog>(`${this.api}/articles/${id}`, payload);
+    public updateArticle(payload: ArticleBlog, _id: string): Observable<ArticleBlog> {
+        return this.http.put<ArticleBlog>(`${this.api}/articles/${_id}`, payload);
     }
 
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { ArticleModel } from './article.model';
 import { ModelType } from 'typegoose';
@@ -53,4 +53,13 @@ export class ArticlesService {
     return article;
   }
 
+  async update(id: string, articleDTO: ArticleDTO) {
+    const article = await this.articleModel.findByIdAndUpdate(id, articleDTO, {
+      new: true,
+    });
+    if (!article) {
+      throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
+    }
+    return article;
+  }
 }
