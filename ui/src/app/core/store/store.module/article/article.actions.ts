@@ -25,11 +25,11 @@ export class DeleteArticle {
     constructor(public id: string) { }
 }
 export class SetSelectedArticle {
-    static readonly type = '[Prog] Set';
+    static readonly type = '[Blog] Set';
     constructor(public payload: ArticleBlog) { }
 }
 export class UpdateArticle {
-    static readonly type = '[Prog] Update article';
+    static readonly type = '[Blog] Update article';
     constructor(public payload: ArticleBlog, public id: string) { }
 }
 
