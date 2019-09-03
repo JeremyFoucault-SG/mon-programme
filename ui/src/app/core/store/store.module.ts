@@ -9,6 +9,7 @@ import { NewsletterState } from './store.module/newsletter/newsletter.state';
 import { FollowedState } from './store.module/followed-coaching/followed.state';
 import { SettingState } from './store.module/settings/setting.state';
 import { WishState } from './store.module/wishe/wish.state';
+import { BodyState } from './store.module/body/body.state';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { WishState } from './store.module/wishe/wish.state';
             NewsletterState,
             FollowedState,
             WishState,
-            SettingState
+            SettingState,
+            BodyState
                 ]),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         NgxsLoggerPluginModule.forRoot()
