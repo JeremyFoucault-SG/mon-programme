@@ -24,8 +24,7 @@ import { WishState } from './store.module/wishe/wish.state';
             FollowedState,
             WishState,
             SettingState
-            
-        ]),
+                ]),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         NgxsLoggerPluginModule.forRoot()
     ],
