@@ -1,27 +1,17 @@
-<div class="text-center h-full create">
-    <h1>articles</h1>
-    <div>
-      <form [formGroup]="articleForm" (ngSubmit)="submit()">
-          <div class="">
-                  <label>Titre</label>
-                  <input formControlName="title"/>
-          </div>
-          <div class="">
-                  <label>Url de la photo</label>
-                  <input formControlName="photoUrl"/>
-          </div>
-          <div class="">
-                  <label>Auteur</label>
-                  <input formControlName="author"/>
-          </div>
-          <div class="">
-                  <label>Content</label>
-                  <ngx-quill formControlName="content"></ngx-quill>
-          </div>
-  
-  
-        <input type="submit" class="" />
-      </form>
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+        <h2 class="flex justify-center mt-12">Modifié le contenu de l'article</h2>
+        <div class="form-group">
+        <div class="flex justify-center">
+                <ngx-quill 
+                class="form-control ml-12" [formControl]="articleForm.controls['content']"
+                 (ngSubmit)="onSubmit()"></ngx-quill>
+        <div >
+                <button 
+                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-center"
+                        >Valider
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
+    </form>  
   

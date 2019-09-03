@@ -24,4 +24,12 @@ export class DeleteArticle {
     static readonly type = '[Blog] Delete article by id';
     constructor(public id: string) { }
 }
+export class SetSelectedArticle {
+    static readonly type = '[Prog] Set';
+    constructor(public payload: ArticleBlog) { }
+}
+export class UpdateArticle {
+    static readonly type = '[Prog] Update article';
+    constructor(public payload: ArticleBlog, public id: string) { }
+}
 
