@@ -37,12 +37,12 @@ export class CoachingsController {
 
     @Put(':id')
     async update(@Param('id') idCoaching: string, @Body() coaching: CoachingDTO): Promise<CoachingModel> {
-        return null;
+        return await this.coachingsService.update(idCoaching, coaching);
     }
 
     @Delete(':id')
     @HttpCode(HttpStatus.NO_CONTENT)
-    async delete(@Param('id') idCoaching: string): Promise<void> {
-        return null;
+    async delete(@Param('id') idCoaching: string): Promise<CoachingModel> {
+        return await this.coachingsService.delete(idCoaching);
     }
 }
