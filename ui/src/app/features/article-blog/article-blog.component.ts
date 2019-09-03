@@ -24,8 +24,8 @@ export class ArticleBlogComponent implements OnInit {
   deleteArticle() {
     this.store.dispatch(new DeleteArticle(this.id));
   }
-  editArticle(){
-    
+  editArticle() {
+
   }
   constructor(private store: Store, private route: ActivatedRoute) { }
 

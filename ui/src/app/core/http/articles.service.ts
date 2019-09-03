@@ -54,6 +54,7 @@ export class ArticlesService {
 
 
     // mise a jour d'un article de blog par l'id//
+    // tslint:disable-next-line: variable-name
     public updateArticle(payload: ArticleBlog, _id: string): Observable<ArticleBlog> {
         return this.http.put<ArticleBlog>(`${this.api}/articles/${_id}`, payload);
     }

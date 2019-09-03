@@ -14,5 +14,5 @@ export class GetAllCart {
     static readonly type = '[Cart] Get all cart';
     constructor() { }
 
-    
+
 }

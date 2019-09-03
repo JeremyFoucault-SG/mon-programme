@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Cart } from '../../shared/models/cart.model'
+import { Cart } from '../../shared/models/cart.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -21,6 +21,7 @@ export class CartsService {
     }
 
     // mise a jour d'une cart par l'id//
+    // tslint:disable-next-line: variable-name
     public updateCart(payload: Cart, _id: string): Observable<Cart> {
         return this.http.put<Cart>(`${this.api}/cart/${_id}`, payload);
     }
