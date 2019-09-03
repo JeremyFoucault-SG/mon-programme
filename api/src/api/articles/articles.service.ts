@@ -52,7 +52,11 @@ export class ArticlesService {
     }
     return article;
   }
-
+  /**
+   * Update article
+   * @param id Id article
+   * @param articleDTO
+   */
   async update(id: string, articleDTO: ArticleDTO) {
     const article = await this.articleModel.findByIdAndUpdate(id, articleDTO, {
       new: true,

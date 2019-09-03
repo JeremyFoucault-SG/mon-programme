@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { InjectModel } from 'nestjs-typegoose';
 import { InstanceType } from 'typegoose';
@@ -52,5 +52,20 @@ export class CartsService {
   async findAll(idUser: string): Promise<CartModel[]> {
     const user = await this.usersService.findById(idUser);
     return user.carts;
+  }
+
+  /**
+   * Update cart
+   * @param id Id cart
+   * @param cartDTO
+   */
+  async update(id: string, cartDTO: CartModel) {
+    const cart = await this.cartModel.findByIdAndUpdate(id, cartDTO, {
+      new: true,
+    });
+    if (!cart) {
+      throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
+    }
+    return cart;
   }
 }
