@@ -16,13 +16,13 @@ import { ChartsModule } from 'ng2-charts';
 import { DashboardCompteSmComponent } from './dashboard-compte/dashboard-compte-sm/dashboard-compte-sm.component';
 import { CommandeComponent } from './commande/commande.component';
 import { DashboardSuiviComponent } from './dashboard-suivi/dashboard-suivi.component';
-import { DashboardStatistiqueComponent } from './dashboard-suivi/dashboard-statistique/dashboard-statistique.component';
+import { DashboardStatistiqueComponent } from './dashboard/dashboard-statistique/dashboard-statistique.component';
 import { DashboardInfoCorporellesComponent } from './dashboard-suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
 import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progress-bar/dashboard-progress-bar.component';
 import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
-import { DashboardAvisComponent } from './dashboard-compte/dashboard-avis/dashboard-avis.component';
-import { DashboardProgrammeComponent } from './dashboard-compte/dashboard-programme/dashboard-programme.component';
-import { DashboardArticleComponent } from './dashboard-compte/dashboard-article/dashboard-article.component';
+import { DashboardAvisComponent } from './dashboard/compte/dashboard-avis/dashboard-avis.component';
+import { DashboardProgrammeComponent } from './dashboard/compte/dashboard-programme/dashboard-programme.component';
+import { DashboardArticleComponent } from './dashboard/compte/dashboard-article/dashboard-article.component';
 import { DashboardSuiviSmComponent } from './dashboard-suivi/dashboard-suivi-sm/dashboard-suivi-sm.component';
 import { DashboardCompteComponent } from './dashboard-compte/dashboard-compte.component';
 import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-lg/dashboard-compte-lg.component';
@@ -33,6 +33,7 @@ import { DashboardPaiementComponent } from './dashboard/info/dashboard-paiement/
 import { BlogComponent } from './blog/blog.component';
 import { HeaderComponent } from './blog/header/header.component';
 import { InfoComponent } from './dashboard/info/info.component';
+import { CompteComponent } from './dashboard/compte/compte.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { InfoComponent } from './dashboard/info/info.component';
     BlogComponent,
     HeaderComponent,
     InfoComponent,
+    CompteComponent,
   ],
   imports: [
     RouterModule,
