@@ -15,7 +15,7 @@ export class UpdateBody {
     constructor(public payload: Body, public id: string) { }
 }
 
-
+// SElection d'un body //
 export class SetSelectedBody {
     static readonly type = '[Body] Set';
     constructor(public payload: Body) { }

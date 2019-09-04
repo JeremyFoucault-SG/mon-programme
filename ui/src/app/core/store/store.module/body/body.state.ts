@@ -5,13 +5,15 @@ import { Body as Bodies } from 'src/app/shared/models/body.model';
 import { BodiesService } from 'src/app/core/http/bodies.service';
 import { UpdateBody, AddBody, SetSelectedBody } from './body.action';
 
+
+// importation du model de body //
 export class BodyStateModel {
     items: Bodies[];
     item: Bodies;
 }
 
 @State<BodyStateModel>({
-    name: 'programmes',
+    name: 'bodies',
     defaults: {
         items: [],
         item: null,
@@ -25,12 +27,15 @@ export class BodyState {
     constructor(private service: BodiesService) {
     }
 
+    // Slection du tableau de body //
     @Selector()
     static bodies(state: BodyStateModel) {
         console.log('heyyyy');
         return state.items;
     }
 
+
+    // Selection d'un body //
     @Selector()
     static GetBodies(state: BodyStateModel) {
         console.log('heyyyy');
@@ -38,7 +43,7 @@ export class BodyState {
     }
 
 
-
+    // Action pour mettre à jour le body //
     @Action(UpdateBody)
     UpdateProgramme({ getState, setState }: StateContext<BodyStateModel>, { payload, id }: UpdateBody) {
         return this.service.updateBody(payload, id).pipe(tap((result) => {
@@ -51,6 +56,7 @@ export class BodyState {
         }));
     }
 
+    // Action pour ajouter un body //
     @Action(AddBody)
     addProgramme({ getState, patchState }: StateContext<BodyStateModel>, { payload }: AddBody) {
         return this.service.addBody(payload).pipe(tap((result) => {
@@ -61,6 +67,7 @@ export class BodyState {
         }));
     }
 
+    // Action pour connaitre le body selectionné //
     @Action(SetSelectedBody)
     setSelectedTodoId({ getState, setState }: StateContext<BodyStateModel>, { payload }: SetSelectedBody) {
         const state = getState();
