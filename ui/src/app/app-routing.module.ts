@@ -92,7 +92,6 @@ const routes: Routes = [
   { path: 'dashboard-3', component: DashboardSuiviComponent },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },
-  { path: 'form-customize', component: FormCustomizeProgrammeComponent}
 
 
 ];
