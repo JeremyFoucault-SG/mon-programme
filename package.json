@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^4.1.1"
+    "concurrently": "^4.1.1",
+    "ngx-toastr": "^10.2.0"
   },
   "devDependencies": {
     "husky": "^3.0.1"
