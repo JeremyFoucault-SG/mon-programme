@@ -3,11 +3,11 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard-info-sm',
-  templateUrl: './dashboard-info-sm.component.html',
-  styleUrls: ['./dashboard-info-sm.component.css']
+  selector: 'app-info',
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.css']
 })
-export class DashboardInfoSmComponent implements OnInit {
+export class InfoComponent implements OnInit {
 
   constructor(private router: Router, private fb: FormBuilder) { }
 
@@ -33,6 +33,9 @@ export class DashboardInfoSmComponent implements OnInit {
     })
   });
 
+  submit(){
+    console.log(this.myForm.value)
+  }
   ngOnInit() {
   }
 
