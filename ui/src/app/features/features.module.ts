@@ -20,21 +20,19 @@ import { DashboardStatistiqueComponent } from './dashboard-suivi/dashboard-stati
 import { DashboardInfoCorporellesComponent } from './dashboard-suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
 import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progress-bar/dashboard-progress-bar.component';
 import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
-import { DashboardInfoSmComponent } from './dashboard-infos-personnelles/dashboard-info-sm/dashboard-info-sm.component';
 import { DashboardAvisComponent } from './dashboard-compte/dashboard-avis/dashboard-avis.component';
 import { DashboardProgrammeComponent } from './dashboard-compte/dashboard-programme/dashboard-programme.component';
 import { DashboardArticleComponent } from './dashboard-compte/dashboard-article/dashboard-article.component';
-import { DashboardInfosPersonnellesComponent } from './dashboard-infos-personnelles/dashboard-infos-personnelles.component';
 import { DashboardSuiviSmComponent } from './dashboard-suivi/dashboard-suivi-sm/dashboard-suivi-sm.component';
 import { DashboardCompteComponent } from './dashboard-compte/dashboard-compte.component';
 import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-lg/dashboard-compte-lg.component';
-import { DashboardInfoLgComponent } from './dashboard-infos-personnelles/dashboard-info-lg/dashboard-info-lg.component';
 import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/dashboard-suivi-lg.component';
 import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
-import { DashboardPaiementComponent } from './dashboard-infos-personnelles/dashboard-paiement/dashboard-paiement.component';
+import { DashboardPaiementComponent } from './dashboard/info/dashboard-paiement/dashboard-paiement.component';
 import { BlogComponent } from './blog/blog.component';
 import { HeaderComponent } from './blog/header/header.component';
+import { InfoComponent } from './dashboard/info/info.component';
 
 
 @NgModule({
@@ -54,21 +52,19 @@ import { HeaderComponent } from './blog/header/header.component';
     DashboardInfoCorporellesComponent,
     DashboardProgressBarComponent,
     DashboardGoalComponent,
-    DashboardInfoSmComponent,
     DashboardAvisComponent,
     DashboardProgrammeComponent,
     DashboardArticleComponent,
-    DashboardInfosPersonnellesComponent,
     DashboardSuiviSmComponent,
     DashboardCompteComponent,
     DashboardCompteLgComponent,
-    DashboardInfoLgComponent,
     DashboardSuiviLgComponent,
     DashboardPaiementComponent,
     PratiqueSportiveMobileComponent,
     BlogMobileComponent,
     BlogComponent,
     HeaderComponent,
+    InfoComponent,
   ],
   imports: [
     RouterModule,
