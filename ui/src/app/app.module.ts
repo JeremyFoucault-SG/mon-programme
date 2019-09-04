@@ -41,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     ChartsModule,
     StoreModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot() 
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

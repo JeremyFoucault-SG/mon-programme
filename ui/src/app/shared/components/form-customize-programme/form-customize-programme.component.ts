@@ -20,21 +20,20 @@ export class FormCustomizeProgrammeComponent implements OnInit {
     this.createForm();
   }
 
-
   private createForm() {
-  this.customForm = new FormGroup({
-    domicile: new FormControl(''),
-    salle: new FormControl( ''),
-    seances: new FormControl(''),
-    objectif: new FormControl(''),
-    niveau: new FormControl( ''),
-    poids: new FormControl(''),
-    taille: new FormControl( ''),
-    age: new FormControl( ''),
-    pratique: new FormControl(''),
-    muscle: new FormControl( ''),
-  });
-}
+    this.customForm = new FormGroup({
+      domicile: new FormControl(''),
+      salle: new FormControl(''),
+      seances: new FormControl(''),
+      objectif: new FormControl(''),
+      niveau: new FormControl(''),
+      poids: new FormControl(''),
+      taille: new FormControl(''),
+      age: new FormControl(''),
+      pratique: new FormControl(''),
+      muscle: new FormControl(''),
+    });
+  }
 
   showDetails() {
     this.show = true;
@@ -47,11 +46,7 @@ export class FormCustomizeProgrammeComponent implements OnInit {
       this.customForm.reset();
       this.showSuccess();
     } else {
-      (error: any) => {
-        this.errorSuccess();
-      }
     }
-
   }
 
   showSuccess() {
@@ -61,5 +56,4 @@ export class FormCustomizeProgrammeComponent implements OnInit {
   errorSuccess() {
     this.toastr.warning('Erreur lors de la sauvegarde')
   }
-
 }
