@@ -54,6 +54,6 @@ export class FormCustomizeProgrammeComponent implements OnInit {
   }
 
   errorSuccess() {
-    this.toastr.warning('Erreur lors de la sauvegarde')
+    this.toastr.warning('Erreur lors de la sauvegarde');
   }
 }
