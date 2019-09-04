@@ -33,8 +33,8 @@ export class InfoComponent implements OnInit {
     })
   });
 
-  submit(){
-    console.log(this.myForm.value)
+  submit() {
+    console.log(this.myForm.value);
   }
   ngOnInit() {
   }
