@@ -7,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormCustomizeProgrammeComponent implements OnInit {
 
+  isHidden = false;
+  show = false;
+
   constructor() { }
 
   ngOnInit() {
-
   }
 
+  nextPage() {
+    this.show = true;
+    this.isHidden = !this.isHidden;
+  }
 
 }
