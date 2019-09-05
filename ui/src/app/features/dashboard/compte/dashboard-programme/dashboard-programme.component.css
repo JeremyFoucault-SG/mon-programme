@@ -1,7 +1,4 @@
-.content {
-  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.06);
-}
-
-.img-prog {
-  border-radius: 50%;
+.image{
+  background-image: url('https://zupimages.net/up/19/32/07qh.jpeg');
+  background-size: 148%;
 }
