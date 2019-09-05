@@ -86,10 +86,9 @@ const routes: Routes = [
   },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'article-blog', component: ArticleBlogComponent },
-  { path: 'dashboard-suivi', component: DashboardSuiviComponent },
-  { path: 'dashboard-infos', component: InfoComponent },
-  { path: 'dashboard-compte', component: CompteComponent },
-
+  { path: 'mon-compte', component: CompteComponent },
+  { path: 'mon-compte/suivi', component: DashboardSuiviComponent },
+  { path: 'mon-compte/infos', component: InfoComponent },
   { path: 'commande', component: CommandeComponent },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },

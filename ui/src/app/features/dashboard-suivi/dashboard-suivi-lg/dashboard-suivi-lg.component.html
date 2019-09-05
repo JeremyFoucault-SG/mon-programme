@@ -1,14 +1,14 @@
 <div>
         <ul class="flex menu bg-black">
           <li class="mr-6 mb-4">
-            <a class="text-white" [routerLink]="'/dashboard-compte'"
+            <a class="text-white" [routerLink]="'/mon-compte'"
               ><button type="submit" class="px-4 py-2 onglet mt-3">
                 Résumé du compte
               </button></a
             >
           </li>
           <li class="mr-6 mb-4">
-            <a class="text-white" [routerLink]="'/dashboard-infos'"
+            <a class="text-white" [routerLink]="'/mon-compte/infos'"
               ><button type="submit" class="px-4 py-2 onglet mt-3">
                 Mes informations personnelles
               </button></a
@@ -21,7 +21,7 @@
           </li>
         </ul>
       </div>
-      
+
       <!-- Button for return home - page -->
       <div class="ml-5 mt-5">
             <a class="nav-link return" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i class="fa fa-undo mr-2"
@@ -29,28 +29,27 @@
         </div>
 
       <h1 class="ml-24 main-title mt-4">Mon suivi</h1>
-      
+
       <div class="flex justify-around content-center items-center">
         <!-- Table user statistic -->
         <div class="content w-4/6  bg-white rounded ">
           <app-dashboard-statistique></app-dashboard-statistique>
         </div>
-      
+
         <!-- Info corporelles -->
         <div class="content w-1/4  bg-white rounded">
           <app-dashboard-info-corporelles></app-dashboard-info-corporelles>
         </div>
       </div>
-      
+
       <div class="flex justify-around content-center">
         <!-- Progress bar -->
         <div class="content w-4/6 mt-5 mb-5 bg-white rounded">
           <app-dashboard-progress-bar></app-dashboard-progress-bar>
         </div>
-      
+
         <!-- Progress bar goal -->
         <div class="content w-1/4 mt-5 mb-5 bg-white rounded">
           <app-dashboard-goal></app-dashboard-goal>
         </div>
       </div>
-      
