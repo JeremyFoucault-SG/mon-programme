@@ -1,34 +1,36 @@
-<div class="group text-right mt-6 mr-4 ">
-    <a class="nav-link return" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i class="fa fa-undo mr-4"
+<div class="text-right mt-6 mr-4 pt-64">
+    <a class="text-left text-black font-bold text-3xl" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i class="fa fa-undo mr-4"
             aria-hidden="true"></i>PAGE D'ACCUEIL</a>
 </div>
 
 
-<div>
+<div class="pl-24 -mb-24">
+    <app-tag></app-tag>
+</div>
     
 <div *ngFor="let article of articles | async">
 <div>
-    <h1 class="titre-article mb-8">{{article.title}}</h1>
+    <h1 class="mb-8 text-left font-bold text-black text-4xl pl-24 mt-32 mr-4">{{article.title}}</h1>
 </div>
 <div class="text-right mr-4">
-    <p class="date">{{article.createdAt}}</p>
+    <p class="text-gray-600 text-xl text-right">{{article.createdAt}}</p>
 </div>
 
-<div class="image">
+<div class="bg-cover bg-center w-full">
     {{article.photoUrl}}
 </div>
 
 <div class="mt-6">
-    <p class="partage">PARTAGER SUR </p>
+    <p class="pl-20 font-lato text-gray-600 text-2xl">PARTAGER SUR </p>
 </div>
 
-<div class="flex flex-row justify-betwwen bloc">
-    <img class="facebook" src="https://zupimages.net/up/19/32/van1.png">
-    <img class=" twitter" src="https://zupimages.net/up/19/32/al3u.png">
-    <div class="line"></div>
-    <p>{{article.content}}</p>
+<div class="flex flex-row justify-betwwen w-full h-auto ">
+    <img class="ml-20 h-12" src="https://zupimages.net/up/19/32/van1.png">
+    <img class=" h-12 ml-8" src="https://zupimages.net/up/19/32/al3u.png">
+    <div class="bg-gray-700 w-16 h-20 opacity-25 ml-6 mr-6"></div>
+    <p class="text-gray-800 text-base">{{article.content}}</p>
 
 </div>
 </div>
-</div>
+
 <app-newsletter class="mt-6"></app-newsletter>

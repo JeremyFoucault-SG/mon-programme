@@ -23,7 +23,7 @@ export class ArticleBlogComponent implements OnInit {
   constructor(private store: Store) { }
 
   ngOnInit() {
-    this.store.dispatch(new GetByIdArticle('5d67b0e858f61a1e16294c2a'));
+    this.store.dispatch(new GetByIdArticle('5d70dfdf42a76f14bf21d70d'));
   }
 
 }
