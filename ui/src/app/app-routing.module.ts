@@ -5,12 +5,14 @@ import { ArticleBlogComponent } from './features/article-blog/article-blog.compo
 import { HomeComponent } from './features/home/home.component';
 import { CommandeComponent } from './features/commande/commande.component';
 import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
-import { DashboardCompteComponent } from './features/dashboard-compte/dashboard-compte.component';
+
+
 import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { FormCustomizeProgrammeComponent } from './shared/components/form-customize-programme/form-customize-programme.component';
 import { InfoComponent } from './features/dashboard/info/info.component';
+import { CompteComponent } from './features/dashboard/compte/compte.component';
 
 
 
@@ -84,9 +86,9 @@ const routes: Routes = [
   },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'article-blog', component: ArticleBlogComponent },
-  { path: 'dashboard-suivi', component: DashboardSuiviComponent },
-  { path: 'dashboard-infos', component: InfoComponent },
-  { path: 'dashboard-compte', component: DashboardCompteComponent },
+  { path: 'mon-compte', component: CompteComponent },
+  { path: 'mon-compte/suivi', component: DashboardSuiviComponent },
+  { path: 'mon-compte/infos', component: InfoComponent },
   { path: 'commande', component: CommandeComponent },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },
