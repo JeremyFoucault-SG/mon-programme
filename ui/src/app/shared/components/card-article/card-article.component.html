@@ -1,25 +1,72 @@
-<div class="w-full shadow-xl lg:shadow-none border lg:border-none rounded-t-lg lg:rounded-none flex flex-col lg:flex-row" [ngClass]="{'lg:flex-row-reverse' : isReverse}">
-  <div class="h-64 rounded-t-lg lg:rounded-none lg:h-inherit w-full lg:w-3/5 bg-cover bg-center " [ngStyle]="{'background-image': 'url('+article.photoUrl+')'}" [ngClass]="isReverse ? 'lg:img-blog-left': 'lg:img-blog-right'">
-  </div>
+<div
+  class="w-full shadow-xl lg:shadow-none border lg:border-none rounded-t-lg lg:rounded-none flex flex-col lg:flex-row"
+  [ngClass]="{ 'lg:flex-row-reverse': isReverse }"
+>
+  <div
+    class="h-64 rounded-t-lg lg:rounded-none lg:h-inherit w-full lg:w-3/5 bg-cover bg-center "
+    [ngStyle]="{ 'background-image': 'url(' + article.photoUrl + ')' }"
+    [ngClass]="isReverse ? 'lg:img-blog-left' : 'lg:img-blog-right'"
+  ></div>
   <div class="w-full lg:w-1/2">
     <div class="px-10" [ngClass]="isReverse ? 'lg:pl-48' : 'lg:pr-48'">
-      <div class="flex flex-col" [ngClass]="isReverse ? 'items-start' : 'items-end'">
-        <h3 class="hidden lg:inline-block text-5xl"
-          [ngClass]="{'text-left': isReverse, 'text-right': !isReverse, 'pl-10': isReverse, 'pr-10': !isReverse}">01
+      <div
+        class="flex flex-col"
+        [ngClass]="isReverse ? 'items-start' : 'items-end'"
+      >
+        <h3
+          class="hidden lg:inline-block text-5xl"
+          [ngClass]="{
+            'text-left': isReverse,
+            'text-right': !isReverse,
+            'pl-10': isReverse,
+            'pr-10': !isReverse
+          }"
+        >
+          01
         </h3>
-        <div class="hidden lg:inline-block bg-yellow-500 rectangle" [ngClass]="isReverse ? 'text-left' : 'text-right'"></div>
+        <div
+          class="hidden lg:inline-block bg-yellow-500 rectangle"
+          [ngClass]="isReverse ? 'text-left' : 'text-right'"
+        ></div>
       </div>
 
-      <h1 class="uppercase py-10 text-5xl" [ngClass]="isReverse ? 'lg:text-left' : 'lg:text-right'">{{article.titre}}</h1>
-      <p class="text-xl" [ngClass]="isReverse ? 'lg:text-left' : 'lg:text-right'">{{article.content}}</p>
-      <div class="hidden lg:inline-block" [ngClass]="isReverse ? 'text-left' : 'text-right'">
-        <button class="bg-transparent border-yellow-500 hover:bg-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5">
+      <h1
+        class="uppercase py-10 text-5xl"
+        [ngClass]="isReverse ? 'lg:text-left' : 'lg:text-right'"
+      >
+        {{ article.title }}
+      </h1>
+      <p
+        class="text-xl"
+        [ngClass]="isReverse ? 'lg:text-left' : 'lg:text-right'"
+      >
+        {{ article.content }}
+      </p>
+      <div
+        class="hidden lg:inline-block"
+        [ngClass]="isReverse ? 'text-left' : 'text-right'"
+      >
+        <button
+          type="button"
+          class="bg-transparent border-yellow-500 hover:bg-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5"
+        >
           Voir L'article
         </button>
       </div>
-      <div class="flex items-center mt-10 w-full justify-end pb-5" [ngClass]="isReverse ? 'lg:justify-end' : 'lg:justify-start'">
-        <i class="cursor-pointer text-red-700 fa fa-heart-o fa-2x" aria-hidden="true"></i>
-        <p class="hidden lg:inline-block cursor-pointer ml-5 italic text-gray-600 tracking-wider">Sauvegarder l'article</p>
+      <div
+        class="flex items-center mt-10 w-full justify-end pb-5"
+        [ngClass]="isReverse ? 'lg:justify-end' : 'lg:justify-start'"
+      >
+        <i
+          class="cursor-pointer text-red-700 fa fa-heart-o fa-2x"
+          aria-hidden="true"
+        ></i>
+        <p
+          class="hidden lg:inline-block cursor-pointer ml-5 italic text-gray-600 tracking-wider"
+        >
+          Sauvegarder l'article
+        </p>
       </div>
     </div>
   </div>
+</div>

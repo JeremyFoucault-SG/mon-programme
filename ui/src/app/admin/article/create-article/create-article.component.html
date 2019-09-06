@@ -1,0 +1,26 @@
+<div class="text-center h-full create">
+  <h1>articles</h1>
+  <div>
+    <form [formGroup]="articleForm" (ngSubmit)="submit()">
+        <div class="">
+                <label>Titre</label>
+                <input formControlName="title"/>
+        </div>
+        <div class="">
+                <label>Url de la photo</label>
+                <input formControlName="photoUrl"/>
+        </div>
+        <div class="">
+                <label>Auteur</label>
+                <input formControlName="author"/>
+        </div>
+        <div class="">
+                <label>Content</label>
+                <ngx-quill formControlName="content"></ngx-quill>
+        </div>
+
+
+      <input type="submit" class="" />
+    </form>
+  </div>
+</div>

@@ -40,7 +40,7 @@ import { DashboardHistoriqueComponent } from '../features/dashboard/info/dashboa
 import { TagComponent } from './components/tag/tag.component';
 import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
 import { GroupTitleComponent } from './components/group-title/group-title.component';
-
+import { AdminModule } from '../admin/admin.module';
 @NgModule({
   declarations: [
     FormCustomizeProgrammeComponent,
@@ -83,7 +83,8 @@ import { GroupTitleComponent } from './components/group-title/group-title.compon
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    AdminModule
   ],
   exports: [
     FormCustomizeProgrammeComponent,

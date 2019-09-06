@@ -22,6 +22,8 @@ import { DashboardProgrammeComponent } from './dashboard/compte/dashboard-progra
 import { DashboardArticleComponent } from './dashboard/compte/dashboard-article/dashboard-article.component';
 import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
+import { CoreModule } from '../core/core.module';
+import { AdminModule } from '../admin/admin.module';
 import { DashboardPaiementComponent } from './dashboard/info/dashboard-paiement/dashboard-paiement.component';
 import { BlogComponent } from './blog/blog.component';
 import { HeaderComponent } from './blog/header/header.component';
@@ -65,7 +67,9 @@ import { ListingProgrammeComponent } from './listing-programme/listing-programme
     FormsModule,
     ReactiveFormsModule,
     FacebookModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    CoreModule,
+    AdminModule
   ],
   exports: [
   ],

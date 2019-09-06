@@ -41,7 +41,7 @@ export class CartsController {
 
   @Put(':id')
   async update(@User('id') idUser: string, @Param('id') idCart: string, @Body() cart: CartModel): Promise<CartModel> {
-    return null;
+    return await this.cartsServices.update(idCart, cart);
   }
 
   @Delete(':id')

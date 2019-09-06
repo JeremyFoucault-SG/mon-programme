@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { ArticleModel } from './article.model';
 import { ModelType } from 'typegoose';
@@ -41,4 +41,29 @@ export class ArticlesService {
     return this.articleModel.find({}).exec();
   }
 
+  /**
+   * Delete article by id
+   * @param id Id of article
+   */
+  async delete(id: string): Promise<ArticleModel> {
+    const article = await this.articleModel.findByIdAndRemove(id);
+    if (!article) {
+      throw new EntityException(EntityExceptionCode.NOT_FOUND);
+    }
+    return article;
+  }
+  /**
+   * Update article
+   * @param id Id article
+   * @param articleDTO
+   */
+  async update(id: string, articleDTO: ArticleDTO) {
+    const article = await this.articleModel.findByIdAndUpdate(id, articleDTO, {
+      new: true,
+    });
+    if (!article) {
+      throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
+    }
+    return article;
+  }
 }
