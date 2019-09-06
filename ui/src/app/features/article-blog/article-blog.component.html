@@ -36,3 +36,44 @@
   </button>
 </div>
 <app-newsletter class="mt-6"></app-newsletter>
+<div class="text-right mt-6 mr-4 pt-40">
+    <a class="text-left text-black font-bold text-2xl" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i
+            class="fa fa-undo mr-4" aria-hidden="true"></i>PAGE D'ACCUEIL</a>
+</div>
+<div class="pl-24 -mb-24">
+    <app-tag></app-tag>
+</div>
+<div *ngFor="let article of articles | async">
+    <div>
+        <h1 class="mb-8 text-left font-bold text-black text-4xl pl-24 mt-32 mr-4">{{article.title}}</h1>
+    </div>
+    <div class="text-right mr-4">
+        <p class="text-gray-600 text-xl text-right">{{article.createdAt}}</p>
+    </div>
+    <div class="bg-cover bg-center w-full">
+        {{article.photoUrl}}
+    </div>
+    <div class="mt-6 mb-6">
+        <p class="pl-20 font-lato text-gray-600 text-2xl">PARTAGER SUR </p>
+    </div>
+    <div class="flex flex-row justify-betwwen w-full h-auto ">
+        <img class="ml-20 h-12" src="https://zupimages.net/up/19/32/van1.png">
+        <img class=" h-12 ml-8" src="https://zupimages.net/up/19/32/al3u.png">
+        <div class="bg-gray-700 w-16 h-20 opacity-25 ml-6 mr-6"></div>
+        <p class="text-gray-800 text-base">{{article.content}}</p>
+    </div>
+</div>
+<div class="pt-24 md:pt-32 px-5 md:px-10 mb-24">
+    <app-group-title>
+        <app-title class="group-title">NOS MEILLEURS PROGRAMME</app-title>
+        <app-sub-title class="group-subtitle">PROGRAMME</app-sub-title>
+        <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
+            <a [routerLink]="['/routePath']">
+                Voir tout
+            </a>
+        </div>
+    </app-group-title>
+    <app-card-thumb-list [items]="programs"></app-card-thumb-list>
+</div>
+<app-newsletter class="mt-6"></app-newsletter>
+<app-footer></app-footer>

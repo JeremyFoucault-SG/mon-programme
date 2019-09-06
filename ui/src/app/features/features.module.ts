@@ -11,32 +11,26 @@ import { FacebookModule } from 'ngx-facebook';
 import { HomeHeaderMenuComponent } from './home/header/menu/home-header-menu.component';
 import { HomeHeaderComponent } from './home/header/home-header.component';
 import { HomeHeaderVideoComponent } from './home/header/video/home-header-video.component';
-import { StatsComponent } from './dashboard-suivi/stats/stats.component';
 import { ChartsModule } from 'ng2-charts';
-import { DashboardCompteSmComponent } from './dashboard-compte/dashboard-compte-sm/dashboard-compte-sm.component';
 import { CommandeComponent } from './commande/commande.component';
-import { DashboardSuiviComponent } from './dashboard-suivi/dashboard-suivi.component';
-import { DashboardStatistiqueComponent } from './dashboard-suivi/dashboard-statistique/dashboard-statistique.component';
-import { DashboardInfoCorporellesComponent } from './dashboard-suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
-import { DashboardProgressBarComponent } from './dashboard-suivi/dashboard-progress-bar/dashboard-progress-bar.component';
-import { DashboardGoalComponent } from './dashboard-suivi/dashboard-goal/dashboard-goal.component';
-import { DashboardInfoSmComponent } from './dashboard-infos-personnelles/dashboard-info-sm/dashboard-info-sm.component';
-import { DashboardAvisComponent } from './dashboard-compte/dashboard-avis/dashboard-avis.component';
-import { DashboardProgrammeComponent } from './dashboard-compte/dashboard-programme/dashboard-programme.component';
-import { DashboardArticleComponent } from './dashboard-compte/dashboard-article/dashboard-article.component';
-import { DashboardInfosPersonnellesComponent } from './dashboard-infos-personnelles/dashboard-infos-personnelles.component';
-import { DashboardSuiviSmComponent } from './dashboard-suivi/dashboard-suivi-sm/dashboard-suivi-sm.component';
-import { DashboardCompteComponent } from './dashboard-compte/dashboard-compte.component';
-import { DashboardCompteLgComponent } from './dashboard-compte/dashboard-compte-lg/dashboard-compte-lg.component';
-import { DashboardInfoLgComponent } from './dashboard-infos-personnelles/dashboard-info-lg/dashboard-info-lg.component';
-import { DashboardSuiviLgComponent } from './dashboard-suivi/dashboard-suivi-lg/dashboard-suivi-lg.component';
+import { DashboardStatistiqueComponent } from './dashboard/dashboard-statistique/dashboard-statistique.component';
+import { DashboardInfoCorporellesComponent } from './dashboard/suivi/dashboard-info-corporelles/dashboard-info-corporelles.component';
+import { DashboardProgressBarComponent } from './dashboard/suivi/dashboard-progress-bar/dashboard-progress-bar.component';
+import { DashboardGoalComponent } from './dashboard/suivi/dashboard-goal/dashboard-goal.component';
+import { DashboardAvisComponent } from './dashboard/compte/dashboard-avis/dashboard-avis.component';
+import { DashboardProgrammeComponent } from './dashboard/compte/dashboard-programme/dashboard-programme.component';
+import { DashboardArticleComponent } from './dashboard/compte/dashboard-article/dashboard-article.component';
 import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
-import { DashboardPaiementComponent } from './dashboard-infos-personnelles/dashboard-paiement/dashboard-paiement.component';
 import { CoreModule } from '../core/core.module';
 import { AdminModule } from '../admin/admin.module';
+import { DashboardPaiementComponent } from './dashboard/info/dashboard-paiement/dashboard-paiement.component';
 import { BlogComponent } from './blog/blog.component';
 import { HeaderComponent } from './blog/header/header.component';
+import { InfoComponent } from './dashboard/info/info.component';
+import { CompteComponent } from './dashboard/compte/compte.component';
+import { SuiviComponent } from './dashboard/suivi/suivi.component';
+import { ListingProgrammeComponent } from './listing-programme/listing-programme.component';
 
 
 @NgModule({
@@ -45,32 +39,26 @@ import { HeaderComponent } from './blog/header/header.component';
     HomeComponent,
     ArticleBlogComponent,
     NosProgrammesComponent,
-    StatsComponent,
-    DashboardCompteSmComponent,
     HomeHeaderMenuComponent,
     HomeHeaderComponent,
     HomeHeaderVideoComponent,
     CommandeComponent,
-    DashboardSuiviComponent,
     DashboardStatistiqueComponent,
     DashboardInfoCorporellesComponent,
     DashboardProgressBarComponent,
     DashboardGoalComponent,
-    DashboardInfoSmComponent,
     DashboardAvisComponent,
     DashboardProgrammeComponent,
     DashboardArticleComponent,
-    DashboardInfosPersonnellesComponent,
-    DashboardSuiviSmComponent,
-    DashboardCompteComponent,
-    DashboardCompteLgComponent,
-    DashboardInfoLgComponent,
-    DashboardSuiviLgComponent,
     DashboardPaiementComponent,
     PratiqueSportiveMobileComponent,
     BlogMobileComponent,
     BlogComponent,
     HeaderComponent,
+    InfoComponent,
+    CompteComponent,
+    SuiviComponent,
+    ListingProgrammeComponent
   ],
   imports: [
     RouterModule,

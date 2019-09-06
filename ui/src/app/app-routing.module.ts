@@ -3,11 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { ArticleBlogComponent } from './features/article-blog/article-blog.component';
 import { HomeComponent } from './features/home/home.component';
-import { DashboardCompteSmComponent } from './features/dashboard-compte/dashboard-compte-sm/dashboard-compte-sm.component';
 import { CommandeComponent } from './features/commande/commande.component';
-import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
-import { DashboardInfosPersonnellesComponent } from './features/dashboard-infos-personnelles/dashboard-infos-personnelles.component';
-import { DashboardCompteComponent } from './features/dashboard-compte/dashboard-compte.component';
 import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
 import { CreateArticleComponent } from './admin/article/create-article/create-article.component';
@@ -15,6 +11,11 @@ import { ProgrammesComponent } from './admin/programmes/programmes/programmes.co
 import { BlogComponent } from './features/blog/blog.component';
 import { UpdateArticleComponent } from './admin/article/update-article/update-article.component';
 import { ArticleComponent } from './admin/article/article/article.component';
+import { InfoComponent } from './features/dashboard/info/info.component';
+import { CompteComponent } from './features/dashboard/compte/compte.component';
+import { SuiviComponent } from './features/dashboard/suivi/suivi.component';
+import { ListingProgrammeComponent } from './features/listing-programme/listing-programme.component';
+
 
 
 const routes: Routes = [
@@ -87,18 +88,18 @@ const routes: Routes = [
   },
   { path: 'article/:id', component: ArticleBlogComponent },
   { path: 'article-blog', component: ArticleBlogComponent },
-  { path: 'dashboard-suivi', component: DashboardSuiviComponent },
-  { path: 'dashboard-infos', component: DashboardInfosPersonnellesComponent },
-  { path: 'dashboard-compte', component: DashboardCompteComponent },
-  { path: 'dashboard-2', component: DashboardCompteSmComponent },
+  { path: 'mon-compte/suivi', component: SuiviComponent },
+  { path: 'mon-compte/infos', component: InfoComponent },
+  { path: 'mon-compte', component: CompteComponent },
+
   { path: 'commande', component: CommandeComponent },
-  { path: 'dashboard-3', component: DashboardSuiviComponent },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },
   { path: 'create-article', component: CreateArticleComponent},
   { path: 'create-programme', component: ProgrammesComponent },
   { path: 'update-article/:id', component: UpdateArticleComponent},
   { path: 'list-article', component: ArticleComponent},
+  { path: 'detail-programme', component: ListingProgrammeComponent},
 
 
 ];

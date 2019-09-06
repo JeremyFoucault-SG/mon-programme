@@ -6,10 +6,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Imports Components //
 import { AppRoutingModule } from './app-routing.module';
@@ -51,7 +49,10 @@ import { HttpClientModule } from '@angular/common/http';
     AdminModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    StoreModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
