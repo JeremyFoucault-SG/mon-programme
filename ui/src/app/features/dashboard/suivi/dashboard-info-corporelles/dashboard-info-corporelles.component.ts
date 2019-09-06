@@ -20,4 +20,7 @@ export class DashboardInfoCorporellesComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit() {
+
+  }
 }

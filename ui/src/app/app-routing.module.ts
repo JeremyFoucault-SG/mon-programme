@@ -4,15 +4,13 @@ import { PopupMwComponent } from './features/popup-mw/popup-mw.component';
 import { ArticleBlogComponent } from './features/article-blog/article-blog.component';
 import { HomeComponent } from './features/home/home.component';
 import { CommandeComponent } from './features/commande/commande.component';
-import { DashboardSuiviComponent } from './features/dashboard-suivi/dashboard-suivi.component';
-
-
 import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { FormCustomizeProgrammeComponent } from './shared/components/form-customize-programme/form-customize-programme.component';
 import { InfoComponent } from './features/dashboard/info/info.component';
 import { CompteComponent } from './features/dashboard/compte/compte.component';
+import { SuiviComponent } from './features/dashboard/suivi/suivi.component';
 
 
 
@@ -86,7 +84,7 @@ const routes: Routes = [
   },
   { path: 'article', component: ArticleBlogComponent },
   { path: 'article-blog', component: ArticleBlogComponent },
-  { path: 'dashboard-suivi', component: DashboardSuiviComponent },
+  { path: 'dashboard-suivi', component: SuiviComponent },
   { path: 'dashboard-infos', component: InfoComponent },
   { path: 'dashboard-compte', component: CompteComponent },
 

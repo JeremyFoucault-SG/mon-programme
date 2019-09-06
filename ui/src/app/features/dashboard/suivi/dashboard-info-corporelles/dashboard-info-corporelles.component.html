@@ -1,7 +1,7 @@
 
   <div class=" p-10">
     <!-- Title -->
-    <h1 class="title-dashboard-sm">
+    <h1 class="uppercase lg:normal-case pl-1 pt-3 pb-3 text-xs lg:text-2xl text-gray-600 font-semibold tracking-widest leading-tight">
       Information corporelles
     </h1>
   </div>
@@ -10,7 +10,7 @@
   <form [formGroup]="myForm" (ngSubmit)="submit()">
     <!-- Sexe user -->
     <div class="flex justify-around uppercase mb-3 ">
-      <label>Sexe</label>
+      <label class="font-semibold mr-16">Sexe</label>
       <input type="text" formControlName="sexe" placeholder="FEMME" />
     </div>
 
@@ -21,7 +21,7 @@
 
     <!-- Taille user -->
     <div class="flex justify-around uppercase mb-3 mt-3">
-      <label>Taille</label>
+      <label class="font-semibold">Taille</label>
       <input
         type="text"
         formControlName="taille"
@@ -38,7 +38,7 @@
 
     <!-- Poids user -->
     <div class="flex justify-around uppercase pb-10 mt-3">
-      <label>Poids</label>
+      <label class="font-semibold">Poids</label>
       <input
         type="text"
         formControlName="poids"
@@ -52,7 +52,7 @@
     <div class="text-center pb-10">
       <button
         type="submit"
-        class="bg-woman text-white font-semibold py-2 px-2 border rounded uppercase text-xs"
+        class="bg-red-800 text-white font-semibold py-2 px-2 border rounded uppercase text-xs"
       >
         Mettre a jour
         <i
