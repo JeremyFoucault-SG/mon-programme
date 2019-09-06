@@ -28,7 +28,7 @@ import { HeaderComponent } from './blog/header/header.component';
 import { InfoComponent } from './dashboard/info/info.component';
 import { CompteComponent } from './dashboard/compte/compte.component';
 import { SuiviComponent } from './dashboard/suivi/suivi.component';
-import { ListingProgrammeComponent } from './listing-programme/listing-programme.component'
+import { ListingProgrammeComponent } from './listing-programme/listing-programme.component';
 
 
 @NgModule({
