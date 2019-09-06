@@ -33,7 +33,8 @@ module.exports = {
         '-1': '-1'
       },
       boxShadow: {
-        'red': '0 0 8px 0 #cc6666'
+        'red': '0 0 8px 0 #cc6666',
+        'full-inset-pink': 'inset 100vh 0 0 0  rgba(204, 102, 102, 0.47)'
       }
     }
   },

@@ -28,6 +28,10 @@ import { HeaderComponent } from './blog/header/header.component';
 import { InfoComponent } from './dashboard/info/info.component';
 import { CompteComponent } from './dashboard/compte/compte.component';
 import { SuiviComponent } from './dashboard/suivi/suivi.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { Step1Component } from './inscription/step1/step1.component';
+import { Step2Component } from './inscription/step2/step2.component';
 
 
 @NgModule({
@@ -55,6 +59,10 @@ import { SuiviComponent } from './dashboard/suivi/suivi.component';
     InfoComponent,
     CompteComponent,
     SuiviComponent,
+    ConnexionComponent,
+    InscriptionComponent,
+    Step1Component,
+    Step2Component
   ],
   imports: [
     RouterModule,

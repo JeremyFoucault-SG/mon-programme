@@ -1,0 +1,47 @@
+<div class="absolute bg-cover bg-repeat w-full h-full login shadow-full-inset-pink">
+  <div class="text-center text-white text-2xl mt-1/2-screen">
+    <h1>Connexion</h1>
+  </div>
+  <div class="fex justify-center p-8">
+    <form
+      [formGroup]="myForm"
+      (ngSubmit)="submit()"
+      class="flex-col justify-center text-center"
+    >
+      <div class="">
+        <input
+          class="w-full shadow bg-gray-100 rounded border border-gray-500 p-8 py-4 mt-4 mb-4 "
+          placeholder="Email"
+          type="email"
+          formControlName="email"
+        />
+      </div>
+      <div class="">
+        <input
+          class="w-full shadow bg-gray-100 rounded border border-gray-500 p-8 py-4 mt-4 mb-4 "
+          placeholder="Mot de passe"
+          type="password"
+          formControlName="password"
+        />
+      </div>
+      <button
+        [ngClass]="{ 'opacity-50': !myForm.valid }"
+        type="submit"
+        [routerLink]="['/']"
+        class="w-full bg-red-600 text-white font-bold py-2 px-4 border border-red-700 rounded uppercase mt-22"
+      >
+        Connexion
+      </button>
+      <p class="text-white italic text-sm float-left">Mot de passe oublié ?</p>
+    </form>
+    <div class="mt-20">
+      <button
+      type="button"
+      [routerLink]="['/']"
+      class="w-full bg-red-600 text-white font-bold py-2 px-4 border border-red-700 rounded uppercase"
+    >
+      Inscription
+    </button>
+    </div>
+  </div>
+</div>

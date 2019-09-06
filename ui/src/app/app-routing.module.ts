@@ -11,6 +11,8 @@ import { FormCustomizeProgrammeComponent } from './shared/components/form-custom
 import { InfoComponent } from './features/dashboard/info/info.component';
 import { CompteComponent } from './features/dashboard/compte/compte.component';
 import { SuiviComponent } from './features/dashboard/suivi/suivi.component';
+import { ConnexionComponent } from './features/connexion/connexion.component';
+import { InscriptionComponent } from './features/inscription/inscription.component';
 
 
 
@@ -87,11 +89,11 @@ const routes: Routes = [
   { path: 'mon-compte/suivi', component: SuiviComponent },
   { path: 'mon-compte/infos', component: InfoComponent },
   { path: 'mon-compte', component: CompteComponent },
-
+  { path: 'login', component: ConnexionComponent},
   { path: 'commande', component: CommandeComponent },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },
-
+  { path: 'inscription', component: InscriptionComponent}
 
 ];
 
