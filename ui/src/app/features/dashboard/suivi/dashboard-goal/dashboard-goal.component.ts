@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardGoalComponent implements OnInit {
 
   constructor() { }
-  public goaldata = [10]
+  public goaldata = [10];
   public plastiqueType = 'doughnut';
   public plastiqueColor =
     [
