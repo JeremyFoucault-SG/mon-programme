@@ -7,10 +7,10 @@ import { CommandeComponent } from './features/commande/commande.component';
 import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
 import { BlogComponent } from './features/blog/blog.component';
-import { FormCustomizeProgrammeComponent } from './shared/components/form-customize-programme/form-customize-programme.component';
 import { InfoComponent } from './features/dashboard/info/info.component';
 import { CompteComponent } from './features/dashboard/compte/compte.component';
 import { SuiviComponent } from './features/dashboard/suivi/suivi.component';
+import { ListingProgrammeComponent } from './features/listing-programme/listing-programme.component';
 
 
 
@@ -91,6 +91,7 @@ const routes: Routes = [
   { path: 'commande', component: CommandeComponent },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },
+  { path: 'detail-programme', component: ListingProgrammeComponent},
 
 
 ];

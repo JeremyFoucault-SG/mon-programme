@@ -1,35 +1,26 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
-import { GetByIdArticle } from '../../core/store/store.module/article/article.actions';
 import { ProgramDetail, ProgramsList } from 'src/app/shared/models/programs-infos';
 
 @Component({
-  selector: 'app-article-blog',
-  templateUrl: './article-blog.component.html',
-  styleUrls: ['./article-blog.component.css']
+  selector: 'app-listing-programme',
+  templateUrl: './listing-programme.component.html',
+  styleUrls: ['./listing-programme.component.css']
 })
-export class ArticleBlogComponent implements OnInit {
+export class ListingProgrammeComponent implements OnInit {
 
-
-public selected: ProgramDetail;
-public programsInfos: ProgramDetail[] = ProgramsList.infos;
-public programs = [];
+  public selected: ProgramDetail;
+  public programsInfos: ProgramDetail[] = ProgramsList.infos;
+  public programs = [];
 
 
   @Input()
   tag: string;
 
 
-  @Select(ArticleState.articles)
-  articles: Observable<any>;
 
-
-  constructor(private store: Store) { }
+  constructor() { }
 
   ngOnInit() {
-    this.store.dispatch(new GetByIdArticle('5d72133e82fd650c5e476716'));
     this.selected = this.programsInfos[0];
 
     this.programs = [
@@ -122,5 +113,3 @@ public programs = [];
 
 
 }
-
-
