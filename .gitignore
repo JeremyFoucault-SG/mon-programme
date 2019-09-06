@@ -20,6 +20,7 @@
 .history/*
 
 # misc
+/ui/src/styles.css
 /.sass-cache
 /connect.lock
 /coverage
@@ -94,3 +95,4 @@ Thumbs.db
 # 3D Images
 *.[33][dD][mM]
 *.[mM][aA][xX]
+ui/src/styles.css
