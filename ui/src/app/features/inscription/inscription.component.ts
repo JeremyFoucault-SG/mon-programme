@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -12,7 +13,14 @@ export class InscriptionComponent implements OnInit {
   miseAjourIndex(event) {
     this.index = event.value;
   }
-  constructor() { }
+  return() {
+    if (this.index > 1) {
+      this.index--;
+    } else {
+      this.router.navigateByUrl(`login`);
+    }
+  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
