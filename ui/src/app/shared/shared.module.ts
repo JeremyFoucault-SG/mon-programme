@@ -23,11 +23,7 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
 import { ObjectifProgrammeComponent } from './components/menu-nos-programme/objectif-programme/objectif-programme.component';
 import { DetailProgrammeComponent } from './components/detail-programme/detail-programme.component';
 import { DetailProgrammePhotoComponent } from './components/detail-programme/detail-programme-photo/detail-programme-photo.component';
-import { LoginAccueilComponent } from './components/login-sm/login-accueil/login-accueil.component';
 
-import { Inscription2Component } from './components/login-sm/inscription2/inscription2.component';
-import { Inscription3Component } from './components/login-sm/inscription3/inscription3.component';
-import { Inscription4Component } from './components/login-sm/inscription4/inscription4.component';
 
 import { DashboardInfoPersoComponent } from '../features/dashboard/info/dashboard-info-perso/dashboard-info-perso.component';
 // tslint:disable-next-line: max-line-length
@@ -63,12 +59,6 @@ import { GroupTitleComponent } from './components/group-title/group-title.compon
     ObjectifProgrammeComponent,
     DetailProgrammeComponent,
     DetailProgrammePhotoComponent,
-    LoginAccueilComponent,
-
-    Inscription2Component,
-    Inscription3Component,
-    Inscription4Component,
-
     DashboardInfoPersoComponent,
     DashboardInfoFacturationComponent,
     DashboardHistoriqueComponent,
