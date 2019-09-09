@@ -1,0 +1,21 @@
+<div
+  class="absolute bg-cover w-full h-full login shadow-full-inset-pink"
+>
+  <div (click)="return()" class="flex justify-center items-center mt-20 float-left ml-5 h-12 w-12 bg-white rounded-full">
+    <img
+      src="https://zupimages.net/up/19/34/n48y.png"
+      alt="arrow"
+    />
+  </div>
+  <div class="text-center text-white mt-40 md:-mb-20">
+    <h1 class="text-2xl md:text-6xl">Inscription</h1>
+    <p class="test-lg font-semibold md:text-4xl">{{index}} étapes sur 4</p>
+  </div>
+  <div class="fex justify-center p-8 md:p-32">
+
+      <app-step1 *ngIf="index===1" [index]="index" (changeIndex)="miseAjourIndex($event)"></app-step1>
+      <app-step2 *ngIf="index===2" [index]="index" (changeIndex)="miseAjourIndex($event)"></app-step2>
+      <app-step3 *ngIf="index===3" [index]="index" (changeIndex)="miseAjourIndex($event)"></app-step3>
+      <app-step4 *ngIf="index===4"></app-step4>
+  </div>
+</div>
