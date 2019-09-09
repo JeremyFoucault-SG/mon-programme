@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -11,6 +11,16 @@ export class Step2Component implements OnInit {
   public myForm: FormGroup;
   constructor(private router: Router) { }
 
+  @Input()
+  index: number;
+  @Output() changeIndex = new EventEmitter();
+
+  indexNext() {
+    this.index = 3;
+    this.changeIndex.emit({
+      value: this.index
+    });
+  }
 
   ngOnInit() {
     this.myForm = new FormGroup({
@@ -23,7 +33,7 @@ export class Step2Component implements OnInit {
   submit() {
     console.log(this.myForm);
     if (this.myForm.valid) {
-      this.router.navigateByUrl(`inscription-3`);
+      this.indexNext();
     }
   }
 }

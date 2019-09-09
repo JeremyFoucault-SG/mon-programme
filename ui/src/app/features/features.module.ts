@@ -32,6 +32,8 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { Step1Component } from './inscription/step1/step1.component';
 import { Step2Component } from './inscription/step2/step2.component';
+import { Step3Component } from './inscription/step3/step3.component';
+import { Step4Component } from './inscription/step4/step4.component';
 
 
 @NgModule({
@@ -62,7 +64,9 @@ import { Step2Component } from './inscription/step2/step2.component';
     ConnexionComponent,
     InscriptionComponent,
     Step1Component,
-    Step2Component
+    Step2Component,
+    Step3Component,
+    Step4Component
   ],
   imports: [
     RouterModule,

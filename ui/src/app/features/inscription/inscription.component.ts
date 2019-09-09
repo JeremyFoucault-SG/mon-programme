@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InscriptionComponent implements OnInit {
 
+  public index = 1;
+
+  miseAjourIndex(event) {
+    this.index = event.value;
+  }
   constructor() { }
 
   ngOnInit() {
