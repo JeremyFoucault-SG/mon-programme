@@ -11,11 +11,11 @@ export class ArticleDTO {
 
   @Allow()
   @ApiModelProperty()
-  public readonly content: string;
+  public readonly author: string;
 
   @Allow()
   @ApiModelProperty()
-  public readonly author: string;
+  public readonly content: string;
 
   @Allow()
   @ValidateNested({each: true})

@@ -1,9 +1,9 @@
 export class Programmes {
     constructor(
-        public name?: string,
-        public detail?: string,
-        public price?: string,
-        public goal?: string,
-        public date?: string,
+        // tslint:disable-next-line: variable-name
+        public _id: string,
+        public rating?: number,
+        public title?: string,
+        public content?: string,
     ) { }
 }

@@ -1,0 +1,43 @@
+<div class="col">
+    <div class="mt-8 mb-8" *ngIf="programmes">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th class="ml-10">Title</th>
+                    <th class="ml-10">Content</th>
+                    <th class="ml-10">Rating</th>
+                    <th class="ml-10">Edit</th>
+                    <th class="ml-10">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let programme of programmes | async">
+                    <td>{{ programme._id }}</td>
+                    <td class="ml-10">{{ programme.title }}</td>
+                    <td class="ml-10">{{ programme.content }}</td>
+                    <td class="ml-10">{{ programme.rating }}</td>
+                    <td>
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+                            (click)="editProgramme(programme)">Edit</button>
+                    </td>
+                    <td>
+                        <button
+                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded"
+                            (click)="deleteProgramme(programme._id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
+
+<div class="mt-4">
+<app-edit-programme></app-edit-programme>
+</div>
+
+<div class="mt-12">
+    <app-create-programme></app-create-programme>
+</div>
+

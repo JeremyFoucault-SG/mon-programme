@@ -22,6 +22,8 @@ import { DashboardProgrammeComponent } from './dashboard/compte/dashboard-progra
 import { DashboardArticleComponent } from './dashboard/compte/dashboard-article/dashboard-article.component';
 import { PratiqueSportiveMobileComponent } from './pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './blog-mobile/blog-mobile.component';
+import { CoreModule } from '../core/core.module';
+import { AdminModule } from '../admin/admin.module';
 import { DashboardPaiementComponent } from './dashboard/info/dashboard-paiement/dashboard-paiement.component';
 import { BlogComponent } from './blog/blog.component';
 import { HeaderComponent } from './blog/header/header.component';
@@ -34,6 +36,7 @@ import { Step1Component } from './inscription/step1/step1.component';
 import { Step2Component } from './inscription/step2/step2.component';
 import { Step3Component } from './inscription/step3/step3.component';
 import { Step4Component } from './inscription/step4/step4.component';
+import { ListingProgrammeComponent } from './listing-programme/listing-programme.component';
 
 
 @NgModule({
@@ -66,7 +69,8 @@ import { Step4Component } from './inscription/step4/step4.component';
     Step1Component,
     Step2Component,
     Step3Component,
-    Step4Component
+    Step4Component,
+    ListingProgrammeComponent
   ],
   imports: [
     RouterModule,
@@ -75,7 +79,9 @@ import { Step4Component } from './inscription/step4/step4.component';
     FormsModule,
     ReactiveFormsModule,
     FacebookModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    CoreModule,
+    AdminModule
   ],
   exports: [
   ],

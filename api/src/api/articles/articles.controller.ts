@@ -37,12 +37,12 @@ export class ArticlesController {
 
   @Put(':id')
   async update(@Param('id') idArticle: string, @Body() article: ArticleDTO): Promise<ArticleModel> {
-    return null;
+    return await this.articlesService.update(idArticle, article);
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  async delete(@Param('id') idArticle: string): Promise<void> {
-    return null;
+  async delete(@Param('id') idArticle: string): Promise<ArticleModel> {
+    return this.articlesService.delete(idArticle);
   }
 }
