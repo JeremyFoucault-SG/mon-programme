@@ -14,9 +14,6 @@ import { CoachingModel } from '../coachings/coaching.model';
 export class UserModel extends Typegoose {
 
     @prop()
-    id: Types.ObjectId;
-
-    @prop()
     createdAt: Date;
 
     @arrayProp({items: Body})

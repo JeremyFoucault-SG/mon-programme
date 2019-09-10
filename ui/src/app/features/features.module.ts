@@ -37,6 +37,8 @@ import { Step2Component } from './inscription/step2/step2.component';
 import { Step3Component } from './inscription/step3/step3.component';
 import { Step4Component } from './inscription/step4/step4.component';
 import { ListingProgrammeComponent } from './listing-programme/listing-programme.component';
+import { LoginModalComponent } from './login-modal/login-modal.component';
+
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import { ListingProgrammeComponent } from './listing-programme/listing-programme
     InfoComponent,
     CompteComponent,
     SuiviComponent,
+    ListingProgrammeComponent,
+    LoginModalComponent
     ConnexionComponent,
     InscriptionComponent,
     Step1Component,

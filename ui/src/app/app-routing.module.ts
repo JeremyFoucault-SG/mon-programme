@@ -17,6 +17,7 @@ import { SuiviComponent } from './features/dashboard/suivi/suivi.component';
 import { ConnexionComponent } from './features/connexion/connexion.component';
 import { InscriptionComponent } from './features/inscription/inscription.component';
 import { ListingProgrammeComponent } from './features/listing-programme/listing-programme.component';
+import { LoginModalComponent } from './features/login-modal/login-modal.component';
 
 
 
@@ -103,6 +104,7 @@ const routes: Routes = [
   { path: 'update-article/:id', component: UpdateArticleComponent},
   { path: 'list-article', component: ArticleComponent},
   { path: 'detail-programme', component: ListingProgrammeComponent},
+  { path: 'login', component: LoginModalComponent}
 
 
 ];

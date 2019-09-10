@@ -13,11 +13,16 @@ import { GoalsService } from '../src/api/goals/goals.service';
 import { insertGoalData } from './goal.fixture';
 import { UsersService } from '../src/api/users/users.service';
 import { insertUserData } from './user.fixture';
+import { AuthController } from 'src/api/auth/auth.controller';
+import { insertAuthData } from './auth.fixture';
 
 async function bootstrap() {
   await startInMemoryDB();
 
   const app = await require('../src/main').bootstrap();
+
+  const authController: AuthController = app.get('AuthController');
+  await insertAuthData(authController);
 
   const articlesService: ArticlesService = app.get('ArticlesService');
   await insertArticleData(articlesService);

@@ -19,7 +19,7 @@ export class TokenInterceptor implements HttpInterceptor {
         // tslint:disable-next-line: no-parameter-reassignment
         request = request.clone({
             setHeaders: {
-                Authorization: `Bearer ${this.auth.getToken()}`,
+                Authorization: `Bearer ${this.auth.isLogin()}`,
             },
         });
 
