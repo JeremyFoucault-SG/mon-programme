@@ -31,6 +31,8 @@ import { InfoComponent } from './dashboard/info/info.component';
 import { CompteComponent } from './dashboard/compte/compte.component';
 import { SuiviComponent } from './dashboard/suivi/suivi.component';
 import { ListingProgrammeComponent } from './listing-programme/listing-programme.component';
+import { LoginModalComponent } from './login-modal/login-modal.component';
+
 
 
 @NgModule({
@@ -58,7 +60,8 @@ import { ListingProgrammeComponent } from './listing-programme/listing-programme
     InfoComponent,
     CompteComponent,
     SuiviComponent,
-    ListingProgrammeComponent
+    ListingProgrammeComponent,
+    LoginModalComponent
   ],
   imports: [
     RouterModule,

@@ -15,6 +15,7 @@ import { InfoComponent } from './features/dashboard/info/info.component';
 import { CompteComponent } from './features/dashboard/compte/compte.component';
 import { SuiviComponent } from './features/dashboard/suivi/suivi.component';
 import { ListingProgrammeComponent } from './features/listing-programme/listing-programme.component';
+import { LoginModalComponent } from './features/login-modal/login-modal.component';
 
 
 
@@ -100,6 +101,7 @@ const routes: Routes = [
   { path: 'update-article/:id', component: UpdateArticleComponent},
   { path: 'list-article', component: ArticleComponent},
   { path: 'detail-programme', component: ListingProgrammeComponent},
+  { path: 'login', component: LoginModalComponent}
 
 
 ];

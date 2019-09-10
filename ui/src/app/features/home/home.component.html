@@ -1,7 +1,7 @@
 <!-- Home header -->
 <app-home-header [selected]="selected" [programInfos]="programsInfos" (selectChange)="onChange($event)">
 </app-home-header>
-
+<a class="cursor-pointer font-bold text-3xl"><i class="fa fa-sign-out font nav-link" aria-hidden="true"  (click)="logout()"> &nbsp;&nbsp;Déconnexion</i></a>
 <!-- TODO: Ton programe sur mesure -->
 <app-title>TON PROGRAMME SUR-MESURE</app-title>
 <div class="w-3/3 flex justify-end mr-16">
