@@ -21,7 +21,7 @@ export class ConnexionComponent implements OnInit {
   submit() {
     console.log(this.myForm);
     if (this.myForm.valid) {
-      this.router.navigateByUrl(`/`);
+
     }
   }
 }

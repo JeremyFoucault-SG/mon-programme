@@ -14,6 +14,8 @@ import { ArticleComponent } from './admin/article/article/article.component';
 import { InfoComponent } from './features/dashboard/info/info.component';
 import { CompteComponent } from './features/dashboard/compte/compte.component';
 import { SuiviComponent } from './features/dashboard/suivi/suivi.component';
+import { ConnexionComponent } from './features/connexion/connexion.component';
+import { InscriptionComponent } from './features/inscription/inscription.component';
 import { ListingProgrammeComponent } from './features/listing-programme/listing-programme.component';
 import { LoginModalComponent } from './features/login-modal/login-modal.component';
 
@@ -92,10 +94,11 @@ const routes: Routes = [
   { path: 'mon-compte/suivi', component: SuiviComponent },
   { path: 'mon-compte/infos', component: InfoComponent },
   { path: 'mon-compte', component: CompteComponent },
-
+  { path: 'login', component: ConnexionComponent},
   { path: 'commande', component: CommandeComponent },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', component: BlogMobileComponent },
+  { path: 'inscription', component: InscriptionComponent},
   { path: 'create-article', component: CreateArticleComponent},
   { path: 'create-programme', component: ProgrammesComponent },
   { path: 'update-article/:id', component: UpdateArticleComponent},
