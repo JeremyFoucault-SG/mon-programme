@@ -24,10 +24,11 @@ export class LoginModalComponent implements OnInit {
   // login = false;
   // isHidden2 = false;
 
-  constructor(private fb: FacebookService,
-                      private authService: AuthenticationService,
-                      private router: Router,
-                      private toastr: ToastrService) {
+  constructor(
+    private fb: FacebookService,
+    private authService: AuthenticationService,
+    private router: Router,
+    private toastr: ToastrService) {
     // const initParams: InitParams = {
     //   appId: '1369599999853758',
     //   xfbml: true,

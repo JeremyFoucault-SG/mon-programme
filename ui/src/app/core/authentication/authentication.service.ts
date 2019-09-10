@@ -37,7 +37,6 @@ export class AuthenticationService {
   }
 
   isLogout() {
-    console.log('token')
     localStorage.removeItem('token');
     this.user = false;
   }
