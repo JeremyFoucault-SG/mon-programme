@@ -7,6 +7,7 @@ import { UsersModule } from '../users/users.module';
 import { ConfigService } from '../../config/config.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { AuthModel } from './auth.model';
+import { LocalStrategy } from './local.strategy';
 
 @Module({
   imports: [
@@ -16,11 +17,12 @@ import { AuthModel } from './auth.model';
     JwtModule.registerAsync({
       useFactory: async (configService: ConfigService) => ({
         secret: configService.get('JWT_SECRET'),
+        expiresIn: configService.get('JWT_EXPIRESIN'),
       }),
       inject: [ConfigService],
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, LocalStrategy],
 })
 export class AuthModule {}
