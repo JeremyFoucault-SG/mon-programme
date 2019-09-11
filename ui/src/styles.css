@@ -6296,6 +6296,10 @@ video {
   box-shadow: 0 0 8px 0 #cc6666;
 }
 
+.shadow-full-inset-pink{
+  box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+}
+
 .hover\:shadow:hover{
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
@@ -6332,6 +6336,10 @@ video {
   box-shadow: 0 0 8px 0 #cc6666;
 }
 
+.hover\:shadow-full-inset-pink:hover{
+  box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+}
+
 .focus\:shadow:focus{
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
@@ -6366,6 +6374,10 @@ video {
 
 .focus\:shadow-red:focus{
   box-shadow: 0 0 8px 0 #cc6666;
+}
+
+.focus\:shadow-full-inset-pink:focus{
+  box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
 }
 
 .fill-current{
@@ -14112,6 +14124,10 @@ html, body {
     box-shadow: 0 0 8px 0 #cc6666;
   }
 
+  .sm\:shadow-full-inset-pink{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+
   .sm\:hover\:shadow:hover{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
@@ -14148,6 +14164,10 @@ html, body {
     box-shadow: 0 0 8px 0 #cc6666;
   }
 
+  .sm\:hover\:shadow-full-inset-pink:hover{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+
   .sm\:focus\:shadow:focus{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
@@ -14182,6 +14202,10 @@ html, body {
 
   .sm\:focus\:shadow-red:focus{
     box-shadow: 0 0 8px 0 #cc6666;
+  }
+
+  .sm\:focus\:shadow-full-inset-pink:focus{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
   }
 
   .sm\:fill-current{
@@ -21532,6 +21556,10 @@ html, body {
     box-shadow: 0 0 8px 0 #cc6666;
   }
 
+  .md\:shadow-full-inset-pink{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+
   .md\:hover\:shadow:hover{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
@@ -21568,6 +21596,10 @@ html, body {
     box-shadow: 0 0 8px 0 #cc6666;
   }
 
+  .md\:hover\:shadow-full-inset-pink:hover{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+
   .md\:focus\:shadow:focus{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
@@ -21602,6 +21634,10 @@ html, body {
 
   .md\:focus\:shadow-red:focus{
     box-shadow: 0 0 8px 0 #cc6666;
+  }
+
+  .md\:focus\:shadow-full-inset-pink:focus{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
   }
 
   .md\:fill-current{
@@ -28952,6 +28988,10 @@ html, body {
     box-shadow: 0 0 8px 0 #cc6666;
   }
 
+  .lg\:shadow-full-inset-pink{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+
   .lg\:hover\:shadow:hover{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
@@ -28988,6 +29028,10 @@ html, body {
     box-shadow: 0 0 8px 0 #cc6666;
   }
 
+  .lg\:hover\:shadow-full-inset-pink:hover{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+
   .lg\:focus\:shadow:focus{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
@@ -29022,6 +29066,10 @@ html, body {
 
   .lg\:focus\:shadow-red:focus{
     box-shadow: 0 0 8px 0 #cc6666;
+  }
+
+  .lg\:focus\:shadow-full-inset-pink:focus{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
   }
 
   .lg\:fill-current{
@@ -36372,6 +36420,10 @@ html, body {
     box-shadow: 0 0 8px 0 #cc6666;
   }
 
+  .xl\:shadow-full-inset-pink{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+
   .xl\:hover\:shadow:hover{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
@@ -36408,6 +36460,10 @@ html, body {
     box-shadow: 0 0 8px 0 #cc6666;
   }
 
+  .xl\:hover\:shadow-full-inset-pink:hover{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
+  }
+
   .xl\:focus\:shadow:focus{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
@@ -36442,6 +36498,10 @@ html, body {
 
   .xl\:focus\:shadow-red:focus{
     box-shadow: 0 0 8px 0 #cc6666;
+  }
+
+  .xl\:focus\:shadow-full-inset-pink:focus{
+    box-shadow: inset 100vh 0 0 0  rgba(204, 102, 102, 0.47);
   }
 
   .xl\:fill-current{
