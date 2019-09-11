@@ -24,10 +24,10 @@ export class ArticlesService {
 
   /**
    * Find one article by his ID
-   * @param id ID of wanted article
+   * @param title ID of wanted article
    */
-  async findById(id: string): Promise<ArticleModel> {
-    const article = await this.articleModel.findById(id).exec();
+  async findByTitle(title: string): Promise<ArticleModel> {
+    const article = await this.articleModel.findOne({title}).exec();
     if (!article) {
       throw new EntityException(EntityExceptionCode.NOT_FOUND);
     }

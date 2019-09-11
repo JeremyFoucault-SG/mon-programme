@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { ArticleBlog } from '../../../shared/models/articles-blog.model';
 import { ArticleState } from '../../../core/store/store.module/article/article.state';
 import {
-  GetByIdArticle,
   DeleteArticle,
   GetAllArticles,
   SetSelectedArticle } from '../../../core/store/store.module/article/article.actions';

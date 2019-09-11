@@ -16,7 +16,7 @@ export class GetAllArticles {
 // Recuperation aricle by id
 export class GetArticleByTitle {
     static readonly type = '[Blog] Get article by title';
-    constructor(public id: string) { }
+    constructor(public title: string) { }
 }
 
 // Delete article

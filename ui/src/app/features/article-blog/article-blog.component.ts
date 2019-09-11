@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
-import { GetByIdArticle, DeleteArticle } from '../../core/store/store.module/article/article.actions';
+import { GetArticleByTitle, DeleteArticle } from '../../core/store/store.module/article/article.actions';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 import { ProgramDetail, ProgramsList } from 'src/app/shared/models/programs-infos';
@@ -14,7 +14,7 @@ import { ProgramDetail, ProgramsList } from 'src/app/shared/models/programs-info
 })
 export class ArticleBlogComponent implements OnInit {
 
-  public id: string;
+  public title: string;
 
   public selected: ProgramDetail;
   public programsInfos: ProgramDetail[] = ProgramsList.infos;
@@ -25,12 +25,12 @@ export class ArticleBlogComponent implements OnInit {
   tag: string;
 
 
-  @Select(ArticleState.articles)
+  @Select(ArticleState.article)
   article: Observable<ArticleBlog>;
 
-  deleteArticle() {
-    this.store.dispatch(new DeleteArticle(this.id));
-  }
+  // deleteArticle() {
+  //   this.store.dispatch(new DeleteArticle(this.id));
+  // }
   editArticle() {
 
   }
@@ -38,8 +38,8 @@ export class ArticleBlogComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.id = params.get('id');
-      this.store.dispatch(new GetByIdArticle(this.id));
+      this.title = params.get('title');
+      this.store.dispatch(new GetArticleByTitle(this.title));
     });
 
     this.selected = this.programsInfos[0];
