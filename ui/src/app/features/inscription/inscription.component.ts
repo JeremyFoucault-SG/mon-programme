@@ -35,7 +35,7 @@ export class InscriptionComponent implements OnInit {
   indexChange() {
     if (this.index >= 1 && this.index <= 4) {
       this.index++;
-      if(this.index >= 4){
+      if (this.index >= 4) {
         this.isForm = false;
       }
     }

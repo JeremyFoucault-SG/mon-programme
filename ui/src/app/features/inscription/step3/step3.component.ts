@@ -15,7 +15,7 @@ export class Step3Component implements OnInit {
   public formStep3: FormGroup;
 
   ngOnInit() {
-    console.log(this.formStep3)
+    console.log(this.formStep3);
   }
 
 
