@@ -1,4 +1,4 @@
-<form [formGroup]="myForm" (ngSubmit)="submit()" class="flex-col text-center">
+<form [formGroup]="formStep1" class="flex-col text-center">
     <div>
       <input
         class="w-full shadow bg-gray-100 rounded border border-gray-500 p-2 md:p-4 mt-1 md:mt-3 mb-1 md:mb-3"
@@ -23,13 +23,6 @@
         formControlName="age"
       />
     </div>
-    <button
-      [ngClass]="{ 'opacity-50': !myForm.valid }"
-      type="submit"
-      class="w-full bg-red-600 text-white font-bold py-2 px-4 border border-red-700 rounded uppercase mt-8"
-    >
-      Validation
-    </button>
   </form>
 
   <!-- ellispe positionement -->

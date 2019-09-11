@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,33 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./step3.component.css']
 })
 export class Step3Component implements OnInit {
-  public myForm: FormGroup;
+
   constructor(private router: Router) { }
 
-
   @Input()
-  index: number;
-  @Output() changeIndex = new EventEmitter();
-
-  indexNext() {
-    this.index = 4;
-    this.changeIndex.emit({
-      value: this.index
-    });
-  }
+  public formStep3: FormGroup;
 
   ngOnInit() {
-    this.myForm = new FormGroup({
-      pseudo: new FormControl('', Validators.required),
-      poids: new FormControl('', Validators.required),
-      taille: new FormControl('', Validators.required),
-    });
+    console.log(this.formStep3);
   }
 
-  submit() {
-    console.log(this.myForm);
-    if (this.myForm.valid) {
-      this.indexNext();
-    }
-  }
+
 }
