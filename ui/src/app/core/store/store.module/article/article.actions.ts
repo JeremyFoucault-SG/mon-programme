@@ -14,8 +14,8 @@ export class GetAllArticles {
 }
 
 // Recuperation aricle by id
-export class GetByIdArticle {
-    static readonly type = '[Blog] Get article by id';
+export class GetArticleByTitle {
+    static readonly type = '[Blog] Get article by title';
     constructor(public id: string) { }
 }
 
