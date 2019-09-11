@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Data, Router, NavigationStart, NavigationEnd, NavigationError, Event } from '@angular/router';
 import { filter, map, mergeMap, tap } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 /**
  * Header component, hold navigation, title, user
@@ -15,11 +16,12 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+
+  public user: boolean;
   /**
    * True is user is authenticated, display avatar and name on navbar
    * and add more links on navigation menu
    */
-  isLogin = true;
 
   /**
    * Title of the current view (only displayed on md)
@@ -41,7 +43,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   subscriptions: Subscription[] = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit() {
     // Little hack to get route data when component is outside of router-outlet
@@ -76,5 +78,24 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
+
+
+  isLogin() {
+    if (sessionStorage.getItem('token')) {
+      return true;
+    }
+  }
+
+  logout() {
+    this.router.navigateByUrl('/login');
+    this.showSuccessLogout();
+    localStorage.removeItem('token');
+    this.user = false;
+  }
+
+  showSuccessLogout() {
+    this.toastr.success('Vous êtes déconnecté(e)');
+  }
+
 
 }

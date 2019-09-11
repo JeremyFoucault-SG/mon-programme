@@ -21,8 +21,7 @@ export class HomeComponent implements OnInit {
   public programs = [];
   public auth: AuthenticationService;
 
-  constructor(private router: Router,
-              private toastr: ToastrService) { }
+  constructor() { }
 
   ngOnInit() {
     this.selected = this.programsInfos[0];
@@ -116,15 +115,5 @@ export class HomeComponent implements OnInit {
   }
 
 
-  logout() {
-    this.router.navigateByUrl('/');
-    this.showSuccessLogout();
-    localStorage.removeItem('token');
-    this.user = false;
-  }
-
-  showSuccessLogout() {
-    this.toastr.success('Vous êtes déconnecté(e)');
-  }
-
+  
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-connexion',
@@ -8,20 +10,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
+
+  model: any = {};
+  loading = false;
+
   public myForm: FormGroup;
-  constructor(private router: Router) { }
+
+  constructor(
+    private router: Router,
+    private authService: AuthenticationService,
+    private toastr: ToastrService) { }
 
 
   ngOnInit() {
     this.myForm = new FormGroup({
-      email: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
   }
-  submit() {
-    console.log(this.myForm);
-    if (this.myForm.valid) {
-
-    }
+  onSubmit() {
+    this.loading = true;
+    this.authService.login(this.model.username, this.model.password).subscribe(
+      () => {
+        this.router.navigate(['accueil']);
+      },
+      (error) => {
+        this.loading = false;
+        this.toastr.error('Erreur', 'Mot de passe ou identifiant incorrect', {
+        });
+      },
+    );
   }
+
 }
+

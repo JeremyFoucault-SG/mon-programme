@@ -67,7 +67,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
     CompteComponent,
     SuiviComponent,
     ListingProgrammeComponent,
-    LoginModalComponent
+    LoginModalComponent,
     ConnexionComponent,
     InscriptionComponent,
     Step1Component,

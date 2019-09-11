@@ -11,17 +11,17 @@ import { Login } from '../../shared/models/login.model';
 export class LoginService {
 
   constructor(private http: HttpClient) { }
+
   urlApi = `${environment.apiUrl}/auth/signin`;
-  urlReset = `${environment.apiUrl}/auth/forget`;
-  urlMail = `${environment.apiUrl}/auth/validemail`;
   public api = `${environment.apiUrl}`;
   public user: boolean;
 
-  login(email: string, password: string) {
-    return this.http.post<any>(this.urlApi, { email, password })
+  login(username: string, password: string) {
+    return this.http.post<any>(`${this.urlApi}`, { username, password })
       .pipe(tap((user) => {
         if (user) {
-          this.user = true; sessionStorage.setItem('token', user.token);
+          this.user = true;
+          sessionStorage.setItem('token', user.token);
         }
       }));
   }
@@ -36,15 +36,5 @@ export class LoginService {
     sessionStorage.clear();
     this.user = false;
   }
-  resetPass(email: string) {
-    return this.http.post<any>(this.urlReset, { email });
-  }
 
-  checkemail(email: string) {
-    return this.http.post<any>(this.urlMail, { email });
-  }
-
-  updatePassWord(email: string, loginForm: Login): Observable<Login> {
-    return this.http.put<Login>(`${this.api}/auth/${email}`, loginForm);
-  }
 }
