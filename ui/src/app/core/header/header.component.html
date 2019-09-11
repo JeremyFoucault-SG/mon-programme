@@ -53,7 +53,7 @@
       <li>
         <div class="flex flex-row">
           <a
-            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400">
+            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/login']">
             Connexion
           </a>
 
@@ -86,7 +86,7 @@
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" [routerLink]="['/pratique-sportive']" routerLinkActive="active"
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/pratique-sportive-mobile']" routerLinkActive="active"
           (click)="open()">
           Pratique sportive
         </a>
@@ -138,7 +138,7 @@
       <li class="py-4">
         <div>
           <a href="#"
-            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400">Deconnexion</a>
+            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" (click)="logout()">Deconnexion</a>
         </div>
       </li>
     </ul>

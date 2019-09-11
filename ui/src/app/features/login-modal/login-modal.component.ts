@@ -69,19 +69,6 @@ export class LoginModalComponent implements OnInit {
   // submit() {
   // }
 
-  onSubmit() {
-    this.loading = true;
-    this.authService.login(this.model.username, this.model.password).subscribe(
-      () => {
-        this.router.navigate(['accueil']);
-      },
-      (error) => {
-        this.loading = false;
-        this.toastr.error('Erreur', 'Mot de passe ou identifiant incorrect', {
-        });
-      },
-    );
-  }
 
 }
 

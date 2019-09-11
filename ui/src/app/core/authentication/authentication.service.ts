@@ -36,8 +36,4 @@ export class AuthenticationService {
     }
   }
 
-  isLogout() {
-    localStorage.removeItem('token');
-    this.user = false;
-  }
 }

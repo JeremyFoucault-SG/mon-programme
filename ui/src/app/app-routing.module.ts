@@ -17,7 +17,7 @@ import { SuiviComponent } from './features/dashboard/suivi/suivi.component';
 import { ConnexionComponent } from './features/connexion/connexion.component';
 import { InscriptionComponent } from './features/inscription/inscription.component';
 import { ListingProgrammeComponent } from './features/listing-programme/listing-programme.component';
-import { LoginModalComponent } from './features/login-modal/login-modal.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 
 
@@ -64,6 +64,7 @@ const routes: Routes = [
   },
   {
     path: 'sante',
+    canActivate: [AuthGuard],
     component: BlogComponent,
     data: {
       title: 'santé',
@@ -74,6 +75,7 @@ const routes: Routes = [
   {
     path: 'pratique-sportive',
     component: BlogComponent,
+    canActivate: [AuthGuard],
     data: {
       title: 'pratique sportive',
       isTransparent: false,
@@ -83,28 +85,28 @@ const routes: Routes = [
   {
     path: 'style-de-vie-et-nutrition',
     component: BlogComponent,
+    canActivate: [AuthGuard],
     data: {
       title: 'style de vie & nutrition',
       isTransparent: false,
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
-  { path: 'article/:id', component: ArticleBlogComponent },
-  { path: 'article-blog', component: ArticleBlogComponent },
-  { path: 'mon-compte/suivi', component: SuiviComponent },
-  { path: 'mon-compte/infos', component: InfoComponent },
-  { path: 'mon-compte', component: CompteComponent },
+  { path: 'article/:id', canActivate: [AuthGuard], component: ArticleBlogComponent },
+  { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
+  { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent },
+  { path: 'mon-compte/infos', canActivate: [AuthGuard], component: InfoComponent },
+  { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent },
   { path: 'login', component: ConnexionComponent},
-  { path: 'commande', component: CommandeComponent },
-  { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent },
-  { path: 'blog-mobile', component: BlogMobileComponent },
-  { path: 'inscription', component: InscriptionComponent},
-  { path: 'create-article', component: CreateArticleComponent},
-  { path: 'create-programme', component: ProgrammesComponent },
-  { path: 'update-article/:id', component: UpdateArticleComponent},
-  { path: 'list-article', component: ArticleComponent},
-  { path: 'detail-programme', component: ListingProgrammeComponent},
-  { path: 'login', component: LoginModalComponent}
+  { path: 'commande', canActivate: [AuthGuard], component: CommandeComponent },
+  { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent },
+  { path: 'blog-mobile', canActivate: [AuthGuard], component: BlogMobileComponent },
+  { path: 'inscription', canActivate: [AuthGuard], component: InscriptionComponent},
+  { path: 'create-article', canActivate: [AuthGuard], component: CreateArticleComponent},
+  { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
+  { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
+  { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},
+  { path: 'detail-programme', canActivate: [AuthGuard], component: ListingProgrammeComponent},
 
 
 ];
