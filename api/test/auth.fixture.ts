@@ -5,8 +5,8 @@ import { AuthController } from 'src/api/auth/auth.controller';
 export async function insertAuthData(authController: AuthController) {
   // populate mongo
     const auth: AuthDTO = {
-        username: 'jerem',
-        password: 'jeremthebest',
+        username: 'admin',
+        password: 'admin123',
     };
 
     await authController.signup(auth);
