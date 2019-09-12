@@ -7,6 +7,7 @@ import {
   DeleteArticle,
   GetAllArticles,
   SetSelectedArticle } from '../../../core/store/store.module/article/article.actions';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -17,13 +18,21 @@ export class ArticleComponent implements OnInit {
   @Select(ArticleState.articles )
   articles: Observable<ArticleBlog[]>;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.store.dispatch(new GetAllArticles());
   }
   editArticle(payload: ArticleBlog) {
     this.store.dispatch(new SetSelectedArticle(payload));
+  }
+  deleteArticle(id: string) {
+    this.store.dispatch(new DeleteArticle(id));
+    this.showSuccessDelete();
+  }
+
+  showSuccessDelete() {
+    this.toastr.success('Article Supprimé avec succés');
   }
 
 }
