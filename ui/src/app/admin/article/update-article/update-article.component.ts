@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Store, Select } from '@ngxs/store';
 import { isNgTemplate } from '@angular/compiler';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
-import { GetByIdArticle, UpdateArticle, AddArticle, SetSelectedArticle } from 'src/app/core/store/store.module/article/article.actions';
+import {  UpdateArticle, AddArticle, SetSelectedArticle } from 'src/app/core/store/store.module/article/article.actions';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-article',
@@ -14,14 +15,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./update-article.component.css']
 })
 export class UpdateArticleComponent implements OnInit {
-  articleForm: FormGroup;
-  editArticle = false;
-  constructor(private store: Store, private route: ActivatedRoute) {
+  constructor(
+    private store: Store,
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private toastr: ToastrService) {
     this.createForm();
    }
+  articleForm: FormGroup;
+  editArticle = false;
 
   @Select(ArticleState.article)
   selectedArticle: Observable<ArticleBlog>;
+
 
 
   ngOnInit() {
@@ -30,6 +36,8 @@ export class UpdateArticleComponent implements OnInit {
         this.articleForm.patchValue({
           id: item._id,
           title: item.title,
+          photoUrl: item.photoUrl,
+          author: item.author,
           content: item.content
         });
         this.editArticle = true;
@@ -52,11 +60,14 @@ export class UpdateArticleComponent implements OnInit {
   onSubmit() {
     if (this.editArticle) {
       this.store.dispatch(new UpdateArticle(this.articleForm.value, this.articleForm.value.id)).subscribe(() => {
-        this.clearForm();
+        this.articleForm.reset();
+        this.store.dispatch(new SetSelectedArticle(this.articleForm.value));
+        this.showSuccessUpdate();
       });
     } else {
       this.store.dispatch(new AddArticle(this.articleForm.value)).subscribe(() => {
-        this.clearForm();
+        this.articleForm.reset();
+        this.showSuccesAdd();
       });
     }
   }
@@ -64,7 +75,20 @@ export class UpdateArticleComponent implements OnInit {
   clearForm() {
     this.articleForm.reset();
     this.store.dispatch(new SetSelectedArticle(this.articleForm.value));
+    this.showSuccessUpdate();
   }
 
+  showSuccesAdd() {
+    this.toastr.success('Article ajouté');
+  }
+
+  showSuccessUpdate() {
+    this.toastr.success('Article mis à jour.');
+  }
+
+  showError() {
+    // tslint:disable-next-line: quotemark
+    this.toastr.error("Impossible de mettre à jour l'article");
+  }
 
 }

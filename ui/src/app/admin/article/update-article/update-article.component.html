@@ -1,4 +1,4 @@
-<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+<!-- <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
         <h2 class="flex justify-center mt-12">Modifié le contenu de l'article</h2>
         <div class="form-group">
         <div class="flex justify-center">
@@ -13,5 +13,28 @@
             </div>
         </div>
     </div>
-    </form>  
+    </form>   -->
+
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+        <div class="">
+                <label>Titre</label>
+                <input formControlName="title"/>
+        </div>
+        <div class="">
+                <label>Url de la photo</label>
+                <input formControlName="photoUrl"/>
+        </div>
+        <div class="">
+                <label>Auteur</label>
+                <input formControlName="author"/>
+        </div>
+        <div class="">
+                <label>Content</label>
+                <ngx-quill 
+                class="form-control ml-12" [formControl]="articleForm.controls['content']"></ngx-quill>
+        </div>
+
+
+      <input type="submit" class="" />
+    </form>
   

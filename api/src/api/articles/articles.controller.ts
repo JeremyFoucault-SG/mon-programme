@@ -20,12 +20,12 @@ export class ArticlesController {
     return this.articlesService.insert(article);
   }
 
-  @Get(':id')
-  @ApiOperation({ title: 'Get article by ID' })
+  @Get(':title')
+  @ApiOperation({ title: 'Get article by title' })
   @ApiResponse({ status: 200, description: 'Return article.' })
   @ApiResponse({ status: 404, description: 'Not Found.' })
-  async readOne(@Param('id') idArticle: string): Promise<ArticleModel> {
-    return this.articlesService.findById(idArticle);
+  async readOne(@Param('title') titleArticle: string): Promise<ArticleModel> {
+    return this.articlesService.findByTitle(titleArticle);
   }
 
   @Get()

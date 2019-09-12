@@ -6,7 +6,6 @@ import { HomeComponent } from './features/home/home.component';
 import { CommandeComponent } from './features/commande/commande.component';
 import { PratiqueSportiveMobileComponent } from './features/pratique-sportive-mobile/pratique-sportive-mobile';
 import { BlogMobileComponent } from './features/blog-mobile/blog-mobile.component';
-import { CreateArticleComponent } from './admin/article/create-article/create-article.component';
 import { ProgrammesComponent } from './admin/programmes/programmes/programmes.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { UpdateArticleComponent } from './admin/article/update-article/update-article.component';
@@ -92,7 +91,8 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
-  { path: 'article/:id', canActivate: [AuthGuard], component: ArticleBlogComponent },
+  { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },
+  { path: 'articles/:title', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent },
   { path: 'mon-compte/infos', canActivate: [AuthGuard], component: InfoComponent },
@@ -102,7 +102,6 @@ const routes: Routes = [
   { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', canActivate: [AuthGuard], component: BlogMobileComponent },
   { path: 'inscription', canActivate: [AuthGuard], component: InscriptionComponent},
-  { path: 'create-article', canActivate: [AuthGuard], component: CreateArticleComponent},
   { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
   { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
   { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},

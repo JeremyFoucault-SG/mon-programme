@@ -14,9 +14,9 @@ export class GetAllArticles {
 }
 
 // Recuperation aricle by id
-export class GetByIdArticle {
-    static readonly type = '[Blog] Get article by id';
-    constructor(public id: string) { }
+export class GetArticleByTitle {
+    static readonly type = '[Blog] Get article by title';
+    constructor(public title: string) { }
 }
 
 // Delete article
