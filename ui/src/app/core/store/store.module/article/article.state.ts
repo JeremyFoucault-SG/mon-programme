@@ -65,7 +65,6 @@ export class ArticleState {
     @Action(GetArticleByTitle)
     getByTitle({getState, setState, patchState}: StateContext<ArticleStateModel>, {title}: GetArticleByTitle) {
         return this.service.getArticle(title).pipe(tap(response => {
-            console.log('i')
             const state = getState();
             patchState({...state, item: response});
         }));

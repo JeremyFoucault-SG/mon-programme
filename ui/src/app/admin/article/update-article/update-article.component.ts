@@ -67,7 +67,7 @@ export class UpdateArticleComponent implements OnInit {
     } else {
       this.store.dispatch(new AddArticle(this.articleForm.value)).subscribe(() => {
         this.articleForm.reset();
-        this.showSuccesAdd()
+        this.showSuccesAdd();
       });
     }
   }
@@ -78,7 +78,7 @@ export class UpdateArticleComponent implements OnInit {
     this.showSuccessUpdate();
   }
 
-  showSuccesAdd(){
+  showSuccesAdd() {
     this.toastr.success('Article ajouté');
   }
 
