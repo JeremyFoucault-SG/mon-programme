@@ -28,12 +28,6 @@ export class ArticleBlogComponent implements OnInit {
   @Select(ArticleState.article)
   article: Observable<ArticleBlog>;
 
-  // deleteArticle() {
-  //   this.store.dispatch(new DeleteArticle(this.id));
-  // }
-  editArticle() {
-
-  }
   constructor(private store: Store, private route: ActivatedRoute) { }
 
   ngOnInit() {

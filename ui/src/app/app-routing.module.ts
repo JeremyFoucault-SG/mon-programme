@@ -92,6 +92,7 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
+  { path: 'articles/admin', canActivate: [AuthGuard], component: ArticleComponent },
   { path: 'articles/:title', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent },
