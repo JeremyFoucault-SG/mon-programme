@@ -13,7 +13,7 @@
   <form
     class="fex justify-center p-8 md:p-32"
     [formGroup]="myForm"
-    (ngSubmit)="submit()"
+    (ngSubmit)="onSubmit()"
   >
     <app-step1
       *ngIf="index === 1"
@@ -29,9 +29,9 @@
     ></app-step3>
     <app-step4 *ngIf="index === 4"></app-step4>
     <button
-    [ngClass]="isForm ? 'w-full' : 'hidden'"
+    [ngClass]="index < 4 ? 'w-full' : 'hidden'"
       (click)="indexChange()"
-      type="submit"
+      type="button"
       class="w-full bg-red-600 text-white font-bold py-2 px-4 border border-red-700 rounded uppercase mt-8"
     >
       Validation
