@@ -19,11 +19,10 @@ export class AuthenticationService {
   configUrli = `${environment.apiUrl}/auth/signup`;
 
   register(setting: Settings): Observable<Settings> {
-    console.log(setting);
     return this.http.post<Settings>(`${this.configUrli}`, setting);
   }
 
-  login(username: string, password: string) {
+  login(username: Settings['username'], password: Settings['password']) {
     return this.http.post<any>(`${this.configUrl}`, { username, password })
       .pipe(tap((user) => {
         if (user) {

@@ -6,6 +6,7 @@ import { User } from 'src/app/shared/models/user.model';
 import { ToastrService } from 'ngx-toastr';
 import { UsersService } from 'src/app/core/http/users.service';
 import { Settings } from 'src/app/shared/models/settings.model';
+import { SettingsService } from 'src/app/core/http/settings.service';
 
 @Component({
   selector: 'app-inscription',
@@ -13,7 +14,7 @@ import { Settings } from 'src/app/shared/models/settings.model';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent implements OnInit {
-  constructor(private router: Router, private fb: FormBuilder, private auth: AuthenticationService, private toastr: ToastrService, private user: UsersService ) { }
+  constructor(private router: Router, private fb: FormBuilder, private auth: AuthenticationService, private toastr: ToastrService, private setting :SettingsService) { }
 
   public index = 1;
 
@@ -56,7 +57,6 @@ export class InscriptionComponent implements OnInit {
       ...formValue.step2,
       ...formValue.step3,
     };
-    console.log(setting);
     this.auth.register(setting)
       .subscribe(
         (client: Settings) => {
