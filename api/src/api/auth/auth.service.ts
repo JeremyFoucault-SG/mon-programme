@@ -39,7 +39,6 @@ export class AuthService {
         return await model.save();
       }
 
-
     async updateAuth(auth: AuthDTO, user: InstanceType<UserModel>): Promise<AuthModel> {
         const authFinded = await this.authModel.findOne({username: auth.username}).exec();
         if (!authFinded) {

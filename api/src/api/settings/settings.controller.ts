@@ -21,7 +21,6 @@ export class SettingsController {
       return this.settingsService.findById(idUser);
     }
 
-
     @Get()
     @ApiBearerAuth()
     @ApiOperation({ title: 'Get setting all' })
@@ -31,8 +30,6 @@ export class SettingsController {
     async readAll(): Promise<SettingsModel[]> {
         return this.settingsService.findAll();
     }
-
-
 
     @Put()
     async update(@User('id') idUser: string, @Body() setting: SettingsDTO): Promise<SettingsModel> {

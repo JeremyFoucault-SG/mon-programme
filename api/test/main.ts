@@ -25,7 +25,6 @@ async function bootstrap() {
   const authController: AuthController = app.get('AuthController');
   await insertAuthData(authController);
 
-
   const articlesService: ArticlesService = app.get('ArticlesService');
   await insertArticleData(articlesService);
 

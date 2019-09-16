@@ -8,13 +8,13 @@ export async function insertAuthData(authController: AuthController) {
   const auth: RegisterDTO = {
     username: 'admin',
     password: 'admin123',
-    age: "sdfsdfsdfdsf",
-    email: "fsdfsdf",
-    firstname: "sdfsdfsf",
-    lastname: "fsdfsf",
-    objectif: "Raffermissement",
-    size: "sdfsfs",
-    weight: "sfsdfsf",
+    age: 'sdfsdfsdfdsf',
+    email: 'fsdfsdf',
+    firstname: 'sdfsdfsf',
+    lastname: 'fsdfsf',
+    objectif: 'Raffermissement',
+    size: 'sdfsfs',
+    weight: 'sfsdfsf',
   };
 
   await authController.signup(auth);

@@ -11,7 +11,6 @@ import { AuthModel } from './auth.model';
 import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Settings } from 'http2';
 
-
 @Controller('auth')
 export class AuthController {
     constructor(
@@ -33,14 +32,14 @@ export class AuthController {
         const { username, password, ...settings } = register;
         const auth: AuthDTO = { password, username };
         await this.authService.createAuth(register);
-        const user = await this.userService.insert(new UserDTO())
+        const user = await this.userService.insert(new UserDTO());
         const updatedAuth = await this.authService.updateAuth(auth, user);
         const setting = await this.settingService.insert(user._id,
             {
                 infos: {
                     ...settings,
                     username,
-                }
+                },
             });
         return updatedAuth;
     }

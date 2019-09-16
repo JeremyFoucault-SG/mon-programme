@@ -12,7 +12,6 @@ import { ArticlesService } from '../src/api/articles/articles.service';
 import { CoachingsService } from '../src/api/coachings/coachings.service';
 import { InfosDTO } from 'src/api/settings/infos.dto';
 
-
 export async function insertUserData(articlesService: ArticlesService, coachingsService: CoachingsService, usersService: UsersService) {
   // populate mongo
 
@@ -91,9 +90,8 @@ export async function insertUserData(articlesService: ArticlesService, coachings
         weight: faker.name.firstName(50),
         size: faker.name.firstName(50),
 
-      }
-    }
-
+      },
+    };
 
     const userDTO: UserDTO = {
       // bodies,
@@ -109,6 +107,5 @@ export async function insertUserData(articlesService: ArticlesService, coachings
   }
 
   await usersService.insert({});
-
 
 }

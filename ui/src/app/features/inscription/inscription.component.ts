@@ -14,7 +14,8 @@ import { SettingsService } from 'src/app/core/http/settings.service';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent implements OnInit {
-  constructor(private router: Router, private fb: FormBuilder, private auth: AuthenticationService, private toastr: ToastrService, private setting :SettingsService) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private router: Router, private fb: FormBuilder, private auth: AuthenticationService, private toastr: ToastrService, private setting: SettingsService) { }
 
   public index = 1;
 
@@ -39,7 +40,6 @@ export class InscriptionComponent implements OnInit {
 
   indexChange() {
     const isValid = this.myForm.get(`step${this.index}`).valid;
-    
     if (isValid && (this.index >= 1 && this.index <= 4)) {
       this.index++;
     }
@@ -69,7 +69,6 @@ export class InscriptionComponent implements OnInit {
           this.toastr.error(`Error ${error}`);
         });
   }
-  
 
   return() {
     if (this.index > 1) {

@@ -11,7 +11,6 @@ import { LocalStrategy } from './local.strategy';
 import { SettingsService } from '../settings/settings.service';
 import { SettingsModule } from '../settings/settings.module';
 
-
 @Module({
   imports: [
     UsersModule,

@@ -10,6 +10,7 @@ export class Settings {
         public size?: number,
         public username?: string,
         public objectif?: string,
+        // tslint:disable-next-line: variable-name
         public _id?: string,
     ) { }
 }

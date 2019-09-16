@@ -16,8 +16,8 @@ export async function insertSettingData(settingsService: SettingsService) {
                 weight: faker.name.firstName(50),
                 size: faker.name.firstName(50),
 
-            }
-        }
+            },
+        };
         await settingsService.insert(settingsDTO);
     }
 }

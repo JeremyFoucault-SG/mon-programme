@@ -5,7 +5,6 @@ import { UsersService } from '../users/users.service';
 import { SettingsDTO } from './settings.dto';
 import { InjectModel } from 'nestjs-typegoose';
 
-
 /**
  * Service for manage settings save in database, for a given user
  */
@@ -30,7 +29,6 @@ export class SettingsService {
     await user.updateOne({ 'settings.infos': settings.infos }).exec();
     return user.settings;
   }
-
 
   async findById(idSetting: string): Promise<SettingsModel> {
     const setting = await this.settingsModel.findById(idSetting);
