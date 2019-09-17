@@ -50,7 +50,7 @@ export class InscriptionComponent implements OnInit {
   }
 
   onSubmit() {
-    this.toastr.warning('Being create', 'User being Create');
+    this.toastr.success('succés', 'Utilisateur Créé');
     const formValue = this.myForm.value;
     const setting = {
       ...formValue.step1,
@@ -80,5 +80,6 @@ export class InscriptionComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
 }
