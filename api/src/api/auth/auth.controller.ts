@@ -9,7 +9,7 @@ import { UserDTO } from '../users/user.dto';
 import { RegisterDTO } from './register.dto';
 import { AuthModel } from './auth.model';
 import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { Settings } from 'http2';
+import { SettingsModel } from '../settings/settings.model';
 
 @Controller('auth')
 export class AuthController {
@@ -22,8 +22,8 @@ export class AuthController {
     @UseGuards(AuthGuard('local'))
     @HttpCode(HttpStatus.OK)
     @Post('signin')
-    async signin(@Req() settings: Settings): Promise<any> {
-        return this.authService.createToken(settings);
+    async signin(@Body() auth: AuthDTO): Promise<any> {
+        return this.authService.createToken(auth);
     }
 
     @HttpCode(HttpStatus.CREATED)
@@ -41,10 +41,9 @@ export class AuthController {
                     username,
                 },
             });
-        return updatedAuth;
     }
 
-    @Get()
+    @Get('users')
     @ApiBearerAuth()
     @ApiOperation({ title: 'Get auth all' })
     @ApiResponse({ status: 200, description: 'Return setting.' })

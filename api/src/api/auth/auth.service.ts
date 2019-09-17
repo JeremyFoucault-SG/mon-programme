@@ -22,8 +22,8 @@ export class AuthService {
         private readonly configService: ConfigService,
         ) { }
 
-    async createToken(auth: AuthModel): Promise<any> {
-        const id = (auth.user as any) as string;
+    async createToken(auth: AuthDTO): Promise<any> {
+        const id = (auth.username as any) as string;
 
         const payload: JwtPayload = { username: auth.username, password: auth.password };
         const accessToken = this.jwtService.sign(payload, { expiresIn: this.configService.get('JWT_EXPIRESIN'), subject: auth.username});
