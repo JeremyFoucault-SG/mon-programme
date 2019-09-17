@@ -15,6 +15,7 @@ import { UsersService } from '../src/api/users/users.service';
 import { insertUserData } from './user.fixture';
 import { AuthController } from 'src/api/auth/auth.controller';
 import { insertAuthData } from './auth.fixture';
+import { insertSettingData } from './setting.fixture';
 
 async function bootstrap() {
   await startInMemoryDB();

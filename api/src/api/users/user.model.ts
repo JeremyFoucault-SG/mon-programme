@@ -34,6 +34,6 @@ export class UserModel extends Typegoose {
     @arrayProp({items: WishModel})
     wishes: SubDocumentArray<WishModel>;
 
-    @prop({_id: false})
+    @prop({_id: false, default: new SettingsModel()})
     settings: SettingsModel;
 }

@@ -10,6 +10,7 @@ import { WishDTO } from '../src/api/wishes/wish.dto';
 import { SettingsDTO } from '../src/api/settings/settings.dto';
 import { ArticlesService } from '../src/api/articles/articles.service';
 import { CoachingsService } from '../src/api/coachings/coachings.service';
+import { InfosDTO } from 'src/api/settings/infos.dto';
 
 export async function insertUserData(articlesService: ArticlesService, coachingsService: CoachingsService, usersService: UsersService) {
   // populate mongo
@@ -18,7 +19,7 @@ export async function insertUserData(articlesService: ArticlesService, coachings
   const coachings = await coachingsService.findAll();
   const articles = await articlesService.findAll();
 
-  for (let k = 0; k <= 50; k++) {
+  for (let k = 0; k < 1; k++) {
 
     // BODY
     const bodies: BodyDTO[] = [];
@@ -78,15 +79,27 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     }
 
     // SETTINGS
-    const settings: SettingsDTO = {};
+    const settings: SettingsDTO = {
+      infos: {
+        firstname: faker.name.firstName(50),
+        lastname: faker.name.firstName(50),
+        age: faker.name.firstName(50),
+        email: faker.name.firstName(50),
+        username: faker.name.firstName(50),
+        objectif: faker.name.firstName(50),
+        weight: faker.name.firstName(50),
+        size: faker.name.firstName(50),
+
+      },
+    };
 
     const userDTO: UserDTO = {
-      bodies,
-      stats,
-      followedCoachings,
-      carts,
-      bookmarks,
-      wishes,
+      // bodies,
+      // stats,
+      // followedCoachings,
+      // carts,
+      // bookmarks,
+      // wishes,
       settings,
     };
 
@@ -95,8 +108,4 @@ export async function insertUserData(articlesService: ArticlesService, coachings
 
   await usersService.insert({});
 
-  const user = {
-    username: 'username',
-    password: 'password',
-  };
 }

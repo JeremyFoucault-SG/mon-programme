@@ -28,6 +28,8 @@ export class ConnexionComponent implements OnInit {
       password: new FormControl('', Validators.required),
     });
   }
+
+
   onSubmit() {
     this.loading = true;
     this.authService.login(this.model.username, this.model.password).subscribe(

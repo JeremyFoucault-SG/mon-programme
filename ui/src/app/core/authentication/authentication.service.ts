@@ -1,6 +1,6 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { User } from '../../shared/models/user.model';
+import { Settings} from '../../shared/models/settings.model';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -16,11 +16,13 @@ export class AuthenticationService {
 
   configUrl = `${environment.apiUrl}/auth/signin`;
 
-  register(user: User): Observable<User> {
-    return this.http.post<User>(`${this.configUrl}/signup`, user);
+  configUrli = `${environment.apiUrl}/auth/signup`;
+
+  register(setting: Settings): Observable<Settings> {
+    return this.http.post<Settings>(`${this.configUrli}`, setting);
   }
 
-  login(username: string, password: string) {
+  login(username: Settings['username'], password: Settings['password']) {
     return this.http.post<any>(`${this.configUrl}`, { username, password })
       .pipe(tap((user) => {
         if (user) {

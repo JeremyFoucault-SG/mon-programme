@@ -8,6 +8,8 @@ import { ConfigService } from '../../config/config.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { AuthModel } from './auth.model';
 import { LocalStrategy } from './local.strategy';
+import { SettingsService } from '../settings/settings.service';
+import { SettingsModule } from '../settings/settings.module';
 
 @Module({
   imports: [
@@ -21,8 +23,10 @@ import { LocalStrategy } from './local.strategy';
       }),
       inject: [ConfigService],
     }),
+    SettingsModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, LocalStrategy],
+  exports: [AuthService],
 })
 export class AuthModule {}

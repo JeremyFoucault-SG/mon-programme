@@ -26,10 +26,17 @@ export class SettingsService {
     }
 
 
+    public createSetting(setting: Settings): Observable<Settings> {
+        console.log(setting);
+        return this.http.post<Settings>(`${this.api}/setting`, setting);
+
+    }
+
+
     // Mise à jour d'une option //
     // tslint:disable-next-line: variable-name
     public updateSetting(payload: Settings, _id: string) {
         console.log(_id);
-        return this.http.put<Settings>(`${this.api}/settings/${_id}` , payload);
+        return this.http.put<Settings>(`${this.api}/settings/${_id}`, payload);
     }
 }
