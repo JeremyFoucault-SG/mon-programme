@@ -1,6 +1,11 @@
 import { State, Action, StateContext, Selector, Store } from '@ngxs/store';
 import { ArticleBlog } from '../../../../shared/models/articles-blog.model';
-import { AddArticle, GetAllArticles, GetByIdArticle, DeleteArticle, SetSelectedArticle, UpdateArticle } from '../article/article.actions';
+import { AddArticle,
+     GetAllArticles,
+     GetArticleByTitle,
+     DeleteArticle,
+     SetSelectedArticle,
+     UpdateArticle } from '../article/article.actions';
 import { ArticlesService } from 'src/app/core/http/articles.service';
 import { tap } from 'rxjs/operators';
 import { patch, updateItem } from '@ngxs/store/operators';
@@ -57,9 +62,9 @@ export class ArticleState {
     }
 
 
-    @Action(GetByIdArticle)
-    getById({getState, setState, patchState}: StateContext<ArticleStateModel>, {id}: GetByIdArticle) {
-        return this.service.getArticle(id).pipe(tap(response => {
+    @Action(GetArticleByTitle)
+    getByTitle({getState, setState, patchState}: StateContext<ArticleStateModel>, {title}: GetArticleByTitle) {
+        return this.service.getArticle(title).pipe(tap(response => {
             const state = getState();
             patchState({...state, item: response});
         }));

@@ -26,16 +26,8 @@
       <div class="line"></div>
       {{ (article|async).content }}
     </div>
-
-    <button type="button" (click)="deleteArticle()" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
-      Delete Article
-  </button>
-  <button class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded"
-  [routerLink]="['/update-article/', (article|async)._id]">
-    Mettre a jour
-  </button>
 </div>
-<app-newsletter class="mt-6"></app-newsletter>
+<!-- <app-newsletter class="mt-6"></app-newsletter>
 <div class="text-right mt-6 mr-4 pt-40">
     <a class="text-left text-black font-bold text-2xl" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i
             class="fa fa-undo mr-4" aria-hidden="true"></i>PAGE D'ACCUEIL</a>
@@ -76,4 +68,4 @@
     <app-card-thumb-list [items]="programs"></app-card-thumb-list>
 </div>
 <app-newsletter class="mt-6"></app-newsletter>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
