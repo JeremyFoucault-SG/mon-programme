@@ -40,7 +40,7 @@
         class="text-xl"
         [ngClass]="isReverse ? 'lg:text-left' : 'lg:text-right'"
       >
-        {{ article.content }}
+        {{ article.content | firstCharactere }}
       </p>
       <div
         class="hidden lg:inline-block"

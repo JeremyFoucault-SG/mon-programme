@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
-  public user: boolean;
+  public user: boolean = false;
   /**
    * True is user is authenticated, display avatar and name on navbar
    * and add more links on navigation menu
@@ -46,7 +46,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.isLogin()
+
+    console.log(`user: ${this.user}`)
     // Little hack to get route data when component is outside of router-outlet
     this.subscriptions.push(
       this.router.events.pipe(
@@ -65,6 +66,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.isTransparent = data.isTransparent;
       })
     );
+    this.isLogin()
   }
 
   /**
@@ -84,6 +86,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   isLogin() {
     if (sessionStorage.getItem('token')) {
+      console.log('hey')
       this.user = true;
       return true;
     }
