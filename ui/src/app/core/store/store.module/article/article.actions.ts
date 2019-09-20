@@ -1,4 +1,5 @@
 import { ArticleBlog } from '../../../../shared/models/articles-blog.model';
+import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
 
 
 
@@ -6,6 +7,11 @@ import { ArticleBlog } from '../../../../shared/models/articles-blog.model';
 export class AddArticle {
     static readonly type = '[Blog] Add';
     constructor(public payload: ArticleBlog) { }
+}
+
+export class SearchArticle {
+    static readonly type = '[Blog] search articles';
+    constructor(public payload: QueryArticles ) {}
 }
 // Recuperation de tous les articles
 export class GetAllArticles {

@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { CategoryModel } from './category.model';
-import { InjectModel } from '@nestjs/mongoose';
-import { ModelType } from 'typegoose';
+import { InjectModel, } from '@nestjs/mongoose';
+import { ModelType, InstanceType } from 'typegoose';
 import { CategoryDTO } from './category.dto';
 @Injectable()
 export class CategoriesService {
     constructor(
         @InjectModel('CategoryModel') private readonly categoryModel: ModelType<CategoryModel>) { }
 
-    async findAll(): Promise<CategoryModel[]> {
+    async findAll(): Promise<Array<InstanceType<CategoryModel>>> {
         return this.categoryModel.find({}).exec();
     }
     /**
