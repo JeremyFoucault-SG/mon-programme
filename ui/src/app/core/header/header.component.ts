@@ -46,6 +46,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.isLogin()
     // Little hack to get route data when component is outside of router-outlet
     this.subscriptions.push(
       this.router.events.pipe(
@@ -56,6 +57,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
             route = route.firstChild;
           }
           return route;
+          this.open()
         }),
         mergeMap(route => route.data),
       ).subscribe((data) => {
@@ -82,6 +84,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   isLogin() {
     if (sessionStorage.getItem('token')) {
+      this.user = true;
       return true;
     }
   }
