@@ -18,6 +18,11 @@ export class LoginService {
   public user: boolean;
 
 
+  isLogin(){
+    if (localStorage.getItem('token')) {
+      this.user = true;
+    }
+  }
 
   logout() {
     sessionStorage.clear();

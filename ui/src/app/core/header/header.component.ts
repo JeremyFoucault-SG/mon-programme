@@ -3,6 +3,7 @@ import { ActivatedRoute, Data, Router, NavigationStart, NavigationEnd, Navigatio
 import { filter, map, mergeMap, tap } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 /**
  * Header component, hold navigation, title, user
@@ -17,7 +18,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
-  public user: boolean = false;
+  public user: boolean;
   /**
    * True is user is authenticated, display avatar and name on navbar
    * and add more links on navigation menu
@@ -43,11 +44,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   subscriptions: Subscription[] = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastr: ToastrService) { }
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private toastr: ToastrService,
+    private auth: AuthenticationService) { }
 
   ngOnInit() {
-
-    console.log(`user: ${this.user}`)
+    this.auth.isLogin().subscribe(valeur => this.user = valeur );
+    // if (this.auth.isLogin()) {
+    //   this.user = true;
+    // } else {
+    //   this.user = false;
+    // }
     // Little hack to get route data when component is outside of router-outlet
     this.subscriptions.push(
       this.router.events.pipe(
@@ -58,7 +67,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
             route = route.firstChild;
           }
           return route;
-          this.open()
+          this.open();
         }),
         mergeMap(route => route.data),
       ).subscribe((data) => {
@@ -66,7 +75,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.isTransparent = data.isTransparent;
       })
     );
-    this.isLogin()
   }
 
   /**
@@ -83,24 +91,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 
-
-  isLogin() {
-    if (sessionStorage.getItem('token')) {
-      console.log('hey')
-      this.user = true;
-      return true;
-    }
-  }
-
   logout() {
-    this.router.navigateByUrl('/login');
-    this.showSuccessLogout();
-    localStorage.removeItem('token');
-    this.user = false;
-  }
-
-  showSuccessLogout() {
-    this.toastr.success('Vous êtes déconnecté(e)');
+    this.auth.isLogout().subscribe(valeur => this.user = valeur )
+    this.open();
   }
 
 
