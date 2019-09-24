@@ -61,7 +61,7 @@ export class CoachingsService {
         },
         {
           $sort: { rating: -1 },
-        }
+        },
       );
     }
     if (query.limit) {
