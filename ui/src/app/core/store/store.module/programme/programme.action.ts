@@ -1,6 +1,5 @@
 import { Programmes } from '../../../../shared/models/programmes.model';
-
-
+import { QueryCoaching } from 'src/app/shared/models/query.coaching.interface';
 
 // Création d'un programme //
 export class AddProgramme {
@@ -38,4 +37,10 @@ export class DeleteProgramme {
 export class SetSelectedProgramme {
     static readonly type = '[Prog] Set';
     constructor(public payload: Programmes) { }
+}
+
+
+export class SearchProgramme {
+    static readonly type = '[Prog] Search programme by query';
+    constructor(public payload: QueryCoaching) { }
 }

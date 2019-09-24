@@ -38,7 +38,7 @@ import { Step3Component } from './inscription/step3/step3.component';
 import { Step4Component } from './inscription/step4/step4.component';
 import { ListingProgrammeComponent } from './listing-programme/listing-programme.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
-
+import { ListProgrammeComponent } from './list-programme/list-programme.component';
 
 
 @NgModule({
@@ -74,7 +74,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
     Step2Component,
     Step3Component,
     Step4Component,
-    ListingProgrammeComponent
+    ListProgrammeComponent
   ],
   imports: [
     RouterModule,

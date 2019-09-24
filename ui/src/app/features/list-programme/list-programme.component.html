@@ -1,0 +1,37 @@
+<!-- Programs list -->
+<div class="pt-30 md:pt-32 px-5 md:px-10">
+  <div class="flex flex-row justify-between mb-8 mt-8">
+    <h1 class="text-black font-bold text-3xl ">Tous nos programmes</h1>
+    <a class="cursor-pointer" [routerLink]="['/accueil']"><h1 class="text-black text-1xl"><i class="fa fa-undo mr-4" aria-hidden="true"></i>PAGE D'ACCUEIL</h1></a>
+  </div>
+
+
+    <div class="justify-around relative w-32">
+        <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" (change)="navigateTo($event.target.value)">
+          <option>--</option>
+          <option selected value="query1">Populaire</option>
+          <option selected  value="query2">classique</option>
+          <option selected value="query3">peu populaire</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
+    <div class="flex flex-row justify-center mb-12">
+        <a class="hover:bg-red-500 hover:text-white text-gray-700 rounded ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active" >Tout</a>
+        <a class="hover:bg-red-500 hover:text-white rounded text-gray-700 ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'prise-de-masse'}">Prise de masse</a>
+        <a class="hover:bg-red-500 hover:text-white rounded text-gray-700 ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'entretien'}">Entretien</a>
+        <a class="hover:bg-red-500 hover:text-white rounded text-gray-700 ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'seche'}">Sèche</a>
+        <a class="hover:bg-red-500 hover:text-white rounded text-gray-700 ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'raffermissement'}">Raffermissement</a>
+        <a class="hover:bg-red-500 hover:text-white rounded text-gray-700 ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'stretching'}">Stretching</a>
+        <a class="hover:bg-red-500 hover:text-white rounded text-gray-700 ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'recuperation'}">Récupération</a>
+        <a class="hover:bg-red-500 hover:text-white rounded text-gray-700 ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'preparation-competition'}">Préparation compétition</a>
+        <a class="hover:bg-red-500 hover:text-white rounded text-gray-700 ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'tuto-exercice'}">Tuto par exercices</a>
+    </div>
+
+</div>
+<div class="flex flex-row flex-wrap">
+    <app-card-thumb-program *ngFor="let item of programmes | async" class="mx-4" [imageUrl]="item.imageUrl"
+        [title]="item.title" [content]="item.content" [hasBgOverlay]="true" [inlineStars]="9">
+    </app-card-thumb-program>
+</div>

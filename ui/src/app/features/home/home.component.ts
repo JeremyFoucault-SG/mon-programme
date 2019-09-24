@@ -4,6 +4,11 @@ import { HomeHeaderMenuComponent } from './header/menu/home-header-menu.componen
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
+import { Store, Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
+import {SearchProgramme} from 'src/app/core/store/store.module/programme/programme.action';
+import { Programmes } from 'src/app/shared/models/programmes.model';
 
 /**
  * Home component show cards of blog, programs and more
@@ -18,95 +23,17 @@ export class HomeComponent implements OnInit {
   public user: boolean;
   public selected: ProgramDetail;
   public programsInfos: ProgramDetail[] = ProgramsList.infos;
-  public programs = [];
   public auth: AuthenticationService;
 
-  constructor() { }
+
+  @Select(ProgrammeState.programmes)
+  programmes: Observable<Programmes[]>;
+
+  constructor(private store: Store) { }
 
   ngOnInit() {
     this.selected = this.programsInfos[0];
-
-    this.programs = [
-      {
-        title: 'Program 1',
-        content: 'content 1',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-      {
-        title: 'Program 2',
-        content: 'content 2',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-      {
-        title: 'Program 3',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-      {
-        title: 'Program 4',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-    ];
+    this.store.dispatch(new SearchProgramme({rating: 1, limit: 10}));
   }
 
   onChange(programDetail: ProgramDetail, index) {

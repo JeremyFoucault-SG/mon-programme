@@ -17,6 +17,8 @@ import { ConnexionComponent } from './features/connexion/connexion.component';
 import { InscriptionComponent } from './features/inscription/inscription.component';
 import { ListingProgrammeComponent } from './features/listing-programme/listing-programme.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { CardThumbProgramComponent } from './shared/components/card-thumb-program/card-thumb-program.component';
+import { ListProgrammeComponent } from './features/list-programme/list-programme.component';
 
 
 
@@ -91,6 +93,7 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
+  { path: 'coachings', component: ListProgrammeComponent},
   { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },
   { path: 'articles/:title', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
@@ -102,14 +105,11 @@ const routes: Routes = [
   { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', canActivate: [AuthGuard], component: BlogMobileComponent },
   { path: 'inscription', component: InscriptionComponent},
-  { path: 'create-article', canActivate: [AuthGuard], component: CreateArticleComponent},
   { path: 'inscription', canActivate: [AuthGuard], component: InscriptionComponent},
   { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
   { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
   { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},
   { path: 'detail-programme', canActivate: [AuthGuard], component: ListingProgrammeComponent},
-
-
 ];
 
 @NgModule({

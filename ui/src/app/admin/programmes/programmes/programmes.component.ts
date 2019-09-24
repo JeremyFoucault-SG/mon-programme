@@ -6,7 +6,8 @@ import {
   GetByIdProgramme,
   GetAllProgramme,
   DeleteProgramme,
-  SetSelectedProgramme
+  SetSelectedProgramme,
+  SearchProgramme
 } from 'src/app/core/store/store.module/programme/programme.action';
 import { Programmes } from 'src/app/shared/models/programmes.model';
 import { ToastrService } from 'ngx-toastr';
@@ -28,7 +29,7 @@ export class ProgrammesComponent implements OnInit {
 
 
   ngOnInit() {
-    this.store.dispatch(new GetAllProgramme());
+    this.store.dispatch(new SearchProgramme({categories: 'seche'}));
   }
 
 
