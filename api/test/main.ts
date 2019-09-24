@@ -35,7 +35,7 @@ async function bootstrap() {
   await insertCategoryData(categoriesService);
 
   const coachingsService: CoachingsService = app.get('CoachingsService');
-  await insertCoachingData(coachingsService);
+  await insertCoachingData(coachingsService, categoriesService);
 
   const coversService: CoversService = app.get('CoversService');
   await insertCoverData(coversService);

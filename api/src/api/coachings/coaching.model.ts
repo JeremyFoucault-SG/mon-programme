@@ -21,6 +21,9 @@ export class CoachingModel extends Typegoose {
     @prop()
     content: string;
 
+    @prop()
+    imageUrl: string;
+
     @arrayProp({ items: CategoryModel, _id: false })
     categories: SubDocumentArray<CategoryModel>;
 }

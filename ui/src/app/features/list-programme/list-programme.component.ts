@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ProgramDetail, ProgramsList } from 'src/app/shared/models/programs-infos';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Programmes } from 'src/app/shared/models/programmes.model';
 import { Store, Select } from '@ngxs/store';
 import { SearchProgramme } from 'src/app/core/store/store.module/programme/programme.action';
 import { QueryCoaching } from 'src/app/shared/models/query.coaching.interface';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-list-programme',
@@ -21,6 +22,7 @@ export class ListProgrammeComponent implements OnInit {
   public auth: AuthenticationService;
   public categories: QueryCoaching;
 
+
   @Select(ProgrammeState.programmes)
   programmes: Observable<Programmes[]>;
 
@@ -33,7 +35,7 @@ export class ListProgrammeComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams
       .subscribe((params: Params) => {
-        this.store.dispatch(new SearchProgramme({ categories: params.categories }));
+        this.store.dispatch(new SearchProgramme({ categories: params.categories, rating: params.rating }));
       });
   }
 

@@ -21,6 +21,10 @@ export class CoachingDTO {
   public readonly rating: number;
 
   @Allow()
+  @ApiModelProperty()
+  public readonly imageUrl: string;
+
+  @Allow()
   @Type(() => CategoryDTO)
   @ValidateNested({each: true})
   @ApiModelProperty()
