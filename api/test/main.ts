@@ -22,17 +22,17 @@ async function bootstrap() {
 
   const app = await require('../src/main').bootstrap();
 
+  const categoriesService: CategoriesService = app.get('CategoriesService');
+  await insertCategoryData(categoriesService);
+
   const authController: AuthController = app.get('AuthController');
   await insertAuthData(authController);
 
   const articlesService: ArticlesService = app.get('ArticlesService');
-  await insertArticleData(articlesService);
+  await insertArticleData(articlesService, categoriesService);
 
   const goalsService: GoalsService = app.get('GoalsService');
   await insertGoalData(goalsService);
-
-  const categoriesService: CategoriesService = app.get('CategoriesService');
-  await insertCategoryData(categoriesService);
 
   const coachingsService: CoachingsService = app.get('CoachingsService');
   await insertCoachingData(coachingsService, categoriesService);

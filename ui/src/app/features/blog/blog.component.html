@@ -22,15 +22,18 @@
 </div>
 
 <!-- Load more article -->
-<div class="mt-16 flex flex-row justify-center">
-  <div class="cursor-pointer flex flex-row items-center">
-    <span class="uppercase text-2xl mr-2">+ d'articles</span>
-    <span class="fa-stack fa-2x ml-2">
-      <i class="text-red-400 fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-angle-right fa-stack-1x fa-inverse"></i>
-    </span>
+<a (click)="this.showMoreArticles()">
+  <div class="mt-16 flex flex-row justify-center">
+    <div class="cursor-pointer flex flex-row items-center">
+      <span class="uppercase text-2xl mr-2">+ d'articles</span>
+      <span class="fa-stack fa-2x ml-2">
+        <i class="text-red-400 fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-angle-right fa-stack-1x fa-inverse"></i>
+      </span>
+    </div>
   </div>
-</div>
+</a>
+
 
 <!-- Newsletter -->
 <div class="pt-24 md:pt-32">

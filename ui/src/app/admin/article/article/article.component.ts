@@ -6,8 +6,11 @@ import { ArticleState } from '../../../core/store/store.module/article/article.s
 import {
   DeleteArticle,
   GetAllArticles,
-  SetSelectedArticle } from '../../../core/store/store.module/article/article.actions';
+  SetSelectedArticle,
+  SearchArticle
+} from '../../../core/store/store.module/article/article.actions';
 import { ToastrService } from 'ngx-toastr';
+import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -15,24 +18,30 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ArticleComponent implements OnInit {
 
-  @Select(ArticleState.articles )
+  @Select(ArticleState.articles)
   articles: Observable<ArticleBlog[]>;
 
-  constructor(private store: Store, private toastr: ToastrService) { }
+  @Select(ArticleState.articles)
+  query: Observable<QueryArticles[]>;
 
-  ngOnInit() {
-    this.store.dispatch(new GetAllArticles());
-  }
-  editArticle(payload: ArticleBlog) {
-    this.store.dispatch(new SetSelectedArticle(payload));
-  }
-  deleteArticle(id: string) {
-    this.store.dispatch(new DeleteArticle(id));
-    this.showSuccessDelete();
-  }
+constructor(private store: Store, private toastr: ToastrService) { }
 
-  showSuccessDelete() {
-    this.toastr.success('Article Supprimé avec succés');
-  }
+ngOnInit() {
+  // this.store.dispatch(new GetAllArticles());
+  this.store.dispatch(new SearchArticle({ limit: 4}));
+
+}
+editArticle(payload: ArticleBlog) {
+  this.store.dispatch(new SetSelectedArticle(payload));
+}
+deleteArticle(id: string) {
+  this.store.dispatch(new DeleteArticle(id));
+  this.showSuccessDelete();
+}
+
+
+showSuccessDelete() {
+  this.toastr.success('Article Supprimé avec succés');
+}
 
 }

@@ -61,12 +61,12 @@ export async function insertUserData(articlesService: ArticlesService, coachings
 
     // BOOKMARKS
     const bookmarks: BookmarkDTO[] = [];
-    for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
-      const bookmark: BookmarkDTO = {
-        article: articles[faker.random.number({ min: 0, max: articles.length - 1 })],
-      };
-      bookmarks.push(bookmark);
-    }
+    // for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
+    //   const bookmark: BookmarkDTO = {
+    //     article: articles[faker.random.number({ min: 0, max: articles.length - 1 })],
+    //   };
+    //   bookmarks.push(bookmark);
+    // }
 
     // WISHES
     const wishes: WishDTO[] = [];

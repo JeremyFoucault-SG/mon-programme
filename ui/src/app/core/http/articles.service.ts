@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { ArticleBlog } from '../../shared/models/articles-blog.model';
 import { map } from 'rxjs/operators';
+import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
 
 
 @Injectable({
@@ -15,6 +16,15 @@ export class ArticlesService {
 
     public api = `${environment.apiUrl}`;
 
+    public searchArticles(payload: QueryArticles) {
+        let query = payload.limit ? `limit=${payload.limit}` : '';
+        query = payload.skip ? `${query.length > 0 ? query + '&' : ''}skip=${payload.skip}` : query;
+        query = payload.date ? `${query.length > 0 ? query + '&' : ''}date=${payload.date}` : query;
+        query = payload.categories ? `${query.length > 0 ? query + '&' : ''}categories=${payload.categories}` : query;
+
+        return this.http.get(`${this.api}/articles/search${query.length > 0 ? '?' + query : ''}`);
+
+    }
 
 
     // Recuperation article de blog par l'id//

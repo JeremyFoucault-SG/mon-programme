@@ -21,19 +21,23 @@
   <!-- Right block (only desktop) -->
   <div class="flex items-center hidden lg:flex">
 
-    <!-- Show signin and signup button  -->
+    <!-- Show signin and signup button 
     <div *ngIf="!isLogin" class="flex flex-row">
-      <!-- <app-login-modal></app-login-modal> -->
+      <app-login-modal></app-login-modal>
       <button class="ml-4 bg-transparent text-white font-semibold py-2 px-4 border-4 border-white rounded-full">
         Connexion
       </button>
-    </div>
+    </div> -->
 
     <!-- Show user information  -->
-    <div *ngIf="isLogin" class="flex items-center">
+    <div  class="flex items-center">
+      <div 
+      class="flex items-center"
+      *ngIf="user">
       <i class="cursor-pointer fa fa-shopping-basket fa-lg text-white mr-4"></i>
       <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, <strong>Pierre</strong></h3>
       <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="cursor-pointer h-16 w-16 ml-2">
+    </div>
       <i class="cursor-pointer text-white fa fa-2x ml-4 mr-2" [ngClass]="isOpen ? 'fa-times' : 'fa-bars'"
         (click)="open()"></i>
     </div>
@@ -53,12 +57,14 @@
       <li>
         <div class="flex flex-row">
           <a
-            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/login']">
+            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/login']"
+            (click)="open()">
             Connexion
           </a>
 
           <a
-            class="ml-4 inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/inscription']">
+            class="ml-4 inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/inscription']"
+            (click)="open()">
             Inscription
           </a>
         </div>
@@ -68,25 +74,33 @@
       <div class="w-full pt-5 border-b border-gray-800"></div>
 
       <li class="py-2 pt-4">
-        <a class="text-white hover:text-yellow-400" [routerLink]="['/accueil']" routerLinkActive="active"
+        <a class="text-white hover:text-yellow-400" 
+        [routerLink]="['/accueil']" 
+        routerLinkActive="active"
           (click)="open()">
           Accueil
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" [routerLink]="['/style-de-vie-et-nutrition']" routerLinkActive="active"
+        <a class="text-white hover:text-yellow-400" 
+        [routerLink]="['/style-de-vie-et-nutrition']" 
+        routerLinkActive="active"
           (click)="open()">
           style de vie & nutrition
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" [routerLink]="['/sante']" routerLinkActive="active"
+        <a class="text-white hover:text-yellow-400" 
+        [routerLink]="['/sante']" 
+        routerLinkActive="active"
           (click)="open()">
           Santé
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" [routerLink]="['/pratique-sportive-mobile']" routerLinkActive="active"
+        <a class="text-white hover:text-yellow-400" 
+        [routerLink]="['/pratique-sportive-mobile']"
+        routerLinkActive="active"
           (click)="open()">
           Pratique sportive
         </a>
@@ -137,8 +151,7 @@
 
       <li class="py-4">
         <div>
-          <a href="#"
-            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" (click)="logout()">Deconnexion</a>
+          <a class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" (click)="logout()">Deconnexion</a>
         </div>
       </li>
     </ul>

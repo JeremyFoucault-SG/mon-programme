@@ -35,6 +35,7 @@ import { TagComponent } from './components/tag/tag.component';
 import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
 import { GroupTitleComponent } from './components/group-title/group-title.component';
 import { AdminModule } from '../admin/admin.module';
+import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { AdminModule } from '../admin/admin.module';
     SubTitleComponent,
     TagComponent,
     FooterSmComponent,
-    GroupTitleComponent
+    GroupTitleComponent,
+    FirstCharacterePipe
   ],
   imports: [
     CommonModule,
@@ -101,6 +103,7 @@ import { AdminModule } from '../admin/admin.module';
     TagComponent,
     FooterSmComponent,
     GroupTitleComponent,
+    FirstCharacterePipe
   ]
 })
 export class SharedModule { }

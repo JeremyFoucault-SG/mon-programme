@@ -1,14 +1,23 @@
-import { Controller, Post, Get, Put, Delete, HttpCode, HttpStatus, Body, Param } from '@nestjs/common';
+import { Controller, Post, Get, Put, Delete, HttpCode, HttpStatus, Body, Param, Query } from '@nestjs/common';
 import { ApiBearerAuth, ApiUseTags, ApiOperation, ApiResponse, ApiImplicitQuery, ApiImplicitHeader } from '@nestjs/swagger';
 import { ArticleModel } from './article.model';
 import { ArticleDTO } from './article.dto';
 import { ArticlesService } from './articles.service';
+import { ArticleQuery } from './article.query';
+import { CategoryModel } from '../categories/category.model';
 
 @Controller('articles')
 @ApiUseTags('Articles')
 export class ArticlesController {
 
   constructor(private readonly articlesService: ArticlesService) { }
+
+  @Get('search')
+  @ApiOperation({ title: 'Get all articles by query' })
+  @ApiResponse({ status: 200, description: 'Return an array of articles.' })
+  async search(@Query() query: ArticleQuery): Promise<ArticleModel[]> {
+    return this.articlesService.search(query);
+  }
 
   @Post()
   @ApiBearerAuth()
