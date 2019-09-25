@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { CategoryModel } from './category.model';
-import { InjectModel, } from '@nestjs/mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 import { ModelType, InstanceType } from 'typegoose';
 import { CategoryDTO } from './category.dto';
 @Injectable()
