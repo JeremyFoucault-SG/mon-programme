@@ -11,7 +11,6 @@ import {SearchProgramme} from 'src/app/core/store/store.module/programme/program
 import { Programmes } from 'src/app/shared/models/programmes.model';
 import { ArticleState } from '../../core/store/store.module/article/article.state';
 import {SearchArticle} from '../../core/store/store.module/article/article.actions';
-import { Observable } from 'rxjs';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 
 /**
@@ -33,11 +32,6 @@ export class HomeComponent implements OnInit {
   @Select(ProgrammeState.programmes)
   programmes: Observable<Programmes[]>;
 
-  constructor(private store: Store) { }
-
-  ngOnInit() {
-    this.selected = this.programsInfos[0];
-    this.store.dispatch(new SearchProgramme({rating: 1, limit: 10}));
   @Select(ArticleState.articles )
   articles: Observable<ArticleBlog[]>;
 
@@ -45,8 +39,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.selected = this.programsInfos[0];
+    this.store.dispatch(new SearchProgramme({rating: 1, limit: 10}));
     this.store.dispatch(new SearchArticle({date: '-1', limit: 2, categories: 'style-de-vie-et-nutrition'}));
   }
+
 
   onChange(programDetail: ProgramDetail, index) {
     this.selected = programDetail;
