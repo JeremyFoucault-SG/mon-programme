@@ -13,6 +13,11 @@ export class SearchArticle {
     static readonly type = '[Blog] search articles';
     constructor(public payload: QueryArticles ) {}
 }
+
+export class SearchNextArticle {
+    static readonly type = '[Blog] search next articles';
+    constructor(public payload: QueryArticles ) {}
+}
 // Recuperation de tous les articles
 export class GetAllArticles {
     static readonly type = '[Blog] Get all article';

@@ -18,6 +18,10 @@ export class ArticleDTO {
   public readonly content: string;
 
   @Allow()
+  @ApiModelProperty()
+  public readonly photoUrl: string;
+
+  @Allow()
   @ValidateNested({each: true})
   @Type(() => CategoryDTO)
   @ApiModelProperty()

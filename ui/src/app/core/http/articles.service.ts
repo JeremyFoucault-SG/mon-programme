@@ -18,6 +18,7 @@ export class ArticlesService {
 
     public searchArticles(payload: QueryArticles) {
         let query = payload.limit ? `limit=${payload.limit}` : '';
+        query = payload.skip ? `${query.length > 0 ? query + '&' : ''}skip=${payload.skip}` : query;
         query = payload.date ? `${query.length > 0 ? query + '&' : ''}date=${payload.date}` : query;
         query = payload.categories ? `${query.length > 0 ? query + '&' : ''}categories=${payload.categories}` : query;
 

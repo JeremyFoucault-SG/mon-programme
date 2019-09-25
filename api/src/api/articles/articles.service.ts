@@ -59,6 +59,11 @@ export class ArticlesService {
         { $limit: +query.limit },
       );
     }
+    if (query.skip) {
+      pipe.push(
+        { $skip: +query.skip },
+      )
+    }
     if (pipe.length > 0) {
       return this.articleModel.aggregate(pipe).exec();
     } else {
