@@ -23,8 +23,6 @@ import { FunctionSmComponent } from './components/form-function/function-sm/func
 import { ObjectifProgrammeComponent } from './components/menu-nos-programme/objectif-programme/objectif-programme.component';
 import { DetailProgrammeComponent } from './components/detail-programme/detail-programme.component';
 import { DetailProgrammePhotoComponent } from './components/detail-programme/detail-programme-photo/detail-programme-photo.component';
-
-
 import { DashboardInfoPersoComponent } from '../features/dashboard/info/dashboard-info-perso/dashboard-info-perso.component';
 // tslint:disable-next-line: max-line-length
 import { TitleComponent } from './components/title/title.component';
@@ -38,6 +36,7 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
 import { GroupTitleComponent } from './components/group-title/group-title.component';
 import { AdminModule } from '../admin/admin.module';
 import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
+
 @NgModule({
   declarations: [
     FormCustomizeProgrammeComponent,

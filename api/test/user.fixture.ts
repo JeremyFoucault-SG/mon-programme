@@ -18,7 +18,6 @@ export async function insertUserData(articlesService: ArticlesService, coachings
   // Get inserted data for populate user
   const coachings = await coachingsService.findAll();
   const articles = await articlesService.findAll();
-
   for (let k = 0; k < 1; k++) {
 
     // BODY

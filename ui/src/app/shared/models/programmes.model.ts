@@ -5,5 +5,7 @@ export class Programmes {
         public rating?: number,
         public title?: string,
         public content?: string,
+        public imageUrl?: string,
+        public level?: string,
     ) { }
 }

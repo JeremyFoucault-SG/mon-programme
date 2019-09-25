@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Programmes } from 'src/app/shared/models/programmes.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { QueryCoaching } from 'src/app/shared/models/query.coaching.interface';
 
 
 
@@ -16,8 +17,8 @@ export class CoachingsService {
 
     public api = `${environment.apiUrl}`;
 
-     // Recuperation d'un programme  par l'id//
-     public getProgramme(id: string): Observable<Programmes> {
+    // Recuperation d'un programme  par l'id//
+    public getProgramme(id: string): Observable<Programmes> {
         return this.http.get(`${this.api}/coachings/${id}`).pipe(
             map((programme: any) => {
                 return programme as Programmes;
@@ -39,12 +40,12 @@ export class CoachingsService {
     // tslint:disable-next-line: variable-name
     public updateProgramme(payload: Programmes, _id: string) {
         console.log(_id);
-        return this.http.put<Programmes>(`${this.api}/coachings/${_id}` , payload);
+        return this.http.put<Programmes>(`${this.api}/coachings/${_id}`, payload);
     }
 
 
     // Ajout d'un programme //
-   public addProgramme(payload: Programmes) {
+    public addProgramme(payload: Programmes) {
         return this.http.post<Programmes>(`${this.api}/coachings`, payload);
     }
 
@@ -54,5 +55,12 @@ export class CoachingsService {
         return this.http.delete(`${this.api}/coachings/${_id}`);
     }
 
-
+    public searchProgramme(payload: QueryCoaching) {
+        let query = payload.limit ? `limit=${payload.limit}` : '';
+        query = payload.skip ? `${query.length > 0 ? query + '&' : ''}skip=${payload.skip}` : query;
+        query = payload.rating ? `${query.length > 0 ? query + '&' : ''}rating=${payload.rating}` : query;
+        query = payload.categories ? `${query.length > 0 ? query + '&' : ''}categories=${payload.categories}` : query;
+        return this.http.get(`${this.api}/coachings/search${query.length > 0 ? '?' + query : ''}`);
+    }
 }
+

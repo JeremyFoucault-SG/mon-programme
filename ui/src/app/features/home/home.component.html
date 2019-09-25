@@ -13,12 +13,12 @@
     <app-title class="group-title">NOS MEILLEURS PROGRAMME</app-title>
     <app-sub-title class="group-subtitle">PROGRAMME</app-sub-title>
     <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
-      <a [routerLink]="['/routePath']">
+      <a [routerLink]="['/coachings']" routerLinkActive="router-link-active">
         Voir tout
       </a>
     </div>
   </app-group-title>
-  <app-card-thumb-list [items]="programs"></app-card-thumb-list>
+  <app-card-thumb-list [items]="programmes | async" ></app-card-thumb-list>
 </div>
 
 <!-- Article list -->
@@ -33,7 +33,8 @@
     </div>
   </app-group-title>
 
-    <app-card-thumb-list [items]="articles | async" [titleOnRight]="true"></app-card-thumb-list>
+  <app-card-thumb-list  [items]="programs" [titleOnRight]="true"></app-card-thumb-list>
+  <app-card-thumb-list [items]="articles | async" [titleOnRight]="true"></app-card-thumb-list>
 
 
 </div>

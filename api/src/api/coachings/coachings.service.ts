@@ -1,14 +1,18 @@
-import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus, Query } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { CoachingModel } from './coaching.model';
-import { ModelType } from 'typegoose';
+import { ModelType, InstanceType } from 'typegoose';
 import { CoachingDTO } from './coaching.dto';
+import { EntityException, EntityExceptionCode } from 'src/exceptions/entity-exception';
+import { CoachingQuery } from './coachings.query';
+import { CategoriesService } from '../categories/categories.service';
+import { CategoriesModule } from '../categories/categories.module';
 
 @Injectable()
 export class CoachingsService {
   constructor(@InjectModel(CoachingModel) private readonly coachingModel: ModelType<CoachingModel>) { }
 
-  async findAll(): Promise<CoachingModel[]> {
+  async findAll(): Promise<Array<InstanceType<CoachingModel>>> {
     return this.coachingModel.find({}).exec();
   }
 
@@ -39,4 +43,41 @@ export class CoachingsService {
     return coaching;
   }
 
+  async search(query: CoachingQuery): Promise<CoachingModel[]> {
+    const pipe: any[] = [];
+    if (query.categories) {
+      pipe.push(
+        {
+          $match:
+          {
+            'categories.title': { $regex: `${Array.isArray(query.categories) ? query.categories.join('|') : query.categories}`, $options: 'i' },
+          },
+        });
+    }
+    if (query.rating) {
+      pipe.push(
+        {
+          $match: { rating: { $gte: +query.rating, $lte: 5 } },
+        },
+        {
+          $sort: { rating: -1 },
+        },
+      );
+    }
+    if (query.limit) {
+      pipe.push(
+        { $limit: +query.limit },
+      );
+    }
+    if (query.skip) {
+      pipe.push(
+        { $skip: +query.skip },
+      );
+    }
+    if (pipe.length > 0) {
+      return this.coachingModel.aggregate(pipe).exec();
+    } else {
+      return this.coachingModel.find({}).exec();
+    }
+  }
 }

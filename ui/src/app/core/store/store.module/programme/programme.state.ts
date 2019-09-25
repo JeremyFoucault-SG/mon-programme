@@ -1,10 +1,12 @@
-import { State, Action, StateContext, Selector, Store } from '@ngxs/store';
+import { State, Action, StateContext, Selector, Store, StateOperator } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
-import { patch, updateItem } from '@ngxs/store/operators';
+import { patch, updateItem, append } from '@ngxs/store/operators';
 import { Programmes as Programme } from 'src/app/shared/models/programmes.model';
 import { CoachingsService } from 'src/app/core/http/coachings.service';
-import { AddProgramme,
-     GetAllProgramme, GetByIdProgramme, UpdateProgramme, DeleteProgramme, SetSelectedProgramme } from './programme.action';
+import {
+    AddProgramme,
+    GetAllProgramme, GetByIdProgramme, UpdateProgramme, DeleteProgramme, SetSelectedProgramme, SearchProgramme, AddNextProgramme
+} from './programme.action';
 
 export class ProgrammeStateModel {
     items: Programme[];
@@ -19,7 +21,6 @@ export class ProgrammeStateModel {
 
     }
 })
-
 
 export class ProgrammeState {
 
@@ -103,5 +104,24 @@ export class ProgrammeState {
             item: payload
         });
     }
-}
 
+    @Action(SearchProgramme)
+    searchProgramme(ctx: StateContext<ProgrammeStateModel>, { payload }: SearchProgramme) {
+        return this.service.searchProgramme(payload).pipe(tap((programmes: Programme[]) => {
+            ctx.setState(patch({
+                items: programmes
+            }));
+        }));
+    }
+
+
+    @Action(AddNextProgramme)
+    addNextProgramme(ctx: StateContext<ProgrammeStateModel>, { payload }: SearchProgramme) {
+        return this.service.searchProgramme(payload).pipe(tap((programmes: Programme[]) => {
+            ctx.setState(patch({
+                items: append(programmes)
+            }));
+        }));
+    }
+
+}
