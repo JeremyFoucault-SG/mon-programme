@@ -69,6 +69,11 @@ export class CoachingsService {
         { $limit: +query.limit },
       );
     }
+    if (query.skip) {
+      pipe.push(
+        { $skip: +query.skip },
+      );
+    }
     if (pipe.length > 0) {
       return this.coachingModel.aggregate(pipe).exec();
     } else {

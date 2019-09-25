@@ -6,4 +6,5 @@ export interface CoachingQuery {
     limit?: string;
     categories?: string[];
     imageUrl?: string;
+    skip?: number;
 }
