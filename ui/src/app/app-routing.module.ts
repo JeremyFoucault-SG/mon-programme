@@ -102,7 +102,6 @@ const routes: Routes = [
   { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent },
   { path: 'blog-mobile', canActivate: [AuthGuard], component: BlogMobileComponent },
   { path: 'inscription', component: InscriptionComponent},
-  { path: 'create-article', canActivate: [AuthGuard], component: CreateArticleComponent},
   { path: 'inscription', canActivate: [AuthGuard], component: InscriptionComponent},
   { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
   { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},

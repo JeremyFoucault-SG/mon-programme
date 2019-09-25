@@ -22,7 +22,7 @@
 </div>
 
 <!-- Article list -->
-<div class="pt-24 md:pt-32 px-5 md:px-10">
+<div  class="pt-24 md:pt-32 px-5 md:px-10">
   <app-group-title>
     <app-title class="group-title">STYLE DE VIE ET NUTRITION</app-title>
     <app-sub-title class="group-subtitle">BLOG</app-sub-title>
@@ -32,7 +32,10 @@
       </a>
     </div>
   </app-group-title>
-  <app-card-thumb-list [items]="programs" [titleOnRight]="true"></app-card-thumb-list>
+
+    <app-card-thumb-list [items]="articles | async" [titleOnRight]="true"></app-card-thumb-list>
+
+
 </div>
 
 <!-- Article list -->
@@ -46,7 +49,7 @@
       </a>
     </div>
   </app-group-title>
-  <app-card-thumb-list [items]="programs"></app-card-thumb-list>
+  <app-card-thumb-list [items]="articles | async"></app-card-thumb-list>
 </div>
 
 <!-- Newsletter form -->

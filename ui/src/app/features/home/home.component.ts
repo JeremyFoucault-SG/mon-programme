@@ -4,7 +4,11 @@ import { HomeHeaderMenuComponent } from './header/menu/home-header-menu.componen
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
-
+import { Store, Select } from '@ngxs/store';
+import { ArticleState } from '../../core/store/store.module/article/article.state';
+import {SearchArticle} from '../../core/store/store.module/article/article.actions';
+import { Observable } from 'rxjs';
+import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 /**
  * Home component show cards of blog, programs and more
  */
@@ -21,92 +25,14 @@ export class HomeComponent implements OnInit {
   public programs = [];
   public auth: AuthenticationService;
 
-  constructor() { }
+  @Select(ArticleState.articles )
+  articles: Observable<ArticleBlog[]>;
+
+  constructor(private store: Store) { }
 
   ngOnInit() {
     this.selected = this.programsInfos[0];
-
-    this.programs = [
-      {
-        title: 'Program 1',
-        content: 'content 1',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-      {
-        title: 'Program 2',
-        content: 'content 2',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-      {
-        title: 'Program 3',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-      {
-        title: 'Program 4',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-
-      {
-        title: 'Program 5',
-        content: 'content 3',
-        imageUrl: 'https://amp.businessinsider.com/images/5b43ccf31335b831008b4c1c-750-563.jpg'
-      },
-    ];
+    this.store.dispatch(new SearchArticle({date: '-1', limit: 2, categories: 'style-de-vie-et-nutrition'}));
   }
 
   onChange(programDetail: ProgramDetail, index) {
