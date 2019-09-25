@@ -6,5 +6,6 @@ export class Programmes {
         public title?: string,
         public content?: string,
         public imageUrl?: string,
+        public level?: string,
     ) { }
 }

@@ -44,3 +44,8 @@ export class SearchProgramme {
     static readonly type = '[Prog] Search programme by query';
     constructor(public payload: QueryCoaching) { }
 }
+
+export class AddNextProgramme {
+    static readonly type = '[prog] Next programme';
+    constructor(public payload: QueryCoaching) { }
+}

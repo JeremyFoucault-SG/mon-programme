@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
+import { Programmes } from '../../models/programmes.model';
+import { Params } from '@angular/router';
 
 /**
  * Card thumb is used for both thumbs of programs and article
@@ -9,11 +11,19 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card-thumb-program.component.css']
 })
 export class CardThumbProgramComponent implements OnInit {
+
+  isOpen = false;
   /**
    * Set image in background of card
    */
   @Input()
   imageUrl: string;
+
+  @Input()
+  level: string;
+
+  @Input()
+  point: boolean;
 
   /**
    * If true set a darken overlay above background image
@@ -74,7 +84,7 @@ export class CardThumbProgramComponent implements OnInit {
    */
   private showContentOverlay = false;
 
-  constructor() { }
+  constructor(private elmt: ElementRef) { }
 
   ngOnInit() {
   }
@@ -93,11 +103,25 @@ export class CardThumbProgramComponent implements OnInit {
     this.showContentOverlay = false;
   }
 
-  /**
-   * Add article to wish list
-   */
-  addToWishList() {
-    throw new Error('Not implemented !');
+  open() {
+    this.isOpen = !this.isOpen;
   }
 
+  close() {
+    this.isOpen = false;
+  }
+
+  addWish() {
+    // Not inplement //
+  }
+
+  addRating() {
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event) {
+    if (!this.elmt.nativeElement.contains(event.target)) {
+    this.isOpen = false;
+    }
+  }
 }

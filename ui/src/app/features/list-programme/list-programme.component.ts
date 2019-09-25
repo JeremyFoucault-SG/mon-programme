@@ -5,7 +5,7 @@ import { ProgrammeState } from 'src/app/core/store/store.module/programme/progra
 import { Observable, Subscription } from 'rxjs';
 import { Programmes } from 'src/app/shared/models/programmes.model';
 import { Store, Select } from '@ngxs/store';
-import { SearchProgramme } from 'src/app/core/store/store.module/programme/programme.action';
+import { SearchProgramme, AddNextProgramme } from 'src/app/core/store/store.module/programme/programme.action';
 import { QueryCoaching } from 'src/app/shared/models/query.coaching.interface';
 import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
 import { FormControl } from '@angular/forms';
@@ -21,6 +21,8 @@ export class ListProgrammeComponent implements OnInit {
   public programsInfos: ProgramDetail[] = ProgramsList.infos;
   public auth: AuthenticationService;
   public categories: QueryCoaching;
+  public limit = 10;
+  public newLimit = 0;
 
 
   @Select(ProgrammeState.programmes)
@@ -35,7 +37,21 @@ export class ListProgrammeComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams
       .subscribe((params: Params) => {
-        this.store.dispatch(new SearchProgramme({ categories: params.categories, rating: params.rating }));
+        this.store.dispatch(new SearchProgramme({ categories: params.categories, rating: params.rating, limit: this.limit }));
+      });
+  }
+
+  showMoreCoachings() {
+    this.newLimit = this.limit;
+    this.limit += 5;
+    this.route.queryParams
+      .subscribe((params: Params) => {
+        this.store.dispatch(new AddNextProgramme({
+          categories: params.categories,
+          rating: params.rating,
+          limit: this.limit,
+          skip: this.newLimit
+        }));
       });
   }
 

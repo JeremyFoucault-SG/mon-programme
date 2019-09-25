@@ -57,9 +57,10 @@ export class CoachingsService {
 
     public searchProgramme(payload: QueryCoaching) {
         let query = payload.limit ? `limit=${payload.limit}` : '';
+        query = payload.skip ? `${query.length > 0 ? query + '&' : ''}skip=${payload.skip}` : query;
         query = payload.rating ? `${query.length > 0 ? query + '&' : ''}rating=${payload.rating}` : query;
         query = payload.categories ? `${query.length > 0 ? query + '&' : ''}categories=${payload.categories}` : query;
-
         return this.http.get(`${this.api}/coachings/search${query.length > 0 ? '?' + query : ''}`);
     }
 }
+
