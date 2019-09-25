@@ -92,7 +92,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.auth.isLogout().subscribe(valeur => this.user = valeur )
+    this.auth.isLogout().subscribe(valeur => this.user = valeur );
     this.open();
   }
 

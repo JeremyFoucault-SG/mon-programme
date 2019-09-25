@@ -25,7 +25,7 @@ export class BlogComponent implements OnInit {
   @Select(ArticleState.articles )
   articles: Observable<ArticleBlog>;
 
-  constructor( 
+  constructor(
     private store: Store,
     private route: ActivatedRoute,
     private router: Router) {
@@ -38,14 +38,14 @@ export class BlogComponent implements OnInit {
       this.path = this.router.url.substring(1);
       console.log(this.path);
       this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, limit: this.limit}));
-      console.log(this.listArticles)
-    })
+      console.log(this.listArticles);
+    });
 
   }
-  showMoreArticles(){
+  showMoreArticles() {
     this.skip = this.limit;
     this.limit += 3;
 
-    this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, skip: this.skip, limit: this.limit}))
+    this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, skip: this.skip, limit: this.limit}));
   }
 }

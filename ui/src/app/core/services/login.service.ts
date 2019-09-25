@@ -18,7 +18,7 @@ export class LoginService {
   public user: boolean;
 
 
-  isLogin(){
+  isLogin() {
     if (localStorage.getItem('token')) {
       this.user = true;
     }
