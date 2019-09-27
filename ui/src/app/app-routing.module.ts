@@ -92,7 +92,7 @@ const routes: Routes = [
     }
   },
   { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },
-  { path: 'articles/:title', canActivate: [AuthGuard], component: ArticleBlogComponent },
+  { path: 'articles/:urlTitle', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent },
   { path: 'mon-compte/infos', canActivate: [AuthGuard], component: InfoComponent },

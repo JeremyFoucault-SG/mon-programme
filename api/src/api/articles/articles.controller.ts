@@ -29,11 +29,11 @@ export class ArticlesController {
     return this.articlesService.insert(article);
   }
 
-  @Get(':title')
+  @Get(':urlTitle')
   @ApiOperation({ title: 'Get article by title' })
   @ApiResponse({ status: 200, description: 'Return article.' })
   @ApiResponse({ status: 404, description: 'Not Found.' })
-  async readOne(@Param('title') titleArticle: string): Promise<ArticleModel> {
+  async readOne(@Param('urlTitle') titleArticle: string): Promise<ArticleModel> {
     return this.articlesService.findByTitle(titleArticle);
   }
 

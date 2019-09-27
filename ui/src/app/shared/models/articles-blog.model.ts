@@ -6,6 +6,7 @@ export class ArticleBlog {
         public title?: string,
         public content?: string,
         public author?: string,
+        public urlTitle?: string,
         public createdAt?: Date,
         public updatedAt?: Date,
     ) {
