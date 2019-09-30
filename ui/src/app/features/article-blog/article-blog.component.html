@@ -1,36 +1,27 @@
 <div *ngIf="article | async">
   <div class="invisible lg:visible">
     <div class="group text-right lg:pt-40 mr-4 ">
-      <a
-        class="nav-link return"
-        [routerLink]="['']"
-        routerLinkActive="active-nav"
-        ><i class="fa fa-undo mr-4" aria-hidden="true"></i>PAGE D'ACCUEIL</a
-      >
+      <a class="nav-link return" [routerLink]="['']" routerLinkActive="active-nav"><i class="fa fa-undo mr-4"
+          aria-hidden="true"></i>PAGE D'ACCUEIL</a>
     </div>
-      <div class="px-12 lg:mb-10">
-        <app-title-article [article]="article | async"></app-title-article>
-      </div>
+    <div class="px-12">
+      <app-title-article [article]="article | async"></app-title-article>
     </div>
-    <img
-      src="{{ (article | async).photoUrl }}"
-      alt="photo"
-      class="w-full h-64 object-cover"
-    />
+  </div>
+  <img src="{{ (article | async).photoUrl }}" alt="photo" class="w-full h-3/4-screen lg:h-1/2-screen object-cover -mt-24 lg:mt-0" />
 
 
-    <div class="flex flex-col  lg:flex-row px-12 mt-10 sm:shaddow">
-      <div class="mt-6 lg:w-1/5 text-right lg:text-left">
-        <app-partage class="invisible lg:visible"></app-partage>
+  <div class="flex flex-col  lg:flex-row px-12 sm:shaddow -mt-48 lg:mt-16">
+    <div class=" lg:w-1/5 text-right lg:text-left">
+      <app-partage class="invisible lg:visible"></app-partage>
+    </div>
+
+    <div class="lg:w-4/5">
+      <div class="shadow lg:shadow-none rounded w-full mb-5 bg-white lg:bg-transparent px-2 py-2 text-justify ">
+        <app-title-article [article]="article | async" class="visible lg:hidden"></app-title-article>
+        <p class="px-6">{{ (article | async).content }}</p>
       </div>
- 
-          <div class="lg:w-4/5">
-              <div class="shadow lg:shadow-none rounded w-full mt-2 mb-5 bg-white lg:bg-transparent p-8 text-justify ">
-                  <app-title-article [article]="article | async" class="visible lg:hidden"></app-title-article>
-                  <p>{{ (article | async).content }}</p>
-              </div>
 
     </div>
     <app-partage class="visible lg:invisible"></app-partage>
   </div>
-

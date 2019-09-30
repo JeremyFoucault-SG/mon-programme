@@ -1,12 +1,13 @@
 <div *ngIf="article">
-  <div class="text-left">
-    <app-tag></app-tag>
-    <app-tag></app-tag>
+  <div class="flex justify-between">
+    <div class="text-left mb-5">
+      <app-tag></app-tag>
+      <app-tag></app-tag>
+    </div>
+    <a (click)="addFavorite()" class="cursor-pointer text-red-700 hover:text-red-500"><i class="fa"
+        [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i></a>
   </div>
-
-  <h1
-    class="font-bold uppercase text-center tracking-wider text-lg lg:text-5xl lg:text-left lg:mt-8"
-  >
+  <h1 class="font-bold uppercase text-center tracking-wider text-lg lg:text-5xl lg:text-left lg:mt-8 mb-10">
     {{ article.title }}
   </h1>
 </div>

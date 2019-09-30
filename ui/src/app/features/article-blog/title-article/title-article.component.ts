@@ -10,11 +10,15 @@ export class TitleArticleComponent implements OnInit {
 
   @Input()
   public article: ArticleBlog;
-
+  public isFavorite: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  addFavorite(){
+    this.isFavorite = !this.isFavorite;
+
+  }
 }
