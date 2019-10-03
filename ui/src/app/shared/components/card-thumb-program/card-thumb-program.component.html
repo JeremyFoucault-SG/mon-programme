@@ -1,29 +1,26 @@
-<div class="w-3/4-screen md:w-1/2-screen lg:w-1/3-screen relative h-64 rounded-t-lg overflow-hidden border-gray border flex flex-col mb-8  bg-cover bg-no-repeat"
+<div class="w-3/4-screen md:w-1/2-screen lg:w-1/3-screen relative h-64 rounded-t-lg overflow-hidden border-gray border flex flex-col mb-8  bg-cover bg-no-repeat hover:border-red-800 hover:cursor-pointer" (click)="show()"
   (mouseenter)="isContentOverlay && onShowContentOverlay()" (mouseleave)="isContentOverlay && onHideContentOverlay()"[ngStyle]="{'background-image': hasBgOverlay ? 'linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('+imageUrl+')' : 'url('+imageUrl+')'}" >
 
-  <div class="flex-grow justify-end">
-    <!-- Show dropdown menu !! NOT IMPLEMENTED YET !! (see @Inputs) -->
-    <span *ngIf="hasMenu"  (click)="open()"
-      class="float-right text-xs inline-block rounded px-2 py-1 bg-gray-200 rounded-md mt-5 font-semibold mr-2 cursor-pointer">
+  <div class="flex-grow justify-end ">
+    <!-- Show dropdown menu (see @Inputs) -->
+   
+    <div *ngIf="hasMenu"  (click)="open($event)"
+      class="float-right text-xs inline-block rounded px-2 py-1 bg-white rounded-md mt-5 font-semibold mr-2 cursor-pointer">
       <i class="fa fa-ellipsis-h text-red-500 cursor-pointer"></i>
-      <div *ngIf="isOpen" class=" z-10 flex flex-col bg-wite-opacity-5 w-auto">
-        <div class="bg-white rounded">
-         <a [routerLink]="['detail-programme']" class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 pt-4 text-gray-600 hover:text-red-500"><i class="fa fa-eye pr-2" aria-hidden="true"></i>Voir le programme</h1></a>
-         <a (click)="addWish" class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa fa-heart-o pr-2" aria-hidden="true"></i>Wishlist</h1></a>
-         <a (click)="addRating" class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa fa-star-o pr-2" aria-hidden="true"></i>Ajouter une note</h1></a>
+      <div *ngIf="isOpen" class=" z-999 flex flex-col bg-wite-opacity-5 w-auto">
+        <div class="bg-white rounded z-11">
+         <a [routerLink]="['/detail-programme', title]" class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 pt-4 text-gray-600 hover:text-red-500"><i class="fa fa-eye pr-2" aria-hidden="true"></i>Voir le programme</h1></a>
+         <a (click)="addToWishList(coaching)" class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa pr-2 text-red-700" [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i>Wishlist</h1></a>
+         <a class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa fa-star-o pr-2 text-yellow-600" aria-hidden="true"></i>Ajouter une note</h1></a>
         </div>
       </div>
-    </span>
+    </div>
+ 
     <!-- Number of stars as badge (see @Inputs) -->
     <span *ngIf="topStars"
       class="float-right text-xs inline-block bg-gray-200 rounded-full mt-5 px-3 py-1 font-semibold text-gray-700 mr-2">
       <i class="fa fa-star text-yellow-500 mr-2"></i>{{topStars}}
     </span>
-
-    <!-- Tag of article (see @Inputs) -->
-    <span *ngIf="tag"
-      class="tag float-right text-xs inline-block border border-green-500 rounded-full mt-5 px-3 py-1 font-semibold text-green-500 mr-2">{{tag}}</span>
-  </div>
 
   <!-- Card content can be set as an overlay trigger on hover (see @Inputs) -->
   <div class="absolute bottom-0 w-full flex flex-row justify-between"
@@ -56,4 +53,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

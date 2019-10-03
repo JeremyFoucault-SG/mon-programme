@@ -39,6 +39,7 @@ import { Step4Component } from './inscription/step4/step4.component';
 import { ListingProgrammeComponent } from './listing-programme/listing-programme.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { ListProgrammeComponent } from './list-programme/list-programme.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { ListProgrammeComponent } from './list-programme/list-programme.componen
     Step2Component,
     Step3Component,
     Step4Component,
-    ListProgrammeComponent
+    ListProgrammeComponent,
+    WishlistComponent
   ],
   imports: [
     RouterModule,

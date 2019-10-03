@@ -1,16 +1,26 @@
-import { Wishes } from '../../../../shared/models/wishes.model';
+import { Wish } from '../../../../shared/models/wishes.model';
 
 
 
 // Création d'un wish //
-export class AddWish {
-    static readonly type = '[wish] Add wish';
-    constructor(public payload: Wishes) { }
+export class AddWishCoaching {
+    static readonly type = '[Wish] Add wish';
+    constructor(public payload: Wish) { }
+}
+
+export class AddWishArticle {
+    static readonly type = '[Wish] Add wishArticle';
+    constructor(public payload: Wish) { }
 }
 
 // Récupération de tous les wishes //
-export class GetAllWishes {
-    static readonly type = '[Wish] Get all wishes';
+export class GetAllWishesCoaching {
+    static readonly type = '[Wish] Get all wisheCoaching';
+    constructor() { }
+}
+
+export class GetAllWishesArticles {
+    static readonly type = '[Wish] Get all wisheArticles';
     constructor() { }
 }
 
@@ -22,5 +32,5 @@ export class DeleteWish {
 
 export class SetSelectedWish {
     static readonly type = '[Wish] Set';
-    constructor(public payload: Wishes) { }
+    constructor(public payload: Wish) { }
 }

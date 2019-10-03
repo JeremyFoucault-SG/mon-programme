@@ -1,6 +1,15 @@
-import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { Programmes } from '../../models/programmes.model';
-import { Params } from '@angular/router';
+import { Params, Router } from '@angular/router';
+import { CoachingsService } from 'src/app/core/http/coachings.service';
+import { tap } from 'rxjs/operators';
+import { UsersService } from 'src/app/core/http/users.service';
+import { LoginService } from 'src/app/core/services/login.service';
+import { WishesService } from 'src/app/core/http/wishes.service';
+import { Wish } from '../../models/wishes.model';
+import { ProgrammesDTO } from '../../models/coaching.dto';
+import { Store } from '@ngxs/store';
+import { AddWishCoaching } from 'src/app/core/store/store.module/wishe/wish.action';
 
 /**
  * Card thumb is used for both thumbs of programs and article
@@ -12,6 +21,7 @@ import { Params } from '@angular/router';
 })
 export class CardThumbProgramComponent implements OnInit {
 
+
   isOpen = false;
   /**
    * Set image in background of card
@@ -21,9 +31,6 @@ export class CardThumbProgramComponent implements OnInit {
 
   @Input()
   level: string;
-
-  @Input()
-  point: boolean;
 
   /**
    * If true set a darken overlay above background image
@@ -48,7 +55,6 @@ export class CardThumbProgramComponent implements OnInit {
    */
   @Input()
   topStars: number;
-
   /**
    * Set title of card in left-botton of card
    */
@@ -79,14 +85,33 @@ export class CardThumbProgramComponent implements OnInit {
   @Input()
   hasWish: boolean;
 
+  @Input()
+  coaching: Programmes[];
+
+
+  @Input()
+  items: any[];
+
+
+  isFavorite = false;
+
   /**
    * Open/hide content overlay
    */
   private showContentOverlay = false;
 
-  constructor(private elmt: ElementRef) { }
+  constructor(private elmt: ElementRef,
+    private router: Router,
+    public coachingsService: CoachingsService,
+    public authService: LoginService,
+    private wishService: WishesService,
+    private store: Store) { }
 
   ngOnInit() {
+  }
+
+  show() {
+    this.router.navigate(['/detail-programme', this.title]);
   }
 
   /**
@@ -103,7 +128,8 @@ export class CardThumbProgramComponent implements OnInit {
     this.showContentOverlay = false;
   }
 
-  open() {
+  open($event) {
+    $event.stopPropagation();
     this.isOpen = !this.isOpen;
   }
 
@@ -111,9 +137,6 @@ export class CardThumbProgramComponent implements OnInit {
     this.isOpen = false;
   }
 
-  addWish() {
-    // Not inplement //
-  }
 
   addRating() {
   }
@@ -121,7 +144,14 @@ export class CardThumbProgramComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   onClickOutside(event) {
     if (!this.elmt.nativeElement.contains(event.target)) {
-    this.isOpen = false;
+      this.isOpen = false;
     }
   }
+
+  addToWishList(coaching: Programmes) {
+    this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
+    this.isFavorite = true;
+  }
+
 }
+

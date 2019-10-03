@@ -20,7 +20,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ProgrammesComponent implements OnInit {
 
 
-  @Select(ProgrammeState.programmes)
+  @Select(ProgrammeState.programme)
   programmes: Observable<Programmes[]>;
 
 

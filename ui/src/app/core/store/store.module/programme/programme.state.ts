@@ -5,7 +5,7 @@ import { Programmes as Programme } from 'src/app/shared/models/programmes.model'
 import { CoachingsService } from 'src/app/core/http/coachings.service';
 import {
     AddProgramme,
-    GetAllProgramme, GetByIdProgramme, UpdateProgramme, DeleteProgramme, SetSelectedProgramme, SearchProgramme, AddNextProgramme
+    GetAllProgramme, GetByIdProgramme, UpdateProgramme, DeleteProgramme, SetSelectedProgramme, SearchProgramme, AddNextProgramme, GetCoachingByTitle
 } from './programme.action';
 
 export class ProgrammeStateModel {
@@ -28,7 +28,7 @@ export class ProgrammeState {
     }
 
     @Selector()
-    static programmes(state: ProgrammeStateModel) {
+    static programme(state: ProgrammeStateModel) {
         console.log('heyyyy');
         return state.items;
     }
@@ -121,6 +121,14 @@ export class ProgrammeState {
             ctx.setState(patch({
                 items: append(programmes)
             }));
+        }));
+    }
+
+    @Action(GetCoachingByTitle)
+    getByTitle({ getState, setState, patchState }: StateContext<ProgrammeStateModel>, { title }: GetCoachingByTitle) {
+        return this.service.getProgramme(title).pipe(tap(response => {
+            const state = getState();
+            patchState({ ...state, item: response });
         }));
     }
 
