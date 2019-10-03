@@ -24,13 +24,13 @@ export class CardArticleComponent implements OnInit {
 
   constructor(private store: Store) { }
 
-  isFavorite = false
+  isFavorite = false;
 
   ngOnInit() {
   }
 
-  addWishArticle(article: ArticleBlog){
+  addWishArticle(article: ArticleBlog) {
     this.store.dispatch( new AddWishArticle({wishId: article._id}));
-    this.isFavorite = !this.isFavorite
+    this.isFavorite = !this.isFavorite;
   }
 }

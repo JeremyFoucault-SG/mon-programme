@@ -46,3 +46,7 @@ export class WishesService {
         return this.http.post<Wish>(`${this.api}/wishes/articles`, payload);
     }
 }
+
+
+
+

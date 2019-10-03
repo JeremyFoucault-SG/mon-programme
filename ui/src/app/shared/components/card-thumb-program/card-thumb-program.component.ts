@@ -101,11 +101,11 @@ export class CardThumbProgramComponent implements OnInit {
   private showContentOverlay = false;
 
   constructor(private elmt: ElementRef,
-    private router: Router,
-    public coachingsService: CoachingsService,
-    public authService: LoginService,
-    private wishService: WishesService,
-    private store: Store) { }
+              private router: Router,
+              public coachingsService: CoachingsService,
+              public authService: LoginService,
+              private wishService: WishesService,
+              private store: Store) { }
 
   ngOnInit() {
   }

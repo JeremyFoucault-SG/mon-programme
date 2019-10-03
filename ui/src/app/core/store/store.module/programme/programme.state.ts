@@ -5,7 +5,14 @@ import { Programmes as Programme } from 'src/app/shared/models/programmes.model'
 import { CoachingsService } from 'src/app/core/http/coachings.service';
 import {
     AddProgramme,
-    GetAllProgramme, GetByIdProgramme, UpdateProgramme, DeleteProgramme, SetSelectedProgramme, SearchProgramme, AddNextProgramme, GetCoachingByTitle
+    GetAllProgramme,
+    GetByIdProgramme,
+    UpdateProgramme,
+    DeleteProgramme,
+    SetSelectedProgramme,
+    SearchProgramme,
+    AddNextProgramme,
+    GetCoachingByTitle
 } from './programme.action';
 
 export class ProgrammeStateModel {
