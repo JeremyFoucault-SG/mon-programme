@@ -1,0 +1,161 @@
+<!-- Background navbar can be set to transparent or black -->
+<nav class="absolute flex items-center justify-between flex-wrap p-4 w-full z-20"
+  [ngClass]="{'bg-transparent' : isTransparent, 'bg-gray-900': isOpen || !isTransparent}">
+  <!-- [ngClass]="isTransparent || !isOpen  ? 'bg-transparent' : 'bg-gray-900'"> -->
+
+  <!-- Mon programme logo (only desktop) -->
+  <div class="hidden lg:flex items-center mr-6">
+    <img src="https://zupimages.net/up/19/31/f50q.png" alt="logo">
+  </div>
+
+  <!-- Buger menu (only on medium and smaller) -->
+  <div class="lg:hidden">
+    <i class="cursor-pointer text-white fa fa-2x" [ngClass]="isOpen ? 'fa-times' : 'fa-bars'" (click)="open()"></i>
+  </div>
+
+  <!-- Buger menu (only on medium and smaller) -->
+  <div class="lg:hidden">
+    <h3 class="text-white text-3xl font-semibold">{{title}}</h3>
+  </div>
+
+  <!-- Right block (only desktop) -->
+  <div class="flex items-center hidden lg:flex">
+
+    <!-- Show signin and signup button 
+    <div *ngIf="!isLogin" class="flex flex-row">
+      <app-login-modal></app-login-modal>
+      <button class="ml-4 bg-transparent text-white font-semibold py-2 px-4 border-4 border-white rounded-full">
+        Connexion
+      </button>
+    </div> -->
+
+    <!-- Show user information  -->
+    <div  class="flex items-center">
+      <div 
+      class="flex items-center"
+      *ngIf="user">
+      <i class="cursor-pointer fa fa-shopping-basket fa-lg text-white mr-4"></i>
+      <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, <strong>Pierre</strong></h3>
+      <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="cursor-pointer h-16 w-16 ml-2">
+    </div>
+      <i class="cursor-pointer text-white fa fa-2x ml-4 mr-2" [ngClass]="isOpen ? 'fa-times' : 'fa-bars'"
+        (click)="open()"></i>
+    </div>
+  </div>
+
+  <!-- Search button (only on medium and smaller) -->
+  <div class="lg:hidden">
+    <i class="cursor-pointer text-white fa fa-search fa-2x"></i>
+  </div>
+
+  <!-- divider -->
+  <div class="w-full pt-4 border-b border-gray-800" [ngClass]="{'hidden': !isOpen}"></div>
+
+  <!-- Navigation menu -->
+  <div class="w-full text-lg flex flex-col pt-5" [ngClass]="{'hidden': !isOpen}">
+    <ul>
+      <li>
+        <div class="flex flex-row">
+          <a
+            class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/login']"
+            (click)="open()">
+            Connexion
+          </a>
+
+          <a
+            class="ml-4 inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/inscription']"
+            (click)="open()">
+            Inscription
+          </a>
+        </div>
+      </li>
+
+      <!-- divider -->
+      <div class="w-full pt-5 border-b border-gray-800"></div>
+
+      <li class="py-2 pt-4">
+        <a class="text-white hover:text-yellow-400" 
+        [routerLink]="['/accueil']" 
+        routerLinkActive="active"
+          (click)="open()">
+          Accueil
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" 
+        [routerLink]="['/style-de-vie-et-nutrition']" 
+        routerLinkActive="active"
+          (click)="open()">
+          style de vie & nutrition
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" 
+        [routerLink]="['/sante']" 
+        routerLinkActive="active"
+          (click)="open()">
+          Santé
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" 
+        [routerLink]="['/pratique-sportive-mobile']"
+        routerLinkActive="active"
+          (click)="open()">
+          Pratique sportive
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/nos-programmes']" routerLinkActive="active"
+          (click)="open()">
+          Nos programmes
+        </a>
+      </li>
+
+      <!-- divider -->
+      <div class="w-full pt-4 border-b border-gray-800"></div>
+
+      <li class="py-2 pt-4">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte']" routerLinkActive="active"
+          (click)="open()">
+          Mon compte
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/infos']" routerLinkActive="active"
+          (click)="open()">
+          Mes infos
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/favoris']" routerLinkActive="active"
+          (click)="open()">
+          Mes favoris
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/suivis']" routerLinkActive="active"
+          (click)="open()">
+          Mon suivis
+        </a>
+      </li>
+      <li class="py-2">
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/panier']" routerLinkActive="active"
+          (click)="open()">
+          Mon Panier
+        </a>
+      </li>
+
+      <!-- divider -->
+      <div class="w-full pt-4 border-b border-gray-800"></div>
+
+      <li class="py-4">
+        <div>
+          <a class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" (click)="logout()">Deconnexion</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- Overlay when menu is open -->
+  <div class="fixed inset-0 -z-1 bg-gray-900" [ngClass]="{'hidden': !isOpen}"></div>
+</nav>

@@ -1,0 +1,35 @@
+
+.objectif-p{
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: 0.83px;
+  text-align: left;
+  color: #f2f2f2;
+}
+.objectif-h3{
+    font-size: 20px;
+    color: yellow;
+}
+.objectif-h1{
+    font-size: 36px;
+
+}
+.card-objectif{
+    height: 400px;
+}
+.text-objectif:hover{
+    transform: scale(1.2); 
+}
+.text-objectif{
+    transition: transform .2s;
+}
+img{
+    min-height: 400px;
+    max-height: 400px;
+    width: 100%;
+    
+}

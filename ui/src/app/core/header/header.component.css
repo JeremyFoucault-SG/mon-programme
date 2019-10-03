@@ -1,0 +1,7 @@
+.menu-overlay {
+  opacity: 0.95;
+}
+
+.active {
+  color: #F6E05E;
+}

@@ -1,0 +1,138 @@
+.first {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #1c1c1c;
+}
+
+.bloc-button {
+    display: flex;
+    width: 50%;
+    margin-top: 5%;
+    height: 7%;
+    margin-left: 40%;
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #cc6666;
+    ;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #cc6666;
+    ;
+    cursor: pointer;
+}
+
+.option {
+    font-family: Lato;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.47;
+    letter-spacing: 0.78px;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+.second {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.demo {
+    font-family: Lato;
+    font-size: 10px;
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: 3.7;
+    letter-spacing: 0.52px;
+    text-align: right;
+    color: #1c1c1c;
+}
+
+.seance {
+    font-family: Lato;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.47;
+    letter-spacing: 0.78px;
+    text-align: center;
+    color: #1c1c1c;
+}
+
+.search {
+    background-color: #cc6666;
+    width: 100%;
+    height: 140%;
+}
+
+.titre {
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.54;
+    letter-spacing: 1.25px;
+    text-align: center;
+    color: #f2f2f2;
+    margin-top: 10%;
+}
+
+.describe {
+    font-family: Lato;
+    font-size: 25px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+}
+
+.type {
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.7;
+    letter-spacing: 2.08px;
+    text-align: left;
+    color: #cc6666;
+}

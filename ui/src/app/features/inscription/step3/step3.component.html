@@ -1,0 +1,58 @@
+<form [formGroup]="formStep3" class="flex-col justify-center text-center">
+  <div class="flex  mb-3 justify-center">
+    <img
+      src="https://zupimages.net/up/19/34/tv1b.png"
+      alt="profil"
+      class="w-20 h-20 md:w-40 md:h-40 -mr-5"
+    />
+    <a class="text-green-400">
+      <i
+        class="fa fa-plus-circle md:fa-2x pt-16 md:pt-32"
+        aria-hidden="true"
+      ></i>
+    </a>
+  </div>
+
+  <div>
+    <input
+      class="w-full shadow bg-gray-100 rounded border border-gray-500 p-2 md:p-4 mt-1 md:mt-3 mb-1 md:mb-3"
+      placeholder="Pseudo"
+      type="text"
+      formControlName="username"
+    />
+  </div>
+  <div>
+    <select
+      class="w-full shadow bg-gray-100 text-gray-600 rounded border border-gray-500 p-2 md:p-4 mt-1 md:mt-3 mb-1 md:mb-3"
+      placeholder="Objectif"
+      formControlName="objectif"
+    >
+      <option>Prise de masse</option>
+      <option>Raffermissement</option>
+      <option>Sèche</option>
+      <option>Entretien</option>
+    </select>
+  </div>
+  <div class="flex justify-around ">
+    <input
+      class="w-full shadow bg-gray-100 rounded border border-gray-500 p-2 md:p-4 mt-1 md:mt-3 mb-1 md:mb-3 mr-5"
+      placeholder="Poids"
+      type="text"
+      formControlName="weight"
+    />
+    <input
+      class="w-full shadow bg-gray-100 rounded border border-gray-500 p-2 md:p-4 mt-1 md:mt-3 mb-1 md:mb-3 ml-5"
+      placeholder="Taille"
+      type="text"
+      formControlName="size"
+    />
+  </div>
+</form>
+
+<!-- ellispe positionement -->
+<div class="flex justify-center  pt-10 ">
+  <div class="h-3 w-3 opacity-50 rounded-full mx-2 bg-white"></div>
+  <div class="h-3 w-3 opacity-50 rounded-full mx-2 bg-white"></div>
+  <div class="h-3 w-3 opacity-50 rounded-full mx-2 bg-red-700"></div>
+  <div class="h-3 w-3 opacity-50 rounded-full mx-2 bg-white"></div>
+</div>

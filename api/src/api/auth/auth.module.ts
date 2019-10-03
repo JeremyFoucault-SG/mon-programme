@@ -6,7 +6,10 @@ import { JwtModule } from '@nestjs/jwt';
 import { UsersModule } from '../users/users.module';
 import { ConfigService } from '../../config/config.service';
 import { TypegooseModule } from 'nestjs-typegoose';
-import { AuthModel } from '../../../dist/api/auth/auth.model';
+import { AuthModel } from './auth.model';
+import { LocalStrategy } from './local.strategy';
+import { SettingsService } from '../settings/settings.service';
+import { SettingsModule } from '../settings/settings.module';
 
 @Module({
   imports: [
@@ -16,11 +19,14 @@ import { AuthModel } from '../../../dist/api/auth/auth.model';
     JwtModule.registerAsync({
       useFactory: async (configService: ConfigService) => ({
         secret: configService.get('JWT_SECRET'),
+        expiresIn: configService.get('JWT_EXPIRESIN'),
       }),
       inject: [ConfigService],
     }),
+    SettingsModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, LocalStrategy],
+  exports: [AuthService],
 })
 export class AuthModule {}

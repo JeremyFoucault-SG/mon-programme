@@ -1,0 +1,67 @@
+/* Background for "popup" */
+
+.bg-popup {
+  background-image: url("https://zupimages.net/up/19/31/elei.png");
+}
+
+.title {
+  letter-spacing: 15px;
+}
+
+.title-shadow {
+  opacity: 0.11;
+  font-family: Lato;
+  font-size: 100px;
+  font-style: normal;
+  font-stretch: normal;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.body {
+  width: 420px;
+  height: 420px;
+  /* background-image: url("https://zupimages.net/up/19/31/2n2z.png"); */
+  background-repeat: no-repeat;
+  background-position: 46.5% center;
+  background-size: 260% auto;
+}
+
+.line {
+  width: 0px;
+  height: 84px;
+  top: 18px;
+}
+
+.enter {
+  border: 1px solid rgba(255, 226, 100, 0.69);
+  box-shadow: 1px 1px 17px 4px rgba(255, 226, 100, 0.69);
+}
+
+.btn-size {
+  width: 171px;
+  height: 45px;
+}
+
+.btn {
+  background-image: linear-gradient(to right, #ffe264 0%, #ef6562 100%);
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.btn span {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background .5s ease;
+  width: 100%;
+}
+
+.btn:hover span {
+  background: transparent;
+}

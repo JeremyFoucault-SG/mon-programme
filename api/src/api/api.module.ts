@@ -11,6 +11,8 @@ import { WishesModule } from './wishes/wishes.module';
 import { SettingsModule } from './settings/settings.module';
 import { CategoriesModule } from './categories/categories.module';
 import { FollowedCoachingsModule } from './followed-coachings/followed-coachings.module';
+import { CoversModule } from './covers/covers.module';
+import { GoalsModule } from './goals/goals.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { FollowedCoachingsModule } from './followed-coachings/followed-coachings
     CoachingsModule,
     NewsletterModule,
     CartsModule,
+    CoversModule,
+    GoalsModule,
     BodiesModule,
     StatsModule,
     BookmarksModule,

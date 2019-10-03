@@ -1,33 +1,58 @@
-import { Controller, Post, Get, Put, Delete, HttpCode, HttpStatus, Body, Param } from '@nestjs/common';
+import { Controller, Post, Get, Put, Delete, HttpCode, HttpStatus, Body, Param, Query } from '@nestjs/common';
+import { ApiBearerAuth, ApiUseTags, ApiOperation, ApiResponse, ApiImplicitQuery, ApiImplicitHeader } from '@nestjs/swagger';
 import { CoachingModel } from './coaching.model';
 import { CoachingDTO } from './coaching.dto';
+import { CoachingsService } from './coachings.service';
+import { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } from 'constants';
+import { CoachingQuery } from './coachings.query';
 
 @Controller('coachings')
+@ApiUseTags('Coachings')
 export class CoachingsController {
 
+    constructor(private readonly coachingsService: CoachingsService) { }
+
+    @Get('search')
+    @ApiOperation({ title: 'Get all coachings by query' })
+    @ApiResponse({ status: 200, description: 'Return an array of coachings.' })
+    async search(@Query() query: CoachingQuery): Promise<CoachingModel[]> {
+        return this.coachingsService.search(query);
+    }
+
     @Post()
+    @ApiBearerAuth()
+    @ApiOperation({ title: 'Create new coaching' })
+    @ApiResponse({ status: 201, description: 'Return coaching.' })
+    @ApiResponse({ status: 404, description: 'Not Found.' })
+    @ApiResponse({ status: 403, description: 'Forbidden.' })
     async create(@Body() coaching: CoachingDTO): Promise<CoachingModel> {
-        return null;
+        return this.coachingsService.insert(coaching);
     }
 
     @Get(':id')
+    @ApiOperation({ title: 'Get coaching by ID' })
+    @ApiResponse({ status: 200, description: 'Return coaching.' })
+    @ApiResponse({ status: 404, description: 'Not Found.' })
     async readOne(@Param('id') idCoaching: string): Promise<CoachingModel> {
-        return null;
+        return this.coachingsService.findById(idCoaching);
     }
 
     @Get()
-    async readAll(): Promise<CoachingModel> {
-        return null;
+    @ApiOperation({ title: 'Get all coachings' })
+    @ApiResponse({ status: 200, description: 'Return an array of coachings.' })
+    async readAll(): Promise<CoachingModel[]> {
+        return this.coachingsService.findAll();
     }
 
     @Put(':id')
     async update(@Param('id') idCoaching: string, @Body() coaching: CoachingDTO): Promise<CoachingModel> {
-        return null;
+        return await this.coachingsService.update(idCoaching, coaching);
     }
 
     @Delete(':id')
     @HttpCode(HttpStatus.NO_CONTENT)
-    async delete(@Param('id') idCoaching: string): Promise<void> {
-        return null;
+    async delete(@Param('id') idCoaching: string): Promise<CoachingModel> {
+        return await this.coachingsService.delete(idCoaching);
     }
+
 }

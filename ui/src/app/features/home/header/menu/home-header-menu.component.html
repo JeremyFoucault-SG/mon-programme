@@ -1,0 +1,16 @@
+<div class="lists">
+    <ul>
+        <li class="opacity-75 leading-loose">
+            <div class="flex flex-row items-center">
+                <div class="pl-16 h-2 bg-red-400"></div>
+                <div class="ml-8 font-lato font-bold text-gray-400 text-4xl tracking-wider">NOS PROGRAMMES</div>
+            </div>
+        </li>
+        <li class="opacity-75 py-3" *ngFor="let program of programInfos">
+            <div class="flex flex-row items-center">
+                <div class="pl-16"></div>
+                <div class="ml-8 font-lato text-gray-400 font-bold tracking-wider"><a class="cursor-pointer hover:text-red-400" [routerLink]="['/', program.link]">{{program.title}}</a></div>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -11,14 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^4.1.1"
+    "concurrently": "^4.1.1",
+    "ngx-toastr": "^10.2.0"
   },
   "devDependencies": {
     "husky": "^3.0.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn --cwd ./api lint && yarn --cwd ./ui lint && node ./husky.hook.js"
+      "pre-commit": "node ./husky.hook.js",
+      "pre-push": "yarn --cwd ./api lint && yarn --cwd ./ui lint"
     }
   }
 }

@@ -1,0 +1,16 @@
+.box{
+    width: 100%;
+    position: absolute;
+    height: 8vh;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.14);
+}
+
+.line {
+    background-color: gray;
+    width: 20%;
+    height: 2px;
+}
+
+.home{
+    margin-top: -5%;
+}
