@@ -3,7 +3,7 @@ import { CategoriesService } from '../src/api/categories/categories.service';
 import { CategoryDTO } from '../src/api/categories/category.dto';
 
 export async function insertCategoryData(categoryService: CategoriesService) {
-  
+
   await categoryService.insert({title: 'seche'});
   await categoryService.insert({title: 'entretien'});
   await categoryService.insert({title: 'raffermissement'});
