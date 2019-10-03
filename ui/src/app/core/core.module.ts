@@ -16,6 +16,7 @@ export function tokenGetter() {
   imports: [
     JwtModule.forRoot({
       config: {
+        // tslint:disable-next-line: object-literal-shorthand
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:3000'],
       }
