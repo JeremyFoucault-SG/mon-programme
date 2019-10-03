@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  onChange(programDetail: ProgramDetail, index) {
+  onChange(programDetail: ProgramDetail) {
     this.selected = programDetail;
     console.log();
   }

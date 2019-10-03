@@ -82,7 +82,7 @@ export class CardThumbProgramComponent implements OnInit {
   /**
    * Open/hide content overlay
    */
-  private showContentOverlay = false;
+  showContentOverlay = false;
 
   constructor(private elmt: ElementRef) { }
 
