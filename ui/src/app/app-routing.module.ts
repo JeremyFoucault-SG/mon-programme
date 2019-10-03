@@ -19,6 +19,7 @@ import { ListingProgrammeComponent } from './features/listing-programme/listing-
 import { AuthGuard } from './core/guards/auth.guard';
 import { CardThumbProgramComponent } from './shared/components/card-thumb-program/card-thumb-program.component';
 import { ListProgrammeComponent } from './features/list-programme/list-programme.component';
+import { WishlistComponent } from './features/wishlist/wishlist.component';
 
 
 
@@ -93,13 +94,15 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
-  { path: 'coachings', component: ListProgrammeComponent},
+  { path: 'detail-programme/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent},
+  { path: 'coachings', canActivate: [AuthGuard], component: ListProgrammeComponent},
   { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },
   { path: 'articles/:title', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
+  { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent },
   { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent },
   { path: 'mon-compte/infos', canActivate: [AuthGuard], component: InfoComponent },
-  { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent },
+  { path: 'mon-compte/favoris', canActivate: [AuthGuard], component : WishlistComponent},
   { path: 'login', component: ConnexionComponent},
   { path: 'commande', canActivate: [AuthGuard], component: CommandeComponent },
   { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent },
@@ -109,7 +112,6 @@ const routes: Routes = [
   { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
   { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
   { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},
-  { path: 'detail-programme', canActivate: [AuthGuard], component: ListingProgrammeComponent},
 ];
 
 @NgModule({

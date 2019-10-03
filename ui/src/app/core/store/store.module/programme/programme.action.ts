@@ -49,3 +49,13 @@ export class AddNextProgramme {
     static readonly type = '[prog] Next programme';
     constructor(public payload: QueryCoaching) { }
 }
+
+
+// Recuperation programme by id
+export class GetCoachingByTitle {
+    static readonly type = '[prog] Get coaching by title';
+    constructor(public title: string) { }
+}
+
+
+

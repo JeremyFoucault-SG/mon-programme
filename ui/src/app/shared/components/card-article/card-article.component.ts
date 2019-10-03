@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ArticleBlog } from '../../../shared/models/articles-blog.model';
 import { Store, Select} from '@ngxs/store';
 import { FirstCharacterePipe } from '../../pipes/firstCharactere.pipe';
+import { VirtualTimeScheduler } from 'rxjs';
+import { AddWishCoaching, AddWishArticle } from 'src/app/core/store/store.module/wishe/wish.action';
 @Component({
   selector: 'app-card-article',
   templateUrl: './card-article.component.html',
@@ -22,7 +24,13 @@ export class CardArticleComponent implements OnInit {
 
   constructor(private store: Store) { }
 
+  isFavorite = false;
+
   ngOnInit() {
   }
 
+  addWishArticle(article: ArticleBlog) {
+    this.store.dispatch( new AddWishArticle({wishId: article._id}));
+    this.isFavorite = !this.isFavorite;
+  }
 }

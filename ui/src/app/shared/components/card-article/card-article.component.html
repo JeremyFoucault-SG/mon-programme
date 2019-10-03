@@ -57,10 +57,12 @@
       <div
         class="flex items-center mt-10 w-full justify-end pb-5"
         [ngClass]="isReverse ? 'lg:justify-end' : 'lg:justify-start'"
+        (click)="addWishArticle(article)"
       >
         <i
           class="cursor-pointer text-red-700 fa fa-heart-o fa-2x"
           aria-hidden="true"
+          [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"
         ></i>
         <p
           class="hidden lg:inline-block cursor-pointer ml-5 italic text-gray-600 tracking-wider"

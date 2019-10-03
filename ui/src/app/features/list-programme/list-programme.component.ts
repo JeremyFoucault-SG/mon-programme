@@ -25,7 +25,7 @@ export class ListProgrammeComponent implements OnInit {
   public newLimit = 0;
 
 
-  @Select(ProgrammeState.programmes)
+  @Select(ProgrammeState.programme)
   programmes: Observable<Programmes[]>;
 
   constructor(

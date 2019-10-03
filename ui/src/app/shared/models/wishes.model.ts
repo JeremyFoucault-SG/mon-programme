@@ -1,6 +1,6 @@
-export class Wishes {
+export class Wish {
     constructor(
         // tslint:disable-next-line: variable-name
-        public _id: string,
+        public wishId: string,
     ) { }
 }

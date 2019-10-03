@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   public auth: AuthenticationService;
 
 
-  @Select(ProgrammeState.programmes)
+  @Select(ProgrammeState.programme)
   programmes: Observable<Programmes[]>;
 
   @Select(ArticleState.articles )

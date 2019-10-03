@@ -1,0 +1,14 @@
+<div class="pt-48 flex flex-row justify-around">
+<button class="bg-red-400 rounded px-4 py-4 text-white hover:text-black font-lato" (click)="showArticles()">Mes articles favoris </button>
+<button class="bg-red-400 rounded  px-4 py-4 text-white hover:text-black font-lato" (click)="showCoachings()">Mes programmes favoris</button>
+</div>
+
+<ul class="flex flex-row px-2 xl:flex-col xl:p-10 xl:py-20 items-center w-full xl:w-auto xl:h-full" *ngFor="let wish of wish | async">
+    <li  class="cursor-pointer mt-5 flex-grow bg-orange-400 h-1 xl:h-1 w-1">
+    {{ wish.article.title}}
+    </li> 
+     <li  class="cursor-pointer mt-5 flex-grow bg-orange-400 h-1 xl:h-1 w-1">
+    {{ wish.coaching.title}}
+    </li>
+  </ul>
+  
