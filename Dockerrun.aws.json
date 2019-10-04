@@ -29,7 +29,7 @@
   "containerDefinitions": [
     {
       "name": "ui",
-      "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME_UI}:${IMAGE_TAG}",
+      "image": "746293219118.dkr.ecr.us-east-2.amazonaws.com/mon-programme-ui:latest",
       "essential": true,
       "memory": 128,
       "mountPoints": [
@@ -42,7 +42,7 @@
     },
     {
       "name": "api",
-      "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME_API}:${IMAGE_TAG}",
+      "image": "746293219118.dkr.ecr.us-east-2.amazonaws.com/mon-programme-api:latest",
       "essential": true,
       "memory": 256,
       "mountPoints": [
