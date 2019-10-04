@@ -21,6 +21,9 @@ export class CardThumbListComponent implements OnInit {
   @Input()
   items: any[];
 
+  @Input()
+  coaching: any[];
+
   /**
    * If true set title on the right for lg and xl display
    */

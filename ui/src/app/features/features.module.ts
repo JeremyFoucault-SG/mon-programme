@@ -40,6 +40,9 @@ import { ListingProgrammeComponent } from './listing-programme/listing-programme
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { ListProgrammeComponent } from './list-programme/list-programme.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { WishlistCoachingComponent } from './wishlist/wishlist-coaching/wishlist-coaching.component';
+import { WishlistArticleComponent } from './wishlist/wishlist-article/wishlist-article.component';
+
 
 
 @NgModule({
@@ -76,7 +79,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     Step3Component,
     Step4Component,
     ListProgrammeComponent,
-    WishlistComponent
+    WishlistComponent,
+    WishlistCoachingComponent,
+    WishlistArticleComponent,
   ],
   imports: [
     RouterModule,

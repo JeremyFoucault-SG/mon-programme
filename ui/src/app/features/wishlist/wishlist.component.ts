@@ -4,7 +4,7 @@ import { WishesService } from 'src/app/core/http/wishes.service';
 import { Wish } from 'src/app/shared/models/wishes.model';
 import { ProgrammesDTO } from 'src/app/shared/models/coaching.dto';
 import { Store, Select } from '@ngxs/store';
-import { GetAllWishesCoaching, GetAllWishesArticles } from 'src/app/core/store/store.module/wishe/wish.action';
+import { GetAllWishesCoaching, GetAllWishesArticles, DeleteWishArticle, DeleteWishCoaching } from 'src/app/core/store/store.module/wishe/wish.action';
 import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
 import { Observable } from 'rxjs';
 
@@ -15,20 +15,28 @@ import { Observable } from 'rxjs';
 })
 export class WishlistComponent implements OnInit {
 
-  constructor(private wishService: WishesService, private store: Store) { }
+  constructor( private store: Store) { }
 
-  @Select(WishState.wish)
-  wish: Observable<Wish[]>;
+  @Select(WishState.wishCoachings)
+  coachings: Observable<Wish[]>;
+
+
+  @Select(WishState.wishArticles)
+  articles: Observable<Wish[]>;
 
   ngOnInit() {
-  }
-
-  showCoachings() {
-    console.log(this.wish);
     this.store.dispatch(new GetAllWishesCoaching());
+    this.store.dispatch(new GetAllWishesArticles())
   }
 
-  showArticles() {
-  this.store.dispatch(new GetAllWishesArticles());
+  deleteWishCoaching(id: string){
+    this.store.dispatch(new DeleteWishCoaching(id));
   }
+
+  deleteWishArticle(id: string){
+    this.store.dispatch(new DeleteWishArticle(id));
+  }
+
+  
+
 }

@@ -85,9 +85,11 @@ export class CardThumbProgramComponent implements OnInit {
   @Input()
   hasWish: boolean;
 
-  @Input()
-  coaching: Programmes[];
+  // @Input()
+  // coaching: Programmes[];
 
+  @Input()
+  public coaching: Programmes;
 
   @Input()
   items: any[];
@@ -149,6 +151,7 @@ export class CardThumbProgramComponent implements OnInit {
   }
 
   addToWishList(coaching: Programmes) {
+    console.log(coaching)
     this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
     this.isFavorite = true;
   }

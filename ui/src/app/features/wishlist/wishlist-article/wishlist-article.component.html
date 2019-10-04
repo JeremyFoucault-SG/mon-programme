@@ -1,0 +1,9 @@
+<div *ngFor="let wishes of wishes | async">
+    <h1>Mes Articles Favoris</h1>
+    <span >{{wishes.article.title}}</span>
+</div>
+<div>
+    <h1>Mes programmes Favoris</h1>
+    <span >{{wishes.coaching.title}}</span>
+</div>
+
