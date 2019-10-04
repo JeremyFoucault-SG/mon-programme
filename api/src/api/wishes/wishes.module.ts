@@ -5,12 +5,16 @@ import { UsersModule } from '../users/users.module';
 import { WishModel } from './wish.model';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { CoachingsModule } from '../coachings/coachings.module';
+import { AuthModule } from '../auth/auth.module';
+import { ArticlesModule } from '../articles/articles.module';
 
 @Module({
   imports: [
     TypegooseModule.forFeature([WishModel]),
+    AuthModule,
     UsersModule,
     CoachingsModule,
+    ArticlesModule,
   ],
   controllers: [WishesController],
   providers: [WishesService],
