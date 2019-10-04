@@ -8,7 +8,7 @@ import { AuthDTO } from './auth.dto';
 import { JwtPayload } from './jwt-payload';
 import { UserModel } from '../users/user.model';
 import { InstanceType } from 'typegoose';
-import { ConfigService } from 'src/config/config.service';
+import { ConfigService } from '../../config/config.service';
 import { Authentication } from './authentication';
 import { SettingsModel } from '../settings/settings.model';
 import { SettingsService } from '../settings/settings.service';
