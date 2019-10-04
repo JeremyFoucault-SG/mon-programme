@@ -30,7 +30,7 @@ export class CardArticleComponent implements OnInit {
   }
 
   addWishArticle(article: ArticleBlog) {
-    console.log(article)
+    console.log(article);
     this.store.dispatch( new AddWishArticle({wishId: article._id}));
     this.isFavorite = !this.isFavorite;
   }

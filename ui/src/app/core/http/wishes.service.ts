@@ -46,10 +46,12 @@ export class WishesService {
         return this.http.post<Wish>(`${this.api}/wishes/articles`, payload);
     }
 
+    // tslint:disable-next-line: variable-name
     public deleteWishArticle(_id: string) {
         return this.http.delete(`${this.api}/wishes/articles/${_id}`);
     }
 
+    // tslint:disable-next-line: variable-name
     public deleteWishCoaching(_id: string) {
         return this.http.delete(`${this.api}/wishes/coachings/${_id}`);
     }

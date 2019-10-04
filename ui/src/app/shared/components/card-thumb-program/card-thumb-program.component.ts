@@ -151,7 +151,7 @@ export class CardThumbProgramComponent implements OnInit {
   }
 
   addToWishList(coaching: Programmes) {
-    console.log(coaching)
+    console.log(coaching);
     this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
     this.isFavorite = true;
   }
