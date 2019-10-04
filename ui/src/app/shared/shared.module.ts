@@ -37,6 +37,7 @@ import { GroupTitleComponent } from './components/group-title/group-title.compon
 import { AdminModule } from '../admin/admin.module';
 import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
 
+
 @NgModule({
   declarations: [
     FormCustomizeProgrammeComponent,

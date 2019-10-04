@@ -4,7 +4,7 @@ import { Wish } from '../../../../shared/models/wishes.model';
 
 // Création d'un wish //
 export class AddWishCoaching {
-    static readonly type = '[Wish] Add wish';
+    static readonly type = '[Wish] Add wishCoaching';
     constructor(public payload: Wish) { }
 }
 
@@ -24,9 +24,15 @@ export class GetAllWishesArticles {
     constructor() { }
 }
 
-// Supression d'un wish //
-export class DeleteWish {
-    static readonly type = '[Wish] Delete wish';
+// Delete wishArticle
+export class DeleteWishArticle {
+    static readonly type = '[Blog] Delete wishArticle by id';
+    constructor(public id: string) { }
+}
+
+// Delete wishCoaching
+export class DeleteWishCoaching {
+    static readonly type = '[Blog] Delete wishCoaching by id';
     constructor(public id: string) { }
 }
 

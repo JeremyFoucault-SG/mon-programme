@@ -94,8 +94,8 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
-  { path: 'detail-programme/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent},
-  { path: 'coachings', canActivate: [AuthGuard], component: ListProgrammeComponent},
+  { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent},
+  { path: 'nos-programmes', canActivate: [AuthGuard], component: ListProgrammeComponent},
   { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },
   { path: 'articles/:title', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
