@@ -20,35 +20,35 @@ export class AuthService {
         @InjectModel(AuthModel) private readonly authModel: ModelType<AuthModel>,
         private readonly jwtService: JwtService,
         private readonly configService: ConfigService,
-        ) { }
+    ) { }
 
     async createToken(auth: AuthDTO): Promise<any> {
         const id = (auth.username as any) as string;
-
-        const payload: JwtPayload = { username: auth.username, password: auth.password };
-        const accessToken = this.jwtService.sign(payload, { expiresIn: this.configService.get('JWT_EXPIRESIN'), subject: auth.username});
-        return {token: accessToken};
+        const user = await this.authModel.findOne({ username: auth.username });
+        const payload: JwtPayload = { username: auth.username, userId: user.user as unknown as string };
+        const accessToken = this.jwtService.sign(payload, { expiresIn: +this.configService.get('JWT_EXPIRESIN'), subject: auth.username });
+        return { token: accessToken };
     }
 
     async createAuth(register: RegisterDTO): Promise<Authentication> {
         const user = await this.authModel.findOne({ username: register.username });
         if (user) {
-          throw new UnauthorizedException();
+            throw new UnauthorizedException();
         }
         const model: Authentication = new this.authModel(register);
         return await model.save();
-      }
+    }
 
     async updateAuth(auth: AuthDTO, user: InstanceType<UserModel>): Promise<AuthModel> {
-        const authFinded = await this.authModel.findOne({username: auth.username}).exec();
+        const authFinded = await this.authModel.findOne({ username: auth.username }).exec();
         if (!authFinded) {
             throw new UnauthorizedException();
         }
-        return await authFinded.updateOne({user: user.id}).exec();
+        return await authFinded.updateOne({ user: user.id }).exec();
     }
 
     async verifyAuth(username: string, password: string): Promise<AuthModel> {
-        const userFinded = await this.authModel.findOne({username, password}).exec();
+        const userFinded = await this.authModel.findOne({ username, password }).exec();
         if (!userFinded || userFinded.password !== password) {
             throw new UnauthorizedException();
         }
@@ -57,5 +57,5 @@ export class AuthService {
 
     async findAll(): Promise<AuthModel[]> {
         return this.authModel.find({}).exec();
-      }
+    }
 }

@@ -72,7 +72,7 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     const wishes: WishDTO[] = [];
     for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
       const wish: WishDTO = {
-        coaching: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+        wishId: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
       };
       wishes.push(wish);
     }

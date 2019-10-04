@@ -6,6 +6,9 @@ export class ArticleModel extends Typegoose {
     createdAt: Date;
 
     @prop()
+    id: string;
+
+    @prop()
     updatedAt: Date;
 
     @prop()
