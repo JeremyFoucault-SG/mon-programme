@@ -82,20 +82,15 @@ export class WishesService {
     return user.wishes.filter(w => w.coaching);
   }
 
-  async deleteWishArticle(id: string): Promise<WishModel> {
-    const wishArticle = await this.wishModel.findByIdAndRemove(id);
-    if (!wishArticle) {
+  async deleteWish(idUser: string, id: string): Promise<WishModel> {
+    const user = await this.usersService.findById(idUser);
+    const wish = await user.wishes.id(id);
+    if (!wish) {
       throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
     }
-    return wishArticle;
-  }
-
-  async deleteWishCoaching(id: string): Promise<WishModel> {
-    const coaching = await this.wishModel.findByIdAndRemove(id);
-    if (!coaching) {
-      throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
-    }
-    return coaching;
+    await wish.remove();
+    await user.save();
+    return wish;
   }
 
 }

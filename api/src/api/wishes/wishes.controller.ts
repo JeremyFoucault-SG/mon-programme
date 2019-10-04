@@ -49,16 +49,10 @@ export class WishesController {
         return null;
     }
 
-    @Delete('/articles/:id')
+    @Delete(':id')
+    @UseGuards(AuthGuard('jwt'))
     @HttpCode(HttpStatus.NO_CONTENT)
-    async deleteWishArticle(@Param('id') idArticle: string): Promise<WishModel> {
-        return await this.wishService.deleteWishArticle(idArticle);
+    async deleteWish(@User() user: UserJWTPayload, @Param('id') idArticle: string): Promise<WishModel> {
+        return await this.wishService.deleteWish(user.userId, idArticle);
     }
-
-    @Delete('/coachings/:id')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    async deleteWishCoaching(@Param('id') idCoaching: string): Promise<WishModel> {
-        return await this.wishService.deleteWishArticle(idCoaching);
-    }
-
 }
