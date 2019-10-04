@@ -22,19 +22,6 @@
       "memory": 128
     },
     {
-      "name": "api",
-      "image": "746293219118.dkr.ecr.us-east-2.amazonaws.com/mon-programme-api:latest",
-      "essential": true,
-      "memory": 256,
-      "mountPoints": [
-        {
-          "sourceVolume": "api",
-          "containerPath": "/workdir",
-          "readOnly": true
-        }
-      ]
-    },
-    {
       "name": "nginx-proxy",
       "image": "nginx",
       "essential": true,
