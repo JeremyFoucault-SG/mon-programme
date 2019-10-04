@@ -1,6 +1,6 @@
 import { State, Action, StateContext, Selector, Store } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
-import { patch, updateItem, append } from '@ngxs/store/operators';
+import { patch, updateItem, append, removeItem } from '@ngxs/store/operators';
 import { Wish as Wish } from 'src/app/shared/models/wishes.model';
 import { WishesService } from 'src/app/core/http/wishes.service';
 import {
@@ -83,26 +83,24 @@ export class WishState {
 
     @Action(DeleteWishArticle)
     deleteWishArticle({ getState, setState }: StateContext<WishStateModel>, { id }: DeleteWishArticle) {
-        return this.service.deleteWishArticle(id).pipe(tap(() => {
-            const state = getState();
-            const filteredArray = state.articles.filter(item => item.article._id !== id);
-            setState({
-                ...state,
-                articles: filteredArray,
-            });
+        return this.service.deleteWish(id).pipe(tap(() => {
+            setState(
+                patch({
+                    articles: removeItem<Wish>(w => w._id === id)
+                })
+            );
         }));
     }
 
 
     @Action(DeleteWishCoaching)
     deleteWishCoaching({ getState, setState }: StateContext<WishStateModel>, { id }: DeleteWishCoaching) {
-        return this.service.deleteWishCoaching(id).pipe(tap(() => {
-            const state = getState();
-            const filteredArray = state.coachings.filter(item => item.coaching._id !== id);
-            setState({
-                ...state,
-                coachings: filteredArray,
-            });
+        return this.service.deleteWish(id).pipe(tap(() => {
+            setState(
+                patch({
+                    coachings: removeItem<Wish>(w => w._id === id)
+                })
+            );
         }));
     }
 

@@ -1,10 +1,10 @@
 <div class="pt-48 flex flex-row justify-around">
 <div>
     <h1 class="mb-8 underline">Mes programmes Favoris:</h1>
-    <li *ngFor="let wish of coachings | async" class="italic">{{wish.coaching.title}} | <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer" aria-hidden="true" (click)="deleteWishCoaching(wish.coaching._id)"></i><br></li>
+    <li *ngFor="let wish of coachings | async" class="italic">{{wish.coaching.title}} | <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer" aria-hidden="true" (click)="deleteWishCoaching(wish._id)"></i><br></li>
 </div>
 <div>
     <h1 class ="mb-8 underline" >Mes Articles Favoris:</h1>
-    <li *ngFor="let wish of articles | async"class="italic" >{{wish.article.title}} | <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer" aria-hidden="true" (click)="deleteWishArticle(wish.article._id)"></i><br></li>
+    <li *ngFor="let wish of articles | async"class="italic" >{{wish.article.title}} | <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer" aria-hidden="true" (click)="deleteWishArticle(wish._id)"></i><br></li>
 </div>
 </div>
