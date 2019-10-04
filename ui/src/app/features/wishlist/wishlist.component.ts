@@ -31,7 +31,7 @@ export class WishlistComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new GetAllWishesCoaching());
-    this.store.dispatch(new GetAllWishesArticles())
+    this.store.dispatch(new GetAllWishesArticles());
   }
 
   deleteWishCoaching(id: string) {
