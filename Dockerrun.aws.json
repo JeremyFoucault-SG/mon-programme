@@ -2,18 +2,6 @@
   "AWSEBDockerrunVersion": 2,
   "volumes": [
     {
-      "name": "ui",
-      "host": {
-        "sourcePath": "/var/app/current/ui"
-      }
-    },
-    {
-      "name": "api",
-      "host": {
-        "sourcePath": "/var/app/current/api"
-      }
-    },
-    {
       "name": "nginx-proxy-static",
       "host": {
         "sourcePath": "/var/app/current/proxy/html"
@@ -28,32 +16,6 @@
   ],
   "containerDefinitions": [
     {
-      "name": "ui",
-      "image": "746293219118.dkr.ecr.us-east-2.amazonaws.com/mon-programme-ui:latest",
-      "essential": true,
-      "memory": 128,
-      "mountPoints": [
-        {
-          "sourceVolume": "ui",
-          "containerPath": "/usr/share/nginx/html",
-          "readOnly": true
-        }
-      ]
-    },
-    {
-      "name": "api",
-      "image": "746293219118.dkr.ecr.us-east-2.amazonaws.com/mon-programme-api:latest",
-      "essential": true,
-      "memory": 256,
-      "mountPoints": [
-        {
-          "sourceVolume": "api",
-          "containerPath": "/workdir",
-          "readOnly": true
-        }
-      ]
-    },
-    {
       "name": "nginx-proxy",
       "image": "nginx",
       "essential": true,
@@ -63,10 +25,6 @@
           "hostPort": 80,
           "containerPort": 80
         }
-      ],
-      "links": [
-        "ui",
-        "api"
       ],
       "mountPoints": [
         {

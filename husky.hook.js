@@ -15,7 +15,7 @@ exec('git rev-parse --abbrev-ref HEAD', (error, stdout, stderr) => {
     }
 });
 
-exec('git diff --cached --name-only', (error, stdout, stderr) => {
+/* exec('git diff --cached --name-only', (error, stdout, stderr) => {
   if (error) {
       console.error(`exec error: ${error}`);
       process.exit(1)
@@ -27,3 +27,4 @@ exec('git diff --cached --name-only', (error, stdout, stderr) => {
       return;
   }
 });
+ */
