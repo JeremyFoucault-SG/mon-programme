@@ -34,7 +34,9 @@
       <div 
       class="flex items-center"
       *ngIf="user">
-      <i class="cursor-pointer fa fa-shopping-basket fa-lg text-white mr-4"></i>
+      <a [routerLink]="['/commande']" >
+        <i class="cursor-pointer fa fa-shopping-basket fa-lg text-white mr-4"></i>
+      </a>
       <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, <strong>Pierre</strong></h3>
       <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="cursor-pointer h-16 w-16 ml-2">
     </div>

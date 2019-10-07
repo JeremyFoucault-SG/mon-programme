@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Wishes } from 'src/app/shared/models/wishes.model';
+import { Wish } from 'src/app/shared/models/wishes.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Programmes } from 'src/app/shared/models/programmes.model';
+import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
+import { ProgrammesDTO } from 'src/app/shared/models/coaching.dto';
+import { User } from 'src/app/shared/models/user.model';
 
 
 
@@ -12,27 +16,42 @@ import { map } from 'rxjs/operators';
 })
 export class WishesService {
 
+
     constructor(private http: HttpClient) { }
 
     public api = `${environment.apiUrl}`;
 
     // Recuperation de tous les wishes//
-    public getAllWishes(): Observable<Wishes[]> {
-        return this.http.get(`${this.api}/wishes`).pipe(
+    public getAllWishesArticles(): Observable<Wish[]> {
+        return this.http.get(`${this.api}/wishes/articles`).pipe(
             map((allWishes: any) => {
-                return allWishes as Wishes[];
+                return allWishes as Wish[];
+            }),
+        );
+    }
+    public getAllWishesCoachings(): Observable<Wish[]> {
+        return this.http.get(`${this.api}/wishes/coachings`).pipe(
+            map((allWishes: any) => {
+                return allWishes as Wish[];
             }),
         );
     }
 
     // Ajout d'un wish //
-    public addWish(payload: Wishes) {
-        return this.http.post<Wishes>(`${this.api}/wishes`, payload);
+    public addWishCoaching(payload: Wish): Observable<Wish> {
+        return this.http.post<Wish>(`${this.api}/wishes/coachings`, payload);
     }
 
-    // Supression d'un wish //
+    public addWishArticle(payload: Wish): Observable<Wish> {
+        return this.http.post<Wish>(`${this.api}/wishes/articles`, payload);
+    }
+
     // tslint:disable-next-line: variable-name
     public deleteWish(_id: string) {
         return this.http.delete(`${this.api}/wishes/${_id}`);
     }
 }
+
+
+
+

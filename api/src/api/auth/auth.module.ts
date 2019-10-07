@@ -10,23 +10,25 @@ import { AuthModel } from './auth.model';
 import { LocalStrategy } from './local.strategy';
 import { SettingsService } from '../settings/settings.service';
 import { SettingsModule } from '../settings/settings.module';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [
     UsersModule,
     TypegooseModule.forFeature([AuthModel]),
-    PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.registerAsync({
       useFactory: async (configService: ConfigService) => ({
         secret: configService.get('JWT_SECRET'),
-        expiresIn: configService.get('JWT_EXPIRESIN'),
+        signOptions: { expiresIn: +configService.get('JWT_EXPIRESIN') },
       }),
       inject: [ConfigService],
     }),
+    PassportModule.register({ defaultStrategy: 'jwt'  }),
+
     SettingsModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService, LocalStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}

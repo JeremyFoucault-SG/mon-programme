@@ -40,6 +40,11 @@ import { ListingProgrammeComponent } from './listing-programme/listing-programme
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { TitleArticleComponent } from './article-blog/title-article/title-article.component';
 import { PartageComponent } from './article-blog/partage/partage.component';
+import { ListProgrammeComponent } from './list-programme/list-programme.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { WishlistCoachingComponent } from './wishlist/wishlist-coaching/wishlist-coaching.component';
+import { WishlistArticleComponent } from './wishlist/wishlist-article/wishlist-article.component';
+import { BasketComponent } from './basket/basket.component';
 
 
 
@@ -78,7 +83,12 @@ import { PartageComponent } from './article-blog/partage/partage.component';
     Step4Component,
     ListingProgrammeComponent,
     TitleArticleComponent,
-    PartageComponent
+    PartageComponent,
+    ListProgrammeComponent,
+    WishlistComponent,
+    WishlistCoachingComponent,
+    WishlistArticleComponent,
+    BasketComponent
   ],
   imports: [
     RouterModule,

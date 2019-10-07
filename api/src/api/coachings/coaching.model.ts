@@ -21,6 +21,15 @@ export class CoachingModel extends Typegoose {
     @prop()
     content: string;
 
+    @prop()
+    imageUrl: string;
+
+    @prop()
+    level: string;
+
+    @prop()
+    price: number;
+
     @arrayProp({ items: CategoryModel, _id: false })
     categories: SubDocumentArray<CategoryModel>;
 }

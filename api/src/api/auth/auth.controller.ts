@@ -49,7 +49,9 @@ export class AuthController {
     @ApiResponse({ status: 200, description: 'Return setting.' })
     @ApiResponse({ status: 404, description: 'Not Found.' })
     @ApiResponse({ status: 403, description: 'Forbidden.' })
+    @UseGuards(AuthGuard('jwt'))
     async readAll(): Promise<AuthModel[]> {
         return this.authService.findAll();
     }
+
 }

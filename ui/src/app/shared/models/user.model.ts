@@ -15,5 +15,6 @@ export class User {
         public cp?: string,
         public rib?: string,
         public iban?: string,
+        public id?: string,
     ) { }
 }

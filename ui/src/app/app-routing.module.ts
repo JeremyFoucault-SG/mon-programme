@@ -17,6 +17,10 @@ import { ConnexionComponent } from './features/connexion/connexion.component';
 import { InscriptionComponent } from './features/inscription/inscription.component';
 import { ListingProgrammeComponent } from './features/listing-programme/listing-programme.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { CardThumbProgramComponent } from './shared/components/card-thumb-program/card-thumb-program.component';
+import { ListProgrammeComponent } from './features/list-programme/list-programme.component';
+import { WishlistComponent } from './features/wishlist/wishlist.component';
+import { BasketComponent } from './features/basket/basket.component';
 
 
 
@@ -91,12 +95,16 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
+  { path: 'mon-panier', canActivate: [AuthGuard], component: BasketComponent},
+  { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent},
+  { path: 'nos-programmes', canActivate: [AuthGuard], component: ListProgrammeComponent},
   { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },
   { path: 'articles/:urlTitle', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
+  { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent },
   { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent },
   { path: 'mon-compte/infos', canActivate: [AuthGuard], component: InfoComponent },
-  { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent },
+  { path: 'mon-compte/favoris', canActivate: [AuthGuard], component : WishlistComponent},
   { path: 'login', component: ConnexionComponent},
   { path: 'commande', canActivate: [AuthGuard], component: CommandeComponent },
   { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent },
@@ -106,9 +114,6 @@ const routes: Routes = [
   { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
   { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
   { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},
-  { path: 'detail-programme', canActivate: [AuthGuard], component: ListingProgrammeComponent},
-
-
 ];
 
 @NgModule({

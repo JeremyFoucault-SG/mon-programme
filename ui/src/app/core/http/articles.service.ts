@@ -26,7 +26,6 @@ export class ArticlesService {
 
     }
 
-
     // Recuperation article de blog par l'id//
     public getArticle(id: string): Observable<ArticleBlog> {
         return this.http.get(`${this.api}/articles/${id}`).pipe(
@@ -35,7 +34,6 @@ export class ArticlesService {
             }),
         );
     }
-
 
     // Recuperation de tous les articles de blog//
     public getAllArticles(): Observable<ArticleBlog[]> {
@@ -46,7 +44,6 @@ export class ArticlesService {
         );
     }
 
-
     // Suprimer un article par son id/
     public deleteArticle(id: string): Observable<ArticleBlog> {
         return this.http.delete(`${this.api}/articles/${id}`).pipe(
@@ -56,12 +53,10 @@ export class ArticlesService {
         );
     }
 
-
     // creation d'un article de blog//
     public  createArticle(article: ArticleBlog): Observable<ArticleBlog> {
         return this.http.post<ArticleBlog>(`${this.api}/articles`, article);
     }
-
 
     // mise a jour d'un article de blog par l'id//
     // tslint:disable-next-line: variable-name

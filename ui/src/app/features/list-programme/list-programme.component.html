@@ -1,0 +1,54 @@
+<!-- Programs list -->
+<div class="pt-30 md:pt-32 px-5 md:px-10">
+  <div class="flex flex-row justify-between mb-8 mt-8">
+    <h1 class="text-black font-bold text-3xl ">Tous nos programmes</h1>
+    <a class="cursor-pointer" [routerLink]="['/accueil']"><h1 class="text-black text-1xl"><i class="fa fa-undo mr-4" aria-hidden="true"></i>PAGE D'ACCUEIL</h1></a>
+  </div>
+
+
+    <div class="justify-around relative w-40 mb-4">
+        <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" (change)="navigateTo($event.target.value)">
+          <option selected value="query1">Populaire</option>
+          <option value="query2">classique</option>
+          <option  value="query3">peu populaire</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
+    <div class="flex flex-row flex-wrap justify-center mb-12">
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Tout</button></a>
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'prise-de-masse'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Prise de masse</button></a>
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'entretien'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Entretien</button></a>
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'seche'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Sèche</button></a>
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'raffermissement'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Raffermissement</button></a>
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'stretching'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Stretching</button></a>
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'recuperation'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Récupération</button></a>
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'preparation-competition'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Préparation compétition</button></a>
+        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'tuto-exercice'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          Tuto par exercices</button></a>
+    </div>
+
+</div>
+<div class="flex flex-row flex-wrap">
+    <app-card-thumb-program *ngFor="let item of programmes| async" class="mx-4" [imageUrl]="item.imageUrl"
+        [title]="item.title" [coaching]="item" [hasBgOverlay]="true" [inlineStars]="item.rating" [level]="item.level" [hasMenu]="true" [content]="item.content">
+    </app-card-thumb-program>
+</div>
+
+<div class="flex flex-row justify-center mt-4 mb-8">
+<a (click)="this.showMoreCoachings()">
+    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex flex-row justify-center">
+        Charger plus<i class="fa fa-arrow-right ml-4" aria-hidden="true"></i>
+      </button>
+</a>
+</div>
+

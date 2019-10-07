@@ -18,7 +18,6 @@ export async function insertUserData(articlesService: ArticlesService, coachings
   // Get inserted data for populate user
   const coachings = await coachingsService.findAll();
   const articles = await articlesService.findAll();
-
   for (let k = 0; k < 1; k++) {
 
     // BODY
@@ -46,18 +45,25 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     }
 
     // CARTS
+    // const carts: CartDTO[] = [];
+    // for (let i = 0; i <= faker.random.number({ min: 0, max: 5 }); i++) {
+
+    //   const cartCoachings = [];
+
+    //   for (let j = 0; j <= faker.random.number({ min: 0, max: 10 }); j++) {
+    //     cartCoachings.push(coachings[j]);
+    //   }
+
+    //   carts.push({
+    //     coachings: cartCoachings,
+    //   });
+    // }
     const carts: CartDTO[] = [];
-    for (let i = 0; i <= faker.random.number({ min: 0, max: 5 }); i++) {
-
-      const cartCoachings = [];
-
-      for (let j = 0; j <= faker.random.number({ min: 0, max: 10 }); j++) {
-        cartCoachings.push(coachings[j]);
-      }
-
-      carts.push({
-        coachings: cartCoachings,
-      });
+    for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
+      const cart: CartDTO = {
+        cartId: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+      };
+      carts.push(cart);
     }
 
     // BOOKMARKS
@@ -73,7 +79,7 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     const wishes: WishDTO[] = [];
     for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
       const wish: WishDTO = {
-        coaching: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+        wishId: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
       };
       wishes.push(wish);
     }

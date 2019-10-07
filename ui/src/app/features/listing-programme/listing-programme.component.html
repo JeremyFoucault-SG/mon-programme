@@ -1,15 +1,14 @@
-<div class="flex lg:flex-row sm:flex-col pt-64 bg-white lg:bg-black">
-    <div class="flex lg:flex-row sm:flex-col pl-0 lg:pl-40 mr-0 lg:mr-20">
-        <img src="https://zupimages.net/up/19/32/07qh.jpeg" class="h-auto w-full z-0 shadow-xl">
+<div class="flex lg:flex-row sm:flex-col pt-64 bg-white lg:bg-black" *ngIf="programme | async">
+    <div class="flex flex-row md:flex-col sm:flex-col pl-0 lg:pl-40 mr-0 lg:mr-20 w-full">
+        <img src ="{{(programme | async).imageUrl}}" class="h-auto w-full z-0 shadow-xl border border-gray-300 rounded mb-10">
     </div>
     <div class="p-16 lg:pr-48">
-        <h1 class="mb-4 text-bold font-lato text-3xl text-black lg:text-white">PROGRAMME 1</h1>
-        <p class="mb-4 text-left text-base font-lato text-black lg:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation.</p>
+        <h1 class="mb-4 text-bold font-lato text-3xl text-black lg:text-white" >{{title}}</h1>
+        <p class="mb-4 text-left text-base font-lato text-white lg:text-white italic" >"{{ (programme | async).content}}"</p>
         <div class="flex flex-row justify-center pt-5 pb-5">
-            <span class="mr-4 text-bold font-lato text-3xl text-black lg:text-white">19€</span>
-            <button
+            <span class="mr-4 text-bold font-lato text-3xl text-black lg:text-white">{{ (programme | async).price }} €</span>
+            <button *ngIf=" (programme|async) as programme"
+            (click)="addBasket(programme)"
                 class="bg-red-500 hover:bg-red-600 text-black lg:text-white font-bold py-2 px-4  inline-flex items-center ml-4 text-xs rounded-sm">
                 <i class="fa fa-shopping-basket mr-2 text-black lg:text-white text-xs" aria-hidden="true"></i>AJOUTER AU PANIER
             </button>
@@ -17,7 +16,7 @@
     </div>
 </div>
 <div class="flex flex-row justify-end">
-    <div class="hidden lg:flex lg:flex-row sm:flex-col bg-red-500 w-2/3 h-24 -mt-16 justify-around">
+    <div class="hidden lg:flex lg:flex-row sm:flex-col bg-red-500 w-2/3 h-24 -mt-16 justify-around"> 
         <a class="cursor-pointer mt-2 ml-2">
                 <i class="fa fa-heart-o text-white mr-2 hover:text-black" aria-hidden="true"></i><span
                     class="text-white text-xs italic hover:text-black">Sauvegarder l'article</span></a>
@@ -27,18 +26,17 @@
     </div>
 </div>
 <div class="justify-start -mt-20 ">
-        <p class="text-left m-16 text-xl font-bold"><i class="fa fa-undo mr-4" aria-hidden="true"></i>
-            RETOUR</p>
+        <a [routerLink]="['/coachings']"><p class="text-left m-16 text-xl font-bold"><i class="fa fa-undo mr-4" aria-hidden="true"></i>
+            RETOUR</p></a>
     </div>
-<div class="mb-24">
+    <div class="pt-24 md:pt-32 px-5 md:px-10">
         <app-group-title>
-            <app-title class="group-title">NOS MEILLEURS PROGRAMME</app-title>
-            <app-sub-title class="group-subtitle">PROGRAMME</app-sub-title>
-            <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
-                <a [routerLink]="['/routePath']">
-                    Voir tout
-                </a>
-            </div>
+          <app-title class="group-title text-right">PROGRAMMES SIMILAIRES</app-title>
+          <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
+            <a [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active">
+              Voir tout
+            </a>
+          </div>
         </app-group-title>
         <app-card-thumb-list>
                 <app-card-thumb-program *ngFor="let item of programs" class="mr-5" [imageUrl]="item.imageUrl" [title]="item.title"

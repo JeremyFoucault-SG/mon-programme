@@ -7,6 +7,10 @@ export class ArticleDTO {
 
   @Allow()
   @ApiModelProperty()
+  public readonly id?: string;
+
+  @Allow()
+  @ApiModelProperty()
   public readonly title: string;
 
   @Allow()
