@@ -1,6 +1,6 @@
   <!-- Card list body -->
   <div #scrollList class="scroll-list overflow-x-auto lgf:overflow-x-hidden flex flex-row flex-no-wrap">
-    <app-card-thumb-program *ngFor="let item of items" class="mr-5" [imageUrl]="item.imageUrl" [title]="item.title"
+    <app-card-thumb-program *ngFor="let item of items" class="mr-5" [imageUrl]="item.imageUrl" [title]="item.urlTitle"
       [content]="item.content" [hasBgOverlay]="true" [inlineStars]="9" [level]="item.level" [coaching]="coaching">
     </app-card-thumb-program>
   </div>

@@ -78,7 +78,7 @@ import { SumPipe } from './pipes/sum.pipe';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    AdminModule
+    AdminModule,
   ],
   exports: [
     FormCustomizeProgrammeComponent,
@@ -106,7 +106,8 @@ import { SumPipe } from './pipes/sum.pipe';
     TagComponent,
     FooterSmComponent,
     GroupTitleComponent,
-    FirstCharacterePipe
+    FirstCharacterePipe,
+    SumPipe
   ]
 })
 export class SharedModule { }

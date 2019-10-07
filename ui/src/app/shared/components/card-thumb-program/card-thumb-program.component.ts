@@ -85,6 +85,9 @@ export class CardThumbProgramComponent implements OnInit {
   @Input()
   hasWish: boolean;
 
+  @Input()
+  urlTitle: string;
+
   // @Input()
   // coaching: Programmes[];
 
@@ -113,7 +116,7 @@ export class CardThumbProgramComponent implements OnInit {
   }
 
   show() {
-    this.router.navigate(['/nos-programmes', this.title]);
+    this.router.navigate(['/nos-programmes', this.urlTitle]);
   }
 
   /**
