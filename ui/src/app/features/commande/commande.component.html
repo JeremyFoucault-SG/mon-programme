@@ -133,25 +133,21 @@
           <div *ngFor="let cart of carts | async" class="flex flex-col">
             <div class="flex mt-8 border-top border-black"> <img src="{{cart.coaching.imageUrl}}" alt="profil" class="h-16 w-16 ml-2 mr-16 mb-10 rounded-full">
               <div>
-              <p class="text-black">{{cart.coaching.title}}</p>
-              <p > {{cart.coaching.price}}€</p>
-              <p>total : € </p>
+              <p class="text-black italic">{{cart.coaching.title}}</p>
+              <p > {{cart.coaching.price}} €</p>
               </div>
             </div>
 
           </div>
 
           <div>
-            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-              <option>-- Code promo ? -- </option>
-            </select>
+            <input placeholder="Code promo ?" class="w-3/4">
           </div>
           <div>
-            <div class="mt-4 mb-4"><p class="text-gray-500">Total</p><br>
+            <div class="mt-4 mb-4"><p class="text-black font-bold text-lato">Total: {{ carts | async | sum }} €</p><br>
             <p class="text-gray-500">Livraison</p></div>
           </div>
           <div>
-           <div class="mt-4"><p>Total</p></div> 
           </div>
       </div>
     </div>

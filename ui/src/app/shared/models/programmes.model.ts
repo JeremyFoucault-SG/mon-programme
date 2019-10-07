@@ -8,5 +8,6 @@ export class Programmes {
         public imageUrl?: string,
         public level?: string,
         public price?: number,
+        public urlTitle?: string,
     ) { }
 }

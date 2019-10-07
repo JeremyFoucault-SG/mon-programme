@@ -99,7 +99,7 @@ import { BasketComponent } from './basket/basket.component';
     FacebookModule.forRoot(),
     ChartsModule,
     CoreModule,
-    AdminModule
+    AdminModule,
   ],
   exports: [
   ],
