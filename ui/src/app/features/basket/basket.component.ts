@@ -22,7 +22,6 @@ export class BasketComponent implements OnInit {
   }
   deleteCartCoaching(id: string) {
      this.store.dispatch(new DeleteCartCoaching(id));
- 
   }
 
 }

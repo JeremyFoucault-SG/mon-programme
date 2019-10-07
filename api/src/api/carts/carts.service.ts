@@ -28,7 +28,6 @@ export class CartsService {
   async insert(idUser: string, cart: CartDTO): Promise<InstanceType<CartModel>> {
     const user = await this.usersService.findById(idUser);
     const coaching = await this.coachingsService.findById(cart.cartId);
-    console.log(coaching);
     const createdCart = new this.cartModel({coaching});
     user.carts.push(createdCart);
     await user.save();
@@ -56,7 +55,7 @@ export class CartsService {
   async findAll(idUser: string): Promise<CartModel[]> {
     const user = await this.usersService.findById(idUser);
     await user.populate('carts.coaching').execPopulate();
-    return user.carts.filter(w => w.coaching)
+    return user.carts.filter(w => w.coaching);
   }
 
   /**

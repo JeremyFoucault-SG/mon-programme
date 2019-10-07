@@ -20,7 +20,7 @@ export class CommandeComponent implements OnInit {
   public total;
 
 
-  constructor(private store: Store) { 
+  constructor(private store: Store) {
   }
 
   @Select(CartState.cartCoachings)
@@ -28,7 +28,7 @@ export class CommandeComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new GetAllCarts());
-    console.log(this.total)
+    console.log(this.total);
   }
   deleteCartCoaching(id: string) {
      this.store.dispatch(new DeleteCartCoaching(id));
@@ -39,11 +39,11 @@ export class CommandeComponent implements OnInit {
     this.isHidden = !this.isHidden;
   }
 
-  add(value: number){
-    return this.total.push(value)
+  add(value: number) {
+    return this.total.push(value);
   }
-  test(value){
-    console.log(value)
+  test(value) {
+    console.log(value);
   }
 
 

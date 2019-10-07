@@ -40,8 +40,6 @@ export class CartsController {
     return this.cartsServices.findById(idUser, idCart);
   }
 
-
-
   @Put(':id')
   async update(@User('id') idUser: string, @Param('id') idCart: string, @Body() cart: CartModel): Promise<CartModel> {
     return await this.cartsServices.update(idCart, cart);
