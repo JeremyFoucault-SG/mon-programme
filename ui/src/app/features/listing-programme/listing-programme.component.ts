@@ -1,12 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProgramDetail, ProgramsList } from 'src/app/shared/models/programs-infos';
+import {
+  ProgramDetail,
+  ProgramsList
+} from 'src/app/shared/models/programs-infos';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Programmes } from 'src/app/shared/models/programmes.model';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
-import { SearchProgramme, GetCoachingByTitle } from 'src/app/core/store/store.module/programme/programme.action';
+import {
+  SearchProgramme,
+  GetCoachingByTitle
+} from 'src/app/core/store/store.module/programme/programme.action';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { AddCart } from 'src/app/core/store/store.module/cart/cart.actions';
 
 @Component({
   selector: 'app-listing-programme',
@@ -14,8 +21,6 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./listing-programme.component.css']
 })
 export class ListingProgrammeComponent implements OnInit {
-
-
   @Input()
   title: string;
 
@@ -29,15 +34,13 @@ export class ListingProgrammeComponent implements OnInit {
   public auth: AuthenticationService;
 
 
-
   @Select(ProgrammeState.Getprogrammes)
   programme: Observable<Programmes>;
 
   @Select(ProgrammeState.programme)
   programmes: Observable<Programmes>;
 
-
-  constructor(private store: Store, private route: ActivatedRoute) { }
+  constructor(private store: Store, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -48,11 +51,12 @@ export class ListingProgrammeComponent implements OnInit {
     this.store.dispatch(new SearchProgramme({ rating: 4, limit: 10 }));
   }
 
-
-
   onChange(programDetail: ProgramDetail, index) {
     this.selected = programDetail;
     console.log();
   }
 
+  addBasket(coaching: Programmes) {
+    this.store.dispatch(new AddCart({ cartId: coaching._id }));
+  }
 }

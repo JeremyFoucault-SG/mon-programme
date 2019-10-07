@@ -5,9 +5,18 @@ import { FollowedCoachingDTO } from '../followed-coachings/followed-coachings.dt
 import { Type } from 'class-transformer';
 
 export class CartDTO {
+
   @Allow()
-  @Type(() => CoachingDTO)
-  @ValidateNested({each: true})
   @ApiModelProperty()
-  public readonly coachings: CoachingDTO[];
+  public readonly id?: string;
+
+  @Allow()
+  @ApiModelProperty()
+  public readonly cartId?: string;
+
+  // @Allow()
+  // @Type(() => CoachingDTO)
+  // @ValidateNested({each: true})
+  // @ApiModelProperty()
+  // public readonly coachings: CoachingDTO[];
 }

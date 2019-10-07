@@ -7,7 +7,8 @@
         <p class="mb-4 text-left text-base font-lato text-white lg:text-white italic" >"{{ (programme | async).content}}"</p>
         <div class="flex flex-row justify-center pt-5 pb-5">
             <span class="mr-4 text-bold font-lato text-3xl text-black lg:text-white">{{ (programme | async).price }} €</span>
-            <button
+            <button *ngIf=" (programme|async) as programme"
+            (click)="addBasket(programme)"
                 class="bg-red-500 hover:bg-red-600 text-black lg:text-white font-bold py-2 px-4  inline-flex items-center ml-4 text-xs rounded-sm">
                 <i class="fa fa-shopping-basket mr-2 text-black lg:text-white text-xs" aria-hidden="true"></i>AJOUTER AU PANIER
             </button>
@@ -32,7 +33,7 @@
         <app-group-title>
           <app-title class="group-title text-right">PROGRAMMES SIMILAIRES</app-title>
           <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
-            <a [routerLink]="['/coachings']" routerLinkActive="router-link-active">
+            <a [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active">
               Voir tout
             </a>
           </div>

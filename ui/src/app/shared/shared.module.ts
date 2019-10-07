@@ -36,6 +36,7 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
 import { GroupTitleComponent } from './components/group-title/group-title.component';
 import { AdminModule } from '../admin/admin.module';
 import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
+import { SumPipe } from './pipes/sum.pipe';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
     TagComponent,
     FooterSmComponent,
     GroupTitleComponent,
-    FirstCharacterePipe
+    FirstCharacterePipe,
+    SumPipe
   ],
   imports: [
     CommonModule,
