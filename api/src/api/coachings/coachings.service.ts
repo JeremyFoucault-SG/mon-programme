@@ -86,8 +86,8 @@ export class CoachingsService {
   * @param title ID of wanted coaching
   */
 
-  async findByTitle(title: string): Promise<CoachingModel> {
-    const coaching = await this.coachingModel.findOne({ title }).exec();
+  async findByTitle(urlTitle: string): Promise<CoachingModel> {
+    const coaching = await this.coachingModel.findOne({ urlTitle }).exec();
     if (!coaching) {
       throw new EntityException(EntityExceptionCode.NOT_FOUND);
     }

@@ -46,11 +46,11 @@ export class CoachingsController {
         return await this.coachingsService.delete(idCoaching);
     }
 
-    @Get(':title')
-    @ApiOperation({ title: 'Get article by title' })
+    @Get(':urlTitle')
+    @ApiOperation({ title: 'Get coaching by title' })
     @ApiResponse({ status: 200, description: 'Return article.' })
     @ApiResponse({ status: 404, description: 'Not Found.' })
-    async readOne(@Param('title') titleCoaching: string): Promise<CoachingModel> {
+    async readOne(@Param('urlTitle') titleCoaching: string): Promise<CoachingModel> {
         return this.coachingsService.findByTitle(titleCoaching);
     }
 
