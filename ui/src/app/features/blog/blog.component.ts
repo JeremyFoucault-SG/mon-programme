@@ -39,14 +39,14 @@ export class BlogComponent implements OnInit {
       console.log(this.path);
       this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, limit: 3}));
       console.log(this.listArticles);
-      
+
     });
 
   }
   showMoreArticles() {
     this.skip = this.limit;
     this.limit += 3;
-      this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, skip: this.skip, limit: this.limit}));
-    
+    this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, skip: this.skip, limit: this.limit}));
+
   }
 }
