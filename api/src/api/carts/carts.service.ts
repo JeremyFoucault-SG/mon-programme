@@ -6,6 +6,7 @@ import { CartModel } from './cart.model';
 import { ModelType } from 'typegoose';
 import { CartDTO } from './cart.dto';
 import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
+import { CoachingsService } from '../coachings/coachings.service';
 
 /**
  * Service for manage carts save in database, for a given user
@@ -15,6 +16,7 @@ export class CartsService {
 
   constructor(
     private usersService: UsersService,
+    private coachingsService: CoachingsService,
     @InjectModel(CartModel) private readonly cartModel: ModelType<CartModel>,
   ) { }
 
@@ -25,7 +27,8 @@ export class CartsService {
    */
   async insert(idUser: string, cart: CartDTO): Promise<InstanceType<CartModel>> {
     const user = await this.usersService.findById(idUser);
-    const createdCart = new this.cartModel(cart);
+    const coaching = await this.coachingsService.findById(cart.cartId);
+    const createdCart = new this.cartModel({coaching});
     user.carts.push(createdCart);
     await user.save();
     return user.carts[user.carts.length - 1];
@@ -51,7 +54,8 @@ export class CartsService {
    */
   async findAll(idUser: string): Promise<CartModel[]> {
     const user = await this.usersService.findById(idUser);
-    return user.carts;
+    await user.populate('carts.coaching').execPopulate();
+    return user.carts.filter(w => w.coaching);
   }
 
   /**
@@ -66,6 +70,16 @@ export class CartsService {
     if (!cart) {
       throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
     }
+    return cart;
+  }
+  async deleteCart(idUser: string, id: string): Promise<CartModel> {
+    const user = await this.usersService.findById(idUser);
+    const cart = await user.carts.id(id);
+    if (!cart) {
+      throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
+    }
+    await cart.remove();
+    await user.save();
     return cart;
   }
 }

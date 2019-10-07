@@ -42,6 +42,7 @@ import { ListProgrammeComponent } from './list-programme/list-programme.componen
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { WishlistCoachingComponent } from './wishlist/wishlist-coaching/wishlist-coaching.component';
 import { WishlistArticleComponent } from './wishlist/wishlist-article/wishlist-article.component';
+import { BasketComponent } from './basket/basket.component';
 
 
 
@@ -82,6 +83,7 @@ import { WishlistArticleComponent } from './wishlist/wishlist-article/wishlist-a
     WishlistComponent,
     WishlistCoachingComponent,
     WishlistArticleComponent,
+    BasketComponent
   ],
   imports: [
     RouterModule,

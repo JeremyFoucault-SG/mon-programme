@@ -45,18 +45,25 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     }
 
     // CARTS
+    // const carts: CartDTO[] = [];
+    // for (let i = 0; i <= faker.random.number({ min: 0, max: 5 }); i++) {
+
+    //   const cartCoachings = [];
+
+    //   for (let j = 0; j <= faker.random.number({ min: 0, max: 10 }); j++) {
+    //     cartCoachings.push(coachings[j]);
+    //   }
+
+    //   carts.push({
+    //     coachings: cartCoachings,
+    //   });
+    // }
     const carts: CartDTO[] = [];
-    for (let i = 0; i <= faker.random.number({ min: 0, max: 5 }); i++) {
-
-      const cartCoachings = [];
-
-      for (let j = 0; j <= faker.random.number({ min: 0, max: 10 }); j++) {
-        cartCoachings.push(coachings[j]);
-      }
-
-      carts.push({
-        coachings: cartCoachings,
-      });
+    for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
+      const cart: CartDTO = {
+        cartId: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+      };
+      carts.push(cart);
     }
 
     // BOOKMARKS

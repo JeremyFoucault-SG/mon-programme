@@ -20,6 +20,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { CardThumbProgramComponent } from './shared/components/card-thumb-program/card-thumb-program.component';
 import { ListProgrammeComponent } from './features/list-programme/list-programme.component';
 import { WishlistComponent } from './features/wishlist/wishlist.component';
+import { BasketComponent } from './features/basket/basket.component';
 
 
 
@@ -94,6 +95,7 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
+  { path: 'mon-panier', canActivate: [AuthGuard], component: BasketComponent},
   { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent},
   { path: 'nos-programmes', canActivate: [AuthGuard], component: ListProgrammeComponent},
   { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },

@@ -10,6 +10,7 @@ import { FollowedState } from './store.module/followed-coaching/followed.state';
 import { SettingState } from './store.module/settings/setting.state';
 import { WishState } from './store.module/wishe/wish.state';
 import { BodyState } from './store.module/body/body.state';
+import { CartState } from './store.module/cart/cart.state';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { BodyState } from './store.module/body/body.state';
 
         NgxsModule.forRoot([
             ArticleState,
+            CartState,
             ProgrammeState,
             BookmarkState,
             NewsletterState,

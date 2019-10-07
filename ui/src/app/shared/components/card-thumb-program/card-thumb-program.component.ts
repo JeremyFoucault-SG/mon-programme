@@ -113,7 +113,7 @@ export class CardThumbProgramComponent implements OnInit {
   }
 
   show() {
-    this.router.navigate(['/detail-programme', this.title]);
+    this.router.navigate(['/nos-programmes', this.title]);
   }
 
   /**
