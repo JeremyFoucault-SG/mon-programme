@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ArticleBlog } from '../../../shared/models/articles-blog.model';
-import { Store, Select} from '@ngxs/store';
+import { Store, Select } from '@ngxs/store';
 import { FirstCharacterePipe } from '../../pipes/firstCharactere.pipe';
 import { VirtualTimeScheduler, Observable } from 'rxjs';
 import { AddWishCoaching, AddWishArticle, DeleteWishArticle } from 'src/app/core/store/store.module/wishe/wish.action';
@@ -15,7 +15,6 @@ import { Wish } from '../../models/wishes.model';
 })
 export class CardArticleComponent implements OnInit {
 
- 
   @Select(WishState.wishArticles)
   articles: Observable<Wish[]>;
   /**
@@ -30,7 +29,7 @@ export class CardArticleComponent implements OnInit {
   public isReverse: boolean;
 
   constructor(private store: Store,
-              private toastr: ToastrService) { }
+    private toastr: ToastrService) { }
 
   isFavorite = false;
 
@@ -39,9 +38,8 @@ export class CardArticleComponent implements OnInit {
 
   addWishArticle(article: ArticleBlog) {
     this.isFavorite = !this.isFavorite;
-    if(this.isFavorite)
-    {
-      this.store.dispatch( new AddWishArticle({wishId: article._id}));
+    if (this.isFavorite) {
+      this.store.dispatch(new AddWishArticle({ wishId: article._id }));
       this.toastr.success('Article ajouté aux favoris avec succés !');
     } else {
       this.toastr.warning('Article supprimé des favoris avec succés !');
