@@ -18,7 +18,7 @@ export class NewsletterController {
     @ApiOperation({ title: 'Create new newsletter' })
     @ApiResponse({ status: 201, description: 'Return newsletter.' })
     async newsletter(@Body() body) {
-        const contact = new this.newsletterModel({ email: body.email });
-        await contact.save();
+        const newsletter = new this.newsletterModel({ email: body.email });
+        await newsletter.save();
     }
 }
