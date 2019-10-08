@@ -10,6 +10,7 @@ import { Wish } from '../../models/wishes.model';
 import { ProgrammesDTO } from '../../models/coaching.dto';
 import { Store } from '@ngxs/store';
 import { AddWishCoaching } from 'src/app/core/store/store.module/wishe/wish.action';
+import { ToastrService } from 'ngx-toastr';
 
 /**
  * Card thumb is used for both thumbs of programs and article
@@ -55,11 +56,15 @@ export class CardThumbProgramComponent implements OnInit {
    */
   @Input()
   topStars: number;
+
   /**
    * Set title of card in left-botton of card
    */
   @Input()
   title: string;
+
+  @Input()
+  urlTitle: string;
 
   /**
    * Set text content of card below title
@@ -85,9 +90,6 @@ export class CardThumbProgramComponent implements OnInit {
   @Input()
   hasWish: boolean;
 
-  @Input()
-  urlTitle: string;
-
   // @Input()
   // coaching: Programmes[];
 
@@ -110,7 +112,8 @@ export class CardThumbProgramComponent implements OnInit {
               public coachingsService: CoachingsService,
               public authService: LoginService,
               private wishService: WishesService,
-              private store: Store) { }
+              private store: Store,
+              private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -157,6 +160,7 @@ export class CardThumbProgramComponent implements OnInit {
     console.log(coaching);
     this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
     this.isFavorite = true;
+    this.toastr.success('Programme ajouté aux favoris avec succés !');
   }
 
 }
