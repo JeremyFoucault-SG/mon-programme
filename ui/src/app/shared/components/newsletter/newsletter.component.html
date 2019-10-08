@@ -1,23 +1,57 @@
-<app-newsletter-banner class="hidden xl:flex" ></app-newsletter-banner>
+<app-newsletter-banner class="hidden xl:flex"></app-newsletter-banner>
 
 <div class="bg-black xl:bg-transparent text-center flex flex-col w-full">
-    <div class="xl:hidden pt-10 pb-10">
-        <p class="text-center text-4xl text-red-400 font-bold">- 10%</p>
-        <p class="text-center text-3xl text-white font-bold uppercase">sur tout les programmes</p>
-    </div>
-    <p class="hidden pt-16 xl:block font-bold text-lg leading-relaxed uppercase text-grey-700 font-lato">newsletter</p>
-    <app-title class="py-1">Rejoins la team</app-title>
-    <div class="self-center leading-tight text-xl text-grey w-7/12">Rejoins la team Mon Programme et bénéficie de réductions, conseils sportifs et nutritions</div>
-    <div class="flex flex-row justify-center mt-12">
-        <form class="w-full m-4 flex flex-col xl:flex-row justify-center" (ngSubmit)="f.valid && onSubmit()" [formGroup]="newsletterForm" #f="ngForm">
-          <input class="shadow-lg self-center w-10/12 md:w-8/12 xl:w-6/12 rounded-lg xl:rounded-r-none xl:rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-gray-300" placeholder="Address email"
-          [ngClass]="{'border-red-500': f.submitted && newsletterForm.get('email').errors}"
+  <div class="xl:hidden pt-10 pb-10">
+    <p class="text-center text-4xl text-red-400 font-bold">- 10%</p>
+    <p class="text-center text-3xl text-white font-bold uppercase">
+      sur tout les programmes
+    </p>
+  </div>
+  <p
+    class="hidden pt-16 xl:block font-bold text-lg leading-relaxed uppercase text-grey-700 font-lato"
+  >
+    newsletter
+  </p>
+  <app-title class="py-1">Rejoins la team</app-title>
+  <div class="self-center leading-tight text-xl text-grey w-7/12">
+    Rejoins la team Mon Programme et bénéficie de réductions, conseils sportifs
+    et nutritions
+  </div>
+  <div class="flex flex-row justify-center mt-12">
+    <form
+      class="w-full m-4 flex flex-col xl:flex-row flex-wrap justify-center"
+      (ngSubmit)="f.valid && onSubmit()"
+      [formGroup]="newsletterForm"
+      #f="ngForm"
+    >
+      <div class="w-full">
+        <input
+          class="shadow-lg self-center w-10/12 md:w-8/12 xl:w-6/12 rounded-lg xl:rounded-r-none xl:rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-gray-300"
+          placeholder="Address email"
+          [ngClass]="{
+            'border-red-500': f.submitted && newsletterForm.get('email').errors
+          }"
           formControlName="email"
           placeholder="Adresse e-mail"
-          />
-          <p *ngIf="f.submitted && newsletterForm.get('email').errors" class="text-red-500 ">L'email est requis</p>
-          <button class="btn-newsletter shadow-lg self-center px-8 mt-5 xl:mt-0 rounded-lg xl:rounded-l-none xl:rounded-r-lg bg-red-400 xl:bg-yellow  text-gray-800 font-bold p-4 uppercase">Envoyer</button>
-      </form>
+        />
+        <p
+          *ngIf="f.submitted && newsletterForm.get('email').errors"
+          class="block lg:hidden text-red-500 w-full"
+        >
+          L'email est requis
+        </p>
+        <button
+          class="btn-newsletter shadow-lg self-center px-8 mt-5 xl:mt-0 rounded-lg xl:rounded-l-none xl:rounded-r-lg bg-red-400 xl:bg-yellow  text-gray-800 font-bold p-4 uppercase"
+        >
+          Envoyer
+        </button>
+      </div>
+      <p
+        *ngIf="f.submitted && newsletterForm.get('email').errors"
+        class="hidden lg:block text-red-500 w-full"
+      >
+        L'email est requis
+      </p>
+    </form>
   </div>
 </div>
-
