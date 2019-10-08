@@ -7,7 +7,7 @@ import { InjectModel } from 'nestjs-typegoose';
 import { ContactModel } from './contact.model';
 import { ModelType } from 'typegoose';
 
-@Controller('contact')
+@Controller()
 export class ContactController {
     constructor(
         private readonly configService: ConfigService,
@@ -15,7 +15,7 @@ export class ContactController {
         @InjectModel(ContactModel) private readonly contactModel: ModelType<ContactModel>
     ) { }
 
-    @Post()
+    @Post('contact')
     contact(@Body() body: ContactDTO) {
         this
             .mailerService

@@ -6,13 +6,5 @@ export class NewsletterDTO {
 
     @Allow()
     @ApiModelProperty()
-    public readonly title: string;
-
-    @Allow()
-    @ApiModelProperty()
-    public readonly content: string;
-
-    @Allow()
-    @ApiModelProperty()
-    public readonly categories: CategoryDTO[];
+    public readonly email: string;
 }

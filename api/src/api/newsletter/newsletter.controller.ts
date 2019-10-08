@@ -19,30 +19,4 @@ export class NewsletterController {
     async create(@Body() newsletter: NewsletterDTO): Promise<NewsletterModel> {
         return this.newsletterService.insert(newsletter);
     }
-
-    @Get(':id')
-    @ApiOperation({ title: 'Get newsletter by ID' })
-    @ApiResponse({ status: 200, description: 'Return newsletter.' })
-    @ApiResponse({ status: 404, description: 'Not Found.' })
-    async readOne(@Param('id') idNewsletter: string): Promise<NewsletterModel> {
-        return this.newsletterService.findById(idNewsletter);
-    }
-
-    @Get()
-    @ApiOperation({ title: 'Get all newsletters' })
-    @ApiResponse({ status: 200, description: 'Return an array of newsletters.' })
-    async readAll(): Promise<NewsletterModel[]> {
-        return this.newsletterService.findAll();
-    }
-
-    @Put(':id')
-    async update(@Param('id') idNewsletter: string, @Body() newsletter: NewsletterDTO): Promise<NewsletterModel> {
-        return null;
-    }
-
-    @Delete(':id')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    async delete(@Param('id') idNewsletter: string): Promise<void> {
-        return null;
-    }
 }

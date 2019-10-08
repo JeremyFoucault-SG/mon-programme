@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
 @Injectable({ providedIn: 'root'})
 export class ContactService {
 
-  url = `${environment.apiUrl}/contact`;
+  url = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient, private toastr: ToastrService) {}
 
@@ -24,7 +24,7 @@ export class ContactService {
   }
 
   contact(contact) {
-    return this.http.post<any>(`${this.url}`, contact)
+    return this.http.post<any>(`${this.url}/contact`, contact)
     .pipe(
       tap(() =>  this.toastr.success('Demande de contact envoyé')),
       catchError((err) => {
