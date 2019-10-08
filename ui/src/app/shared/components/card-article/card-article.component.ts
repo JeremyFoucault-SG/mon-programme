@@ -29,7 +29,7 @@ export class CardArticleComponent implements OnInit {
   public isReverse: boolean;
 
   constructor(private store: Store,
-    private toastr: ToastrService) { }
+              private toastr: ToastrService) { }
 
   isFavorite = false;
 
