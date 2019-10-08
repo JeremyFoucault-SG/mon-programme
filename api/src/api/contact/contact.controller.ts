@@ -6,8 +6,10 @@ import { ConfigService } from '../../config/config.service';
 import { InjectModel } from 'nestjs-typegoose';
 import { ContactModel } from './contact.model';
 import { ModelType } from 'typegoose';
+import { ApiUseTags } from '@nestjs/swagger';
 
 @Controller()
+@ApiUseTags('Contact')
 export class ContactController {
     constructor(
         private readonly configService: ConfigService,
@@ -35,11 +37,5 @@ export class ContactController {
             .then(() => { })
             // tslint:disable-next-line: no-console
             .catch((err) => console.log(err));
-    }
-
-    @Post('newsletter')
-    async newsletter(@Body() body) {
-        const contact = new this.contactModel({ email: body.email });
-        await contact.save();
     }
 }

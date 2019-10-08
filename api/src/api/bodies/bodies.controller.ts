@@ -1,11 +1,12 @@
 import { Controller, Post, Get, Put, Body, Param } from '@nestjs/common';
 import { BodyModel } from './body.model';
 import { BodyDTO } from './body.dto';
-import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
 import { User } from '../../decorators/user.decorator';
 import { BodiesService } from './bodies.service';
 
 @Controller('bodies')
+@ApiUseTags('Bodies')
 export class BodiesController {
 
   constructor(private readonly bodiesService: BodiesService) {}

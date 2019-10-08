@@ -12,16 +12,7 @@ export class ContactService {
 
   constructor(private http: HttpClient, private toastr: ToastrService) {}
 
-  newsletter(rdv) {
-    return this.http.post<any>(`${this.url}/newsletter`, rdv)
-    .pipe(
-      tap(() =>  this.toastr.success('Inscription validé')),
-      catchError((err) => {
-        this.toastr.error(`Erreur lors de l'inscription`);
-        return throwError(err);
-      })
-    );
-  }
+
 
   contact(contact) {
     return this.http.post<any>(`${this.url}/contact`, contact)

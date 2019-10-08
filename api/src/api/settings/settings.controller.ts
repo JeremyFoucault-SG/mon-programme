@@ -1,12 +1,13 @@
 import { Controller, Get, Put, Body, Post, Param } from '@nestjs/common';
 import { SettingsModel } from './settings.model';
 import { SettingsDTO } from './settings.dto';
-import { ApiResponse, ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
+import { ApiResponse, ApiBearerAuth, ApiOperation, ApiUseTags } from '@nestjs/swagger';
 import { SettingsService } from './settings.service';
 import { User } from '../../decorators/user.decorator';
 import { settings } from 'cluster';
 
 @Controller('settings')
+@ApiUseTags('Settings')
 export class SettingsController {
 
     constructor(private readonly settingsService: SettingsService) {}

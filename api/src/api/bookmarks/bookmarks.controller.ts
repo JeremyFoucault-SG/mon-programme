@@ -1,11 +1,12 @@
 import { Controller, Get, Post, Delete, HttpCode, HttpStatus, Body, Param } from '@nestjs/common';
 import { BookmarkModel } from './bookmark.model';
-import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
 import { User } from '../../decorators/user.decorator';
 import { BookmarksService } from './bookmarks.service';
 import { BookmarkDTO } from './bookmark.dto';
 
 @Controller('bookmarks')
+@ApiUseTags('Bookmarks')
 export class BookmarksController {
 
   constructor(private readonly bookmarksServices: BookmarksService) { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ContactService } from 'src/app/core/http/contact.service';
+import { NewsletterService } from 'src/app/core/http/newsletter.service';
 
 @Component({
   selector: 'app-newsletter',
@@ -12,14 +12,14 @@ export class NewsletterComponent implements OnInit {
   model: any = {};
   newsletterForm: FormGroup;
 
-  constructor(private toastr: ToastrService, private contactService: ContactService) { }
+  constructor(private toastr: ToastrService, private newsletterService: NewsletterService) { }
 
   ngOnInit() {
     this.newsletterForm  = new FormGroup({
-      email: new FormControl('', [Validators.required,Validators.email]),
+      email: new FormControl('', [Validators.required , Validators.email]),
     });
   }
   onSubmit() {
-    this.contactService.newsletter(this.newsletterForm.value).subscribe();
+    this.newsletterService.newsletter(this.newsletterForm.value).subscribe();
   }
 }
