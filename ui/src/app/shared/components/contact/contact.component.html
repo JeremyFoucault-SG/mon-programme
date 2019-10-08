@@ -3,28 +3,61 @@
   <div class="flex justify-center">
     <div class="hidden xl:block rounded-full flex justify-center">
       <span class="-mt-12 fa-stack fa-3x">
-          <i class="text-red-400 fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-long-arrow-down fa-stack-1x fa-inverse"></i>
-        </span>
+        <i class="text-red-400 fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-long-arrow-down fa-stack-1x fa-inverse"></i>
+      </span>
     </div>
   </div>
-  <div class="shadow-xl xl:shadow-none mt-5 xl:mt-10 w-10/12 py-5 border border-gray-300 rounded-lg xl:rounded-none xl:border-none flex flex-col items-center">
-    <app-title>Restons en contact</app-title>
-    <p class="w-7/12 xl:w-5/12 text-gray-400 font-bold text-xl text-center pt-2 pb-20">
+  <div
+    class="shadow-xl xl:shadow-none mt-5 xl:mt-10 w-10/12 py-5 border border-gray-300 rounded-lg xl:rounded-none xl:border-none flex flex-col items-center"
+  >
+    <app-title class ="relative z-10">Restons en contact</app-title>
+    <p
+      class=" relative z-10 w-7/12 xl:w-5/12 text-gray-400 font-bold text-xl text-center pt-2 pb-20"
+    >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
       officiis enim distinctio debitis fugit? Necessitatibus eos reiciendis
       dolorum.
     </p>
-    <form class="w-10/12 xl:w-7/12">
+    <form class="w-10/12 xl:w-7/12 z-10" (ngSubmit)="f.valid && onSubmit()" [formGroup]="contactForm" #f="ngForm" >
       <div class="flex flex-col xl:flex-row justify-center">
         <div class="w-full flex flex-col mr-0 xl:mr-10">
-          <input class="shadow-none xl:shadow-red border border-gray-400 xl:border-none italic mt-4 leading-2loose pl-10 w-full text-lg font-lato opacity-75 rounded-lg" placeholder="Nom" />
-          <input class="shadow-none xl:shadow-red border border-gray-400 xl:border-none italic mt-4 leading-2loose pl-10 w-full text-lg font-lato opacity-75 rounded-lg" placeholder="Adresse e-mail" />
-          <input class="shadow-none xl:shadow-red border border-gray-400 xl:border-none italic mt-4 leading-2loose pl-10 w-full text-lg font-lato opacity-75 rounded-lg " placeholder="Numéro de tél" />
+          <input
+            class="shadow-none xl:shadow-red border border-gray-400 italic mt-4 leading-2loose pl-10 w-full text-lg font-lato opacity-75 rounded-lg"
+            [ngClass]="{'border-red-500': f.submitted && contactForm.get('name').errors}"
+            placeholder="Nom" formControlName="name"
+          />
+          <p *ngIf="f.submitted && contactForm.get('name').errors" class="text-red-500">Le nom est requis</p>
+          <input
+            class="shadow-none xl:shadow-red border border-gray-400 italic mt-4 leading-2loose pl-10 w-full text-lg font-lato opacity-75 rounded-lg"
+            [ngClass]="{'border-red-500': f.submitted && contactForm.get('email').errors}"
+            formControlName="email"
+            placeholder="Adresse e-mail"
+          />
+          <p *ngIf="f.submitted && contactForm.get('email').errors" class="text-red-500">L'email est requis</p>
+          <input
+            class="shadow-none xl:shadow-red border border-gray-400 italic mt-4 leading-2loose pl-10 w-full text-lg font-lato opacity-75 rounded-lg "
+            placeholder="Numéro de tél"
+            [ngClass]="{'border-red-500': f.submitted && contactForm.get('phone').errors}"
+            formControlName="phone"
+          />
+          <p *ngIf="f.submitted && contactForm.get('phone').errors" class="text-red-500">Le téléphone est requis</p>
         </div>
         <div class="w-full flex flex-col mr-0 xl:ml-10">
-          <input class="shadow-none xl:shadow-red border border-gray-400 xl:border-none italic mt-4 leading-2loose pl-10 w-full text-lg font-lato opacity-75 rounded-lg" placeholder="Sujet" />
-          <textarea class="shadow-none xl:shadow-red border border-gray-400 xl:border-none italic leading-2loose pl-10 mt-4 w-full text-lg font-lato opacity-75 rounded-lg" placeholder="Message"></textarea>
+          <input
+            class="shadow-none xl:shadow-red border border-gray-400 italic mt-4 leading-2loose pl-10 w-full text-lg font-lato opacity-75 rounded-lg"
+            placeholder="Sujet"
+            [ngClass]="{'border-red-500': f.submitted && contactForm.get('topic').errors}"
+            formControlName="topic"
+          />
+          <p *ngIf="f.submitted && contactForm.get('topic').errors" class="text-red-500">Le sujet est requis</p>
+          <textarea
+            class="shadow-none xl:shadow-red border border-gray-400 italic leading-2loose pl-10 mt-4 w-full text-lg font-lato opacity-75 rounded-lg"
+            placeholder="Message"
+            [ngClass]="{'border-red-500': f.submitted && contactForm.get('message').errors}"
+            formControlName="message"
+          ></textarea>
+          <p *ngIf="f.submitted && contactForm.get('message').errors" class="text-red-500">Le message est requis</p>
         </div>
       </div>
       <div class="mt-10 ">

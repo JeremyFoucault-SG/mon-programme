@@ -43,8 +43,8 @@ async function bootstrap() {
   const usersService: UsersService = app.get('UsersService');
   await insertUserData(articlesService, coachingsService, usersService);
 
-  const newsletterService: NewsletterService = app.get('NewsletterService');
-  insertNewsletterData(newsletterService);
+  // const newsletterService: NewsletterService = app.get('NewsletterService');
+  // insertNewsletterData(newsletterService);
 
 }
 bootstrap();
