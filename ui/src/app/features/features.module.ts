@@ -45,7 +45,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { WishlistCoachingComponent } from './wishlist/wishlist-coaching/wishlist-coaching.component';
 import { WishlistArticleComponent } from './wishlist/wishlist-article/wishlist-article.component';
 import { BasketComponent } from './basket/basket.component';
-
+import { PaiementComponent } from './paiement/paiement.component';
 
 
 @NgModule({
@@ -88,7 +88,8 @@ import { BasketComponent } from './basket/basket.component';
     WishlistComponent,
     WishlistCoachingComponent,
     WishlistArticleComponent,
-    BasketComponent
+    BasketComponent,
+    PaiementComponent
   ],
   imports: [
     RouterModule,

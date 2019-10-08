@@ -8,22 +8,17 @@ import { SumPipe } from '../../shared/pipes/sum.pipe';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-commande',
-  templateUrl: './commande.component.html',
-  styleUrls: ['./commande.component.css'],
-
+  selector: 'app-paiement',
+  templateUrl: './paiement.component.html',
+  styleUrls: ['./paiement.component.css']
 })
-export class CommandeComponent implements OnInit {
+export class PaiementComponent implements OnInit {
 
   paiement = false;
   isHidden = false;
   pipes: [SumPipe];
 
-
-
-
-  constructor(private store: Store, private toastr: ToastrService) {
-  }
+  constructor(private store: Store, private toastr: ToastrService) { }
 
   @Select(CartState.cartCoachings)
   carts: Observable<Cart[]>;
@@ -37,5 +32,6 @@ export class CommandeComponent implements OnInit {
     this.store.dispatch(new DeleteCartCoaching(id));
     this.toastr.warning('Programme supprimé du panier !');
   }
+
 
 }

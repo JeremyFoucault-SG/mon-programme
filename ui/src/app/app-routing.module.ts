@@ -21,6 +21,7 @@ import { CardThumbProgramComponent } from './shared/components/card-thumb-progra
 import { ListProgrammeComponent } from './features/list-programme/list-programme.component';
 import { WishlistComponent } from './features/wishlist/wishlist.component';
 import { BasketComponent } from './features/basket/basket.component';
+import { PaiementComponent } from './features/paiement/paiement.component';
 
 
 
@@ -114,6 +115,7 @@ const routes: Routes = [
   { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
   { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
   { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},
+  { path: 'paiement', canActivate: [AuthGuard], component: PaiementComponent},
 ];
 
 @NgModule({
