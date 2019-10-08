@@ -26,6 +26,14 @@ export class ArticleDTO {
   public readonly photoUrl: string;
 
   @Allow()
+  @ApiModelProperty()
+  public readonly urlTitle?: string;
+
+  @Allow()
+  @ApiModelProperty()
+  public readonly isFavorite?: boolean;
+
+  @Allow()
   @ValidateNested({each: true})
   @Type(() => CategoryDTO)
   @ApiModelProperty()

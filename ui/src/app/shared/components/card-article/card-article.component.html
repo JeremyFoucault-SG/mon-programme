@@ -46,13 +46,14 @@
         class="hidden lg:inline-block"
         [ngClass]="isReverse ? 'text-left' : 'text-right'"
       >
+      <a [routerLink]="['/articles', article.urlTitle]">
         <button
-          type="button"
-          [routerLink]="['/articles', article.title]"
-          class="bg-transparent border-yellow-500 hover:bg-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5"
-        >
-          Voir L'article
-        </button>
+        type="button"
+        class="bg-transparent border-yellow-500 hover:bg-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5"
+      >
+        Voir L'article
+      </button>
+      </a>
       </div>
       <div
         class="flex items-center mt-10 w-full justify-end pb-5"

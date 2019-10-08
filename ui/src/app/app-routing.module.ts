@@ -99,7 +99,7 @@ const routes: Routes = [
   { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent},
   { path: 'nos-programmes', canActivate: [AuthGuard], component: ListProgrammeComponent},
   { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },
-  { path: 'articles/:title', canActivate: [AuthGuard], component: ArticleBlogComponent },
+  { path: 'articles/:urlTitle', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
   { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent },
   { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent },
