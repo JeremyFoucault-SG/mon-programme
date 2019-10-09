@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
-import { Programmes } from '../../models/programmes.model';
+import { Programme } from '../../models/programmes.model';
 import { Params, Router } from '@angular/router';
 import { CoachingsService } from 'src/app/core/http/coachings.service';
 import { tap } from 'rxjs/operators';
@@ -94,7 +94,7 @@ export class CardThumbProgramComponent implements OnInit {
   // coaching: Programmes[];
 
   @Input()
-  public coaching: Programmes;
+  public coaching: Programme;
 
   @Input()
   items: any[];
@@ -156,7 +156,7 @@ export class CardThumbProgramComponent implements OnInit {
     }
   }
 
-  addToWishList(coaching: Programmes) {
+  addToWishList(coaching: Programme) {
     console.log(coaching);
     this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
     this.isFavorite = true;

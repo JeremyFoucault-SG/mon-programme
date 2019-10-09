@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Programmes } from '../../../shared/models/programmes.model';
+import { Programme } from '../../../shared/models/programmes.model';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
 import { UpdateProgramme, AddProgramme, SetSelectedProgramme } from 'src/app/core/store/store.module/programme/programme.action';
 import { ToastrService } from 'ngx-toastr';
@@ -15,10 +15,17 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditProgrammeComponent implements OnInit {
 
-  @Select(ProgrammeState.Getprogrammes) selectedProgramme: Observable<Programmes>;
-  programmeForm: FormGroup;
+  @Select(ProgrammeState.getProgramme)
+  selectedProgramme: Observable<Programme>;
+
+  programmeForm = this.fb.group({
+    id: ['', Validators.required],
+    rating: ['', Validators.required],
+    title: ['', Validators.required],
+    content: ['', Validators.required],
+  });
+
   editProgramme = false;
-  public content: AbstractControl;
 
   constructor(private fb: FormBuilder,
               private store: Store,
@@ -42,18 +49,14 @@ export class EditProgrammeComponent implements OnInit {
         this.editProgramme = false;
       }
     });
-
-
-
-
   }
 
   createForm() {
     this.programmeForm = this.fb.group({
-      id: ['', Validators.required],
-      rating: ['', Validators.required],
-      title: ['', Validators.required],
-      content: ['', Validators.required],
+      id: [''],
+      rating: [''],
+      title: [''],
+      content: [''],
     });
   }
 
@@ -63,22 +66,19 @@ export class EditProgrammeComponent implements OnInit {
   onSubmit() {
     if (this.editProgramme) {
       this.store.dispatch(new UpdateProgramme(this.programmeForm.value, this.programmeForm.value.id)).subscribe(() => {
-        this.clearForm();
+        this.programmeForm.reset();
+        this.showSuccessUpdate();
       });
     } else {
       this.store.dispatch(new AddProgramme(this.programmeForm.value)).subscribe(() => {
-        this.clearForm();
+        this.programmeForm.reset();
+        this.showSuccesAdd();
       });
     }
   }
-
-  clearForm() {
-    this.programmeForm.reset();
-    this.store.dispatch(new SetSelectedProgramme(this.programmeForm.value));
-    this.showSuccessUpdate();
+  showSuccesAdd() {
+    this.toastr.success('Programme ajouté');
   }
-
-
 
   showSuccessUpdate() {
     this.toastr.success('Programme mis à jour.');

@@ -1,7 +1,7 @@
 import { State, Action, StateContext, Selector, Store, StateOperator } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
 import { patch, updateItem, append } from '@ngxs/store/operators';
-import { Programmes as Programme } from 'src/app/shared/models/programmes.model';
+import { Programme as Programme } from 'src/app/shared/models/programmes.model';
 import { CoachingsService } from 'src/app/core/http/coachings.service';
 import {
     AddProgramme,
@@ -35,13 +35,13 @@ export class ProgrammeState {
     }
 
     @Selector()
-    static programme(state: ProgrammeStateModel) {
+    static getProgrammes(state: ProgrammeStateModel) {
         console.log('heyyyy');
         return state.items;
     }
 
     @Selector()
-    static Getprogrammes(state: ProgrammeStateModel) {
+    static getProgramme(state: ProgrammeStateModel) {
         console.log('heyyyy');
         return state.item;
     }
