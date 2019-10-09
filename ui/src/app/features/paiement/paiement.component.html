@@ -1,0 +1,162 @@
+<!-- Bouton pour retour à l'acceuil -->
+<div class="ml-5 pt-32 mb-6">
+    <a class="nav-link return text-black font-bold text-2xl" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i
+            class="fa fa-undo mr-2 text-2xl" aria-hidden="true"></i>PAGE D'ACCUEIL</a>
+</div>
+
+
+
+<!-- Premier formulaire pour information de commande, caché si deuxieme formulaire paiement actif -->
+<!-- Rappel du composant function -->
+<div class="flex flex-row justify-between sm:flex-row">
+
+    <div class="w-1/3  h-screen">
+        <div class="flex flex-col">
+            <h2 class="text-red-400 text-3xl font-bold">Comment ça marche ? </h2>
+            <div class="flex flex-col mr-64 pt-6">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <div class="flex flex-row pt-8">
+                    <i class="fa fa-check-square-o fa-4x text-green-600" aria-hidden="true"></i>
+                    <p class="text-black text-xl font-bold ml-4 text-center">Je renseigne mes informations</p>
+                </div>
+                <div class="flex flex-row justify-between">
+                    <p class="text-2xl text-gray-600 ml-4">1</p>
+                    <p class="text-gray-600 text-lg ml-12">Je renseigne mes informations afin de pouvoir valider ma
+                        commande</p>
+                </div>
+                <div class="flex flex-row pt-8">
+                    <i class="fa fa-check-square-o fa-4x text-green-600" aria-hidden="true"></i>
+                    <p class="text-black text-xl font-bold ml-4">Je vérifie mon panier</p>
+                </div>
+                <div class="flex flex-row justify-between">
+                    <p class="text-2xl text-gray-600 ml-4">2</p>
+                    <p class="text-gray-600 text-lg ml-12">Je vérifie que tous mes articles sont bien présent dans le
+                        panier</p>
+                </div>
+                <div class="flex flex-row pt-8">
+                    <i class="fa fa-check-square-o fa-4x text-green-600" aria-hidden="true"></i>
+                    <p class="text-black text-xl font-bold ml-4">J'accède au paiment</p>
+                </div>
+                <div class="flex flex-row justify-between">
+                    <p class="text-2xl text-gray-600 ml-4">3</p>
+                    <p class="text-gray-600 text-lg ml-12">Accés au paiment pour réglement CB ou paypal</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Début du premier formulaire -->
+    <div class="w-1/3 ">
+        <div class="mb-10">
+            <a [routerLink]="['/commande']">INFORMATION DE COMMANDE</a><a class="ml-10 underline text-red-400 font-bold"
+                [routerLink]="['/paiement']" routerLinkActive="router-link-active">02 PAIEMENT</a></div>
+        <p class="mb-6 text-2xl text-black">Paiement</p>
+        <div class="max-w-sm w-full lg:max-w-full lg:flex">
+            <div
+                class="border-gray-400 border border-solid p-4 flex flex-col justify-between leading-normal">
+                <div class="mb-8">
+                    <p class="text-sm text-gray-600 flex items-center">
+                    </p>
+                    <div class="text-gray-900 font-bold text-lg mb-2"><input type="radio" name="indoor-outdoor"> Carte de crédit</div>
+                    <form class="w-full max-w-lg">
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2"
+                                    for="cards">
+                                    NUMERO DE CARTE
+                                </label>
+                                <input
+                                    class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="cards" type="text">
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-2">
+                            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2"
+                                    for="name">
+                                    NOM
+                                </label>
+                                <input
+                                    class="appearance-none block w-full text-gray-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="name" type="text">
+                            </div>
+                            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2"
+                                    for="date">
+                                   DATE
+                                </label>
+                                <div class="relative">
+                                    <input
+                                    class="appearance-none block w-full text-gray-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="date" type="text">
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2"
+                                    for="ccv">
+                                    CCV
+                                </label>
+                                <input
+                                    class="appearance-none block w-full text-gray-600 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="ccv" type="text">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-sm w-full lg:max-w-full lg:flex pt-8">
+            <div
+                class="border-gray-400 border border-solid p-4 flex flex-col justify-between leading-normal w-4/5">
+                <div class="mb-8">
+                    <p class="text-sm text-gray-600 flex items-center">
+                    </p>
+                    <div class="text-gray-900 font-bold text-lg mb-2"><input type="radio" name="indoor-outdoor"> Paypal</div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Fin du premier formulaire -->
+
+        <!-- panier présent sur les 2 formulaires -->
+    </div>
+    <div class="w-80 bg-gray-300 flex-auto z-10 h-screen">
+        <div class="ml-10 pt-12">
+            <p class="text-black flex text-2xl">
+                PANIER
+            </p>
+            <div class="w-full flex flex-col pt-10">
+                <div *ngFor="let cart of carts | async" class="flex flex-col  border-t-2  border-gray-500">
+                    <div class="flex mt-4 border-top border-black"> <img src="{{cart.coaching.imageUrl}}" alt="profil"
+                            class="h-16 w-16 ml-2 mr-10 mb-4 rounded-full">
+                        <div>
+                            <p class="text-gray-800 italic text-lato">{{cart.coaching.title}}</p>
+
+                            <p class="mr-4 text-gray-800"> <span
+                                    class="mr-2 text-gray-800">€</span>{{cart.coaching.price}} </p><i
+                                class="fa fa-trash-o hover:text-red-700 & cursor-pointer mr-4 items-center"
+                                aria-hidden="true" (click)="deleteCartCoaching(cart._id)"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="border-t-2 border-b-2 border-gray-500 pt-4 pb-4">
+                    <input placeholder="Code promo ?" class="w-4/5 flex justify-center bg-transparent">
+                </div>
+                <div>
+                    <div class="pt-10 flex flex-row justify-between">
+                        <p class="text-black text-lato">Total</p>
+                        <p class="mr-4 text-black font-bold"> {{ carts | async | sum }} €</p>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

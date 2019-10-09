@@ -1,11 +1,12 @@
 import { Controller, Post, Get, Put, Delete, HttpCode, HttpStatus, Body, Param, UseGuards } from '@nestjs/common';
 import { CartModel } from './cart.model';
 import { User, UserJWTPayload } from '../../decorators/user.decorator';
-import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
 import { CartsService } from './carts.service';
 import { AuthGuard } from '@nestjs/passport';
 import { CartDTO } from './cart.dto';
 @Controller('carts')
+@ApiUseTags('Carts')
 export class CartsController {
 
   constructor(private readonly cartsServices: CartsService) { }

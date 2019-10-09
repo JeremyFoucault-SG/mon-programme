@@ -14,7 +14,7 @@ export async function insertCoachingData(coachingService: CoachingsService, cate
       content: faker.lorem.sentences(10),
       rating: faker.random.number(5),
       categories: [categories[faker.random.number({ min: 0, max: categories.length - 1 })]],
-      imageUrl: faker.image.nightlife(),
+      imageUrl: faker.image.sports(),
       level: faker.lorem.sentence(2),
       price: faker.random.number(2),
     };

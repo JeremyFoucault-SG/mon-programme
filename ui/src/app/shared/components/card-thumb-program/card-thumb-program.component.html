@@ -1,12 +1,12 @@
-<div class="w-3/4-screen md:w-1/2-screen lg:w-1/3-screen relative h-64 rounded-t-lg overflow-hidden border-gray border flex flex-col mb-8  bg-cover bg-no-repeat hover:border-red-800 hover:cursor-pointer" (click)="show()"
+<div class="w-3/4-screen md:w-1/2-screen lg:w-1/3-screen relative h-64 rounded-t-lg overflow-hidden border-gray border flex flex-col mb-8  bg-cover bg-no-repeat hover:border-red-800 && cursor-pointer" (click)="show()"
 [ngStyle]="{'background-image': hasBgOverlay ? 'linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('+imageUrl+')' : 'url('+imageUrl+')'}">
 
   <div class="flex-grow justify-end ">
     <!-- Show dropdown menu (see @Inputs) -->
    
     <div *ngIf="hasMenu"  (click)="open($event)"
-      class="float-right text-xs inline-block rounded px-2 py-1 bg-white rounded-md mt-5 font-semibold mr-2 cursor-pointer">
-      <i class="fa fa-ellipsis-h text-red-500 cursor-pointer"></i>
+      class="float-right text-xs inline-block rounded px-2 py-1 bg-white rounded-md mt-5 font-semibold mr-2 cursor-move">
+      <i class="fa fa-ellipsis-h text-red-500 cursor-move"></i>
       <div *ngIf="isOpen" class=" z-999 flex flex-col bg-wite-opacity-5 w-auto">
         <div class="bg-white rounded z-11">
          <a [routerLink]="['/nos-programmes', coaching.urlTitle]" class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 pt-4 text-gray-600 hover:text-red-500"><i class="fa fa-eye pr-2" aria-hidden="true"></i>Voir le programme</h1></a>
@@ -28,7 +28,7 @@
 
     <!-- Title and description (see @Inputs)-->
     <div class="px-4 pb-2 flex flex-col">
-      <p *ngIf="title" class="py-2 text-xl text-white font-lato font-bold tracking-widest">{{title}}</p>
+      <p *ngIf="urlTitle" class="py-2 text-xl text-white font-lato font-bold tracking-widest">{{urlTitle}}</p>
       <p *ngIf="level" class="text-base text-white font-lato">{{level}}</p>
     
     </div>

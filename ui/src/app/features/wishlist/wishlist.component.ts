@@ -12,6 +12,7 @@ import {
 } from 'src/app/core/store/store.module/wishe/wish.action';
 import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-wishlist',
@@ -20,7 +21,8 @@ import { Observable } from 'rxjs';
 })
 export class WishlistComponent implements OnInit {
 
-  constructor(private store: Store) { }
+  constructor(private store: Store,
+              private toastr: ToastrService) { }
 
   @Select(WishState.wishCoachings)
   coachings: Observable<Wish[]>;
@@ -36,9 +38,11 @@ export class WishlistComponent implements OnInit {
 
   deleteWishCoaching(id: string) {
     this.store.dispatch(new DeleteWishCoaching(id));
+    this.toastr.success('Programme supprimé des favoris avec succés !');
   }
 
   deleteWishArticle(id: string) {
     this.store.dispatch(new DeleteWishArticle(id));
+    this.toastr.success('Article supprimé des favoris avec succés !');
   }
 }

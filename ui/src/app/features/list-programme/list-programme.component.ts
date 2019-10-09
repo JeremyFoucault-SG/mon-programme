@@ -57,13 +57,13 @@ export class ListProgrammeComponent implements OnInit {
 
   navigateTo(value) {
     if (value === 'query1') {
-      this.router.navigate(['/coachings'], { queryParams: { rating: 5 }, queryParamsHandling: 'merge' });
+      this.router.navigate(['/nos-programmes'], { queryParams: { rating: 5 }, queryParamsHandling: 'merge' });
     }
     if (value === 'query2') {
-      this.router.navigate(['/coachings'], { queryParams: { rating: 3 }, queryParamsHandling: 'merge' });
+      this.router.navigate(['/nos-programmes'], { queryParams: { rating: 3 }, queryParamsHandling: 'merge' });
     }
     if (value === 'query3') {
-      this.router.navigate(['/coachings'], { queryParams: { rating: 1 }, queryParamsHandling: 'merge' });
+      this.router.navigate(['/nos-programmes'], { queryParams: { rating: 1 }, queryParamsHandling: 'merge' });
     }
   }
 
