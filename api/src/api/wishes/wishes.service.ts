@@ -5,31 +5,37 @@ import { InjectModel } from 'nestjs-typegoose';
 import { WishModel } from './wish.model';
 import { ModelType } from 'typegoose';
 import { WishDTO } from './wish.dto';
-import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
+import {
+  EntityException,
+  EntityExceptionCode,
+} from '../../exceptions/entity-exception';
 import { CoachingModel } from '../coachings/coaching.model';
 import { CoachingsService } from '../coachings/coachings.service';
 import { ArticlesService } from '../articles/articles.service';
 import { ArticleModel } from '../articles/article.model';
+import { WishQuery } from './wish.query';
 
 /**
  * Service for manage wishes save in database, for a given user
  */
 @Injectable()
 export class WishesService {
-
   constructor(
     private usersService: UsersService,
     private coachingsService: CoachingsService,
     private articlesService: ArticlesService,
     @InjectModel(WishModel) private readonly wishModel: ModelType<WishModel>,
-  ) { }
+  ) {}
 
   /**
    * Create new coaching wish for given a user ID
    * @param idUser ID of user
    * @param bookmar Coaching to insert
    */
-  async insertCoachings(idUser, wish: WishDTO): Promise<InstanceType<WishModel>> {
+  async insertCoachings(
+    idUser,
+    wish: WishDTO,
+  ): Promise<InstanceType<WishModel>> {
     const user = await this.usersService.findById(idUser);
     const coaching = await this.coachingsService.findById(wish.wishId);
     const wishCreated = new this.wishModel({ coaching });
@@ -57,7 +63,10 @@ export class WishesService {
    * @param idUser ID of user
    * @param idWish ID of wanted wish
    */
-  async findById(idUser: string, idWish: string): Promise<InstanceType<WishModel>> {
+  async findById(
+    idUser: string,
+    idWish: string,
+  ): Promise<InstanceType<WishModel>> {
     const user = await this.usersService.findById(idUser);
     const wish = user.wishes.id(idWish);
     if (!wish) {
@@ -70,16 +79,26 @@ export class WishesService {
    * Find all whishes for a given user ID
    * @param idUser ID of user
    */
-  async findAllArticle(idUser: string): Promise<WishModel[]> {
+  async searchArticle(idUser: string, limit?: number): Promise<WishModel[]> {
     const user = await this.usersService.findById(idUser);
     await user.populate('wishes.article').execPopulate();
-    return user.wishes.filter(w => w.article);
+    const allWish = user.wishes.filter(w => w.article);
+    if (limit) {
+      return allWish.slice(0, +limit);
+    } else {
+      return allWish;
+    }
   }
 
-  async findAllCoaching(idUser: string): Promise<WishModel[]> {
+  async searchCoaching(idUser: string, limit?: number): Promise<WishModel[]> {
     const user = await this.usersService.findById(idUser);
     await user.populate('wishes.coaching').execPopulate();
-    return user.wishes.filter(w => w.coaching);
+    const allWish = user.wishes.filter(w => w.coaching);
+    if (limit) {
+      return allWish.slice(0, +limit);
+    } else {
+      return allWish;
+    }
   }
 
   async deleteWish(idUser: string, id: string): Promise<WishModel> {
@@ -92,5 +111,4 @@ export class WishesService {
     await user.save();
     return wish;
   }
-
 }
