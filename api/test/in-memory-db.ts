@@ -1,6 +1,6 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { Logger } from '@nestjs/common';
-import * as mongoose from 'mongoose'
+import * as mongoose from 'mongoose';
 export async function startInMemoryDB() {
   const mongod = new MongoMemoryServer({ instance: { ip: '0.0.0.0', dbName: 'monprogramme', port: 27017 } });
 
@@ -10,7 +10,7 @@ export async function startInMemoryDB() {
     const collections = await mongoose.connection.db.collections();
 
     for (const collection of collections) {
-      await collection.deleteMany({})
+      await collection.deleteMany({});
     }
 
   } catch (err) {
