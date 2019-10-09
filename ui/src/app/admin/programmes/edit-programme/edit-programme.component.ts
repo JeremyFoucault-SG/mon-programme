@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, FormControl } from '@angular/forms';
+import {
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Programme } from '../../../shared/models/programmes.model';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
-import { UpdateProgramme, AddProgramme, SetSelectedProgramme } from 'src/app/core/store/store.module/programme/programme.action';
+import {
+  UpdateProgramme,
+  AddProgramme,
+  SetSelectedProgramme
+} from 'src/app/core/store/store.module/programme/programme.action';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -15,6 +22,15 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditProgrammeComponent implements OnInit {
 
+  constructor(
+    private fb: FormBuilder,
+    private store: Store,
+    private route: ActivatedRoute,
+    private router: Router,
+    private toastr: ToastrService
+  ) {
+    this.createForm();
+  }
   @Select(ProgrammeState.getProgramme)
   selectedProgramme: Observable<Programme>;
 
@@ -22,19 +38,10 @@ export class EditProgrammeComponent implements OnInit {
     id: ['', Validators.required],
     rating: ['', Validators.required],
     title: ['', Validators.required],
-    content: ['', Validators.required],
+    content: ['', Validators.required]
   });
 
   editProgramme = false;
-
-  constructor(private fb: FormBuilder,
-              private store: Store,
-              private route: ActivatedRoute,
-              private router: Router,
-              private toastr: ToastrService) {
-    this.createForm();
-  }
-
   ngOnInit() {
     this.selectedProgramme.subscribe(item => {
       if (item) {
@@ -56,24 +63,30 @@ export class EditProgrammeComponent implements OnInit {
       id: [''],
       rating: [''],
       title: [''],
-      content: [''],
+      content: ['']
     });
   }
 
-
-
-
   onSubmit() {
     if (this.editProgramme) {
-      this.store.dispatch(new UpdateProgramme(this.programmeForm.value, this.programmeForm.value.id)).subscribe(() => {
-        this.programmeForm.reset();
-        this.showSuccessUpdate();
-      });
+      this.store
+        .dispatch(
+          new UpdateProgramme(
+            this.programmeForm.value,
+            this.programmeForm.value.id
+          )
+        )
+        .subscribe(() => {
+          this.programmeForm.reset();
+          this.showSuccessUpdate();
+        });
     } else {
-      this.store.dispatch(new AddProgramme(this.programmeForm.value)).subscribe(() => {
-        this.programmeForm.reset();
-        this.showSuccesAdd();
-      });
+      this.store
+        .dispatch(new AddProgramme(this.programmeForm.value))
+        .subscribe(() => {
+          this.programmeForm.reset();
+          this.showSuccesAdd();
+        });
     }
   }
   showSuccesAdd() {
