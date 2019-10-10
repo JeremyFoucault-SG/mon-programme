@@ -4,6 +4,7 @@ import { filter, map, mergeMap, tap } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from '../authentication/authentication.service';
+import { CartsService } from '../http/carts.service';
 
 /**
  * Header component, hold navigation, title, user
@@ -44,13 +45,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   subscriptions: Subscription[] = [];
 
+  public coachings = [];
+  public newOrder = 0;
+
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
-    private auth: AuthenticationService) { }
+    private auth: AuthenticationService,
+    private cartsService: CartsService) { }
 
   ngOnInit() {
+
     this.auth.isLogin().subscribe(valeur => this.user = valeur );
     // if (this.auth.isLogin()) {
     //   this.user = true;
@@ -75,6 +82,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.isTransparent = data.isTransparent;
       })
     );
+    if (this.auth.isLogin()) {
+      this.cartsService. getAllCart().subscribe(
+          (coachings) => {
+            this.coachings = coachings;
+            this.newOrder = this.coachings.length;
+          });
+    }
   }
 
   /**
@@ -98,3 +112,4 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 
 }
+

@@ -57,6 +57,8 @@ export class CommandeComponent implements OnInit {
     this.usersService.addUserInfos(payload).subscribe(
       () => {
         this.router.navigate(['paiement']);
+        this.toastr.success('succes', 'informations enregistrées', {
+        });
       },
       (error) => {
         this.loading = false;
