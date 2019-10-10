@@ -35,8 +35,6 @@ export class ConnexionComponent implements OnInit {
     this.authService.login(this.model.username, this.model.password).subscribe(
       () => {
         this.router.navigate(['accueil']);
-        this.toastr.success('succes', 'informations enregistrées', {
-        });
       },
       (error) => {
         this.loading = false;
