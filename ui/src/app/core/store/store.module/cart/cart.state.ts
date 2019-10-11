@@ -30,6 +30,11 @@ export class CartState {
         return state.items;
     }
 
+    @Selector()
+    static count(state: CartStateModel) {
+        return state.items.length;
+    }
+
     @Action(AddCart)
     add({ getState, patchState, setState }: StateContext<CartStateModel>, { payload }: AddCart) {
         console.log('ha');

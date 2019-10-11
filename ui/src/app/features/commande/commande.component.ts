@@ -10,6 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import { UsersService } from 'src/app/core/http/users.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-commande',
@@ -46,9 +47,11 @@ export class CommandeComponent implements OnInit {
       password: new FormControl('', Validators.required),
     });
   }
+
+
   deleteCartCoaching(id: string) {
     this.store.dispatch(new DeleteCartCoaching(id));
-    this.toastr.warning('Programme supprimé du panier !');
+    this.toastr.warning('Programme supprimé du panier !', 'Succés', {positionClass: 'toast-bottom-right'});
   }
 
 
@@ -57,13 +60,11 @@ export class CommandeComponent implements OnInit {
     this.usersService.addUserInfos(payload).subscribe(
       () => {
         this.router.navigate(['paiement']);
-        this.toastr.success('succes', 'informations enregistrées', {
-        });
+        this.toastr.success('succes', 'informations enregistrées', {positionClass: 'toast-bottom-right'});
       },
       (error) => {
         this.loading = false;
-        this.toastr.error('Erreur', 'tous les champs ne sont pas saisis', {
-        });
+        this.toastr.error('Erreur', 'tous les champs ne sont pas saisis', {positionClass: 'toast-bottom-right'});
       },
     );
   }
