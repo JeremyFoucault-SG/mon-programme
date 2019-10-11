@@ -9,7 +9,7 @@ import { ModelType } from 'typegoose';
 @ApiUseTags('Newsletters')
 export class NewsletterController {
 
-    constructor(private readonly newsletterService: NewsletterService,
+    constructor(
                 @InjectModel(NewsletterModel) private readonly newsletterModel: ModelType<NewsletterModel>,
       ) { }
 

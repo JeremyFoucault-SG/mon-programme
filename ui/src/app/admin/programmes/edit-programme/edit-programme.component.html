@@ -7,7 +7,8 @@
                     <!-- <ngx-quill
                     class="form-control ml-12" [formControl]="programmeForm.controls['content']"
                      (ngSubmit)="onSubmit()"></ngx-quill> -->
-                     <quill-editor class="form-control" formControlName="content">
+                     <quill-editor #quill class="form-control" formControlName="content" (onSelectionChanged)="onSelectionChanged()">
+
                         <div quill-editor-toolbar>
                             <span class="ql-formats">
                                 <select class="ql-font">
@@ -23,18 +24,19 @@
                                 </select>
                               </span>
                               <span class="ql-formats">
-                                <button class="ql-bold"></button>
-                                <button class="ql-italic"></button>
-                                <button class="ql-underline"></button>
-                                <button class="ql-strike"></button>
+                                <button type="button" class="ql-bold"></button>
+                                <button type="button" class="ql-italic"></button>
+                                <button type="button" class="ql-underline"></button>
+                                <button type="button" class="ql-strike"></button>
                               </span>
                               <span class="ql-formats">
                                 <select class="ql-color"></select>
                                 <select class="ql-background"></select>
                               </span>
                               <span class="ql-formats">
-                                <button class="ql-list" value="ordered"></button>
-                                <button class="ql-list" value="bullet"></button>
+                                <button type="button" class="ql-list" value="ordered"></button>
+                                <button type="button" class="ql-list" value="bullet"></button>
+
                                 <select class="ql-align">
                                   <option selected></option>
                                   <option value="center"></option>
@@ -43,8 +45,8 @@
                                 </select>
                               </span>
                               <span class="ql-formats">
-                                <button class="ql-link"></button>
-                                <button class="ql-image"></button>
+                                <button type="button" class="ql-link"></button>
+                                <button type="button" class="ql-image"></button>
                               </span>
                         </div>
                       </quill-editor>

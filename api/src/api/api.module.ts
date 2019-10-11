@@ -14,6 +14,7 @@ import { FollowedCoachingsModule } from './followed-coachings/followed-coachings
 import { CoversModule } from './covers/covers.module';
 import { GoalsModule } from './goals/goals.module';
 import { ContactModule } from './contact/contact.module';
+import { UploadModule} from './uplaod/upload.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { ContactModule } from './contact/contact.module';
     CategoriesModule,
     FollowedCoachingsModule,
     ContactModule,
+    UploadModule,
   ],
 })
 export class ApiModule { }
