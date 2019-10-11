@@ -62,14 +62,13 @@ export class ListingProgrammeComponent implements OnInit {
 
   addBasket(coaching: Programmes) {
     this.store.dispatch(new AddCart({ cartId: coaching._id }));
-    window.location.reload();
-    this.toastr.success('Programme ajouté au panier avec succés !');
+    this.toastr.success('Programme ajouté au panier avec succés !', 'Succés', {positionClass: 'toast-bottom-right'} );
   }
 
   addToWishList(coaching: Programmes) {
     console.log(coaching);
     this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
     this.isFavorite = true;
-    this.toastr.success('Programme ajouté aux favoris avec succés !');
+    this.toastr.success('Programme ajouté aux favoris avec succés !', 'Succés', {positionClass: 'toast-bottom-right'} );
   }
 }

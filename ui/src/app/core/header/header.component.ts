@@ -5,6 +5,12 @@ import { Observable, Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { CartsService } from '../http/carts.service';
+import { Login } from 'src/app/shared/models/login.model';
+import { User } from 'src/app/shared/models/user.model';
+import { Select, Store } from '@ngxs/store';
+import { CartState } from '../store/store.module/cart/cart.state';
+import { Cart } from 'src/app/shared/models/cart.model';
+import { GetAllCarts } from '../store/store.module/cart/cart.actions';
 
 /**
  * Header component, hold navigation, title, user
@@ -45,8 +51,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   subscriptions: Subscription[] = [];
 
+  // users: Login;
+  // name = this.users.username;
+
+
   public coachings = [];
   public newOrder = 0;
+
+  @Select(CartState.count)
+  carts: Observable<number>;
 
 
   constructor(
@@ -54,7 +67,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private auth: AuthenticationService,
-    private cartsService: CartsService) { }
+    private cartsService: CartsService,
+    private store: Store) { }
 
   ngOnInit() {
 
@@ -83,7 +97,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       })
     );
     if (this.auth.isLogin()) {
-      this.cartsService. getAllCart().subscribe(
+      this.store.dispatch(new GetAllCarts()).subscribe(
           (coachings) => {
             this.coachings = coachings;
             this.newOrder = this.coachings.length;
