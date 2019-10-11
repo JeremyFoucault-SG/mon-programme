@@ -1,6 +1,11 @@
 import { Settings } from '../../../../shared/models/settings.model';
 
 
+export class GetAllSetting {
+    static readonly type = '[Blog] Get all setting';
+    constructor() { }
+}
+
 
 // Récupération d'une option par son id //
 export class GetByIdSetting {

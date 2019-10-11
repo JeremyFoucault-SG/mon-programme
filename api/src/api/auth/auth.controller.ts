@@ -30,16 +30,29 @@ export class AuthController {
     @HttpCode(HttpStatus.CREATED)
     @Post('signup')
     async signup(@Body() register: RegisterDTO) {
-        const { username, password, ...settings } = register;
+        const { username, password, age, email, firstname, lastname, goals, size, weight } = register;
         const auth: AuthDTO = { password, username };
         await this.authService.createAuth(register);
         const user = await this.userService.insert(new UserDTO());
-        const updatedAuth = await this.authService.updateAuth(auth, user);
-        const setting = await this.settingService.insert(user._id,
+        await this.authService.updateAuth(auth, user);
+        await this.settingService.insert(user._id,
             {
+
                 infos: {
-                    ...settings,
-                    username,
+                    age,
+                    weight,
+                    size,
+                    goals,
+
+            },
+                contact: {
+                    email,
+                    firstname,
+                    lastname,
+
+                },
+                paiement: {
+
                 },
             });
     }
