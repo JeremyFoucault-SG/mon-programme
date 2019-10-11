@@ -59,7 +59,6 @@ export class InfoComponent implements OnInit {
   }
   ngOnInit() {
     const test = this.store.dispatch(new GetUserById(this.idUser));
-    console.log(test)
   }
   parseJwt(token) {
     const base64Url = token.split('.')[1];

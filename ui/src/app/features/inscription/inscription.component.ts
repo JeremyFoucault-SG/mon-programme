@@ -60,6 +60,7 @@ export class InscriptionComponent implements OnInit {
     };
     this.auth.register(register)
       .subscribe(
+        // tslint:disable-next-line: no-shadowed-variable
         (register: Register) => {
           this.myForm.patchValue(register);
           this.toastr.clear();
