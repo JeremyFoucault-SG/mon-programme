@@ -6,6 +6,8 @@ import { tap, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Auth } from 'src/app/shared/models/auth.model';
+import { Register } from 'src/app/shared/models/register.model';
 
 
 @Injectable({
@@ -24,10 +26,10 @@ export class AuthenticationService {
 
   private subject = new ReplaySubject<boolean>(1);
 
-  register(setting: Settings): Observable<Settings> {
-    return this.http.post<Settings>(`${this.configUrli}`, setting);
+  register(register: Register): Observable<Register> {
+    return this.http.post<Register>(`${this.configUrli}`, register);
   }
-  login(username: Settings['username'], password: Settings['password']) {
+  login(username: string, password: string) {
     return this.http.post<any>(`${this.configUrl}`, { username, password })
       .pipe(
         tap((user) => {

@@ -1,4 +1,5 @@
 import { Wish } from '../../../../shared/models/wishes.model';
+import { QueryWish } from 'src/app/shared/models/queryWish.model';
 
 
 
@@ -15,13 +16,13 @@ export class AddWishArticle {
 
 // Récupération de tous les wishes //
 export class GetAllWishesCoaching {
-    static readonly type = '[Wish] Get all wisheCoaching';
-    constructor() { }
+    static readonly type = '[Wish] Get all wishesCoaching';
+    constructor(public payload?: QueryWish) { }
 }
 
 export class GetAllWishesArticles {
-    static readonly type = '[Wish] Get all wisheArticles';
-    constructor() { }
+    static readonly type = '[Wish] Get all wishesArticles';
+    constructor(public payload?: QueryWish) { }
 }
 
 // Delete wishArticle

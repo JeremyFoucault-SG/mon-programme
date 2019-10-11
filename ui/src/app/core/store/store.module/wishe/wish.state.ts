@@ -42,8 +42,8 @@ export class WishState {
     }
 
     @Action(GetAllWishesCoaching)
-    getAllCoachings(ctx: StateContext<WishStateModel>, action: GetAllWishesCoaching) {
-        return this.service.getAllWishesCoachings().pipe(tap((wish: Wish[]) => {
+    getAllCoachings(ctx: StateContext<WishStateModel>, {payload}: GetAllWishesCoaching) {
+        return this.service.getAllWishesCoachings(payload).pipe(tap((wish: Wish[]) => {
             ctx.setState(patch({
                 coachings: wish
             }));
@@ -51,8 +51,8 @@ export class WishState {
     }
 
     @Action(GetAllWishesArticles)
-    getAllArticles(ctx: StateContext<WishStateModel>, action: GetAllWishesArticles) {
-        return this.service.getAllWishesArticles().pipe(tap((wish: Wish[]) => {
+    getAllArticles(ctx: StateContext<WishStateModel>, {payload}: GetAllWishesArticles) {
+        return this.service.getAllWishesArticles(payload).pipe(tap((wish: Wish[]) => {
             ctx.setState(patch({
                 articles: wish
             }));

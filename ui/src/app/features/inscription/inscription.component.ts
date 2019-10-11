@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { UsersService } from 'src/app/core/http/users.service';
 import { Settings } from 'src/app/shared/models/settings.model';
 import { SettingsService } from 'src/app/core/http/settings.service';
+import { Register } from 'src/app/shared/models/register.model';
 
 @Component({
   selector: 'app-inscription',
@@ -32,7 +33,7 @@ export class InscriptionComponent implements OnInit {
     }),
     step3: this.fb.group({
       username: ['', Validators.required],
-      objectif: ['', Validators.required],
+      goals: ['', Validators.required],
       weight: ['', Validators.required],
       size: ['', Validators.required],
     })
@@ -52,15 +53,16 @@ export class InscriptionComponent implements OnInit {
   onSubmit() {
     this.toastr.success('succés', 'Utilisateur Créé');
     const formValue = this.myForm.value;
-    const setting = {
+    const register = {
       ...formValue.step1,
       ...formValue.step2,
       ...formValue.step3,
     };
-    this.auth.register(setting)
+    this.auth.register(register)
       .subscribe(
-        (client: Settings) => {
-          this.myForm.patchValue(client);
+        // tslint:disable-next-line: no-shadowed-variable
+        (register: Register) => {
+          this.myForm.patchValue(register);
           this.toastr.clear();
           this.toastr.success('success', 'User Created');
         },

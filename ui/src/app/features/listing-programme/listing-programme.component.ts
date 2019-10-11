@@ -12,7 +12,7 @@ import {
   SearchProgramme,
   GetCoachingByTitle
 } from 'src/app/core/store/store.module/programme/programme.action';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { AddCart } from 'src/app/core/store/store.module/cart/cart.actions';
 import { ToastrService } from 'ngx-toastr';
 import { AddWishCoaching } from 'src/app/core/store/store.module/wishe/wish.action';
@@ -44,7 +44,7 @@ export class ListingProgrammeComponent implements OnInit {
   @Select(ProgrammeState.getProgrammes)
   programmes: Observable<Programme>;
 
-  constructor(private store: Store, private route: ActivatedRoute, private toastr: ToastrService) {}
+  constructor(private store: Store, private route: ActivatedRoute, private toastr: ToastrService, private router: Router) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -62,13 +62,13 @@ export class ListingProgrammeComponent implements OnInit {
 
   addBasket(coaching: Programme) {
     this.store.dispatch(new AddCart({ cartId: coaching._id }));
-    this.toastr.success('Programme ajouté au panier avec succés !');
+    this.toastr.success('Programme ajouté au panier avec succés !', 'Succés', {positionClass: 'toast-bottom-right'} );
   }
 
   addToWishList(coaching: Programme) {
     console.log(coaching);
     this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
     this.isFavorite = true;
-    this.toastr.success('Programme ajouté aux favoris avec succés !');
+    this.toastr.success('Programme ajouté aux favoris avec succés !', 'Succés', {positionClass: 'toast-bottom-right'} );
   }
 }

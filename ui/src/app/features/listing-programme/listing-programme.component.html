@@ -20,7 +20,7 @@
         <a class="cursor-pointer mt-2 ml-2" (click)="addToWishList(programme)">
             <i class="fa pr-2 text-red-700" [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i><span
                     class="text-white text-xs italic hover:text-black">Sauvegarder l'article</span></a>
-                    <a class="cursor-pointer mt-6">
+                    <a class="cursor-pointer mt-6" [routerLink]="['/commande']">
         <p class="text-2xl text-white font-thin mr-8">VOIR LE PANIER <i class="fa fa-angle-right ml-4"
                 aria-hidden="true"></i> </p></a>
     </div>

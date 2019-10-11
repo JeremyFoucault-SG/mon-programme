@@ -8,6 +8,7 @@ import { Programme } from 'src/app/shared/models/programmes.model';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 import { ProgrammesDTO } from 'src/app/shared/models/coaching.dto';
 import { User } from 'src/app/shared/models/user.model';
+import { QueryWish } from 'src/app/shared/models/queryWish.model';
 
 
 
@@ -22,15 +23,17 @@ export class WishesService {
     public api = `${environment.apiUrl}`;
 
     // Recuperation de tous les wishes//
-    public getAllWishesArticles(): Observable<Wish[]> {
-        return this.http.get(`${this.api}/wishes/articles`).pipe(
+    public getAllWishesArticles(payload?: QueryWish): Observable<Wish[]> {
+        const query = payload && payload.limit ? `limit=${payload.limit}` : '';
+        return this.http.get(`${this.api}/wishes/articles${query.length > 0 ? '?' + query : ''}`).pipe(
             map((allWishes: any) => {
                 return allWishes as Wish[];
             }),
         );
     }
-    public getAllWishesCoachings(): Observable<Wish[]> {
-        return this.http.get(`${this.api}/wishes/coachings`).pipe(
+    public getAllWishesCoachings(payload?: QueryWish): Observable<Wish[]> {
+        const query = payload && payload.limit ? `limit=${payload.limit}` : '';
+        return this.http.get(`${this.api}/wishes/coachings${query.length > 0 ? '?' + query : ''}`).pipe(
             map((allWishes: any) => {
                 return allWishes as Wish[];
             }),

@@ -6,6 +6,11 @@ import { Cart } from 'src/app/shared/models/cart.model';
 import { GetAllCarts, DeleteCartCoaching } from 'src/app/core/store/store.module/cart/cart.actions';
 import { SumPipe } from '../../shared/pipes/sum.pipe';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
+import { UsersService } from 'src/app/core/http/users.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-commande',
@@ -18,24 +23,49 @@ export class CommandeComponent implements OnInit {
   paiement = false;
   isHidden = false;
   pipes: [SumPipe];
+  model: any = {};
+  public myForm: FormGroup;
+  loading = false;
 
 
-
-
-  constructor(private store: Store, private toastr: ToastrService) {
+  constructor(private store: Store,
+              private router: Router,
+              private usersService: UsersService,
+              private toastr: ToastrService) {
   }
 
   @Select(CartState.cartCoachings)
   carts: Observable<Cart[]>;
 
 
-
   ngOnInit() {
     this.store.dispatch(new GetAllCarts());
-  }
-  deleteCartCoaching(id: string) {
-    this.store.dispatch(new DeleteCartCoaching(id));
-    this.toastr.warning('Programme supprimé du panier !');
+    this.myForm = new FormGroup({
+      firstname: new FormControl('', Validators.required),
+      lastname: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
   }
 
+
+  deleteCartCoaching(id: string) {
+    this.store.dispatch(new DeleteCartCoaching(id));
+    this.toastr.warning('Programme supprimé du panier !', 'Succés', {positionClass: 'toast-bottom-right'});
+  }
+
+
+  onSubmit(payload) {
+    this.loading = true;
+    this.usersService.addUserInfos(payload).subscribe(
+      () => {
+        this.router.navigate(['paiement']);
+        this.toastr.success('succes', 'informations enregistrées', {positionClass: 'toast-bottom-right'});
+      },
+      (error) => {
+        this.loading = false;
+        this.toastr.error('Erreur', 'tous les champs ne sont pas saisis', {positionClass: 'toast-bottom-right'});
+      },
+    );
+  }
 }

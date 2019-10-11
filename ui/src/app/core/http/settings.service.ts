@@ -16,6 +16,14 @@ export class SettingsService {
 
     public api = `${environment.apiUrl}`;
 
+    public getAllSetting(): Observable<Settings[]> {
+        return this.http.get(`${this.api}/settings`).pipe(
+            map((setting: any) => {
+                return setting as Settings[];
+            }),
+        );
+    }
+
     // Recuperation d'une option par l'id//
     public getSetting(id: string): Observable<Settings> {
         return this.http.get(`${this.api}/settings/${id}`).pipe(

@@ -14,7 +14,7 @@ export class ContactController {
     constructor(
         private readonly configService: ConfigService,
         private readonly mailerService: MailerService,
-        @InjectModel(ContactModel) private readonly contactModel: ModelType<ContactModel>
+        @InjectModel(ContactModel) private readonly contactModel: ModelType<ContactModel>,
     ) { }
 
     @Post('contact')

@@ -12,16 +12,6 @@ export class SettingsController {
 
     constructor(private readonly settingsService: SettingsService) {}
 
-    @Get(':id')
-    @ApiBearerAuth()
-    @ApiOperation({ title: 'Get setting by ID' })
-    @ApiResponse({ status: 200, description: 'Return setting.' })
-    @ApiResponse({ status: 404, description: 'Not Found.' })
-    @ApiResponse({ status: 403, description: 'Forbidden.' })
-    async readOne(@Param('id') idUser: string): Promise<SettingsModel> {
-      return this.settingsService.findById(idUser);
-    }
-
     @Get()
     @ApiBearerAuth()
     @ApiOperation({ title: 'Get setting all' })
@@ -30,6 +20,16 @@ export class SettingsController {
     @ApiResponse({ status: 403, description: 'Forbidden.' })
     async readAll(): Promise<SettingsModel[]> {
         return this.settingsService.findAll();
+    }
+
+    @Get(':id')
+    @ApiBearerAuth()
+    @ApiOperation({ title: 'Get setting by ID' })
+    @ApiResponse({ status: 200, description: 'Return setting.' })
+    @ApiResponse({ status: 404, description: 'Not Found.' })
+    @ApiResponse({ status: 403, description: 'Forbidden.' })
+    async readOne(@Param('id') idUser: string): Promise<SettingsModel> {
+      return this.settingsService.findById(idUser);
     }
 
     @Put()
