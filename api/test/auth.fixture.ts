@@ -12,7 +12,7 @@ export async function insertAuthData(authController: AuthController) {
     email: 'fsdfsdf',
     firstname: 'sdfsdfsf',
     lastname: 'fsdfsf',
-    objectif: 'Raffermissement',
+    goals: 'Raffermissement',
     size: 'sdfsfs',
     weight: 'sfsdfsf',
   };

@@ -36,10 +36,7 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe((params: Params) => {
       this.path = this.router.url.substring(1);
-      console.log(this.path);
       this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, limit: 3}));
-      console.log(this.listArticles);
-
     });
 
   }
@@ -47,6 +44,5 @@ export class BlogComponent implements OnInit {
     this.skip = this.limit;
     this.limit += 3;
     this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, skip: this.skip, limit: this.limit}));
-
   }
 }
