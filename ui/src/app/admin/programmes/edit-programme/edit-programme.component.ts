@@ -1,8 +1,10 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   Validators,
 } from '@angular/forms';
+
 import { Select, Store } from '@ngxs/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -22,6 +24,7 @@ import { QuillEditorComponent } from 'ngx-quill';
   styleUrls: ['./edit-programme.component.css']
 })
 export class EditProgrammeComponent implements OnInit {
+
   @ViewChild('quill', {static: true}) quill: QuillEditorComponent;
 
   constructor(
@@ -31,6 +34,7 @@ export class EditProgrammeComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService
   ) {
+
     this.createForm();
   }
   @Select(ProgrammeState.getProgramme)
@@ -65,12 +69,13 @@ export class EditProgrammeComponent implements OnInit {
       id: [''],
       rating: [''],
       title: [''],
-      content: ['']
+      content: [''],
     });
   }
 
   onSubmit() {
     if (this.editProgramme) {
+
       this.store
         .dispatch(
           new UpdateProgramme(
@@ -89,6 +94,7 @@ export class EditProgrammeComponent implements OnInit {
           this.programmeForm.reset();
           this.showSuccesAdd();
         });
+
     }
   }
   showSuccesAdd() {

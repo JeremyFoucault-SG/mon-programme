@@ -8,6 +8,7 @@
                     class="form-control ml-12" [formControl]="programmeForm.controls['content']"
                      (ngSubmit)="onSubmit()"></ngx-quill> -->
                      <quill-editor #quill class="form-control" formControlName="content" (onSelectionChanged)="onSelectionChanged()">
+
                         <div quill-editor-toolbar>
                             <span class="ql-formats">
                                 <select class="ql-font">
@@ -35,6 +36,7 @@
                               <span class="ql-formats">
                                 <button type="button" class="ql-list" value="ordered"></button>
                                 <button type="button" class="ql-list" value="bullet"></button>
+
                                 <select class="ql-align">
                                   <option selected></option>
                                   <option value="center"></option>
