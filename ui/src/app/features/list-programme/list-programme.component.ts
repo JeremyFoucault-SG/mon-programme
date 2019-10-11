@@ -3,7 +3,7 @@ import { ProgramDetail, ProgramsList } from 'src/app/shared/models/programs-info
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
 import { Observable, Subscription } from 'rxjs';
-import { Programmes } from 'src/app/shared/models/programmes.model';
+import { Programme } from 'src/app/shared/models/programmes.model';
 import { Store, Select } from '@ngxs/store';
 import { SearchProgramme, AddNextProgramme } from 'src/app/core/store/store.module/programme/programme.action';
 import { QueryCoaching } from 'src/app/shared/models/query.coaching.interface';
@@ -25,8 +25,8 @@ export class ListProgrammeComponent implements OnInit {
   public newLimit = 0;
 
 
-  @Select(ProgrammeState.programme)
-  programmes: Observable<Programmes[]>;
+  @Select(ProgrammeState.getProgrammes)
+  programmes: Observable<Programme[]>;
 
   constructor(
     private store: Store,

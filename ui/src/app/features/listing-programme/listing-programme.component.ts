@@ -5,7 +5,7 @@ import {
 } from 'src/app/shared/models/programs-infos';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Programmes } from 'src/app/shared/models/programmes.model';
+import { Programme } from 'src/app/shared/models/programmes.model';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import {
@@ -38,11 +38,11 @@ export class ListingProgrammeComponent implements OnInit {
   isFavorite = false;
 
 
-  @Select(ProgrammeState.Getprogrammes)
-  programme: Observable<Programmes>;
+  @Select(ProgrammeState.getProgramme)
+  programme: Observable<Programme>;
 
-  @Select(ProgrammeState.programme)
-  programmes: Observable<Programmes>;
+  @Select(ProgrammeState.getProgrammes)
+  programmes: Observable<Programme>;
 
   constructor(private store: Store, private route: ActivatedRoute, private toastr: ToastrService, private router: Router) {}
 
@@ -60,12 +60,12 @@ export class ListingProgrammeComponent implements OnInit {
     console.log();
   }
 
-  addBasket(coaching: Programmes) {
+  addBasket(coaching: Programme) {
     this.store.dispatch(new AddCart({ cartId: coaching._id }));
     this.toastr.success('Programme ajouté au panier avec succés !', 'Succés', {positionClass: 'toast-bottom-right'} );
   }
 
-  addToWishList(coaching: Programmes) {
+  addToWishList(coaching: Programme) {
     console.log(coaching);
     this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
     this.isFavorite = true;

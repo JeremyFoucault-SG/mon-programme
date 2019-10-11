@@ -1,4 +1,5 @@
 import { NgxQuillModule } from '@dimpu/ngx-quill';
+import { QuillModule } from 'ngx-quill';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ProgrammesComponent } from './programmes/programmes/programmes.component';
 
@@ -8,7 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { EditProgrammeComponent } from './programmes/edit-programme/edit-programme.component';
 import { UpdateArticleComponent } from './article/update-article/update-article.component';
-import { CreateProgrammeComponent } from './programmes/create-programme/create-programme.component';
 import { ArticleComponent } from './article/article/article.component';
 
 @NgModule({
@@ -17,7 +17,6 @@ declarations: [
     ProgrammesComponent,
     EditProgrammeComponent,
     UpdateArticleComponent,
-    CreateProgrammeComponent,
     ArticleComponent
 ],
 
@@ -25,7 +24,8 @@ declarations: [
     CoreModule,
     NgxQuillModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    QuillModule.forRoot()
   ],
   exports: [
     UpdateArticleComponent,

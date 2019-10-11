@@ -1,5 +1,5 @@
 import { ArticleBlog } from './articles-blog.model';
-import { Programmes } from './programmes.model';
+import { Programme } from './programmes.model';
 
 export class Wish {
     constructor(
@@ -7,6 +7,6 @@ export class Wish {
         // tslint:disable-next-line: variable-name
         public _id?: string,
         public article?: ArticleBlog,
-        public coaching?: Programmes,
+        public coaching?: Programme,
     ) { }
 }

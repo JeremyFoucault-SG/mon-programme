@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Programmes } from 'src/app/shared/models/programmes.model';
+import { Programme } from 'src/app/shared/models/programmes.model';
 import { WishesService } from 'src/app/core/http/wishes.service';
 import { Wish } from 'src/app/shared/models/wishes.model';
 import { ProgrammesDTO } from 'src/app/shared/models/coaching.dto';

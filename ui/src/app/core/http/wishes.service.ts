@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Wish } from 'src/app/shared/models/wishes.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Programmes } from 'src/app/shared/models/programmes.model';
+import { Programme } from 'src/app/shared/models/programmes.model';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 import { ProgrammesDTO } from 'src/app/shared/models/coaching.dto';
 import { User } from 'src/app/shared/models/user.model';

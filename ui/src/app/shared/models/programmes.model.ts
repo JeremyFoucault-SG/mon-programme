@@ -1,4 +1,4 @@
-export class Programmes {
+export class Programme {
     constructor(
         // tslint:disable-next-line: variable-name
         public _id: string,
