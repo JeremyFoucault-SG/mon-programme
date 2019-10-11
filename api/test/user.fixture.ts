@@ -103,7 +103,7 @@ export async function insertUserData(articlesService: ArticlesService, coachings
       paiement: {
         rib: faker.name.firstName(50),
         iban: faker.name.firstName(50),
-      }
+      },
 
     };
 
