@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   Validators,
@@ -14,6 +14,7 @@ import {
   SetSelectedProgramme
 } from 'src/app/core/store/store.module/programme/programme.action';
 import { ToastrService } from 'ngx-toastr';
+import { QuillEditorComponent } from 'ngx-quill';
 
 @Component({
   selector: 'app-edit-programme',
@@ -21,6 +22,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./edit-programme.component.css']
 })
 export class EditProgrammeComponent implements OnInit {
+  @ViewChild('quill', {static: true}) quill: QuillEditorComponent;
 
   constructor(
     private fb: FormBuilder,
@@ -99,6 +101,10 @@ export class EditProgrammeComponent implements OnInit {
 
   showError() {
     this.toastr.error('Impossible de mettre à jour le programme');
+  }
+
+  onSelectionChanged() {
+    console.log(this.quill.quillEditor.getSelection(), this.programmeForm.value)
   }
 
 }

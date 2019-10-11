@@ -7,7 +7,7 @@
                     <!-- <ngx-quill
                     class="form-control ml-12" [formControl]="programmeForm.controls['content']"
                      (ngSubmit)="onSubmit()"></ngx-quill> -->
-                     <quill-editor class="form-control" formControlName="content">
+                     <quill-editor #quill class="form-control" formControlName="content" (onSelectionChanged)="onSelectionChanged()">
                         <div quill-editor-toolbar>
                             <span class="ql-formats">
                                 <select class="ql-font">

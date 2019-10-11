@@ -16,6 +16,8 @@ export async function bootstrap() {
     res.redirect(process.env.NODE_ENV === 'production' ? '/api/doc/' : 'doc');
   });
 
+  const config: ConfigService = app.get('ConfigService');
+
   const options = new DocumentBuilder()
     .setTitle('Mon Programme API')
     .setDescription('Mon Programme API documentation')
@@ -26,11 +28,12 @@ export async function bootstrap() {
 
   app.enableCors();
 
+  app.useStaticAssets(config.get('UPLOAD_PATH'), { prefix: '/images/' });
+
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
   }));
 
-  const config: ConfigService = app.get('ConfigService');
 
   await app.listen(config.get('HTTP_PORT'));
 
