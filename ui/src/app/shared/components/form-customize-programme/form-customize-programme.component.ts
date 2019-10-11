@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { QueryCoaching } from '../../models/query.coaching.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-customize-programme',
@@ -13,8 +15,9 @@ export class FormCustomizeProgrammeComponent implements OnInit {
   show = false;
   customForm: FormGroup;
   error = '';
+  public categories: QueryCoaching;
 
-  constructor(private toastr: ToastrService) { }
+  constructor(private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -43,17 +46,12 @@ export class FormCustomizeProgrammeComponent implements OnInit {
   onFormSubmit() {
     if (this.customForm.valid) {
       console.log(this.customForm.value);
+      this.router.navigate(['/nos-programmes'],
+      { queryParams: {categories: this.customForm.get('objectif').value}});
       this.customForm.reset();
-      this.showSuccess();
     } else {
+      this.toastr.warning('Le champs objectif est obligatoire');
     }
   }
 
-  showSuccess() {
-    this.toastr.success('Programme Enregistré avec succés.');
-  }
-
-  errorSuccess() {
-    this.toastr.warning('Erreur lors de la sauvegarde');
-  }
 }
