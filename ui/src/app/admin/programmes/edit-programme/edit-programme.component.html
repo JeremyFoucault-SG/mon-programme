@@ -4,9 +4,7 @@
             <h2 class="flex justify-center mt-12">Modifié le contenu du programme</h2>
             <div class="form-group">
             <div class="flex justify-center">
-                    <!-- <ngx-quill
-                    class="form-control ml-12" [formControl]="programmeForm.controls['content']"
-                     (ngSubmit)="onSubmit()"></ngx-quill> -->
+                    
                      <quill-editor #quill class="form-control" formControlName="content" (onSelectionChanged)="onSelectionChanged()">
 
                         <div quill-editor-toolbar>
