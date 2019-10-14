@@ -22,6 +22,7 @@ import { ListProgrammeComponent } from './features/list-programme/list-programme
 import { WishlistComponent } from './features/wishlist/wishlist.component';
 import { BasketComponent } from './features/basket/basket.component';
 import { PaiementComponent } from './features/paiement/paiement.component';
+import { ConnexionModalComponent } from './shared/components/connexion-modal/connexion-modal.component';
 
 
 
@@ -116,6 +117,7 @@ const routes: Routes = [
   { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
   { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},
   { path: 'paiement', canActivate: [AuthGuard], component: PaiementComponent},
+  { path: 'login-modal', component: ConnexionModalComponent}
 ];
 
 @NgModule({

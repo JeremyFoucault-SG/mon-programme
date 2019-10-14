@@ -35,3 +35,28 @@ html, body {
   }
 
 }
+
+.hidden{
+  display:none;
+}
+.show{
+  display:block;
+}
+
+#overlay {
+  position: absolute;
+  top: 0px;
+  left:  0px;
+  z-index:  1;
+  background:  rgba(0,0,0,0.8);
+  width:  100%;
+  height: 100%;
+}
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}

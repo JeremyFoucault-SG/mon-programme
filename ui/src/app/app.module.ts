@@ -18,19 +18,7 @@ import { FeaturesModule } from './features/features.module';
 import { NgxsModule } from '@ngxs/store';
 import { AdminModule } from './admin/admin.module';
 import { StoreModule } from '../app/core/store/store.module';
-
 import { HttpClientModule } from '@angular/common/http';
-
-
-
-
-
-
-
-
-
-
-
 
 
 @NgModule({

@@ -72,7 +72,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.auth.isLogin().subscribe(valeur => this.user = valeur );
+    this.auth.isLogin().subscribe(valeur => this.user = valeur);
     // if (this.auth.isLogin()) {
     //   this.user = true;
     // } else {
@@ -94,14 +94,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
       ).subscribe((data) => {
         this.title = data.title;
         this.isTransparent = data.isTransparent;
-      })
+      }),
     );
     if (this.auth.isLogin()) {
-      this.store.dispatch(new GetAllCarts()).subscribe(
-          (coachings) => {
-            this.coachings = coachings;
-            this.newOrder = this.coachings.length;
-          });
+      // this.store.dispatch(new GetAllCarts()).subscribe(
+      //   (coachings) => {
+      //     this.coachings = coachings;
+      //     this.newOrder = this.coachings.length;
+      //   });
     }
   }
 
@@ -120,7 +120,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.auth.isLogout().subscribe(valeur => this.user = valeur );
+    this.auth.isLogout().subscribe(valeur => this.user = valeur);
     this.open();
   }
 
