@@ -5,16 +5,16 @@ import { ArticleBlog } from '../../../shared/models/articles-blog.model';
 import { ArticleState } from '../../../core/store/store.module/article/article.state';
 import {
   DeleteArticle,
-  GetAllArticles,
   SetSelectedArticle,
   SearchArticle
 } from '../../../core/store/store.module/article/article.actions';
 import { ToastrService } from 'ngx-toastr';
 import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['./article.component.css'],
 })
 export class ArticleComponent implements OnInit {
 
@@ -24,7 +24,7 @@ export class ArticleComponent implements OnInit {
   @Select(ArticleState.articles)
   query: Observable<QueryArticles[]>;
 
-constructor(private store: Store, private toastr: ToastrService) { }
+constructor(private store: Store, private toastr: ToastrService, private router: Router,) { }
 
 ngOnInit() {
   // this.store.dispatch(new GetAllArticles());
@@ -32,6 +32,7 @@ ngOnInit() {
 
 }
 editArticle(payload: ArticleBlog) {
+  this.router.navigate(['create-article']);
   this.store.dispatch(new SetSelectedArticle(payload));
 }
 deleteArticle(id: string) {
