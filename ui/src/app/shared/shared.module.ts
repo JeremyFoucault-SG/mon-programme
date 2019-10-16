@@ -37,6 +37,9 @@ import { GroupTitleComponent } from './components/group-title/group-title.compon
 import { AdminModule } from '../admin/admin.module';
 import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
 import { SumPipe } from './pipes/sum.pipe';
+import { ModalComponent } from './components/modal/modal.component';
+import { ConnexionModalComponent } from './components/connexion-modal/connexion-modal.component';
+import { ConnexionModal2Component } from './components/connexion-modal2/connexion-modal2.component';
 
 
 @NgModule({
@@ -71,7 +74,10 @@ import { SumPipe } from './pipes/sum.pipe';
     FooterSmComponent,
     GroupTitleComponent,
     FirstCharacterePipe,
-    SumPipe
+    SumPipe,
+    ModalComponent,
+    ConnexionModalComponent,
+    ConnexionModal2Component,
   ],
   imports: [
     CommonModule,
@@ -108,6 +114,6 @@ import { SumPipe } from './pipes/sum.pipe';
     GroupTitleComponent,
     FirstCharacterePipe,
     SumPipe
-  ]
+  ],
 })
 export class SharedModule { }
