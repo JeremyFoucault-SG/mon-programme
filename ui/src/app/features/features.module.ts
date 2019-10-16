@@ -102,8 +102,6 @@ import { PaiementComponent } from './paiement/paiement.component';
     CoreModule,
     AdminModule,
   ],
-  exports: [
-  ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeaturesModule { }

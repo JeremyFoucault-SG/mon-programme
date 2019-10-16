@@ -115,9 +115,5 @@ import { ConnexionModal2Component } from './components/connexion-modal2/connexio
     FirstCharacterePipe,
     SumPipe
   ],
-  entryComponents : [
-    ConnexionModalComponent,
-    ConnexionModal2Component,
-  ]
 })
 export class SharedModule { }

@@ -19,6 +19,8 @@ import { NgxsModule } from '@ngxs/store';
 import { AdminModule } from './admin/admin.module';
 import { StoreModule } from '../app/core/store/store.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ConnexionModalComponent } from './shared/components/connexion-modal/connexion-modal.component';
+import { ConnexionModal2Component } from './shared/components/connexion-modal2/connexion-modal2.component';
 
 
 @NgModule({
@@ -46,6 +48,5 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

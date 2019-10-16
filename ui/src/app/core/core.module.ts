@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from './store/store.module';
 import { JwtModule } from '@auth0/angular-jwt';
+import { ConnexionModalComponent } from '../shared/components/connexion-modal/connexion-modal.component';
+import { ConnexionModal2Component } from '../shared/components/connexion-modal2/connexion-modal2.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -27,6 +29,10 @@ export function tokenGetter() {
   ],
   exports: [
     HeaderComponent,
+  ],
+  entryComponents : [
+    ConnexionModalComponent,
+    ConnexionModal2Component,
   ]
 })
 export class CoreModule { }

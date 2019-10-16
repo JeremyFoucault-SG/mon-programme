@@ -11,6 +11,8 @@ import { Select, Store } from '@ngxs/store';
 import { CartState } from '../store/store.module/cart/cart.state';
 import { Cart } from 'src/app/shared/models/cart.model';
 import { GetAllCarts } from '../store/store.module/cart/cart.actions';
+import { ModalService } from 'src/app/shared/components/modal/modal.service';
+import { ConnexionModalComponent } from 'src/app/shared/components/connexion-modal/connexion-modal.component';
 
 /**
  * Header component, hold navigation, title, user
@@ -68,7 +70,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private toastr: ToastrService,
     private auth: AuthenticationService,
     private cartsService: CartsService,
-    private store: Store) { }
+    private store: Store,
+    private modalService: ModalService) { }
 
   ngOnInit() {
 
@@ -112,18 +115,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.isOpen = !this.isOpen;
   }
 
-  /**
-   * Call unsubscribe on each subscription
-   */
-  ngOnDestroy(): void {
-    this.subscriptions.forEach(s => s.unsubscribe());
+  openInscription(){
+    this.modalService.init(ConnexionModalComponent, {}, {});
   }
 
-  logout() {
-    this.auth.isLogout().subscribe(valeur => this.user = valeur);
-    this.open();
+    /**
+     * Call unsubscribe on each subscription
+     */
+    ngOnDestroy(): void {
+      this.subscriptions.forEach(s => s.unsubscribe());
+    }
+
+    logout() {
+      this.auth.isLogout().subscribe(valeur => this.user = valeur);
+      this.open();
+    }
+
+
   }
-
-
-}
 

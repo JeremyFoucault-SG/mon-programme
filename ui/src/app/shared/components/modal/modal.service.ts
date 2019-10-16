@@ -12,10 +12,10 @@ export class ModalService {
 
   init(component: any, inputs: object, outputs: object) {
     // const onClose = new EventEmitter();
-    let componentConfig = {
-      inputs: inputs,
-      outputs: outputs
-    }
+    const componentConfig = {
+      inputs,
+      outputs
+    };
     const cmpRef = this.domService.appendComponentTo(this.modalElementId, component, componentConfig);
     // document.getElementById(this.modalElementId).classList.add('show');
     document.getElementById(this.modalElementId).classList.remove('pointer-events-none');
