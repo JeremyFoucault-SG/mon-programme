@@ -115,7 +115,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.isOpen = !this.isOpen;
   }
 
-  openInscription(){
+  openInscription() {
     this.modalService.init(ConnexionModalComponent, {}, {});
   }
 

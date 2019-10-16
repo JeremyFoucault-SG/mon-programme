@@ -7,7 +7,7 @@ import {
   ComponentRef
 } from '@angular/core';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class DomService {
 
   // private childComponentRef:any;
@@ -19,6 +19,7 @@ export class DomService {
     private injector: Injector
   ) { }
 
+  // tslint:disable-next-line: no-shadowed-variable
   public appendComponentTo(parentId: string, child: any, childConfig?: any): ComponentRef<any> {
     // Create a component reference from the component
     const childComponentRef: ComponentRef<any> = this.componentFactoryResolver
@@ -65,15 +66,18 @@ export class DomService {
   private attachConfig(config, componentRef: ComponentRef<any>) {
     const inputs = config.inputs;
     const outputs = config.outputs;
+    // tslint:disable-next-line: forin
     for (const key in inputs) {
       componentRef.instance[key] = inputs[key];
     }
+    // tslint:disable-next-line: forin
     for (const key in outputs) {
       componentRef.instance[key] = outputs[key];
     }
 
   }
 }
+// tslint:disable-next-line: class-name
 interface childConfig {
   inputs: object;
   outputs: object;
