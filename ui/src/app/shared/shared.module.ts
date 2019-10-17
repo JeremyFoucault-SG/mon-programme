@@ -38,9 +38,9 @@ import { AdminModule } from '../admin/admin.module';
 import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
 import { SumPipe } from './pipes/sum.pipe';
 import { ModalComponent } from './components/modal/modal.component';
-import { ConnexionModalComponent } from './components/connexion-modal/connexion-modal.component';
-import { ConnexionModal2Component } from './components/connexion-modal2/connexion-modal2.component';
-
+import { ConnexionModalComponent } from './components/register/connexion-modal/connexion-modal.component';
+import { ConnexionModal2Component } from './components/register/connexion-modal2/connexion-modal2.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +78,7 @@ import { ConnexionModal2Component } from './components/connexion-modal2/connexio
     ModalComponent,
     ConnexionModalComponent,
     ConnexionModal2Component,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
