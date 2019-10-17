@@ -39,7 +39,7 @@ export class ConnexionModal2Component implements OnInit {
   ngOnInit() {
   }
 
-  
+
 
 }
 
