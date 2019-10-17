@@ -12,7 +12,10 @@ import { CartState } from '../store/store.module/cart/cart.state';
 import { Cart } from 'src/app/shared/models/cart.model';
 import { GetAllCarts } from '../store/store.module/cart/cart.actions';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
-import { ConnexionModalComponent } from 'src/app/shared/components/connexion-modal/connexion-modal.component';
+import { ConnexionModalComponent } from 'src/app/shared/components/register/connexion-modal/connexion-modal.component';
+import { RegisterComponent } from 'src/app/shared/components/register/register.component';
+import { Settings } from 'src/app/shared/models/settings.model';
+import { Register } from 'src/app/shared/models/register.model';
 
 /**
  * Header component, hold navigation, title, user
@@ -53,7 +56,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   subscriptions: Subscription[] = [];
 
-  // users: Login;
+  // users: Register;
   // name = this.users.username;
 
 
@@ -116,7 +119,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   openInscription() {
-    this.modalService.init(ConnexionModalComponent, {}, {});
+    this.modalService.init(RegisterComponent, {}, {});
   }
 
     /**
