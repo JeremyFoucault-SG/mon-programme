@@ -112,5 +112,8 @@ export class EditProgrammeComponent implements OnInit {
   onSelectionChanged() {
     console.log(this.quill.quillEditor.getSelection(), this.programmeForm.value)
   }
-
+  clearForm() {
+    this.programmeForm.reset();
+    this.store.dispatch(new SetSelectedProgramme(this.programmeForm.value));
+  }
 }

@@ -1,59 +1,82 @@
+<div class="flex justify-center">
+  <form [formGroup]="programmeForm" (ngSubmit)="onSubmit()">
+    <div class="w-full md:w-1/2 mb-6 md:mb-0">
+      <label
+        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+        for="grid-first-name"
+      >
+        title
+      </label>
+      <input
+        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+        formControlName="title"
+        id="grid-title"
+        type="text"
+        placeholder="titre"
+      />
+      <p class="text-red-500 text-xs italic">inserer un titre</p>
+    </div>
+    <quill-editor
+      #quill
+      class="form-control"
+      formControlName="content"
+      (onSelectionChanged)="onSelectionChanged()"
+    >
+      <div quill-editor-toolbar>
+        <span class="ql-formats">
+          <select class="ql-font">
+            <option selected></option>
+            <option value="serif"></option>
+            <option value="monospace"></option>
+          </select>
+          <select class="ql-size">
+            <option value="small"></option>
+            <option selected></option>
+            <option value="large"></option>
+            <option value="huge"></option>
+          </select>
+        </span>
+        <span class="ql-formats">
+          <button type="button" class="ql-bold"></button>
+          <button type="button" class="ql-italic"></button>
+          <button type="button" class="ql-underline"></button>
+          <button type="button" class="ql-strike"></button>
+        </span>
+        <span class="ql-formats">
+          <select class="ql-color"></select>
+          <select class="ql-background"></select>
+        </span>
+        <span class="ql-formats">
+          <button type="button" class="ql-list" value="ordered"></button>
+          <button type="button" class="ql-list" value="bullet"></button>
 
-
-        <form [formGroup]="programmeForm" (ngSubmit)="onSubmit()">
-            <h2 class="flex justify-center mt-12">Modifié le contenu du programme</h2>
-            <div class="form-group">
-            <div class="flex justify-center">
-                    
-                     <quill-editor #quill class="form-control" formControlName="content" (onSelectionChanged)="onSelectionChanged()">
-
-                        <div quill-editor-toolbar>
-                            <span class="ql-formats">
-                                <select class="ql-font">
-                                  <option selected></option>
-                                  <option value="serif"></option>
-                                  <option value="monospace"></option>
-                                </select>
-                                <select class="ql-size">
-                                  <option value="small"></option>
-                                  <option selected></option>
-                                  <option value="large"></option>
-                                  <option value="huge"></option>
-                                </select>
-                              </span>
-                              <span class="ql-formats">
-                                <button type="button" class="ql-bold"></button>
-                                <button type="button" class="ql-italic"></button>
-                                <button type="button" class="ql-underline"></button>
-                                <button type="button" class="ql-strike"></button>
-                              </span>
-                              <span class="ql-formats">
-                                <select class="ql-color"></select>
-                                <select class="ql-background"></select>
-                              </span>
-                              <span class="ql-formats">
-                                <button type="button" class="ql-list" value="ordered"></button>
-                                <button type="button" class="ql-list" value="bullet"></button>
-
-                                <select class="ql-align">
-                                  <option selected></option>
-                                  <option value="center"></option>
-                                  <option value="right"></option>
-                                  <option value="justify"></option>
-                                </select>
-                              </span>
-                              <span class="ql-formats">
-                                <button type="button" class="ql-link"></button>
-                                <button type="button" class="ql-image"></button>
-                              </span>
-                        </div>
-                      </quill-editor>
-            <div >
-                    <button
-                            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-center"
-                            [disabled]="programmeForm.pristine || programmeForm.invalid">Valider DD
-                    </button>
-                </div>
-            </div>
-        </div>
-        </form>
+          <select class="ql-align">
+            <option selected></option>
+            <option value="center"></option>
+            <option value="right"></option>
+            <option value="justify"></option>
+          </select>
+        </span>
+        <span class="ql-formats">
+          <button type="button" class="ql-link"></button>
+          <button type="button" class="ql-image"></button>
+        </span>
+      </div>
+    </quill-editor>
+    <div class="flex justify-between text-xs -mx-3 mb-6">
+      <button
+        type="reset"
+        class="text-red-700 font-bold py-2 px-4 rounded"
+        (click)="clearForm()"
+      >
+        Reset
+      </button>
+      <button
+        class="bg-green-700 text-white text-xs font-bold py-2 px-4 rounded"
+        [disabled]="programmeForm.pristine || programmeForm.invalid"
+      >
+        Valider
+      </button>
+    </div>
+  </form>
+</div>

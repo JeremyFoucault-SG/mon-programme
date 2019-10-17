@@ -1,20 +1,14 @@
-import { Component, OnInit, ViewChild, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Component, OnInit, ViewChild} from '@angular/core';
+import { FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Store, Select } from '@ngxs/store';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
-import {
-  UpdateArticle,
-  AddArticle,
-  SetSelectedArticle,
-  SearchArticle
-} from 'src/app/core/store/store.module/article/article.actions';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import {UpdateArticle, AddArticle, SetSelectedArticle, SearchArticle} from 'src/app/core/store/store.module/article/article.actions';
+import { Router } from '@angular/router';
 import { ngfModule, ngf } from 'angular-file';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
 import { Observable, Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { QuillEditorComponent } from 'ngx-quill';
-import { ArticlesService } from 'src/app/core/http/articles.service';
 import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
 import {
   HttpClient, HttpClientModule, HttpRequest, HttpResponse, HttpEvent
@@ -26,6 +20,23 @@ import {
   styleUrls: ['./update-article.component.css']
 })
 export class UpdateArticleComponent implements OnInit {
+  accept = '*';
+  file: File;
+  progress: number;
+  url = 'https://jquery-file-upload.appspot.com/';
+  hasBaseDropZoneOver = false;
+  httpEmitter: Subscription;
+  httpEvent: HttpEvent<{}>;
+  lastFileAt: Date;
+
+  sendableFormData: FormData; // populated via ngfFormData directive
+
+  dragFiles: any;
+  validComboDrag: any;
+  lastInvalids: any;
+  fileDropDisabled: any;
+  maxSize: any;
+  baseDropValid: any;
 
   @ViewChild('quill', {static: true}) quill: QuillEditorComponent;
 
@@ -128,5 +139,37 @@ export class UpdateArticleComponent implements OnInit {
   }
   onRemoveTag(index: number) {
     this.tags.removeAt(index);
+  }
+  cancel() {
+    this.progress = 0;
+    if ( this.httpEmitter ) {
+      console.log('cancelled');
+      this.httpEmitter.unsubscribe();
+    }
+  }
+
+  onRemoveFile() {
+    this.file = undefined;
+  }
+
+  uploadFiles(): Subscription {
+    const req = new HttpRequest<FormData>(
+      'POST',
+      this.url,
+      this.sendableFormData, {
+      reportProgress: true// , responseType: 'text'
+    });
+    return this.httpEmitter = this.httpClient.request(req)
+    .subscribe(
+      event => {
+        this.httpEvent = event;
+
+        if (event instanceof HttpResponse) {
+          delete this.httpEmitter;
+          console.log('request done', event);
+        }
+      },
+      error => alert('Error Uploading Files: ' + error.message)
+    );
   }
 }

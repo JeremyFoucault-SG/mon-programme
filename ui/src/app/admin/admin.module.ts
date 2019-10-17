@@ -10,6 +10,7 @@ import { ArticleComponent } from './article/article/article.component';
 
 import {
   faTimes,
+  faCloudUploadAlt
 } from '@fortawesome/free-solid-svg-icons';
 import {
   FontAwesomeModule,
@@ -75,7 +76,7 @@ const apiUrl = 'http://localhost:3000/upload';
 export class AdminModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(
-      faTimes
+      faTimes, faCloudUploadAlt
     );
   }
 }
