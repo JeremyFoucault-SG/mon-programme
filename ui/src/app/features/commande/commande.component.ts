@@ -58,7 +58,7 @@ export class CommandeComponent implements OnInit {
   onSubmit() {
     this.loading = true;
     // TODO : addUserInfos ??????
-    
+
     // this.usersService.addUserInfos(payload).subscribe(
     //   () => {
     //     this.router.navigate(['paiement']);
