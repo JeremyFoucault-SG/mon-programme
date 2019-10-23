@@ -10,7 +10,13 @@ import { ArticlesModule } from '../articles/articles.module';
 
 @Module({
   imports: [
-    TypegooseModule.forFeature([WishModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: WishModel,
+        schemaOptions: {
+          collection: 'wishes',
+        },
+      }]),
     AuthModule,
     UsersModule,
     CoachingsModule,
@@ -19,4 +25,4 @@ import { ArticlesModule } from '../articles/articles.module';
   controllers: [WishesController],
   providers: [WishesService],
 })
-export class WishesModule {}
+export class WishesModule { }

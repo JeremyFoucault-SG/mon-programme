@@ -5,8 +5,16 @@ import { CategoryModel } from './category.model';
 import { TypegooseModule } from 'nestjs-typegoose';
 
 @Module({
-  imports: [TypegooseModule.forFeature([CategoryModel])],
+  imports: [
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: CategoryModel,
+        schemaOptions: {
+          collection: 'categories',
+        },
+      }]),
+  ],
   controllers: [CategoriesController],
   providers: [CategoriesService],
 })
-export class CategoriesModule {}
+export class CategoriesModule { }

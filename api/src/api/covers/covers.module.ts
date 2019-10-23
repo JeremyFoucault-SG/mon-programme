@@ -5,8 +5,16 @@ import { TypegooseModule } from 'nestjs-typegoose';
 import { CoverModel } from './cover.model';
 
 @Module({
-  imports: [TypegooseModule.forFeature([CoverModel])],
+  imports: [
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: CoverModel,
+        schemaOptions: {
+          collection: 'covers',
+        },
+      }]),
+  ],
   controllers: [CoversController],
   providers: [CoversService],
 })
-export class CoversModule {}
+export class CoversModule { }
