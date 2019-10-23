@@ -8,11 +8,17 @@ import { CoachingsModule } from '../coachings/coachings.module';
 
 @Module({
   imports: [
-    TypegooseModule.forFeature([CartModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: CartModel,
+        schemaOptions: {
+          collection: 'carts',
+        },
+      }]),
     CoachingsModule,
     UsersModule,
   ],
   controllers: [CartsController],
   providers: [CartsService],
 })
-export class CartsModule {}
+export class CartsModule { }

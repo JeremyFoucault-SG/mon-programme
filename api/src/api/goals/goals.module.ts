@@ -5,8 +5,15 @@ import { GoalModel } from './goal.model';
 import { TypegooseModule } from 'nestjs-typegoose';
 
 @Module({
-  imports: [TypegooseModule.forFeature([GoalModel])],
+  imports: [TypegooseModule.forFeature(
+    [{
+      typegooseClass: GoalModel,
+      schemaOptions: {
+        collection: 'goals',
+      },
+    }],
+  )],
   controllers: [GoalsController],
   providers: [GoalsService],
 })
-export class GoalsModule {}
+export class GoalsModule { }

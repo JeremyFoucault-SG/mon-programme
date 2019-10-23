@@ -15,7 +15,13 @@ import { JwtStrategy } from './jwt.strategy';
 @Module({
   imports: [
     UsersModule,
-    TypegooseModule.forFeature([AuthModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: AuthModel,
+        schemaOptions: {
+          collection: 'auths',
+        },
+      }]),
     JwtModule.registerAsync({
       useFactory: async (configService: ConfigService) => ({
         secret: configService.get('JWT_SECRET'),
@@ -23,7 +29,7 @@ import { JwtStrategy } from './jwt.strategy';
       }),
       inject: [ConfigService],
     }),
-    PassportModule.register({ defaultStrategy: 'jwt'  }),
+    PassportModule.register({ defaultStrategy: 'jwt' }),
 
     SettingsModule,
   ],
@@ -31,4 +37,4 @@ import { JwtStrategy } from './jwt.strategy';
   providers: [AuthService, LocalStrategy, JwtStrategy],
   exports: [AuthService],
 })
-export class AuthModule {}
+export class AuthModule { }

@@ -10,10 +10,16 @@ import { SettingsDTO } from './settings.dto';
   imports: [
     UsersModule,
     SettingsModule,
-    TypegooseModule.forFeature([SettingsModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: SettingsModel,
+        schemaOptions: {
+          collection: 'settings',
+        },
+      }]),
   ],
   controllers: [SettingsController],
   providers: [SettingsService],
   exports: [SettingsService],
 })
-export class SettingsModule {}
+export class SettingsModule { }
