@@ -1,7 +1,7 @@
 import * as faker from 'faker/locale/fr';
-import { AuthDTO } from 'src/api/auth/auth.dto';
-import { AuthController } from 'src/api/auth/auth.controller';
-import { RegisterDTO } from 'src/api/auth/register.dto';
+import { AuthDTO } from '../src/api/auth/auth.dto';
+import { AuthController } from '../src/api/auth/auth.controller';
+import { RegisterDTO } from '../src/api/auth/register.dto';
 
 export async function insertAuthData(authController: AuthController) {
   // populate mongo

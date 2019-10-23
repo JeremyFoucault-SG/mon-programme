@@ -4,7 +4,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { extname } from 'path';
 import * as shortid from 'shortid';
 import { diskStorage } from 'multer';
-import { ConfigService } from 'src/config/config.service';
+import { ConfigService } from '../../config/config.service';
 
 @Controller('upload')
 @ApiUseTags('upload')
