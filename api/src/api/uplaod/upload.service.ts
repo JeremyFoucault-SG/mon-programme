@@ -8,12 +8,12 @@ export class UploadService {
   constructor(private readonly configService: ConfigService) {}
 
   async removePhoto(photo: {id: string, index: number, url: string}) {
-    unlink(`${this.configService.get('UPLOAD_PATH')}/${photo.url.split('/').pop()}`, (err) => console.log(err));
+    unlink(`${this.configService.get('UPLOAD_PATH')}/${photo.url.split('/').pop()}`, (err) => {throw err; } );
   }
 
   async removePhotos(photos: Array<{ id: string, index: number, url: string }>) {
     photos.forEach(photo => {
-      unlink(`${this.configService.get('UPLOAD_PATH')}/${photo.url.split('/').pop()}`, (err) => console.log(err));
+      unlink(`${this.configService.get('UPLOAD_PATH')}/${photo.url.split('/').pop()}`, (err) => {throw err; } );
     });
   }
 }

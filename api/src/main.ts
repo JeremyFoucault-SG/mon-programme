@@ -34,7 +34,6 @@ export async function bootstrap() {
     whitelist: true,
   }));
 
-
   await app.listen(config.get('HTTP_PORT'));
 
   return app;
