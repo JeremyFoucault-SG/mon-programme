@@ -13,7 +13,7 @@ export async function bootstrap() {
 
   // redirect / openapi doc
   app.use('^/$', (req, res) => {
-    res.redirect(process.env.NODE_ENV === 'production' ? '/api/doc/' : 'doc');
+    res.redirect(process.env.NODE_ENV === 'production' ? '/doc/' : 'doc');
   });
 
   const options = new DocumentBuilder()
