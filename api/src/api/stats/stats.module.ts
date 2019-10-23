@@ -7,10 +7,16 @@ import { StatModel } from './stat.model';
 
 @Module({
   imports: [
-    TypegooseModule.forFeature([StatModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: StatModel,
+        schemaOptions: {
+          collection: 'stats',
+        },
+      }]),
     UsersModule,
   ],
   controllers: [StatsController],
   providers: [StatsService],
 })
-export class StatsModule {}
+export class StatsModule { }

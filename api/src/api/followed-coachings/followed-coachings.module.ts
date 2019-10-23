@@ -8,11 +8,17 @@ import { CoachingsModule } from '../coachings/coachings.module';
 
 @Module({
   imports: [
-    TypegooseModule.forFeature([FollowedCoachingModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: FollowedCoachingModel,
+        schemaOptions: {
+          collection: 'followedCoachings',
+        },
+      }]),
     UsersModule,
     CoachingsModule,
   ],
   controllers: [FollowedCoachingsController],
   providers: [FollowedCoachingsService],
 })
-export class FollowedCoachingsModule {}
+export class FollowedCoachingsModule { }
