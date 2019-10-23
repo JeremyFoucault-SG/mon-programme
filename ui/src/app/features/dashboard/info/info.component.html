@@ -1,6 +1,5 @@
-
 <!-- Header -->
-<div class="pt-40 bg-black">
+<div  class="pt-40 bg-black">
   <ul class="flex justify-between lg:justify-center">
     <li class="mr-6 mb-4">
       <div class="flex ml-5">
@@ -12,7 +11,9 @@
           ></a>
         </div>
         <a [routerLink]="['/mon-compte']"
-          ><h3 class="uppercase text-white ml-3 fs-9 pt-1 lg:hover:bg-red-700  py-2 px-4 rounded-full">
+          ><h3
+            class="uppercase text-white ml-3 fs-9 pt-1 lg:hover:bg-red-700  py-2 px-4 rounded-full"
+          >
             Resume du compte
           </h3></a
         >
@@ -21,7 +22,10 @@
     </li>
     <li class="mr-6 mb-4 hidden lg:flex">
       <a class="text-white" [routerLink]="'/'"
-        ><button type="submit" class="uppercase text-white mr-3 fs-9 pt-1 bg-red-700  py-2 px-4 rounded-full">
+        ><button
+          type="submit"
+          class="uppercase text-white mr-3 fs-9 pt-1 bg-red-700  py-2 px-4 rounded-full"
+        >
           Mes informations personnelles
         </button></a
       >
@@ -29,7 +33,11 @@
     <li class="mr-6 mb-4">
       <div class="flex mr-5">
         <a [routerLink]="['/mon-compte/suivi']"
-          ><h3 class="uppercase text-white mr-3 fs-9 pt-1 lg:hover:bg-red-700  py-2 px-4 rounded-full">Suivi</h3></a
+          ><h3
+            class="uppercase text-white mr-3 fs-9 pt-1 lg:hover:bg-red-700  py-2 px-4 rounded-full"
+          >
+            Suivi
+          </h3></a
         >
         <div
           class="flex justify-center w-6 h-6 bg-white rounded-full lg:hidden"
@@ -44,34 +52,38 @@
 </div>
 
 <!-- Content -->
-<div class="flex-col mr-5 ml-5">
+<div class="flex-col mr-5 ml-5 lg:py-20 lg:px-20 my-10">
   <form
-    class="flex flex-col lg:flex-row lg:justify-around"
+    class="flex flex-col lg:flex-row lg:justify-around lg:shadow"
     [formGroup]="myForm"
     (ngSubmit)="submit()"
   >
     <div
       class="shadow lg:shadow-none rounded lg:rounded-none lg:w-1/3 mt-5 mb-5"
     >
-      <app-dashboard-info-perso [formInfo]="myForm.get('infos')">
+    <app-dashboard-info-facturation
+          [formContact]="myForm.get('contact')"
+        ></app-dashboard-info-facturation>
 
-      </app-dashboard-info-perso>
     </div>
     <div class="flex flex-col content-around ">
       <div
         class="shadow lg:shadow-none rounded lg:rounded-none lg:w-full mt-5 mb-5"
       >
-        <app-dashboard-info-facturation [formFacturation]="myForm.get('facturation')"></app-dashboard-info-facturation>
+      <app-dashboard-info-perso [formInfo]="myForm.get('infos')">
+      </app-dashboard-info-perso>
       </div>
       <div
         class="shadow lg:shadow-none rounded lg:rounded-none lg:w-full mt-5 mb-5"
       >
-        <app-dashboard-paiement [formPaiement]="myForm.get('paiement')"></app-dashboard-paiement>
+        <app-dashboard-paiement
+          [formPaiement]="myForm.get('paiement')"
+        ></app-dashboard-paiement>
       </div>
       <div class="text-center">
         <button
           type="submit"
-          class="bg-red-700 text-white font-bold py-2 px-4 border border-blue-700 rounded uppercase"
+          class="bg-red-700 text-white font-bold py-2 px-4 border border-blue-700 rounded uppercase mb-10"
         >
           Mettre a jour
           <i
@@ -83,8 +95,15 @@
     </div>
   </form>
 
-   <!-- Historique -->
-   <div class="shadow rounded lg:w-4/6 lg:m-auto">
-        <app-dashboard-historique></app-dashboard-historique>
-   </div>
+    <div class="flex justify-center">
+      <div
+        class="shadow lg:shadow-none rounded lg:rounded-none w-full py-10 px-10 lg:w-1/2 mt-5 mb-5"
+      >
+        <app-dashboard-authentification></app-dashboard-authentification>
+      </div>
+    </div>
+  <!-- Historique -->
+  <div class="shadow rounded lg:w-4/6 lg:m-auto">
+    <app-dashboard-historique></app-dashboard-historique>
+  </div>
 </div>

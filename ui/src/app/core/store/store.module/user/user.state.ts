@@ -7,13 +7,11 @@ import { User } from 'src/app/shared/models/user.model';
 
 
 export class UserStateModel {
-    items: User[];
     item: User;
 }
 @State<UserStateModel>({
     name: 'user',
     defaults: {
-        items: [],
         item: null,
     }
 })
@@ -23,19 +21,25 @@ export class UserState {
     }
 
     @Selector()
-    static users(state: UserStateModel) {
-        return state.items;
-    }
-    @Selector()
     static user(state: UserStateModel) {
         return state.item;
     }
 
     @Action(GetUserById)
-    GetUserById({ getState, setState, patchState }: StateContext<UserStateModel>, { id }: GetUserById) {
-        return this.service.getUserById(id).pipe(tap(response => {
+    GetUserById({ getState, setState, patchState }: StateContext<UserStateModel>, action: GetUserById) {
+        return this.service.getUserById().pipe(tap(response => {
             const state = getState();
             patchState({ ...state, item: response });
         }));
     }
+    // @Action(UpdateUser)
+    // UpdateUser({ getState, setState }: StateContext<UserStateModel>, { payload}: UpdateUser) {
+    //     return this.service.updateUser(payload).pipe(tap((result) => {
+    //         setState(
+    //             patch({
+    //                 item: result,
+    //             })
+    //         );
+    //     }));
+    // }
 }
