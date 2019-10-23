@@ -4,6 +4,7 @@ import { CoachingModel } from './coaching.model';
 import { ModelType, InstanceType } from 'typegoose';
 import { CoachingDTO } from './coaching.dto';
 import { CoachingQuery } from './coachings.query';
+import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
 
 @Injectable()
 export class CoachingsService {
