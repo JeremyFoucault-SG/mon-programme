@@ -11,10 +11,27 @@ import { ArticleComponent } from './article/article/article.component';
 import Quill from 'quill';
 import imageUpload from 'quill-plugin-image-upload';
 import BlotFormatter from 'quill-blot-formatter';
+import { environment } from '../../environments/environment';
 // register quill-plugin-image-upload
 Quill.register('modules/imageUpload', imageUpload);
 Quill.register('modules/blotFormatter', BlotFormatter);
-const apiUrl = 'http://localhost:3000/upload';
+
+export function uploader(file) {
+  const apiUrl = `${environment.apiUrl}/upload`;
+
+  return new Promise(async (resolve, reject) => {
+    const data = new FormData();
+    data.append('file', file);
+    console.log(file);
+    const res = await fetch(apiUrl, {
+      method: 'POST',
+      body: data
+    });
+    const body = await res.json();
+    console.log(body);
+    resolve(body.url);
+  });
+}
 
 @NgModule({
   declarations: [
@@ -38,21 +55,7 @@ const apiUrl = 'http://localhost:3000/upload';
           // empty object for default behaviour.
         },
         imageUpload: {
-          upload: file => {
-            // return a Promise that resolves in a link to the uploaded image
-            return new Promise(async (resolve, reject) => {
-              const data = new FormData();
-              data.append('file', file);
-              console.log(file);
-              const res = await fetch(apiUrl, {
-                method: 'POST',
-                body: data
-              });
-              const body = await res.json();
-              console.log(body);
-              resolve(body.url);
-            });
-          }
+          upload: uploader
         }
       }
     })

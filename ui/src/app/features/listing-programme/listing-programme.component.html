@@ -16,8 +16,8 @@
     </div>
 </div>
 <div class="flex flex-row justify-end">
-    <div class="hidden lg:flex lg:flex-row sm:flex-col bg-red-500 w-2/3 h-24 -mt-16 justify-around"> 
-        <a class="cursor-pointer mt-2 ml-2" (click)="addToWishList(programme)">
+    <div class="hidden lg:flex lg:flex-row sm:flex-col bg-red-500 w-2/3 h-24 -mt-16 justify-around">
+        <a class="cursor-pointer mt-2 ml-2" *ngIf=" (programme|async) as programme" (click)="addToWishList(programme)">
             <i class="fa pr-2 text-red-700" [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i><span
                     class="text-white text-xs italic hover:text-black">Sauvegarder l'article</span></a>
                     <a class="cursor-pointer mt-6" [routerLink]="['/commande']">

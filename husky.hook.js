@@ -14,3 +14,17 @@ exec('git rev-parse --abbrev-ref HEAD', (error, stdout, stderr) => {
         return;
     }
 });
+
+/* exec('git diff --cached --name-only', (error, stdout, stderr) => {
+  if (error) {
+      console.error(`exec error: ${error}`);
+      process.exit(1)
+      return;
+  }
+  if ((/ui\/src\/styles.css/).test(stdout.trim())) {
+      console.log('\x1b[31m%s\x1b[0m', `DON'T ADD "styles.css" file`);
+      process.exit(1)
+      return;
+  }
+});
+ */
