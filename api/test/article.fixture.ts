@@ -1,7 +1,7 @@
 import * as faker from 'faker/locale/fr';
 import { ArticlesService } from '../src/api/articles/articles.service';
 import { ArticleDTO } from '../src/api/articles/article.dto';
-import { CategoriesService } from 'src/api/categories/categories.service';
+import { CategoriesService } from '../src/api/categories/categories.service';
 
 export async function insertArticleData(articleService: ArticlesService, categoryService: CategoriesService) {
   // populate mongo
