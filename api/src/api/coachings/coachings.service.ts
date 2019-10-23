@@ -3,10 +3,8 @@ import { InjectModel } from 'nestjs-typegoose';
 import { CoachingModel } from './coaching.model';
 import { ModelType, InstanceType } from 'typegoose';
 import { CoachingDTO } from './coaching.dto';
-import { EntityException, EntityExceptionCode } from 'src/exceptions/entity-exception';
 import { CoachingQuery } from './coachings.query';
-import { CategoriesService } from '../categories/categories.service';
-import { CategoriesModule } from '../categories/categories.module';
+import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
 
 @Injectable()
 export class CoachingsService {
@@ -80,4 +78,18 @@ export class CoachingsService {
       return this.coachingModel.find({}).exec();
     }
   }
+
+ /**
+  * Find one coaching by his ID
+  * @param title ID of wanted coaching
+  */
+
+  async findByTitle(urlTitle: string): Promise<CoachingModel> {
+    const coaching = await this.coachingModel.findOne({ urlTitle }).exec();
+    if (!coaching) {
+      throw new EntityException(EntityExceptionCode.NOT_FOUND);
+    }
+    return coaching;
+  }
+
 }

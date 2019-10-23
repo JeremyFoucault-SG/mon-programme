@@ -1,33 +1,87 @@
-import { Controller, Post, Get, Put, Delete, HttpCode, HttpStatus, Body, Param } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Get,
+  Put,
+  Delete,
+  HttpCode,
+  HttpStatus,
+  Body,
+  Param,
+  UseGuards,
+  Query,
+} from '@nestjs/common';
 import { WishModel } from './wish.model';
 import { WishDTO } from './wish.dto';
+import { WishesService } from './wishes.service';
+import { User, UserJWTPayload } from 'src/decorators/user.decorator';
+import { userInfo } from 'os';
+import { threadId } from 'worker_threads';
+import {
+  ApiBearerAuth,
+  ApiUseTags,
+  ApiOperation,
+  ApiResponse,
+} from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
+import { ArticleModel } from '../articles/article.model';
+import { WishQuery } from './wish.query';
 
 @Controller('wishes')
+@ApiUseTags('Wishes')
 export class WishesController {
+  constructor(private readonly wishService: WishesService) {}
 
-    @Post()
-    async create(@Body() wish: WishDTO): Promise<WishModel> {
-        return null;
-    }
+  @Post('coachings')
+  @UseGuards(AuthGuard('jwt'))
+  async createWishCoaching(
+    @User() user: UserJWTPayload,
+    @Body() wish: WishDTO,
+  ): Promise<WishModel> {
+    return this.wishService.insertCoachings(user.userId, wish);
+  }
 
-    @Get(':id')
-    async readOne(@Param('id') idWish: string): Promise<WishModel> {
-        return null;
-    }
+  @Post('articles')
+  @UseGuards(AuthGuard('jwt'))
+  async createWishArticle(
+    @User() user: UserJWTPayload,
+    @Body() wish: WishDTO,
+  ): Promise<WishModel> {
+    return this.wishService.insertArticle(user.userId, wish);
+  }
 
-    @Get()
-    async readAll(): Promise<WishModel> {
-        return null;
-    }
+  @Get('articles')
+  @UseGuards(AuthGuard('jwt'))
+  async readAllArticles(@User() user: UserJWTPayload, @Query() query?: WishQuery): Promise<WishModel[]> {
+    return this.wishService.searchArticle(user.userId, query.limit);
+  }
 
-    @Put(':id')
-    async update(@Param('id') idWish: string, @Body() wish: WishDTO): Promise<WishModel> {
-        return null;
-    }
+  @Get('coachings')
+  @UseGuards(AuthGuard('jwt'))
+  async readAllCoachings(@User() user: UserJWTPayload, @Query() query?: WishQuery): Promise<WishModel[]> {
+    return this.wishService.searchCoaching(user.userId, query.limit);
+  }
 
-    @Delete(':id')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    async delete(@Param('id') idWish: string): Promise<void> {
-        return null;
-    }
+  @Get(':id')
+  async readOne(@Param('id') idWish: string): Promise<WishModel> {
+    return null;
+  }
+
+  @Put(':id')
+  async update(
+    @Param('id') idWish: string,
+    @Body() wish: WishDTO,
+  ): Promise<WishModel> {
+    return null;
+  }
+
+  @Delete(':id')
+  @UseGuards(AuthGuard('jwt'))
+  @HttpCode(HttpStatus.NO_CONTENT)
+  async deleteWish(
+    @User() user: UserJWTPayload,
+    @Param('id') idArticle: string,
+  ): Promise<WishModel> {
+    return await this.wishService.deleteWish(user.userId, idArticle);
+  }
 }

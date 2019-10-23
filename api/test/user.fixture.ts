@@ -45,18 +45,25 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     }
 
     // CARTS
+    // const carts: CartDTO[] = [];
+    // for (let i = 0; i <= faker.random.number({ min: 0, max: 5 }); i++) {
+
+    //   const cartCoachings = [];
+
+    //   for (let j = 0; j <= faker.random.number({ min: 0, max: 10 }); j++) {
+    //     cartCoachings.push(coachings[j]);
+    //   }
+
+    //   carts.push({
+    //     coachings: cartCoachings,
+    //   });
+    // }
     const carts: CartDTO[] = [];
-    for (let i = 0; i <= faker.random.number({ min: 0, max: 5 }); i++) {
-
-      const cartCoachings = [];
-
-      for (let j = 0; j <= faker.random.number({ min: 0, max: 10 }); j++) {
-        cartCoachings.push(coachings[j]);
-      }
-
-      carts.push({
-        coachings: cartCoachings,
-      });
+    for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
+      const cart: CartDTO = {
+        cartId: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+      };
+      carts.push(cart);
     }
 
     // BOOKMARKS
@@ -72,7 +79,7 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     const wishes: WishDTO[] = [];
     for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
       const wish: WishDTO = {
-        coaching: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+        wishId: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
       };
       wishes.push(wish);
     }
@@ -80,16 +87,24 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     // SETTINGS
     const settings: SettingsDTO = {
       infos: {
-        firstname: faker.name.firstName(50),
-        lastname: faker.name.firstName(50),
         age: faker.name.firstName(50),
-        email: faker.name.firstName(50),
-        username: faker.name.firstName(50),
-        objectif: faker.name.firstName(50),
         weight: faker.name.firstName(50),
         size: faker.name.firstName(50),
-
+        goals: faker.name.firstName(50),
       },
+      contact: {
+        firstname: faker.name.firstName(50),
+        lastname: faker.name.firstName(50),
+        email: faker.name.firstName(50),
+        address: faker.name.firstName(50),
+        city: faker.name.firstName(50),
+        cp: faker.name.firstName(50),
+      },
+      paiement: {
+        rib: faker.name.firstName(50),
+        iban: faker.name.firstName(50),
+      },
+
     };
 
     const userDTO: UserDTO = {

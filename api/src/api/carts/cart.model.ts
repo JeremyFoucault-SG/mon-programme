@@ -6,6 +6,13 @@ export class CartModel extends Typegoose {
     @prop()
     createdAt: Date;
 
-    @arrayProp({items: CoachingModel})
-    coachings: SubDocumentArray<CoachingModel>;
+    @prop({ref: CoachingModel})
+    coaching: Ref<CoachingModel>;
+
+    @prop()
+    cartId: string;
+
+    @prop()
+    id: string;
+
 }

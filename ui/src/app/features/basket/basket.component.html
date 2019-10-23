@@ -1,0 +1,7 @@
+<div class="pt-48">
+    <div>
+        <h1 class="mb-8 underline">Mes Panier</h1>
+        <li *ngFor="let cart of carts | async" class="italic">{{cart.coaching.title}} : {{cart.coaching.price}}€ | <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer" aria-hidden="true" (click)="deleteCartCoaching(cart._id)" ></i><br></li>
+    <h1>Total :</h1>
+</div>  
+</div>

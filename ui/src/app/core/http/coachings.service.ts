@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Programmes } from 'src/app/shared/models/programmes.model';
+import { Programme } from 'src/app/shared/models/programmes.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { QueryCoaching } from 'src/app/shared/models/query.coaching.interface';
@@ -18,35 +18,35 @@ export class CoachingsService {
     public api = `${environment.apiUrl}`;
 
     // Recuperation d'un programme  par l'id//
-    public getProgramme(id: string): Observable<Programmes> {
+    public getProgramme(id: string): Observable<Programme> {
         return this.http.get(`${this.api}/coachings/${id}`).pipe(
             map((programme: any) => {
-                return programme as Programmes;
+                return programme as Programme;
             }),
         );
     }
 
 
     // Recuperation de tous les programmes//
-    public getAllProgrammes(): Observable<Programmes[]> {
+    public getAllProgrammes(): Observable<Programme[]> {
         return this.http.get(`${this.api}/coachings`).pipe(
             map((allProgrammes: any) => {
-                return allProgrammes as Programmes[];
+                return allProgrammes as Programme[];
             }),
         );
     }
 
     // Mise à jour d'un programme //
     // tslint:disable-next-line: variable-name
-    public updateProgramme(payload: Programmes, _id: string) {
+    public updateProgramme(payload: Programme, _id: string) {
         console.log(_id);
-        return this.http.put<Programmes>(`${this.api}/coachings/${_id}`, payload);
+        return this.http.put<Programme>(`${this.api}/coachings/${_id}`, payload);
     }
 
 
     // Ajout d'un programme //
-    public addProgramme(payload: Programmes) {
-        return this.http.post<Programmes>(`${this.api}/coachings`, payload);
+    public addProgramme(payload: Programme) {
+        return this.http.post<Programme>(`${this.api}/coachings`, payload);
     }
 
     // Supression d'un programme //

@@ -13,8 +13,10 @@ export async function bootstrap() {
 
   // redirect / openapi doc
   app.use('^/$', (req, res) => {
-    res.redirect(process.env.NODE_ENV === 'production' ? '/api/doc/' : 'doc');
+    res.redirect(process.env.NODE_ENV === 'production' ? '/doc/' : 'doc');
   });
+
+  const config: ConfigService = app.get('ConfigService');
 
   const options = new DocumentBuilder()
     .setTitle('Mon Programme API')
@@ -26,11 +28,11 @@ export async function bootstrap() {
 
   app.enableCors();
 
+  app.useStaticAssets(config.get('UPLOAD_PATH'), { prefix: '/images/' });
+
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
   }));
-
-  const config: ConfigService = app.get('ConfigService');
 
   await app.listen(config.get('HTTP_PORT'));
 

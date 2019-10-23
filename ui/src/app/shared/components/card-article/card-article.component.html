@@ -46,21 +46,24 @@
         class="hidden lg:inline-block"
         [ngClass]="isReverse ? 'text-left' : 'text-right'"
       >
+      <a [routerLink]="['/articles', article.urlTitle]">
         <button
-          type="button"
-          [routerLink]="['/articles', article.title]"
-          class="bg-transparent border-yellow-500 hover:bg-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5"
-        >
-          Voir L'article
-        </button>
+        type="button"
+        class="bg-transparent border-yellow-500 hover:bg-yellow-500 font-semibold py-2 px-12 border m-8 rounded-full uppercase mb-5"
+      >
+        Voir L'article
+      </button>
+      </a>
       </div>
       <div
         class="flex items-center mt-10 w-full justify-end pb-5"
         [ngClass]="isReverse ? 'lg:justify-end' : 'lg:justify-start'"
+        (click)="addWishArticle(article)"
       >
         <i
           class="cursor-pointer text-red-700 fa fa-heart-o fa-2x"
           aria-hidden="true"
+          [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"
         ></i>
         <p
           class="hidden lg:inline-block cursor-pointer ml-5 italic text-gray-600 tracking-wider"

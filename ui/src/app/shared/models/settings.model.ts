@@ -1,16 +1,13 @@
+import { InfoUser } from './infoUser.model';
+import { ContactUser } from './contactUser.model';
+import { PaiementUser } from './paiementUser.model';
+
 export class Settings {
-    constructor(
-        public firstname?: string,
-        public lastname?: string,
-        public email?: string,
-        public password?: string,
-        public confirm?: string,
-        public age?: number,
-        public weight?: number,
-        public size?: number,
-        public username?: string,
-        public objectif?: string,
-        // tslint:disable-next-line: variable-name
-        public _id?: string,
-    ) { }
+  constructor(
+    // tslint:disable-next-line: variable-name
+    public _id?: string,
+    public infos?: InfoUser,
+    public contact?: ContactUser,
+    public paiement?: PaiementUser
+  ) {}
 }

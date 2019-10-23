@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "yarn --cwd ./api install && yarn --cwd ./ui install",
     "start": "concurrently --raw \"yarn --cwd ./api start:dev\" \"yarn --cwd ./ui start\"",
+    "build": "concurrently --raw \"yarn --cwd ./api build\" \"yarn --cwd ./ui build\"",
     "start:mongo": "docker-compose -f docker-compose.dev.yml stop && docker-compose -f docker-compose.dev.yml up"
   },
   "author": "",
@@ -20,7 +21,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "node ./husky.hook.js",
-      "pre-push": "yarn --cwd ./api lint && yarn --cwd ./ui lint"
+      "pre-push": "yarn --cwd ./api lint && yarn --cwd ./ui lint && yarn build"
     }
   }
 }

@@ -5,7 +5,7 @@
 <!-- TODO: Ton programe sur mesure -->
 <app-title>TON PROGRAMME SUR-MESURE</app-title>
 <div class="w-3/3 flex justify-end mr-16">
-<app-form-customize-programme></app-form-customize-programme>
+  <app-form-customize-programme></app-form-customize-programme>
 </div>
 <!-- Programs list -->
 <div class="pt-24 md:pt-32 px-5 md:px-10">
@@ -13,16 +13,21 @@
     <app-title class="group-title">NOS MEILLEURS PROGRAMME</app-title>
     <app-sub-title class="group-subtitle">PROGRAMME</app-sub-title>
     <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
-      <a [routerLink]="['/coachings']" routerLinkActive="router-link-active">
+      <a [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active">
         Voir tout
       </a>
     </div>
   </app-group-title>
-  <app-card-thumb-list [items]="programmes | async" ></app-card-thumb-list>
+  <app-card-thumb-list>
+    <app-card-thumb-program *ngFor="let item of programmes | async" class="mr-5" [imageUrl]="item.imageUrl"
+      [title]="item.title" [content]="item.content | firstCharactere" [hasBgOverlay]="true" [inlineStars]="9"
+      [tag]="'ghghhghghg'" [urlTitle]="item.urlTitle" [level]="item.level">
+    </app-card-thumb-program>
+  </app-card-thumb-list>
 </div>
 
 <!-- Article list -->
-<div  class="pt-24 md:pt-32 px-5 md:px-10">
+<div class="pt-24 md:pt-32 px-5 md:px-10">
   <app-group-title>
     <app-title class="group-title">STYLE DE VIE ET NUTRITION</app-title>
     <app-sub-title class="group-subtitle">BLOG</app-sub-title>
@@ -33,9 +38,12 @@
     </div>
   </app-group-title>
 
-  <app-card-thumb-list  [items]="programs" [titleOnRight]="true"></app-card-thumb-list>
-  <app-card-thumb-list [items]="articles | async" [titleOnRight]="true"></app-card-thumb-list>
-
+  <app-card-thumb-list [titleOnRight]="true">
+    <app-card-thumb-program *ngFor="let item of articles | async" class="mr-5" [imageUrl]="item.photoUrl"
+      [title]="item.title" [content]="item.content | firstCharactere" [hasBgOverlay]="true" [inlineStars]="9"
+      [isContentOverlay]="true" [tag]="'ghghhghghg'">
+    </app-card-thumb-program>
+  </app-card-thumb-list>
 
 </div>
 
@@ -45,12 +53,17 @@
     <app-title class="group-title">NOS DERNIERS ARTICLES</app-title>
     <app-sub-title class="group-subtitle">BLOG</app-sub-title>
     <div class="group-action font-sm text-black opacity-25 hover:opacity-100 font-semibold">
-      <a [routerLink]="['/routePath']">
+      <a [routerLink]="['/sante']">
         Voir tout
       </a>
     </div>
   </app-group-title>
-  <app-card-thumb-list [items]="articles | async"></app-card-thumb-list>
+  <app-card-thumb-list>
+    <app-card-thumb-program *ngFor="let item of articles | async" class="mr-5" [imageUrl]="item.photoUrl"
+      [title]="item.title" [content]="item.content | firstCharactere" [hasBgOverlay]="true" [inlineStars]="9"
+      [isContentOverlay]="true" [tag]="'ghghhghghg'">
+    </app-card-thumb-program>
+  </app-card-thumb-list>
 </div>
 
 <!-- Newsletter form -->

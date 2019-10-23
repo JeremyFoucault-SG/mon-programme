@@ -17,30 +17,30 @@
         </div>
       </div>
     <div class="flex flex-row flex-wrap justify-center mb-12">
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Tout</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'prise-de-masse'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'prise-de-masse'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Prise de masse</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'entretien'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'entretien'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Entretien</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'seche'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'seche'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Sèche</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'raffermissement'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'raffermissement'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Raffermissement</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'stretching'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'stretching'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Stretching</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'recuperation'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'recuperation'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Récupération</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'preparation-competition'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'preparation-competition'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Préparation compétition</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/coachings']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'tuto-exercice'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'tuto-exercice'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Tuto par exercices</button></a>
     </div>
 
 </div>
 <div class="flex flex-row flex-wrap">
-    <app-card-thumb-program *ngFor="let item of programmes | async" class="mx-4" [imageUrl]="item.imageUrl"
-        [title]="item.title" [hasBgOverlay]="true" [inlineStars]="item.rating" [level]="item.level" [hasMenu]="true" >
+    <app-card-thumb-program *ngFor="let item of programmes| async" class="mx-4" [imageUrl]="item.imageUrl"
+        [urlTitle]="item.urlTitle" [coaching]="item" [hasBgOverlay]="true" [inlineStars]="item.rating" [level]="item.level" [hasMenu]="true" [content]="item.content ">
     </app-card-thumb-program>
 </div>
 
@@ -51,3 +51,4 @@
       </button>
 </a>
 </div>
+

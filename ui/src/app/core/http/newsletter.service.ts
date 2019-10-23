@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Newsletters } from 'src/app/shared/models/newsletters.model';
+import { tap, catchError } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
+import { throwError } from 'rxjs';
 
 
 
@@ -10,19 +12,18 @@ import { Newsletters } from 'src/app/shared/models/newsletters.model';
 })
 export class NewsletterService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private toastr: ToastrService) { }
 
-    public api = `${environment.apiUrl}`;
+    public url = `${environment.apiUrl}`;
 
-     // Ajout d'une newsletter //
-   public addNewsletter(payload: Newsletters) {
-    return this.http.post<Newsletters>(`${this.api}/newsletters`, payload);
-}
-
-// Supression d'une newsletter //
-// tslint:disable-next-line: variable-name
-public deleteNewsletter(_id: string) {
-    return this.http.delete(`${this.api}/newsletters/${_id}`);
-}
-
+    newsletter(rdv) {
+      return this.http.post<any>(`${this.url}/newsletter`, rdv)
+      .pipe(
+        tap(() =>  this.toastr.success('Inscription validé')),
+        catchError((err) => {
+          this.toastr.error(`Erreur lors de l'inscription`);
+          return throwError(err);
+        })
+      );
+    }
 }

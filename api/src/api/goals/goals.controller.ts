@@ -5,6 +5,7 @@ import { GoalDTO } from './goal.dto';
 import { GoalsService } from './goals.service';
 
 @Controller('goals')
+@ApiUseTags('Goals')
 export class GoalsController {
 
     constructor(private readonly goalsService: GoalsService) { }

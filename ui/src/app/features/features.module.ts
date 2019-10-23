@@ -30,7 +30,7 @@ import { HeaderComponent } from './blog/header/header.component';
 import { InfoComponent } from './dashboard/info/info.component';
 import { CompteComponent } from './dashboard/compte/compte.component';
 import { SuiviComponent } from './dashboard/suivi/suivi.component';
-import { ConnexionComponent } from './connexion/connexion.component';
+import { ConnexionComponent } from '../features/connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { Step1Component } from './inscription/step1/step1.component';
 import { Step2Component } from './inscription/step2/step2.component';
@@ -38,7 +38,12 @@ import { Step3Component } from './inscription/step3/step3.component';
 import { Step4Component } from './inscription/step4/step4.component';
 import { ListingProgrammeComponent } from './listing-programme/listing-programme.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
+import { TitleArticleComponent } from './article-blog/title-article/title-article.component';
+import { PartageComponent } from './article-blog/partage/partage.component';
 import { ListProgrammeComponent } from './list-programme/list-programme.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { BasketComponent } from './basket/basket.component';
+import { PaiementComponent } from './paiement/paiement.component';
 
 
 @NgModule({
@@ -74,7 +79,13 @@ import { ListProgrammeComponent } from './list-programme/list-programme.componen
     Step2Component,
     Step3Component,
     Step4Component,
-    ListProgrammeComponent
+    ListingProgrammeComponent,
+    TitleArticleComponent,
+    PartageComponent,
+    ListProgrammeComponent,
+    WishlistComponent,
+    BasketComponent,
+    PaiementComponent
   ],
   imports: [
     RouterModule,
@@ -85,9 +96,7 @@ import { ListProgrammeComponent } from './list-programme/list-programme.componen
     FacebookModule.forRoot(),
     ChartsModule,
     CoreModule,
-    AdminModule
-  ],
-  exports: [
+    AdminModule,
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

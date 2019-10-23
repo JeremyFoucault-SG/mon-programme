@@ -13,7 +13,7 @@ export async function insertArticleData(articleService: ArticlesService, categor
         author: faker.name.firstName(),
         content: faker.lorem.sentences(500),
         categories: [categories[faker.random.number({min: 0, max: categories.length - 1 })]],
-        photoUrl: faker.image.sports(),
+        photoUrl: faker.image.food(),
     };
 
     await articleService.insert(articleDTO);

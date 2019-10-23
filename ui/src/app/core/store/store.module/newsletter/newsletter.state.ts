@@ -41,27 +41,27 @@ export class NewsletterState {
     }
 
 
-    @Action(AddNewsletter)
-    addBookmark({ getState, patchState }: StateContext<NewsletterStateModel>, { payload }: AddNewsletter) {
-        return this.service.addNewsletter(payload).pipe(tap((result) => {
-            const state = getState();
-            patchState({
-                items: [...state.items, result]
-            });
-        }));
-    }
+    // @Action(AddNewsletter)
+    // addBookmark({ getState, patchState }: StateContext<NewsletterStateModel>, { payload }: AddNewsletter) {
+    //     return this.service.addNewsletter(payload).pipe(tap((result) => {
+    //         const state = getState();
+    //         patchState({
+    //             items: [...state.items, result]
+    //         });
+    //     }));
+    // }
 
-    @Action(DeleteNewsletter)
-    deleteBookmark({ getState, setState }: StateContext<NewsletterStateModel>, { id }: DeleteNewsletter) {
-        return this.service.deleteNewsletter(id).pipe(tap(() => {
-            const state = getState();
-            const filteredArray = state.items.filter(item => item._id !== id);
-            setState({
-                ...state,
-                items: filteredArray,
-            });
-        }));
-    }
+    // @Action(DeleteNewsletter)
+    // deleteBookmark({ getState, setState }: StateContext<NewsletterStateModel>, { id }: DeleteNewsletter) {
+    //     return this.service.deleteNewsletter(id).pipe(tap(() => {
+    //         const state = getState();
+    //         const filteredArray = state.items.filter(item => item.email);
+    //         setState({
+    //             ...state,
+    //             items: filteredArray,
+    //         });
+    //     }));
+    // }
 
 
     @Action(SetSelectedNewsletter)

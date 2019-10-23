@@ -1,0 +1,19 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <app-connexion-modal [formStep1]="myForm.get('step1')" *ngIf="index===1">
+        <button type="button"
+            class="h-10 text-sm font-semibold py-2 px-2 border border-red-400 rounded px-4 bg-red-400 p-3 rounded text-white hover:bg-red-500"
+            (click)="indexChange()" ngHide="isHidden">
+            ETAPE SUIVANTE
+            <i class="fa fa-long-arrow-right ml-2" aria-hidden="true"></i>
+        </button>
+    </app-connexion-modal>
+
+    <app-connexion-modal2 [formStep2]="myForm.get('step2')" *ngIf="index === 2 ">
+        <button
+            class="h-10 text-sm font-semibold py-2 px-2 border border-red-400 rounded px-4 bg-red-400 p-3 rounded text-white hover:bg-red-500"
+            type="submit" (click)="indexChange()">
+            CONNEXION
+            <i class="fa fa-long-arrow-right ml-2" aria-hidden="true"></i>
+        </button>
+    </app-connexion-modal2>
+</form>

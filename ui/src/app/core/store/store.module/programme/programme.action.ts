@@ -1,10 +1,10 @@
-import { Programmes } from '../../../../shared/models/programmes.model';
+import { Programme } from '../../../../shared/models/programmes.model';
 import { QueryCoaching } from 'src/app/shared/models/query.coaching.interface';
 
 // Création d'un programme //
 export class AddProgramme {
     static readonly type = '[Prog] Add programme';
-    constructor(public payload: Programmes) { }
+    constructor(public payload: Programme) { }
 }
 
 
@@ -25,7 +25,7 @@ export class GetByIdProgramme {
 // mise à jour d'un programme  //
 export class UpdateProgramme {
     static readonly type = '[Prog] Update programme';
-    constructor(public payload: Programmes, public id: string) { }
+    constructor(public payload: Programme, public id: string) { }
 }
 
 // Supression d'un programme //
@@ -36,7 +36,7 @@ export class DeleteProgramme {
 
 export class SetSelectedProgramme {
     static readonly type = '[Prog] Set';
-    constructor(public payload: Programmes) { }
+    constructor(public payload: Programme) { }
 }
 
 
@@ -49,3 +49,13 @@ export class AddNextProgramme {
     static readonly type = '[prog] Next programme';
     constructor(public payload: QueryCoaching) { }
 }
+
+
+// Recuperation programme by id
+export class GetCoachingByTitle {
+    static readonly type = '[prog] Get coaching by title';
+    constructor(public title: string) { }
+}
+
+
+

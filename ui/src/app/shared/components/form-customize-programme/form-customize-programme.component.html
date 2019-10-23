@@ -11,16 +11,19 @@
             </div>
             <div class="flex-col mt-4">
                 <label class="text-gray-700 font-bold mt-2" for="seances">Nombres de séances /semaines :</label>
-                <div class="items-center pt-2 w_full"><input type="range" min="1" max="10" value="5" class="w-full" id="myRange" formControlName="seances" name="seances"></div>
+                <div class="items-center pt-2 w_full"><input type="range" min="1" max="11" value="5" class="w-full" id="myRange" formControlName="seances" name="seances"></div>
             </div>
         </div>
         <div class="flex-row mt-4">
                 <label class="text-gray-700 font-bold mt-2 " for="objectif">Quel est ton objectif ?</label>
             <select
-                class="block appearance-none border border-red-500 bg-gray-200 text-gray-700 py-3 px-4 pr-8 mt-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="objectif" formControlName="objectif">
-                <option>Séche</option>
-                <option>Prise de masse</option>
-                <option>Perte de poids</option>
+                class="block appearance-none border border-red-500 bg-gray-200 text-gray-700 py-3 px-4 pr-8 mt-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="objectif" formControlName="objectif" required>
+                <option>seche</option>
+                <option>prise-de-masse</option>
+                <option>entretien</option>
+                <option>raffermissement</option>
+                <option>stretching</option>
+                <option>preparation-competition</option>
             </select>
         </div>
         <div class="flex-row mt-4">
@@ -47,22 +50,22 @@
         <div class="flex-row border-b border-b-2 border-red-500 mt-4">
             <label class="text-gray-700 font-bold" for="taille">Taille :</label>
             <input type="text" placeholder="165 cm"
-                class="appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" name="taille" formControlName="taille" required>
+                class="appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" name="taille" formControlName="taille">
         </div>
         <div class="flex-row border-b border-b-2 border-red-500 mt-4">
             <label class="text-gray-700 font-bold" for="age">Age :</label>
             <input type="text" placeholder="28 ans"
-                class="appearance-none bg-transparent border-none wtext-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" name="age" formControlName="age" required>
+                class="appearance-none bg-transparent border-none wtext-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" name="age" formControlName="age" >
         </div>
         <div class="flex-row border-b border-b-2 border-red-500 mt-4">
             <label class="text-gray-700 font-bold" for="pratique">Nombres d'années de pratique :</label>
             <input type="text" placeholder="2 ans"
-                class="appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" name="pratique" formControlName="pratique" required>
+                class="appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" name="pratique" formControlName="pratique" >
         </div>
         <div class="flex-row mt-4">
                 <label class="text-gray-700 font-bold mt-2" for="muscle">Muscles ciblés ?</label>
             <select
-                class="block appearance-none border border-red-500 bg-gray-200 text-gray-700 py-3 px-4 pr-8 mt-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="muscle" formControlName="muscle" required>
+                class="block appearance-none border border-red-500 bg-gray-200 text-gray-700 py-3 px-4 pr-8 mt-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="muscle" formControlName="muscle" >
                 <option>Abdominaux</option>
                 <option>Biceps</option>
                 <option>Quadriceps</option>

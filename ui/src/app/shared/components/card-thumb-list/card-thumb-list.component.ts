@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 /**
  * Display card in an inline scrollable container
@@ -20,13 +21,16 @@ export class CardThumbListComponent implements OnInit {
   @Input()
   items: any[];
 
+  @Input()
+  coaching: any[];
+
   /**
    * If true set title on the right for lg and xl display
    */
   @Input()
   titleOnRight = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

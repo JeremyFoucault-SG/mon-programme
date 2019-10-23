@@ -1,18 +1,61 @@
 
-    
+
         <form [formGroup]="programmeForm" (ngSubmit)="onSubmit()">
             <h2 class="flex justify-center mt-12">Modifié le contenu du programme</h2>
             <div class="form-group">
             <div class="flex justify-center">
-                    <ngx-quill 
+                    <!-- <ngx-quill
                     class="form-control ml-12" [formControl]="programmeForm.controls['content']"
-                     (ngSubmit)="onSubmit()"></ngx-quill>
+                     (ngSubmit)="onSubmit()"></ngx-quill> -->
+                     <quill-editor #quill class="form-control" formControlName="content" (onSelectionChanged)="onSelectionChanged()">
+
+                        <div quill-editor-toolbar>
+                            <span class="ql-formats">
+                                <select class="ql-font">
+                                  <option selected></option>
+                                  <option value="serif"></option>
+                                  <option value="monospace"></option>
+                                </select>
+                                <select class="ql-size">
+                                  <option value="small"></option>
+                                  <option selected></option>
+                                  <option value="large"></option>
+                                  <option value="huge"></option>
+                                </select>
+                              </span>
+                              <span class="ql-formats">
+                                <button type="button" class="ql-bold"></button>
+                                <button type="button" class="ql-italic"></button>
+                                <button type="button" class="ql-underline"></button>
+                                <button type="button" class="ql-strike"></button>
+                              </span>
+                              <span class="ql-formats">
+                                <select class="ql-color"></select>
+                                <select class="ql-background"></select>
+                              </span>
+                              <span class="ql-formats">
+                                <button type="button" class="ql-list" value="ordered"></button>
+                                <button type="button" class="ql-list" value="bullet"></button>
+
+                                <select class="ql-align">
+                                  <option selected></option>
+                                  <option value="center"></option>
+                                  <option value="right"></option>
+                                  <option value="justify"></option>
+                                </select>
+                              </span>
+                              <span class="ql-formats">
+                                <button type="button" class="ql-link"></button>
+                                <button type="button" class="ql-image"></button>
+                              </span>
+                        </div>
+                      </quill-editor>
             <div >
-                    <button 
+                    <button
                             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full text-center"
-                            [disabled]="programmeForm.pristine || programmeForm.invalid">Valider
+                            [disabled]="programmeForm.pristine || programmeForm.invalid">Valider DD
                     </button>
                 </div>
             </div>
         </div>
-        </form>  
+        </form>

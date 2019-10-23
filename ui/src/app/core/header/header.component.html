@@ -34,8 +34,11 @@
       <div 
       class="flex items-center"
       *ngIf="user">
-      <i class="cursor-pointer fa fa-shopping-basket fa-lg text-white mr-4"></i>
-      <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, <strong>Pierre</strong></h3>
+      <a [routerLink]="['/commande']" >
+        <i class="cursor-pointer fa fa-shopping-basket fa-lg text-white"></i>
+          <span class="bg-red-700 p-1 rounded-full text-white text-xs">{{carts | async}}</span>
+      </a>
+      <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, <strong>{{}</strong></h3>
       <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="cursor-pointer h-16 w-16 ml-2">
     </div>
       <i class="cursor-pointer text-white fa fa-2x ml-4 mr-2" [ngClass]="isOpen ? 'fa-times' : 'fa-bars'"
@@ -63,8 +66,8 @@
           </a>
 
           <a
-            class="ml-4 inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/inscription']"
-            (click)="open()">
+            class="ml-4 inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400"
+            (click)="openInscription()">
             Inscription
           </a>
         </div>

@@ -1,11 +1,12 @@
 import { Controller, Post, Get, Put, Body, Param } from '@nestjs/common';
 import { StatModel } from './stat.model';
 import { StatDTO } from './stat.dto';
-import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
 import { StatsService } from './stats.service';
 import { User } from '../../decorators/user.decorator';
 
 @Controller('stats')
+@ApiUseTags('Stats')
 export class StatsController {
 
   constructor(private readonly statsService: StatsService) { }

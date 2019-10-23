@@ -36,6 +36,11 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
 import { GroupTitleComponent } from './components/group-title/group-title.component';
 import { AdminModule } from '../admin/admin.module';
 import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
+import { SumPipe } from './pipes/sum.pipe';
+import { ModalComponent } from './components/modal/modal.component';
+import { ConnexionModalComponent } from './components/register/connexion-modal/connexion-modal.component';
+import { ConnexionModal2Component } from './components/register/connexion-modal2/connexion-modal2.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -68,14 +73,19 @@ import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
     TagComponent,
     FooterSmComponent,
     GroupTitleComponent,
-    FirstCharacterePipe
+    FirstCharacterePipe,
+    SumPipe,
+    ModalComponent,
+    ConnexionModalComponent,
+    ConnexionModal2Component,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    AdminModule
+    AdminModule,
   ],
   exports: [
     FormCustomizeProgrammeComponent,
@@ -103,7 +113,8 @@ import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
     TagComponent,
     FooterSmComponent,
     GroupTitleComponent,
-    FirstCharacterePipe
-  ]
+    FirstCharacterePipe,
+    SumPipe
+  ],
 })
 export class SharedModule { }

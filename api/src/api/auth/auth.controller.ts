@@ -8,10 +8,11 @@ import { UsersService } from '../users/users.service';
 import { UserDTO } from '../users/user.dto';
 import { RegisterDTO } from './register.dto';
 import { AuthModel } from './auth.model';
-import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
 import { SettingsModel } from '../settings/settings.model';
 
 @Controller('auth')
+@ApiUseTags('Auth')
 export class AuthController {
     constructor(
         private readonly authService: AuthService,
@@ -29,16 +30,29 @@ export class AuthController {
     @HttpCode(HttpStatus.CREATED)
     @Post('signup')
     async signup(@Body() register: RegisterDTO) {
-        const { username, password, ...settings } = register;
+        const { username, password, age, email, firstname, lastname, goals, size, weight } = register;
         const auth: AuthDTO = { password, username };
         await this.authService.createAuth(register);
         const user = await this.userService.insert(new UserDTO());
-        const updatedAuth = await this.authService.updateAuth(auth, user);
-        const setting = await this.settingService.insert(user._id,
+        await this.authService.updateAuth(auth, user);
+        await this.settingService.insert(user._id,
             {
+
                 infos: {
-                    ...settings,
-                    username,
+                    age,
+                    weight,
+                    size,
+                    goals,
+
+            },
+                contact: {
+                    email,
+                    firstname,
+                    lastname,
+
+                },
+                paiement: {
+
                 },
             });
     }
@@ -49,7 +63,9 @@ export class AuthController {
     @ApiResponse({ status: 200, description: 'Return setting.' })
     @ApiResponse({ status: 404, description: 'Not Found.' })
     @ApiResponse({ status: 403, description: 'Forbidden.' })
+    @UseGuards(AuthGuard('jwt'))
     async readAll(): Promise<AuthModel[]> {
         return this.authService.findAll();
     }
+
 }
