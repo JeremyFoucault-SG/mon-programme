@@ -1,10 +1,21 @@
+import { Allow } from 'class-validator';
+import { ApiModelProperty } from '@nestjs/swagger';
+
 export class InfosDTO {
-    firstname: string;
-    lastname: string;
-    email: string;
-    age: string;
-    weight: string;
-    size: string;
-    username: string;
-    objectif: string;
+
+    @Allow()
+    @ApiModelProperty()
+    public readonly age?: string;
+
+    @Allow()
+    @ApiModelProperty()
+    public readonly weight?: string;
+
+    @Allow()
+    @ApiModelProperty()
+    public readonly size?: string;
+
+    @Allow()
+    @ApiModelProperty()
+    public readonly goals?: string;
 }

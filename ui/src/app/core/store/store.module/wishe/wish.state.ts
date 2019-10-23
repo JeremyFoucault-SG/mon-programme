@@ -1,28 +1,26 @@
 import { State, Action, StateContext, Selector, Store } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
-import { patch, updateItem } from '@ngxs/store/operators';
-import { Wishes as Wish } from 'src/app/shared/models/wishes.model';
+import { patch, updateItem, append, removeItem } from '@ngxs/store/operators';
+import { Wish as Wish } from 'src/app/shared/models/wishes.model';
 import { WishesService } from 'src/app/core/http/wishes.service';
 import {
-    AddWish,
-    GetAllWishes, DeleteWish, SetSelectedWish
+    AddWishCoaching as AddWishCoaching,
+    AddWishArticle, GetAllWishesCoaching, GetAllWishesArticles, DeleteWishArticle, DeleteWishCoaching
 } from './wish.action';
+import { filter } from 'minimatch';
 
 export class WishStateModel {
-    items: Wish[];
-    item: Wish;
+    coachings: Wish[];
+    articles: Wish[];
 }
 
 @State<WishStateModel>({
-    name: 'wishes',
+    name: 'wish',
     defaults: {
-        items: [],
-        item: null,
-
+        coachings: [],
+        articles: [],
     }
 })
-
-
 export class WishState {
 
     constructor(private service: WishesService) {
@@ -30,57 +28,82 @@ export class WishState {
 
     @Selector()
     static wish(state: WishStateModel) {
-        console.log('heyyyy');
-        return state.items;
+        return [...state.articles, ...state.coachings];
     }
 
     @Selector()
-    static Getwishes(state: WishStateModel) {
-        console.log('heyyyy');
-        return state.item;
+    static wishArticles(state: WishStateModel) {
+        return state.articles;
     }
 
-    @Action(GetAllWishes)
-    getAll(ctx: StateContext<WishStateModel>, action: GetAllWishes) {
-        console.log('ffffffff');
-        return this.service.getAllWishes().pipe(tap((wishes: Wish[]) => {
+    @Selector()
+    static wishCoachings(state: WishStateModel) {
+        return state.coachings;
+    }
+
+    @Action(GetAllWishesCoaching)
+    getAllCoachings(ctx: StateContext<WishStateModel>, {payload}: GetAllWishesCoaching) {
+        return this.service.getAllWishesCoachings(payload).pipe(tap((wish: Wish[]) => {
             ctx.setState(patch({
-                items: wishes
+                coachings: wish
             }));
         }));
     }
 
-
-    @Action(AddWish)
-    addWish({ getState, patchState }: StateContext<WishStateModel>, { payload }: AddWish) {
-        return this.service.addWish(payload).pipe(tap((result) => {
-            const state = getState();
-            patchState({
-                items: [...state.items, result]
-            });
+    @Action(GetAllWishesArticles)
+    getAllArticles(ctx: StateContext<WishStateModel>, {payload}: GetAllWishesArticles) {
+        return this.service.getAllWishesArticles(payload).pipe(tap((wish: Wish[]) => {
+            ctx.setState(patch({
+                articles: wish
+            }));
         }));
     }
 
-    @Action(DeleteWish)
-    deleteWish({ getState, setState }: StateContext<WishStateModel>, { id }: DeleteWish) {
+    @Action(AddWishCoaching)
+    addWishCoaching({ getState, patchState, setState }: StateContext<WishStateModel>, { payload }: AddWishCoaching) {
+        return this.service.addWishCoaching(payload).pipe(tap((result: Wish) => {
+            setState(
+                patch({
+                    coachings: append([result])
+                })
+            );
+        }));
+    }
+
+    @Action(AddWishArticle)
+    addWishArticle({ getState, patchState, setState }: StateContext<WishStateModel>, { payload }: AddWishArticle) {
+        return this.service.addWishArticle(payload).pipe(tap((result: Wish) => {
+            setState(
+                patch({
+                    articles: append([result])
+                })
+            );
+        }));
+    }
+
+    @Action(DeleteWishArticle)
+    deleteWishArticle({ getState, setState }: StateContext<WishStateModel>, { id }: DeleteWishArticle) {
         return this.service.deleteWish(id).pipe(tap(() => {
-            const state = getState();
-            const filteredArray = state.items.filter(item => item._id !== id);
-            setState({
-                ...state,
-                items: filteredArray,
-            });
+            setState(
+                patch({
+                    articles: removeItem<Wish>(w => w._id === id)
+                })
+            );
         }));
     }
 
 
-    @Action(SetSelectedWish)
-    setSelectedTodoId({ getState, setState }: StateContext<WishStateModel>, { payload }: SetSelectedWish) {
-        const state = getState();
-        setState({
-            ...state,
-            item: payload
-        });
+    @Action(DeleteWishCoaching)
+    deleteWishCoaching({ getState, setState }: StateContext<WishStateModel>, { id }: DeleteWishCoaching) {
+        return this.service.deleteWish(id).pipe(tap(() => {
+            setState(
+                patch({
+                    coachings: removeItem<Wish>(w => w._id === id)
+                })
+            );
+        }));
     }
+
+
 }
 

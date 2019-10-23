@@ -10,9 +10,14 @@ export class UpdateCart {
     constructor(public payload: Cart, public id: string) { }
 }
 
-export class GetAllCart {
+export class GetAllCarts {
     static readonly type = '[Cart] Get all cart';
     constructor() { }
 
 
+}
+
+export class DeleteCartCoaching {
+    static readonly type = '[Blog] Delete cartCoaching by id';
+    constructor(public id: string) { }
 }

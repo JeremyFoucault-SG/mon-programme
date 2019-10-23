@@ -3,7 +3,6 @@ import { ApiBearerAuth, ApiUseTags, ApiOperation, ApiResponse, ApiImplicitQuery,
 import { CoachingModel } from './coaching.model';
 import { CoachingDTO } from './coaching.dto';
 import { CoachingsService } from './coachings.service';
-import { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } from 'constants';
 import { CoachingQuery } from './coachings.query';
 
 @Controller('coachings')
@@ -29,14 +28,6 @@ export class CoachingsController {
         return this.coachingsService.insert(coaching);
     }
 
-    @Get(':id')
-    @ApiOperation({ title: 'Get coaching by ID' })
-    @ApiResponse({ status: 200, description: 'Return coaching.' })
-    @ApiResponse({ status: 404, description: 'Not Found.' })
-    async readOne(@Param('id') idCoaching: string): Promise<CoachingModel> {
-        return this.coachingsService.findById(idCoaching);
-    }
-
     @Get()
     @ApiOperation({ title: 'Get all coachings' })
     @ApiResponse({ status: 200, description: 'Return an array of coachings.' })
@@ -53,6 +44,14 @@ export class CoachingsController {
     @HttpCode(HttpStatus.NO_CONTENT)
     async delete(@Param('id') idCoaching: string): Promise<CoachingModel> {
         return await this.coachingsService.delete(idCoaching);
+    }
+
+    @Get(':urlTitle')
+    @ApiOperation({ title: 'Get coaching by title' })
+    @ApiResponse({ status: 200, description: 'Return article.' })
+    @ApiResponse({ status: 404, description: 'Not Found.' })
+    async readOne(@Param('urlTitle') titleCoaching: string): Promise<CoachingModel> {
+        return this.coachingsService.findByTitle(titleCoaching);
     }
 
 }

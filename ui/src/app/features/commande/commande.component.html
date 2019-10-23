@@ -1,67 +1,95 @@
 <!-- Bouton pour retour à l'acceuil -->
-<div class="ml-5 mt-5 mb-6">
-  <a class="nav-link return text-black font-bold" [routerLink]="[ '' ]" routerLinkActive="active-nav"><i
-      class="fa fa-undo mr-2" aria-hidden="true"></i>PAGE D'ACCUEIL</a>
+<div class="ml-5 pt-32 mb-6">
+  <a class="nav-link return text-black font-bold text-2xl" [routerLink]="[ '/accueil' ]"><i
+      class="fa fa-undo mr-2 text-2xl" aria-hidden="true"></i>PAGE D'ACCUEIL</a>
 </div>
 
 
 
-
 <!-- Premier formulaire pour information de commande, caché si deuxieme formulaire paiement actif -->
-<div class="mt-6 w-3/3 flex" *ngIf="!isHidden">
-  <div>
-  </div>
-
   <!-- Rappel du composant function -->
-  <div class="w-1/3 mr-16">
-    <app-function></app-function>
+  <div class="flex flex-row justify-between sm:flex-row">
+    
+  <div class="w-1/3  h-screen">
+<div class="flex flex-col">
+  <h2 class="text-red-400 text-3xl font-bold">Comment ça marche ? </h2>
+  <div class="flex flex-col mr-64 pt-6">
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+     <div class="flex flex-row pt-8">
+       <i class="fa fa-check-square-o fa-4x text-green-600" aria-hidden="true"></i><p class="text-black text-xl font-bold ml-4 text-center">Je renseigne mes informations</p>
+      </div>
+      <div class="flex flex-row justify-between"><p class="text-2xl text-gray-600 ml-4">1</p><p class="text-gray-600 text-lg ml-12">Je renseigne mes informations afin de pouvoir valider ma commande</p></div>
+     <div class="flex flex-row pt-8">
+        <i class="fa fa-check-square-o fa-4x text-green-600" aria-hidden="true"></i><p class="text-black text-xl font-bold ml-4">Je vérifie mon panier</p></div>
+        <div class="flex flex-row justify-between"><p class="text-2xl text-gray-600 ml-4">2</p><p class="text-gray-600 text-lg ml-12">Je vérifie que tous mes articles sont bien présent dans le panier</p></div>
+      <div class="flex flex-row pt-8">
+          <i class="fa fa-check-square-o fa-4x text-green-600" aria-hidden="true"></i><p class="text-black text-xl font-bold ml-4">J'accède au paiment</p></div>
+          <div class="flex flex-row justify-between"><p class="text-2xl text-gray-600 ml-4">3</p><p class="text-gray-600 text-lg ml-12">Accés au paiment pour réglement CB ou paypal</p></div>
+     
+     
+   </div>
+</div>
   </div>
 
   <!-- Début du premier formulaire -->
   <div class="w-1/3 ">
     <div class="mb-10">
-      <a>01 INFORMATION DE COMMANDE</a><a class="ml-10" ngHide="isHidden" (click)="nextPage()">02 PAIMENT</a></div>
-    <p class="mb-6 text-2xl text-black-500">Information de commande</p>
-    <form class="w-full max-w-lg mt-6">
+      <a class="underline text-red-400 font-bold" [routerLink]="['/commande']">INFORMATION DE COMMANDE</a><a class="ml-10" [routerLink]="['/paiement']" routerLinkActive="router-link-active" >02 PAIEMENT</a></div>
+    <p class="mb-6 text-2xl text-black">Information de commande</p>
+    <form class="w-full max-w-lg mt-6" name="myForm" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="flex flex-wrap -mx-3 ">
         <div class="w-full md:w-1/2 px-3  md:mb-0">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-            for="grid-first-name">
+            for="firstname">
             PRENOM
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-first-name" type="text">
+            id="grid-first-name"  type="firstname" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstname.invalid }" placeholder="Prénom" required>
+            <div *ngIf="f.submitted && firstname.invalid" class="invalid-feedback">
+              <div *ngIf="firstname.errors.required" class="text-red-700">Le prénom est requis</div>
+            </div>
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-            for="grid-last-name">
+            for="lastname">
             NOM
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-last-name" type="text">
+            id="lastname"  type="lastname" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastname.invalid }" placeholder="Nom" required>
+            <div *ngIf="f.submitted && lastname.invalid" class="invalid-feedback">
+              <div *ngIf="lastname.errors.required" class="text-red-700">Le nom est requis</div>
+            </div>
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 ">
         <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="grid-email">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25" for="email">
             EMAIL
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-email" type="email">
+            id="email" id="email"  type="email" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="jjj@jjj.jj" required>
+            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+              <div *ngIf="email.errors.required" class="text-red-700">L'email est requis</div>
+            </div>
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 ">
         <div class="w-full px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-            for="grid-password">
+            for="password">
             Password
           </label>
           <input
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-password" type="password" placeholder="******************">
+            id="password" name="password" [(ngModel)]="model.password" #password="ngModel" type="password" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" placeholder="**********" required
+            minlength="6">
+            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+              <div *ngIf="password.errors.required" class="text-red-700">Le mot de passe est requis</div>
+              <div *ngIf="password.errors.minlength" class="text-red-700">6 caractères minimum </div>
+            </div>
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 ">
@@ -113,181 +141,47 @@
             id="grid-first-name" type="text">
         </div>
       </div>
-      <a class="text-gray-700 text-xs font-bold mb-2 opacity-25"><i class="fa fa-long-arrow-left mr-2"
+      <a class="text-gray-700 text-xs font-bold mb-2 opacity-25 cursor-pointer" [routerLink]="['/nos-programmes']"><i class="fa fa-long-arrow-left mr-2"
           aria-hidden="true"></i>Retour au programme</a>
-      <div class="w-full px-3 text-right mt-6">
-        <button type="submit" ngHide="isHidden" (click)="nextPage()" class="px-4 py-2 bg-woman font-lato">PAIEMENT<i
-            class="fa fa-long-arrow-right ml-4 " aria-hidden="true"></i></button>
+      <div class="w-full px-3 text-right mt-6 rounded">
+       <a> <button class="px-4 py-2 bg-red-400 font-lato text-white rounded text-xl" [disabled]="loading">PAIEMENT<i
+            class="fa fa-long-arrow-right ml-4 text-white" aria-hidden="true"></i></button></a>
       </div>
     </form>
     <!-- Fin du premier formulaire -->
 
     <!-- panier présent sur les 2 formulaires -->
   </div>
-  <div class="w-1/3 bg-gray-300 opacity-50 ml-16 flex-col">
-    <div class="ml-10">
-      <p class="text-black font-bold">
+  <div class="w-80 bg-gray-300 flex-auto z-10 h-screen">
+    <div class="ml-10 pt-12">
+      <p class="text-black flex text-2xl">
         PANIER
-      </p>
-      <table class="w-full">
-        <tr>
-          <td>
-            <div class="flex mt-10"> <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="h-16 w-16 ml-2 mr-16"><p class="text-gray-500">Programme 1</p></div>
-            <div class="flex mt-8"> <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="h-16 w-16 ml-2 mr-16 mb-10"><p class="text-gray-500">Programme 2</p></div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-           <div><p>Code promo ? </p></div> 
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="mt-4 mb-4"><p class="text-gray-500">Total</p><br>
-            <p class="text-gray-500">Livraison</p></div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-           <div class="mt-4"><p>Total</p></div> 
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
-
-
-<!-- Changement de formulaire aprés validation de la premiere etape (information de commande), apparition du deuxieme formulaire -->
-<div class="mt-6 w-3/3 flex" *ngIf="isHidden">
-  <div>
-  </div>
-  <!-- 
-  rappel du composant comment ca marche (function) -->
-  <div class="w-1/3 mr-16">
-    <app-function></app-function>
-  </div>
-
-  <!-- Deuxieme formulaire paiement -->
-  <div class="w-1/3">
-    <div class="mb-10">
-      <a>01 INFORMATION DE COMMANDE</a><a class="ml-10">02 PAIMENT</a></div>
-    <p class="mb-6 text-2xl text-black-500">Paiment</p>
-    <form class="w-full mt-6">
-      <div class=" lg:max-w-full mb-6">
-
-        <!-- premiere option carte de crédit -->
-        <div
-          class="border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <label class="block uppercase tracking-wide text-black-700 text-xs font-bold mb-2">
-            <input class="mr-2 leading-tight" type="radio">
-            <span class="text-black">
-              Carte de crédit
-            </span>
-            <div class="flex justify-end">
-              <img class="image" src="https://zupimages.net/up/19/34/d08m.png">
+      </p>  
+      <div class="w-full flex flex-col pt-10">
+          <div *ngFor="let cart of carts | async" class="flex flex-col  border-t-2  border-gray-500">
+            <div class="flex mt-4 border-top border-black"> <img src="{{cart.coaching.imageUrl}}" alt="profil" class="h-16 w-16 ml-2 mr-10 mb-4 rounded-full">
+              <div>
+              <p class="text-gray-800 italic text-lato">{{cart.coaching.title}}</p>
+              
+              <p class="mr-4 text-gray-800"> <span class="mr-2 text-gray-800">€</span>{{cart.coaching.price}} </p><i class="fa fa-trash-o hover:text-red-700 & cursor-pointer mr-4 items-center" aria-hidden="true" (click)="deleteCartCoaching(cart._id)" ></i>
+              </div>
             </div>
-          </label>
-          <div class="flex justify-center">
-            <form class="w-full">
-              <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full px-3">
-                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-                    for="grid-carte">
-                    NUMERO DE CARTE
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-carte" type="text" placeholder="0000 0000 0000 0000">
-                </div>
-              </div>
-              <div class="flex flex-wrap -mx-3 mb-2">
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-                    for="grid-name">
-                    NOM
-                  </label>
-                  <input
-                    class="appearance-none block w-full  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-name" type="text">
-                </div>
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-                    for="grid-name">
-                    DATE
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-name" type="text" placeholder="MM/YY">
-                </div>
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 opacity-25"
-                    for="grid-name">
-                    CCV CODE
-                  </label>
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-name" type="text">
-                </div>
-              </div>
-            </form>
+
           </div>
-        </div>
+
+          <div class="border-t-2 border-b-2 border-gray-500 pt-4 pb-4">
+            <input placeholder="Code promo ?" class="w-4/5 flex justify-center bg-transparent">
+          </div>
+          <div>
+            <div class="pt-10 flex flex-row justify-between">
+              <p class="text-black text-lato">Total</p>
+              <p class="mr-4 text-black font-bold"> {{ carts | async | sum }} €</p>
+          </div>
+          <div>
+          </div>
       </div>
-
-      <!--  Deuxieme option paypal -->
-      <div class="lg:max-w-full mb-6">
-        <div
-          class="border-r border-b border-l border-gray-400 lg:border-l-1 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <label class="block uppercase tracking-wide text-black-700 text-xs font-bold mb-2">
-            <input class="mr-2 leading-tight" type="radio">
-            <span class="text-black">
-              PayPal
-            </span>
-            <div class="flex justify-end">
-              <img class="image" src="https://zupimages.net/up/19/34/fn9h.png">
-            </div>
-          </label>
-        </div>
-      </div>
-    </form>
-    <div class="w-2/4 px-3 mt-6">
-      <button type="submit" ngHide="isHidden" class="px-4 py-2 bg-woman font-lato">CONFIRMER<i
-          class="fa fa-long-arrow-right ml-4" aria-hidden="true"></i></button>
-    </div>
-
-
-    <!-- Panier rappelé sur les deux formulaires -->
-  </div>
-  <div class="w-1/3 bg-gray-300 opacity-50 ml-16 flex-col">
-    <div class="ml-10">
-      <p class="text-black font-bold">
-        PANIER
-      </p>
-      <table class="w-full">
-        <tr>
-          <td>
-            <div class="flex mt-10"> <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="h-16 w-16 ml-2 mr-16"><p class="text-gray-500">Programme 1</p></div>
-            <div class="flex mt-8"> <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="h-16 w-16 ml-2 mr-16 mb-10"><p class="text-gray-500">Programme 2</p></div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-           <div><p>Code promo ? </p></div> 
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="mt-4 mb-4"><p class="text-gray-500">Total</p><br>
-            <p class="text-gray-500">Livraison</p></div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-           <div class="mt-4"><p>Total</p></div> 
-          </td>
-        </tr>
-      </table>
     </div>
   </div>
 </div>
+</div>
+

@@ -8,7 +8,7 @@ import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
 import {SearchProgramme} from 'src/app/core/store/store.module/programme/programme.action';
-import { Programmes } from 'src/app/shared/models/programmes.model';
+import { Programme } from 'src/app/shared/models/programmes.model';
 import { ArticleState } from '../../core/store/store.module/article/article.state';
 import {SearchArticle} from '../../core/store/store.module/article/article.actions';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
   public auth: AuthenticationService;
 
 
-  @Select(ProgrammeState.programmes)
-  programmes: Observable<Programmes[]>;
+  @Select(ProgrammeState.getProgrammes)
+  programmes: Observable<Programme[]>;
 
   @Select(ArticleState.articles )
   articles: Observable<ArticleBlog[]>;

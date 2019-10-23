@@ -14,8 +14,7 @@ import { ProgramDetail, ProgramsList } from 'src/app/shared/models/programs-info
 })
 export class ArticleBlogComponent implements OnInit {
 
-  public title: string;
-
+  public urlTitle: string;
   public selected: ProgramDetail;
   public programsInfos: ProgramDetail[] = ProgramsList.infos;
   public programs = [];
@@ -32,8 +31,8 @@ export class ArticleBlogComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.title = params.get('title');
-      this.store.dispatch(new GetArticleByTitle(this.title));
+      this.urlTitle = params.get('urlTitle');
+      this.store.dispatch(new GetArticleByTitle(this.urlTitle));
     });
 
     this.selected = this.programsInfos[0];

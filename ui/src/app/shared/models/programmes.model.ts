@@ -1,4 +1,4 @@
-export class Programmes {
+export class Programme {
     constructor(
         // tslint:disable-next-line: variable-name
         public _id: string,
@@ -7,5 +7,7 @@ export class Programmes {
         public content?: string,
         public imageUrl?: string,
         public level?: string,
+        public price?: number,
+        public urlTitle?: string,
     ) { }
 }

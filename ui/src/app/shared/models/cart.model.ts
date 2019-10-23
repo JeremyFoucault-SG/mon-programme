@@ -1,6 +1,11 @@
+import { Programme } from './programmes.model';
+
 export class Cart {
     constructor(
         // tslint:disable-next-line: variable-name
-        public _id: string
+        public cartId: string,
+        // tslint:disable-next-line: variable-name
+        public _id?: string,
+        public coaching?: Programme,
     ) {}
 }

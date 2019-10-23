@@ -17,7 +17,7 @@ export class RegisterDTO {
     lastname: string;
     @Allow()
     @ApiModelProperty()
-    objectif: string;
+    goals: string;
     @Allow()
     @ApiModelProperty()
     password: string;

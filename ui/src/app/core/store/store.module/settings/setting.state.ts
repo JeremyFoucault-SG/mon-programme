@@ -3,7 +3,7 @@ import { tap } from 'rxjs/operators';
 import { patch, updateItem } from '@ngxs/store/operators';
 import { Settings as Setting } from 'src/app/shared/models/settings.model';
 import {SettingsService } from 'src/app/core/http/settings.service';
-import { GetByIdSetting, UpdateSetting, SetSelectedSetting } from './setting.action';
+import { GetByIdSetting, UpdateSetting, SetSelectedSetting, GetAllSetting } from './setting.action';
 
 export class SettingStateModel {
     items: Setting[];
@@ -27,14 +27,21 @@ export class SettingState {
 
     @Selector()
     static settings(state: SettingStateModel) {
-        console.log('heyyyy');
         return state.items;
     }
 
     @Selector()
     static GetSettings(state: SettingStateModel) {
-        console.log('heyyyy');
         return state.item;
+    }
+
+    @Action(GetAllSetting)
+    getAll(ctx: StateContext<SettingStateModel>, action: GetAllSetting) {
+        return this.service.getAllSetting().pipe(tap((setting: Setting[]) => {
+            ctx.setState(patch({
+                items: setting
+            }));
+        }));
     }
 
     @Action(GetByIdSetting)

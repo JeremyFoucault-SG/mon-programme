@@ -2,10 +2,11 @@ import { Controller, Post, Get, Put, Param, Body } from '@nestjs/common';
 import { FollowedCoachingModel } from './followed-coaching.model';
 import { FollowedCoachingDTO } from './followed-coachings.dto';
 import { FollowedCoachingsService } from './followed-coachings.service';
-import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
 import { User } from '../../decorators/user.decorator';
 
 @Controller('followed-coachings')
+@ApiUseTags('Followed-coachings')
 export class FollowedCoachingsController {
 
   constructor(private readonly followedCoachingsService: FollowedCoachingsService) {}

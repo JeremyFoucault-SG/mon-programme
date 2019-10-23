@@ -7,6 +7,10 @@ export class ArticleDTO {
 
   @Allow()
   @ApiModelProperty()
+  public readonly id?: string;
+
+  @Allow()
+  @ApiModelProperty()
   public readonly title: string;
 
   @Allow()
@@ -20,6 +24,14 @@ export class ArticleDTO {
   @Allow()
   @ApiModelProperty()
   public readonly photoUrl: string;
+
+  @Allow()
+  @ApiModelProperty()
+  public readonly urlTitle?: string;
+
+  @Allow()
+  @ApiModelProperty()
+  public readonly isFavorite?: boolean;
 
   @Allow()
   @ValidateNested({each: true})
