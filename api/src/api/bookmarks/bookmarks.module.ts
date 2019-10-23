@@ -7,10 +7,16 @@ import { BookmarkModel } from './bookmark.model';
 
 @Module({
   imports: [
-    TypegooseModule.forFeature([BookmarkModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: BookmarkModel,
+        schemaOptions: {
+          collection: 'bookmarks',
+        },
+      }]),
     UsersModule,
   ],
   controllers: [BookmarksController],
   providers: [BookmarksService],
 })
-export class BookmarksModule {}
+export class BookmarksModule { }

@@ -6,10 +6,16 @@ import { ArticleModel } from './article.model';
 
 @Module({
   imports: [
-    TypegooseModule.forFeature([ArticleModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: ArticleModel,
+        schemaOptions: {
+          collection: 'articles',
+        },
+      }]),
   ],
   controllers: [ArticlesController],
   providers: [ArticlesService],
   exports: [ArticlesService],
 })
-export class ArticlesModule {}
+export class ArticlesModule { }

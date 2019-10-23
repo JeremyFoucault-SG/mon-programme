@@ -5,8 +5,15 @@ import { NewsletterModel } from './newsletter.model';
 import { TypegooseModule } from 'nestjs-typegoose';
 
 @Module({
-  imports: [TypegooseModule.forFeature([NewsletterModel])],
+  imports: [TypegooseModule.forFeature(
+    [{
+      typegooseClass: NewsletterModel,
+      schemaOptions: {
+        collection: 'newsletters',
+      },
+    }]),
+  ],
   controllers: [NewsletterController],
   providers: [NewsletterService],
 })
-export class NewsletterModule {}
+export class NewsletterModule { }
