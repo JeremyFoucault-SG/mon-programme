@@ -55,17 +55,19 @@ export class CommandeComponent implements OnInit {
   }
 
 
-  onSubmit(payload) {
+  onSubmit() {
     this.loading = true;
-    this.usersService.addUserInfos(payload).subscribe(
-      () => {
-        this.router.navigate(['paiement']);
-        this.toastr.success('succes', 'informations enregistrées', {positionClass: 'toast-bottom-right'});
-      },
-      (error) => {
-        this.loading = false;
-        this.toastr.error('Erreur', 'tous les champs ne sont pas saisis', {positionClass: 'toast-bottom-right'});
-      },
-    );
+    // TODO : addUserInfos ??????
+    
+    // this.usersService.addUserInfos(payload).subscribe(
+    //   () => {
+    //     this.router.navigate(['paiement']);
+    //     this.toastr.success('succes', 'informations enregistrées', {positionClass: 'toast-bottom-right'});
+    //   },
+    //   (error) => {
+    //     this.loading = false;
+    //     this.toastr.error('Erreur', 'tous les champs ne sont pas saisis', {positionClass: 'toast-bottom-right'});
+    //   },
+    // );
   }
 }
