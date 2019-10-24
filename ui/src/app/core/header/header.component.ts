@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   /**
    * Show/Hide navigation
    */
-  isVisible = true
+  isVisible = true;
 
   /**
    * Store all subscription for unsubscribe on destroy cycle event
