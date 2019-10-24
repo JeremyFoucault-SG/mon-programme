@@ -6,34 +6,34 @@
   </div>
 
 
-    <div class="justify-around relative w-40 mb-4">
-        <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" (change)="navigateTo($event.target.value)">
-          <option selected value="query1">Populaire</option>
-          <option value="query2">classique</option>
-          <option  value="query3">peu populaire</option>
-        </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+      <div class="justify-around relative w-40 mb-4">
+          <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" (change)="navigateTo($event.target.value)">
+            <option selected value="query1">Populaire</option>
+            <option value="query2">classique</option>
+            <option  value="query3">peu populaire</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+          </div>
         </div>
-      </div>
-    <div class="flex flex-row flex-wrap justify-center mb-12">
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+      <div class="flex flex-row flex-wrap justify-center mb-12">
+          <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Tout</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'prise-de-masse'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'prise-de-masse'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Prise de masse</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'entretien'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'entretien'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Entretien</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'seche'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'seche'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Sèche</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'raffermissement'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'raffermissement'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Raffermissement</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'stretching'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'stretching'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Stretching</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'recuperation'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'recuperation'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Récupération</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'preparation-competition'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'preparation-competition'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Préparation compétition</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'tuto-exercice'}"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'tuto-exercice'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Tuto par exercices</button></a>
     </div>
 

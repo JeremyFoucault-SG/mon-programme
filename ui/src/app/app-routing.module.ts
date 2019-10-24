@@ -33,6 +33,7 @@ const routes: Routes = [
     data: {
       isChoose: true,
       imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
+      isTransparent: true,
     }
   },
   {

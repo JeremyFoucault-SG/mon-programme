@@ -5,11 +5,11 @@
         <div class="flex flex-row w-1/3 bg-center bg-cover bg-auto" style="background-image: url(https://zupimages.net/up/19/34/7g1j.png)">
       </div>
       <div class="flex flex-row pl-8">
-      <form class="w-full max-w-2xl" [formGroup]="formStep1">
+      <form class="w-full max-w-2xl" [formGroup]="formStep1"  name="formStep1" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
         <div class="flex flex-col justify-center">
         <p class="justify-center flex font-bold">SOIT PLUS FORT QUE TES <span class="line-through text-red-400 ml-2">EXCUSES</span></p>
         <p class="justify-center font-bold flex text-2xl pt-4">Inscription</p>
-        <p class="justify-center flex pt-4 pb-4">Déja inscrit ? <a class="hover:text-red-400 cursor-pointer ml-2">Connexion</a></p>
+        <p class="justify-center flex pt-4 pb-4">Déja inscrit ? <a class="hover:text-red-400 cursor-pointer ml-2" (click)="connexion()">Connexion</a></p>
         <button class="bg-blue-700 rounded py-2 px-2"><i class="fa fa-facebook-official text-white" aria-hidden="true"></i><span class="text-white ml-2">S'inscrire avec Facebook</span></button>
       </div>
         <div class="flex flex-row  -mx-3 mb-6 pt-4">
