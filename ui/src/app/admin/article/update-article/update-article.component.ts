@@ -115,7 +115,6 @@ export class UpdateArticleComponent implements OnInit {
       this.uploadPhoto()
         .pipe(
           switchMap(() => {
-            console.log(this.articleForm.value);
             return this.store.dispatch(new AddArticle(this.articleForm.value))
           })
         )
@@ -143,9 +142,7 @@ export class UpdateArticleComponent implements OnInit {
     // tslint:disable-next-line: quotemark
     this.toastr.error("Impossible de mettre à jour l'article");
   }
-  onSelectionChanged() {
-    console.log(this.quill.quillEditor.getSelection(), this.articleForm.value);
-  }
+
   get tags() {
     return this.articleForm.get('tags') as FormArray;
   }
@@ -174,7 +171,6 @@ export class UpdateArticleComponent implements OnInit {
 
   uploadPhoto(): Observable<any> {
     if (this.file) {
-      console.log(this.file);
       return this.uploaderService
         .upload(this.sendableFormData)
         .pipe(map(res => this.articleForm.get('file').patchValue(res)));
@@ -190,8 +186,6 @@ export class UpdateArticleComponent implements OnInit {
       this.sendableFormData, {
       reportProgress: true// , responseType: 'text'
     });
-    console.log(this.url);
-    console.log(this.sendableFormData);
     return this.httpEmitter = this.httpClient.request(req)
     .subscribe(
       event => {
@@ -199,7 +193,6 @@ export class UpdateArticleComponent implements OnInit {
 
         if (event instanceof HttpResponse) {
           delete this.httpEmitter;
-          console.log('request done', event);
         }
       },
       error => alert('Error Uploading Files: ' + error.message)
