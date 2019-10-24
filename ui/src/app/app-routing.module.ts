@@ -115,6 +115,7 @@ const routes: Routes = [
   { path: 'inscription', canActivate: [AuthGuard], component: InscriptionComponent},
   { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
   { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
+  { path: 'create-article', canActivate: [AuthGuard], component: UpdateArticleComponent},
   { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},
   { path: 'paiement', canActivate: [AuthGuard], component: PaiementComponent},
   { path: 'login-modal', component: ConnexionModalComponent}
