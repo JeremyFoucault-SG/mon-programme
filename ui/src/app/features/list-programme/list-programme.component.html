@@ -40,7 +40,7 @@
 </div>
 <div class="flex flex-row flex-wrap">
     <app-card-thumb-program *ngFor="let item of programmes| async" class="mx-4" [imageUrl]="item.imageUrl"
-        [urlTitle]="item.urlTitle" [coaching]="item" [hasBgOverlay]="true" [inlineStars]="item.rating" [level]="item.level" [hasMenu]="true" [content]="item.content ">
+        [urlTitle]="['/nos-programmes', item.urlTitle]" [coaching]="item" [hasBgOverlay]="true" [inlineStars]="item.rating" [level]="item.level" [hasMenu]="true" [content]="item.content ">
     </app-card-thumb-program>
 </div>
 

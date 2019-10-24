@@ -64,7 +64,7 @@ export class CardThumbProgramComponent implements OnInit {
   title: string;
 
   @Input()
-  urlTitle: string;
+  urlTitle: string[];
 
   /**
    * Set text content of card below title
