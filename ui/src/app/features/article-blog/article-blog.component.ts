@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
-import { GetArticleByTitle, DeleteArticle } from '../../core/store/store.module/article/article.actions';
+import { GetArticleByTitle, DeleteArticle, SearchArticle } from '../../core/store/store.module/article/article.actions';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 import { ProgramDetail, ProgramsList } from 'src/app/shared/models/programs-infos';
@@ -27,9 +27,14 @@ export class ArticleBlogComponent implements OnInit {
   @Select(ArticleState.article)
   article: Observable<ArticleBlog>;
 
+  @Select(ArticleState.articles )
+  articles: Observable<ArticleBlog[]>;
+
   constructor(private store: Store, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.store.dispatch(new SearchArticle({date: '-1', limit: 20, categories: 'style-de-vie-et-nutrition'}));
+
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.urlTitle = params.get('urlTitle');
       this.store.dispatch(new GetArticleByTitle(this.urlTitle));

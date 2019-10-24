@@ -83,7 +83,7 @@ export class UpdateArticleComponent implements OnInit {
           file: item.file,
           title: item.title,
           category: item.category,
-          tag: item.tag,
+          tag: item.tags,
           content: item.content
         });
         this.editArticle = true;

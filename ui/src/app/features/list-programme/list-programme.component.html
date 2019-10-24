@@ -40,13 +40,13 @@
 </div>
 <div class="flex flex-row flex-wrap">
     <app-card-thumb-program *ngFor="let item of programmes| async" class="mx-4" [imageUrl]="item.imageUrl"
-        [urlTitle]="item.urlTitle" [coaching]="item" [hasBgOverlay]="true" [inlineStars]="item.rating" [level]="item.level" [hasMenu]="true" [content]="item.content ">
+        [urlTitle]="['/nos-programmes', item.urlTitle]" [coaching]="item" [hasBgOverlay]="true" [inlineStars]="item.rating" [level]="item.level" [hasMenu]="true" [content]="item.content ">
     </app-card-thumb-program>
 </div>
 
 <div class="flex flex-row justify-center mt-4 mb-8">
 <a (click)="this.showMoreCoachings()">
-    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex flex-row justify-center">
+    <button class="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded flex flex-row justify-center">
         Charger plus<i class="fa fa-arrow-right ml-4" aria-hidden="true"></i>
       </button>
 </a>
