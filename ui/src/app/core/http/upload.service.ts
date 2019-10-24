@@ -10,13 +10,13 @@ import {  catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadService {
-  private url = `${environment.apiUrl}/uploads`;
+  private url = `${environment.apiUrl}/upload`;
 
   constructor(private httpClient: HttpClient, private toastr: ToastrService) { }
 
 
-  upload(formData: FormData): Observable<{id: string, index: number, url: string}> {
-    return this.httpClient.post<{id: string, index: number, url: string}>(`${this.url}`, formData)
+  upload(formData: FormData): Observable<{id: string, url: string}> {
+    return this.httpClient.post<{id: string, url: string}>(`${this.url}`, formData)
     .pipe(
       catchError((err) => {
         this.toastr.error(`Impossible d'uploader la photo`, 'Erreur');

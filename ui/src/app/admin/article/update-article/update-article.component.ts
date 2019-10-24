@@ -1,18 +1,19 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
-import { FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
+import {Component, OnInit, ViewChild, EventEmitter, Output} from '@angular/core';
+import { FormControl, FormBuilder, Validators, FormArray} from '@angular/forms';
 import { Store, Select } from '@ngxs/store';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
-import {UpdateArticle, AddArticle, SetSelectedArticle, SearchArticle} from 'src/app/core/store/store.module/article/article.actions';
+import { UpdateArticle, AddArticle, SetSelectedArticle, SearchArticle,
+  DeleteArticle} from 'src/app/core/store/store.module/article/article.actions';
 import { Router } from '@angular/router';
 import { ngfModule, ngf } from 'angular-file';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, of, EMPTY } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { QuillEditorComponent } from 'ngx-quill';
 import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
-import {
-  HttpClient, HttpClientModule, HttpRequest, HttpResponse, HttpEvent
-} from '@angular/common/http';
+import { HttpClient, HttpEvent} from '@angular/common/http';
+import { map, switchMap } from 'rxjs/operators';
+import { UploadService } from 'src/app/core/http/upload.service';
 
 @Component({
   selector: 'app-update-article',
@@ -23,7 +24,7 @@ export class UpdateArticleComponent implements OnInit {
   accept = '*';
   file: File;
   progress: number;
-  url = 'https://jquery-file-upload.appspot.com/';
+  url = 'http://localhost:3000/upload';
   hasBaseDropZoneOver = false;
   httpEmitter: Subscription;
   httpEvent: HttpEvent<{}>;
@@ -38,17 +39,21 @@ export class UpdateArticleComponent implements OnInit {
   maxSize: any;
   baseDropValid: any;
 
-  @ViewChild('quill', {static: true}) quill: QuillEditorComponent;
+  @ViewChild('quill', { static: true }) quill: QuillEditorComponent;
 
   tag = new FormControl(null, Validators.required);
   id: string;
 
   articleForm = this.fb.group({
     id: [],
+    file: this.fb.group({
+      url: [],
+      id: []
+    }),
     title: [],
     category: [],
     content: [],
-    tags: this.fb.array([]),
+    tags: this.fb.array([])
   });
 
   constructor(
@@ -57,8 +62,8 @@ export class UpdateArticleComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     public httpClient: HttpClient,
-  ) {
-  }
+    private uploaderService: UploadService
+  ) {}
   editArticle = false;
 
   @Select(ArticleState.article)
@@ -67,38 +72,53 @@ export class UpdateArticleComponent implements OnInit {
   @Select(ArticleState.articles)
   query: Observable<QueryArticles[]>;
 
+  @Output()
+  uploadFinished = new EventEmitter<{ photo: { id: string; url: string } }>();
+
   ngOnInit() {
     this.selectedArticle.subscribe(item => {
       if (item) {
         this.articleForm.patchValue({
           id: item._id,
+          file: item.file,
           title: item.title,
           category: item.category,
           tag: item.tag,
-          content: item.content,
+          content: item.content
         });
         this.editArticle = true;
       } else {
         this.editArticle = false;
       }
     });
-    this.store.dispatch(new SearchArticle({ limit: 4}));
+    this.store.dispatch(new SearchArticle({ limit: 4 }));
   }
 
   onSubmit() {
     if (this.editArticle) {
-
-      this.store
-        .dispatch(
-          new UpdateArticle(this.articleForm.value, this.articleForm.value.id)
+      this.uploadPhoto()
+        .pipe(
+          switchMap(() =>
+            this.store.dispatch(
+              new UpdateArticle(
+                this.articleForm.value,
+                this.articleForm.value.id
+              )
+            )
+          )
         )
         .subscribe(() => {
+          // tslint:disable-next-line: no-unused-expression
           this.showSuccessUpdate();
           this.router.navigate(['articles']);
         });
     } else {
-      this.store
-        .dispatch(new AddArticle(this.articleForm.value))
+      this.uploadPhoto()
+        .pipe(
+          switchMap(() =>
+            this.store.dispatch(new AddArticle(this.articleForm.value))
+          )
+        )
         .subscribe(() => {
           this.showSuccesAdd();
           this.router.navigate(['articles']);
@@ -124,10 +144,7 @@ export class UpdateArticleComponent implements OnInit {
     this.toastr.error("Impossible de mettre à jour l'article");
   }
   onSelectionChanged() {
-    console.log(
-      this.quill.quillEditor.getSelection(),
-      this.articleForm.value
-    );
+    console.log(this.quill.quillEditor.getSelection(), this.articleForm.value);
   }
   get tags() {
     return this.articleForm.get('tags') as FormArray;
@@ -142,34 +159,26 @@ export class UpdateArticleComponent implements OnInit {
   }
   cancel() {
     this.progress = 0;
-    if ( this.httpEmitter ) {
-      console.log('cancelled');
+    if (this.httpEmitter) {
       this.httpEmitter.unsubscribe();
     }
+  }
+  deleteArticle(id: string) {
+    this.store.dispatch(new DeleteArticle(id));
+    this.showSuccessUpdate();
   }
 
   onRemoveFile() {
     this.file = undefined;
   }
 
-  uploadFiles(): Subscription {
-    const req = new HttpRequest<FormData>(
-      'POST',
-      this.url,
-      this.sendableFormData, {
-      reportProgress: true// , responseType: 'text'
-    });
-    return this.httpEmitter = this.httpClient.request(req)
-    .subscribe(
-      event => {
-        this.httpEvent = event;
-
-        if (event instanceof HttpResponse) {
-          delete this.httpEmitter;
-          console.log('request done', event);
-        }
-      },
-      error => alert('Error Uploading Files: ' + error.message)
-    );
+  uploadPhoto(): Observable<any> {
+    if (this.file) {
+      return this.uploaderService
+        .upload(this.sendableFormData)
+        .pipe(map(res => this.articleForm.get('file').patchValue(res)));
+    } else {
+      return of(EMPTY);
+    }
   }
 }
