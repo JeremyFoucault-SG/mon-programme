@@ -14,7 +14,7 @@ import {
 import { WishModel } from './wish.model';
 import { WishDTO } from './wish.dto';
 import { WishesService } from './wishes.service';
-import { User, UserJWTPayload } from 'src/decorators/user.decorator';
+import { User, UserJWTPayload } from '../../decorators/user.decorator';
 import { userInfo } from 'os';
 import { threadId } from 'worker_threads';
 import {

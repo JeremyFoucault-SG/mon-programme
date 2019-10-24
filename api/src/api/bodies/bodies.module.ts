@@ -7,10 +7,16 @@ import { BodyModel } from './body.model';
 
 @Module({
   imports: [
-    TypegooseModule.forFeature([BodyModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: BodyModel,
+        schemaOptions: {
+          collection: 'bodies',
+        },
+      }]),
     UsersModule,
   ],
   controllers: [BodiesController],
   providers: [BodiesService],
 })
-export class BodiesModule {}
+export class BodiesModule { }

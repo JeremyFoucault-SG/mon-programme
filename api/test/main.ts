@@ -6,14 +6,14 @@ import { ArticlesService } from '../src/api/articles/articles.service';
 import { CategoriesService } from '../src/api/categories/categories.service';
 import { insertCategoryData } from './category.fixture';
 import { insertNewsletterData } from './newsletter.fixture';
-import { CoachingsService } from 'src/api/coachings/coachings.service';
-import { CoversService } from 'src/api/covers/covers.service';
-import { NewsletterService } from 'src/api/newsletter/newsletter.service';
+import { CoachingsService } from '../src/api/coachings/coachings.service';
+import { CoversService } from '../src/api/covers/covers.service';
+import { NewsletterService } from '../src/api/newsletter/newsletter.service';
 import { GoalsService } from '../src/api/goals/goals.service';
 import { insertGoalData } from './goal.fixture';
 import { UsersService } from '../src/api/users/users.service';
 import { insertUserData } from './user.fixture';
-import { AuthController } from 'src/api/auth/auth.controller';
+import { AuthController } from '../src/api/auth/auth.controller';
 import { insertAuthData } from './auth.fixture';
 import { insertSettingData } from './setting.fixture';
 

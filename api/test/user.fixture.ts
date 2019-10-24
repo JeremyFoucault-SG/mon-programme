@@ -10,7 +10,7 @@ import { WishDTO } from '../src/api/wishes/wish.dto';
 import { SettingsDTO } from '../src/api/settings/settings.dto';
 import { ArticlesService } from '../src/api/articles/articles.service';
 import { CoachingsService } from '../src/api/coachings/coachings.service';
-import { InfosDTO } from 'src/api/settings/infos.dto';
+import { InfosDTO } from '../src/api/settings/infos.dto';
 
 export async function insertUserData(articlesService: ArticlesService, coachingsService: CoachingsService, usersService: UsersService) {
   // populate mongo

@@ -13,7 +13,7 @@ export async function bootstrap() {
 
   // redirect / openapi doc
   app.use('^/$', (req, res) => {
-    res.redirect(process.env.NODE_ENV === 'production' ? '/api/doc/' : 'doc');
+    res.redirect(process.env.NODE_ENV === 'production' ? '/doc/' : 'doc');
   });
 
   const config: ConfigService = app.get('ConfigService');
@@ -33,7 +33,6 @@ export async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
   }));
-
 
   await app.listen(config.get('HTTP_PORT'));
 
