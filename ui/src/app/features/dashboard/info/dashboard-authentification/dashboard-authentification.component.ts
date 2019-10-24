@@ -13,10 +13,10 @@ export class DashboardAuthentificationComponent implements OnInit {
   formAuth = this.fb.group({
     password: ['', Validators.required],
     username: ['', Validators.required]
-  })
+  });
   ngOnInit() {
   }
-  submit(){
-    console.log(this.formAuth.value)
+  submit() {
+    console.log(this.formAuth.value);
   }
 }

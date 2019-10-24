@@ -11,6 +11,11 @@ import { Select, Store } from '@ngxs/store';
 import { CartState } from '../store/store.module/cart/cart.state';
 import { Cart } from 'src/app/shared/models/cart.model';
 import { GetAllCarts } from '../store/store.module/cart/cart.actions';
+import { ModalService } from 'src/app/shared/components/modal/modal.service';
+import { ConnexionModalComponent } from 'src/app/shared/components/register/connexion-modal/connexion-modal.component';
+import { RegisterComponent } from 'src/app/shared/components/register/register.component';
+import { Settings } from 'src/app/shared/models/settings.model';
+import { Register } from 'src/app/shared/models/register.model';
 
 /**
  * Header component, hold navigation, title, user
@@ -51,7 +56,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   subscriptions: Subscription[] = [];
 
-  // users: Login;
+  // users: Register;
   // name = this.users.username;
 
 
@@ -68,11 +73,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private toastr: ToastrService,
     private auth: AuthenticationService,
     private cartsService: CartsService,
-    private store: Store) { }
+    private store: Store,
+    private modalService: ModalService) { }
 
   ngOnInit() {
 
-    this.auth.isLogin().subscribe(valeur => this.user = valeur );
+    this.auth.isLogin().subscribe(valeur => this.user = valeur);
     // if (this.auth.isLogin()) {
     //   this.user = true;
     // } else {
@@ -94,14 +100,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
       ).subscribe((data) => {
         this.title = data.title;
         this.isTransparent = data.isTransparent;
-      })
+      }),
     );
     if (this.auth.isLogin()) {
-      this.store.dispatch(new GetAllCarts()).subscribe(
-          (coachings) => {
-            this.coachings = coachings;
-            this.newOrder = this.coachings.length;
-          });
+      // this.store.dispatch(new GetAllCarts()).subscribe(
+      //   (coachings) => {
+      //     this.coachings = coachings;
+      //     this.newOrder = this.coachings.length;
+      //   });
     }
   }
 
@@ -112,18 +118,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.isOpen = !this.isOpen;
   }
 
-  /**
-   * Call unsubscribe on each subscription
-   */
-  ngOnDestroy(): void {
-    this.subscriptions.forEach(s => s.unsubscribe());
+  openInscription() {
+    this.modalService.init(RegisterComponent, {}, {});
   }
 
-  logout() {
-    this.auth.isLogout().subscribe(valeur => this.user = valeur );
-    this.open();
+    /**
+     * Call unsubscribe on each subscription
+     */
+    ngOnDestroy(): void {
+      this.subscriptions.forEach(s => s.unsubscribe());
+    }
+
+    logout() {
+      this.auth.isLogout().subscribe(valeur => this.user = valeur);
+      this.open();
+    }
+
+
   }
-
-
-}
 

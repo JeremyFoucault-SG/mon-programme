@@ -58,7 +58,7 @@ export class InfoComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new GetByIdSetting());
     this.setting.subscribe((item: Settings) => {
-      console.log(item)
+      console.log(item);
       if (item) {
         this.myForm.get('infos').patchValue({
           age: item.infos.age,

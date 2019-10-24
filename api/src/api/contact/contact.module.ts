@@ -10,7 +10,13 @@ import { ContactModel } from './contact.model';
   controllers: [ContactController],
   imports: [
     DbModule,
-    TypegooseModule.forFeature([ContactModel]),
+    TypegooseModule.forFeature(
+      [{
+        typegooseClass: ContactModel,
+        schemaOptions: {
+          collection: 'contacts',
+        },
+      }]),
     MailerModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({
         transport: {

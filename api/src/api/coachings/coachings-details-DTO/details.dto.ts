@@ -19,5 +19,4 @@ export class DetailsDTO {
     @ApiModelProperty()
     public readonly reps: number;
 
-
 }

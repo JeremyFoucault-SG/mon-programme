@@ -8,10 +8,8 @@ import { AuthDTO } from './auth.dto';
 import { JwtPayload } from './jwt-payload';
 import { UserModel } from '../users/user.model';
 import { InstanceType } from 'typegoose';
-import { ConfigService } from 'src/config/config.service';
+import { ConfigService } from '../../config/config.service';
 import { Authentication } from './authentication';
-import { SettingsModel } from '../settings/settings.model';
-import { SettingsService } from '../settings/settings.service';
 import { RegisterDTO } from './register.dto';
 
 @Injectable()
@@ -49,7 +47,7 @@ export class AuthService {
 
     async verifyAuth(username: string, password: string): Promise<AuthModel> {
         const userFinded = await this.authModel.findOne({ username, password }).exec();
-        if (!userFinded || userFinded.password !== password) {
+        if (!userFinded || !userFinded.comparePassword(password)) {
             throw new UnauthorizedException();
         }
         return userFinded;

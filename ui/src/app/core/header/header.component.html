@@ -4,9 +4,11 @@
   <!-- [ngClass]="isTransparent || !isOpen  ? 'bg-transparent' : 'bg-gray-900'"> -->
 
   <!-- Mon programme logo (only desktop) -->
-  <div class="hidden lg:flex items-center mr-6">
-    <img src="https://zupimages.net/up/19/31/f50q.png" alt="logo">
-  </div>
+  <a [routerLink]="['accueil']">
+    <div class="hidden lg:flex items-center mr-6">
+      <img src="https://zupimages.net/up/19/31/f50q.png" alt="logo">
+    </div>
+  </a>
 
   <!-- Buger menu (only on medium and smaller) -->
   <div class="lg:hidden">
@@ -21,7 +23,7 @@
   <!-- Right block (only desktop) -->
   <div class="flex items-center hidden lg:flex">
 
-    <!-- Show signin and signup button 
+    <!-- Show signin and signup button
     <div *ngIf="!isLogin" class="flex flex-row">
       <app-login-modal></app-login-modal>
       <button class="ml-4 bg-transparent text-white font-semibold py-2 px-4 border-4 border-white rounded-full">
@@ -31,7 +33,7 @@
 
     <!-- Show user information  -->
     <div  class="flex items-center">
-      <div 
+      <div
       class="flex items-center"
       *ngIf="user">
       <a [routerLink]="['/commande']" >
@@ -66,8 +68,8 @@
           </a>
 
           <a
-            class="ml-4 inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/inscription']"
-            (click)="open()">
+            class="ml-4 inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400"
+            (click)="openInscription()">
             Inscription
           </a>
         </div>
@@ -77,32 +79,32 @@
       <div *ngIf="!user" class="w-full pt-5 border-b border-gray-800"></div>
 
       <li class="py-2 pt-4">
-        <a class="text-white hover:text-yellow-400" 
-        [routerLink]="['/accueil']" 
+        <a class="text-white hover:text-yellow-400"
+        [routerLink]="['/accueil']"
         routerLinkActive="active"
           (click)="open()">
           Accueil
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" 
-        [routerLink]="['/style-de-vie-et-nutrition']" 
+        <a class="text-white hover:text-yellow-400"
+        [routerLink]="['/style-de-vie-et-nutrition']"
         routerLinkActive="active"
           (click)="open()">
           style de vie & nutrition
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" 
-        [routerLink]="['/sante']" 
+        <a class="text-white hover:text-yellow-400"
+        [routerLink]="['/sante']"
         routerLinkActive="active"
           (click)="open()">
           Santé
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" 
-        [routerLink]="['/pratique-sportive-mobile']"
+        <a class="text-white hover:text-yellow-400"
+        [routerLink]="['/pratique-sportive']"
         routerLinkActive="active"
           (click)="open()">
           Pratique sportive

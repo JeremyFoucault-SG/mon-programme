@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { ArticleBlog } from '../../shared/models/articles-blog.model';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Injectable({
@@ -12,7 +13,8 @@ import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
 })
 export class ArticlesService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient,
+                private toastr: ToastrService) { }
 
     public api = `${environment.apiUrl}`;
 
@@ -63,5 +65,13 @@ export class ArticlesService {
     public updateArticle(payload: ArticleBlog, _id: string): Observable<ArticleBlog> {
         return this.http.put<ArticleBlog>(`${this.api}/articles/${_id}`, payload);
     }
-
+  deleteTag(id: string, tag: string) {
+    return this.http.delete<void>(`${this.api}/articles/${id}/${tag}`)
+    .pipe(
+      catchError((err) => {
+        this.toastr.error(`Impossible de supprimer le tag ${tag}`, 'Erreur');
+        return throwError(err);
+      })
+    );
+  }
 }

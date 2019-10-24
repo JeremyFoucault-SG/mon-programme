@@ -1,10 +1,10 @@
 import { Controller, Post, Body, UseInterceptors, UploadedFile, Req } from '@nestjs/common';
-import { ApiBearerAuth, ApiOperation, ApiResponse, ApiUseTags } from '@nestjs/swagger';
+import { ApiUseTags } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { extname } from 'path';
 import * as shortid from 'shortid';
 import { diskStorage } from 'multer';
-import { ConfigService } from 'src/config/config.service';
+import { ConfigService } from '../../config/config.service';
 
 @Controller('upload')
 @ApiUseTags('upload')
@@ -31,7 +31,6 @@ export class UploadController {
     uploadFile(@UploadedFile() file, @Req() req) {
       return {
         id: file.id,
-        index: req.body.index,
         url: `${this.configService.get('HOST_IMAGE')}/images/${file.filename}`,
       };
     }

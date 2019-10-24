@@ -30,7 +30,7 @@ import { HeaderComponent } from './blog/header/header.component';
 import { InfoComponent } from './dashboard/info/info.component';
 import { CompteComponent } from './dashboard/compte/compte.component';
 import { SuiviComponent } from './dashboard/suivi/suivi.component';
-import { ConnexionComponent } from './connexion/connexion.component';
+import { ConnexionComponent } from '../features/connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { Step1Component } from './inscription/step1/step1.component';
 import { Step2Component } from './inscription/step2/step2.component';
@@ -42,8 +42,6 @@ import { TitleArticleComponent } from './article-blog/title-article/title-articl
 import { PartageComponent } from './article-blog/partage/partage.component';
 import { ListProgrammeComponent } from './list-programme/list-programme.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { WishlistCoachingComponent } from './wishlist/wishlist-coaching/wishlist-coaching.component';
-import { WishlistArticleComponent } from './wishlist/wishlist-article/wishlist-article.component';
 import { BasketComponent } from './basket/basket.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { DashboardAuthentificationComponent } from './dashboard/info/dashboard-authentification/dashboard-authentification.component';
@@ -88,8 +86,6 @@ import { ProgrammeContentComponent } from './programme-content/programme-content
     PartageComponent,
     ListProgrammeComponent,
     WishlistComponent,
-    WishlistCoachingComponent,
-    WishlistArticleComponent,
     BasketComponent,
     PaiementComponent,
     DashboardAuthentificationComponent,
@@ -105,8 +101,6 @@ import { ProgrammeContentComponent } from './programme-content/programme-content
     ChartsModule,
     CoreModule,
     AdminModule,
-  ],
-  exports: [
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -1,6 +1,9 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 # dependencies
-/node_modules
+node_modules
+*dist
+vscode
+
 # IDEs and editors
 /.idea
 .project
@@ -96,3 +99,8 @@ Thumbs.db
 *.[33][dD][mM]
 *.[mM][aA][xX]
 ui/src/styles.css
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

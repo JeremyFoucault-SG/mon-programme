@@ -15,7 +15,7 @@ import { InstanceType } from 'typegoose';
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectModel(UserModel) private readonly userModel: ModelType<UserModel>
+    @InjectModel(UserModel) private readonly userModel: ModelType<UserModel>,
   ) {}
 
   /**

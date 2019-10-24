@@ -30,7 +30,10 @@ export class ArticleModel extends Typegoose {
     author: string;
 
     @prop()
-    photoUrl: string;
+    image: string;
+
+    @prop()
+    tags: string[];
 
     @arrayProp({ items: CategoryModel, _id: false })
     categories: Array<Ref<CategoryModel>>;

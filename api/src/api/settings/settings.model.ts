@@ -6,7 +6,6 @@ import { InfosModel } from './infos.model';
 import { ContactUserModel } from './contactUser.model';
 import { PaiementModel } from './paiement.model';
 
-
 export class SettingsModel extends Typegoose {
     @prop()
     createdAt?: Date;

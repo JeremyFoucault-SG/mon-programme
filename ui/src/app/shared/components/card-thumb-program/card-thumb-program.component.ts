@@ -64,7 +64,7 @@ export class CardThumbProgramComponent implements OnInit {
   title: string;
 
   @Input()
-  urlTitle: string;
+  urlTitle: string[];
 
   /**
    * Set text content of card below title
@@ -105,7 +105,7 @@ export class CardThumbProgramComponent implements OnInit {
   /**
    * Open/hide content overlay
    */
-  private showContentOverlay = true;
+  showContentOverlay = false;
 
   constructor(private elmt: ElementRef,
               private router: Router,
