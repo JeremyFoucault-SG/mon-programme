@@ -11,7 +11,7 @@ import { Observable, Subscription, of, EMPTY } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { QuillEditorComponent } from 'ngx-quill';
 import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
-import { HttpClient, HttpEvent} from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpRequest, HttpResponse} from '@angular/common/http';
 import { map, switchMap } from 'rxjs/operators';
 import { UploadService } from 'src/app/core/http/upload.service';
 
@@ -22,7 +22,7 @@ import { UploadService } from 'src/app/core/http/upload.service';
 })
 export class UpdateArticleComponent implements OnInit {
   accept = '*';
-  file: File;
+  file: File[] = [];
   progress: number;
   url = 'http://localhost:3000/upload';
   hasBaseDropZoneOver = false;
@@ -45,10 +45,9 @@ export class UpdateArticleComponent implements OnInit {
   id: string;
 
   articleForm = this.fb.group({
-    id: [],
     file: this.fb.group({
+      id: [],
       url: [],
-      id: []
     }),
     title: [],
     category: [],
@@ -115,9 +114,10 @@ export class UpdateArticleComponent implements OnInit {
     } else {
       this.uploadPhoto()
         .pipe(
-          switchMap(() =>
-            this.store.dispatch(new AddArticle(this.articleForm.value))
-          )
+          switchMap(() => {
+            console.log(this.articleForm.value);
+            return this.store.dispatch(new AddArticle(this.articleForm.value))
+          })
         )
         .subscribe(() => {
           this.showSuccesAdd();
@@ -169,11 +169,12 @@ export class UpdateArticleComponent implements OnInit {
   }
 
   onRemoveFile() {
-    this.file = undefined;
+    this.file = [];
   }
 
   uploadPhoto(): Observable<any> {
     if (this.file) {
+      console.log(this.file);
       return this.uploaderService
         .upload(this.sendableFormData)
         .pipe(map(res => this.articleForm.get('file').patchValue(res)));
@@ -181,4 +182,28 @@ export class UpdateArticleComponent implements OnInit {
       return of(EMPTY);
     }
   }
+
+  uploadFiles(): Subscription {
+    const req = new HttpRequest<FormData>(
+      'POST',
+      this.url,
+      this.sendableFormData, {
+      reportProgress: true// , responseType: 'text'
+    });
+    console.log(this.url);
+    console.log(this.sendableFormData);
+    return this.httpEmitter = this.httpClient.request(req)
+    .subscribe(
+      event => {
+        this.httpEvent = event;
+
+        if (event instanceof HttpResponse) {
+          delete this.httpEmitter;
+          console.log('request done', event);
+        }
+      },
+      error => alert('Error Uploading Files: ' + error.message)
+    );
+  }
 }
+

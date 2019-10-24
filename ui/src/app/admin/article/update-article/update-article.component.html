@@ -1,9 +1,14 @@
+<ngfFormData
+  [files]="file"
+  [(FormData)]="sendableFormData"
+  postName="file"
+></ngfFormData>
 <div class="flex justify-center pt-40">
   <div style="margin-bottom: 40px">
     <form [formGroup]="articleForm" (ngSubmit)="onSubmit()" class="max-w-full">
       <div class="flex justify-start">
         <button
-        type="button"
+          type="button"
           class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 mb-4 px-4 rounded text-xs"
           (click)="deleteArticle(id)"
         >
@@ -11,12 +16,12 @@
         </button>
       </div>
       <div
-        *ngIf="!file"
-        ngfDrop
+      *ngIf="file.length <= 0"
+      ngfDrop
         multiple="1"
         selectable="1"
         [(validDrag)]="validComboDrag"
-        [(file)]="file"
+        [(files)]="file"
         accept="image/*"
         [(lastInvalids)]="lastInvalids"
         [(dragFiles)]="dragFiles"
@@ -26,7 +31,7 @@
         [fileDropDisabled]="fileDropDisabled"
       >
         <div class="text-xl font-bold uppercase text-blue-800">
-          <div class="text-center" >
+          <div class="text-center">
             <fa-icon
               [icon]="['fas', 'cloud-upload-alt']"
               class="cursor-pointer text-blue-800"
@@ -40,13 +45,13 @@
       <div
         class="w-full relative"
         *ngIf="
-          ['image/gif', 'image/png', 'image/jpeg'].indexOf(file?.type) >= 0
+          ['image/gif', 'image/png', 'image/jpeg'].indexOf(file[0]?.type) >= 0
         "
       >
         <button
           class="absolute top-0 right-0 mr-5 mt-2"
           type="button"
-          *ngIf="file"
+          *ngIf="file.length > 0"
         >
           <fa-icon
             [icon]="['fas', 'times']"
@@ -58,10 +63,16 @@
 
         <div
           class="w-full h-48 bg-cover rounded shadow-lg"
-          [ngfBackground]="file"
+          [ngfBackground]="file[0]"
         ></div>
       </div>
-
+      <button
+        type="button"
+        class="btn btn-success btn-s"
+        (click)="uploadFiles()"
+      >
+        <span class="glyphicon glyphicon-upload"></span> Upload all
+      </button>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
