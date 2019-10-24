@@ -23,7 +23,7 @@
   /* background-image: url("https://zupimages.net/up/19/43/4gu6.jpg"); */
   background-repeat: no-repeat;
   background-position: 46.5% center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .line {
