@@ -1,3 +1,4 @@
+const { colors } = require('tailwindcss/defaultTheme')
 module.exports = {
   theme: {
     fontFamily: {
@@ -5,6 +6,12 @@ module.exports = {
       'roboto': ['Roboto']
     },
     extend: {
+      colors: {
+        red: {
+          ...colors.red,
+          '400': '#C45352',
+        }
+      },
       spacing: {
         '2screen': '200vw',
         '1/3-screen': '23vw',
