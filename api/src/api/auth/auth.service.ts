@@ -46,7 +46,7 @@ export class AuthService {
     }
 
     async verifyAuth(username: string, password: string): Promise<AuthModel> {
-        const userFinded = await this.authModel.findOne({ username, password }).exec();
+        const userFinded = await this.authModel.findOne({ username }).exec();
         if (!userFinded || !userFinded.comparePassword(password)) {
             throw new UnauthorizedException();
         }
