@@ -10,10 +10,10 @@ export async function insertArticleData(articleService: ArticlesService, categor
   for (let i = 1; i <= 50; i++) {
     const articleDTO: ArticleDTO = {
         title: faker.lorem.sentence(4),
-        author: faker.name.firstName(),
+        image: faker.image.fashion(),
+        tags: [faker.name.firstName()],
         content: faker.lorem.sentences(500),
         categories: [categories[faker.random.number({min: 0, max: categories.length - 1 })]],
-        photoUrl: faker.image.food(),
     };
 
     await articleService.insert(articleDTO);

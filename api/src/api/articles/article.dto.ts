@@ -11,23 +11,19 @@ export class ArticleDTO {
 
   @Allow()
   @ApiModelProperty()
+  public readonly image?: string;
+
+  @Allow()
+  @ApiModelProperty()
   public readonly title: string;
 
   @Allow()
   @ApiModelProperty()
-  public readonly author: string;
+  public readonly tags: string[];
 
   @Allow()
   @ApiModelProperty()
   public readonly content: string;
-
-  @Allow()
-  @ApiModelProperty()
-  public readonly photoUrl: string;
-
-  @Allow()
-  @ApiModelProperty()
-  public readonly urlTitle?: string;
 
   @Allow()
   @ApiModelProperty()
