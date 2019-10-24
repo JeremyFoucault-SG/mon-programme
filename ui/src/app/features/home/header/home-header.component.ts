@@ -32,9 +32,10 @@ export class HomeHeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  onChange(programDetail: ProgramDetail, index) {
+  // TODO: fix param
+  onChange(programDetail: ProgramDetail/* , index */) {
     this.selected = programDetail;
-    this.selectChange.emit(this.selected[index + 1]);
+    // this.selectChange.emit(this.selected[index + 1]);
   }
 
   backClick() {

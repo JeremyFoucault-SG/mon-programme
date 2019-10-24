@@ -3,10 +3,8 @@ import { InjectModel } from 'nestjs-typegoose';
 import { CoachingModel } from './coaching.model';
 import { ModelType, InstanceType } from 'typegoose';
 import { CoachingDTO } from './coaching.dto';
-import { EntityException, EntityExceptionCode } from 'src/exceptions/entity-exception';
 import { CoachingQuery } from './coachings.query';
-import { CategoriesService } from '../categories/categories.service';
-import { CategoriesModule } from '../categories/categories.module';
+import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
 
 @Injectable()
 export class CoachingsService {

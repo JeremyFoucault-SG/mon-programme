@@ -1,7 +1,7 @@
 import * as faker from 'faker/locale/fr';
 import { CoachingsService } from '../src/api/coachings/coachings.service';
 import { CoachingDTO } from '../src/api/coachings/coaching.dto';
-import { CategoriesService } from 'src/api/categories/categories.service';
+import { CategoriesService } from '../src/api/categories/categories.service';
 
 export async function insertCoachingData(coachingService: CoachingsService, categoryService: CategoriesService) {
 

@@ -17,23 +17,23 @@
           </div>
         </div>
       <div class="flex flex-row flex-wrap justify-center mb-12">
-          <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+          <a class="ml-6 mr-6" routerLinkActive="router-link-active" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Tout</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'prise-de-masse'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" routerLinkActive="router-link-active" (click)="selectCategory('prise-de-masse')"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Prise de masse</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'entretien'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" routerLinkActive="router-link-active" (click)="selectCategory('entretien')" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Entretien</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'seche'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" routerLinkActive="router-link-active" (click)="selectCategory('seche')" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Sèche</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'raffermissement'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" routerLinkActive="router-link-active" (click)="selectCategory('raffermissement')" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Raffermissement</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'stretching'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" routerLinkActive="router-link-active" (click)="selectCategory('stretching')" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Stretching</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'recuperation'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" routerLinkActive="router-link-active" (click)="selectCategory('recuperation')" ><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Récupération</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'preparation-competition'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" routerLinkActive="router-link-active" (click)="selectCategory('preparation-competition')"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Préparation compétition</button></a>
-        <a class="ml-6 mr-6" [routerLink]="['/nos-programmes']" routerLinkActive="router-link-active"  [queryParams]="{ categories: 'tuto-exercice'}" queryParamsHandling="merge"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
+        <a class="ml-6 mr-6" routerLinkActive="router-link-active" (click)="selectCategory('tuto')"><button class="bg-transparent hover:bg-red-700 hover:text-white text-gray-600 font-bold py-2 px-4 rounded">
           Tuto par exercices</button></a>
     </div>
 

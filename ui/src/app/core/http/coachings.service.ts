@@ -39,7 +39,6 @@ export class CoachingsService {
     // Mise à jour d'un programme //
     // tslint:disable-next-line: variable-name
     public updateProgramme(payload: Programme, _id: string) {
-        console.log(_id);
         return this.http.put<Programme>(`${this.api}/coachings/${_id}`, payload);
     }
 

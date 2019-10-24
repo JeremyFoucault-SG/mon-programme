@@ -54,6 +54,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isOpen = false;
 
   /**
+   * Show/Hide navigation
+   */
+  isVisible = true
+
+  /**
    * Store all subscription for unsubscribe on destroy cycle event
    */
   subscriptions: Subscription[] = [];
@@ -101,6 +106,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         mergeMap(route => route.data),
       ).subscribe((data) => {
         this.title = data.title;
+        this.isVisible = data.isVisible;
         this.isTransparent = data.isTransparent;
       }),
     );
