@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.selected = this.programsInfos[0];
     this.store.dispatch(new SearchProgramme({rating: 1, limit: 10}));
-    this.store.dispatch(new SearchArticle({date: '-1', limit: 2, categories: 'style-de-vie-et-nutrition'}));
+    this.store.dispatch(new SearchArticle({date: '-1', limit: 20, categories: 'style-de-vie-et-nutrition'}));
   }
 
 

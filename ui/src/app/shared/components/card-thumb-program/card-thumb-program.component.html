@@ -1,57 +1,72 @@
-<div class="w-3/4-screen md:w-1/2-screen lg:w-1/3-screen relative h-64 rounded-t-lg overflow-hidden border-gray border flex flex-col mb-8  bg-cover bg-no-repeat hover:border-red-800 && cursor-pointer" (click)="show()"
-[ngStyle]="{'background-image': hasBgOverlay ? 'linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('+imageUrl+')' : 'url('+imageUrl+')'}">
+<div
+  class="w-3/4-screen md:w-1/2-screen lg:w-1/3-screen relative h-64 rounded-t-lg overflow-hidden border-gray border flex flex-col mb-8  bg-cover bg-no-repeat hover:border-red-800 && cursor-pointer"
+  [routerLink]="urlTitle"
+  [ngStyle]="{'background-image': hasBgOverlay ? 'linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('+imageUrl+')' : 'url('+imageUrl+')'}">
 
   <div class="flex-grow justify-end ">
     <!-- Show dropdown menu (see @Inputs) -->
-   
-    <div *ngIf="hasMenu"  (click)="open($event)"
+
+    <div *ngIf="hasMenu" (click)="open($event)"
       class="float-right text-xs inline-block rounded px-2 py-1 bg-white rounded-md mt-5 font-semibold mr-2 cursor-move">
       <i class="fa fa-ellipsis-h text-red-500 cursor-move"></i>
       <div *ngIf="isOpen" class=" z-999 flex flex-col bg-wite-opacity-5 w-auto">
         <div class="bg-white rounded z-11">
-         <a [routerLink]="['/nos-programmes', coaching.urlTitle]" class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 pt-4 text-gray-600 hover:text-red-500"><i class="fa fa-eye pr-2" aria-hidden="true"></i>Voir le programme</h1></a>
-         <a (click)="addToWishList(coaching)" class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa pr-2 text-red-700" [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i>Wishlist</h1></a>
-         <a class="cursor-pointer"><h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa fa-star-o pr-2 text-yellow-600" aria-hidden="true"></i>Ajouter une note</h1></a>
+          <a [routerLink]="urlTitle" class="cursor-pointer">
+            <h1 class="pl-4 pr-8 pb-4 pt-4 text-gray-600 hover:text-red-500"><i class="fa fa-eye pr-2"
+                aria-hidden="true"></i>Voir le programme</h1>
+          </a>
+          <a (click)="addToWishList(coaching)" class="cursor-pointer">
+            <h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa pr-2 text-red-700"
+                [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i>Wishlist</h1>
+          </a>
+          <a class="cursor-pointer">
+            <h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa fa-star-o pr-2 text-yellow-600"
+                aria-hidden="true"></i>Ajouter une note</h1>
+          </a>
         </div>
       </div>
     </div>
- 
+
     <!-- Number of stars as badge (see @Inputs) -->
     <span *ngIf="topStars"
       class="float-right text-xs inline-block bg-gray-200 rounded-full mt-5 px-3 py-1 font-semibold text-gray-700 mr-2">
       <i class="fa fa-star text-yellow-500 mr-2"></i>{{topStars}}
     </span>
 
-  <!-- Card content can be set as an overlay trigger on hover (see @Inputs) -->
-  <div class="absolute bottom-0 w-full flex flex-row justify-between"
-    [ngClass]="{'content-overlay': isContentOverlay, 'hidden': isContentOverlay && !showContentOverlay}">
+    <!-- Tag of article (see @Inputs) -->
+    <span *ngIf="tag"
+      class="tag float-right text-xs inline-block border border-green-500 rounded-full mt-5 px-3 py-1 font-semibold text-green-500 mr-2">{{tag}}</span>
 
-    <!-- Title and description (see @Inputs)-->
-    <div class="px-4 pb-2 flex flex-col">
-      <p *ngIf="urlTitle" class="py-2 text-xl text-white font-lato font-bold tracking-widest">{{urlTitle}}</p>
-      <p *ngIf="level" class="text-base text-white font-lato">{{level}}</p>
-    
-    </div>
-    <div class="self-end">
-      <!-- Inline stars (5 stars) (see @Inputs)-->
-      <div *ngIf="inlineStars >= 0" class="px-4 pb-2">
-        <i class="text-bold text-yellow-500 fa ml-2"
-          ngClass="{{inlineStars === 0 ? 'fa-star-o': inlineStars >= 1  ? 'fa-star': inlineStars > 0 && inlineStars < 1 ? 'fa-star-half-o': '' }}"></i>
-        <i class="text-bold text-yellow-500 fa ml-2"
-          ngClass="{{inlineStars === 0 || inlineStars < 2  ? 'fa-star-o': inlineStars >= 2  ? 'fa-star': inlineStars > 1 && inlineStars < 2 ? 'fa-star-half-o': '' }}"></i>
-        <i class="text-bold text-yellow-500 fa ml-2"
-          ngClass="{{inlineStars === 0 || inlineStars < 3  ? 'fa-star-o': inlineStars >= 3  ? 'fa-star': inlineStars > 2 && inlineStars < 3 ? 'fa-star-half-o': '' }}"></i>
-        <i class="text-bold text-yellow-500 fa ml-2"
-          ngClass="{{inlineStars === 0 || inlineStars < 4  ? 'fa-star-o': inlineStars >= 4  ? 'fa-star': inlineStars > 3 && inlineStars < 4 ? 'fa-star-half-o': '' }}"></i>
-        <i class="text-bold text-yellow-500 fa ml-2"
-          ngClass="{{inlineStars === 0 || inlineStars < 5  ? 'fa-star-o': inlineStars >= 5  ? 'fa-star': inlineStars > 4 && inlineStars < 5 ? 'fa-star-half-o': '' }}"></i>
+    <!-- Card content can be set as an overlay trigger on hover (see @Inputs) -->
+    <div class="absolute bottom-0 w-full flex flex-row justify-between"
+      [ngClass]="{'content-overlay': isContentOverlay, 'hidden': isContentOverlay && !showContentOverlay}">
+
+      <!-- Title and description (see @Inputs)-->
+      <div class="px-4 pb-2 flex flex-col">
+        <p *ngIf="urlTitle" class="py-2 text-xl text-white font-lato font-bold tracking-widest">{{title}}</p>
+        <p *ngIf="level" class="text-base text-white font-lato">{{level}}</p>
+
       </div>
+      <div class="self-end">
+        <!-- Inline stars (5 stars) (see @Inputs)-->
+        <div *ngIf="inlineStars >= 0" class="px-4 pb-2">
+          <i class="text-bold text-yellow-500 fa ml-2"
+            ngClass="{{inlineStars === 0 ? 'fa-star-o': inlineStars >= 1  ? 'fa-star': inlineStars > 0 && inlineStars < 1 ? 'fa-star-half-o': '' }}"></i>
+          <i class="text-bold text-yellow-500 fa ml-2"
+            ngClass="{{inlineStars === 0 || inlineStars < 2  ? 'fa-star-o': inlineStars >= 2  ? 'fa-star': inlineStars > 1 && inlineStars < 2 ? 'fa-star-half-o': '' }}"></i>
+          <i class="text-bold text-yellow-500 fa ml-2"
+            ngClass="{{inlineStars === 0 || inlineStars < 3  ? 'fa-star-o': inlineStars >= 3  ? 'fa-star': inlineStars > 2 && inlineStars < 3 ? 'fa-star-half-o': '' }}"></i>
+          <i class="text-bold text-yellow-500 fa ml-2"
+            ngClass="{{inlineStars === 0 || inlineStars < 4  ? 'fa-star-o': inlineStars >= 4  ? 'fa-star': inlineStars > 3 && inlineStars < 4 ? 'fa-star-half-o': '' }}"></i>
+          <i class="text-bold text-yellow-500 fa ml-2"
+            ngClass="{{inlineStars === 0 || inlineStars < 5  ? 'fa-star-o': inlineStars >= 5  ? 'fa-star': inlineStars > 4 && inlineStars < 5 ? 'fa-star-half-o': '' }}"></i>
+        </div>
 
-      <!-- Add to wish list button (see @Inputs) -->
-      <div *ngIf="hasWish" class="content-end">
-        <i class="fa fa-plus float-right bg-red-800 text-white p-2" aria-hidden="true"></i>
+        <!-- Add to wish list button (see @Inputs) -->
+        <div *ngIf="hasWish" class="content-end">
+          <i class="fa fa-plus float-right bg-red-800 text-white p-2" aria-hidden="true"></i>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
