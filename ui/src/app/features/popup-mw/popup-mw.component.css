@@ -1,7 +1,7 @@
 /* Background for "popup" */
 
 .bg-popup {
-  background-image: url("https://zupimages.net/up/19/31/elei.png");
+  background-image: url("https://zupimages.net/up/19/43/4gu6.jpg");
 }
 
 .title {
@@ -20,10 +20,10 @@
 .body {
   width: 420px;
   height: 420px;
-  /* background-image: url("https://zupimages.net/up/19/31/2n2z.png"); */
+  /* background-image: url("https://zupimages.net/up/19/43/4gu6.jpg"); */
   background-repeat: no-repeat;
   background-position: 46.5% center;
-  background-size: 260% auto;
+  background-size: cover;
 }
 
 .line {

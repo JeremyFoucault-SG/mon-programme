@@ -67,4 +67,9 @@ export class ListProgrammeComponent implements OnInit {
     }
   }
 
+  selectCategory(category) {
+    const params = this.route.snapshot.queryParamMap.getAll('categories');
+    this.router.navigate([], { relativeTo: this.route, queryParams: { categories: [...params, category]} });
+  }
+
 }

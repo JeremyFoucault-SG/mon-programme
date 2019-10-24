@@ -16,6 +16,7 @@ import { ConnexionModalComponent } from 'src/app/shared/components/register/conn
 import { RegisterComponent } from 'src/app/shared/components/register/register.component';
 import { Settings } from 'src/app/shared/models/settings.model';
 import { Register } from 'src/app/shared/models/register.model';
+import { InfoUser } from 'src/app/shared/models/infoUser.model';
 
 /**
  * Header component, hold navigation, title, user
@@ -41,6 +42,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   title = 'Title Example';
 
+
   /**
    * True for transparent background else set background to black color
    */
@@ -52,6 +54,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isOpen = false;
 
   /**
+   * Show/Hide navigation
+   */
+  isVisible = true;
+
+  /**
    * Store all subscription for unsubscribe on destroy cycle event
    */
   subscriptions: Subscription[] = [];
@@ -61,7 +68,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 
   public coachings = [];
-  public newOrder = 0;
+
 
   @Select(CartState.count)
   carts: Observable<number>;
@@ -99,6 +106,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         mergeMap(route => route.data),
       ).subscribe((data) => {
         this.title = data.title;
+        this.isVisible = data.isVisible;
         this.isTransparent = data.isTransparent;
       }),
     );
@@ -133,7 +141,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.auth.isLogout().subscribe(valeur => this.user = valeur);
       this.open();
     }
-
-
   }
 
