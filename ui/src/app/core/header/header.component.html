@@ -1,5 +1,5 @@
 <!-- Background navbar can be set to transparent or black -->
-<nav class="absolute flex items-center justify-between flex-wrap p-4 w-full z-20"
+<nav *ngIf="isVisible" class="absolute flex items-center justify-between flex-wrap p-4 w-full z-20"
   [ngClass]="{'bg-transparent' : isTransparent, 'bg-gray-900': isOpen || !isTransparent}">
   <!-- [ngClass]="isTransparent || !isOpen  ? 'bg-transparent' : 'bg-gray-900'"> -->
 
@@ -38,9 +38,9 @@
       *ngIf="user">
       <a [routerLink]="['/commande']" >
         <i class="cursor-pointer fa fa-shopping-basket fa-lg text-white"></i>
-          <span class="bg-red-700 p-1 rounded-full text-white text-xs">{{carts | async}}</span>
+          <span class="bg-red-700 p-1 rounded-full text-white text-xs" *ngIf="(carts | async) > 0">{{carts | async}}</span>
       </a>
-      <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, <strong>{{}</strong></h3>
+      <h3 class="fs-8 inline-block lg:ml-5 text-white">Hello, <strong></strong></h3>
       <img src="https://zupimages.net/up/19/31/rixg.png" alt="profil" class="cursor-pointer h-16 w-16 ml-2">
     </div>
       <i class="cursor-pointer text-white fa fa-2x ml-4 mr-2" [ngClass]="isOpen ? 'fa-times' : 'fa-bars'"
@@ -139,13 +139,13 @@
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/suivis']" routerLinkActive="active"
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/suivi']" routerLinkActive="active"
           (click)="open()">
           Mon suivis
         </a>
       </li>
       <li class="py-2">
-        <a class="text-white hover:text-yellow-400" [routerLink]="['/mon-compte/panier']" routerLinkActive="active"
+        <a class="text-white hover:text-yellow-400" [routerLink]="['/commande']" routerLinkActive="active"
           (click)="open()">
           Mon Panier
         </a>

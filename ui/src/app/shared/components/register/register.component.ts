@@ -46,8 +46,10 @@ public index = 1;
     }),
   });
 
+
   ngOnInit() {
   }
+
   onSubmit() {
     this.toastr.success('succés', 'Utilisateur Créé');
     const formValue = this.myForm.value;
