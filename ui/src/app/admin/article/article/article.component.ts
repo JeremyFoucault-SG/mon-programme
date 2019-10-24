@@ -14,35 +14,38 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css'],
+  styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-
   @Select(ArticleState.articles)
   articles: Observable<ArticleBlog[]>;
 
   @Select(ArticleState.articles)
   query: Observable<QueryArticles[]>;
 
-constructor(private store: Store, private toastr: ToastrService, private router: Router,) { }
+  constructor(
+    private store: Store,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
 
-ngOnInit() {
-  // this.store.dispatch(new GetAllArticles());
-  this.store.dispatch(new SearchArticle({ limit: 4}));
+  ngOnInit() {
+    // this.store.dispatch(new GetAllArticles());
+    this.store.dispatch(new SearchArticle({ limit: 4 }));
+  }
+  editArticle(payload: ArticleBlog) {
+    this.router.navigate(['create-article']);
+    this.store.dispatch(new SetSelectedArticle(payload));
+  }
+  deleteArticle(id: string) {
+    this.store.dispatch(new DeleteArticle(id));
+    this.showSuccessDelete();
+  }
 
-}
-editArticle(payload: ArticleBlog) {
-  this.router.navigate(['create-article']);
-  this.store.dispatch(new SetSelectedArticle(payload));
-}
-deleteArticle(id: string) {
-  this.store.dispatch(new DeleteArticle(id));
-  this.showSuccessDelete();
-}
-
-
-showSuccessDelete() {
-  this.toastr.success('Article Supprimé avec succés');
-}
-
+  showSuccessDelete() {
+    this.toastr.success('Article Supprimé avec succés');
+  }
+  createArticle() {
+    this.router.navigate(['create-article']);
+  }
 }
