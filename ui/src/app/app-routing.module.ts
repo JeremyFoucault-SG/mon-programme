@@ -32,7 +32,8 @@ const routes: Routes = [
     component: PopupMwComponent,
     data: {
       isChoose: true,
-      imageUrl: 'https://zupimages.net/up/19/31/2e19.png',
+      imageUrl: 'https://zupimages.net/up/19/43/koz4.png',
+      isVisible: false,
     }
   },
   {
@@ -65,6 +66,7 @@ const routes: Routes = [
     data: {
       title: 'Accueil',
       isTransparent: true,
+      isVisible: true,
     }
   },
   {
@@ -74,7 +76,8 @@ const routes: Routes = [
     data: {
       title: 'santé',
       isTransparent: false,
-      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
+      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg',
+      isVisible: true,
     }
   },
   {
@@ -84,7 +87,8 @@ const routes: Routes = [
     data: {
       title: 'pratique sportive',
       isTransparent: false,
-      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
+      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg',
+      isVisible: true,
     }
   },
   {
@@ -94,31 +98,79 @@ const routes: Routes = [
     data: {
       title: 'style de vie & nutrition',
       isTransparent: false,
-      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
+      imageHeader: 'https://zupimages.net/up/19/31/puje.jpg',
+      isVisible: true,
     }
   },
-  { path: 'mon-panier', canActivate: [AuthGuard], component: BasketComponent},
-  { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent},
-  { path: 'nos-programmes', canActivate: [AuthGuard], component: ListProgrammeComponent},
-  { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent },
-  { path: 'articles/:urlTitle', canActivate: [AuthGuard], component: ArticleBlogComponent },
-  { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent },
-  { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent },
-  { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent },
-  { path: 'mon-compte/infos', canActivate: [AuthGuard], component: InfoComponent },
-  { path: 'mon-compte/favoris', canActivate: [AuthGuard], component : WishlistComponent},
-  { path: 'login', component: ConnexionComponent},
-  { path: 'commande', canActivate: [AuthGuard], component: CommandeComponent },
-  { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent },
-  { path: 'blog-mobile', canActivate: [AuthGuard], component: BlogMobileComponent },
-  { path: 'inscription', component: InscriptionComponent},
-  { path: 'inscription', canActivate: [AuthGuard], component: InscriptionComponent},
-  { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent },
-  { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent},
-  { path: 'create-article', canActivate: [AuthGuard], component: UpdateArticleComponent},
-  { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent},
-  { path: 'paiement', canActivate: [AuthGuard], component: PaiementComponent},
-  { path: 'login-modal', component: ConnexionModalComponent}
+  {
+    path: 'mon-panier',
+    canActivate: [AuthGuard],
+    component: BasketComponent,
+  data: {
+    isVisible: true,
+  }},
+  { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'nos-programmes', canActivate: [AuthGuard], component: ListProgrammeComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'articles/:urlTitle', canActivate: [AuthGuard], component: ArticleBlogComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'mon-compte/suivi', canActivate: [AuthGuard], component: SuiviComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'mon-compte/infos', canActivate: [AuthGuard], component: InfoComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'mon-compte/favoris', canActivate: [AuthGuard], component : WishlistComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'login', component: ConnexionComponent, data: {
+  }},
+  { path: 'commande', canActivate: [AuthGuard], component: CommandeComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'blog-mobile', canActivate: [AuthGuard], component: BlogMobileComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'inscription', component: InscriptionComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'inscription', canActivate: [AuthGuard], component: InscriptionComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent, data: {
+    isVisible: true,
+  } },
+  { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'create-article', canActivate: [AuthGuard], component: UpdateArticleComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'paiement', canActivate: [AuthGuard], component: PaiementComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'login-modal', component: ConnexionModalComponent, data: {
+    isVisible: true,
+  }}
 ];
 
 @NgModule({
