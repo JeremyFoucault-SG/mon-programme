@@ -1,0 +1,332 @@
+{
+  "03": {
+    "nb_seances": 3,
+    "muscles": [
+      "Pecs",
+      "Dos",
+      "Jambes",
+      "Epaules",
+      "Biceps",
+      "Triceps"
+    ],
+    "name": "Séries Classiques",
+    "seances": {
+      "1": {
+        "id": 1,
+        "rep_time": "1 min",
+        "Pecs": {
+          "1": {
+            "exercise": "Développé incliné haltères",
+            "series": "5",
+            "reps": "10"
+          },
+          "2": {
+            "exercise": "Développé incliné barre libre",
+            "series": "3",
+            "reps": "15"
+          },
+          "3": {
+            "exercise": "Développé couché haltères",
+            "series": "4",
+            "reps": "12"
+          },
+          "4": {
+            "exercise": "Ecarté poulies hautes vis à vis",
+            "series": "3",
+            "reps": "15"
+          }
+        },
+        "Dos": {
+          "1": {
+            "exercise": "Tirage poulie haute poitrine",
+            "series": "4",
+            "reps": "15"
+          },
+          "2": {
+            "exercise": "Tirage poulie haute prise serrée",
+            "series": "4",
+            "reps": "10"
+          },
+          "3": {
+            "exercise": "Rowing horizontal prise large",
+            "series": "3",
+            "reps": "15"
+          },
+          "4": {
+            "exercise": "Rowing haltère debout de chaque côté",
+            "series": "3",
+            "reps": "10"
+          }
+        }
+      },
+      "2": {
+        "id": 2,
+        "rep_time": "1 min30",
+        "Jambes": {
+          "1": {
+            "exercise": "Leg extension",
+            "series": "4",
+            "reps": "20"
+          },
+          "2": {
+            "exercise": "Squat barre libre",
+            "series": "5",
+            "reps": "20-15-12-12-10"
+          },
+          "3": {
+            "exercise": "Presse 45°",
+            "series": "4",
+            "reps": "12"
+          },
+          "4": {
+            "exercise": "Fentes en marchant",
+            "series": "4",
+            "reps": "30"
+          },
+          "5": {
+            "exercise": "Soulevé de terre jambes tendues barre libre",
+            "series": "5",
+            "reps": "15"
+          },
+          "6": {
+            "exercise": "Mollets assis",
+            "series": "5",
+            "reps": "15"
+          }
+        },
+        "Epaules": {
+          "1": {
+            "exercise": "Haltères élévations latérales",
+            "series": "4",
+            "reps": "18"
+          },
+          "2": {
+            "exercise": "Développé barre libre nuque",
+            "series": "4",
+            "reps": "12"
+          },
+          "3": {
+            "exercise": "Elévations frontales barre droite",
+            "series": "4",
+            "reps": "12"
+          },
+          "4": {
+            "exercise": "Arrière d’épaules (oiseau) haltères assis",
+            "series": "4",
+            "reps": "15"
+          }
+        },
+        "Trapèzes": {
+          "1": {
+            "exercise": "Shrug haltères debout",
+            "series": "4",
+            "reps": "15"
+          }
+        }
+      },
+      "3": {
+        "id": 3,
+        "rep_time": "1 min",
+        "Biceps": {
+          "1": {
+            "exercise": "Curl barre droite",
+            "series": "4",
+            "reps": "15"
+          },
+          "2": {
+            "exercise": "Curl haltères debout",
+            "series": "4",
+            "reps": "12"
+          },
+          "3": {
+            "exercise": "Curl haltères prise marteau assis",
+            "series": "4",
+            "reps": "10"
+          }
+        },
+        "Triceps": {
+          "1": {
+            "exercise": "Haltères au front",
+            "series": "4",
+            "reps": "15"
+          },
+          "2": {
+            "exercise": "Extensions poulie haute barre droite",
+            "series": "4",
+            "reps": "12"
+          },
+          "3": {
+            "exercise": "Extensions haltère horizontal unilatéral",
+            "series": "4",
+            "reps": "10"
+          }
+        }
+      }
+    }
+  },
+  "04": {
+    "nb_seances": 3,
+    "muscles": [
+      "Pecs",
+      "Dos",
+      "Jambes",
+      "Epaules",
+      "Biceps",
+      "Triceps"
+    ],
+    "name": "Séries Classiques2",
+    "seances": {
+      "1": {
+        "id": 1,
+        "rep_time": "1 min",
+        "Pecs": {
+          "1": {
+            "exercise": "Développé incliné haltères",
+            "series": "5",
+            "reps": "10"
+          },
+          "2": {
+            "exercise": "Développé incliné barre libre",
+            "series": "3",
+            "reps": "15"
+          },
+          "3": {
+            "exercise": "Développé couché haltères",
+            "series": "4",
+            "reps": "12"
+          },
+          "4": {
+            "exercise": "Ecarté poulies hautes vis à vis",
+            "series": "3",
+            "reps": "15"
+          }
+        },
+        "Dos": {
+          "1": {
+            "exercise": "Tirage poulie haute poitrine",
+            "series": "4",
+            "reps": "15"
+          },
+          "2": {
+            "exercise": "Tirage poulie haute prise serrée",
+            "series": "4",
+            "reps": "10"
+          },
+          "3": {
+            "exercise": "Rowing horizontal prise large",
+            "series": "3",
+            "reps": "15"
+          },
+          "4": {
+            "exercise": "Rowing haltère debout de chaque côté",
+            "series": "3",
+            "reps": "10"
+          }
+        }
+      },
+      "2": {
+        "id": 2,
+        "rep_time": "1 min30",
+        "Jambes": {
+          "1": {
+            "exercise": "Leg extension",
+            "series": "4",
+            "reps": "20"
+          },
+          "2": {
+            "exercise": "Squat barre libre",
+            "series": "5",
+            "reps": "20-15-12-12-10"
+          },
+          "3": {
+            "exercise": "Presse 45°",
+            "series": "4",
+            "reps": "12"
+          },
+          "4": {
+            "exercise": "Fentes en marchant",
+            "series": "4",
+            "reps": "30"
+          },
+          "5": {
+            "exercise": "Soulevé de terre jambes tendues barre libre",
+            "series": "5",
+            "reps": "15"
+          },
+          "6": {
+            "exercise": "Mollets assis",
+            "series": "5",
+            "reps": "15"
+          }
+        },
+        "Epaules": {
+          "1": {
+            "exercise": "Haltères élévations latérales",
+            "series": "4",
+            "reps": "18"
+          },
+          "2": {
+            "exercise": "Développé barre libre nuque",
+            "series": "4",
+            "reps": "12"
+          },
+          "3": {
+            "exercise": "Elévations frontales barre droite",
+            "series": "4",
+            "reps": "12"
+          },
+          "4": {
+            "exercise": "Arrière d’épaules (oiseau) haltères assis",
+            "series": "4",
+            "reps": "15"
+          }
+        },
+        "Trapèzes": {
+          "1": {
+            "exercise": "Shrug haltères debout",
+            "series": "4",
+            "reps": "15"
+          }
+        }
+      },
+      "3": {
+        "id": 3,
+        "rep_time": "1 min",
+        "Biceps": {
+          "1": {
+            "exercise": "Curl barre droite",
+            "series": "4",
+            "reps": "15"
+          },
+          "2": {
+            "exercise": "Curl haltères debout",
+            "series": "4",
+            "reps": "12"
+          },
+          "3": {
+            "exercise": "Curl haltères prise marteau assis",
+            "series": "4",
+            "reps": "10"
+          }
+        },
+        "Triceps": {
+          "1": {
+            "exercise": "Haltères au front",
+            "series": "4",
+            "reps": "15"
+          },
+          "2": {
+            "exercise": "Extensions poulie haute barre droite",
+            "series": "4",
+            "reps": "12"
+          },
+          "3": {
+            "exercise": "Extensions haltère horizontal unilatéral",
+            "series": "4",
+            "reps": "10"
+          }
+        }
+      }
+    }
+  }
+}

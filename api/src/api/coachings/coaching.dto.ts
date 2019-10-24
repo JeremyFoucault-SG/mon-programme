@@ -2,6 +2,7 @@ import { CategoryDTO } from '../categories/category.dto';
 import { ApiModelProperty } from '@nestjs/swagger';
 import { Allow, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
+import { SeanceDTO } from './coachings-details-DTO/seance.dto';
 
 export class CoachingDTO {
   @Allow()
@@ -35,6 +36,12 @@ export class CoachingDTO {
   @Allow()
   @ApiModelProperty()
   public readonly urlTitle?: string;
+
+  @Allow()
+  @Type(() => SeanceDTO)
+  @ValidateNested({each: true})
+  @ApiModelProperty()
+  public readonly seances: SeanceDTO[];
 
   @Allow()
   @Type(() => CategoryDTO)

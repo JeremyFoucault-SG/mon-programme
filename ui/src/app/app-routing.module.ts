@@ -22,6 +22,7 @@ import { ListProgrammeComponent } from './features/list-programme/list-programme
 import { WishlistComponent } from './features/wishlist/wishlist.component';
 import { BasketComponent } from './features/basket/basket.component';
 import { PaiementComponent } from './features/paiement/paiement.component';
+import { ProgrammeContentComponent } from './features/programme-content/programme-content.component';
 
 
 
@@ -96,6 +97,7 @@ const routes: Routes = [
       imageHeader: 'https://zupimages.net/up/19/31/puje.jpg'
     }
   },
+  { path: 'test-pro',  component: ProgrammeContentComponent},
   { path: 'mon-panier', canActivate: [AuthGuard], component: BasketComponent},
   { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent},
   { path: 'nos-programmes', canActivate: [AuthGuard], component: ListProgrammeComponent},

@@ -47,6 +47,7 @@ import { WishlistArticleComponent } from './wishlist/wishlist-article/wishlist-a
 import { BasketComponent } from './basket/basket.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { DashboardAuthentificationComponent } from './dashboard/info/dashboard-authentification/dashboard-authentification.component';
+import { ProgrammeContentComponent } from './programme-content/programme-content.component';
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import { DashboardAuthentificationComponent } from './dashboard/info/dashboard-a
     WishlistArticleComponent,
     BasketComponent,
     PaiementComponent,
-    DashboardAuthentificationComponent
+    DashboardAuthentificationComponent,
+    ProgrammeContentComponent
   ],
   imports: [
     RouterModule,
