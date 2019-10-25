@@ -10,7 +10,7 @@ import { ProgrammeState } from 'src/app/core/store/store.module/programme/progra
 import {SearchProgramme} from 'src/app/core/store/store.module/programme/programme.action';
 import { Programme } from 'src/app/shared/models/programmes.model';
 import { ArticleState } from '../../core/store/store.module/article/article.state';
-import {SearchArticle} from '../../core/store/store.module/article/article.actions';
+import {SearchArticle, SearchLastArticle} from '../../core/store/store.module/article/article.actions';
 import { ArticleBlog } from 'src/app/shared/models/articles-blog.model';
 
 /**
@@ -35,12 +35,16 @@ export class HomeComponent implements OnInit {
   @Select(ArticleState.articles )
   articles: Observable<ArticleBlog[]>;
 
+  @Select(ArticleState.lastArticle )
+  lastArticle: Observable<ArticleBlog[]>;
+
   constructor(private store: Store) { }
 
   ngOnInit() {
     this.selected = this.programsInfos[0];
     this.store.dispatch(new SearchProgramme({rating: 1, limit: 10}));
-    this.store.dispatch(new SearchArticle({date: '-1', limit: 20, categories: 'style-de-vie-et-nutrition'}));
+    this.store.dispatch(new SearchArticle({limit: 10, categories: 'style-de-vie-et-nutrition'}));
+    this.store.dispatch(new SearchLastArticle({date: '-1', limit: 10}));
   }
 
 

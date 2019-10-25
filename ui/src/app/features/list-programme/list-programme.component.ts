@@ -24,7 +24,6 @@ export class ListProgrammeComponent implements OnInit {
   public limit = 10;
   public newLimit = 0;
 
-
   @Select(ProgrammeState.getProgrammes)
   programmes: Observable<Programme[]>;
 
@@ -69,7 +68,7 @@ export class ListProgrammeComponent implements OnInit {
 
   selectCategory(category) {
     const params = this.route.snapshot.queryParamMap.getAll('categories');
-    this.router.navigate([], { relativeTo: this.route, queryParams: { categories: [...params, category]} });
+    this.router.navigate([], { relativeTo: this.route, queryParams: { categories: [...params, category] } });
   }
 
 }
