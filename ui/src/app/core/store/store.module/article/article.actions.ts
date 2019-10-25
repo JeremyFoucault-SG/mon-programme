@@ -14,6 +14,11 @@ export class SearchArticle {
     constructor(public payload: QueryArticles ) {}
 }
 
+export class SearchLastArticle {
+    static readonly type = '[Blog] search last articles';
+    constructor(public payload: QueryArticles ) {}
+}
+
 export class SearchNextArticle {
     static readonly type = '[Blog] search next articles';
     constructor(public payload: QueryArticles ) {}

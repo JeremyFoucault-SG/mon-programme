@@ -8,7 +8,8 @@ import {
     SetSelectedArticle,
     SearchArticle,
     UpdateArticle,
-    SearchNextArticle
+    SearchNextArticle,
+    SearchLastArticle
 } from '../article/article.actions';
 import { ArticlesService } from 'src/app/core/http/articles.service';
 import { tap } from 'rxjs/operators';
@@ -18,6 +19,7 @@ import { patch, updateItem, append } from '@ngxs/store/operators';
 export class ArticleStateModel {
     items: ArticleBlog[];
     item: ArticleBlog;
+    lastItems: ArticleBlog[];
 }
 
 @State<ArticleStateModel>({
@@ -25,6 +27,7 @@ export class ArticleStateModel {
     defaults: {
         items: [],
         item: null,
+        lastItems: [],
     }
 })
 export class ArticleState {
@@ -40,6 +43,10 @@ export class ArticleState {
     static article(state: ArticleStateModel) {
         return state.item;
     }
+    @Selector()
+    static lastArticle(state: ArticleStateModel) {
+        return state.lastItems;
+    }
 
     @Action(SearchArticle)
     search(ctx: StateContext<ArticleStateModel>, { payload }: SearchArticle) {
@@ -49,6 +56,17 @@ export class ArticleState {
             }));
         }));
     }
+
+    @Action(SearchLastArticle)
+    searchLast(ctx: StateContext<ArticleStateModel>, { payload }: SearchLastArticle) {
+        return this.service.searchArticles(payload).pipe(tap((articles: ArticleBlog[]) => {
+            ctx.setState(patch({
+                lastItems: articles
+            }));
+        }));
+    }
+
+
     @Action(SearchNextArticle)
     searchNext(ctx: StateContext<ArticleStateModel>, { payload }: SearchArticle) {
         return this.service.searchArticles(payload).pipe(tap((articles: ArticleBlog[]) => {
