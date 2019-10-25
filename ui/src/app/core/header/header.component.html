@@ -59,7 +59,7 @@
   <!-- Navigation menu -->
   <div class="w-full text-lg flex flex-col pt-5" [ngClass]="{'hidden': !isOpen}">
     <ul>
-      <li>
+      <li *ngIf="!user">
         <div class="flex flex-row">
           <a
             class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" [routerLink]="['/login']"
@@ -76,7 +76,7 @@
       </li>
 
       <!-- divider -->
-      <div class="w-full pt-5 border-b border-gray-800"></div>
+      <div *ngIf="!user" class="w-full pt-5 border-b border-gray-800"></div>
 
       <li class="py-2 pt-4">
         <a class="text-white hover:text-yellow-400"
@@ -152,11 +152,11 @@
       </li>
 
       <!-- divider -->
-      <div class="w-full pt-4 border-b border-gray-800"></div>
+      <div *ngIf="user" class="w-full pt-4 border-b border-gray-800"></div>
 
       <li class="py-4">
         <div>
-          <a class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" (click)="logout()">Deconnexion</a>
+          <a *ngIf="user" class="inline-block text-lg px-4 py-2 leading-none border rounded text-yellow-400 border-yellow-400 hover:border-transparent hover:text-black hover:bg-yellow-400" (click)="logout()">Deconnexion</a>
         </div>
       </li>
     </ul>

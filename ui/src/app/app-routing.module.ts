@@ -22,6 +22,7 @@ import { ListProgrammeComponent } from './features/list-programme/list-programme
 import { WishlistComponent } from './features/wishlist/wishlist.component';
 import { BasketComponent } from './features/basket/basket.component';
 import { PaiementComponent } from './features/paiement/paiement.component';
+import { ProgrammeContentComponent } from './features/programme-content/programme-content.component';
 import { ConnexionModalComponent } from './shared/components/register/connexion-modal/connexion-modal.component';
 
 

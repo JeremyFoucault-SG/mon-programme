@@ -4,6 +4,7 @@ import { SettingsModel } from './settings.model';
 import { UsersService } from '../users/users.service';
 import { SettingsDTO } from './settings.dto';
 import { InjectModel } from 'nestjs-typegoose';
+import { UserModel } from '../users/user.model';
 
 /**
  * Service for manage settings save in database, for a given user
@@ -27,12 +28,16 @@ export class SettingsService {
   async insert(idUser: string, settings: SettingsDTO): Promise<SettingsModel> {
     const user = await this.usersService.findById(idUser);
     await user.updateOne({ 'settings.infos': settings.infos }).exec();
+    await user.updateOne({ 'settings.contact': settings.contact }).exec();
+    await user.updateOne({ 'settings.paiement': settings.paiement }).exec();
     return user.settings;
   }
 
-  async findById(idSetting: string): Promise<SettingsModel> {
-    const setting = await this.settingsModel.findById(idSetting);
-    return setting;
+  async update(id: string, settings: SettingsDTO): Promise<SettingsModel> {
+    const user = await this.usersService.findById(id);
+    user.set('settings', settings);
+    await user.save();
+    return user.settings;
   }
 
   async findAll(): Promise<SettingsModel[]> {

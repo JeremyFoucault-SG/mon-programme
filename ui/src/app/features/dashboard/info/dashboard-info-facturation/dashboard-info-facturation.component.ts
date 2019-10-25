@@ -11,7 +11,7 @@ export class DashboardInfoFacturationComponent implements OnInit {
    * liason formulaire facturation
    */
   @Input()
-  public formFacturation: FormGroup;
+  public formContact: FormGroup;
 
   constructor() { }
 

@@ -1,9 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { UserModel } from './user.model';
 import { ModelType } from 'typegoose';
 import { UserDTO } from './user.dto';
-import { EntityExceptionCode, EntityException } from '../../exceptions/entity-exception';
+import {
+  EntityExceptionCode,
+  EntityException,
+} from '../../exceptions/entity-exception';
 import { InstanceType } from 'typegoose';
 
 /**
@@ -11,7 +14,9 @@ import { InstanceType } from 'typegoose';
  */
 @Injectable()
 export class UsersService {
-  constructor(@InjectModel(UserModel) private readonly userModel: ModelType<UserModel>) { }
+  constructor(
+    @InjectModel(UserModel) private readonly userModel: ModelType<UserModel>,
+  ) {}
 
   /**
    * Create new User
@@ -55,4 +60,15 @@ export class UsersService {
     return deletedUser;
   }
 
+  async update(id: string, userDTO: UserDTO): Promise<UserModel> {
+    const user = await this.userModel.findById(id).exec();
+    await user.updateOne({ 'user.settings.infos': userDTO.settings.infos }).exec();
+    await user.updateOne({ 'user.settings.contact': userDTO.settings.contact }).exec();
+    await user.updateOne({ 'user.settings.paiement': userDTO.settings.paiement }).exec();
+    return user;
+    // if (!user) {
+    //   throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
+    // }
+    // return user;
+  }
 }

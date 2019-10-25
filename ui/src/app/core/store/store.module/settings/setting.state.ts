@@ -31,7 +31,7 @@ export class SettingState {
     }
 
     @Selector()
-    static GetSettings(state: SettingStateModel) {
+    static setting(state: SettingStateModel) {
         return state.item;
     }
 
@@ -45,8 +45,8 @@ export class SettingState {
     }
 
     @Action(GetByIdSetting)
-    getById({ getState, setState, patchState }: StateContext<SettingStateModel>, { id }: GetByIdSetting) {
-        return this.service.getSetting(id).pipe(tap(respons => {
+    getById({ getState, setState, patchState }: StateContext<SettingStateModel>, action: GetByIdSetting) {
+        return this.service.getSetting().pipe(tap(respons => {
             const state = getState();
             patchState({ ...state, item: respons });
         }));
@@ -55,12 +55,11 @@ export class SettingState {
 
 
     @Action(UpdateSetting)
-    UpdateSetting({ getState, setState }: StateContext<SettingStateModel>, { payload, id }: UpdateSetting) {
-        return this.service.updateSetting(payload, id).pipe(tap((result) => {
+    UpdateSetting({ getState, setState }: StateContext<SettingStateModel>, { payload}: UpdateSetting) {
+        return this.service.updateSettingsUser(payload).pipe(tap((result) => {
             setState(
                 patch({
-                    items: updateItem<Setting>(p => p._id === id, result),
-                    item: null
+                    item: result,
                 })
             );
         }));

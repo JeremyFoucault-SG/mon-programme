@@ -10,13 +10,13 @@ export class GetAllSetting {
 // Récupération d'une option par son id //
 export class GetByIdSetting {
     static readonly type = '[Setting] Get Setting by id';
-    constructor(public id: string) { }
+    constructor() { }
 }
 
 // mise à jour d'une option  //
 export class UpdateSetting {
     static readonly type = '[Setting] Update Setting';
-    constructor(public payload: Settings, public id: string) { }
+    constructor(public payload: Settings) { }
 }
 
 export class SetSelectedSetting {

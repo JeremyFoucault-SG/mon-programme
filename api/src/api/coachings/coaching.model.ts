@@ -1,6 +1,7 @@
 import { Typegoose, prop, arrayProp, pre } from 'typegoose';
 import { CategoryModel } from '../categories/category.model';
 import { SubDocument, SubDocumentArray } from '../../../@types/typegoose';
+import { SeanceModel } from './coachings-details-model/seance.model';
 
 @pre<CoachingModel>('save', function(next) {
     if (this.title) {
@@ -39,6 +40,9 @@ export class CoachingModel extends Typegoose {
 
     @prop()
     urlTitle: string;
+
+    @arrayProp({ items: SeanceModel, _id: false })
+    seances: SubDocumentArray<SeanceModel>;
 
     @arrayProp({ items: CategoryModel, _id: false })
     categories: SubDocumentArray<CategoryModel>;

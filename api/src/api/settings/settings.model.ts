@@ -3,6 +3,8 @@ import { InfosDTO } from './infos.dto';
 import { ContactUserDto } from './contactUser.dto';
 import { PaiementDto } from './paiement.dto';
 import { InfosModel } from './infos.model';
+import { ContactUserModel } from './contactUser.model';
+import { PaiementModel } from './paiement.model';
 
 export class SettingsModel extends Typegoose {
     @prop()
@@ -12,9 +14,9 @@ export class SettingsModel extends Typegoose {
     infos: InfosModel;
 
     @prop()
-    contact: ContactUserDto;
+    contact: ContactUserModel;
 
     @prop()
-    paiement: PaiementDto;
+    paiement: PaiementModel;
 
 }

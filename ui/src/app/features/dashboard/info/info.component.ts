@@ -11,7 +11,10 @@ import { UserState } from 'src/app/core/store/store.module/user/user.state';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/shared/models/user.model';
 import { GetUserById } from 'src/app/core/store/store.module/user/user.actions';
-
+import { throwIfEmpty } from 'rxjs/operators';
+import { UpdateSetting, GetByIdSetting } from 'src/app/core/store/store.module/settings/setting.action';
+import { SettingState } from 'src/app/core/store/store.module/settings/setting.state';
+import { Settings } from 'src/app/shared/models/settings.model';
 
 @Component({
   selector: 'app-info',
@@ -19,8 +22,8 @@ import { GetUserById } from 'src/app/core/store/store.module/user/user.actions';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
-  @Select(UserState.user)
-  user: Observable<User[]>;
+  @Select(SettingState.setting)
+  setting: Observable<Settings>;
 
   constructor(
     private router: Router,
@@ -30,18 +33,17 @@ export class InfoComponent implements OnInit {
 
   myForm = this.fb.group({
     infos: this.fb.group({
-      name: ['', Validators.required],
-      prenom: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmation: ['', Validators.required],
+      weight: ['', Validators.required],
+      size: ['', Validators.required],
       age: ['', Validators.required],
-      pseudo: ['', Validators.required],
-      objectif: ['', Validators.required]
+      goals: ['', Validators.required]
     }),
-    facturation: this.fb.group({
+    contact: this.fb.group({
+      lastname: ['', Validators.required],
+      firstname: ['', Validators.required],
+      email: ['', Validators.required],
       address: ['', Validators.required],
-      ville: ['', Validators.required],
+      city: ['', Validators.required],
       cp: ['', Validators.required]
     }),
     paiement: this.fb.group({
@@ -50,28 +52,34 @@ export class InfoComponent implements OnInit {
     })
   });
 
-  public token = localStorage.getItem('token');
-  public payload = this.parseJwt(this.token);
-  public idUser = this.payload.userId;
-
   submit() {
-    console.log(this.myForm.value);
+    this.store.dispatch(new UpdateSetting(this.myForm.value));
   }
   ngOnInit() {
-    const test = this.store.dispatch(new GetUserById(this.idUser));
+    this.store.dispatch(new GetByIdSetting());
+    this.setting.subscribe((item: Settings) => {
+      console.log(item);
+      if (item) {
+        this.myForm.get('infos').patchValue({
+          age: item.infos.age,
+          weight: item.infos.weight,
+          size: item.infos.size,
+          goals: item.infos.goals
+        });
+        this.myForm.get('contact').patchValue({
+          lastname: item.contact.lastname,
+          firstname: item.contact.firstname,
+          email: item.contact.email,
+          address: item.contact.address,
+          city: item.contact.city,
+          cp: item.contact.cp,
+        });
+        this.myForm.get('paiement').patchValue({
+          iban: item.paiement.iban,
+          rib: item.paiement.rib,
+        });
+      }
+    });
   }
-  parseJwt(token) {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = decodeURIComponent(
-      atob(base64)
-        .split('')
-        .map(c => {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join('')
-    );
 
-    return JSON.parse(jsonPayload);
-  }
 }
