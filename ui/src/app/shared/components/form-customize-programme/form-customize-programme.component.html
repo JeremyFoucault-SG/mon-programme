@@ -39,8 +39,11 @@
             </select>
         </div>
         <div class="flex mt-4">
-            <a (click)="showDetails()" ngHide="isHidden" class="cursor-pointer"><i class="fa fa-plus-circle mr-2" aria-hidden="true"></i></a>
-            <p (click)="showDetails()" class="cursor-pointer text-black font-bold italic">Détails avancé</p>
+            <a (click)="showDetails()" ngHide="isHidden" *ngIf="!isHidden" class="cursor-pointer"><i class="fa fa-plus-circle mr-2" aria-hidden="true"></i></a>
+            <a (click)="showDetails()" ngHide="isHidden" *ngIf="isHidden" class="cursor-pointer"><i class="fa fa-minus-circle mr-2" aria-hidden="true"></i>
+            </a>
+            <p (click)="showDetails()" *ngIf="!isHidden" class="cursor-pointer text-black font-bold italic">Détails avancés</p>
+            <p (click)="showDetails()" *ngIf="isHidden" class="cursor-pointer text-black font-bold italic">Moins de détails</p>
         </div>
     </form>
     <form class="mt-4" *ngIf="isHidden" (ngSubmit)="onFormSubmit()" [formGroup]="customForm">
