@@ -14,6 +14,8 @@ import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
 import { HttpClient, HttpEvent, HttpRequest, HttpResponse} from '@angular/common/http';
 import { map, switchMap } from 'rxjs/operators';
 import { UploadService } from 'src/app/core/http/upload.service';
+import { Category } from 'src/app/shared/models/category.model';
+import { CategoryService } from 'src/app/core/http/category.service';
 
 @Component({
   selector: 'app-update-article',
@@ -43,6 +45,7 @@ export class UpdateArticleComponent implements OnInit {
 
   tag = new FormControl(null, Validators.required);
   id: string;
+  categories: Category[];
 
   @Select(ArticleState.articles)
   articles: Observable<ArticleBlog[]>;
@@ -64,7 +67,8 @@ export class UpdateArticleComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     public httpClient: HttpClient,
-    private uploaderService: UploadService
+    private uploaderService: UploadService,
+    private categoryService: CategoryService
   ) {}
   editArticle = false;
 
@@ -78,12 +82,15 @@ export class UpdateArticleComponent implements OnInit {
   uploadFinished = new EventEmitter<{ photo: { id: string; url: string } }>();
 
   ngOnInit() {
+    this.categoryService.getCategories().subscribe((categories) => {
+      this.categories = categories;
+    });
     this.selectedArticle.subscribe(item => {
       if (item) {
         this.articleForm.patchValue({
           image: item.image,
           title: item.title,
-          category: item.category,
+          category: item.categories,
           tag: item.tags,
           content: item.content
         });
@@ -95,6 +102,7 @@ export class UpdateArticleComponent implements OnInit {
     });
     this.store.dispatch(new SearchArticle({ limit: 4 }));
   }
+
 
   onSubmit() {
     if (this.editArticle) {
