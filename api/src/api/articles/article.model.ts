@@ -30,7 +30,10 @@ export class ArticleModel extends Typegoose {
     author: string;
 
     @prop()
-    image: string;
+    image: {
+      id: string,
+      url: string,
+    };
 
     @prop()
     tags: string[];

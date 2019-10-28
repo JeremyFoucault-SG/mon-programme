@@ -11,7 +11,10 @@ export class ArticleDTO {
 
   @Allow()
   @ApiModelProperty()
-  public readonly image?: string;
+  public readonly image?: {
+    id: string,
+    url: string,
+  };
 
   @Allow()
   @ApiModelProperty()

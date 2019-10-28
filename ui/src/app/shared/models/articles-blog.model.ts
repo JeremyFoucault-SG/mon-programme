@@ -1,3 +1,5 @@
+import { Category } from './category.model';
+
 export class ArticleBlog {
     constructor(
         // tslint:disable-next-line: variable-name
@@ -5,7 +7,7 @@ export class ArticleBlog {
         public image?: string,
         public file?: string,
         public title?: string,
-        public category?: string,
+        public categories?: Category[],
         public tags?: string,
         public urlTitle?: string,
         public content?: string,

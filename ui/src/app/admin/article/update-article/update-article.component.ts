@@ -44,17 +44,19 @@ export class UpdateArticleComponent implements OnInit {
   tag = new FormControl(null, Validators.required);
   id: string;
 
-  articleForm = this.fb.group({
-    file: this.fb.group({
-      id: [],
-      url: [],
-    }),
-    title: [],
-    category: [],
-    content: [],
-    tags: this.fb.array([])
-  });
+  @Select(ArticleState.articles)
+  articles: Observable<ArticleBlog[]>;
 
+  articleForm = this.fb.group({
+    image: this.fb.group({
+      id: (['', Validators.required]),
+      url: (['', Validators.required]),
+    }),
+    title: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    category: new FormControl([], [Validators.required, Validators.minLength(6)]),
+    content: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    tags: this.fb.array([], Validators.required),
+  });
   constructor(
     private store: Store,
     private toastr: ToastrService,
@@ -78,14 +80,14 @@ export class UpdateArticleComponent implements OnInit {
     this.selectedArticle.subscribe(item => {
       if (item) {
         this.articleForm.patchValue({
-          id: item._id,
-          file: item.file,
+          image: item.image,
           title: item.title,
-          category: item.category,
+          category: item.categories,
           tag: item.tags,
           content: item.content
         });
         this.editArticle = true;
+        this.id = item._id;
       } else {
         this.editArticle = false;
       }
@@ -101,7 +103,7 @@ export class UpdateArticleComponent implements OnInit {
             this.store.dispatch(
               new UpdateArticle(
                 this.articleForm.value,
-                this.articleForm.value.id
+                this.id,
               )
             )
           )
@@ -109,17 +111,19 @@ export class UpdateArticleComponent implements OnInit {
         .subscribe(() => {
           // tslint:disable-next-line: no-unused-expression
           this.showSuccessUpdate();
+          this.clearForm();
           this.router.navigate(['articles']);
         });
     } else {
       this.uploadPhoto()
         .pipe(
           switchMap(() => {
-            return this.store.dispatch(new AddArticle(this.articleForm.value))
+            return this.store.dispatch(new AddArticle(this.articleForm.value));
           })
         )
         .subscribe(() => {
           this.showSuccesAdd();
+          this.clearForm();
           this.router.navigate(['articles']);
         });
     }
@@ -163,6 +167,7 @@ export class UpdateArticleComponent implements OnInit {
   deleteArticle(id: string) {
     this.store.dispatch(new DeleteArticle(id));
     this.showSuccessUpdate();
+    this.router.navigate(['articles']);
   }
 
   onRemoveFile() {
@@ -173,7 +178,7 @@ export class UpdateArticleComponent implements OnInit {
     if (this.file) {
       return this.uploaderService
         .upload(this.sendableFormData)
-        .pipe(map(res => this.articleForm.get('file').patchValue(res)));
+        .pipe(map(res => this.articleForm.get('image').patchValue(res)));
     } else {
       return of(EMPTY);
     }

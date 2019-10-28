@@ -38,8 +38,8 @@ export class CoachingsService {
 
     // Mise à jour d'un programme //
     // tslint:disable-next-line: variable-name
-    public updateProgramme(payload: Programme, _id: string) {
-        return this.http.put<Programme>(`${this.api}/coachings/${_id}`, payload);
+    public updateProgramme(payload: Programme, id: string) {
+        return this.http.put<Programme>(`${this.api}/coachings/${id}`, payload);
     }
 
 
@@ -50,8 +50,8 @@ export class CoachingsService {
 
     // Supression d'un programme //
     // tslint:disable-next-line: variable-name
-    public deleteProgramme(_id: string) {
-        return this.http.delete(`${this.api}/coachings/${_id}`);
+    public deleteProgramme(id: string) {
+        return this.http.delete(`${this.api}/coachings/${id}`);
     }
 
     public searchProgramme(payload: QueryCoaching) {

@@ -1,9 +1,5 @@
-
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 import { Select, Store } from '@ngxs/store';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -24,9 +20,8 @@ import { QuillEditorComponent } from 'ngx-quill';
   styleUrls: ['./edit-programme.component.css']
 })
 export class EditProgrammeComponent implements OnInit {
-
-  @ViewChild('quill', {static: true}) quill: QuillEditorComponent;
-
+  @ViewChild('quill', { static: true }) quill: QuillEditorComponent;
+  id: string;
   constructor(
     private fb: FormBuilder,
     private store: Store,
@@ -34,15 +29,12 @@ export class EditProgrammeComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService
   ) {
-
     this.createForm();
   }
   @Select(ProgrammeState.getProgramme)
   selectedProgramme: Observable<Programme>;
 
   programmeForm = this.fb.group({
-    id: ['', Validators.required],
-    rating: ['', Validators.required],
     title: ['', Validators.required],
     content: ['', Validators.required]
   });
@@ -52,12 +44,12 @@ export class EditProgrammeComponent implements OnInit {
     this.selectedProgramme.subscribe(item => {
       if (item) {
         this.programmeForm.patchValue({
-          id: item._id,
           title: item.title,
           rating: item.rating,
           content: item.content
         });
         this.editProgramme = true;
+        this.id = item._id;
       } else {
         this.editProgramme = false;
       }
@@ -66,21 +58,18 @@ export class EditProgrammeComponent implements OnInit {
 
   createForm() {
     this.programmeForm = this.fb.group({
-      id: [''],
-      rating: [''],
       title: [''],
-      content: [''],
+      content: ['']
     });
   }
 
   onSubmit() {
     if (this.editProgramme) {
-
       this.store
         .dispatch(
           new UpdateProgramme(
             this.programmeForm.value,
-            this.programmeForm.value.id
+            this.id,
           )
         )
         .subscribe(() => {
@@ -94,7 +83,6 @@ export class EditProgrammeComponent implements OnInit {
           this.programmeForm.reset();
           this.showSuccesAdd();
         });
-
     }
   }
   showSuccesAdd() {
@@ -110,7 +98,10 @@ export class EditProgrammeComponent implements OnInit {
   }
 
   onSelectionChanged() {
-    console.log(this.quill.quillEditor.getSelection(), this.programmeForm.value);
+    console.log(
+      this.quill.quillEditor.getSelection(),
+      this.programmeForm.value
+    );
   }
   clearForm() {
     this.programmeForm.reset();

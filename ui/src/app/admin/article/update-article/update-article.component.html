@@ -5,7 +5,12 @@
 ></ngfFormData>
 <div class="flex justify-center pt-40">
   <div style="margin-bottom: 40px">
-    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()" class="max-w-full">
+    <form
+      [formGroup]="articleForm"
+      #f="ngForm"
+      (ngSubmit)="f.valid && onSubmit()"
+      class="max-w-full"
+    >
       <div class="flex justify-start">
         <button
           type="button"
@@ -16,8 +21,8 @@
         </button>
       </div>
       <div
-      *ngIf="file.length <= 0"
-      ngfDrop
+        *ngIf="file.length <= 0"
+        ngfDrop
         multiple="1"
         selectable="1"
         [(validDrag)]="validComboDrag"
@@ -29,7 +34,16 @@
         [class.invalid-drag]="validComboDrag === false"
         [class.valid-drag]="validComboDrag"
         [fileDropDisabled]="fileDropDisabled"
+        [ngClass]="{
+          'border-red-500': f.submitted && articleForm.get('image').errors
+        }"
       >
+        <p
+          *ngIf="f.submitted && articleForm.get('image').errors"
+          class="text-red-500"
+        >
+          inserer une image
+        </p>
         <div class="text-xl font-bold uppercase text-blue-800">
           <div class="text-center">
             <fa-icon
@@ -57,7 +71,7 @@
             [icon]="['fas', 'times']"
             class="cursor-pointer text-red-800"
             [size]="'2x'"
-            (click)="onRemoveFile()"
+            (click)="onRemoveFile(id)"
           ></fa-icon>
         </button>
 
@@ -66,13 +80,6 @@
           [ngfBackground]="file[0]"
         ></div>
       </div>
-      <button
-        type="button"
-        class="btn btn-success btn-s"
-        (click)="uploadFiles()"
-      >
-        <span class="glyphicon glyphicon-upload"></span> Upload all
-      </button>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
@@ -87,8 +94,16 @@
             id="grid-title"
             type="text"
             placeholder="titre"
+            [ngClass]="{
+              'border-red-500': f.submitted && articleForm.get('title').errors
+            }"
           />
-          <p class="text-red-500 text-xs italic">inserer un titre</p>
+          <p
+            *ngIf="f.submitted && articleForm.get('title').errors"
+            class="text-red-500"
+          >
+            inserer un titre
+          </p>
         </div>
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
@@ -102,13 +117,19 @@
               class="block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-state"
               formControlName="category"
+              [ngClass]="{
+                'border-red-500':
+                  f.submitted && articleForm.get('category').errors
+              }"
             >
-              <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-              <option>Option 4</option>
+              <option *ngFor="let article of articles | async">{{article.categories[0].title}}</option>
             </select>
-            <p class="text-red-500 text-xs italic">inserer une categorie</p>
+            <p
+              *ngIf="f.submitted && articleForm.get('category').errors"
+              class="text-red-500"
+            >
+              choisissez une category
+            </p>
           </div>
         </div>
       </div>
@@ -120,7 +141,16 @@
             type="text"
             [formControl]="tag"
             placeholder="tag"
+            [ngClass]="{
+              'border-red-500': f.submitted && articleForm.get('tags').errors
+            }"
           />
+          <p
+            *ngIf="f.submitted && articleForm.get('tags').errors"
+            class="text-red-500"
+          >
+            Ajoutez un tag
+          </p>
           <div class="flex flex-row flex-wrap mt-2">
             <div *ngFor="let t of tags.controls; let i = index" class="ml-5">
               {{ t.value }}
@@ -132,7 +162,6 @@
               ></fa-icon>
             </div>
           </div>
-          <p class="text-red-500 text-xs italic">inserer un tag</p>
         </form>
       </div>
 
@@ -140,7 +169,16 @@
         #quill
         class="form-control max-h-full"
         formControlName="content"
+        [ngClass]="{
+          'border-red-500': f.submitted && articleForm.get('content').errors
+        }"
       >
+        <p
+          *ngIf="f.submitted && articleForm.get('content').errors"
+          class="text-red-500"
+        >
+          Ajoutez un texte
+        </p>
         <div quill-editor-toolbar>
           <span class="ql-formats">
             <select class="ql-font">
@@ -193,7 +231,6 @@
         </button>
         <button
           class="bg-green-700 text-white text-xs font-bold py-2 px-4 rounded"
-          [disabled]="articleForm.pristine || articleForm.invalid"
         >
           Valider
         </button>

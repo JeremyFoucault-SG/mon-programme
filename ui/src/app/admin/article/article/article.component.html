@@ -4,9 +4,10 @@
       <thead>
         <tr>
           <th>Id</th>
+          <th class="ml-10">category</th>
           <th class="ml-10">Title</th>
           <th class="ml-10">Content</th>
-
+          <th class="ml-10">tags</th>
           <th class="ml-10">Edit</th>
           <th class="ml-10">Delete</th>
         </tr>
@@ -14,6 +15,8 @@
       <tbody>
         <tr *ngFor="let article of articles | async">
           <td>{{ article._id }}</td>
+          <td>{{ article.categories[0].title}}</td>
+          <td>{{article.tags}}</td>
           <td class="ml-10">{{ article.title }}</td>
           <td class="ml-10">{{ article.content }}</td>
 
@@ -37,9 +40,11 @@
       </tbody>
     </table>
   </div>
-  <button type="button"
+  <button
+    type="button"
     class="content-start sm:content-end md:content-center lg:content-between xl:content-around bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    (click)="createArticle()">
+    (click)="createArticle()"
+  >
     Creer un nouvel article
   </button>
 </div>
