@@ -49,14 +49,15 @@ export class UpdateArticleComponent implements OnInit {
 
   articleForm = this.fb.group({
     image: this.fb.group({
-      id: (['', Validators.required]),
-      url: (['', Validators.required]),
+      id: (Validators.required),
+      url: (Validators.required),
     }),
     title: new FormControl('', [Validators.required, Validators.minLength(6)]),
     category: new FormControl([], [Validators.required, Validators.minLength(6)]),
-    content: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    content: new FormControl(Validators.required),
     tags: this.fb.array([], Validators.required),
   });
+
   constructor(
     private store: Store,
     private toastr: ToastrService,
@@ -82,7 +83,7 @@ export class UpdateArticleComponent implements OnInit {
         this.articleForm.patchValue({
           image: item.image,
           title: item.title,
-          category: item.categories,
+          category: item.category,
           tag: item.tags,
           content: item.content
         });

@@ -15,7 +15,6 @@
       <tbody>
         <tr *ngFor="let article of articles | async">
           <td>{{ article._id }}</td>
-          <td>{{ article.categories[0].title}}</td>
           <td>{{article.tags}}</td>
           <td class="ml-10">{{ article.title }}</td>
           <td class="ml-10">{{ article.content }}</td>
