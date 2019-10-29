@@ -16,7 +16,7 @@ export async function insertArticleData(articleService: ArticlesService, categor
         },
         tags: [faker.name.firstName()],
         content: faker.lorem.sentences(500),
-        categories: [categories[faker.random.number({min: 0, max: categories.length - 1 })]],
+        category: categories[faker.random.number({min: 0, max: categories.length - 1 })].title,
     };
 
     await articleService.insert(articleDTO);

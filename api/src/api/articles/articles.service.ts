@@ -56,7 +56,7 @@ export class ArticlesService {
       pipe.push(
         {
           $match: {
-            'categories.title': { $regex: `${Array.isArray(query.categories) ? query.categories.join('|') : query.categories}`, $options: 'i' },
+            category: { $regex: `${Array.isArray(query.categories) ? query.categories.join('|') : query.categories}`, $options: 'i' },
           },
         },
       );

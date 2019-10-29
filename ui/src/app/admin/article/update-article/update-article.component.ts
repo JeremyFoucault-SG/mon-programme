@@ -58,7 +58,7 @@ export class UpdateArticleComponent implements OnInit {
     title: new FormControl('', [Validators.required, Validators.minLength(6)]),
     category: new FormControl([], [Validators.required, Validators.minLength(6)]),
     content: new FormControl(Validators.required),
-    tags: this.fb.array([], Validators.required),
+    tags: this.fb.array([]),
   });
 
   constructor(
@@ -90,9 +90,12 @@ export class UpdateArticleComponent implements OnInit {
         this.articleForm.patchValue({
           image: item.image,
           title: item.title,
-          category: item.categories,
-          tag: item.tags,
+          category: item.category,
+          tags: item.tags,
           content: item.content
+        });
+        item.tags.forEach(t => {
+          this.tags.push(this.fb.control(t));
         });
         this.editArticle = true;
         this.id = item._id;
@@ -106,6 +109,7 @@ export class UpdateArticleComponent implements OnInit {
 
   onSubmit() {
     if (this.editArticle) {
+      console.log(this.articleForm.value);
       this.uploadPhoto()
         .pipe(
           switchMap(() =>
@@ -114,6 +118,7 @@ export class UpdateArticleComponent implements OnInit {
                 this.articleForm.value,
                 this.id,
               )
+
             )
           )
         )

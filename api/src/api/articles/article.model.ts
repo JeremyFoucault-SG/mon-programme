@@ -38,6 +38,6 @@ export class ArticleModel extends Typegoose {
     @prop()
     tags: string[];
 
-    @arrayProp({ items: CategoryModel, _id: false })
-    categories: Array<Ref<CategoryModel>>;
+    @prop()
+    category: string;
 }

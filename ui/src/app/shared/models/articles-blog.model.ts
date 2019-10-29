@@ -1,4 +1,3 @@
-import { Category } from './category.model';
 
 export class ArticleBlog {
     constructor(
@@ -7,8 +6,8 @@ export class ArticleBlog {
         public image?: string,
         public file?: string,
         public title?: string,
-        public categories?: Category[],
-        public tags?: string,
+        public category?: string,
+        public tags?: string[],
         public urlTitle?: string,
         public content?: string,
         public createdAt?: Date,
