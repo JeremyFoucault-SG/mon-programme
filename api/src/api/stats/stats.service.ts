@@ -28,7 +28,7 @@ export class StatsService {
     const statCreated = this.statModel.create(stat);
     user.stats.push(statCreated);
     await user.save();
-    return user.followedCoachings[user.followedCoachings.length - 1];
+    return user.myCoachings[user.myCoachings.length - 1];
   }
 
   /**

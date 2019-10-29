@@ -11,15 +11,38 @@ import { SettingsDTO } from '../src/api/settings/settings.dto';
 import { ArticlesService } from '../src/api/articles/articles.service';
 import { CoachingsService } from '../src/api/coachings/coachings.service';
 import { InfosDTO } from '../src/api/settings/infos.dto';
+import { FollowedCoachingsService } from 'src/api/followed-coachings/followed-coachings.service';
 
-export async function insertUserData(articlesService: ArticlesService, coachingsService: CoachingsService, usersService: UsersService) {
+export async function insertUserData(
+  articlesService: ArticlesService,
+  coachingsService: CoachingsService,
+  followedCoachingsService: FollowedCoachingsService,
+  usersService: UsersService,
+) {
   // populate mongo
 
   // Get inserted data for populate user
   const coachings = await coachingsService.findAll();
   const articles = await articlesService.findAll();
-  for (let k = 0; k < 1; k++) {
 
+  {
+    const user = (await usersService.findAll())[0];
+    const myCoachings: FollowedCoachingDTO[] = [];
+    for (let i = 0; i <= faker.random.number({ min: 5, max: 10 }); i++) {
+      const followedCoaching: FollowedCoachingDTO = {
+        rating: faker.random.number({ min: 0, max: 5 }),
+        coaching:
+          coachings[faker.random.number({ min: 5, max: coachings.length - 1 })]
+            .id,
+      };
+
+      await followedCoachingsService.insert(user.id, followedCoaching);
+      myCoachings.push(followedCoaching);
+    }
+
+  }
+
+  for (let k = 0; k < 5; k++) {
     // BODY
     const bodies: BodyDTO[] = [];
     for (let i = 0; i <= faker.random.number({ min: 0, max: 5 }); i++) {
@@ -35,13 +58,15 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     }
 
     // FOLLOWED COACHING
-    const followedCoachings: FollowedCoachingDTO[] = [];
-    for (let i = 0; i <= faker.random.number({ min: 0, max: 5 }); i++) {
+    const myCoachings: FollowedCoachingDTO[] = [];
+    for (let i = 0; i <= faker.random.number({ min: 5, max: 10 }); i++) {
       const followedCoaching: FollowedCoachingDTO = {
         rating: faker.random.number({ min: 0, max: 5 }),
-        coaching: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+        coaching:
+          coachings[faker.random.number({ min: 5, max: coachings.length - 1 })]
+            .id,
       };
-      followedCoachings.push(followedCoaching);
+      myCoachings.push(followedCoaching);
     }
 
     // CARTS
@@ -61,7 +86,9 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     const carts: CartDTO[] = [];
     for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
       const cart: CartDTO = {
-        cartId: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+        cartId:
+          coachings[faker.random.number({ min: 0, max: coachings.length - 1 })]
+            .id,
       };
       carts.push(cart);
     }
@@ -79,7 +106,9 @@ export async function insertUserData(articlesService: ArticlesService, coachings
     const wishes: WishDTO[] = [];
     for (let i = 1; i <= faker.random.number({ min: 0, max: 5 }); i++) {
       const wish: WishDTO = {
-        wishId: coachings[faker.random.number({ min: 0, max: coachings.length - 1 })].id,
+        wishId:
+          coachings[faker.random.number({ min: 0, max: coachings.length - 1 })]
+            .id,
       };
       wishes.push(wish);
     }
@@ -104,13 +133,12 @@ export async function insertUserData(articlesService: ArticlesService, coachings
         rib: faker.name.firstName(50),
         iban: faker.name.firstName(50),
       },
-
     };
 
     const userDTO: UserDTO = {
       // bodies,
       // stats,
-      // followedCoachings,
+      myCoachings,
       // carts,
       // bookmarks,
       // wishes,
@@ -121,5 +149,4 @@ export async function insertUserData(articlesService: ArticlesService, coachings
   }
 
   await usersService.insert({});
-
 }

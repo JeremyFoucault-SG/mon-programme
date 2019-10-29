@@ -30,19 +30,16 @@ export class FollowedState {
 
     @Selector()
     static programmes(state: FollowedStateModel) {
-        console.log('heyyyy');
         return state.items;
     }
 
     @Selector()
     static Getprogrammes(state: FollowedStateModel) {
-        console.log('heyyyy');
         return state.item;
     }
 
     @Action(GetAllFollowed)
     getAll(ctx: StateContext<FollowedStateModel>, action: GetAllFollowed) {
-        console.log('ffffffff');
         return this.service.getAllFollowed().pipe(tap((followed: Followeds[]) => {
             ctx.setState(patch({
                 items: followed

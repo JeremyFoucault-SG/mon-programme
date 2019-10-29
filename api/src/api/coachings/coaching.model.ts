@@ -12,9 +12,6 @@ import { SeanceModel } from './coachings-details-model/seance.model';
 
 export class CoachingModel extends Typegoose {
     @prop()
-    id: string;
-
-    @prop()
     createdAt: Date;
 
     @prop()
