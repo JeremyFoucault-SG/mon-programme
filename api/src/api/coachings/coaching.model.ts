@@ -12,9 +12,6 @@ import { SeanceModel } from './coachings-details-model/seance.model';
 
 export class CoachingModel extends Typegoose {
     @prop()
-    id: string;
-
-    @prop()
     createdAt: Date;
 
     @prop()
@@ -40,6 +37,12 @@ export class CoachingModel extends Typegoose {
 
     @prop()
     urlTitle: string;
+
+    @prop()
+    nameCitation: string;
+
+    @prop()
+    citation: string;
 
     @arrayProp({ items: SeanceModel, _id: false })
     seances: SubDocumentArray<SeanceModel>;

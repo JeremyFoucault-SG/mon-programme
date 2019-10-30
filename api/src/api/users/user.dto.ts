@@ -8,6 +8,7 @@ import { CartDTO } from '../carts/cart.dto';
 import { StatDTO } from '../stats/stat.dto';
 import { BodyDTO } from '../bodies/body.dto';
 import { FollowedCoachingDTO } from '../followed-coachings/followed-coachings.dto';
+import { CoachingDTO } from '../coachings/coaching.dto';
 
 export class UserDTO {
   @Allow()
@@ -30,7 +31,7 @@ export class UserDTO {
   @ValidateNested({ each: true })
   @Type(() => FollowedCoachingDTO)
   @ApiModelProperty()
-  public readonly followedCoachings?: FollowedCoachingDTO[];
+  public readonly myCoachings?: FollowedCoachingDTO[];
 
   @Allow()
   @ValidateNested({ each: true })
@@ -55,4 +56,5 @@ export class UserDTO {
   @Type(() => SettingsDTO)
   @ApiModelProperty()
   public readonly settings?: SettingsDTO;
+
 }

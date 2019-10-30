@@ -42,7 +42,7 @@ export class UsersService {
   /**
    * Find all users
    */
-  async findAll(): Promise<UserModel[]> {
+  async findAll(): Promise<Array<InstanceType<UserModel>>> {
     return this.userModel.find({}).exec();
   }
 

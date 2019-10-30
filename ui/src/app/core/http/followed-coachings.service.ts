@@ -19,7 +19,7 @@ export class FollowedcoachingsService {
 
     // Recuperation de tous les programmes-suivi//
     public getAllFollowed(): Observable<Followed[]> {
-        return this.http.get(`${this.api}/followed`).pipe(
+        return this.http.get(`${this.api}/followed-coachings`).pipe(
             map((allfollowed: any) => {
                 return allfollowed as Followed[];
             }),
@@ -28,6 +28,6 @@ export class FollowedcoachingsService {
 
     // Ajout d'un programme-suivi //
     public addFollowed(payload: Followed) {
-        return this.http.post<Followed>(`${this.api}/followed`, payload);
+        return this.http.post<Followed>(`${this.api}/followed-coachings`, payload);
     }
 }

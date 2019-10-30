@@ -35,17 +35,25 @@ export class CoachingDTO {
 
   @Allow()
   @ApiModelProperty()
+  public readonly nameCitation: string;
+
+  @Allow()
+  @ApiModelProperty()
+  public readonly citation: string;
+
+  @Allow()
+  @ApiModelProperty()
   public readonly urlTitle?: string;
 
   @Allow()
   @Type(() => SeanceDTO)
-  @ValidateNested({each: true})
+  @ValidateNested({ each: true })
   @ApiModelProperty()
   public readonly seances: SeanceDTO[];
 
   @Allow()
   @Type(() => CategoryDTO)
-  @ValidateNested({each: true})
+  @ValidateNested({ each: true })
   @ApiModelProperty()
   public readonly categories: CategoryDTO[];
 }

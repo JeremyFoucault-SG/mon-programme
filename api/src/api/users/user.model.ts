@@ -23,7 +23,7 @@ export class UserModel extends Typegoose {
     stats: SubDocumentArray<StatModel>;
 
     @arrayProp({items: FollowedCoachingModel})
-    followedCoachings: SubDocumentArray<FollowedCoachingModel>;
+    myCoachings: SubDocumentArray<FollowedCoachingModel>;
 
     @arrayProp({items: CartModel})
     carts: SubDocumentArray<CartModel>;

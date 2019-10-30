@@ -24,6 +24,7 @@ import { BasketComponent } from './features/basket/basket.component';
 import { PaiementComponent } from './features/paiement/paiement.component';
 import { ProgrammeContentComponent } from './features/programme-content/programme-content.component';
 import { ConnexionModalComponent } from './shared/components/register/connexion-modal/connexion-modal.component';
+import { MyProgrammesComponent } from './features/my-programmes/my-programmes.component';
 
 
 
@@ -108,6 +109,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: BasketComponent,
   data: {
+    isVisible: true,
+  }},
+  { path: 'mes-programmes', canActivate: [AuthGuard], component: MyProgrammesComponent, data: {
+    isVisible: true,
+  }},
+  { path: 'mes-programmes/:title', canActivate: [AuthGuard], component: ProgrammeContentComponent, data: {
     isVisible: true,
   }},
   { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent, data: {

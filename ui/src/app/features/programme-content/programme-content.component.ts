@@ -17,9 +17,6 @@ export class ProgrammeContentComponent implements OnInit {
   @Select(ProgrammeState.getProgramme)
   programme: Observable<Programme>;
 
-  @Select(ProgrammeState.getProgrammes)
-  programmes: Observable<Programme[]>;
-
   constructor(private store: Store,  private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {

@@ -7,6 +7,7 @@ import { ModelType } from 'typegoose';
 import { FollowedCoachingDTO } from './followed-coachings.dto';
 import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
 import { CoachingsService } from '../coachings/coachings.service';
+import { UserModel } from '../users/user.model';
 
 /**
  * Service for manage followed coachings save in database, for a given user
@@ -20,43 +21,42 @@ export class FollowedCoachingsService {
     @InjectModel(FollowedCoachingModel) private readonly followedCoachingModel: ModelType<FollowedCoachingModel>,
   ) { }
 
+  // /**
+  //  * Create new coaching for a given user ID
+  //  * @param idUser ID of user
+  //  * @param followedCoaching Coaching to insert
+  //  */
+  // async insert(idUser: string, followedCoaching: FollowedCoachingDTO): Promise<InstanceType<FollowedCoachingModel>> {
+  //   const user = await this.usersService.findById(idUser);
+  //   const coaching = await this.coachingsService.findById(followedCoaching.coaching);
+  //   const followedCoachingCreated = this.followedCoachingModel.create({
+  //     rating: followedCoaching.rating,
+  //     coaching,
+  //   });
+  //   user.myCoachings.push(followedCoachingCreated);
+  //   await user.save();
+  //   return user.myCoachings[user.myCoachings.length - 1];
+  // }
+
   /**
-   * Create new coaching for a given user ID
+   * Find one coaching by his ID for a given user ID
    * @param idUser ID of user
-   * @param followedCoaching Coaching to insert
    */
-  async insert(idUser: string, followedCoaching: FollowedCoachingDTO): Promise<InstanceType<FollowedCoachingModel>> {
+  async insert(idUser: string, coaching: FollowedCoachingDTO): Promise<FollowedCoachingModel> {
     const user = await this.usersService.findById(idUser);
-    const coaching = await this.coachingsService.findById(followedCoaching.coaching);
-    const followedCoachingCreated = this.followedCoachingModel.create({
-      rating: followedCoaching.rating,
-      coaching,
-    });
-    user.followedCoachings.push(followedCoachingCreated);
+    const c = new this.followedCoachingModel(coaching);
+    user.myCoachings.push(c);
     await user.save();
-    return user.followedCoachings[user.followedCoachings.length - 1];
+    return user.myCoachings.shift();
   }
 
   /**
    * Find one coaching by his ID for a given user ID
    * @param idUser ID of user
-   * @param idFollowedCoaching ID of wanted coaching
-   */
-  async findById(idUser: string, idFollowedCoaching: string): Promise<InstanceType<FollowedCoachingModel>> {
-    const user = await this.usersService.findById(idUser);
-    const coaching = user.followedCoachings.id(idFollowedCoaching);
-    if (!coaching) {
-      throw new EntityException(EntityExceptionCode.NOT_FOUND);
-    }
-    return coaching;
-  }
-
-  /**
-   * Find all followed coaching for a given user ID
-   * @param idUser ID of user
    */
   async findAll(idUser: string): Promise<FollowedCoachingModel[]> {
     const user = await this.usersService.findById(idUser);
-    return user.followedCoachings;
+    await user.populate('myCoachings.coaching').execPopulate();
+    return user.myCoachings;
   }
 }

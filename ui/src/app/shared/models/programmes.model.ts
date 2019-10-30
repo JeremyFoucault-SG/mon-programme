@@ -1,3 +1,5 @@
+import { Seance } from './seances.model';
+
 export class Programme {
     constructor(
         // tslint:disable-next-line: variable-name
@@ -9,5 +11,9 @@ export class Programme {
         public level?: string,
         public price?: number,
         public urlTitle?: string,
-    ) { }
+        public nameCitation?: string,
+        public citation?: string,
+        public seances?: Seance[],
+    ) {}
+
 }

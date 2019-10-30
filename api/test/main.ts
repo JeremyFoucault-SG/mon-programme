@@ -15,7 +15,8 @@ import { UsersService } from '../src/api/users/users.service';
 import { insertUserData } from './user.fixture';
 import { AuthController } from '../src/api/auth/auth.controller';
 import { insertAuthData } from './auth.fixture';
-import { insertSettingData } from './setting.fixture';
+import { FollowedCoachingsService } from 'src/api/followed-coachings/followed-coachings.service';
+// import { insertSettingData } from './setting.fixture';
 
 async function bootstrap() {
   await startInMemoryDB();
@@ -41,7 +42,8 @@ async function bootstrap() {
   await insertCoverData(coversService);
 
   const usersService: UsersService = app.get('UsersService');
-  await insertUserData(articlesService, coachingsService, usersService);
+  const followedCoachingsService: FollowedCoachingsService = app.get('FollowedCoachingsService');
+  await insertUserData(articlesService, coachingsService, followedCoachingsService, usersService);
 
   // const newsletterService: NewsletterService = app.get('NewsletterService');
   // insertNewsletterData(newsletterService);

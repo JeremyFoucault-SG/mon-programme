@@ -22,6 +22,8 @@ export async function insertCoachingData(
       imageUrl: faker.image.sports(),
       level: faker.lorem.sentence(2),
       price: faker.random.number(2),
+      nameCitation: faker.name.firstName(20),
+      citation: faker.lorem.sentences(20),
       seances: [
         {
           index: 3,

@@ -1,3 +1,8 @@
+import { Programme } from './programmes.model';
+
 export class Followed {
-    constructor() { }
+    constructor(
+        public rating: number,
+        public coaching: Programme,
+    ) { }
 }
