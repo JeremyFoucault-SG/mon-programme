@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleBlog } from '../../shared/models/articles-blog.model';
 import { Store, Select} from '@ngxs/store';
 import { Observable } from 'rxjs/Observable';
-import { GetAllArticles, SearchArticle, SearchNextArticle } from './../../core/store/store.module/article/article.actions';
+import { GetAllArticles, SearchArticle, SearchNextArticle, ResetArticle } from './../../core/store/store.module/article/article.actions';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
@@ -34,6 +34,7 @@ export class BlogComponent implements OnInit {
 
 
   ngOnInit() {
+    this.store.dispatch(new ResetArticle());
     this.route.queryParams.subscribe((params: Params) => {
       this.path = this.router.url.substring(1);
       this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, limit: 3}));

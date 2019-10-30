@@ -9,7 +9,8 @@ import {
     SearchArticle,
     UpdateArticle,
     SearchNextArticle,
-    SearchLastArticle
+    SearchLastArticle,
+    ResetArticle
 } from '../article/article.actions';
 import { ArticlesService } from 'src/app/core/http/articles.service';
 import { tap } from 'rxjs/operators';
@@ -55,6 +56,14 @@ export class ArticleState {
                 items: articles
             }));
         }));
+    }
+
+    @Action(ResetArticle)
+    reset(ctx: StateContext<ArticleStateModel>, { payload }: SearchArticle) {
+        return ctx.setState(patch({
+                items: [] as ArticleBlog[]
+            }));
+
     }
 
     @Action(SearchLastArticle)

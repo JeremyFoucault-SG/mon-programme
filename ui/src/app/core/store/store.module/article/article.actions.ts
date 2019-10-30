@@ -49,3 +49,7 @@ export class UpdateArticle {
     constructor(public payload: ArticleBlog, public id: string) { }
 }
 
+export class ResetArticle {
+    static readonly type = '[Blog] Reset article';
+    constructor() { }
+}
