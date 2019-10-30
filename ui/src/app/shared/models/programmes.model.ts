@@ -13,7 +13,7 @@ export class Programme {
         public urlTitle?: string,
         public nameCitation?: string,
         public citation?: string,
-        public seances?: Seance,
+        public seances?: Seance[],
     ) {}
 
 }
