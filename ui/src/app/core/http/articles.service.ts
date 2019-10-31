@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable, throwError } from 'rxjs';
 import { ArticleBlog } from '../../shared/models/articles-blog.model';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 import { QueryArticles } from 'src/app/shared/models/queryArticles.model';
 import { ToastrService } from 'ngx-toastr';
 
@@ -70,6 +70,17 @@ export class ArticlesService {
     .pipe(
       catchError((err) => {
         this.toastr.error(`Impossible de supprimer le tag ${tag}`, 'Erreur');
+        return throwError(err);
+      })
+    );
+  }
+
+  deleteImage(id: string, idFile: string) {
+    return this.http.delete<void>(`${this.api}/articles/${id}/image/${idFile}`)
+    .pipe(
+      tap(() => this.toastr.success('Suppression éffectué avec succès')),
+      catchError((err) => {
+        this.toastr.error(`Impossible de supprimer la photo`, 'Erreur');
         return throwError(err);
       })
     );

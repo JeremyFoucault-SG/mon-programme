@@ -7,7 +7,7 @@ export async function insertArticleData(articleService: ArticlesService, categor
   // populate mongo
   const categories = await categoryService.findAll();
 
-  for (let i = 1; i <= 50; i++) {
+  for (let i = 0; i <= 2; i++) {
     const articleDTO: ArticleDTO = {
         title: faker.lorem.sentence(4),
         image: {
@@ -15,7 +15,7 @@ export async function insertArticleData(articleService: ArticlesService, categor
           url: faker.image.imageUrl(),
         },
         tags: [faker.name.firstName()],
-        content: faker.lorem.sentences(500),
+        content: faker.lorem.sentences(5),
         category: categories[faker.random.number({min: 0, max: categories.length - 1 })].title,
     };
 

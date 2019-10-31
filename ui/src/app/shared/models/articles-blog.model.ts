@@ -2,7 +2,7 @@
 export class ArticleBlog {
     constructor(
         // tslint:disable-next-line: variable-name
-        public _id: string,
+        public _id?: string,
         public image?: string,
         public file?: string,
         public title?: string,

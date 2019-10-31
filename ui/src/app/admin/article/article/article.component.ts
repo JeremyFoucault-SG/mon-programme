@@ -31,7 +31,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     // this.store.dispatch(new GetAllArticles());
-    this.store.dispatch(new SearchArticle({ limit: 4 }));
+    this.store.dispatch(new SearchArticle({ limit: 400 }));
   }
   editArticle(payload: ArticleBlog) {
     this.router.navigate(['create-article']);
@@ -47,5 +47,6 @@ export class ArticleComponent implements OnInit {
   }
   createArticle() {
     this.router.navigate(['create-article']);
+    this.store.dispatch(new SetSelectedArticle(undefined));
   }
 }

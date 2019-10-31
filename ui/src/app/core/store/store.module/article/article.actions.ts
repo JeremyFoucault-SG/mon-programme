@@ -37,7 +37,7 @@ export class DeleteArticle {
 }
 export class SetSelectedArticle {
     static readonly type = '[Blog] Set';
-    constructor(public payload: ArticleBlog) { }
+    constructor(public payload: ArticleBlog | undefined) { }
 }
 export class UpdateArticle {
     static readonly type = '[Blog] Update article';

@@ -11,6 +11,7 @@ import {  catchError } from 'rxjs/operators';
 })
 export class UploadService {
   private url = `${environment.apiUrl}/upload`;
+  http: any;
 
   constructor(private httpClient: HttpClient, private toastr: ToastrService) { }
 
@@ -24,5 +25,8 @@ export class UploadService {
       })
     );
   }
-
+  public deleteImage(id: string): Observable<any> {
+    return this.http.deleteImage(
+      `${this.url}/${id}`);
+  }
 }

@@ -28,6 +28,7 @@ export class UploadController {
         },
       }),
     }))
+
     uploadFile(@UploadedFile() file, @Req() req) {
       return {
         id: file.id,

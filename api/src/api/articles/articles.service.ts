@@ -5,8 +5,7 @@ import { ModelType, InstanceType } from 'typegoose';
 import { EntityException, EntityExceptionCode } from '../../exceptions/entity-exception';
 import { ArticleDTO } from './article.dto';
 import { ArticleQuery } from './article.query';
-import { CategoriesService } from '../categories/categories.service';
-import { CategoryModel } from '../categories/category.model';
+import { UploadService } from '../uplaod/upload.service';
 /**
  * Service for manage articles save in database
  */
@@ -14,6 +13,7 @@ import { CategoryModel } from '../categories/category.model';
 export class ArticlesService {
 
   constructor(
+    private uploadService: UploadService,
     @InjectModel(ArticleModel) private readonly articleModel: ModelType<ArticleModel>,
   ) { }
 
@@ -115,5 +115,27 @@ export class ArticlesService {
       throw new HttpException('Does not exist', HttpStatus.NOT_FOUND);
     }
     return article;
+  }
+
+  async addImage(id: string, image: { id: string, url: string }) {
+    await this.articleModel.findByIdAndUpdate(id, { $push: { images: image } }).exec();
+    return image;
+  }
+
+  async updateImages(id: string, images: Array<{ id: string, url: string }>) {
+    await this.articleModel.updateOne({}, { $set: { images } });
+    return images;
+  }
+
+  async removeImage(id: string, idImage: string) {
+    const article = await this.findById(id);
+
+    if (article.image.id === idImage) {
+      this.uploadService.removePhoto(article.image);
+    }
+    // else {
+    //   const content = article.content.find(c => c.id === idImage);
+    //   this.uploadService.removePhoto(content.url);
+    // }
   }
 }

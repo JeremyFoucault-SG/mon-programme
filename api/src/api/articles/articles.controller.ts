@@ -54,4 +54,9 @@ export class ArticlesController {
   async delete(@Param('id') idArticle: string): Promise<ArticleModel> {
     return this.articlesService.delete(idArticle);
   }
+
+  @Delete(':id/image/:idFile')
+  async deletePhoto(@Param('id') id: string, @Param('idFile') idFile: string) {
+    return this.articlesService.removeImage(id, idFile);
+  }
 }
