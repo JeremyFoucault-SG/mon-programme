@@ -5,14 +5,13 @@ import { Wish as Wish } from 'src/app/shared/models/wishes.model';
 import { WishesService } from 'src/app/core/http/wishes.service';
 import {
     AddWishCoaching as AddWishCoaching,
-    AddWishArticle, GetAllWishesCoaching, GetAllWishesArticles, DeleteWishArticle, DeleteWishCoaching, GetWishArticlesById
+    AddWishArticle, GetAllWishesCoaching, GetAllWishesArticles, DeleteWishArticle, DeleteWishCoaching, DeleteWishByIdArticle
 } from './wish.action';
 import { filter } from 'minimatch';
 
 export class WishStateModel {
     coachings: Wish[];
     articles: Wish[];
-    article: Wish;
 }
 
 @State<WishStateModel>({
@@ -20,7 +19,6 @@ export class WishStateModel {
     defaults: {
         coachings: [],
         articles: [],
-        article: null
     }
 })
 export class WishState {
@@ -36,11 +34,6 @@ export class WishState {
     @Selector()
     static wishArticles(state: WishStateModel) {
         return state.articles;
-    }
-
-    @Selector()
-    static wishArticle(state: WishStateModel) {
-        return state.article;
     }
 
     @Selector()
@@ -63,14 +56,6 @@ export class WishState {
             ctx.setState(patch({
                 articles: wish
             }));
-        }));
-    }
-
-    @Action(GetWishArticlesById)
-    GetWishArticlesById({ getState, setState, patchState }: StateContext<WishStateModel>, { id }: GetWishArticlesById) {
-        return this.service.getWishesArticlesbyId(id).pipe(tap(response => {
-            const state = getState();
-            patchState({ ...state, article: response });
         }));
     }
 
@@ -102,6 +87,18 @@ export class WishState {
             setState(
                 patch({
                     articles: removeItem<Wish>(w => w._id === id)
+                })
+            );
+        }));
+    }
+
+    @Action(DeleteWishByIdArticle)
+    deleteWishByIdArticle({ getState, setState }: StateContext<WishStateModel>, { id }: DeleteWishByIdArticle) {
+        const wish = getState().articles.find(w => w.article._id === id);
+        return this.service.deleteWish(wish._id).pipe(tap(() => {
+            setState(
+                patch({
+                    articles: removeItem<Wish>(w => w.article._id === id)
                 })
             );
         }));

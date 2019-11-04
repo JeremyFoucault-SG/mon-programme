@@ -3,7 +3,7 @@ import { ArticleBlog } from '../../../shared/models/articles-blog.model';
 import { Store, Select } from '@ngxs/store';
 import { FirstCharacterePipe } from '../../pipes/firstCharactere.pipe';
 import { VirtualTimeScheduler, Observable } from 'rxjs';
-import { AddWishCoaching, AddWishArticle, DeleteWishArticle, GetWishArticlesById } from 'src/app/core/store/store.module/wishe/wish.action';
+import { AddWishCoaching, AddWishArticle, DeleteWishArticle, DeleteWishByIdArticle } from 'src/app/core/store/store.module/wishe/wish.action';
 import { ToastrService } from 'ngx-toastr';
 import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
 import { Wish } from '../../models/wishes.model';
@@ -44,12 +44,13 @@ export class CardArticleComponent implements OnInit {
     // if(this.store.dispatch(new GetWishArticlesById()){}
   }
 
-  addWishArticle(article: ArticleBlog) {
+  changeWishArticle(article: ArticleBlog, id: string) {
     this.isFavorite = !this.isFavorite;
     if (this.isFavorite) {
       this.store.dispatch(new AddWishArticle({ wishId: article._id }));
       this.toastr.success('Article ajouté aux favoris avec succés !');
     } else {
+      this.store.dispatch(new DeleteWishByIdArticle(id))
       this.toastr.warning('Article supprimé des favoris avec succés !');
     }
   }

@@ -25,14 +25,15 @@ export class GetAllWishesArticles {
     constructor(public payload?: QueryWish) { }
 }
 
-export class GetWishArticlesById {
-    static readonly type = '[Blog] Get wish by id';
-    constructor(public id: string) { }
-}
 
 // Delete wishArticle
 export class DeleteWishArticle {
     static readonly type = '[Blog] Delete wishArticle by id';
+    constructor(public id: string) { }
+}
+
+export class DeleteWishByIdArticle {
+    static readonly type = '[Blog] Delete wishArticle by id articles';
     constructor(public id: string) { }
 }
 
