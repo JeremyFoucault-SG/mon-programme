@@ -1,7 +1,7 @@
 
 // Imports Modules //
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
@@ -19,8 +19,7 @@ import { NgxsModule } from '@ngxs/store';
 import { AdminModule } from './admin/admin.module';
 import { StoreModule } from '../app/core/store/store.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ConnexionModalComponent } from './shared/components/register/connexion-modal/connexion-modal.component';
-import { ConnexionModal2Component } from './shared/components/register/connexion-modal2/connexion-modal2.component';
+
 
 
 @NgModule({
@@ -41,10 +40,12 @@ import { ConnexionModal2Component } from './shared/components/register/connexion
     AdminModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
     StoreModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

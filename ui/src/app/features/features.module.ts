@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { PopupMwComponent } from './popup-mw/popup-mw.component';
@@ -102,6 +102,5 @@ import { ProgrammeContentComponent } from './programme-content/programme-content
     CoreModule,
     AdminModule,
   ],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeaturesModule { }

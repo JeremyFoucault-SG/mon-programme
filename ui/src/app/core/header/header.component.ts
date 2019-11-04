@@ -17,12 +17,17 @@ import { RegisterComponent } from 'src/app/shared/components/register/register.c
 import { Settings } from 'src/app/shared/models/settings.model';
 import { Register } from 'src/app/shared/models/register.model';
 import { InfoUser } from 'src/app/shared/models/infoUser.model';
+import { GetByIdSetting } from '../store/store.module/settings/setting.action';
+import { SettingState } from '../store/store.module/settings/setting.state';
+import { JwtHelperService } from "@auth0/angular-jwt";
+
 
 /**
  * Header component, hold navigation, title, user
  * TODO: search form
  * TODO: signup/signin
  */
+
 
 @Component({
   selector: 'app-header',
@@ -42,7 +47,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   title = 'Title Example';
 
-
+  public helper = new JwtHelperService();
+  public decodedToken = this.helper.decodeToken(localStorage.getItem('token'));
   /**
    * True for transparent background else set background to black color
    */
@@ -64,11 +70,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
 
   // users: Register;
-  // name = this.users.username;
-
 
   public coachings = [];
-
 
   @Select(CartState.count)
   carts: Observable<number>;
@@ -83,63 +86,54 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private store: Store,
     private modalService: ModalService) { }
 
-  ngOnInit() {
 
-    this.auth.isLogin().subscribe(valeur => this.user = valeur);
-    // if (this.auth.isLogin()) {
-    //   this.user = true;
-    // } else {
-    //   this.user = false;
-    // }
-    // Little hack to get route data when component is outside of router-outlet
-    this.subscriptions.push(
-      this.router.events.pipe(
-        filter(e => e instanceof NavigationEnd),
-        map(() => this.activatedRoute),
-        map(route => {
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-          this.open();
-        }),
-        mergeMap(route => route.data),
-      ).subscribe((data) => {
-        this.title = data.title;
-        this.isVisible = data.isVisible;
-        this.isTransparent = data.isTransparent;
+
+ngOnInit() {
+  this.auth.isLogin().subscribe(valeur => this.user = valeur);
+  this.subscriptions.push(
+    this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd),
+      map(() => this.activatedRoute),
+      map(route => {
+        while (route.firstChild) {
+          route = route.firstChild;
+        }
+        return route;
+        this.open();
       }),
-    );
-    if (this.auth.isLogin()) {
-      // this.store.dispatch(new GetAllCarts()).subscribe(
-      //   (coachings) => {
-      //     this.coachings = coachings;
-      //     this.newOrder = this.coachings.length;
-      //   });
-    }
+      mergeMap(route => route.data),
+    ).subscribe((data) => {
+      this.title = data.title;
+      this.isVisible = data.isVisible;
+      this.isTransparent = data.isTransparent;
+    }),
+  );
+  if (this.auth.isLogin()) {
   }
+}
 
-  /**
-   * Open/Close navigation menu
-   */
-  open() {
-    this.isOpen = !this.isOpen;
-  }
+/**
+ * Open/Close navigation menu
+ */
+open() {
+  this.isOpen = !this.isOpen;
+}
 
-  openInscription() {
-    this.modalService.init(RegisterComponent, {}, {});
-  }
+openInscription() {
+  this.modalService.init(RegisterComponent, {}, {});
+}
 
-    /**
-     * Call unsubscribe on each subscription
-     */
-    ngOnDestroy(): void {
-      this.subscriptions.forEach(s => s.unsubscribe());
-    }
+/**
+ * Call unsubscribe on each subscription
+ */
+ngOnDestroy(): void {
+  this.subscriptions.forEach(s => s.unsubscribe());
+}
 
-    logout() {
-      this.auth.isLogout().subscribe(valeur => this.user = valeur);
-      this.open();
-    }
-  }
+logout() {
+  this.auth.isLogout().subscribe(valeur => this.user = valeur);
+  this.open();
+}
+
+}
 
