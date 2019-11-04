@@ -36,6 +36,5 @@ import { UserState } from './store.module/user/user.state';
     ],
     providers: [],
     bootstrap: [],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StoreModule { }

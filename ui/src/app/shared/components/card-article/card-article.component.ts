@@ -3,10 +3,11 @@ import { ArticleBlog } from '../../../shared/models/articles-blog.model';
 import { Store, Select } from '@ngxs/store';
 import { FirstCharacterePipe } from '../../pipes/firstCharactere.pipe';
 import { VirtualTimeScheduler, Observable } from 'rxjs';
-import { AddWishCoaching, AddWishArticle, DeleteWishArticle } from 'src/app/core/store/store.module/wishe/wish.action';
+import { AddWishCoaching, AddWishArticle, DeleteWishArticle, GetWishArticlesById } from 'src/app/core/store/store.module/wishe/wish.action';
 import { ToastrService } from 'ngx-toastr';
 import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
 import { Wish } from '../../models/wishes.model';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-card-article',
@@ -15,8 +16,9 @@ import { Wish } from '../../models/wishes.model';
 })
 export class CardArticleComponent implements OnInit {
 
-  @Select(WishState.wishArticles)
-  articles: Observable<Wish[]>;
+  // @Select(WishState.wishArticles)
+  // wishes: Observable<Wish[]>;
+
   /**
    * Set photo, titre, desc in article-blog
    */
@@ -28,12 +30,18 @@ export class CardArticleComponent implements OnInit {
   @Input()
   public isReverse: boolean;
 
+  @Input()
+  public isFavorite: boolean;
+
   constructor(private store: Store,
               private toastr: ToastrService) { }
 
-  isFavorite = false;
 
   ngOnInit() {
+    // this.wishes.subscribe(wishes => {
+    //   this.isFavorite = wishes.find(w => w.article._id === this.article._id) ? true : false;
+    // });
+    // if(this.store.dispatch(new GetWishArticlesById()){}
   }
 
   addWishArticle(article: ArticleBlog) {

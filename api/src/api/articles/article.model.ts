@@ -35,6 +35,9 @@ export class ArticleModel extends Typegoose {
     @prop()
     tags: string[];
 
+    @prop({ default: false })
+    isFavorite: boolean;
+
     @arrayProp({ items: CategoryModel, _id: false })
     categories: Array<Ref<CategoryModel>>;
 }

@@ -66,9 +66,15 @@
           [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"
         ></i>
         <p
-          class="hidden lg:inline-block cursor-pointer ml-5 italic text-gray-600 tracking-wider"
+        [ngClass]="{'hidden' : isFavorite , 'inline-block': !isFavorite }"
+          class="hidden cursor-pointer ml-5 italic text-gray-600 tracking-wider"
         >
           Sauvegarder l'article
+        </p>
+        <p
+        [ngClass]="{'inline-block' : isFavorite , 'hidden': !isFavorite }"
+        class="hidden cursor-pointer ml-5 italic text-gray-600 tracking-wider">
+          Article ajouté au favoris
         </p>
       </div>
     </div>
