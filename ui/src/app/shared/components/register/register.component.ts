@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
       ...this.step1,
       ...this.step2
     };
-  
+
     this.auth.register(form)
       .subscribe(
         // tslint:disable-next-line: no-shadowed-variable

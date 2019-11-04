@@ -19,7 +19,7 @@ import { Register } from 'src/app/shared/models/register.model';
 import { InfoUser } from 'src/app/shared/models/infoUser.model';
 import { GetByIdSetting } from '../store/store.module/settings/setting.action';
 import { SettingState } from '../store/store.module/settings/setting.state';
-import { JwtHelperService } from "@auth0/angular-jwt";
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 /**
