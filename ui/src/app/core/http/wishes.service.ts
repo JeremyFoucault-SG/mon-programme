@@ -45,7 +45,7 @@ export class WishesService {
             map((wish: any) => {
                 return wish as Wish;
             })
-        )
+        );
     }
 
     // Ajout d'un wish //

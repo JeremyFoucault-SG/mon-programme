@@ -76,7 +76,7 @@ export class ListingProgrammeComponent implements OnInit {
 
   addToWishList(coaching: Programme, id: string) {
     this.isFavorite = !this.isFavorite;
-    if(this.isFavorite){
+    if (this.isFavorite) {
       this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
       this.toastr.success('Programme ajouté aux favoris avec succés !');
     } else {
@@ -93,6 +93,6 @@ export class ListingProgrammeComponent implements OnInit {
       })
     ).subscribe((hasWish: boolean) => {
       this.isFavorite = hasWish;
-    })
+    });
   }
 }
