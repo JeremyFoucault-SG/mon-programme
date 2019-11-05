@@ -17,6 +17,21 @@
               <a><i class="fa fa-plus-circle text-green-900 fa-lg cursor-pointer" aria-hidden="true"></i></a>
             </div>
           </div>
+          <div class="inline-block relative w-64">
+            <label class="block tracking-wide text-red-400 text-xs font-bold mb-2" for="grid-title">
+              Quel est ton sexe
+            </label>
+            <select
+              class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+              name="sexe" formControlName="sexe"
+              [ngClass]="{'border-red-500': f.submitted && myForm2.get('sexe').errors}">
+              <option>Homme</option>
+              <option>Femme</option>
+            </select>
+            <p *ngIf="f.submitted && myForm2.get('sexe').errors" class="text-red-700">
+              Le sexe est requis
+            </p>
+          </div>
           <div class="flex flex-row  -mx-3 mb-6 pt-4">
             <div class="w-full md:w-3/4 px-3 mb-6 md:mb-0">
               <label class="block tracking-wide text-red-400 text-xs font-bold mb-2" for="grid-title">

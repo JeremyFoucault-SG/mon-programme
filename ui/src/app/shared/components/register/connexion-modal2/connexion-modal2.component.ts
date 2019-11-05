@@ -13,29 +13,30 @@ import { Register } from 'src/app/shared/models/register.model';
 })
 export class ConnexionModal2Component implements OnInit {
 
-// Vu enfant de la modal //
+  // Vu enfant de la modal //
   @ViewChild(ModalComponent, { static: false })
   modal: ModalComponent;
 
 
- // Envoi de la donnée au composant parent //
+  // Envoi de la donnée au composant parent //
   @Output()
   private stepTwo = new EventEmitter<any>();
 
-// Boolean pour  caché les formulaires //
+  // Boolean pour  caché les formulaires //
   inscription = false;
   isHidden = false;
   login = false;
   isHidden2 = false;
-  index = 1 ;
+  index = 1;
 
 
-// Récupération du formulaire et application des validators //
+  // Récupération du formulaire et application des validators //
   myForm2 = this.fb.group({
-      username: ['', Validators.required],
-      goals: [],
-      weight: ['', Validators.required],
-      size: ['', Validators.required],
+    sexe: ['', Validators.required],
+    username: ['', Validators.required],
+    goals: [],
+    weight: ['', Validators.required],
+    size: ['', Validators.required],
   });
 
 
@@ -51,7 +52,7 @@ export class ConnexionModal2Component implements OnInit {
 
 
 
-// Envoi via un output le 2eme formulaire d'inscription au composant parent + applique le hiden pour afficher le 2eme formulaire //
+  // Envoi via un output le 2eme formulaire d'inscription au composant parent + applique le hiden pour afficher le 2eme formulaire //
   onSubmit() {
     const step2 = this.myForm2.value;
     this.stepTwo.emit(step2);

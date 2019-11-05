@@ -18,4 +18,8 @@ export class InfosDTO {
     @Allow()
     @ApiModelProperty()
     public readonly goals?: string;
+
+    @Allow()
+    @ApiModelProperty()
+    public readonly sexe?: string;
 }
