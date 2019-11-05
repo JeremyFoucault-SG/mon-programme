@@ -3,7 +3,12 @@ import { ArticleBlog } from '../../../shared/models/articles-blog.model';
 import { Store, Select } from '@ngxs/store';
 import { FirstCharacterePipe } from '../../pipes/firstCharactere.pipe';
 import { VirtualTimeScheduler, Observable } from 'rxjs';
-import { AddWishCoaching, AddWishArticle, DeleteWishArticle, DeleteWishByIdArticle } from 'src/app/core/store/store.module/wishe/wish.action';
+import {
+  AddWishCoaching,
+  AddWishArticle,
+  DeleteWishArticle,
+  DeleteWishByIdArticle
+} from 'src/app/core/store/store.module/wishe/wish.action';
 import { ToastrService } from 'ngx-toastr';
 import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
 import { Wish } from '../../models/wishes.model';
@@ -15,9 +20,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./card-article.component.css']
 })
 export class CardArticleComponent implements OnInit {
-
-  // @Select(WishState.wishArticles)
-  // wishes: Observable<Wish[]>;
 
   /**
    * Set photo, titre, desc in article-blog
@@ -33,16 +35,9 @@ export class CardArticleComponent implements OnInit {
   @Input()
   public isFavorite: boolean;
 
-  constructor(private store: Store,
-              private toastr: ToastrService) { }
+  constructor(private store: Store, private toastr: ToastrService) {}
 
-
-  ngOnInit() {
-    // this.wishes.subscribe(wishes => {
-    //   this.isFavorite = wishes.find(w => w.article._id === this.article._id) ? true : false;
-    // });
-    // if(this.store.dispatch(new GetWishArticlesById()){}
-  }
+  ngOnInit() {}
 
   changeWishArticle(article: ArticleBlog, id: string) {
     this.isFavorite = !this.isFavorite;
@@ -50,7 +45,7 @@ export class CardArticleComponent implements OnInit {
       this.store.dispatch(new AddWishArticle({ wishId: article._id }));
       this.toastr.success('Article ajouté aux favoris avec succés !');
     } else {
-      this.store.dispatch(new DeleteWishByIdArticle(id))
+      this.store.dispatch(new DeleteWishByIdArticle(id));
       this.toastr.warning('Article supprimé des favoris avec succés !');
     }
   }

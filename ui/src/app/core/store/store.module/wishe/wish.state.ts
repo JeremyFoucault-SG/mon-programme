@@ -5,9 +5,9 @@ import { Wish as Wish } from 'src/app/shared/models/wishes.model';
 import { WishesService } from 'src/app/core/http/wishes.service';
 import {
     AddWishCoaching as AddWishCoaching,
-    AddWishArticle, GetAllWishesCoaching, GetAllWishesArticles, DeleteWishArticle, DeleteWishCoaching, DeleteWishByIdArticle
+    AddWishArticle, GetAllWishesCoaching, GetAllWishesArticles, DeleteWishArticle, DeleteWishCoaching, DeleteWishByIdArticle, DeleteWishByIdProgramme
 } from './wish.action';
-import { filter } from 'minimatch';
+
 
 export class WishStateModel {
     coachings: Wish[];
@@ -111,6 +111,18 @@ export class WishState {
             setState(
                 patch({
                     coachings: removeItem<Wish>(w => w._id === id)
+                })
+            );
+        }));
+    }
+
+    @Action(DeleteWishByIdProgramme)
+    deleteWishByIdProgramme({ getState, setState }: StateContext<WishStateModel>, { id }: DeleteWishByIdProgramme) {
+        const wish = getState().coachings.find(w => w.coaching._id === id);
+        return this.service.deleteWish(wish._id).pipe(tap(() => {
+            setState(
+                patch({
+                    coachings: removeItem<Wish>(w => w.coaching._id === id)
                 })
             );
         }));

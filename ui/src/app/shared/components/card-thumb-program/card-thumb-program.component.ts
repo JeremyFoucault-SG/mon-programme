@@ -9,7 +9,7 @@ import { WishesService } from 'src/app/core/http/wishes.service';
 import { Wish } from '../../models/wishes.model';
 import { ProgrammesDTO } from '../../models/coaching.dto';
 import { Store } from '@ngxs/store';
-import { AddWishCoaching } from 'src/app/core/store/store.module/wishe/wish.action';
+import { AddWishCoaching, DeleteWishByIdProgramme } from 'src/app/core/store/store.module/wishe/wish.action';
 import { ToastrService } from 'ngx-toastr';
 
 /**
@@ -100,7 +100,8 @@ export class CardThumbProgramComponent implements OnInit {
   items: any[];
 
 
-  isFavorite = false;
+  @Input()
+  public isFavorite: boolean;
 
   /**
    * Open/hide content overlay
@@ -156,11 +157,16 @@ export class CardThumbProgramComponent implements OnInit {
     }
   }
 
-  addToWishList(coaching: Programme) {
-    console.log(coaching);
-    this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
-    this.isFavorite = true;
-    this.toastr.success('Programme ajouté aux favoris avec succés !');
+  addToWishList(coaching: Programme, id: string) {
+    this.isFavorite = !this.isFavorite;
+    if (this.isFavorite) {
+      this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
+      this.toastr.success('Programme ajouté aux favoris avec succés !');
+    } else {
+      this.store.dispatch(new DeleteWishByIdProgramme(id) );
+      this.toastr.warning('Programme supprimé aux favoris avec succés !');
+    }
+
   }
 
 }

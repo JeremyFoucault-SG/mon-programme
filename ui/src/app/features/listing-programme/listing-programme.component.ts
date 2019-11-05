@@ -4,7 +4,7 @@ import {
   ProgramsList
 } from 'src/app/shared/models/programs-infos';
 import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Programme } from 'src/app/shared/models/programmes.model';
 import { ProgrammeState } from 'src/app/core/store/store.module/programme/programme.state';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
@@ -15,7 +15,10 @@ import {
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { AddCart } from 'src/app/core/store/store.module/cart/cart.actions';
 import { ToastrService } from 'ngx-toastr';
-import { AddWishCoaching } from 'src/app/core/store/store.module/wishe/wish.action';
+import { AddWishCoaching, DeleteWishByIdProgramme } from 'src/app/core/store/store.module/wishe/wish.action';
+import { map } from 'rxjs/operators';
+import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
+import { Wish } from 'src/app/shared/models/wishes.model';
 
 @Component({
   selector: 'app-listing-programme',
@@ -34,8 +37,7 @@ export class ListingProgrammeComponent implements OnInit {
   public programs = [];
   public user: boolean;
   public auth: AuthenticationService;
-
-  isFavorite = false;
+  public isFavorite: boolean;
 
 
   @Select(ProgrammeState.getProgramme)
@@ -43,6 +45,9 @@ export class ListingProgrammeComponent implements OnInit {
 
   @Select(ProgrammeState.getProgrammes)
   programmes: Observable<Programme>;
+
+  @Select(WishState.wishCoachings)
+  wishes: Observable<Wish[]>;
 
   constructor(private store: Store, private route: ActivatedRoute, private toastr: ToastrService, private router: Router) {}
 
@@ -53,11 +58,15 @@ export class ListingProgrammeComponent implements OnInit {
     });
     this.selected = this.programsInfos[0];
     this.store.dispatch(new SearchProgramme({ rating: 4, limit: 10 }));
+    this.programme.subscribe(item =>  {
+      if (item) {
+      this.changeFavorite(item._id);
+      }
+    });
   }
 
   onChange(programDetail: ProgramDetail, index) {
     this.selected = programDetail;
-    console.log();
   }
 
   addBasket(coaching: Programme) {
@@ -65,10 +74,25 @@ export class ListingProgrammeComponent implements OnInit {
     this.toastr.success('Programme ajouté au panier avec succés !', 'Succés', {positionClass: 'toast-bottom-right'} );
   }
 
-  addToWishList(coaching: Programme) {
-    console.log(coaching);
-    this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
-    this.isFavorite = true;
-    this.toastr.success('Programme ajouté aux favoris avec succés !', 'Succés', {positionClass: 'toast-bottom-right'} );
+  addToWishList(coaching: Programme, id: string) {
+    this.isFavorite = !this.isFavorite;
+    if(this.isFavorite){
+      this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
+      this.toastr.success('Programme ajouté aux favoris avec succés !');
+    } else {
+      this.store.dispatch(new DeleteWishByIdProgramme(id) );
+      this.toastr.warning('Programme supprimé aux favoris avec succés !');
+    }
+
+  }
+
+  changeFavorite(id) {
+   this.wishes.pipe(
+      map(wishes => {
+        return wishes.some(w => w.coaching._id === id);
+      })
+    ).subscribe((hasWish: boolean) => {
+      this.isFavorite = hasWish;
+    })
   }
 }

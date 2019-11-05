@@ -43,6 +43,11 @@ export class DeleteWishCoaching {
     constructor(public id: string) { }
 }
 
+export class DeleteWishByIdProgramme {
+    static readonly type = '[Blog] Delete wishCoaching by id programmes';
+    constructor(public id: string) { }
+}
+
 export class SetSelectedWish {
     static readonly type = '[Wish] Set';
     constructor(public payload: Wish) { }

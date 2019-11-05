@@ -36,19 +36,16 @@ export class ProgrammeState {
 
     @Selector()
     static getProgrammes(state: ProgrammeStateModel) {
-        console.log('heyyyy');
         return state.items;
     }
 
     @Selector()
     static getProgramme(state: ProgrammeStateModel) {
-        console.log('heyyyy');
         return state.item;
     }
 
     @Action(GetAllProgramme)
     getAll(ctx: StateContext<ProgrammeStateModel>, action: GetAllProgramme) {
-        console.log('ffffffff');
         return this.service.getAllProgrammes().pipe(tap((programmes: Programme[]) => {
             ctx.setState(patch({
                 items: programmes

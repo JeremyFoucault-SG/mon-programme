@@ -17,9 +17,17 @@
 </div>
 <div class="flex flex-row justify-end">
     <div class="hidden lg:flex lg:flex-row sm:flex-col bg-red-400 w-2/3 h-24 -mt-16 justify-around">
-        <a class="cursor-pointer mt-2 ml-2" *ngIf=" (programme|async) as programme" (click)="addToWishList(programme)">
-            <i class="fa pr-2 text-red-700" [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i><span
-                    class="text-white text-xs italic hover:text-black">Sauvegarder l'article</span></a>
+        <a class="cursor-pointer mt-2 ml-2" *ngIf=" (programme|async) as programme" (click)="addToWishList(programme, programme._id)">
+            <i class="fa pr-2 text-red-700" [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i>
+            <span
+            [ngClass]="{'inline-block' : isFavorite , 'hidden': !isFavorite }"
+            class="text-white text-xs italic hover:text-black">Programme ajouté au favoris
+            </span>
+            <span
+            [ngClass]="{'hidden' : isFavorite , 'inline-block': !isFavorite }"
+            class="text-white text-xs italic hover:text-black">Sauvegarder le programme
+            </span>
+        </a>
                     <a class="cursor-pointer mt-6" [routerLink]="['/commande']">
         <p class="text-2xl text-white font-thin mr-8">VOIR LE PANIER <i class="fa fa-angle-right ml-4"
                 aria-hidden="true"></i> </p></a>
@@ -40,7 +48,7 @@
         </app-group-title>
         <app-card-thumb-list>
                 <app-card-thumb-program *ngFor="let item of programmes | async" class="mr-5" [imageUrl]="item.imageUrl" [title]="item.title"
-                [content]="item.content | firstCharactere" [hasBgOverlay]="true" [inlineStars]="9" [tag]="'ghghhghghg'" [urlTitle]="['/nos-programmes', item.urlTitle]" [level]="item.level">
+                [content]="item.content | firstCharactere" [hasBgOverlay]="true"  [inlineStars]="9" [tag]="'ghghhghghg'" [urlTitle]="['/nos-programmes', item.urlTitle]" [level]="item.level">
               </app-card-thumb-program>
         </app-card-thumb-list>
     </div>
