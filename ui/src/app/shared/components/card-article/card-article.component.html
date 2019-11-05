@@ -58,7 +58,7 @@
       <div
         class="flex items-center mt-10 w-full justify-end pb-5"
         [ngClass]="isReverse ? 'lg:justify-end' : 'lg:justify-start'"
-        (click)="addWishArticle(article)"
+        (click)="changeWishArticle(article, article._id)"
       >
         <i
           class="cursor-pointer text-red-700 fa fa-heart-o fa-2x"
@@ -66,9 +66,15 @@
           [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"
         ></i>
         <p
-          class="hidden lg:inline-block cursor-pointer ml-5 italic text-gray-600 tracking-wider"
+        [ngClass]="{'hidden' : isFavorite , 'inline-block': !isFavorite }"
+          class="hidden cursor-pointer ml-5 italic text-gray-600 tracking-wider"
         >
           Sauvegarder l'article
+        </p>
+        <p
+        [ngClass]="{'inline-block' : isFavorite , 'hidden': !isFavorite }"
+        class="hidden cursor-pointer ml-5 italic text-gray-600 tracking-wider">
+          Article ajouté au favoris
         </p>
       </div>
     </div>

@@ -25,15 +25,26 @@ export class GetAllWishesArticles {
     constructor(public payload?: QueryWish) { }
 }
 
+
 // Delete wishArticle
 export class DeleteWishArticle {
     static readonly type = '[Blog] Delete wishArticle by id';
     constructor(public id: string) { }
 }
 
+export class DeleteWishByIdArticle {
+    static readonly type = '[Blog] Delete wishArticle by id articles';
+    constructor(public id: string) { }
+}
+
 // Delete wishCoaching
 export class DeleteWishCoaching {
     static readonly type = '[Blog] Delete wishCoaching by id';
+    constructor(public id: string) { }
+}
+
+export class DeleteWishByIdProgramme {
+    static readonly type = '[Blog] Delete wishCoaching by id programmes';
     constructor(public id: string) { }
 }
 

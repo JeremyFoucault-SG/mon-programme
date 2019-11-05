@@ -15,7 +15,7 @@
             <h1 class="pl-4 pr-8 pb-4 pt-4 text-gray-600 hover:text-red-500"><i class="fa fa-eye pr-2"
                 aria-hidden="true"></i>Voir le programme</h1>
           </a>
-          <a (click)="addToWishList(coaching)" class="cursor-pointer">
+          <a (click)="addToWishList(coaching, coaching._id)" class="cursor-pointer">
             <h1 class="pl-4 pr-8 pb-4 text-gray-600 hover:text-red-500"><i class="fa pr-2 text-red-700"
                 [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i>Wishlist</h1>
           </a>

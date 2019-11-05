@@ -40,6 +40,14 @@ export class WishesService {
         );
     }
 
+    public getWishesArticlesbyId(id: string): Observable<Wish> {
+        return this.http.get(`${this.api}/whishes/articles/${id}`).pipe(
+            map((wish: any) => {
+                return wish as Wish;
+            })
+        );
+    }
+
     // Ajout d'un wish //
     public addWishCoaching(payload: Wish): Observable<Wish> {
         return this.http.post<Wish>(`${this.api}/wishes/coachings`, payload);

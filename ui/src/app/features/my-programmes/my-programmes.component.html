@@ -1,5 +1,8 @@
-<div class="container pt-32">
-  <h1 class="text-center">Mes Programmes</h1>
+<div class="pt-32 w-full">
+    <div class="flex flex-row justify-around mb-8 mt-8">
+        <h1 class="text-black font-bold text-3xl ">Tous nos programmes</h1>
+        <a class="cursor-pointer" [routerLink]="['/accueil']"><h1 class="text-black text-1xl"><i class="fa fa-undo mr-4" aria-hidden="true"></i>PAGE D'ACCUEIL</h1></a>
+      </div>
   <hr />
   <div class="w-3/4 m-auto " *ngFor="let coaching of myCoachings | async">
     <div

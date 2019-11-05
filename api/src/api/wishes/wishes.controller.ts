@@ -56,6 +56,12 @@ export class WishesController {
     return this.wishService.searchArticle(user.userId, query.limit);
   }
 
+  @Get('articles/:id')
+  @UseGuards(AuthGuard('jwt'))
+  async findWishAriclesbyId(@User() user: UserJWTPayload, @Param('id') idWish: string): Promise<WishModel> {
+    return this.wishService.findById(user.userId, idWish);
+  }
+
   @Get('coachings')
   @UseGuards(AuthGuard('jwt'))
   async readAllCoachings(@User() user: UserJWTPayload, @Query() query?: WishQuery): Promise<WishModel[]> {

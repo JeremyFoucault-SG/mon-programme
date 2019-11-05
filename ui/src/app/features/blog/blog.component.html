@@ -16,7 +16,7 @@
 <!-- Card list -->
 <div class="flex flex-row flex-wrap justify-around">
   <div *ngFor="let article of articles | async; odd as isReverse" class="w-104 mr-1 mt-5 lg:mt-10 lg:w-full">
-    <app-card-article [article]="article" [isReverse]="isReverse">
+    <app-card-article [article]="article" [isReverse]="isReverse" [isFavorite]="isFavorite(article._id) | async">
     </app-card-article>
   </div>
 </div>

@@ -9,6 +9,9 @@ import { SearchProgramme, AddNextProgramme } from 'src/app/core/store/store.modu
 import { QueryCoaching } from 'src/app/shared/models/query.coaching.interface';
 import { Router, ActivatedRoute, Params, ParamMap } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
+import { Wish } from 'src/app/shared/models/wishes.model';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list-programme',
@@ -26,6 +29,9 @@ export class ListProgrammeComponent implements OnInit {
 
   @Select(ProgrammeState.getProgrammes)
   programmes: Observable<Programme[]>;
+
+  @Select(WishState.wishCoachings)
+  wishes: Observable<Wish[]>;
 
   constructor(
     private store: Store,
@@ -71,4 +77,11 @@ export class ListProgrammeComponent implements OnInit {
     this.router.navigate([], { relativeTo: this.route, queryParams: { categories: [...params, category] } });
   }
 
+  isFavorite(id): Observable<boolean> {
+    return this.wishes.pipe(
+      map(wishes => {
+        return wishes.some(w => w.coaching._id === id);
+      })
+    );
+  }
 }

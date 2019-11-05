@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleBlog } from '../../shared/models/articles-blog.model';
 import { Store, Select} from '@ngxs/store';
 import { Observable } from 'rxjs/Observable';
-import { GetAllArticles, SearchArticle, SearchNextArticle } from './../../core/store/store.module/article/article.actions';
+import { GetAllArticles, SearchArticle, SearchNextArticle, ResetArticle } from './../../core/store/store.module/article/article.actions';
 import { ArticleState } from 'src/app/core/store/store.module/article/article.state';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
+import { Wish } from 'src/app/shared/models/wishes.model';
+import { switchMap, map } from 'rxjs/operators';
 
 
 /**
@@ -25,6 +28,9 @@ export class BlogComponent implements OnInit {
   @Select(ArticleState.articles )
   articles: Observable<ArticleBlog>;
 
+  @Select(WishState.wishArticles)
+  wishes: Observable<Wish[]>;
+
   constructor(
     private store: Store,
     private route: ActivatedRoute,
@@ -34,6 +40,7 @@ export class BlogComponent implements OnInit {
 
 
   ngOnInit() {
+    this.store.dispatch(new ResetArticle());
     this.route.queryParams.subscribe((params: Params) => {
       this.path = this.router.url.substring(1);
       this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, limit: 3}));
@@ -44,5 +51,13 @@ export class BlogComponent implements OnInit {
     this.skip = this.limit;
     this.limit += 3;
     this.store.dispatch(new SearchNextArticle({categories: `${this.path}`, skip: this.skip, limit: this.limit}));
+  }
+
+  isFavorite(id): Observable<boolean> {
+    return this.wishes.pipe(
+      map(wishes => {
+        return wishes.some(w => w.article._id === id);
+      })
+    );
   }
 }
