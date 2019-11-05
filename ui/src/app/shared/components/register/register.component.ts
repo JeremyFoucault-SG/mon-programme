@@ -63,6 +63,7 @@ export class RegisterComponent implements OnInit {
         (res: Register) => {
           this.router.navigate(['/login']);
           this.toastr.clear();
+          this.modalService.destroy('');
         },
         (error) => {
           this.toastr.clear();

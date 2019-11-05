@@ -73,7 +73,6 @@ const routes: Routes = [
   },
   {
     path: 'sante',
-    canActivate: [AuthGuard],
     component: BlogComponent,
     data: {
       title: 'santé',
@@ -85,7 +84,6 @@ const routes: Routes = [
   {
     path: 'pratique-sportive',
     component: BlogComponent,
-    canActivate: [AuthGuard],
     data: {
       title: 'pratique sportive',
       isTransparent: false,
@@ -96,7 +94,6 @@ const routes: Routes = [
   {
     path: 'style-de-vie-et-nutrition',
     component: BlogComponent,
-    canActivate: [AuthGuard],
     data: {
       title: 'style de vie & nutrition',
       isTransparent: false,
@@ -106,30 +103,29 @@ const routes: Routes = [
   },
   {
     path: 'mon-panier',
-    canActivate: [AuthGuard],
     component: BasketComponent,
   data: {
     isVisible: true,
   }},
-  { path: 'mes-programmes', canActivate: [AuthGuard], component: MyProgrammesComponent, data: {
+  { path: 'mes-programmes', component: MyProgrammesComponent, data: {
     isVisible: true,
   }},
-  { path: 'mes-programmes/:title', canActivate: [AuthGuard], component: ProgrammeContentComponent, data: {
+  { path: 'mes-programmes/:title', component: ProgrammeContentComponent, data: {
     isVisible: true,
   }},
-  { path: 'nos-programmes/:title', canActivate: [AuthGuard], component: ListingProgrammeComponent, data: {
+  { path: 'nos-programmes/:title', component: ListingProgrammeComponent, data: {
     isVisible: true,
   }},
-  { path: 'nos-programmes', canActivate: [AuthGuard], component: ListProgrammeComponent, data: {
+  { path: 'nos-programmes', component: ListProgrammeComponent, data: {
     isVisible: true,
   }},
-  { path: 'articles', canActivate: [AuthGuard], component: ArticleComponent, data: {
+  { path: 'articles', component: ArticleComponent, data: {
     isVisible: true,
   } },
-  { path: 'articles/:urlTitle', canActivate: [AuthGuard], component: ArticleBlogComponent, data: {
+  { path: 'articles/:urlTitle', component: ArticleBlogComponent, data: {
     isVisible: true,
   } },
-  { path: 'article-blog', canActivate: [AuthGuard], component: ArticleBlogComponent, data: {
+  { path: 'article-blog', component: ArticleBlogComponent, data: {
     isVisible: true,
   } },
   { path: 'mon-compte', canActivate: [AuthGuard], component: CompteComponent, data: {
@@ -146,34 +142,34 @@ const routes: Routes = [
   }},
   { path: 'login', component: ConnexionComponent, data: {
   }},
-  { path: 'commande', canActivate: [AuthGuard], component: CommandeComponent, data: {
+  { path: 'commande', component: CommandeComponent, data: {
     isVisible: true,
   } },
-  { path: 'pratique-sportive-mobile', canActivate: [AuthGuard], component: PratiqueSportiveMobileComponent, data: {
+  { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent, data: {
     isVisible: true,
   } },
-  { path: 'blog-mobile', canActivate: [AuthGuard], component: BlogMobileComponent, data: {
+  { path: 'blog-mobile', component: BlogMobileComponent, data: {
     isVisible: true,
   } },
   { path: 'inscription', component: InscriptionComponent, data: {
     isVisible: true,
   }},
-  { path: 'inscription', canActivate: [AuthGuard], component: InscriptionComponent, data: {
+  { path: 'inscription', component: InscriptionComponent, data: {
     isVisible: true,
   }},
-  { path: 'create-programme', canActivate: [AuthGuard], component: ProgrammesComponent, data: {
+  { path: 'create-programme', component: ProgrammesComponent, data: {
     isVisible: true,
   } },
-  { path: 'update-article/:id', canActivate: [AuthGuard], component: UpdateArticleComponent, data: {
+  { path: 'update-article/:id', component: UpdateArticleComponent, data: {
     isVisible: true,
   }},
-  { path: 'create-article', canActivate: [AuthGuard], component: UpdateArticleComponent, data: {
+  { path: 'create-article', component: UpdateArticleComponent, data: {
     isVisible: true,
   }},
-  { path: 'list-article', canActivate: [AuthGuard], component: ArticleComponent, data: {
+  { path: 'list-article', component: ArticleComponent, data: {
     isVisible: true,
   }},
-  { path: 'paiement', canActivate: [AuthGuard], component: PaiementComponent, data: {
+  { path: 'paiement', component: PaiementComponent, data: {
     isVisible: true,
   }},
   { path: 'login-modal', component: ConnexionModalComponent, data: {
