@@ -1,5 +1,5 @@
 import { QuillModule } from 'ngx-quill';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ProgrammesComponent } from './programmes/programmes/programmes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';

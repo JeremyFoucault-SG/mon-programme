@@ -14,4 +14,7 @@ export class InfosModel {
     @prop()
     goals?: string;
 
+    @prop()
+    sexe?: string;
+
 }

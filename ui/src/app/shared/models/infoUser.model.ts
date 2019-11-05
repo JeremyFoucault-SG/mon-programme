@@ -3,7 +3,8 @@ export class InfoUser {
         public username: string,
         public age: string,
         public weight: number,
-        public size: string,
+        public size: number,
         public goals: string,
+        public sexe: string,
     ) { }
 }

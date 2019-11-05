@@ -7,11 +7,16 @@
   </div>
 
   <!-- form for infos corporelles -->
-  <form [formGroup]="myForm" (ngSubmit)="submit()">
+  <form [formGroup]="formInfo">
+
     <!-- Sexe user -->
     <div class="flex justify-around uppercase mb-3 ">
       <label class="font-semibold mr-16">Sexe</label>
-      <input type="text" formControlName="sexe" placeholder="FEMME" />
+      <input 
+      type="text" 
+      formControlName="sexe" 
+      placeholder="FEMME" 
+      class="w-1/4"/>
     </div>
 
     <!-- border-bottom -->
@@ -24,7 +29,7 @@
       <label class="font-semibold">Taille</label>
       <input
         type="text"
-        formControlName="taille"
+        formControlName="size"
         placeholder="168"
         class="w-1/4"
       />
@@ -41,7 +46,7 @@
       <label class="font-semibold">Poids</label>
       <input
         type="text"
-        formControlName="poids"
+        formControlName="weight"
         placeholder="52"
         class="w-1/4"
       />
@@ -62,9 +67,14 @@
       </button>
     </div>
 
-    <div class="text-center pb-5">
-        <h1 class="text-green-600 font-bold text-lg">Entre 18.5 et 25 </h1>
-        <p class="text-green-600">Corpulence normal</p>
+    <div class="text-center pb-5 flex justify-center">
+      <input
+      type="text"
+      formControlName="calcul"
+      placeholder="IMC"
+      class="w-1/4 text-green-600"
+      disabled="disabled" 
+    />
+        <p class="text-black font-bold">Corpulence normal</p>
     </div>
   </form>
-
