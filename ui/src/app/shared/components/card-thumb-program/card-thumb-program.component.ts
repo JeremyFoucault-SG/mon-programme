@@ -4,7 +4,6 @@ import { Params, Router } from '@angular/router';
 import { CoachingsService } from 'src/app/core/http/coachings.service';
 import { tap } from 'rxjs/operators';
 import { UsersService } from 'src/app/core/http/users.service';
-import { LoginService } from 'src/app/core/services/login.service';
 import { WishesService } from 'src/app/core/http/wishes.service';
 import { Wish } from '../../models/wishes.model';
 import { ProgrammesDTO } from '../../models/coaching.dto';
@@ -111,7 +110,6 @@ export class CardThumbProgramComponent implements OnInit {
   constructor(private elmt: ElementRef,
               private router: Router,
               public coachingsService: CoachingsService,
-              public authService: LoginService,
               private wishService: WishesService,
               private store: Store,
               private toastr: ToastrService) { }
