@@ -1,13 +1,9 @@
 import { Component, OnInit, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { Programme } from '../../models/programmes.model';
-import { Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { CoachingsService } from 'src/app/core/http/coachings.service';
-import { tap } from 'rxjs/operators';
-import { UsersService } from 'src/app/core/http/users.service';
 import { LoginService } from 'src/app/core/services/login.service';
 import { WishesService } from 'src/app/core/http/wishes.service';
-import { Wish } from '../../models/wishes.model';
-import { ProgrammesDTO } from '../../models/coaching.dto';
 import { Store } from '@ngxs/store';
 import { AddWishCoaching, DeleteWishByIdProgramme } from 'src/app/core/store/store.module/wishe/wish.action';
 import { ToastrService } from 'ngx-toastr';
@@ -21,7 +17,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./card-thumb-program.component.css']
 })
 export class CardThumbProgramComponent implements OnInit {
-
 
   isOpen = false;
   /**

@@ -1,18 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ArticleBlog } from '../../../shared/models/articles-blog.model';
-import { Store, Select } from '@ngxs/store';
-import { FirstCharacterePipe } from '../../pipes/firstCharactere.pipe';
-import { VirtualTimeScheduler, Observable } from 'rxjs';
-import {
-  AddWishCoaching,
-  AddWishArticle,
-  DeleteWishArticle,
-  DeleteWishByIdArticle
-} from 'src/app/core/store/store.module/wishe/wish.action';
+import { Store } from '@ngxs/store';
+import { AddWishArticle, DeleteWishByIdArticle } from 'src/app/core/store/store.module/wishe/wish.action';
 import { ToastrService } from 'ngx-toastr';
-import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
-import { Wish } from '../../models/wishes.model';
-import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-card-article',
@@ -22,12 +13,12 @@ import { filter } from 'rxjs/operators';
 export class CardArticleComponent implements OnInit {
 
   /**
-   * Set photo, titre, desc in article-blog
+   * Set photo, titre, content, etc in article-blog
    */
   @Input()
   public article: ArticleBlog;
   /**
-   * Look is the articles is even or odd
+   * Look is article is on the left or right side
    */
   @Input()
   public isReverse: boolean;

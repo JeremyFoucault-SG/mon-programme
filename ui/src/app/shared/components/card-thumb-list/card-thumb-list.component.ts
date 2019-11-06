@@ -16,15 +16,6 @@ export class CardThumbListComponent implements OnInit {
   @ViewChild('scrollList', { read: ElementRef, static: true }) tref: ElementRef;
 
   /**
-   * Array of items
-   */
-  @Input()
-  items: any[];
-
-  @Input()
-  coaching: any[];
-
-  /**
    * If true set title on the right for lg and xl display
    */
   @Input()
