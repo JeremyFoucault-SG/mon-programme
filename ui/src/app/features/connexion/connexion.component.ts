@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import { ToastrService } from 'ngx-toastr';
 import { Store } from '@ngxs/store';
 import { GetAllWishesArticles, GetAllWishesCoaching } from 'src/app/core/store/store.module/wishe/wish.action';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
+import { ModalService } from 'src/app/shared/components/modal/modal.service';
 
 @Component({
   selector: 'app-connexion',
@@ -17,9 +19,14 @@ export class ConnexionComponent implements OnInit {
 
   public myForm: FormGroup;
 
+  // Vu enfant de la modal //
+  @ViewChild(ModalComponent, { static: false })
+  modal: ModalComponent;
+
   constructor(
     private router: Router,
     private authService: AuthenticationService,
+    private modalService: ModalService,
     private store: Store,
     private toastr: ToastrService
   ) {}
@@ -35,9 +42,7 @@ export class ConnexionComponent implements OnInit {
     this.loading = true;
     this.authService.login(this.model.username, this.model.password).subscribe(
       () => {
-        this.store.dispatch(new GetAllWishesArticles());
-        this.store.dispatch(new GetAllWishesCoaching());
-        this.router.navigate(['accueil']);
+        this.modalService.destroy('');
       },
       error => {
         this.loading = false;

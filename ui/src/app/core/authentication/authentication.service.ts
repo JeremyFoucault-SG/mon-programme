@@ -29,13 +29,13 @@ export class AuthenticationService {
   register(register: Register): Observable<Register> {
     return this.http.post<Register>(`${this.configUrli}`, register);
   }
-  login(username: string, password: string) {
+   login(username: string, password: string) {
     return this.http.post<any>(`${this.configUrl}`, { username, password })
       .pipe(
         tap((user) => {
           if (user) {
-            this.subject.next(true);
             localStorage.setItem('token', user.token);
+            this.subject.next(true);
           }
         }),
         catchError((err) => {
@@ -45,7 +45,7 @@ export class AuthenticationService {
       );
   }
 
-  isLogin() {
+  isLogin(): Observable<boolean> {
     if (localStorage.getItem('token')) {
       this.subject.next(true);
     } else {
@@ -59,7 +59,6 @@ export class AuthenticationService {
   }
 
   isLogout() {
-    this.router.navigate(['/login']);
     this.showSuccessLogout();
     localStorage.removeItem('token');
     if (!localStorage.getItem('token')) {

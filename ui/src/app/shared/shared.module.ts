@@ -99,7 +99,8 @@ import { RegisterComponent } from './components/register/register.component';
     FooterSmComponent,
     GroupTitleComponent,
     FirstCharacterePipe,
-    SumPipe
+    SumPipe,
+    ModalComponent
   ],
 })
 export class SharedModule { }

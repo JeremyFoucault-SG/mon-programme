@@ -107,7 +107,7 @@ const routes: Routes = [
   data: {
     isVisible: true,
   }},
-  { path: 'mes-programmes', component: MyProgrammesComponent, data: {
+  { path: 'mes-programmes', canActivate: [AuthGuard], component: MyProgrammesComponent, data: {
     isVisible: true,
   }},
   { path: 'mes-programmes/:title', component: ProgrammeContentComponent, data: {
@@ -142,7 +142,7 @@ const routes: Routes = [
   }},
   { path: 'login', component: ConnexionComponent, data: {
   }},
-  { path: 'commande', component: CommandeComponent, data: {
+  { path: 'commande', canActivate: [AuthGuard], component: CommandeComponent, data: {
     isVisible: true,
   } },
   { path: 'pratique-sportive-mobile', component: PratiqueSportiveMobileComponent, data: {
