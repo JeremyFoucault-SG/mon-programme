@@ -15,6 +15,7 @@ import { throwIfEmpty } from 'rxjs/operators';
 import { UpdateSetting, GetByIdSetting } from 'src/app/core/store/store.module/settings/setting.action';
 import { SettingState } from 'src/app/core/store/store.module/settings/setting.state';
 import { Settings } from 'src/app/shared/models/settings.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-info',
@@ -28,7 +29,8 @@ export class InfoComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private store: Store
+    private store: Store,
+    private toaster: ToastrService
   ) {}
 
   myForm = this.fb.group({
@@ -36,7 +38,8 @@ export class InfoComponent implements OnInit {
       weight: ['', Validators.required],
       size: ['', Validators.required],
       age: ['', Validators.required],
-      goals: ['', Validators.required]
+      goals: ['', Validators.required],
+      sexe: ['', Validators.required]
     }),
     contact: this.fb.group({
       lastname: ['', Validators.required],
@@ -54,6 +57,8 @@ export class InfoComponent implements OnInit {
 
   submit() {
     this.store.dispatch(new UpdateSetting(this.myForm.value));
+    this.toaster.success('Informations mises à jours', 'succés', {
+    });
   }
   ngOnInit() {
     this.store.dispatch(new GetByIdSetting());
@@ -64,7 +69,8 @@ export class InfoComponent implements OnInit {
           age: item.infos.age,
           weight: item.infos.weight,
           size: item.infos.size,
-          goals: item.infos.goals
+          goals: item.infos.goals,
+          sexe: item.infos.sexe,
         });
         this.myForm.get('contact').patchValue({
           lastname: item.contact.lastname,

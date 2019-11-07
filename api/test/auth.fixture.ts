@@ -15,6 +15,7 @@ export async function insertAuthData(authController: AuthController) {
     goals: 'Raffermissement',
     size: 'sdfsfs',
     weight: 'sfsdfsf',
+    sexe: 'homme',
   };
 
   await authController.signup(auth);

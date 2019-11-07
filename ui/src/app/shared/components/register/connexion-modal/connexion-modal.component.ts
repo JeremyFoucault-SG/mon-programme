@@ -35,7 +35,7 @@ export class ConnexionModalComponent implements OnInit {
 // Récupération du formulaire et application des validators //
   myForm1 = this.fb.group({
       firstname: ['', Validators.required],
-      name: ['', Validators.required],
+      lastname: ['', Validators.required],
       age: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
