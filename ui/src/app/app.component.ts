@@ -20,6 +20,6 @@ export class AppComponent implements OnInit {
         this.store.dispatch(new GetAllWishesCoaching());
         this.store.dispatch(new GetAllWishesArticles());
       }
-    })
+    });
   }
 }
