@@ -29,8 +29,5 @@ export class DashboardInfoCorporellesComponent implements OnInit {
   ngOnInit() {
   }
 
-  // submit() {
-  //   this.store.dispatch(new UpdateSetting(this.formInfo.value));
-  // }
 
 }
