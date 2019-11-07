@@ -49,9 +49,7 @@ export class CardArticleComponent implements OnInit {
   changeWishArticle(article: ArticleBlog, id: string) {
     this.authService.isLogin().pipe(take(1)).subscribe(res => {
       if (res) {
-        console.log(res)
         this.isFavorite = !this.isFavorite;
-        console.log(this.isFavorite)
         if (this.isFavorite) {
           this.store.dispatch(new AddWishArticle({ wishId: article._id }));
           this.toastr.success('Article ajouté aux favoris avec succés !');
