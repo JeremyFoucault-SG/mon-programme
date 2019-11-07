@@ -30,7 +30,7 @@ export class AuthController {
     @HttpCode(HttpStatus.CREATED)
     @Post('signup')
     async signup(@Body() register: RegisterDTO) {
-        const { username, password, age, email, firstname, lastname, goals, size, weight } = register;
+        const { username, password, age, email, firstname, lastname, goals, size, weight, sexe } = register;
         const auth: AuthDTO = { password, username };
         await this.authService.createAuth(register);
         const user = await this.userService.insert(new UserDTO());
@@ -43,7 +43,7 @@ export class AuthController {
                     weight,
                     size,
                     goals,
-
+                    sexe,
             },
                 contact: {
                     email,
