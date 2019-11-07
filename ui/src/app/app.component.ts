@@ -14,12 +14,12 @@ import { AuthenticationService } from './core/authentication/authentication.serv
 export class AppComponent implements OnInit {
   constructor(private store: Store, private authService: AuthenticationService) {}
 
-
   ngOnInit() {
-    if (this.authService.isLogin()) {
-      this.store.dispatch(new GetAllWishesCoaching());
-      this.store.dispatch(new GetAllWishesArticles());
-    }
-
+    this.authService.isLogin().subscribe(res => {
+      if (res) {
+        this.store.dispatch(new GetAllWishesCoaching());
+        this.store.dispatch(new GetAllWishesArticles());
+      }
+    });
   }
 }
