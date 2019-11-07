@@ -57,8 +57,7 @@ export class InfoComponent implements OnInit {
 
   submit() {
     this.store.dispatch(new UpdateSetting(this.myForm.value));
-    this.toaster.success('Informations mises à jours', 'succés',{
-
+    this.toaster.success('Informations mises à jours', 'succés', {
     });
   }
   ngOnInit() {

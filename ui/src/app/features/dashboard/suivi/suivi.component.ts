@@ -21,8 +21,6 @@ export class SuiviComponent implements OnInit {
               private fb: FormBuilder,
               private store: Store) { }
 
-             
-
 
   myForm = this.fb.group({
     infos: this.fb.group({
