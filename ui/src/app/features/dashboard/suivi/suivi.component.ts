@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { GetByIdSetting } from 'src/app/core/store/store.module/settings/setting.action';
+import { GetByIdSetting, UpdateSetting } from 'src/app/core/store/store.module/settings/setting.action';
 import { Select, Store } from '@ngxs/store';
 import { SettingState } from 'src/app/core/store/store.module/settings/setting.state';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { Settings } from 'src/app/shared/models/settings.model';
+import { AstMemoryEfficientTransformer } from '@angular/compiler';
 
 @Component({
   selector: 'app-suivi',
@@ -13,7 +14,6 @@ import { Settings } from 'src/app/shared/models/settings.model';
   styleUrls: ['./suivi.component.css']
 })
 export class SuiviComponent implements OnInit {
-
   @Select(SettingState.setting)
   setting: Observable<Settings>;
 
@@ -30,6 +30,7 @@ export class SuiviComponent implements OnInit {
       calcul: [''],
     }),
   });
+
 
   ngOnInit() {
     this.store.dispatch(new GetByIdSetting());

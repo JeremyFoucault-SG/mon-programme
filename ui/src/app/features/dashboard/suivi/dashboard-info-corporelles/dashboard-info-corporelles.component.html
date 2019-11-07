@@ -10,18 +10,19 @@
   <form [formGroup]="formInfo">
 
     <!-- Sexe user -->
-    <div class="flex justify-around uppercase mb-3 ">
-      <label class="font-semibold mr-16">Sexe</label>
+    <div class=" flex justify-around uppercase mb-3 ">
+      <label class="font-semibold">Sexe</label>
       <input 
       type="text" 
       formControlName="sexe" 
       placeholder="FEMME" 
-      class="w-1/4"/>
+      class="w-1/4 mr-40 text-center"
+      disabled="disabled"/>
     </div>
 
     <!-- border-bottom -->
     <div class="flex justify-center">
-      <div class="border-b h-2 w-11/12"></div>
+      <div class="border-b border-black h-2 w-11/12"></div>
     </div>
 
     <!-- Taille user -->
@@ -31,14 +32,15 @@
         type="text"
         formControlName="size"
         placeholder="168"
-        class="w-1/4"
+        class="w-1/4 text-center"
+        disabled="disabled"
       />
-      <p>KG</p>
+      <p>CM</p>
     </div>
 
     <!-- border-bottom -->
     <div class="flex justify-center">
-      <div class="border-b h-2 w-11/12"></div>
+      <div class="border-b border-black h-2 w-11/12"></div>
     </div>
 
     <!-- Poids user -->
@@ -48,33 +50,21 @@
         type="text"
         formControlName="weight"
         placeholder="52"
-        class="w-1/4"
+        class="w-1/4 text-center"
+        disabled="disabled"
       />
-      <p>CM</p>
+      <p>KG</p>
     </div>
 
-    <!-- Show button submit -->
-    <div class="text-center pb-10">
-      <button
-        type="submit"
-        class="bg-red-800 text-white font-semibold py-2 px-2 border rounded uppercase text-xs"
-      >
-        Mettre a jour
-        <i
-          class="fa fa-arrow-right text-white self-center ml-5"
-          aria-hidden="true"
-        ></i>
-      </button>
-    </div>
 
     <div class="text-center pb-5 flex justify-center">
+      <p class="text-center text-black font-bold">IMC = 
       <input
       type="text"
       formControlName="calcul"
       placeholder="IMC"
-      class="w-1/4 text-green-600"
+      class="w-1/4 text-black text-center"
       disabled="disabled" 
-    />
-        <p class="text-black font-bold">Corpulence normal</p>
+    /></p>
     </div>
   </form>

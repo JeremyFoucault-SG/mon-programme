@@ -35,9 +35,9 @@
               </label>
               <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="name" type="text" placeholder="Smith" formControlName="name"
+                id="name" type="text" placeholder="Smith" formControlName="lastname"
                 [ngClass]="{'border-red-500': f.submitted && myForm1.get('name').errors}">
-              <p *ngIf="f.submitted && myForm1.get('name').errors" class="text-red-700">
+              <p *ngIf="f.submitted && myForm1.get('lastname').errors" class="text-red-700">
                 Le nom est requis
               </p>
             </div>

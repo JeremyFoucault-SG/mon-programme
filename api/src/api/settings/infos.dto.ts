@@ -3,6 +3,10 @@ import { ApiModelProperty } from '@nestjs/swagger';
 
 export class InfosDTO {
 
+   @Allow()
+   @ApiModelProperty()
+   public readonly sexe?: string;
+
     @Allow()
     @ApiModelProperty()
     public readonly age?: string;
@@ -18,8 +22,4 @@ export class InfosDTO {
     @Allow()
     @ApiModelProperty()
     public readonly goals?: string;
-
-    @Allow()
-    @ApiModelProperty()
-    public readonly sexe?: string;
 }

@@ -30,4 +30,7 @@ export class RegisterDTO {
     @Allow()
     @ApiModelProperty()
     weight: string;
+    @Allow()
+    @ApiModelProperty()
+    sexe: string;
 }
