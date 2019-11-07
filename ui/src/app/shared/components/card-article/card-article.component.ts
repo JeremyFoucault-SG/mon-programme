@@ -12,7 +12,10 @@ import {
 import { ToastrService } from 'ngx-toastr';
 import { WishState } from 'src/app/core/store/store.module/wishe/wish.state';
 import { Wish } from '../../models/wishes.model';
-import { filter } from 'rxjs/operators';
+import { filter, take } from 'rxjs/operators';
+import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
+import { ModalService } from '../modal/modal.service';
+import { ConnexionComponent } from 'src/app/features/connexion/connexion.component';
 
 @Component({
   selector: 'app-card-article',
@@ -20,7 +23,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./card-article.component.css']
 })
 export class CardArticleComponent implements OnInit {
-
   /**
    * Set photo, titre, desc in article-blog
    */
@@ -35,18 +37,31 @@ export class CardArticleComponent implements OnInit {
   @Input()
   public isFavorite: boolean;
 
-  constructor(private store: Store, private toastr: ToastrService) {}
+  constructor(
+    private store: Store,
+    private toastr: ToastrService,
+    private authService: AuthenticationService,
+    private modalService: ModalService
+  ) {}
 
   ngOnInit() {}
 
   changeWishArticle(article: ArticleBlog, id: string) {
-    this.isFavorite = !this.isFavorite;
-    if (this.isFavorite) {
-      this.store.dispatch(new AddWishArticle({ wishId: article._id }));
-      this.toastr.success('Article ajouté aux favoris avec succés !');
-    } else {
-      this.store.dispatch(new DeleteWishByIdArticle(id));
-      this.toastr.warning('Article supprimé des favoris avec succés !');
-    }
+    this.authService.isLogin().pipe(take(1)).subscribe(res => {
+      if (res) {
+        console.log(res)
+        this.isFavorite = !this.isFavorite;
+        console.log(this.isFavorite)
+        if (this.isFavorite) {
+          this.store.dispatch(new AddWishArticle({ wishId: article._id }));
+          this.toastr.success('Article ajouté aux favoris avec succés !');
+        } else {
+          this.store.dispatch(new DeleteWishByIdArticle(id));
+          this.toastr.warning('Article supprimé des favoris avec succés !');
+        }
+      } else {
+        this.modalService.init(ConnexionComponent, {}, {});
+      }
+    });
   }
 }
