@@ -78,10 +78,10 @@ export class ListingProgrammeComponent implements OnInit {
     this.isFavorite = !this.isFavorite;
     if (this.isFavorite) {
       this.store.dispatch(new AddWishCoaching({ wishId: coaching._id }));
-      this.toastr.success('Programme ajouté aux favoris avec succés !');
+      this.toastr.success('Programme ajouté à la wishlist avec succés !');
     } else {
       this.store.dispatch(new DeleteWishByIdProgramme(id) );
-      this.toastr.warning('Programme supprimé aux favoris avec succés !');
+      this.toastr.warning('Programme supprimé de la wishlist avec succés !');
     }
 
   }

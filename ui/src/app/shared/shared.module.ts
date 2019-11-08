@@ -31,6 +31,7 @@ import { FooterSmComponent } from './components/footer-sm/footer-sm.component';
 import { GroupTitleComponent } from './components/group-title/group-title.component';
 import { AdminModule } from '../admin/admin.module';
 import { FirstCharacterePipe } from './pipes/firstCharactere.pipe';
+import { SecondCharacterePipe } from './pipes/secondCharactere.pipe';
 import { SumPipe } from './pipes/sum.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { ConnexionModalComponent } from './components/register/connexion-modal/connexion-modal.component';
@@ -65,6 +66,7 @@ import { RegisterComponent } from './components/register/register.component';
     GroupTitleComponent,
     FirstCharacterePipe,
     SumPipe,
+    SecondCharacterePipe,
     ModalComponent,
     ConnexionModalComponent,
     ConnexionModal2Component,
@@ -99,7 +101,8 @@ import { RegisterComponent } from './components/register/register.component';
     FooterSmComponent,
     GroupTitleComponent,
     FirstCharacterePipe,
-    SumPipe
+    SumPipe,
+    SecondCharacterePipe,
   ],
 })
 export class SharedModule { }
