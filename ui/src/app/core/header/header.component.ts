@@ -20,6 +20,7 @@ import { InfoUser } from 'src/app/shared/models/infoUser.model';
 import { GetByIdSetting } from '../store/store.module/settings/setting.action';
 import { SettingState } from '../store/store.module/settings/setting.state';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { ConnexionComponent } from 'src/app/features/connexion/connexion.component';
 
 
 /**
@@ -117,6 +118,10 @@ ngOnInit() {
  */
 open() {
   this.isOpen = !this.isOpen;
+}
+
+openConnexion() {
+  this.modalService.init(ConnexionComponent, {}, {});
 }
 
 openInscription() {

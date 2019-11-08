@@ -103,6 +103,7 @@ import { RegisterComponent } from './components/register/register.component';
     FirstCharacterePipe,
     SumPipe,
     SecondCharacterePipe,
+    ModalComponent
   ],
-})
+}
 export class SharedModule { }
