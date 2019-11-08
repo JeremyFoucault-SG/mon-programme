@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetByIdSetting } from 'src/app/core/store/store.module/settings/setting.action';
+import { Settings } from 'src/app/shared/models/settings.model';
 
 @Component({
   selector: 'app-dashboard-goal',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-goal.component.css']
 })
 export class DashboardGoalComponent implements OnInit {
+  store: any;
+  setting: any;
 
   constructor() { }
   public goaldata = [10];
@@ -19,6 +23,11 @@ export class DashboardGoalComponent implements OnInit {
     ];
 
   ngOnInit() {
+    this.store.dispatch(new GetByIdSetting());
+    this.setting.subscribe((item: Settings) => {
+      console.log(item);
+      }
+    );
   }
 
 }

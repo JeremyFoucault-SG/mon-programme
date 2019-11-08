@@ -1,10 +1,36 @@
 <div class="pt-48 flex flex-row justify-around">
 <div>
-    <h1 class="mb-8 underline">Mes programmes Favoris:</h1>
-    <li *ngFor="let wish of coachings | async" class="italic">{{wish.coaching.title}} | <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer" aria-hidden="true" (click)="deleteWishCoaching(wish._id)"></i><br></li>
+    <h1 class="mb-10 underline text-center text-lg font-bold">Mes programmes Favoris:</h1>
+    <div class="max-w-sm w-full lg:max-w-md lg:flex shadow-md mt-10" *ngFor="let wish of coachings | async">
+      <div class="flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+        <img src={{wish.coaching.image}} class="hover:cursor-pointer object-cover h-48 w-48">
+      </div>
+      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r pl-4 flex flex-col justify-between leading-normal">
+          <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer text-right pt-2 pr-2" aria-hidden="true" (click)="deleteWishCoaching(wish._id)"></i>
+        <div class="mb-8">
+            <a [routerLink]="['/nos-programmes', wish.coaching.urlTitle]">
+          <div class="text-gray-900 font-bold text-xl mb-2">{{wish.coaching.title}}</div></a>
+          <p class="text-gray-700 text-base">{{wish.coaching.content | secondCharactere}} ... </p>
+        </div>
+        <a [routerLink]="['/nos-programmes', wish.coaching.urlTitle]" class="hover:text-blue-700"><i class="fa fa-eye" aria-hidden="true"></i> Voir le programme</a>
+      </div>
+    </div>
 </div>
 <div>
-    <h1 class ="mb-8 underline" >Mes Articles Favoris:</h1>
-    <li *ngFor="let wish of articles | async"class="italic" >{{wish.article.title}} | <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer" aria-hidden="true" (click)="deleteWishArticle(wish._id)"></i><br></li>
+    <h1 class ="mb-10 underline text-center text-lg font-bold" >Mes Articles Favoris:</h1>
+    <div class="max-w-sm w-full lg:max-w-md lg:flex shadow-md mt-10" *ngFor="let wish of articles | async">
+        <div class="flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+          <img src={{wish.article.image}} class="hover:cursor-pointer object-cover h-48 w-48">
+        </div>
+        <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r pl-4 flex flex-col justify-between leading-normal">
+            <i class="fa fa-trash-o hover:text-red-700 & cursor-pointer text-right pt-2 pr-2" aria-hidden="true" (click)="deleteWishArticle(wish._id)"></i>
+          <div class="mb-8">
+              <a [routerLink]="['/articles', wish.article.urlTitle]">
+            <div class="text-gray-900 font-bold text-xl mb-2">{{wish.article.title}}</div></a>
+            <p class="text-gray-700 text-base">{{wish.article.content | secondCharactere}} ... </p>
+          </div>
+          <a [routerLink]="['/articles', wish.article.urlTitle]" class="hover:text-blue-700"><i class="fa fa-eye" aria-hidden="true"></i> Voir l'article</a>
+        </div>
+      </div>
 </div>
 </div>

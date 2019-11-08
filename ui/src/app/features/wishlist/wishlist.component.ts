@@ -19,6 +19,9 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.css']
 })
+
+
+
 export class WishlistComponent implements OnInit {
 
   constructor(private store: Store,
@@ -38,11 +41,12 @@ export class WishlistComponent implements OnInit {
 
   deleteWishCoaching(id: string) {
     this.store.dispatch(new DeleteWishCoaching(id));
-    this.toastr.success('Programme supprimé des favoris avec succés !', 'Succés', {positionClass: 'toast-bottom-right'});
+    this.toastr.success('Programme supprimé de la wishlist avec succés !', 'Succés', {positionClass: 'toast-bottom-right'});
   }
 
   deleteWishArticle(id: string) {
     this.store.dispatch(new DeleteWishArticle(id));
-    this.toastr.success('Article supprimé des favoris avec succés !', 'Succés', {positionClass: 'toast-bottom-right'});
+    this.toastr.success('Article supprimé de la wishlist avec succés !', 'Succés', {positionClass: 'toast-bottom-right'});
   }
+
 }
