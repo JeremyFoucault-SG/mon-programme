@@ -21,11 +21,11 @@
             <i class="fa pr-2 text-red-700" [ngClass]="{'fa-heart' : isFavorite , 'fa-heart-o': !isFavorite }"></i>
             <span
             [ngClass]="{'inline-block' : isFavorite , 'hidden': !isFavorite }"
-            class="text-white text-xs italic hover:text-black">Programme ajouté au favoris
+            class="text-white text-xs italic hover:text-black">Programme ajouté à la wishlist
             </span>
             <span
             [ngClass]="{'hidden' : isFavorite , 'inline-block': !isFavorite }"
-            class="text-white text-xs italic hover:text-black">Sauvegarder le programme
+            class="text-white text-xs italic hover:text-black">Ajouter à ma wishlist
             </span>
         </a>
                     <a class="cursor-pointer mt-6" [routerLink]="['/commande']">
