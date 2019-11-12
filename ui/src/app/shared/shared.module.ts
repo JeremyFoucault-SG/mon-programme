@@ -105,5 +105,5 @@ import { RegisterComponent } from './components/register/register.component';
     SecondCharacterePipe,
     ModalComponent
   ],
-}
+})
 export class SharedModule { }
