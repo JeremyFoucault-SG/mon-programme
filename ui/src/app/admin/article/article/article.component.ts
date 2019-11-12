@@ -30,7 +30,6 @@ export class ArticleComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.store.dispatch(new GetAllArticles());
     this.store.dispatch(new SearchArticle({ limit: 4 }));
   }
   editArticle(payload: ArticleBlog) {
