@@ -15,67 +15,69 @@
           Supprimer
         </button>
       </div>
-      <div
-        *ngIf="file.length <= 0"
-        ngfDrop
-        multiple="1"
-        selectable="1"
-        [(validDrag)]="validComboDrag"
-        [(files)]="file"
-        accept="image/*"
-        [(lastInvalids)]="lastInvalids"
-        [(dragFiles)]="dragFiles"
-        class="h-48 border-2 border-dotted border-gray-600 bg-gray-200 rounded flex justify-center items-center mb-4"
-        [class.invalid-drag]="validComboDrag === false"
-        [class.valid-drag]="validComboDrag"
-        [fileDropDisabled]="fileDropDisabled"
-        [ngClass]="{
-          'border-red-500': f.submitted && articleForm.get('image').errors
-        }"
-      >
-        <p
-          *ngIf="f.submitted && articleForm.get('image').errors"
-          class="text-red-500"
+      <div *ngIf="!articleForm.value.image.url">
+        <div
+          *ngIf="file.length <= 0"
+          ngfDrop
+          multiple="1"
+          selectable="1"
+          [(validDrag)]="validComboDrag"
+          [(files)]="file"
+          accept="image/*"
+          [(lastInvalids)]="lastInvalids"
+          [(dragFiles)]="dragFiles"
+          class="h-48 border-2 border-dotted border-gray-600 bg-gray-200 rounded flex justify-center items-center mb-4"
+          [class.invalid-drag]="validComboDrag === false"
+          [class.valid-drag]="validComboDrag"
+          [fileDropDisabled]="fileDropDisabled"
+          [ngClass]="{
+            'border-red-500': f.submitted && articleForm.get('image').errors
+          }"
         >
-          inserer une image
-        </p>
-        <div class="text-xl font-bold uppercase text-blue-800">
-          <div class="text-center">
-            <fa-icon
-              [icon]="['fas', 'cloud-upload-alt']"
-              class="cursor-pointer text-blue-800"
-              [size]="'3x'"
-            ></fa-icon>
+          <p
+            *ngIf="f.submitted && articleForm.get('image').errors"
+            class="text-red-500"
+          >
+            inserer une image
+          </p>
+          <div class="text-xl font-bold uppercase text-blue-800">
+            <div class="text-center">
+              <fa-icon
+                [icon]="['fas', 'cloud-upload-alt']"
+                class="cursor-pointer text-blue-800"
+                [size]="'3x'"
+              ></fa-icon>
+            </div>
+            <div>Uploader une image</div>
           </div>
-          <div>Uploader une image</div>
         </div>
-      </div>
-
-      <div
-        class="w-full relative"
-        *ngIf="
-          ['image/gif', 'image/png', 'image/jpeg'].indexOf(file[0]?.type) >= 0
-        "
-      >
-        <button
-          class="absolute top-0 right-0 mr-5 mt-2"
-          type="button"
-          *ngIf="file.length > 0"
-        >
-          <fa-icon
-            [icon]="['fas', 'times']"
-            class="cursor-pointer text-red-800"
-            [size]="'2x'"
-            (click)="onRemoveFile(id)"
-          ></fa-icon>
-        </button>
 
         <div
-          class="w-full h-48 bg-cover rounded shadow-lg"
-          [ngfBackground]="file[0]"
-        ></div>
+          class="w-full relative"
+          *ngIf="
+            ['image/gif', 'image/png', 'image/jpeg'].indexOf(file[0]?.type) >= 0
+          "
+        >
+          <button
+            class="absolute top-0 right-0 mr-5 mt-2"
+            type="button"
+            *ngIf="file.length > 0"
+          >
+            <fa-icon
+              [icon]="['fas', 'times']"
+              class="cursor-pointer text-red-800"
+              [size]="'2x'"
+              (click)="onRemoveFile(id)"
+            ></fa-icon>
+          </button>
+
+          <div
+            class="w-full h-48 bg-cover rounded shadow-lg"
+            [ngfBackground]="file[0]"
+          ></div>
+        </div>
       </div>
-      <div class="w-full relative">
+      <div class="w-full relative" *ngIf="articleForm.value.image.url">
         <button
           class="absolute top-0 right-0 mr-5 mt-2"
           type="button"
