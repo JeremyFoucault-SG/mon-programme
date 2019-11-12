@@ -16,6 +16,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { NgxsModule } from '@ngxs/store';
+import { NgxsResetPluginModule } from 'ngxs-reset-plugin';
 import { AdminModule } from './admin/admin.module';
 import { StoreModule } from '../app/core/store/store.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -46,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
       preventDuplicates: true,
     }),
     StoreModule,
+    NgxsResetPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

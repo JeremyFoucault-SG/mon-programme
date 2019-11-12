@@ -52,3 +52,4 @@ export class SetSelectedWish {
     static readonly type = '[Wish] Set';
     constructor(public payload: Wish) { }
 }
+

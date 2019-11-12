@@ -8155,6 +8155,13 @@ ngx-toastr@^10.2.0:
   dependencies:
     tslib "^1.9.0"
 
+ngxs-reset-plugin@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ngxs-reset-plugin/-/ngxs-reset-plugin-1.2.0.tgz#38dd8363f45cad7410e00ce346a98001241944f8"
+  integrity sha512-IbiwPge8ZUlsEFLOyyx+ynvH588zuF68lArxhp+AoJB18WtzPDyznlqAU9Fv2WxsDHJ8awNCb1ks3xULRvv60A==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -10208,7 +10215,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs-compat@^6.5.2:
+rxjs-compat@^6.5.3:
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.5.3.tgz#18440949b2678bf87a78a754009676b2c49183dc"
   integrity sha512-BIJX2yovz3TBpjJoAZyls2QYuU6ZiCaZ+U96SmxQpuSP/qDUfiXPKOVLbThBB2WZijNHkdTTJXKRwvv5Y48H7g==
